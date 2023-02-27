@@ -104,7 +104,7 @@
             this.pnlTittleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTittleBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTittleBar.Name = "pnlTittleBar";
-            this.pnlTittleBar.Size = new System.Drawing.Size(818, 63);
+            this.pnlTittleBar.Size = new System.Drawing.Size(839, 63);
             this.pnlTittleBar.TabIndex = 1;
             // 
             // lblClose
@@ -536,7 +536,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(839, 450);
+            this.ClientSize = new System.Drawing.Size(839, 739);
             this.Controls.Add(this.txtQuanHeVoiChuHo);
             this.Controls.Add(this.lblQuanHeVoiChuHo);
             this.Controls.Add(this.txtCccdChuHo);
