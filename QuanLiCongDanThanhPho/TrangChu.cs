@@ -22,7 +22,12 @@ namespace QuanLiCongDanThanhPho
             Application.Exit();
         }
 
-        private void btnHide_Click(object sender, EventArgs e)
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblHideApp_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
