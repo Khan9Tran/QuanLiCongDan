@@ -286,7 +286,6 @@
         private TextBox txtCCCDChuHo;
         private TextBox txtTenChuHo;
         private TextBox txtMaHoKhau;
-        private Button btnSua;
         private Button btnQuayLai;
         private Button btnTrangChu;
         private Label lblTieuDe;
