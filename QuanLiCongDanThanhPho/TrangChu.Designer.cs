@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnKhungTren = new System.Windows.Forms.Panel();
+            this.pnlKhungTren = new System.Windows.Forms.Panel();
             this.lblHideApp = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
-            this.pnChucNang = new System.Windows.Forms.Panel();
-            this.pnHienThiForm = new System.Windows.Forms.Panel();
-            this.pnKhungTren.SuspendLayout();
+            this.pnlChucNang = new System.Windows.Forms.Panel();
+            this.pnlHienThiForm = new System.Windows.Forms.Panel();
+            this.pnlKhungTren.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnKhungTren
+            // pnlKhungTren
             // 
-            this.pnKhungTren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnKhungTren.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnKhungTren.Controls.Add(this.lblHideApp);
-            this.pnKhungTren.Controls.Add(this.lblExit);
-            this.pnKhungTren.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnKhungTren.Location = new System.Drawing.Point(0, 0);
-            this.pnKhungTren.Name = "pnKhungTren";
-            this.pnKhungTren.Size = new System.Drawing.Size(1782, 71);
-            this.pnKhungTren.TabIndex = 0;
+            this.pnlKhungTren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnlKhungTren.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlKhungTren.Controls.Add(this.lblHideApp);
+            this.pnlKhungTren.Controls.Add(this.lblExit);
+            this.pnlKhungTren.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlKhungTren.Location = new System.Drawing.Point(0, 0);
+            this.pnlKhungTren.Name = "pnlKhungTren";
+            this.pnlKhungTren.Size = new System.Drawing.Size(1782, 71);
+            this.pnlKhungTren.TabIndex = 0;
             // 
             // lblHideApp
             // 
@@ -70,23 +70,23 @@
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
-            // pnChucNang
+            // pnlChucNang
             // 
-            this.pnChucNang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnChucNang.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnChucNang.Location = new System.Drawing.Point(0, 71);
-            this.pnChucNang.Name = "pnChucNang";
-            this.pnChucNang.Size = new System.Drawing.Size(250, 782);
-            this.pnChucNang.TabIndex = 1;
+            this.pnlChucNang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.pnlChucNang.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlChucNang.Location = new System.Drawing.Point(0, 71);
+            this.pnlChucNang.Name = "pnlChucNang";
+            this.pnlChucNang.Size = new System.Drawing.Size(250, 782);
+            this.pnlChucNang.TabIndex = 1;
             // 
-            // pnHienThiForm
+            // pnlHienThiForm
             // 
-            this.pnHienThiForm.AutoSize = true;
-            this.pnHienThiForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnHienThiForm.Location = new System.Drawing.Point(250, 71);
-            this.pnHienThiForm.Name = "pnHienThiForm";
-            this.pnHienThiForm.Size = new System.Drawing.Size(1532, 782);
-            this.pnHienThiForm.TabIndex = 2;
+            this.pnlHienThiForm.AutoSize = true;
+            this.pnlHienThiForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlHienThiForm.Location = new System.Drawing.Point(250, 71);
+            this.pnlHienThiForm.Name = "pnlHienThiForm";
+            this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 782);
+            this.pnlHienThiForm.TabIndex = 2;
             // 
             // FTrangChu
             // 
@@ -94,15 +94,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(1782, 853);
-            this.Controls.Add(this.pnHienThiForm);
-            this.Controls.Add(this.pnChucNang);
-            this.Controls.Add(this.pnKhungTren);
+            this.Controls.Add(this.pnlHienThiForm);
+            this.Controls.Add(this.pnlChucNang);
+            this.Controls.Add(this.pnlKhungTren);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrangChu";
-            this.pnKhungTren.ResumeLayout(false);
-            this.pnKhungTren.PerformLayout();
+            this.pnlKhungTren.ResumeLayout(false);
+            this.pnlKhungTren.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,9 +110,9 @@
 
         #endregion
 
-        private Panel pnKhungTren;
-        private Panel pnChucNang;
-        private Panel pnHienThiForm;
+        private Panel pnlKhungTren;
+        private Panel pnlChucNang;
+        private Panel pnlHienThiForm;
         private Label lblExit;
         private Label lblHideApp;
     }
