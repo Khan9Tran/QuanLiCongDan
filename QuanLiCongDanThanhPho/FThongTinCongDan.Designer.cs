@@ -53,35 +53,19 @@
             this.txtNoiSinh = new System.Windows.Forms.TextBox();
             this.txtHoKhau = new System.Windows.Forms.TextBox();
             this.lblHoKhau = new System.Windows.Forms.Label();
-            this.lblDiaChiThuongTru = new System.Windows.Forms.Label();
-            this.txtDiaChiThuongTru = new System.Windows.Forms.TextBox();
             this.lblNghe = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblTenCha = new System.Windows.Forms.Label();
-            this.txtTenCha = new System.Windows.Forms.TextBox();
             this.lblQuocTich = new System.Windows.Forms.Label();
             this.txtQuocTich = new System.Windows.Forms.TextBox();
-            this.txtQuocTichCha = new System.Windows.Forms.TextBox();
-            this.lblQuocTichCha = new System.Windows.Forms.Label();
-            this.lblCccdCha = new System.Windows.Forms.Label();
-            this.txtCccdCha = new System.Windows.Forms.TextBox();
-            this.txtCccdMe = new System.Windows.Forms.TextBox();
-            this.lblCccdMe = new System.Windows.Forms.Label();
-            this.txtQuocTichMe = new System.Windows.Forms.TextBox();
-            this.lblQuocTichMe = new System.Windows.Forms.Label();
-            this.txtTenMe = new System.Windows.Forms.TextBox();
-            this.lblTenMe = new System.Windows.Forms.Label();
-            this.txtCccdChuHo = new System.Windows.Forms.TextBox();
-            this.lblCccdChuHo = new System.Windows.Forms.Label();
-            this.txtQuocTichChuHo = new System.Windows.Forms.TextBox();
-            this.lblQuocTichChuHo = new System.Windows.Forms.Label();
-            this.txtTenChuHo = new System.Windows.Forms.TextBox();
-            this.lblTenChuHo = new System.Windows.Forms.Label();
-            this.lblQuanHeVoiChuHo = new System.Windows.Forms.Label();
-            this.txtQuanHeVoiChuHo = new System.Windows.Forms.TextBox();
+            this.pnlThongTin = new System.Windows.Forms.Panel();
+            this.lblTrinhDoHocVan = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTittleBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).BeginInit();
+            this.pnlThongTin.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTittleBar
@@ -89,7 +73,7 @@
             this.lblTittleBar.AutoSize = true;
             this.lblTittleBar.BackColor = System.Drawing.Color.Transparent;
             this.lblTittleBar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTittleBar.Location = new System.Drawing.Point(71, 20);
+            this.lblTittleBar.Location = new System.Drawing.Point(52, 9);
             this.lblTittleBar.Name = "lblTittleBar";
             this.lblTittleBar.Size = new System.Drawing.Size(205, 24);
             this.lblTittleBar.TabIndex = 0;
@@ -97,21 +81,22 @@
             // 
             // pnlTittleBar
             // 
-            this.pnlTittleBar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(9)))));
+            this.pnlTittleBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTittleBar.Controls.Add(this.lblClose);
             this.pnlTittleBar.Controls.Add(this.picTittleBar);
             this.pnlTittleBar.Controls.Add(this.lblTittleBar);
             this.pnlTittleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTittleBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTittleBar.Name = "pnlTittleBar";
-            this.pnlTittleBar.Size = new System.Drawing.Size(818, 63);
+            this.pnlTittleBar.Size = new System.Drawing.Size(1200, 42);
             this.pnlTittleBar.TabIndex = 1;
             // 
             // lblClose
             // 
             this.lblClose.AutoSize = true;
             this.lblClose.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblClose.Location = new System.Drawing.Point(756, 20);
+            this.lblClose.Location = new System.Drawing.Point(1125, 9);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(62, 24);
             this.lblClose.TabIndex = 2;
@@ -122,62 +107,70 @@
             // 
             this.picTittleBar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picTittleBar.Image = global::QuanLiCongDanThanhPho.Properties.Resources.humanIcon;
-            this.picTittleBar.Location = new System.Drawing.Point(14, 12);
+            this.picTittleBar.Location = new System.Drawing.Point(14, 3);
             this.picTittleBar.Name = "picTittleBar";
-            this.picTittleBar.Size = new System.Drawing.Size(51, 41);
+            this.picTittleBar.Size = new System.Drawing.Size(32, 30);
             this.picTittleBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTittleBar.TabIndex = 1;
             this.picTittleBar.TabStop = false;
             // 
             // picCongDan
             // 
+            this.picCongDan.BackColor = System.Drawing.Color.White;
             this.picCongDan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picCongDan.Location = new System.Drawing.Point(14, 83);
+            this.picCongDan.Location = new System.Drawing.Point(11, 20);
             this.picCongDan.Name = "picCongDan";
-            this.picCongDan.Size = new System.Drawing.Size(141, 148);
+            this.picCongDan.Size = new System.Drawing.Size(326, 341);
             this.picCongDan.TabIndex = 2;
             this.picCongDan.TabStop = false;
             // 
             // lblTen
             // 
             this.lblTen.AutoSize = true;
-            this.lblTen.Location = new System.Drawing.Point(171, 83);
+            this.lblTen.BackColor = System.Drawing.Color.Transparent;
+            this.lblTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTen.Location = new System.Drawing.Point(373, 17);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(35, 20);
+            this.lblTen.Size = new System.Drawing.Size(45, 28);
             this.lblTen.TabIndex = 3;
             this.lblTen.Text = "Tên:";
+            this.lblTen.Click += new System.EventHandler(this.lblTen_Click);
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(212, 80);
+            this.txtTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTen.Location = new System.Drawing.Point(424, 17);
             this.txtTen.Name = "txtTen";
             this.txtTen.ReadOnly = true;
-            this.txtTen.Size = new System.Drawing.Size(288, 27);
+            this.txtTen.Size = new System.Drawing.Size(428, 34);
             this.txtTen.TabIndex = 4;
             // 
             // lblCccd
             // 
             this.lblCccd.AutoSize = true;
-            this.lblCccd.Location = new System.Drawing.Point(506, 83);
+            this.lblCccd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCccd.Location = new System.Drawing.Point(858, 17);
             this.lblCccd.Name = "lblCccd";
-            this.lblCccd.Size = new System.Drawing.Size(50, 20);
+            this.lblCccd.Size = new System.Drawing.Size(64, 28);
             this.lblCccd.TabIndex = 5;
             this.lblCccd.Text = "CCCD:";
             // 
             // txtCccd
             // 
-            this.txtCccd.Location = new System.Drawing.Point(562, 80);
+            this.txtCccd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCccd.Location = new System.Drawing.Point(928, 14);
             this.txtCccd.Name = "txtCccd";
             this.txtCccd.ReadOnly = true;
-            this.txtCccd.Size = new System.Drawing.Size(248, 27);
+            this.txtCccd.Size = new System.Drawing.Size(259, 34);
             this.txtCccd.TabIndex = 6;
             // 
             // lblNgaySinh
             // 
             this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Location = new System.Drawing.Point(171, 127);
+            this.lblNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNgaySinh.Location = new System.Drawing.Point(373, 68);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(77, 20);
+            this.lblNgaySinh.Size = new System.Drawing.Size(103, 28);
             this.lblNgaySinh.TabIndex = 7;
             this.lblNgaySinh.Text = "Ngày sinh:";
             // 
@@ -185,405 +178,259 @@
             // 
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Enabled = false;
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(255, 122);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(482, 68);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(120, 27);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(143, 34);
             this.dtpNgaySinh.TabIndex = 8;
             // 
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Location = new System.Drawing.Point(391, 127);
+            this.lblGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGioiTinh.Location = new System.Drawing.Point(642, 68);
             this.lblGioiTinh.Name = "lblGioiTinh";
-            this.lblGioiTinh.Size = new System.Drawing.Size(68, 20);
+            this.lblGioiTinh.Size = new System.Drawing.Size(91, 28);
             this.lblGioiTinh.TabIndex = 9;
             this.lblGioiTinh.Text = "Giới tính:";
             // 
             // txtGioiTinh
             // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(465, 124);
+            this.txtGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtGioiTinh.Location = new System.Drawing.Point(739, 68);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.ReadOnly = true;
-            this.txtGioiTinh.Size = new System.Drawing.Size(63, 27);
+            this.txtGioiTinh.Size = new System.Drawing.Size(172, 34);
             this.txtGioiTinh.TabIndex = 10;
             // 
             // lblDanToc
             // 
             this.lblDanToc.AutoSize = true;
-            this.lblDanToc.Location = new System.Drawing.Point(171, 171);
+            this.lblDanToc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDanToc.Location = new System.Drawing.Point(373, 117);
             this.lblDanToc.Name = "lblDanToc";
-            this.lblDanToc.Size = new System.Drawing.Size(64, 20);
+            this.lblDanToc.Size = new System.Drawing.Size(84, 28);
             this.lblDanToc.TabIndex = 11;
             this.lblDanToc.Text = "Dân tộc:";
             // 
             // txtDanToc
             // 
-            this.txtDanToc.Location = new System.Drawing.Point(241, 168);
+            this.txtDanToc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDanToc.Location = new System.Drawing.Point(463, 117);
             this.txtDanToc.Name = "txtDanToc";
             this.txtDanToc.ReadOnly = true;
-            this.txtDanToc.Size = new System.Drawing.Size(133, 27);
+            this.txtDanToc.Size = new System.Drawing.Size(133, 34);
             this.txtDanToc.TabIndex = 12;
+            this.txtDanToc.TextChanged += new System.EventHandler(this.txtDanToc_TextChanged);
             // 
             // lblTonGiao
             // 
             this.lblTonGiao.AutoSize = true;
-            this.lblTonGiao.Location = new System.Drawing.Point(388, 171);
+            this.lblTonGiao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTonGiao.Location = new System.Drawing.Point(610, 117);
             this.lblTonGiao.Name = "lblTonGiao";
-            this.lblTonGiao.Size = new System.Drawing.Size(70, 20);
+            this.lblTonGiao.Size = new System.Drawing.Size(91, 28);
             this.lblTonGiao.TabIndex = 13;
             this.lblTonGiao.Text = "Tôn giáo:";
             // 
             // txtTonGiao
             // 
-            this.txtTonGiao.Location = new System.Drawing.Point(464, 168);
+            this.txtTonGiao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTonGiao.Location = new System.Drawing.Point(707, 117);
             this.txtTonGiao.Name = "txtTonGiao";
             this.txtTonGiao.ReadOnly = true;
-            this.txtTonGiao.Size = new System.Drawing.Size(92, 27);
+            this.txtTonGiao.Size = new System.Drawing.Size(190, 34);
             this.txtTonGiao.TabIndex = 14;
             // 
             // lblTinhTrangHonNhan
             // 
             this.lblTinhTrangHonNhan.AutoSize = true;
-            this.lblTinhTrangHonNhan.Location = new System.Drawing.Point(546, 127);
+            this.lblTinhTrangHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTinhTrangHonNhan.Location = new System.Drawing.Point(373, 226);
             this.lblTinhTrangHonNhan.Name = "lblTinhTrangHonNhan";
-            this.lblTinhTrangHonNhan.Size = new System.Drawing.Size(144, 20);
+            this.lblTinhTrangHonNhan.Size = new System.Drawing.Size(192, 28);
             this.lblTinhTrangHonNhan.TabIndex = 17;
             this.lblTinhTrangHonNhan.Text = "Tình trạng hôn nhân:";
             // 
             // txtTinhTrangHonNhan
             // 
-            this.txtTinhTrangHonNhan.Location = new System.Drawing.Point(696, 124);
+            this.txtTinhTrangHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTinhTrangHonNhan.Location = new System.Drawing.Point(571, 226);
             this.txtTinhTrangHonNhan.Name = "txtTinhTrangHonNhan";
             this.txtTinhTrangHonNhan.ReadOnly = true;
-            this.txtTinhTrangHonNhan.Size = new System.Drawing.Size(114, 27);
+            this.txtTinhTrangHonNhan.Size = new System.Drawing.Size(200, 34);
             this.txtTinhTrangHonNhan.TabIndex = 18;
             // 
             // lblQueQuan
             // 
             this.lblQueQuan.AutoSize = true;
-            this.lblQueQuan.Location = new System.Drawing.Point(14, 247);
+            this.lblQueQuan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblQueQuan.Location = new System.Drawing.Point(373, 277);
             this.lblQueQuan.Name = "lblQueQuan";
-            this.lblQueQuan.Size = new System.Drawing.Size(76, 20);
+            this.lblQueQuan.Size = new System.Drawing.Size(101, 28);
             this.lblQueQuan.TabIndex = 19;
             this.lblQueQuan.Text = "Quê quán:";
             // 
             // txtQueQuan
             // 
-            this.txtQueQuan.Location = new System.Drawing.Point(96, 244);
+            this.txtQueQuan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQueQuan.Location = new System.Drawing.Point(480, 274);
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.ReadOnly = true;
-            this.txtQueQuan.Size = new System.Drawing.Size(278, 27);
+            this.txtQueQuan.Size = new System.Drawing.Size(278, 34);
             this.txtQueQuan.TabIndex = 20;
+            this.txtQueQuan.TextChanged += new System.EventHandler(this.txtQueQuan_TextChanged);
             // 
             // lblNoiSinh
             // 
             this.lblNoiSinh.AutoSize = true;
-            this.lblNoiSinh.Location = new System.Drawing.Point(391, 247);
+            this.lblNoiSinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNoiSinh.Location = new System.Drawing.Point(764, 277);
             this.lblNoiSinh.Name = "lblNoiSinh";
-            this.lblNoiSinh.Size = new System.Drawing.Size(66, 20);
+            this.lblNoiSinh.Size = new System.Drawing.Size(88, 28);
             this.lblNoiSinh.TabIndex = 21;
             this.lblNoiSinh.Text = "Nơi sinh:";
             // 
             // txtNoiSinh
             // 
-            this.txtNoiSinh.Location = new System.Drawing.Point(465, 247);
+            this.txtNoiSinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNoiSinh.Location = new System.Drawing.Point(858, 274);
             this.txtNoiSinh.Name = "txtNoiSinh";
             this.txtNoiSinh.ReadOnly = true;
-            this.txtNoiSinh.Size = new System.Drawing.Size(345, 27);
+            this.txtNoiSinh.Size = new System.Drawing.Size(329, 34);
             this.txtNoiSinh.TabIndex = 22;
             // 
             // txtHoKhau
             // 
-            this.txtHoKhau.Location = new System.Drawing.Point(95, 289);
+            this.txtHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtHoKhau.Location = new System.Drawing.Point(468, 330);
             this.txtHoKhau.Name = "txtHoKhau";
             this.txtHoKhau.ReadOnly = true;
-            this.txtHoKhau.Size = new System.Drawing.Size(714, 27);
+            this.txtHoKhau.Size = new System.Drawing.Size(719, 34);
             this.txtHoKhau.TabIndex = 23;
             // 
             // lblHoKhau
             // 
             this.lblHoKhau.AutoSize = true;
-            this.lblHoKhau.Location = new System.Drawing.Point(14, 292);
+            this.lblHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHoKhau.Location = new System.Drawing.Point(373, 333);
             this.lblHoKhau.Name = "lblHoKhau";
-            this.lblHoKhau.Size = new System.Drawing.Size(67, 20);
+            this.lblHoKhau.Size = new System.Drawing.Size(89, 28);
             this.lblHoKhau.TabIndex = 24;
             this.lblHoKhau.Text = "Hộ khẩu:";
-            // 
-            // lblDiaChiThuongTru
-            // 
-            this.lblDiaChiThuongTru.AutoSize = true;
-            this.lblDiaChiThuongTru.Location = new System.Drawing.Point(14, 337);
-            this.lblDiaChiThuongTru.Name = "lblDiaChiThuongTru";
-            this.lblDiaChiThuongTru.Size = new System.Drawing.Size(102, 20);
-            this.lblDiaChiThuongTru.TabIndex = 25;
-            this.lblDiaChiThuongTru.Text = "Nơi ở hiện tại:";
-            // 
-            // txtDiaChiThuongTru
-            // 
-            this.txtDiaChiThuongTru.Location = new System.Drawing.Point(122, 334);
-            this.txtDiaChiThuongTru.Name = "txtDiaChiThuongTru";
-            this.txtDiaChiThuongTru.ReadOnly = true;
-            this.txtDiaChiThuongTru.Size = new System.Drawing.Size(684, 27);
-            this.txtDiaChiThuongTru.TabIndex = 26;
             // 
             // lblNghe
             // 
             this.lblNghe.AutoSize = true;
-            this.lblNghe.Location = new System.Drawing.Point(171, 211);
+            this.lblNghe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNghe.Location = new System.Drawing.Point(373, 174);
             this.lblNghe.Name = "lblNghe";
-            this.lblNghe.Size = new System.Drawing.Size(98, 20);
+            this.lblNghe.Size = new System.Drawing.Size(130, 28);
             this.lblNghe.TabIndex = 27;
             this.lblNghe.Text = "Nghề nghiệp:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(275, 208);
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(509, 171);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(182, 27);
+            this.textBox2.Size = new System.Drawing.Size(182, 34);
             this.textBox2.TabIndex = 28;
-            // 
-            // lblTenCha
-            // 
-            this.lblTenCha.AutoSize = true;
-            this.lblTenCha.Location = new System.Drawing.Point(14, 382);
-            this.lblTenCha.Name = "lblTenCha";
-            this.lblTenCha.Size = new System.Drawing.Size(62, 20);
-            this.lblTenCha.TabIndex = 29;
-            this.lblTenCha.Text = "Tên cha:";
-            // 
-            // txtTenCha
-            // 
-            this.txtTenCha.Location = new System.Drawing.Point(80, 379);
-            this.txtTenCha.Name = "txtTenCha";
-            this.txtTenCha.ReadOnly = true;
-            this.txtTenCha.Size = new System.Drawing.Size(393, 27);
-            this.txtTenCha.TabIndex = 30;
             // 
             // lblQuocTich
             // 
             this.lblQuocTich.AutoSize = true;
-            this.lblQuocTich.Location = new System.Drawing.Point(562, 171);
+            this.lblQuocTich.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblQuocTich.Location = new System.Drawing.Point(903, 117);
             this.lblQuocTich.Name = "lblQuocTich";
-            this.lblQuocTich.Size = new System.Drawing.Size(75, 20);
+            this.lblQuocTich.Size = new System.Drawing.Size(100, 28);
             this.lblQuocTich.TabIndex = 15;
             this.lblQuocTich.Text = "Quốc tịch:";
             // 
             // txtQuocTich
             // 
-            this.txtQuocTich.Location = new System.Drawing.Point(649, 168);
+            this.txtQuocTich.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQuocTich.Location = new System.Drawing.Point(1009, 114);
             this.txtQuocTich.Name = "txtQuocTich";
             this.txtQuocTich.ReadOnly = true;
-            this.txtQuocTich.Size = new System.Drawing.Size(161, 27);
+            this.txtQuocTich.Size = new System.Drawing.Size(178, 34);
             this.txtQuocTich.TabIndex = 16;
             // 
-            // txtQuocTichCha
+            // pnlThongTin
             // 
-            this.txtQuocTichCha.Location = new System.Drawing.Point(584, 379);
-            this.txtQuocTichCha.Name = "txtQuocTichCha";
-            this.txtQuocTichCha.ReadOnly = true;
-            this.txtQuocTichCha.Size = new System.Drawing.Size(222, 27);
-            this.txtQuocTichCha.TabIndex = 32;
+            this.pnlThongTin.BackColor = System.Drawing.Color.White;
+            this.pnlThongTin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlThongTin.Controls.Add(this.textBox1);
+            this.pnlThongTin.Controls.Add(this.lblTrinhDoHocVan);
+            this.pnlThongTin.Controls.Add(this.textBox2);
+            this.pnlThongTin.Controls.Add(this.txtHoKhau);
+            this.pnlThongTin.Controls.Add(this.lblNghe);
+            this.pnlThongTin.Controls.Add(this.lblQueQuan);
+            this.pnlThongTin.Controls.Add(this.txtTinhTrangHonNhan);
+            this.pnlThongTin.Controls.Add(this.lblHoKhau);
+            this.pnlThongTin.Controls.Add(this.lblTinhTrangHonNhan);
+            this.pnlThongTin.Controls.Add(this.txtQuocTich);
+            this.pnlThongTin.Controls.Add(this.txtQueQuan);
+            this.pnlThongTin.Controls.Add(this.lblQuocTich);
+            this.pnlThongTin.Controls.Add(this.lblNoiSinh);
+            this.pnlThongTin.Controls.Add(this.txtTonGiao);
+            this.pnlThongTin.Controls.Add(this.txtNoiSinh);
+            this.pnlThongTin.Controls.Add(this.lblTonGiao);
+            this.pnlThongTin.Controls.Add(this.lblTen);
+            this.pnlThongTin.Controls.Add(this.txtDanToc);
+            this.pnlThongTin.Controls.Add(this.txtTen);
+            this.pnlThongTin.Controls.Add(this.lblDanToc);
+            this.pnlThongTin.Controls.Add(this.lblCccd);
+            this.pnlThongTin.Controls.Add(this.txtGioiTinh);
+            this.pnlThongTin.Controls.Add(this.txtCccd);
+            this.pnlThongTin.Controls.Add(this.lblGioiTinh);
+            this.pnlThongTin.Controls.Add(this.lblNgaySinh);
+            this.pnlThongTin.Controls.Add(this.dtpNgaySinh);
+            this.pnlThongTin.Controls.Add(this.panel1);
+            this.pnlThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlThongTin.Location = new System.Drawing.Point(0, 42);
+            this.pnlThongTin.Name = "pnlThongTin";
+            this.pnlThongTin.Size = new System.Drawing.Size(1200, 678);
+            this.pnlThongTin.TabIndex = 29;
+            this.pnlThongTin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlThongTin_Paint);
             // 
-            // lblQuocTichCha
+            // lblTrinhDoHocVan
             // 
-            this.lblQuocTichCha.AutoSize = true;
-            this.lblQuocTichCha.Location = new System.Drawing.Point(497, 382);
-            this.lblQuocTichCha.Name = "lblQuocTichCha";
-            this.lblQuocTichCha.Size = new System.Drawing.Size(75, 20);
-            this.lblQuocTichCha.TabIndex = 31;
-            this.lblQuocTichCha.Text = "Quốc tịch:";
+            this.lblTrinhDoHocVan.AutoSize = true;
+            this.lblTrinhDoHocVan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTrinhDoHocVan.Location = new System.Drawing.Point(719, 174);
+            this.lblTrinhDoHocVan.Name = "lblTrinhDoHocVan";
+            this.lblTrinhDoHocVan.Size = new System.Drawing.Size(160, 28);
+            this.lblTrinhDoHocVan.TabIndex = 29;
+            this.lblTrinhDoHocVan.Text = "Trình độ học vấn:";
             // 
-            // lblCccdCha
+            // textBox1
             // 
-            this.lblCccdCha.AutoSize = true;
-            this.lblCccdCha.Location = new System.Drawing.Point(14, 430);
-            this.lblCccdCha.Name = "lblCccdCha";
-            this.lblCccdCha.Size = new System.Drawing.Size(50, 20);
-            this.lblCccdCha.TabIndex = 33;
-            this.lblCccdCha.Text = "CCCD:";
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(885, 174);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(302, 34);
+            this.textBox1.TabIndex = 30;
             // 
-            // txtCccdCha
+            // panel1
             // 
-            this.txtCccdCha.Location = new System.Drawing.Point(74, 427);
-            this.txtCccdCha.Name = "txtCccdCha";
-            this.txtCccdCha.ReadOnly = true;
-            this.txtCccdCha.Size = new System.Drawing.Size(385, 27);
-            this.txtCccdCha.TabIndex = 34;
-            // 
-            // txtCccdMe
-            // 
-            this.txtCccdMe.Location = new System.Drawing.Point(70, 524);
-            this.txtCccdMe.Name = "txtCccdMe";
-            this.txtCccdMe.ReadOnly = true;
-            this.txtCccdMe.Size = new System.Drawing.Size(389, 27);
-            this.txtCccdMe.TabIndex = 40;
-            // 
-            // lblCccdMe
-            // 
-            this.lblCccdMe.AutoSize = true;
-            this.lblCccdMe.Location = new System.Drawing.Point(14, 527);
-            this.lblCccdMe.Name = "lblCccdMe";
-            this.lblCccdMe.Size = new System.Drawing.Size(50, 20);
-            this.lblCccdMe.TabIndex = 39;
-            this.lblCccdMe.Text = "CCCD:";
-            // 
-            // txtQuocTichMe
-            // 
-            this.txtQuocTichMe.Location = new System.Drawing.Point(584, 476);
-            this.txtQuocTichMe.Name = "txtQuocTichMe";
-            this.txtQuocTichMe.ReadOnly = true;
-            this.txtQuocTichMe.Size = new System.Drawing.Size(222, 27);
-            this.txtQuocTichMe.TabIndex = 38;
-            // 
-            // lblQuocTichMe
-            // 
-            this.lblQuocTichMe.AutoSize = true;
-            this.lblQuocTichMe.Location = new System.Drawing.Point(497, 479);
-            this.lblQuocTichMe.Name = "lblQuocTichMe";
-            this.lblQuocTichMe.Size = new System.Drawing.Size(75, 20);
-            this.lblQuocTichMe.TabIndex = 37;
-            this.lblQuocTichMe.Text = "Quốc tịch:";
-            // 
-            // txtTenMe
-            // 
-            this.txtTenMe.Location = new System.Drawing.Point(80, 476);
-            this.txtTenMe.Name = "txtTenMe";
-            this.txtTenMe.ReadOnly = true;
-            this.txtTenMe.Size = new System.Drawing.Size(393, 27);
-            this.txtTenMe.TabIndex = 36;
-            // 
-            // lblTenMe
-            // 
-            this.lblTenMe.AutoSize = true;
-            this.lblTenMe.Location = new System.Drawing.Point(14, 479);
-            this.lblTenMe.Name = "lblTenMe";
-            this.lblTenMe.Size = new System.Drawing.Size(60, 20);
-            this.lblTenMe.TabIndex = 35;
-            this.lblTenMe.Text = "Tên mẹ:";
-            // 
-            // txtCccdChuHo
-            // 
-            this.txtCccdChuHo.Location = new System.Drawing.Point(70, 618);
-            this.txtCccdChuHo.Name = "txtCccdChuHo";
-            this.txtCccdChuHo.ReadOnly = true;
-            this.txtCccdChuHo.Size = new System.Drawing.Size(389, 27);
-            this.txtCccdChuHo.TabIndex = 46;
-            // 
-            // lblCccdChuHo
-            // 
-            this.lblCccdChuHo.AutoSize = true;
-            this.lblCccdChuHo.Location = new System.Drawing.Point(14, 621);
-            this.lblCccdChuHo.Name = "lblCccdChuHo";
-            this.lblCccdChuHo.Size = new System.Drawing.Size(50, 20);
-            this.lblCccdChuHo.TabIndex = 45;
-            this.lblCccdChuHo.Text = "CCCD:";
-            // 
-            // txtQuocTichChuHo
-            // 
-            this.txtQuocTichChuHo.Location = new System.Drawing.Point(584, 570);
-            this.txtQuocTichChuHo.Name = "txtQuocTichChuHo";
-            this.txtQuocTichChuHo.ReadOnly = true;
-            this.txtQuocTichChuHo.Size = new System.Drawing.Size(222, 27);
-            this.txtQuocTichChuHo.TabIndex = 44;
-            // 
-            // lblQuocTichChuHo
-            // 
-            this.lblQuocTichChuHo.AutoSize = true;
-            this.lblQuocTichChuHo.Location = new System.Drawing.Point(497, 573);
-            this.lblQuocTichChuHo.Name = "lblQuocTichChuHo";
-            this.lblQuocTichChuHo.Size = new System.Drawing.Size(75, 20);
-            this.lblQuocTichChuHo.TabIndex = 43;
-            this.lblQuocTichChuHo.Text = "Quốc tịch:";
-            // 
-            // txtTenChuHo
-            // 
-            this.txtTenChuHo.Location = new System.Drawing.Point(103, 570);
-            this.txtTenChuHo.Name = "txtTenChuHo";
-            this.txtTenChuHo.ReadOnly = true;
-            this.txtTenChuHo.Size = new System.Drawing.Size(377, 27);
-            this.txtTenChuHo.TabIndex = 42;
-            // 
-            // lblTenChuHo
-            // 
-            this.lblTenChuHo.AutoSize = true;
-            this.lblTenChuHo.Location = new System.Drawing.Point(14, 573);
-            this.lblTenChuHo.Name = "lblTenChuHo";
-            this.lblTenChuHo.Size = new System.Drawing.Size(83, 20);
-            this.lblTenChuHo.TabIndex = 41;
-            this.lblTenChuHo.Text = "Tên chủ hộ:";
-            // 
-            // lblQuanHeVoiChuHo
-            // 
-            this.lblQuanHeVoiChuHo.AutoSize = true;
-            this.lblQuanHeVoiChuHo.Location = new System.Drawing.Point(14, 664);
-            this.lblQuanHeVoiChuHo.Name = "lblQuanHeVoiChuHo";
-            this.lblQuanHeVoiChuHo.Size = new System.Drawing.Size(139, 20);
-            this.lblQuanHeVoiChuHo.TabIndex = 47;
-            this.lblQuanHeVoiChuHo.Text = "Quan hệ với chủ hộ:";
-            // 
-            // txtQuanHeVoiChuHo
-            // 
-            this.txtQuanHeVoiChuHo.Location = new System.Drawing.Point(159, 661);
-            this.txtQuanHeVoiChuHo.Name = "txtQuanHeVoiChuHo";
-            this.txtQuanHeVoiChuHo.ReadOnly = true;
-            this.txtQuanHeVoiChuHo.Size = new System.Drawing.Size(154, 27);
-            this.txtQuanHeVoiChuHo.TabIndex = 48;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(9)))));
+            this.panel1.Controls.Add(this.picCongDan);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(352, 676);
+            this.panel1.TabIndex = 31;
             // 
             // FThongTinCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(839, 450);
-            this.Controls.Add(this.txtQuanHeVoiChuHo);
-            this.Controls.Add(this.lblQuanHeVoiChuHo);
-            this.Controls.Add(this.txtCccdChuHo);
-            this.Controls.Add(this.lblCccdChuHo);
-            this.Controls.Add(this.txtQuocTichChuHo);
-            this.Controls.Add(this.lblQuocTichChuHo);
-            this.Controls.Add(this.txtTenChuHo);
-            this.Controls.Add(this.lblTenChuHo);
-            this.Controls.Add(this.txtCccdMe);
-            this.Controls.Add(this.lblCccdMe);
-            this.Controls.Add(this.txtQuocTichMe);
-            this.Controls.Add(this.lblQuocTichMe);
-            this.Controls.Add(this.txtTenMe);
-            this.Controls.Add(this.lblTenMe);
-            this.Controls.Add(this.txtCccdCha);
-            this.Controls.Add(this.lblCccdCha);
-            this.Controls.Add(this.txtQuocTichCha);
-            this.Controls.Add(this.lblQuocTichCha);
-            this.Controls.Add(this.txtTenCha);
-            this.Controls.Add(this.lblTenCha);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.lblNghe);
-            this.Controls.Add(this.txtDiaChiThuongTru);
-            this.Controls.Add(this.lblDiaChiThuongTru);
-            this.Controls.Add(this.lblHoKhau);
-            this.Controls.Add(this.txtHoKhau);
-            this.Controls.Add(this.txtNoiSinh);
-            this.Controls.Add(this.lblNoiSinh);
-            this.Controls.Add(this.txtQueQuan);
-            this.Controls.Add(this.lblQueQuan);
-            this.Controls.Add(this.txtTinhTrangHonNhan);
-            this.Controls.Add(this.lblTinhTrangHonNhan);
-            this.Controls.Add(this.txtQuocTich);
-            this.Controls.Add(this.lblQuocTich);
-            this.Controls.Add(this.txtTonGiao);
-            this.Controls.Add(this.lblTonGiao);
-            this.Controls.Add(this.txtDanToc);
-            this.Controls.Add(this.lblDanToc);
-            this.Controls.Add(this.txtGioiTinh);
-            this.Controls.Add(this.lblGioiTinh);
-            this.Controls.Add(this.dtpNgaySinh);
-            this.Controls.Add(this.lblNgaySinh);
-            this.Controls.Add(this.txtCccd);
-            this.Controls.Add(this.lblCccd);
-            this.Controls.Add(this.txtTen);
-            this.Controls.Add(this.lblTen);
-            this.Controls.Add(this.picCongDan);
+            this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.Controls.Add(this.pnlThongTin);
             this.Controls.Add(this.pnlTittleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FThongTinCongDan";
@@ -592,8 +439,10 @@
             this.pnlTittleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTittleBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).EndInit();
+            this.pnlThongTin.ResumeLayout(false);
+            this.pnlThongTin.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -624,31 +473,13 @@
         private TextBox txtNoiSinh;
         private TextBox txtHoKhau;
         private Label lblHoKhau;
-        private Label lblDiaChiThuongTru;
-        private TextBox txtDiaChiThuongTru;
         private Label lblNghe;
         private TextBox textBox2;
-        private Label lblTenCha;
-        private TextBox txtTenCha;
         private Label lblQuocTich;
         private TextBox txtQuocTich;
-        private TextBox txtQuocTichCha;
-        private Label lblQuocTichCha;
-        private Label lblCccdCha;
-        private TextBox txtCccdCha;
-        private TextBox txtCccdMe;
-        private Label lblCccdMe;
-        private TextBox txtQuocTichMe;
-        private Label lblQuocTichMe;
-        private TextBox txtTenMe;
-        private Label lblTenMe;
-        private TextBox txtCccdChuHo;
-        private Label lblCccdChuHo;
-        private TextBox txtQuocTichChuHo;
-        private Label lblQuocTichChuHo;
-        private TextBox txtTenChuHo;
-        private Label lblTenChuHo;
-        private Label lblQuanHeVoiChuHo;
-        private TextBox txtQuanHeVoiChuHo;
+        private Panel pnlThongTin;
+        private TextBox textBox1;
+        private Label lblTrinhDoHocVan;
+        private Panel panel1;
     }
 }

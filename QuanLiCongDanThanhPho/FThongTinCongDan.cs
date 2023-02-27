@@ -21,5 +21,25 @@ namespace QuanLiCongDanThanhPho
         {
             Application.Exit();
         }
+
+        private void pnlThongTin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtQueQuan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDanToc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
