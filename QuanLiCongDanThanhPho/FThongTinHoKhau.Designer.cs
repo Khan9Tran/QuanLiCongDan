@@ -42,7 +42,6 @@
             this.lblCCCDChuHo = new System.Windows.Forms.Label();
             this.lblTenChuHo = new System.Windows.Forms.Label();
             this.pnlTrai = new System.Windows.Forms.Panel();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.pnlTren.SuspendLayout();
@@ -118,8 +117,9 @@
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.txtDiaChi.Location = new System.Drawing.Point(617, 176);
+            this.txtDiaChi.Location = new System.Drawing.Point(617, 177);
             this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.ReadOnly = true;
             this.txtDiaChi.Size = new System.Drawing.Size(485, 27);
             this.txtDiaChi.TabIndex = 9;
             // 
@@ -206,7 +206,6 @@
             // pnlTrai
             // 
             this.pnlTrai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.pnlTrai.Controls.Add(this.btnSua);
             this.pnlTrai.Controls.Add(this.btnQuayLai);
             this.pnlTrai.Controls.Add(this.btnTrangChu);
             this.pnlTrai.Dock = System.Windows.Forms.DockStyle.Left;
@@ -214,17 +213,6 @@
             this.pnlTrai.Name = "pnlTrai";
             this.pnlTrai.Size = new System.Drawing.Size(250, 639);
             this.pnlTrai.TabIndex = 2;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.btnSua.Location = new System.Drawing.Point(-31, 377);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(190, 50);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Chỉnh sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
             // 
             // btnQuayLai
             // 
@@ -253,6 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1200, 720);
             this.Controls.Add(this.pnlTrai);
             this.Controls.Add(this.pnlHienThongTin);
