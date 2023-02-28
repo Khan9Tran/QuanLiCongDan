@@ -72,6 +72,8 @@
             this.lblMaThue = new System.Windows.Forms.Label();
             this.lblMaHoKhau = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
+            this.lblGhiChu = new System.Windows.Forms.Label();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.pnlTittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTittleBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).BeginInit();
@@ -326,6 +328,8 @@
             // 
             // pnlThongTinCD
             // 
+            this.pnlThongTinCD.Controls.Add(this.txtGhiChu);
+            this.pnlThongTinCD.Controls.Add(this.lblGhiChu);
             this.pnlThongTinCD.Controls.Add(this.btnKhaiSinh);
             this.pnlThongTinCD.Controls.Add(this.btnThue);
             this.pnlThongTinCD.Controls.Add(this.btnHonNhan);
@@ -586,6 +590,27 @@
             this.lblDiaChi.TabIndex = 31;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
+            // lblGhiChu
+            // 
+            this.lblGhiChu.AutoSize = true;
+            this.lblGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblGhiChu.Location = new System.Drawing.Point(29, 547);
+            this.lblGhiChu.Name = "lblGhiChu";
+            this.lblGhiChu.Size = new System.Drawing.Size(113, 28);
+            this.lblGhiChu.TabIndex = 51;
+            this.lblGhiChu.Text = "Ghi chú (*)";
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtGhiChu.Location = new System.Drawing.Point(250, 548);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.ReadOnly = true;
+            this.txtGhiChu.Size = new System.Drawing.Size(430, 27);
+            this.txtGhiChu.TabIndex = 52;
+            // 
             // FThongTinCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -658,5 +683,7 @@
         private Button btnThue;
         private Button btnHonNhan;
         private Button btnHoKhau;
+        private TextBox txtGhiChu;
+        private Label lblGhiChu;
     }
 }
