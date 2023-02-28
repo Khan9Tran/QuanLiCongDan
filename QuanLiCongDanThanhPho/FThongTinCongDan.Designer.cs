@@ -52,6 +52,8 @@
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlThongTinCD = new System.Windows.Forms.Panel();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.lblGhiChu = new System.Windows.Forms.Label();
             this.btnKhaiSinh = new System.Windows.Forms.Button();
             this.btnThue = new System.Windows.Forms.Button();
             this.btnHonNhan = new System.Windows.Forms.Button();
@@ -72,8 +74,6 @@
             this.lblMaThue = new System.Windows.Forms.Label();
             this.lblMaHoKhau = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
-            this.lblGhiChu = new System.Windows.Forms.Label();
-            this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.pnlTittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTittleBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).BeginInit();
@@ -108,7 +108,6 @@
             // picTittleBar
             // 
             this.picTittleBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picTittleBar.Image = global::QuanLiCongDanThanhPho.Properties.Resources.humanIcon;
             this.picTittleBar.Location = new System.Drawing.Point(12, 35);
             this.picTittleBar.Name = "picTittleBar";
             this.picTittleBar.Size = new System.Drawing.Size(32, 30);
@@ -368,6 +367,27 @@
             this.pnlThongTinCD.Size = new System.Drawing.Size(985, 598);
             this.pnlThongTinCD.TabIndex = 31;
             // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtGhiChu.Location = new System.Drawing.Point(250, 548);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.ReadOnly = true;
+            this.txtGhiChu.Size = new System.Drawing.Size(430, 27);
+            this.txtGhiChu.TabIndex = 52;
+            // 
+            // lblGhiChu
+            // 
+            this.lblGhiChu.AutoSize = true;
+            this.lblGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblGhiChu.Location = new System.Drawing.Point(29, 547);
+            this.lblGhiChu.Name = "lblGhiChu";
+            this.lblGhiChu.Size = new System.Drawing.Size(113, 28);
+            this.lblGhiChu.TabIndex = 51;
+            this.lblGhiChu.Text = "Ghi chú (*)";
+            // 
             // btnKhaiSinh
             // 
             this.btnKhaiSinh.BackColor = System.Drawing.Color.White;
@@ -589,27 +609,6 @@
             this.lblDiaChi.Size = new System.Drawing.Size(78, 28);
             this.lblDiaChi.TabIndex = 31;
             this.lblDiaChi.Text = "Địa chỉ";
-            // 
-            // lblGhiChu
-            // 
-            this.lblGhiChu.AutoSize = true;
-            this.lblGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblGhiChu.Location = new System.Drawing.Point(29, 547);
-            this.lblGhiChu.Name = "lblGhiChu";
-            this.lblGhiChu.Size = new System.Drawing.Size(113, 28);
-            this.lblGhiChu.TabIndex = 51;
-            this.lblGhiChu.Text = "Ghi chú (*)";
-            // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtGhiChu.Location = new System.Drawing.Point(250, 548);
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.ReadOnly = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(430, 27);
-            this.txtGhiChu.TabIndex = 52;
             // 
             // FThongTinCongDan
             // 
