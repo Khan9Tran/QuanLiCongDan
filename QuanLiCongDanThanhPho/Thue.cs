@@ -14,10 +14,19 @@ namespace QuanLiCongDanThanhPho
         private DateTime hanNop;
         private string soTien;
 
-        public string MaThue { get { return maThue; } }
-        public string CoQuanQuanLy { get { return coQuanQuanLy; } }
-        public DateTime HanNop { get { return hanNop; } }
-        public string SoTien { get { return soTien; } }
-        public DateTime NgayCapMa { get { return ngayCapMa; } }
+        public Thue(string maThue, string coQuanQuanLy, DateTime ngayCapMa, DateTime hanNop, string soTien)
+        {
+            this.maThue = maThue;
+            this.coQuanQuanLy = coQuanQuanLy;
+            this.ngayCapMa = ngayCapMa;
+            this.hanNop = hanNop;
+            this.soTien = soTien;
+        }
+
+        public string MaThue { get => maThue; set => maThue = value; }
+        public string CoQuanQuanLy { get => coQuanQuanLy; set => coQuanQuanLy = value; }
+        public DateTime NgayCapMa { get => ngayCapMa; set => ngayCapMa = value; }
+        public DateTime HanNop { get => hanNop; set => hanNop = value; }
+        public string SoTien { get => soTien; set => soTien = value; }
     }
 }

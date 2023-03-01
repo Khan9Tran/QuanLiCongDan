@@ -8,8 +8,6 @@ namespace QuanLiCongDanThanhPho
 {
     internal class KhaiSinh
     {
-        private string maDinhDanh;
-        private string hoTen;
         private string gioiTinh;
         private string quocTich;
         private string danToc;
@@ -20,16 +18,27 @@ namespace QuanLiCongDanThanhPho
         private CongDan cha;
         private CongDan me;
 
-        public string MaDinhDanh { get { return maDinhDanh; } }
-        public string HoTen { get { return hoTen; } }
-        public string GioiTinh { get { return gioiTinh; } }
-        public string QuocTich { get { return quocTich; } }
-        public string DanToc { get { return danToc; } }
-        public DateTime NgaySinh { get { return ngaySinh; } }
-        public DateTime NgayDangKy { get { return ngayDangKy; } }
-        public DiaChi NoiSinh { get { return noiSinh; } }
-        public string QueQuan { get { return queQuan; } }
-        public CongDan Cha { get { return cha; } }
-        public CongDan Me { get { return me; } }
+        public KhaiSinh(string gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, DiaChi noiSinh, string queQuan, CongDan cha, CongDan me)
+        {
+            this.gioiTinh = gioiTinh;
+            this.quocTich = quocTich;
+            this.danToc = danToc;
+            this.ngaySinh = ngaySinh;
+            this.ngayDangKy = ngayDangKy;
+            this.noiSinh = noiSinh;
+            this.queQuan = queQuan;
+            this.cha = cha;
+            this.me = me;
+        }
+
+        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public string QuocTich { get => quocTich; set => quocTich = value; }
+        public string DanToc { get => danToc; set => danToc = value; }
+        public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
+        public DateTime NgayDangKy { get => ngayDangKy; set => ngayDangKy = value; }
+        public string QueQuan { get => queQuan; set => queQuan = value; }
+        internal DiaChi NoiSinh { get => noiSinh; set => noiSinh = value; }
+        internal CongDan Cha { get => cha; set => cha = value; }
+        internal CongDan Me { get => me; set => me = value; }
     }
 }

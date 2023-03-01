@@ -11,7 +11,11 @@ namespace QuanLiCongDanThanhPho
         private CongDan congDan;
         private string quanHeVoiChuHo;
 
-        public CongDan CongDan { get { return congDan; } }
-        public string QHeVoiChuHo { get { return quanHeVoiChuHo; } }
+        public QuanHeVoiChuHo(CongDan congDan, string quanHeVoiChuHo)
+        {
+            this.congDan = congDan;
+            this.quanHeVoiChuHo = quanHeVoiChuHo;
+        }
+        internal CongDan CongDan { get => congDan; set => congDan = value; }
     }
 }

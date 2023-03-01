@@ -15,12 +15,22 @@ namespace QuanLiCongDanThanhPho
         private string tinhThanhPho;
         private string quocGia;
 
-        public string SoDiaChi { get { return soDiaChi; } }
-        public string SoNha { get { return soNha; } }
-        public string Duong { get { return duong; } }
-        public string QuanHuyen { get { return quanHuyen; } }
-        public string TinhThanhPho { get { return tinhThanhPho; } }
-        public string QuocGia { get { return quocGia; } }
+        public DiaChi(string soDiaChi, string soNha, string duong, string quanHuyen, string tinhThanhPho, string quocGia)
+        {
+            this.soDiaChi = soDiaChi;
+            this.soNha = soNha;
+            this.duong = duong;
+            this.quanHuyen = quanHuyen;
+            this.tinhThanhPho = tinhThanhPho;
+            this.quocGia = quocGia;
+        }
+
+        public string SoDiaChi { get => soDiaChi; set => soDiaChi = value; }
+        public string SoNha { get => soNha; set => soNha = value; }
+        public string Duong { get => duong; set => duong = value; }
+        public string QuanHuyen { get => quanHuyen; set => quanHuyen = value; }
+        public string TinhThanhPho { get => tinhThanhPho; set => tinhThanhPho = value; }
+        public string QuocGia { get => quocGia; set => quocGia = value; }
 
         public string ToString()
         {

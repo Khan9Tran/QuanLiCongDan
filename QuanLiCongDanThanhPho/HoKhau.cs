@@ -11,12 +11,19 @@ namespace QuanLiCongDanThanhPho
         private string maHoKhau;
         private DiaChi diaChi;
         private CongDan chuHo;
-        private QuanHeVoiChuHo[] quanHeVoiChuHo;
+        private List<QuanHeVoiChuHo> quanHeVoiChuHo;
 
-        public string MaHoKhau { get { return maHoKhau;} }
-        public DiaChi DiaChi { get { return diaChi; } }
-        public CongDan ChuHo { get { return chuHo; } }
-        public QuanHeVoiChuHo[] QHeVoiChuHo { get { return quanHeVoiChuHo; } }
+        public HoKhau(string maHoKhau, DiaChi diaChi, CongDan chuHo, List<QuanHeVoiChuHo> quanHeVoiChuHo)
+        {
+            this.MaHoKhau = maHoKhau;
+            this.DiaChi = diaChi;
+            this.ChuHo = chuHo;
+            this.QuanHeVoiChuHo = quanHeVoiChuHo;
+        }
 
+        public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
+        internal DiaChi DiaChi { get => diaChi; set => diaChi = value; }
+        internal CongDan ChuHo { get => chuHo; set => chuHo = value; }
+        internal List<QuanHeVoiChuHo> QuanHeVoiChuHo { get => quanHeVoiChuHo; set => quanHeVoiChuHo = value; }
     }
 }
