@@ -28,134 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTittleBar = new Label();
-            txtMatKhau = new TextBox();
-            txtTaiKhoan = new TextBox();
-            btnDangNhap = new Button();
-            lblTaiKhoan = new Label();
-            lblMatKhau = new Label();
-            panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            panel1.SuspendLayout();
-            SuspendLayout();
+            this.lblTittleBar = new System.Windows.Forms.Label();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
+            this.btnDangNhap = new System.Windows.Forms.Button();
+            this.lblTaiKhoan = new System.Windows.Forms.Label();
+            this.lblMatKhau = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // lblTittleBar
             // 
-            lblTittleBar.AutoSize = true;
-            lblTittleBar.BackColor = Color.Transparent;
-            lblTittleBar.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTittleBar.ForeColor = Color.LightGray;
-            lblTittleBar.Location = new Point(61, 71);
-            lblTittleBar.Name = "lblTittleBar";
-            lblTittleBar.Size = new Size(257, 41);
-            lblTittleBar.TabIndex = 2;
-            lblTittleBar.Text = "Quản lí công dân";
+            this.lblTittleBar.AutoSize = true;
+            this.lblTittleBar.BackColor = System.Drawing.Color.Transparent;
+            this.lblTittleBar.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTittleBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(185)))), ((int)(((byte)(174)))));
+            this.lblTittleBar.Location = new System.Drawing.Point(36, 96);
+            this.lblTittleBar.Name = "lblTittleBar";
+            this.lblTittleBar.Size = new System.Drawing.Size(292, 46);
+            this.lblTittleBar.TabIndex = 2;
+            this.lblTittleBar.Text = "Quản lí công dân";
             // 
             // txtMatKhau
             // 
-            txtMatKhau.BackColor = Color.Gainsboro;
-            txtMatKhau.Location = new Point(125, 280);
-            txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.Size = new Size(220, 34);
-            txtMatKhau.TabIndex = 4;
+            this.txtMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(185)))), ((int)(((byte)(174)))));
+            this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMatKhau.Location = new System.Drawing.Point(125, 281);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(220, 27);
+            this.txtMatKhau.TabIndex = 4;
             // 
             // txtTaiKhoan
             // 
-            txtTaiKhoan.BackColor = Color.Gainsboro;
-            txtTaiKhoan.Location = new Point(125, 230);
-            txtTaiKhoan.Name = "txtTaiKhoan";
-            txtTaiKhoan.Size = new Size(220, 34);
-            txtTaiKhoan.TabIndex = 5;
+            this.txtTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(185)))), ((int)(((byte)(174)))));
+            this.txtTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTaiKhoan.Location = new System.Drawing.Point(125, 230);
+            this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.Size = new System.Drawing.Size(220, 27);
+            this.txtTaiKhoan.TabIndex = 5;
             // 
             // btnDangNhap
             // 
-            btnDangNhap.BackColor = Color.Transparent;
-            btnDangNhap.Location = new Point(90, 380);
-            btnDangNhap.Name = "btnDangNhap";
-            btnDangNhap.Size = new Size(200, 50);
-            btnDangNhap.TabIndex = 6;
-            btnDangNhap.Text = "Đăng nhập";
-            btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(140)))), ((int)(((byte)(111)))));
+            this.btnDangNhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.btnDangNhap.Location = new System.Drawing.Point(90, 380);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(200, 50);
+            this.btnDangNhap.TabIndex = 6;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.UseVisualStyleBackColor = false;
             // 
             // lblTaiKhoan
             // 
-            lblTaiKhoan.AutoSize = true;
-            lblTaiKhoan.BackColor = Color.Transparent;
-            lblTaiKhoan.ForeColor = SystemColors.ButtonHighlight;
-            lblTaiKhoan.Location = new Point(20, 230);
-            lblTaiKhoan.Name = "lblTaiKhoan";
-            lblTaiKhoan.Size = new Size(103, 28);
-            lblTaiKhoan.TabIndex = 7;
-            lblTaiKhoan.Text = "Tài khoản";
+            this.lblTaiKhoan.AutoSize = true;
+            this.lblTaiKhoan.BackColor = System.Drawing.Color.Transparent;
+            this.lblTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(185)))), ((int)(((byte)(174)))));
+            this.lblTaiKhoan.Location = new System.Drawing.Point(20, 230);
+            this.lblTaiKhoan.Name = "lblTaiKhoan";
+            this.lblTaiKhoan.Size = new System.Drawing.Size(103, 28);
+            this.lblTaiKhoan.TabIndex = 7;
+            this.lblTaiKhoan.Text = "Tài khoản";
             // 
             // lblMatKhau
             // 
-            lblMatKhau.AutoSize = true;
-            lblMatKhau.BackColor = Color.Transparent;
-            lblMatKhau.ForeColor = SystemColors.ButtonHighlight;
-            lblMatKhau.Location = new Point(20, 280);
-            lblMatKhau.Name = "lblMatKhau";
-            lblMatKhau.Size = new Size(102, 28);
-            lblMatKhau.TabIndex = 8;
-            lblMatKhau.Text = "Mật khẩu";
+            this.lblMatKhau.AutoSize = true;
+            this.lblMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(185)))), ((int)(((byte)(174)))));
+            this.lblMatKhau.Location = new System.Drawing.Point(20, 280);
+            this.lblMatKhau.Name = "lblMatKhau";
+            this.lblMatKhau.Size = new System.Drawing.Size(102, 28);
+            this.lblMatKhau.TabIndex = 8;
+            this.lblMatKhau.Text = "Mật khẩu";
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(72, 177, 191);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(380, 40);
-            panel1.TabIndex = 9;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(72, 177, 191);
-            button1.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(347, 7);
-            button1.Name = "button1";
-            button1.Size = new Size(30, 30);
-            button1.TabIndex = 0;
-            button1.Text = "X";
-            button1.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(96)))), ((int)(((byte)(125)))));
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(380, 40);
+            this.panel1.TabIndex = 9;
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(72, 177, 191);
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(315, 7);
-            button2.Name = "button2";
-            button2.Size = new Size(30, 30);
-            button2.TabIndex = 1;
-            button2.Text = "-";
-            button2.UseVisualStyleBackColor = false;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.button2.Location = new System.Drawing.Point(315, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 30);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "-";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.button1.Location = new System.Drawing.Point(347, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 30);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FDangNhap
             // 
-            AutoScaleDimensions = new SizeF(12F, 28F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(44, 43, 69);
-            ClientSize = new Size(380, 550);
-            Controls.Add(panel1);
-            Controls.Add(lblMatKhau);
-            Controls.Add(lblTaiKhoan);
-            Controls.Add(btnDangNhap);
-            Controls.Add(txtTaiKhoan);
-            Controls.Add(txtMatKhau);
-            Controls.Add(lblTittleBar);
-            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
-            Name = "FDangNhap";
-            Text = "FDangNhap";
-            panel1.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
+            this.ClientSize = new System.Drawing.Size(380, 550);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblMatKhau);
+            this.Controls.Add(this.lblTaiKhoan);
+            this.Controls.Add(this.btnDangNhap);
+            this.Controls.Add(this.txtTaiKhoan);
+            this.Controls.Add(this.txtMatKhau);
+            this.Controls.Add(this.lblTittleBar);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FDangNhap";
+            this.Text = "FDangNhap";
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
