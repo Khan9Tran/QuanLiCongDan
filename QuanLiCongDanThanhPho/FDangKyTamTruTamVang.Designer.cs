@@ -43,12 +43,13 @@
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.txtLiDo = new System.Windows.Forms.TextBox();
+            this.btnDangKy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTen
             // 
             this.lblTen.AutoSize = true;
-            this.lblTen.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.lblTen.Location = new System.Drawing.Point(209, 109);
             this.lblTen.Name = "lblTen";
             this.lblTen.Size = new System.Drawing.Size(104, 28);
@@ -58,7 +59,7 @@
             // lblCCCD
             // 
             this.lblCCCD.AutoSize = true;
-            this.lblCCCD.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblCCCD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.lblCCCD.Location = new System.Drawing.Point(209, 184);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(61, 28);
@@ -68,7 +69,7 @@
             // lblNgayDangKy
             // 
             this.lblNgayDangKy.AutoSize = true;
-            this.lblNgayDangKy.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNgayDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.lblNgayDangKy.Location = new System.Drawing.Point(209, 254);
             this.lblNgayDangKy.Name = "lblNgayDangKy";
             this.lblNgayDangKy.Size = new System.Drawing.Size(144, 28);
@@ -78,7 +79,7 @@
             // lblNgayBatDau
             // 
             this.lblNgayBatDau.AutoSize = true;
-            this.lblNgayBatDau.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNgayBatDau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.lblNgayBatDau.Location = new System.Drawing.Point(209, 333);
             this.lblNgayBatDau.Name = "lblNgayBatDau";
             this.lblNgayBatDau.Size = new System.Drawing.Size(141, 28);
@@ -88,7 +89,7 @@
             // lblNgayKetThuc
             // 
             this.lblNgayKetThuc.AutoSize = true;
-            this.lblNgayKetThuc.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNgayKetThuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.lblNgayKetThuc.Location = new System.Drawing.Point(209, 409);
             this.lblNgayKetThuc.Name = "lblNgayKetThuc";
             this.lblNgayKetThuc.Size = new System.Drawing.Size(146, 28);
@@ -108,7 +109,7 @@
             // 
             this.rdoTamTru.AutoSize = true;
             this.rdoTamTru.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdoTamTru.ForeColor = System.Drawing.Color.IndianRed;
+            this.rdoTamTru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(141)))), ((int)(((byte)(111)))));
             this.rdoTamTru.Location = new System.Drawing.Point(748, 326);
             this.rdoTamTru.Name = "rdoTamTru";
             this.rdoTamTru.Size = new System.Drawing.Size(139, 41);
@@ -121,7 +122,7 @@
             // 
             this.rdoTamVang.AutoSize = true;
             this.rdoTamVang.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdoTamVang.ForeColor = System.Drawing.Color.IndianRed;
+            this.rdoTamVang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(141)))), ((int)(((byte)(111)))));
             this.rdoTamVang.Location = new System.Drawing.Point(964, 320);
             this.rdoTamVang.Name = "rdoTamVang";
             this.rdoTamVang.Size = new System.Drawing.Size(164, 41);
@@ -133,7 +134,7 @@
             // lblLiDo
             // 
             this.lblLiDo.AutoSize = true;
-            this.lblLiDo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblLiDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.lblLiDo.Location = new System.Drawing.Point(209, 492);
             this.lblLiDo.Name = "lblLiDo";
             this.lblLiDo.Size = new System.Drawing.Size(58, 28);
@@ -191,12 +192,23 @@
             this.txtLiDo.Size = new System.Drawing.Size(738, 27);
             this.txtLiDo.TabIndex = 15;
             // 
+            // btnDangKy
+            // 
+            this.btnDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.btnDangKy.Location = new System.Drawing.Point(1335, 701);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(150, 50);
+            this.btnDangKy.TabIndex = 16;
+            this.btnDangKy.Text = "Đăng ký";
+            this.btnDangKy.UseVisualStyleBackColor = true;
+            // 
             // FDangKyTamTruTamVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(65)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(185)))), ((int)(((byte)(174)))));
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.txtLiDo);
             this.Controls.Add(this.dtpNgayKetThuc);
             this.Controls.Add(this.dtpNgayBatDau);
@@ -240,5 +252,6 @@
         private DateTimePicker dtpNgayBatDau;
         private DateTimePicker dtpNgayKetThuc;
         private TextBox txtLiDo;
+        private Button btnDangKy;
     }
 }
