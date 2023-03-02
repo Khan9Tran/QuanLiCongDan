@@ -90,8 +90,9 @@
             this.Controls.Add(this.gvTamTru);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDanhSachTamTruTamVang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDanhSachTamTruTamVang";
             ((System.ComponentModel.ISupportInitialize)(this.gvTamTru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTamVang)).EndInit();

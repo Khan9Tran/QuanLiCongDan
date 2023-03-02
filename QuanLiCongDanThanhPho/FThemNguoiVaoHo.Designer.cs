@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
+            this.txtQuanHeVoiChuHo = new System.Windows.Forms.TextBox();
+            this.lblQuanHeVoiChuHo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtMaHo
@@ -59,7 +61,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(641, 453);
+            this.btnThem.Location = new System.Drawing.Point(641, 496);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(197, 50);
             this.btnThem.TabIndex = 23;
@@ -113,11 +115,32 @@
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
             // 
+            // txtQuanHeVoiChuHo
+            // 
+            this.txtQuanHeVoiChuHo.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtQuanHeVoiChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQuanHeVoiChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQuanHeVoiChuHo.Location = new System.Drawing.Point(546, 436);
+            this.txtQuanHeVoiChuHo.Name = "txtQuanHeVoiChuHo";
+            this.txtQuanHeVoiChuHo.Size = new System.Drawing.Size(442, 27);
+            this.txtQuanHeVoiChuHo.TabIndex = 30;
+            // 
+            // lblQuanHeVoiChuHo
+            // 
+            this.lblQuanHeVoiChuHo.AutoSize = true;
+            this.lblQuanHeVoiChuHo.Location = new System.Drawing.Point(409, 435);
+            this.lblQuanHeVoiChuHo.Name = "lblQuanHeVoiChuHo";
+            this.lblQuanHeVoiChuHo.Size = new System.Drawing.Size(45, 28);
+            this.lblQuanHeVoiChuHo.TabIndex = 29;
+            this.lblQuanHeVoiChuHo.Text = "Tên";
+            // 
             // FThemNguoiVaoHo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 695);
+            this.Controls.Add(this.txtQuanHeVoiChuHo);
+            this.Controls.Add(this.lblQuanHeVoiChuHo);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.label2);
@@ -146,5 +169,7 @@
         private Label label2;
         private TextBox txtCCCD;
         private Button btnTim;
+        private TextBox txtQuanHeVoiChuHo;
+        private Label lblQuanHeVoiChuHo;
     }
 }

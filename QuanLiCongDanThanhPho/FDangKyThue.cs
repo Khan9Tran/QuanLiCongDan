@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDangKyCCCD : Form
+    public partial class FDangKyThue : Form
     {
-        public FDangKyCCCD()
+        public FDangKyThue()
         {
             InitializeComponent();
         }
 
-        private void FDangKyCCCD_Load(object sender, EventArgs e)
+        private void FDangKyThue_Load(object sender, EventArgs e)
         {
 
         }

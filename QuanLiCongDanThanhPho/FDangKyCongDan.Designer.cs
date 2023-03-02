@@ -69,6 +69,7 @@
             this.lblNgayDangKyKetHon = new System.Windows.Forms.Label();
             this.cboDanToc = new System.Windows.Forms.ComboBox();
             this.cboQuocTich = new System.Windows.Forms.ComboBox();
+            this.btnDangKy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTen
@@ -414,6 +415,7 @@
             // 
             // dtmNgayDangKyThue
             // 
+            this.dtmNgayDangKyThue.CustomFormat = "dd/MM/yyyy";
             this.dtmNgayDangKyThue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtmNgayDangKyThue.Location = new System.Drawing.Point(899, 392);
             this.dtmNgayDangKyThue.Name = "dtmNgayDangKyThue";
@@ -422,6 +424,7 @@
             // 
             // dtmNgayDangKyKetHon
             // 
+            this.dtmNgayDangKyKetHon.CustomFormat = "dd/MM/yyyy";
             this.dtmNgayDangKyKetHon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtmNgayDangKyKetHon.Location = new System.Drawing.Point(899, 536);
             this.dtmNgayDangKyKetHon.Name = "dtmNgayDangKyKetHon";
@@ -453,11 +456,24 @@
             this.cboQuocTich.Size = new System.Drawing.Size(188, 36);
             this.cboQuocTich.TabIndex = 42;
             // 
+            // btnDangKy
+            // 
+            this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
+            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDangKy.ForeColor = System.Drawing.Color.White;
+            this.btnDangKy.Location = new System.Drawing.Point(1380, 720);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(140, 50);
+            this.btnDangKy.TabIndex = 88;
+            this.btnDangKy.Text = "Đăng ký";
+            this.btnDangKy.UseVisualStyleBackColor = false;
+            // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.cboQuocTich);
             this.Controls.Add(this.cboDanToc);
             this.Controls.Add(this.lblNgayDangKyKetHon);
@@ -552,5 +568,6 @@
         private Label lblNgayDangKyKetHon;
         private ComboBox cboDanToc;
         private ComboBox cboQuocTich;
+        private Button btnDangKy;
     }
 }
