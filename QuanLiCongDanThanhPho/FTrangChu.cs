@@ -69,6 +69,7 @@ namespace QuanLiCongDanThanhPho
 
         private void cmnusDangKyItemKhaiSinh_Click(object sender, EventArgs e)
         {
+
         }
 
         private void cmnusDanhMucItemCongDan_Click(object sender, EventArgs e)
