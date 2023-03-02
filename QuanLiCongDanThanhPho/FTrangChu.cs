@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,7 +37,10 @@ namespace QuanLiCongDanThanhPho
         {
             cmnusDangKy.Show(this, this.PointToClient(MousePosition));
         }
-
+        private void btnDanhMuc_Click(object sender, EventArgs e)
+        {
+            cmnusDanhMuc.Show(this, this.PointToClient(MousePosition));
+        }
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
@@ -61,6 +65,29 @@ namespace QuanLiCongDanThanhPho
         private void cmnusitemDangKyHonNhan_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyHonNhan());
+        }
+
+        private void cmnusDangKyItemKhaiSinh_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void cmnusDanhMucItemCongDan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDanhSachCongDan());
+        }
+
+        private void cmnusDanhMucItemHoKhau_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDanhSachHoKhau());
+        }
+        private void cmnusDanhMucItemTamTruTamVang_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDanhSachTamTruTamVang());
+        }
+
+        private void cmnusDanhMucItemThue_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDanhSachThue());
         }
     }
 }
