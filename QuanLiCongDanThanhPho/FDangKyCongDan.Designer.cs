@@ -47,25 +47,25 @@
             this.lblNgayDangKy = new System.Windows.Forms.Label();
             this.lblHoTenVoChong = new System.Windows.Forms.Label();
             this.lblCCCCVoChong = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtQueQuan = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtHoKhau = new System.Windows.Forms.TextBox();
+            this.txtThue = new System.Windows.Forms.TextBox();
+            this.txtTenCha = new System.Windows.Forms.TextBox();
+            this.txtTenMe = new System.Windows.Forms.TextBox();
+            this.txtHonNhan = new System.Windows.Forms.TextBox();
+            this.txtTenVoChong = new System.Windows.Forms.TextBox();
+            this.txtCCCDCha = new System.Windows.Forms.TextBox();
+            this.txtCCCDVoChong = new System.Windows.Forms.TextBox();
+            this.txtCCCDMe = new System.Windows.Forms.TextBox();
+            this.txtNgheNghiep = new System.Windows.Forms.TextBox();
             this.rdoNam = new System.Windows.Forms.RadioButton();
             this.rdoNu = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtmNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.dtmNgayDangKyThue = new System.Windows.Forms.DateTimePicker();
+            this.dtmNgayDangKyKetHon = new System.Windows.Forms.DateTimePicker();
             this.lblNgayDangKyKetHon = new System.Windows.Forms.Label();
             this.cboDanToc = new System.Windows.Forms.ComboBox();
             this.cboQuocTich = new System.Windows.Forms.ComboBox();
@@ -242,145 +242,145 @@
             this.lblCCCCVoChong.TabIndex = 18;
             this.lblCCCCVoChong.Text = "CCCD";
             // 
-            // textBox1
+            // txtCCCD
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(200, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(534, 27);
-            this.textBox1.TabIndex = 19;
+            this.txtCCCD.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCCCD.Location = new System.Drawing.Point(200, 90);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(534, 27);
+            this.txtCCCD.TabIndex = 19;
             // 
-            // textBox2
+            // txtTen
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(200, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(534, 27);
-            this.textBox2.TabIndex = 20;
+            this.txtTen.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTen.Location = new System.Drawing.Point(200, 140);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(534, 27);
+            this.txtTen.TabIndex = 20;
             // 
-            // textBox3
+            // txtQueQuan
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(200, 241);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(534, 27);
-            this.textBox3.TabIndex = 21;
+            this.txtQueQuan.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtQueQuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQueQuan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQueQuan.Location = new System.Drawing.Point(200, 241);
+            this.txtQueQuan.Name = "txtQueQuan";
+            this.txtQueQuan.Size = new System.Drawing.Size(534, 27);
+            this.txtQueQuan.TabIndex = 21;
             // 
-            // textBox4
+            // txtDiaChi
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(200, 291);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1040, 27);
-            this.textBox4.TabIndex = 22;
+            this.txtDiaChi.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDiaChi.Location = new System.Drawing.Point(200, 291);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(1040, 27);
+            this.txtDiaChi.TabIndex = 22;
             // 
-            // textBox5
+            // txtHoKhau
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.Location = new System.Drawing.Point(200, 340);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(534, 27);
-            this.textBox5.TabIndex = 23;
+            this.txtHoKhau.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtHoKhau.Location = new System.Drawing.Point(200, 340);
+            this.txtHoKhau.Name = "txtHoKhau";
+            this.txtHoKhau.Size = new System.Drawing.Size(534, 27);
+            this.txtHoKhau.TabIndex = 23;
             // 
-            // textBox6
+            // txtThue
             // 
-            this.textBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(200, 391);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(534, 27);
-            this.textBox6.TabIndex = 24;
+            this.txtThue.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtThue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtThue.Location = new System.Drawing.Point(200, 391);
+            this.txtThue.Name = "txtThue";
+            this.txtThue.Size = new System.Drawing.Size(534, 27);
+            this.txtThue.TabIndex = 24;
             // 
-            // textBox7
+            // txtTenCha
             // 
-            this.textBox7.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.Location = new System.Drawing.Point(200, 441);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(534, 27);
-            this.textBox7.TabIndex = 25;
+            this.txtTenCha.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTenCha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenCha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTenCha.Location = new System.Drawing.Point(200, 441);
+            this.txtTenCha.Name = "txtTenCha";
+            this.txtTenCha.Size = new System.Drawing.Size(534, 27);
+            this.txtTenCha.TabIndex = 25;
             // 
-            // textBox8
+            // txtTenMe
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.Location = new System.Drawing.Point(200, 491);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(534, 27);
-            this.textBox8.TabIndex = 26;
+            this.txtTenMe.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTenMe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenMe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTenMe.Location = new System.Drawing.Point(200, 491);
+            this.txtTenMe.Name = "txtTenMe";
+            this.txtTenMe.Size = new System.Drawing.Size(534, 27);
+            this.txtTenMe.TabIndex = 26;
             // 
-            // textBox9
+            // txtHonNhan
             // 
-            this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox9.Location = new System.Drawing.Point(292, 541);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(442, 27);
-            this.textBox9.TabIndex = 27;
+            this.txtHonNhan.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtHonNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtHonNhan.Location = new System.Drawing.Point(292, 541);
+            this.txtHonNhan.Name = "txtHonNhan";
+            this.txtHonNhan.Size = new System.Drawing.Size(442, 27);
+            this.txtHonNhan.TabIndex = 27;
             // 
-            // textBox10
+            // txtTenVoChong
             // 
-            this.textBox10.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox10.Location = new System.Drawing.Point(292, 591);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(442, 27);
-            this.textBox10.TabIndex = 28;
+            this.txtTenVoChong.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTenVoChong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTenVoChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTenVoChong.Location = new System.Drawing.Point(292, 591);
+            this.txtTenVoChong.Name = "txtTenVoChong";
+            this.txtTenVoChong.Size = new System.Drawing.Size(442, 27);
+            this.txtTenVoChong.TabIndex = 28;
             // 
-            // textBox11
+            // txtCCCDCha
             // 
-            this.textBox11.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox11.Location = new System.Drawing.Point(840, 440);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(400, 27);
-            this.textBox11.TabIndex = 29;
+            this.txtCCCDCha.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtCCCDCha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCDCha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCCCDCha.Location = new System.Drawing.Point(840, 440);
+            this.txtCCCDCha.Name = "txtCCCDCha";
+            this.txtCCCDCha.Size = new System.Drawing.Size(400, 27);
+            this.txtCCCDCha.TabIndex = 29;
             // 
-            // textBox12
+            // txtCCCDVoChong
             // 
-            this.textBox12.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox12.Location = new System.Drawing.Point(840, 590);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(400, 27);
-            this.textBox12.TabIndex = 30;
+            this.txtCCCDVoChong.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtCCCDVoChong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCDVoChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCCCDVoChong.Location = new System.Drawing.Point(840, 590);
+            this.txtCCCDVoChong.Name = "txtCCCDVoChong";
+            this.txtCCCDVoChong.Size = new System.Drawing.Size(400, 27);
+            this.txtCCCDVoChong.TabIndex = 30;
             // 
-            // textBox13
+            // txtCCCDMe
             // 
-            this.textBox13.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox13.Location = new System.Drawing.Point(840, 491);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(400, 27);
-            this.textBox13.TabIndex = 31;
+            this.txtCCCDMe.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtCCCDMe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCDMe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCCCDMe.Location = new System.Drawing.Point(840, 491);
+            this.txtCCCDMe.Name = "txtCCCDMe";
+            this.txtCCCDMe.Size = new System.Drawing.Size(400, 27);
+            this.txtCCCDMe.TabIndex = 31;
             // 
-            // textBox16
+            // txtNgheNghiep
             // 
-            this.textBox16.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox16.Location = new System.Drawing.Point(899, 240);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(341, 27);
-            this.textBox16.TabIndex = 34;
+            this.txtNgheNghiep.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNgheNghiep.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNgheNghiep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNgheNghiep.Location = new System.Drawing.Point(899, 240);
+            this.txtNgheNghiep.Name = "txtNgheNghiep";
+            this.txtNgheNghiep.Size = new System.Drawing.Size(341, 27);
+            this.txtNgheNghiep.TabIndex = 34;
             // 
             // rdoNam
             // 
@@ -402,26 +402,31 @@
             this.rdoNu.Text = "Nữ";
             this.rdoNu.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dtmNgaySinh
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(899, 191);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(341, 34);
-            this.dateTimePicker1.TabIndex = 37;
+            this.dtmNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtmNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmNgaySinh.Location = new System.Drawing.Point(899, 191);
+            this.dtmNgaySinh.Name = "dtmNgaySinh";
+            this.dtmNgaySinh.Size = new System.Drawing.Size(341, 34);
+            this.dtmNgaySinh.TabIndex = 37;
+            this.dtmNgaySinh.Value = new System.DateTime(2023, 3, 2, 0, 0, 0, 0);
             // 
-            // dateTimePicker2
+            // dtmNgayDangKyThue
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(899, 392);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(341, 34);
-            this.dateTimePicker2.TabIndex = 38;
+            this.dtmNgayDangKyThue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmNgayDangKyThue.Location = new System.Drawing.Point(899, 392);
+            this.dtmNgayDangKyThue.Name = "dtmNgayDangKyThue";
+            this.dtmNgayDangKyThue.Size = new System.Drawing.Size(341, 34);
+            this.dtmNgayDangKyThue.TabIndex = 38;
             // 
-            // dateTimePicker3
+            // dtmNgayDangKyKetHon
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(899, 536);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(341, 34);
-            this.dateTimePicker3.TabIndex = 39;
+            this.dtmNgayDangKyKetHon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmNgayDangKyKetHon.Location = new System.Drawing.Point(899, 536);
+            this.dtmNgayDangKyKetHon.Name = "dtmNgayDangKyKetHon";
+            this.dtmNgayDangKyKetHon.Size = new System.Drawing.Size(341, 34);
+            this.dtmNgayDangKyKetHon.TabIndex = 39;
             // 
             // lblNgayDangKyKetHon
             // 
@@ -456,25 +461,25 @@
             this.Controls.Add(this.cboQuocTich);
             this.Controls.Add(this.cboDanToc);
             this.Controls.Add(this.lblNgayDangKyKetHon);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtmNgayDangKyKetHon);
+            this.Controls.Add(this.dtmNgayDangKyThue);
+            this.Controls.Add(this.dtmNgaySinh);
             this.Controls.Add(this.rdoNu);
             this.Controls.Add(this.rdoNam);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNgheNghiep);
+            this.Controls.Add(this.txtCCCDMe);
+            this.Controls.Add(this.txtCCCDVoChong);
+            this.Controls.Add(this.txtCCCDCha);
+            this.Controls.Add(this.txtTenVoChong);
+            this.Controls.Add(this.txtHonNhan);
+            this.Controls.Add(this.txtTenMe);
+            this.Controls.Add(this.txtTenCha);
+            this.Controls.Add(this.txtThue);
+            this.Controls.Add(this.txtHoKhau);
+            this.Controls.Add(this.txtDiaChi);
+            this.Controls.Add(this.txtQueQuan);
+            this.Controls.Add(this.txtTen);
+            this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.lblCCCCVoChong);
             this.Controls.Add(this.lblHoTenVoChong);
             this.Controls.Add(this.lblNgayDangKy);
@@ -525,25 +530,25 @@
         private Label lblNgayDangKy;
         private Label lblHoTenVoChong;
         private Label lblCCCCVoChong;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private TextBox textBox16;
+        private TextBox txtCCCD;
+        private TextBox txtTen;
+        private TextBox txtQueQuan;
+        private TextBox txtDiaChi;
+        private TextBox txtHoKhau;
+        private TextBox txtThue;
+        private TextBox txtTenCha;
+        private TextBox txtTenMe;
+        private TextBox txtHonNhan;
+        private TextBox txtTenVoChong;
+        private TextBox txtCCCDCha;
+        private TextBox txtCCCDVoChong;
+        private TextBox txtCCCDMe;
+        private TextBox txtNgheNghiep;
         private RadioButton rdoNam;
         private RadioButton rdoNu;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker3;
+        private DateTimePicker dtmNgaySinh;
+        private DateTimePicker dtmNgayDangKyThue;
+        private DateTimePicker dtmNgayDangKyKetHon;
         private Label lblNgayDangKyKetHon;
         private ComboBox cboDanToc;
         private ComboBox cboQuocTich;
