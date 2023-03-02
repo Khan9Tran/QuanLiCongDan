@@ -12,13 +12,14 @@ namespace QuanLiCongDanThanhPho
         private string hoTen;
         private string ngheNghiep;
         private string soDienThoai;
+        private string tonGiao;
         private KhaiSinh khaiSinh;
         private string maHoKhau;
         private string maThue;
         private TamTruTamVang tamTruTamVang;
         private KetHon ketHon;
 
-        public CongDan(string maCccd, string hoTen, string ngheNghiep, string soDienThoai, KhaiSinh khaiSinh, string maHoKhau, string maThue, TamTruTamVang tamTruTamVang, KetHon ketHon)
+        public CongDan(string maCccd, string hoTen, string ngheNghiep, string soDienThoai, string tonGiao,KhaiSinh khaiSinh, string maHoKhau, string maThue, TamTruTamVang tamTruTamVang, KetHon ketHon)
         {
             this.maCccd = maCccd;
             this.hoTen = hoTen;
@@ -29,6 +30,7 @@ namespace QuanLiCongDanThanhPho
             this.maThue = maThue;
             this.tamTruTamVang = tamTruTamVang;
             this.ketHon = ketHon;
+            this.tonGiao = tonGiao;
         }
 
         public string MaCccd { get => maCccd; set => maCccd = value; }
@@ -40,5 +42,6 @@ namespace QuanLiCongDanThanhPho
         internal KhaiSinh KhaiSinh { get => khaiSinh; set => khaiSinh = value; }
         internal TamTruTamVang TamTruTamVang { get => tamTruTamVang; set => tamTruTamVang = value; }
         internal KetHon KetHon { get => ketHon; set => ketHon = value; }
+        public string TonGiao { get => tonGiao; set => tonGiao = value; }
     }
 }
