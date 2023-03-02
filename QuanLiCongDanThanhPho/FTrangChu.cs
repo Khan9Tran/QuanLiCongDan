@@ -46,7 +46,7 @@ namespace QuanLiCongDanThanhPho
             currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock= DockStyle.Fill;
+            childForm.Dock = DockStyle.Fill;
             pnlHienThiForm.Controls.Add(childForm);
             pnlHienThiForm.Tag = childForm;
             childForm.BringToFront();
@@ -56,6 +56,11 @@ namespace QuanLiCongDanThanhPho
         private void cmnusDangKyItemTamTruTamVang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyTamTruTamVang());
+        }
+
+        private void cmnusitemDangKyHonNhan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDangKyHonNhan());
         }
     }
 }

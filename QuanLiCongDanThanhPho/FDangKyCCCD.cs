@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDangKyKetHon : Form
+    public partial class FDangKyCCCD : Form
     {
-        public FDangKyKetHon()
+        public FDangKyCCCD()
         {
             InitializeComponent();
         }
