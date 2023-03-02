@@ -89,5 +89,10 @@ namespace QuanLiCongDanThanhPho
         {
             OpenChildForm(new FDanhSachThue());
         }
+
+        private void cmnusDangKyItemCongDan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDangKyCongDan());
+        }
     }
 }

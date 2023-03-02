@@ -43,6 +43,7 @@
             this.cmnusDangKyItemKhaiSinh = new System.Windows.Forms.ToolStripMenuItem();
             this.cnmusDangKyItemCCCD = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnusDangKyItemHoKhau = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmnusDangKyItemCongDan = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDanhMuc = new System.Windows.Forms.Button();
             this.cmnusDanhMuc = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmnusDanhMucItemCongDan = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,6 @@
             this.hônNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cCCDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.khaiSinhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnusDangKyItemCongDan = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlKhungTren.SuspendLayout();
             this.pnlChucNang.SuspendLayout();
             this.cmnusDangKy.SuspendLayout();
@@ -182,7 +182,7 @@
             this.cmnusDangKyItemHoKhau,
             this.cmnusDangKyItemCongDan});
             this.cmnusDangKy.Name = "cmnusDangKy";
-            this.cmnusDangKy.Size = new System.Drawing.Size(270, 196);
+            this.cmnusDangKy.Size = new System.Drawing.Size(270, 224);
             // 
             // cmnusDangKyItemTamTruTamVang
             // 
@@ -216,6 +216,13 @@
             this.cmnusDangKyItemHoKhau.Name = "cmnusDangKyItemHoKhau";
             this.cmnusDangKyItemHoKhau.Size = new System.Drawing.Size(269, 32);
             this.cmnusDangKyItemHoKhau.Text = "Hộ khẩu";
+            // 
+            // cmnusDangKyItemCongDan
+            // 
+            this.cmnusDangKyItemCongDan.Name = "cmnusDangKyItemCongDan";
+            this.cmnusDangKyItemCongDan.Size = new System.Drawing.Size(269, 32);
+            this.cmnusDangKyItemCongDan.Text = "Công Dân";
+            this.cmnusDangKyItemCongDan.Click += new System.EventHandler(this.cmnusDangKyItemCongDan_Click);
             // 
             // btnDanhMuc
             // 
@@ -330,12 +337,6 @@
             this.khaiSinhToolStripMenuItem.Name = "khaiSinhToolStripMenuItem";
             this.khaiSinhToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
             this.khaiSinhToolStripMenuItem.Text = "Khai sinh";
-            // 
-            // cmnusDangKyItemCongDan
-            // 
-            this.cmnusDangKyItemCongDan.Name = "cmnusDangKyItemCongDan";
-            this.cmnusDangKyItemCongDan.Size = new System.Drawing.Size(269, 32);
-            this.cmnusDangKyItemCongDan.Text = "Công Dân";
             // 
             // FTrangChu
             // 
