@@ -70,6 +70,9 @@
             this.cboDanToc = new System.Windows.Forms.ComboBox();
             this.cboQuocTich = new System.Windows.Forms.ComboBox();
             this.btnDangKy = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnTaiAnh = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTen
@@ -84,7 +87,7 @@
             // lblNgaySinh
             // 
             this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Location = new System.Drawing.Point(740, 190);
+            this.lblNgaySinh.Location = new System.Drawing.Point(740, 291);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(107, 28);
             this.lblNgaySinh.TabIndex = 1;
@@ -147,7 +150,7 @@
             // lblNgheNghiep
             // 
             this.lblNgheNghiep.AutoSize = true;
-            this.lblNgheNghiep.Location = new System.Drawing.Point(740, 241);
+            this.lblNgheNghiep.Location = new System.Drawing.Point(740, 340);
             this.lblNgheNghiep.Name = "lblNgheNghiep";
             this.lblNgheNghiep.Size = new System.Drawing.Size(134, 28);
             this.lblNgheNghiep.TabIndex = 8;
@@ -201,7 +204,7 @@
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Location = new System.Drawing.Point(740, 140);
+            this.lblGioiTinh.Location = new System.Drawing.Point(965, 236);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(95, 28);
             this.lblGioiTinh.TabIndex = 14;
@@ -280,7 +283,7 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDiaChi.Location = new System.Drawing.Point(200, 291);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(1040, 27);
+            this.txtDiaChi.Size = new System.Drawing.Size(534, 27);
             this.txtDiaChi.TabIndex = 22;
             // 
             // txtHoKhau
@@ -378,7 +381,7 @@
             this.txtNgheNghiep.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNgheNghiep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNgheNghiep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNgheNghiep.Location = new System.Drawing.Point(899, 240);
+            this.txtNgheNghiep.Location = new System.Drawing.Point(899, 339);
             this.txtNgheNghiep.Name = "txtNgheNghiep";
             this.txtNgheNghiep.Size = new System.Drawing.Size(341, 27);
             this.txtNgheNghiep.TabIndex = 34;
@@ -386,7 +389,7 @@
             // rdoNam
             // 
             this.rdoNam.AutoSize = true;
-            this.rdoNam.Location = new System.Drawing.Point(899, 135);
+            this.rdoNam.Location = new System.Drawing.Point(1090, 236);
             this.rdoNam.Name = "rdoNam";
             this.rdoNam.Size = new System.Drawing.Size(78, 32);
             this.rdoNam.TabIndex = 35;
@@ -396,7 +399,7 @@
             // rdoNu
             // 
             this.rdoNu.AutoSize = true;
-            this.rdoNu.Location = new System.Drawing.Point(1081, 135);
+            this.rdoNu.Location = new System.Drawing.Point(1188, 236);
             this.rdoNu.Name = "rdoNu";
             this.rdoNu.Size = new System.Drawing.Size(62, 32);
             this.rdoNu.TabIndex = 36;
@@ -407,7 +410,7 @@
             // 
             this.dtmNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtmNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmNgaySinh.Location = new System.Drawing.Point(899, 191);
+            this.dtmNgaySinh.Location = new System.Drawing.Point(899, 284);
             this.dtmNgaySinh.Name = "dtmNgaySinh";
             this.dtmNgaySinh.Size = new System.Drawing.Size(341, 34);
             this.dtmNgaySinh.TabIndex = 37;
@@ -468,11 +471,30 @@
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(815, 90);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 160);
+            this.pictureBox1.TabIndex = 89;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnTaiAnh
+            // 
+            this.btnTaiAnh.Location = new System.Drawing.Point(975, 178);
+            this.btnTaiAnh.Name = "btnTaiAnh";
+            this.btnTaiAnh.Size = new System.Drawing.Size(120, 40);
+            this.btnTaiAnh.TabIndex = 90;
+            this.btnTaiAnh.Text = " Tải ảnh ";
+            this.btnTaiAnh.UseVisualStyleBackColor = true;
+            // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.btnTaiAnh);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.cboQuocTich);
             this.Controls.Add(this.cboDanToc);
@@ -520,6 +542,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDangKyCongDan";
             this.Text = "FDangKyCongDan";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,5 +592,7 @@
         private ComboBox cboDanToc;
         private ComboBox cboQuocTich;
         private Button btnDangKy;
+        private PictureBox pictureBox1;
+        private Button btnTaiAnh;
     }
 }
