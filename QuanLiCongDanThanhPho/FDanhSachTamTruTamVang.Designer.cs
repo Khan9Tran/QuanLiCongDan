@@ -47,6 +47,7 @@
             this.gvTamTru.RowTemplate.Height = 29;
             this.gvTamTru.Size = new System.Drawing.Size(1400, 300);
             this.gvTamTru.TabIndex = 0;
+            this.gvTamTru.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTamTru_CellContentClick);
             // 
             // gvTamVang
             // 
@@ -60,6 +61,7 @@
             this.gvTamVang.RowTemplate.Height = 29;
             this.gvTamVang.Size = new System.Drawing.Size(1400, 300);
             this.gvTamVang.TabIndex = 1;
+            this.gvTamVang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTamVang_CellContentClick);
             // 
             // lblTamTru
             // 
@@ -94,6 +96,7 @@
             this.Name = "FDanhSachTamTruTamVang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDanhSachTamTruTamVang";
+            this.Load += new System.EventHandler(this.FDanhSachTamTruTamVang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvTamTru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTamVang)).EndInit();
             this.ResumeLayout(false);

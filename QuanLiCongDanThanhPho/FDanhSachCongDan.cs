@@ -12,6 +12,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSachCongDan : Form
     {
+        CongDanDAO cdDao = new CongDanDAO();
         public FDanhSachCongDan()
         {
             InitializeComponent();
@@ -22,9 +23,13 @@ namespace QuanLiCongDanThanhPho
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gvDanhSachCongDan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
 
+        private void FDanhSachCongDan_Load(object sender, EventArgs e)
+        {
+            gvDanhSachCongDan.DataSource = cdDao.LayDanhSach();
         }
     }
 }

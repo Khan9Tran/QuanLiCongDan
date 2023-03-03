@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,10 @@ namespace QuanLiCongDanThanhPho
                 + $"INSERT FROM THUE(MaThue) VALUES('{thue.MaThue}')\n" +
                 $"INSERT FROM HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu) VALUES('{hN.MaSo}','{hN.TenChong}','{hN.TenVo}','{hN.CCCDVo}','{hN.CCCDChong}') ");
             conn.ThucThi(strSql);
+        }
+        public DataTable LayDanhSach()
+        {
+            return conn.LayDanhSach("SELECT CCCD, Ten, SDT FROM CONGDAN");
         }
     }
 }

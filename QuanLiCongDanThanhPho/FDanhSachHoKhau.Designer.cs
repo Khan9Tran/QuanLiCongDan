@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gvHoKhau = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoKhau)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,30 +44,31 @@
             this.gvHoKhau.RowTemplate.Height = 29;
             this.gvHoKhau.Size = new System.Drawing.Size(1400, 450);
             this.gvHoKhau.TabIndex = 0;
-            this.gvHoKhau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.gvHoKhau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellContentClick);
             // 
-            // textBox1
+            // txtTimKiem
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(20, 198);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(600, 50);
-            this.textBox1.TabIndex = 1;
+            this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimKiem.Location = new System.Drawing.Point(20, 198);
+            this.txtTimKiem.Multiline = true;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(600, 50);
+            this.txtTimKiem.TabIndex = 1;
             // 
             // FDanhSachHoKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.gvHoKhau);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDanhSachHoKhau";
             this.Text = "FDanhSachHoKhau";
+            this.Load += new System.EventHandler(this.FDanhSachHoKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvHoKhau)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -77,6 +78,6 @@
         #endregion
 
         private DataGridView gvHoKhau;
-        private TextBox textBox1;
+        private TextBox txtTimKiem;
     }
 }

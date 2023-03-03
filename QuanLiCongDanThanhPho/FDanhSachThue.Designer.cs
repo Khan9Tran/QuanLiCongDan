@@ -28,46 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gvThue = new System.Windows.Forms.DataGridView();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gvThue)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gvThue
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 281);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1400, 450);
-            this.dataGridView1.TabIndex = 0;
+            this.gvThue.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.gvThue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gvThue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvThue.Location = new System.Drawing.Point(39, 281);
+            this.gvThue.Name = "gvThue";
+            this.gvThue.RowHeadersWidth = 51;
+            this.gvThue.RowTemplate.Height = 29;
+            this.gvThue.Size = new System.Drawing.Size(1400, 450);
+            this.gvThue.TabIndex = 0;
+            this.gvThue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThue_CellContentClick);
             // 
-            // textBox1
+            // txtTimKiem
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(39, 209);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(600, 35);
-            this.textBox1.TabIndex = 1;
+            this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimKiem.Location = new System.Drawing.Point(39, 209);
+            this.txtTimKiem.Multiline = true;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(600, 35);
+            this.txtTimKiem.TabIndex = 1;
             // 
             // FDanhSachThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.gvThue);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDanhSachThue";
             this.Text = "FDanhSachThue";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FDanhSachThue_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gvThue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,7 +77,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private DataGridView gvThue;
+        private TextBox txtTimKiem;
     }
 }
