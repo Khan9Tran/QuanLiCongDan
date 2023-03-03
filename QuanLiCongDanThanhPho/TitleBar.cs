@@ -29,5 +29,10 @@ namespace QuanLiCongDanThanhPho
             else
                 this.ParentForm.Close();
         }
+
+        private void pnlTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
