@@ -28,338 +28,321 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.pnlKhungTren = new System.Windows.Forms.Panel();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.lblHideApp = new System.Windows.Forms.Label();
-            this.lblExit = new System.Windows.Forms.Label();
-            this.pnlChucNang = new System.Windows.Forms.Panel();
-            this.btnSuaDoi = new System.Windows.Forms.Button();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnDangKy = new System.Windows.Forms.Button();
-            this.cmnusDangKy = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmnusDangKyItemTamTruTamVang = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnusDangKyItemHonNhan = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnusDangKyItemKhaiSinh = new System.Windows.Forms.ToolStripMenuItem();
-            this.cnmusDangKyItemCCCD = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnusDangKyItemHoKhau = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnusDangKyItemCongDan = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDanhMuc = new System.Windows.Forms.Button();
-            this.cmnusDanhMuc = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmnusDanhMucItemCongDan = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnusDanhMucItemHoKhau = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnusDanhMucItemThue = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnusDanhMucItemTamTruTamVang = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlHienThiForm = new System.Windows.Forms.Panel();
-            this.CmnusSuaDoi = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.congDanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hộKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thuếToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hônNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cCCDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.khaiSinhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlKhungTren.SuspendLayout();
-            this.pnlChucNang.SuspendLayout();
-            this.cmnusDangKy.SuspendLayout();
-            this.cmnusDanhMuc.SuspendLayout();
-            this.CmnusSuaDoi.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            pnlKhungTren = new Panel();
+            txtTimKiem = new TextBox();
+            lblHideApp = new Label();
+            lblExit = new Label();
+            pnlChucNang = new Panel();
+            btnSuaDoi = new Button();
+            btnThongKe = new Button();
+            btnDangKy = new Button();
+            cmnusDangKy = new ContextMenuStrip(components);
+            cmnusDangKyItemTamTruTamVang = new ToolStripMenuItem();
+            cmnusDangKyItemHonNhan = new ToolStripMenuItem();
+            cmnusDangKyItemKhaiSinh = new ToolStripMenuItem();
+            cnmusDangKyItemCCCD = new ToolStripMenuItem();
+            cmnusDangKyItemHoKhau = new ToolStripMenuItem();
+            cmnusDangKyItemCongDan = new ToolStripMenuItem();
+            btnDanhMuc = new Button();
+            cmnusDanhMuc = new ContextMenuStrip(components);
+            cmnusDanhMucItemCongDan = new ToolStripMenuItem();
+            cmnusDanhMucItemHoKhau = new ToolStripMenuItem();
+            cmnusDanhMucItemThue = new ToolStripMenuItem();
+            cmnusDanhMucItemTamTruTamVang = new ToolStripMenuItem();
+            pnlHienThiForm = new Panel();
+            CmnusSuaDoi = new ContextMenuStrip(components);
+            congDanToolStripMenuItem = new ToolStripMenuItem();
+            hộKhẩuToolStripMenuItem = new ToolStripMenuItem();
+            thuếToolStripMenuItem = new ToolStripMenuItem();
+            hônNhânToolStripMenuItem = new ToolStripMenuItem();
+            cCCDToolStripMenuItem = new ToolStripMenuItem();
+            khaiSinhToolStripMenuItem = new ToolStripMenuItem();
+            pnlKhungTren.SuspendLayout();
+            pnlChucNang.SuspendLayout();
+            cmnusDangKy.SuspendLayout();
+            cmnusDanhMuc.SuspendLayout();
+            CmnusSuaDoi.SuspendLayout();
+            SuspendLayout();
             // 
             // pnlKhungTren
             // 
-            this.pnlKhungTren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnlKhungTren.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlKhungTren.Controls.Add(this.txtTimKiem);
-            this.pnlKhungTren.Controls.Add(this.lblHideApp);
-            this.pnlKhungTren.Controls.Add(this.lblExit);
-            this.pnlKhungTren.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlKhungTren.Location = new System.Drawing.Point(0, 0);
-            this.pnlKhungTren.Name = "pnlKhungTren";
-            this.pnlKhungTren.Size = new System.Drawing.Size(1782, 71);
-            this.pnlKhungTren.TabIndex = 0;
+            pnlKhungTren.BackColor = Color.FromArgb(50, 49, 69);
+            pnlKhungTren.BackgroundImageLayout = ImageLayout.Center;
+            pnlKhungTren.Controls.Add(txtTimKiem);
+            pnlKhungTren.Controls.Add(lblHideApp);
+            pnlKhungTren.Controls.Add(lblExit);
+            pnlKhungTren.Dock = DockStyle.Top;
+            pnlKhungTren.Location = new Point(0, 0);
+            pnlKhungTren.Name = "pnlKhungTren";
+            pnlKhungTren.Size = new Size(1782, 71);
+            pnlKhungTren.TabIndex = 0;
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimKiem.Enabled = false;
-            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txtTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(185)))), ((int)(((byte)(174)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(631, 20);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(20);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(387, 35);
-            this.txtTimKiem.TabIndex = 2;
-            this.txtTimKiem.Text = "tìm kiếm";
-            this.txtTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtTimKiem.BackColor = Color.FromArgb(44, 43, 60);
+            txtTimKiem.BorderStyle = BorderStyle.None;
+            txtTimKiem.Enabled = false;
+            txtTimKiem.Font = new Font("Segoe UI Light", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            txtTimKiem.ForeColor = Color.FromArgb(193, 185, 174);
+            txtTimKiem.Location = new Point(631, 20);
+            txtTimKiem.Margin = new Padding(20);
+            txtTimKiem.Multiline = true;
+            txtTimKiem.Name = "txtTimKiem";
+            txtTimKiem.Size = new Size(387, 35);
+            txtTimKiem.TabIndex = 2;
+            txtTimKiem.Text = "tìm kiếm";
+            txtTimKiem.TextAlign = HorizontalAlignment.Center;
             // 
             // lblHideApp
             // 
-            this.lblHideApp.AutoSize = true;
-            this.lblHideApp.ForeColor = System.Drawing.Color.Transparent;
-            this.lblHideApp.Location = new System.Drawing.Point(1725, 6);
-            this.lblHideApp.Name = "lblHideApp";
-            this.lblHideApp.Size = new System.Drawing.Size(21, 20);
-            this.lblHideApp.TabIndex = 1;
-            this.lblHideApp.Text = "__";
-            this.lblHideApp.Click += new System.EventHandler(this.lblHideApp_Click);
+            lblHideApp.AutoSize = true;
+            lblHideApp.ForeColor = Color.Transparent;
+            lblHideApp.Location = new Point(1725, 6);
+            lblHideApp.Name = "lblHideApp";
+            lblHideApp.Size = new Size(21, 20);
+            lblHideApp.TabIndex = 1;
+            lblHideApp.Text = "__";
+            lblHideApp.Click += lblHideApp_Click;
             // 
             // lblExit
             // 
-            this.lblExit.AutoSize = true;
-            this.lblExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblExit.Location = new System.Drawing.Point(1752, 9);
-            this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(18, 20);
-            this.lblExit.TabIndex = 0;
-            this.lblExit.Text = "X";
-            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            lblExit.AutoSize = true;
+            lblExit.ForeColor = Color.WhiteSmoke;
+            lblExit.Location = new Point(1752, 9);
+            lblExit.Name = "lblExit";
+            lblExit.Size = new Size(18, 20);
+            lblExit.TabIndex = 0;
+            lblExit.Text = "X";
+            lblExit.Click += lblExit_Click;
             // 
             // pnlChucNang
             // 
-            this.pnlChucNang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.pnlChucNang.Controls.Add(this.btnSuaDoi);
-            this.pnlChucNang.Controls.Add(this.btnThongKe);
-            this.pnlChucNang.Controls.Add(this.btnDangKy);
-            this.pnlChucNang.Controls.Add(this.btnDanhMuc);
-            this.pnlChucNang.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlChucNang.Location = new System.Drawing.Point(0, 71);
-            this.pnlChucNang.Name = "pnlChucNang";
-            this.pnlChucNang.Size = new System.Drawing.Size(250, 782);
-            this.pnlChucNang.TabIndex = 1;
+            pnlChucNang.BackColor = Color.FromArgb(50, 49, 69);
+            pnlChucNang.Controls.Add(btnSuaDoi);
+            pnlChucNang.Controls.Add(btnThongKe);
+            pnlChucNang.Controls.Add(btnDangKy);
+            pnlChucNang.Controls.Add(btnDanhMuc);
+            pnlChucNang.Dock = DockStyle.Left;
+            pnlChucNang.Location = new Point(0, 71);
+            pnlChucNang.Name = "pnlChucNang";
+            pnlChucNang.Size = new Size(250, 782);
+            pnlChucNang.TabIndex = 1;
             // 
             // btnSuaDoi
             // 
-            this.btnSuaDoi.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSuaDoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaDoi.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSuaDoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
-            this.btnSuaDoi.Location = new System.Drawing.Point(-18, 402);
-            this.btnSuaDoi.Name = "btnSuaDoi";
-            this.btnSuaDoi.Size = new System.Drawing.Size(200, 82);
-            this.btnSuaDoi.TabIndex = 4;
-            this.btnSuaDoi.Text = "Sửa";
-            this.btnSuaDoi.UseVisualStyleBackColor = false;
+            btnSuaDoi.BackColor = Color.WhiteSmoke;
+            btnSuaDoi.FlatStyle = FlatStyle.Flat;
+            btnSuaDoi.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSuaDoi.ForeColor = Color.FromArgb(44, 43, 69);
+            btnSuaDoi.Location = new Point(-18, 402);
+            btnSuaDoi.Name = "btnSuaDoi";
+            btnSuaDoi.Size = new Size(200, 82);
+            btnSuaDoi.TabIndex = 4;
+            btnSuaDoi.Text = "Sửa";
+            btnSuaDoi.UseVisualStyleBackColor = false;
             // 
             // btnThongKe
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnThongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
-            this.btnThongKe.Location = new System.Drawing.Point(-18, 515);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(200, 82);
-            this.btnThongKe.TabIndex = 3;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
+            btnThongKe.BackColor = Color.WhiteSmoke;
+            btnThongKe.FlatStyle = FlatStyle.Flat;
+            btnThongKe.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnThongKe.ForeColor = Color.FromArgb(44, 43, 69);
+            btnThongKe.Location = new Point(-18, 515);
+            btnThongKe.Name = "btnThongKe";
+            btnThongKe.Size = new Size(200, 82);
+            btnThongKe.TabIndex = 3;
+            btnThongKe.Text = "Thống kê";
+            btnThongKe.UseVisualStyleBackColor = false;
             // 
             // btnDangKy
             // 
-            this.btnDangKy.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDangKy.ContextMenuStrip = this.cmnusDangKy;
-            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
-            this.btnDangKy.Location = new System.Drawing.Point(-18, 279);
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(200, 82);
-            this.btnDangKy.TabIndex = 2;
-            this.btnDangKy.Text = "Đăng ký";
-            this.btnDangKy.UseVisualStyleBackColor = false;
+            btnDangKy.BackColor = Color.WhiteSmoke;
+            btnDangKy.ContextMenuStrip = cmnusDangKy;
+            btnDangKy.FlatStyle = FlatStyle.Flat;
+            btnDangKy.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDangKy.ForeColor = Color.FromArgb(44, 43, 69);
+            btnDangKy.Location = new Point(-18, 279);
+            btnDangKy.Name = "btnDangKy";
+            btnDangKy.Size = new Size(200, 82);
+            btnDangKy.TabIndex = 2;
+            btnDangKy.Text = "Đăng ký";
+            btnDangKy.UseVisualStyleBackColor = false;
             // 
             // cmnusDangKy
             // 
-            this.cmnusDangKy.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.cmnusDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cmnusDangKy.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmnusDangKy.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmnusDangKyItemTamTruTamVang,
-            this.cmnusDangKyItemHonNhan,
-            this.cmnusDangKyItemKhaiSinh,
-            this.cnmusDangKyItemCCCD,
-            this.cmnusDangKyItemHoKhau,
-            this.cmnusDangKyItemCongDan});
-            this.cmnusDangKy.Name = "cmnusDangKy";
-            this.cmnusDangKy.Size = new System.Drawing.Size(270, 224);
+            cmnusDangKy.BackColor = Color.LightSteelBlue;
+            cmnusDangKy.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cmnusDangKy.ImageScalingSize = new Size(20, 20);
+            cmnusDangKy.Items.AddRange(new ToolStripItem[] { cmnusDangKyItemTamTruTamVang, cmnusDangKyItemHonNhan, cmnusDangKyItemKhaiSinh, cnmusDangKyItemCCCD, cmnusDangKyItemHoKhau, cmnusDangKyItemCongDan });
+            cmnusDangKy.Name = "cmnusDangKy";
+            cmnusDangKy.Size = new Size(270, 196);
             // 
             // cmnusDangKyItemTamTruTamVang
             // 
-            this.cmnusDangKyItemTamTruTamVang.Name = "cmnusDangKyItemTamTruTamVang";
-            this.cmnusDangKyItemTamTruTamVang.Size = new System.Drawing.Size(269, 32);
-            this.cmnusDangKyItemTamTruTamVang.Text = "Tạm trú / tạm vắng";
-            this.cmnusDangKyItemTamTruTamVang.Click += new System.EventHandler(this.cmnusDangKyItemTamTruTamVang_Click);
+            cmnusDangKyItemTamTruTamVang.Name = "cmnusDangKyItemTamTruTamVang";
+            cmnusDangKyItemTamTruTamVang.Size = new Size(269, 32);
+            cmnusDangKyItemTamTruTamVang.Text = "Tạm trú / tạm vắng";
+            cmnusDangKyItemTamTruTamVang.Click += cmnusDangKyItemTamTruTamVang_Click;
             // 
             // cmnusDangKyItemHonNhan
             // 
-            this.cmnusDangKyItemHonNhan.Name = "cmnusDangKyItemHonNhan";
-            this.cmnusDangKyItemHonNhan.Size = new System.Drawing.Size(269, 32);
-            this.cmnusDangKyItemHonNhan.Text = "Hôn nhân";
-            this.cmnusDangKyItemHonNhan.Click += new System.EventHandler(this.cmnusitemDangKyHonNhan_Click);
+            cmnusDangKyItemHonNhan.Name = "cmnusDangKyItemHonNhan";
+            cmnusDangKyItemHonNhan.Size = new Size(269, 32);
+            cmnusDangKyItemHonNhan.Text = "Hôn nhân";
+            cmnusDangKyItemHonNhan.Click += cmnusitemDangKyHonNhan_Click;
             // 
             // cmnusDangKyItemKhaiSinh
             // 
-            this.cmnusDangKyItemKhaiSinh.Name = "cmnusDangKyItemKhaiSinh";
-            this.cmnusDangKyItemKhaiSinh.Size = new System.Drawing.Size(269, 32);
-            this.cmnusDangKyItemKhaiSinh.Text = "Khai sinh";
-            this.cmnusDangKyItemKhaiSinh.Click += new System.EventHandler(this.cmnusDangKyItemKhaiSinh_Click);
+            cmnusDangKyItemKhaiSinh.Name = "cmnusDangKyItemKhaiSinh";
+            cmnusDangKyItemKhaiSinh.Size = new Size(269, 32);
+            cmnusDangKyItemKhaiSinh.Text = "Khai sinh";
+            cmnusDangKyItemKhaiSinh.Click += cmnusDangKyItemKhaiSinh_Click;
             // 
             // cnmusDangKyItemCCCD
             // 
-            this.cnmusDangKyItemCCCD.Name = "cnmusDangKyItemCCCD";
-            this.cnmusDangKyItemCCCD.Size = new System.Drawing.Size(269, 32);
-            this.cnmusDangKyItemCCCD.Text = "CCCD";
+            cnmusDangKyItemCCCD.Name = "cnmusDangKyItemCCCD";
+            cnmusDangKyItemCCCD.Size = new Size(269, 32);
+            cnmusDangKyItemCCCD.Text = "CCCD";
             // 
             // cmnusDangKyItemHoKhau
             // 
-            this.cmnusDangKyItemHoKhau.Name = "cmnusDangKyItemHoKhau";
-            this.cmnusDangKyItemHoKhau.Size = new System.Drawing.Size(269, 32);
-            this.cmnusDangKyItemHoKhau.Text = "Hộ khẩu";
+            cmnusDangKyItemHoKhau.Name = "cmnusDangKyItemHoKhau";
+            cmnusDangKyItemHoKhau.Size = new Size(269, 32);
+            cmnusDangKyItemHoKhau.Text = "Hộ khẩu";
             // 
             // cmnusDangKyItemCongDan
             // 
-            this.cmnusDangKyItemCongDan.Name = "cmnusDangKyItemCongDan";
-            this.cmnusDangKyItemCongDan.Size = new System.Drawing.Size(269, 32);
-            this.cmnusDangKyItemCongDan.Text = "Công Dân";
-            this.cmnusDangKyItemCongDan.Click += new System.EventHandler(this.cmnusDangKyItemCongDan_Click);
+            cmnusDangKyItemCongDan.Name = "cmnusDangKyItemCongDan";
+            cmnusDangKyItemCongDan.Size = new Size(269, 32);
+            cmnusDangKyItemCongDan.Text = "Công Dân";
+            cmnusDangKyItemCongDan.Click += cmnusDangKyItemCongDan_Click;
             // 
             // btnDanhMuc
             // 
-            this.btnDanhMuc.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDanhMuc.ContextMenuStrip = this.cmnusDanhMuc;
-            this.btnDanhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDanhMuc.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDanhMuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
-            this.btnDanhMuc.Location = new System.Drawing.Point(-18, 170);
-            this.btnDanhMuc.Name = "btnDanhMuc";
-            this.btnDanhMuc.Size = new System.Drawing.Size(200, 82);
-            this.btnDanhMuc.TabIndex = 1;
-            this.btnDanhMuc.Text = "Danh mục";
-            this.btnDanhMuc.UseVisualStyleBackColor = false;
+            btnDanhMuc.BackColor = Color.WhiteSmoke;
+            btnDanhMuc.ContextMenuStrip = cmnusDanhMuc;
+            btnDanhMuc.FlatStyle = FlatStyle.Flat;
+            btnDanhMuc.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDanhMuc.ForeColor = Color.FromArgb(44, 43, 69);
+            btnDanhMuc.Location = new Point(-18, 170);
+            btnDanhMuc.Name = "btnDanhMuc";
+            btnDanhMuc.Size = new Size(200, 82);
+            btnDanhMuc.TabIndex = 1;
+            btnDanhMuc.Text = "Danh mục";
+            btnDanhMuc.UseVisualStyleBackColor = false;
             // 
             // cmnusDanhMuc
             // 
-            this.cmnusDanhMuc.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.cmnusDanhMuc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cmnusDanhMuc.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmnusDanhMuc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmnusDanhMuc.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmnusDanhMucItemCongDan,
-            this.cmnusDanhMucItemHoKhau,
-            this.cmnusDanhMucItemThue,
-            this.cmnusDanhMucItemTamTruTamVang});
-            this.cmnusDanhMuc.Name = "contextMenuStrip2";
-            this.cmnusDanhMuc.Size = new System.Drawing.Size(268, 132);
+            cmnusDanhMuc.BackColor = Color.LightSteelBlue;
+            cmnusDanhMuc.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cmnusDanhMuc.ImageScalingSize = new Size(20, 20);
+            cmnusDanhMuc.ImeMode = ImeMode.NoControl;
+            cmnusDanhMuc.Items.AddRange(new ToolStripItem[] { cmnusDanhMucItemCongDan, cmnusDanhMucItemHoKhau, cmnusDanhMucItemThue, cmnusDanhMucItemTamTruTamVang });
+            cmnusDanhMuc.Name = "contextMenuStrip2";
+            cmnusDanhMuc.Size = new Size(268, 132);
             // 
             // cmnusDanhMucItemCongDan
             // 
-            this.cmnusDanhMucItemCongDan.Name = "cmnusDanhMucItemCongDan";
-            this.cmnusDanhMucItemCongDan.Size = new System.Drawing.Size(267, 32);
-            this.cmnusDanhMucItemCongDan.Text = "Công Dân";
-            this.cmnusDanhMucItemCongDan.Click += new System.EventHandler(this.cmnusDanhMucItemCongDan_Click);
+            cmnusDanhMucItemCongDan.Name = "cmnusDanhMucItemCongDan";
+            cmnusDanhMucItemCongDan.Size = new Size(267, 32);
+            cmnusDanhMucItemCongDan.Text = "Công Dân";
+            cmnusDanhMucItemCongDan.Click += cmnusDanhMucItemCongDan_Click;
             // 
             // cmnusDanhMucItemHoKhau
             // 
-            this.cmnusDanhMucItemHoKhau.Name = "cmnusDanhMucItemHoKhau";
-            this.cmnusDanhMucItemHoKhau.Size = new System.Drawing.Size(267, 32);
-            this.cmnusDanhMucItemHoKhau.Text = "Hộ khẩu";
-            this.cmnusDanhMucItemHoKhau.Click += new System.EventHandler(this.cmnusDanhMucItemHoKhau_Click);
+            cmnusDanhMucItemHoKhau.Name = "cmnusDanhMucItemHoKhau";
+            cmnusDanhMucItemHoKhau.Size = new Size(267, 32);
+            cmnusDanhMucItemHoKhau.Text = "Hộ khẩu";
+            cmnusDanhMucItemHoKhau.Click += cmnusDanhMucItemHoKhau_Click;
             // 
             // cmnusDanhMucItemThue
             // 
-            this.cmnusDanhMucItemThue.Name = "cmnusDanhMucItemThue";
-            this.cmnusDanhMucItemThue.Size = new System.Drawing.Size(267, 32);
-            this.cmnusDanhMucItemThue.Text = "Thuế";
-            this.cmnusDanhMucItemThue.Click += new System.EventHandler(this.cmnusDanhMucItemThue_Click);
+            cmnusDanhMucItemThue.Name = "cmnusDanhMucItemThue";
+            cmnusDanhMucItemThue.Size = new Size(267, 32);
+            cmnusDanhMucItemThue.Text = "Thuế";
+            cmnusDanhMucItemThue.Click += cmnusDanhMucItemThue_Click;
             // 
             // cmnusDanhMucItemTamTruTamVang
             // 
-            this.cmnusDanhMucItemTamTruTamVang.Name = "cmnusDanhMucItemTamTruTamVang";
-            this.cmnusDanhMucItemTamTruTamVang.Size = new System.Drawing.Size(267, 32);
-            this.cmnusDanhMucItemTamTruTamVang.Text = "Tạm trú/ Tạm vắng";
-            this.cmnusDanhMucItemTamTruTamVang.Click += new System.EventHandler(this.cmnusDanhMucItemTamTruTamVang_Click);
+            cmnusDanhMucItemTamTruTamVang.Name = "cmnusDanhMucItemTamTruTamVang";
+            cmnusDanhMucItemTamTruTamVang.Size = new Size(267, 32);
+            cmnusDanhMucItemTamTruTamVang.Text = "Tạm trú/ Tạm vắng";
+            cmnusDanhMucItemTamTruTamVang.Click += cmnusDanhMucItemTamTruTamVang_Click;
             // 
             // pnlHienThiForm
             // 
-            this.pnlHienThiForm.AutoSize = true;
-            this.pnlHienThiForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHienThiForm.Location = new System.Drawing.Point(250, 71);
-            this.pnlHienThiForm.Name = "pnlHienThiForm";
-            this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 782);
-            this.pnlHienThiForm.TabIndex = 2;
+            pnlHienThiForm.AutoSize = true;
+            pnlHienThiForm.Dock = DockStyle.Fill;
+            pnlHienThiForm.Location = new Point(250, 71);
+            pnlHienThiForm.Name = "pnlHienThiForm";
+            pnlHienThiForm.Size = new Size(1532, 782);
+            pnlHienThiForm.TabIndex = 2;
             // 
             // CmnusSuaDoi
             // 
-            this.CmnusSuaDoi.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.CmnusSuaDoi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.congDanToolStripMenuItem,
-            this.hộKhẩuToolStripMenuItem,
-            this.thuếToolStripMenuItem,
-            this.hônNhânToolStripMenuItem,
-            this.cCCDToolStripMenuItem,
-            this.khaiSinhToolStripMenuItem});
-            this.CmnusSuaDoi.Name = "contextMenuStrip3";
-            this.CmnusSuaDoi.Size = new System.Drawing.Size(143, 148);
+            CmnusSuaDoi.ImageScalingSize = new Size(20, 20);
+            CmnusSuaDoi.Items.AddRange(new ToolStripItem[] { congDanToolStripMenuItem, hộKhẩuToolStripMenuItem, thuếToolStripMenuItem, hônNhânToolStripMenuItem, cCCDToolStripMenuItem, khaiSinhToolStripMenuItem });
+            CmnusSuaDoi.Name = "contextMenuStrip3";
+            CmnusSuaDoi.Size = new Size(143, 148);
             // 
             // congDanToolStripMenuItem
             // 
-            this.congDanToolStripMenuItem.Name = "congDanToolStripMenuItem";
-            this.congDanToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.congDanToolStripMenuItem.Text = "Công dân";
+            congDanToolStripMenuItem.Name = "congDanToolStripMenuItem";
+            congDanToolStripMenuItem.Size = new Size(142, 24);
+            congDanToolStripMenuItem.Text = "Công dân";
             // 
             // hộKhẩuToolStripMenuItem
             // 
-            this.hộKhẩuToolStripMenuItem.Name = "hộKhẩuToolStripMenuItem";
-            this.hộKhẩuToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.hộKhẩuToolStripMenuItem.Text = "Hộ khẩu";
+            hộKhẩuToolStripMenuItem.Name = "hộKhẩuToolStripMenuItem";
+            hộKhẩuToolStripMenuItem.Size = new Size(142, 24);
+            hộKhẩuToolStripMenuItem.Text = "Hộ khẩu";
             // 
             // thuếToolStripMenuItem
             // 
-            this.thuếToolStripMenuItem.Name = "thuếToolStripMenuItem";
-            this.thuếToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.thuếToolStripMenuItem.Text = "Thuế";
+            thuếToolStripMenuItem.Name = "thuếToolStripMenuItem";
+            thuếToolStripMenuItem.Size = new Size(142, 24);
+            thuếToolStripMenuItem.Text = "Thuế";
             // 
             // hônNhânToolStripMenuItem
             // 
-            this.hônNhânToolStripMenuItem.Name = "hônNhânToolStripMenuItem";
-            this.hônNhânToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.hônNhânToolStripMenuItem.Text = "Hôn nhân";
+            hônNhânToolStripMenuItem.Name = "hônNhânToolStripMenuItem";
+            hônNhânToolStripMenuItem.Size = new Size(142, 24);
+            hônNhânToolStripMenuItem.Text = "Hôn nhân";
             // 
             // cCCDToolStripMenuItem
             // 
-            this.cCCDToolStripMenuItem.Name = "cCCDToolStripMenuItem";
-            this.cCCDToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.cCCDToolStripMenuItem.Text = "CCCD";
+            cCCDToolStripMenuItem.Name = "cCCDToolStripMenuItem";
+            cCCDToolStripMenuItem.Size = new Size(142, 24);
+            cCCDToolStripMenuItem.Text = "CCCD";
             // 
             // khaiSinhToolStripMenuItem
             // 
-            this.khaiSinhToolStripMenuItem.Name = "khaiSinhToolStripMenuItem";
-            this.khaiSinhToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.khaiSinhToolStripMenuItem.Text = "Khai sinh";
+            khaiSinhToolStripMenuItem.Name = "khaiSinhToolStripMenuItem";
+            khaiSinhToolStripMenuItem.Size = new Size(142, 24);
+            khaiSinhToolStripMenuItem.Text = "Khai sinh";
             // 
             // FTrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(1782, 853);
-            this.Controls.Add(this.pnlHienThiForm);
-            this.Controls.Add(this.pnlChucNang);
-            this.Controls.Add(this.pnlKhungTren);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FTrangChu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TrangChu";
-            this.pnlKhungTren.ResumeLayout(false);
-            this.pnlKhungTren.PerformLayout();
-            this.pnlChucNang.ResumeLayout(false);
-            this.cmnusDangKy.ResumeLayout(false);
-            this.cmnusDanhMuc.ResumeLayout(false);
-            this.CmnusSuaDoi.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(44, 43, 60);
+            ClientSize = new Size(1782, 853);
+            Controls.Add(pnlHienThiForm);
+            Controls.Add(pnlChucNang);
+            Controls.Add(pnlKhungTren);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FTrangChu";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "TrangChu";
+            pnlKhungTren.ResumeLayout(false);
+            pnlKhungTren.PerformLayout();
+            pnlChucNang.ResumeLayout(false);
+            cmnusDangKy.ResumeLayout(false);
+            cmnusDanhMuc.ResumeLayout(false);
+            CmnusSuaDoi.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
