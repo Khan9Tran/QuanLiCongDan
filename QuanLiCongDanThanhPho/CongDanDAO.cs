@@ -22,7 +22,6 @@ namespace QuanLiCongDanThanhPho
                 $"INSERT FROM THUE(MaThue) VALUES('{thue.MaThue}')\n" 
                 + "GO" +
                 $"INSERT FROM HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu) VALUES('{hN.MaSo}','{hN.TenChong}','{hN.TenVo}','{hN.CCCDVo}','{hN.CCCDChong}')\n" );
-
             conn.ThucThi(strSql);
         }
     }
