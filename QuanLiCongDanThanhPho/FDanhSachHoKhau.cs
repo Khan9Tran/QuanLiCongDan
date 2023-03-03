@@ -12,14 +12,19 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSachHoKhau : Form
     {
+        HoKhauDAO hkDao = new HoKhauDAO();
         public FDanhSachHoKhau()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gvHoKhau_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
 
+        private void FDanhSachHoKhau_Load(object sender, EventArgs e)
+        {
+            gvHoKhau.DataSource = hkDao.LayDanhSach();
         }
     }
 }

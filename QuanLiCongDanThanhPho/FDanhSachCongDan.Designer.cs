@@ -44,7 +44,7 @@
             this.gvDanhSachCongDan.RowTemplate.Height = 29;
             this.gvDanhSachCongDan.Size = new System.Drawing.Size(1500, 450);
             this.gvDanhSachCongDan.TabIndex = 0;
-            this.gvDanhSachCongDan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.gvDanhSachCongDan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDanhSachCongDan_CellContentClick);
             // 
             // txtTimKiem
             // 
@@ -69,6 +69,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDanhSachCongDan";
             this.Text = "DanhSachCongDan";
+            this.Load += new System.EventHandler(this.FDanhSachCongDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
