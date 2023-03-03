@@ -14,7 +14,7 @@ namespace QuanLiCongDanThanhPho
         private DateTime ngayKetThuc;
         private DiaChi diaChi;
         private string lyDo;
-
+        public TamTruTamVang() { }
         public TamTruTamVang(string maSo, string trangThai, DateTime ngayBatDau, DateTime ngayKetThuc, DiaChi diaChi, string lyDo)
         {
             this.MaSo = maSo;

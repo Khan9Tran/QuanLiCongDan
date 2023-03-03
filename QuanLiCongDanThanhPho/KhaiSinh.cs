@@ -14,11 +14,22 @@ namespace QuanLiCongDanThanhPho
         private DateTime ngaySinh;
         private DateTime ngayDangKy;
         private DiaChi noiSinh;
-        private string queQuan;
+        private DiaChi queQuan;
         private CongDan cha;
         private CongDan me;
-
-        public KhaiSinh(string gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, DiaChi noiSinh, string queQuan, CongDan cha, CongDan me)
+        public KhaiSinh () 
+        {
+            gioiTinh = "";
+            quocTich = "";
+            danToc = "";
+            ngaySinh = DateTime.Now;
+            ngayDangKy = DateTime.Now;
+            noiSinh = new DiaChi();
+            queQuan = new DiaChi();
+            cha = new CongDan();
+            me = new CongDan();
+        }
+        public KhaiSinh(string gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, DiaChi noiSinh, DiaChi queQuan, CongDan cha, CongDan me)
         {
             this.gioiTinh = gioiTinh;
             this.quocTich = quocTich;
@@ -36,7 +47,7 @@ namespace QuanLiCongDanThanhPho
         public string DanToc { get => danToc; set => danToc = value; }
         public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
         public DateTime NgayDangKy { get => ngayDangKy; set => ngayDangKy = value; }
-        public string QueQuan { get => queQuan; set => queQuan = value; }
+        public DiaChi QueQuan { get => queQuan; set => queQuan = value; }
         internal DiaChi NoiSinh { get => noiSinh; set => noiSinh = value; }
         internal CongDan Cha { get => cha; set => cha = value; }
         internal CongDan Me { get => me; set => me = value; }

@@ -10,7 +10,7 @@ namespace QuanLiCongDanThanhPho
     {
         private CongDan congDan;
         private string quanHeVoiChuHo;
-
+        public QuanHeVoiChuHo() { }
         public QuanHeVoiChuHo(CongDan congDan, string quanHeVoiChuHo)
         {
             this.congDan = congDan;

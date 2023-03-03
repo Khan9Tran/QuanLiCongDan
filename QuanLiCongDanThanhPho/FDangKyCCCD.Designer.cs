@@ -28,129 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtTen = new TextBox();
-            lblTen = new Label();
-            txtCCCD = new TextBox();
-            lblCCCD = new Label();
-            dtpNgayCap = new DateTimePicker();
-            lblNgayCap = new Label();
-            textBox1 = new TextBox();
-            lblDDNhanDang = new Label();
-            btnDangKy = new Button();
-            SuspendLayout();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.lblTen = new System.Windows.Forms.Label();
+            this.txtCCCD = new System.Windows.Forms.TextBox();
+            this.lblCCCD = new System.Windows.Forms.Label();
+            this.dtpNgayCap = new System.Windows.Forms.DateTimePicker();
+            this.lblNgayCap = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblDDNhanDang = new System.Windows.Forms.Label();
+            this.btnDangKy = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // txtTen
             // 
-            txtTen.BackColor = Color.Gainsboro;
-            txtTen.BorderStyle = BorderStyle.None;
-            txtTen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTen.Location = new Point(525, 128);
-            txtTen.Name = "txtTen";
-            txtTen.Size = new Size(534, 27);
-            txtTen.TabIndex = 22;
+            this.txtTen.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTen.Location = new System.Drawing.Point(525, 128);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(534, 27);
+            this.txtTen.TabIndex = 22;
             // 
             // lblTen
             // 
-            lblTen.AutoSize = true;
-            lblTen.Location = new Point(311, 127);
-            lblTen.Name = "lblTen";
-            lblTen.Size = new Size(104, 28);
-            lblTen.TabIndex = 21;
-            lblTen.Text = "Họ và tên";
+            this.lblTen.AutoSize = true;
+            this.lblTen.Location = new System.Drawing.Point(311, 127);
+            this.lblTen.Name = "lblTen";
+            this.lblTen.Size = new System.Drawing.Size(104, 28);
+            this.lblTen.TabIndex = 21;
+            this.lblTen.Text = "Họ và tên";
             // 
             // txtCCCD
             // 
-            txtCCCD.BackColor = Color.Gainsboro;
-            txtCCCD.BorderStyle = BorderStyle.None;
-            txtCCCD.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCCCD.Location = new Point(525, 195);
-            txtCCCD.Name = "txtCCCD";
-            txtCCCD.Size = new Size(348, 27);
-            txtCCCD.TabIndex = 24;
+            this.txtCCCD.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCCCD.Location = new System.Drawing.Point(525, 195);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(348, 27);
+            this.txtCCCD.TabIndex = 24;
             // 
             // lblCCCD
             // 
-            lblCCCD.AutoSize = true;
-            lblCCCD.Location = new Point(311, 194);
-            lblCCCD.Name = "lblCCCD";
-            lblCCCD.Size = new Size(61, 28);
-            lblCCCD.TabIndex = 23;
-            lblCCCD.Text = "CCCD";
+            this.lblCCCD.AutoSize = true;
+            this.lblCCCD.Location = new System.Drawing.Point(311, 194);
+            this.lblCCCD.Name = "lblCCCD";
+            this.lblCCCD.Size = new System.Drawing.Size(61, 28);
+            this.lblCCCD.TabIndex = 23;
+            this.lblCCCD.Text = "CCCD";
             // 
             // dtpNgayCap
             // 
-            dtpNgayCap.CustomFormat = "dd/MM/yyyy";
-            dtpNgayCap.Format = DateTimePickerFormat.Custom;
-            dtpNgayCap.Location = new Point(525, 337);
-            dtpNgayCap.Name = "dtpNgayCap";
-            dtpNgayCap.Size = new Size(341, 34);
-            dtpNgayCap.TabIndex = 39;
-            dtpNgayCap.Value = new DateTime(2023, 3, 2, 0, 0, 0, 0);
+            this.dtpNgayCap.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayCap.Location = new System.Drawing.Point(525, 337);
+            this.dtpNgayCap.Name = "dtpNgayCap";
+            this.dtpNgayCap.Size = new System.Drawing.Size(341, 34);
+            this.dtpNgayCap.TabIndex = 39;
+            this.dtpNgayCap.Value = new System.DateTime(2023, 3, 2, 0, 0, 0, 0);
             // 
             // lblNgayCap
             // 
-            lblNgayCap.AutoSize = true;
-            lblNgayCap.Location = new Point(311, 337);
-            lblNgayCap.Name = "lblNgayCap";
-            lblNgayCap.Size = new Size(101, 28);
-            lblNgayCap.TabIndex = 38;
-            lblNgayCap.Text = "Ngày cấp";
+            this.lblNgayCap.AutoSize = true;
+            this.lblNgayCap.Location = new System.Drawing.Point(311, 337);
+            this.lblNgayCap.Name = "lblNgayCap";
+            this.lblNgayCap.Size = new System.Drawing.Size(101, 28);
+            this.lblNgayCap.TabIndex = 38;
+            this.lblNgayCap.Text = "Ngày cấp";
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.Gainsboro;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(525, 269);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(534, 27);
-            textBox1.TabIndex = 41;
+            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(525, 269);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(534, 27);
+            this.textBox1.TabIndex = 41;
             // 
             // lblDDNhanDang
             // 
-            lblDDNhanDang.AutoSize = true;
-            lblDDNhanDang.Location = new Point(311, 268);
-            lblDDNhanDang.Name = "lblDDNhanDang";
-            lblDDNhanDang.Size = new Size(208, 28);
-            lblDDNhanDang.TabIndex = 40;
-            lblDDNhanDang.Text = "Đặc điểm nhận dạng";
+            this.lblDDNhanDang.AutoSize = true;
+            this.lblDDNhanDang.Location = new System.Drawing.Point(311, 268);
+            this.lblDDNhanDang.Name = "lblDDNhanDang";
+            this.lblDDNhanDang.Size = new System.Drawing.Size(208, 28);
+            this.lblDDNhanDang.TabIndex = 40;
+            this.lblDDNhanDang.Text = "Đặc điểm nhận dạng";
             // 
             // btnDangKy
             // 
-            btnDangKy.BackColor = Color.FromArgb(44, 43, 69);
-            btnDangKy.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDangKy.ForeColor = Color.White;
-            btnDangKy.Location = new Point(1380, 720);
-            btnDangKy.Name = "btnDangKy";
-            btnDangKy.Size = new Size(140, 50);
-            btnDangKy.TabIndex = 89;
-            btnDangKy.Text = "Đăng ký";
-            btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
+            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDangKy.ForeColor = System.Drawing.Color.White;
+            this.btnDangKy.Location = new System.Drawing.Point(1380, 720);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(140, 50);
+            this.btnDangKy.TabIndex = 89;
+            this.btnDangKy.Text = "Đăng ký";
+            this.btnDangKy.UseVisualStyleBackColor = false;
             // 
             // FDangKyCCCD
             // 
-            AutoScaleDimensions = new SizeF(12F, 28F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(193, 185, 174);
-            ClientSize = new Size(1532, 782);
-            Controls.Add(btnDangKy);
-            Controls.Add(textBox1);
-            Controls.Add(lblDDNhanDang);
-            Controls.Add(dtpNgayCap);
-            Controls.Add(lblNgayCap);
-            Controls.Add(txtCCCD);
-            Controls.Add(lblCCCD);
-            Controls.Add(txtTen);
-            Controls.Add(lblTen);
-            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
-            Name = "FDangKyCCCD";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FDangKyCCCD";
-            Load += FDangKyCCCD_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(185)))), ((int)(((byte)(174)))));
+            this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.btnDangKy);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblDDNhanDang);
+            this.Controls.Add(this.dtpNgayCap);
+            this.Controls.Add(this.lblNgayCap);
+            this.Controls.Add(this.txtCCCD);
+            this.Controls.Add(this.lblCCCD);
+            this.Controls.Add(this.txtTen);
+            this.Controls.Add(this.lblTen);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FDangKyCCCD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FDangKyCCCD";
+            this.Load += new System.EventHandler(this.FDangKyCCCD_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

@@ -13,7 +13,7 @@ namespace QuanLiCongDanThanhPho
         private DateTime ngayCapMa;
         private DateTime hanNop;
         private string soTien;
-
+        public Thue() { }
         public Thue(string maThue, string coQuanQuanLy, DateTime ngayCapMa, DateTime hanNop, string soTien)
         {
             this.maThue = maThue;

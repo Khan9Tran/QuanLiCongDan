@@ -13,7 +13,14 @@ namespace QuanLiCongDanThanhPho
         private string quanHuyen;
         private string tinhThanhPho;
         private string quocGia;
-
+        public DiaChi() 
+        {
+            soNha = "";
+            duong = "";
+            quanHuyen = "";
+            tinhThanhPho = "";
+            quocGia = "";
+        }
         public DiaChi( string soNha, string duong, string quanHuyen, string tinhThanhPho, string quocGia)
         {
             this.soNha = soNha;

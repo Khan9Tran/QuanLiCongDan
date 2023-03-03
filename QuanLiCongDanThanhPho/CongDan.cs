@@ -17,9 +17,22 @@ namespace QuanLiCongDanThanhPho
         private string maHoKhau;
         private string maThue;
         private TamTruTamVang tamTruTamVang;
-        private KetHon ketHon;
+        private HonNhan ketHon;
 
-        public CongDan(string maCccd, string hoTen, string ngheNghiep, string soDienThoai, string tonGiao,KhaiSinh khaiSinh, string maHoKhau, string maThue, TamTruTamVang tamTruTamVang, KetHon ketHon)
+        public CongDan()
+        {
+            this.maCccd = "";
+            this.hoTen = "";
+            this.ngheNghiep = "";
+            this.soDienThoai = "";
+            this.khaiSinh = new KhaiSinh();
+            this.maHoKhau = "";
+            this.maThue = "";
+            this.tamTruTamVang = new TamTruTamVang();
+            this.ketHon = new HonNhan();
+            this.tonGiao = "";
+        }
+        public CongDan(string maCccd, string hoTen, string ngheNghiep, string soDienThoai, string tonGiao, KhaiSinh khaiSinh, string maHoKhau, string maThue, TamTruTamVang tamTruTamVang, HonNhan ketHon)
         {
             this.maCccd = maCccd;
             this.hoTen = hoTen;
@@ -41,7 +54,7 @@ namespace QuanLiCongDanThanhPho
         public string MaThue { get => maThue; set => maThue = value; }
         internal KhaiSinh KhaiSinh { get => khaiSinh; set => khaiSinh = value; }
         internal TamTruTamVang TamTruTamVang { get => tamTruTamVang; set => tamTruTamVang = value; }
-        internal KetHon KetHon { get => ketHon; set => ketHon = value; }
+        internal HonNhan KetHon { get => ketHon; set => ketHon = value; }
         public string TonGiao { get => tonGiao; set => tonGiao = value; }
     }
 }

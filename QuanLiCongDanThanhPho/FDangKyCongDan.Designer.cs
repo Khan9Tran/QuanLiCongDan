@@ -44,7 +44,6 @@
             this.lblCCCDCha = new System.Windows.Forms.Label();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.lblTinhTrangHonNhan = new System.Windows.Forms.Label();
-            this.lblNgayDangKy = new System.Windows.Forms.Label();
             this.lblHoTenVoChong = new System.Windows.Forms.Label();
             this.lblCCCCVoChong = new System.Windows.Forms.Label();
             this.txtCCCD = new System.Windows.Forms.TextBox();
@@ -64,14 +63,12 @@
             this.rdoNam = new System.Windows.Forms.RadioButton();
             this.rdoNu = new System.Windows.Forms.RadioButton();
             this.dtmNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.dtmNgayDangKyThue = new System.Windows.Forms.DateTimePicker();
-            this.dtmNgayDangKyKetHon = new System.Windows.Forms.DateTimePicker();
-            this.lblNgayDangKyKetHon = new System.Windows.Forms.Label();
             this.cboDanToc = new System.Windows.Forms.ComboBox();
             this.cboQuocTich = new System.Windows.Forms.ComboBox();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnTaiAnh = new System.Windows.Forms.Button();
+            this.lblMaHonNhan = new System.Windows.Forms.Label();
+            this.txtMaHonNhan = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +84,7 @@
             // lblNgaySinh
             // 
             this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Location = new System.Drawing.Point(740, 291);
+            this.lblNgaySinh.Location = new System.Drawing.Point(740, 340);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(107, 28);
             this.lblNgaySinh.TabIndex = 1;
@@ -150,7 +147,7 @@
             // lblNgheNghiep
             // 
             this.lblNgheNghiep.AutoSize = true;
-            this.lblNgheNghiep.Location = new System.Drawing.Point(740, 340);
+            this.lblNgheNghiep.Location = new System.Drawing.Point(740, 390);
             this.lblNgheNghiep.Name = "lblNgheNghiep";
             this.lblNgheNghiep.Size = new System.Drawing.Size(134, 28);
             this.lblNgheNghiep.TabIndex = 8;
@@ -204,7 +201,7 @@
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Location = new System.Drawing.Point(965, 236);
+            this.lblGioiTinh.Location = new System.Drawing.Point(769, 90);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(95, 28);
             this.lblGioiTinh.TabIndex = 14;
@@ -218,15 +215,6 @@
             this.lblTinhTrangHonNhan.Size = new System.Drawing.Size(206, 28);
             this.lblTinhTrangHonNhan.TabIndex = 15;
             this.lblTinhTrangHonNhan.Text = "Tình trạng hôn nhân";
-            // 
-            // lblNgayDangKy
-            // 
-            this.lblNgayDangKy.AutoSize = true;
-            this.lblNgayDangKy.Location = new System.Drawing.Point(740, 390);
-            this.lblNgayDangKy.Name = "lblNgayDangKy";
-            this.lblNgayDangKy.Size = new System.Drawing.Size(146, 28);
-            this.lblNgayDangKy.TabIndex = 16;
-            this.lblNgayDangKy.Text = "Ngày Đăng ký";
             // 
             // lblHoTenVoChong
             // 
@@ -273,7 +261,7 @@
             this.txtQueQuan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtQueQuan.Location = new System.Drawing.Point(200, 241);
             this.txtQueQuan.Name = "txtQueQuan";
-            this.txtQueQuan.Size = new System.Drawing.Size(534, 27);
+            this.txtQueQuan.Size = new System.Drawing.Size(852, 27);
             this.txtQueQuan.TabIndex = 21;
             // 
             // txtDiaChi
@@ -283,7 +271,7 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDiaChi.Location = new System.Drawing.Point(200, 291);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(534, 27);
+            this.txtDiaChi.Size = new System.Drawing.Size(852, 27);
             this.txtDiaChi.TabIndex = 22;
             // 
             // txtHoKhau
@@ -381,7 +369,7 @@
             this.txtNgheNghiep.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNgheNghiep.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNgheNghiep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNgheNghiep.Location = new System.Drawing.Point(899, 339);
+            this.txtNgheNghiep.Location = new System.Drawing.Point(899, 391);
             this.txtNgheNghiep.Name = "txtNgheNghiep";
             this.txtNgheNghiep.Size = new System.Drawing.Size(341, 27);
             this.txtNgheNghiep.TabIndex = 34;
@@ -389,7 +377,7 @@
             // rdoNam
             // 
             this.rdoNam.AutoSize = true;
-            this.rdoNam.Location = new System.Drawing.Point(1090, 236);
+            this.rdoNam.Location = new System.Drawing.Point(873, 90);
             this.rdoNam.Name = "rdoNam";
             this.rdoNam.Size = new System.Drawing.Size(78, 32);
             this.rdoNam.TabIndex = 35;
@@ -399,7 +387,7 @@
             // rdoNu
             // 
             this.rdoNu.AutoSize = true;
-            this.rdoNu.Location = new System.Drawing.Point(1188, 236);
+            this.rdoNu.Location = new System.Drawing.Point(974, 90);
             this.rdoNu.Name = "rdoNu";
             this.rdoNu.Size = new System.Drawing.Size(62, 32);
             this.rdoNu.TabIndex = 36;
@@ -410,38 +398,11 @@
             // 
             this.dtmNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtmNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmNgaySinh.Location = new System.Drawing.Point(899, 284);
+            this.dtmNgaySinh.Location = new System.Drawing.Point(899, 333);
             this.dtmNgaySinh.Name = "dtmNgaySinh";
             this.dtmNgaySinh.Size = new System.Drawing.Size(341, 34);
             this.dtmNgaySinh.TabIndex = 37;
             this.dtmNgaySinh.Value = new System.DateTime(2023, 3, 2, 0, 0, 0, 0);
-            // 
-            // dtmNgayDangKyThue
-            // 
-            this.dtmNgayDangKyThue.CustomFormat = "dd/MM/yyyy";
-            this.dtmNgayDangKyThue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmNgayDangKyThue.Location = new System.Drawing.Point(899, 392);
-            this.dtmNgayDangKyThue.Name = "dtmNgayDangKyThue";
-            this.dtmNgayDangKyThue.Size = new System.Drawing.Size(341, 34);
-            this.dtmNgayDangKyThue.TabIndex = 38;
-            // 
-            // dtmNgayDangKyKetHon
-            // 
-            this.dtmNgayDangKyKetHon.CustomFormat = "dd/MM/yyyy";
-            this.dtmNgayDangKyKetHon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmNgayDangKyKetHon.Location = new System.Drawing.Point(899, 536);
-            this.dtmNgayDangKyKetHon.Name = "dtmNgayDangKyKetHon";
-            this.dtmNgayDangKyKetHon.Size = new System.Drawing.Size(341, 34);
-            this.dtmNgayDangKyKetHon.TabIndex = 39;
-            // 
-            // lblNgayDangKyKetHon
-            // 
-            this.lblNgayDangKyKetHon.AutoSize = true;
-            this.lblNgayDangKyKetHon.Location = new System.Drawing.Point(740, 540);
-            this.lblNgayDangKyKetHon.Name = "lblNgayDangKyKetHon";
-            this.lblNgayDangKyKetHon.Size = new System.Drawing.Size(144, 28);
-            this.lblNgayDangKyKetHon.TabIndex = 40;
-            this.lblNgayDangKyKetHon.Text = "Ngày đăng ký";
             // 
             // cboDanToc
             // 
@@ -473,34 +434,42 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(815, 90);
+            this.pictureBox1.Location = new System.Drawing.Point(1080, 80);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 160);
+            this.pictureBox1.Size = new System.Drawing.Size(160, 200);
             this.pictureBox1.TabIndex = 89;
             this.pictureBox1.TabStop = false;
             // 
-            // btnTaiAnh
+            // lblMaHonNhan
             // 
-            this.btnTaiAnh.Location = new System.Drawing.Point(975, 178);
-            this.btnTaiAnh.Name = "btnTaiAnh";
-            this.btnTaiAnh.Size = new System.Drawing.Size(120, 40);
-            this.btnTaiAnh.TabIndex = 90;
-            this.btnTaiAnh.Text = " Tải ảnh ";
-            this.btnTaiAnh.UseVisualStyleBackColor = true;
+            this.lblMaHonNhan.AutoSize = true;
+            this.lblMaHonNhan.Location = new System.Drawing.Point(740, 540);
+            this.lblMaHonNhan.Name = "lblMaHonNhan";
+            this.lblMaHonNhan.Size = new System.Drawing.Size(124, 28);
+            this.lblMaHonNhan.TabIndex = 91;
+            this.lblMaHonNhan.Text = "Mã đăng ký";
+            // 
+            // txtMaHonNhan
+            // 
+            this.txtMaHonNhan.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtMaHonNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaHonNhan.Location = new System.Drawing.Point(899, 541);
+            this.txtMaHonNhan.Name = "txtMaHonNhan";
+            this.txtMaHonNhan.Size = new System.Drawing.Size(341, 27);
+            this.txtMaHonNhan.TabIndex = 92;
             // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
-            this.Controls.Add(this.btnTaiAnh);
+            this.Controls.Add(this.txtMaHonNhan);
+            this.Controls.Add(this.lblMaHonNhan);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.cboQuocTich);
             this.Controls.Add(this.cboDanToc);
-            this.Controls.Add(this.lblNgayDangKyKetHon);
-            this.Controls.Add(this.dtmNgayDangKyKetHon);
-            this.Controls.Add(this.dtmNgayDangKyThue);
             this.Controls.Add(this.dtmNgaySinh);
             this.Controls.Add(this.rdoNu);
             this.Controls.Add(this.rdoNam);
@@ -520,7 +489,6 @@
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.lblCCCCVoChong);
             this.Controls.Add(this.lblHoTenVoChong);
-            this.Controls.Add(this.lblNgayDangKy);
             this.Controls.Add(this.lblTinhTrangHonNhan);
             this.Controls.Add(this.lblGioiTinh);
             this.Controls.Add(this.lblCCCDCha);
@@ -566,7 +534,6 @@
         private Label lblCCCDCha;
         private Label lblGioiTinh;
         private Label lblTinhTrangHonNhan;
-        private Label lblNgayDangKy;
         private Label lblHoTenVoChong;
         private Label lblCCCCVoChong;
         private TextBox txtCCCD;
@@ -586,13 +553,11 @@
         private RadioButton rdoNam;
         private RadioButton rdoNu;
         private DateTimePicker dtmNgaySinh;
-        private DateTimePicker dtmNgayDangKyThue;
-        private DateTimePicker dtmNgayDangKyKetHon;
-        private Label lblNgayDangKyKetHon;
         private ComboBox cboDanToc;
         private ComboBox cboQuocTich;
         private Button btnDangKy;
         private PictureBox pictureBox1;
-        private Button btnTaiAnh;
+        private Label lblMaHonNhan;
+        private TextBox txtMaHonNhan;
     }
 }

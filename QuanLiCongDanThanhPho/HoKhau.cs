@@ -12,7 +12,13 @@ namespace QuanLiCongDanThanhPho
         private DiaChi diaChi;
         private CongDan chuHo;
         private List<QuanHeVoiChuHo> quanHeVoiChuHo;
-
+        public HoKhau()
+        {
+            MaHoKhau = "";
+            DiaChi = new DiaChi();
+            ChuHo = new CongDan() ;
+            QuanHeVoiChuHo = new List<QuanHeVoiChuHo>();
+        }
         public HoKhau(string maHoKhau, DiaChi diaChi, CongDan chuHo, List<QuanHeVoiChuHo> quanHeVoiChuHo)
         {
             this.MaHoKhau = maHoKhau;
