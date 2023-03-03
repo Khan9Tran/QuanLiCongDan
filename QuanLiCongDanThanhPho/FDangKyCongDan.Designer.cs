@@ -75,6 +75,9 @@
             this.cboTonGiao = new System.Windows.Forms.ComboBox();
             this.lblNoiSinh = new System.Windows.Forms.Label();
             this.txtNoiSinh = new System.Windows.Forms.TextBox();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtQHVoiChuHo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -520,11 +523,43 @@
             this.txtNoiSinh.Size = new System.Drawing.Size(534, 27);
             this.txtNoiSinh.TabIndex = 98;
             // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(1059, 645);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(138, 56);
+            this.btnThem.TabIndex = 99;
+            this.btnThem.Text = "Đăng ký";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 697);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 28);
+            this.label2.TabIndex = 100;
+            this.label2.Text = "Quan hệ với chủ hộ";
+            // 
+            // txtQHVoiChuHo
+            // 
+            this.txtQHVoiChuHo.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtQHVoiChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQHVoiChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQHVoiChuHo.Location = new System.Drawing.Point(292, 698);
+            this.txtQHVoiChuHo.Name = "txtQHVoiChuHo";
+            this.txtQHVoiChuHo.Size = new System.Drawing.Size(442, 27);
+            this.txtQHVoiChuHo.TabIndex = 101;
+            // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.txtQHVoiChuHo);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtNoiSinh);
             this.Controls.Add(this.lblNoiSinh);
             this.Controls.Add(this.cboTonGiao);
@@ -632,5 +667,8 @@
         private ComboBox cboTonGiao;
         private Label lblNoiSinh;
         private TextBox txtNoiSinh;
+        private Button btnThem;
+        private Label label2;
+        private TextBox txtQHVoiChuHo;
     }
 }

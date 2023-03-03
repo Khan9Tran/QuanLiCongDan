@@ -14,8 +14,9 @@ namespace QuanLiCongDanThanhPho
         private string soDienThoai;
         private string tonGiao;
         private string maHoKhau;
+        private string qHVoiChuHo;
 
-        public CongDan(string maCccd, string hoTen, string ngheNghiep, string soDienThoai, string tonGiao, string maHoKhau)
+        public CongDan(string maCccd, string hoTen, string ngheNghiep, string soDienThoai, string tonGiao, string maHoKhau, string qHVoiChuHo)
         {
             this.maCccd = maCccd;
             this.hoTen = hoTen;
@@ -23,6 +24,7 @@ namespace QuanLiCongDanThanhPho
             this.soDienThoai = soDienThoai;
             this.tonGiao = tonGiao;
             this.maHoKhau = maHoKhau;
+            this.qHVoiChuHo = qHVoiChuHo;
         }
 
         public string MaCccd { get => maCccd; set => maCccd = value; }
@@ -31,5 +33,6 @@ namespace QuanLiCongDanThanhPho
         public string SoDienThoai { get => soDienThoai; set => soDienThoai = value; }
         public string TonGiao { get => tonGiao; set => tonGiao = value; }
         public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
+        public string QHVoiChuHo { get => qHVoiChuHo; set => qHVoiChuHo = value; }
     }
 }

@@ -21,11 +21,12 @@ namespace QuanLiCongDanThanhPho
             this.cCCDChuHo = cCCDChuHo;
             this.quanHeVoiChuHo = quanHeVoiChuHo;
         }
-        public HoKhau(string maHoKhau)
+        public HoKhau(string maHoKhau, string diaChi,string quanHeVoiChuHo)
         {
             this.maHoKhau = maHoKhau;
             this.diaChi = new DiaChi();
-            this.quanHeVoiChuHo = "";
+            this.diaChi.DinhDang(diaChi);
+            this.quanHeVoiChuHo = quanHeVoiChuHo;
         }
 
         public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }

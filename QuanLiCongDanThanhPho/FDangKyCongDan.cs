@@ -17,6 +17,7 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
         }
+        
         public void ThemCongDan()
         {
             char gioiTinh;
@@ -24,7 +25,7 @@ namespace QuanLiCongDanThanhPho
                 gioiTinh = 'm';
             else
                 gioiTinh = 'f';
-            CongDan cDan = new CongDan(txtCCCD.Text, txtTen.Text,txtNgheNghiep.Text,txtSoDT.Text,cboTonGiao.SelectedText,txtHoKhau.Text);
+            CongDan cDan = new CongDan(txtCCCD.Text, txtTen.Text,txtNgheNghiep.Text,txtSoDT.Text,cboTonGiao.SelectedText,txtHoKhau.Text, txtQHVoiChuHo.Text);
             KhaiSinh khaiSinh = new KhaiSinh(txtCCCD.Text, txtTen.Text,
                                                 gioiTinh, cboQuocTich.SelectedText
                                                 , cboDanToc.SelectedText, dtmNgaySinh.Value, DateTime.Now
@@ -36,6 +37,12 @@ namespace QuanLiCongDanThanhPho
             else
                 honNhan = new HonNhan(txtMaHonNhan.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, txtCCCD.Text, txtTen.Text, "", DateTime.Now);
             Thue thue = new Thue(txtThue.Text);
+            HoKhau hoKhau = new HoKhau(txtHoKhau.Text,txtDiaChi.Text ,txtQHVoiChuHo.Text);
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            ThemCongDan();
         }
     }
 }
