@@ -46,27 +46,29 @@
             // 
             // btnClose
             // 
-            btnClose.BackColor = Color.IndianRed;
+            btnClose.BackColor = Color.Transparent;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClose.ForeColor = Color.Transparent;
+            btnClose.Image = Properties.Resources.cross;
             btnClose.Location = new Point(52, 0);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.TabIndex = 1;
-            btnClose.Text = "X";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
             // btnMinimize
             // 
-            btnMinimize.BackColor = Color.Khaki;
+            btnMinimize.BackColor = Color.Transparent;
             btnMinimize.FlatStyle = FlatStyle.Flat;
             btnMinimize.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMinimize.ForeColor = Color.Transparent;
+            btnMinimize.Image = Properties.Resources.minimize;
             btnMinimize.Location = new Point(0, 0);
             btnMinimize.Name = "btnMinimize";
             btnMinimize.Size = new Size(32, 32);
             btnMinimize.TabIndex = 0;
-            btnMinimize.Text = "-";
             btnMinimize.UseVisualStyleBackColor = false;
             btnMinimize.Click += btnMinimize_Click;
             // 

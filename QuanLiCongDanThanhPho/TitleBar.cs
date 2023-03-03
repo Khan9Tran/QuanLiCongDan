@@ -24,8 +24,11 @@ namespace QuanLiCongDanThanhPho
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.ParentForm.Close();
+            if(ParentForm.ToString()=="FTrangChu")
+                Application.Exit();
+            else
+                this.ParentForm.Close();
         }
-        
+
     }
 }

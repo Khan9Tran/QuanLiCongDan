@@ -326,9 +326,9 @@
             // 
             // titleBar1
             // 
-            titleBar1.Location = new Point(1612, 3);
+            titleBar1.Location = new Point(1608, 6);
             titleBar1.Name = "titleBar1";
-            titleBar1.Size = new Size(84, 35);
+            titleBar1.Size = new Size(91, 41);
             titleBar1.TabIndex = 3;
             // 
             // FTrangChu
