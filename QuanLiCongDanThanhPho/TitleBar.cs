@@ -15,24 +15,36 @@ namespace QuanLiCongDanThanhPho
         public TitleBar()
         {
             InitializeComponent();
+            DinhDang();
         }
+        private void DinhDang()
+        {
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
 
+            btnClose.BackColor = Color.Transparent;
+            btnMinimize.BackColor = Color.Transparent;
+            btnMinimize.FlatAppearance.MouseOverBackColor = Color.DarkGray;
+            btnClose.FlatAppearance.MouseOverBackColor = Color.DarkGray;
+            btnMinimize.FlatAppearance.MouseDownBackColor= Color.Transparent;
+            btnClose.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+
+            btnClose.Image = Image.FromFile(@".\Icons\White\24\Cross.png");
+            btnMinimize.Image = Image.FromFile(@".\Icons\White\24\minus.png");
+        }
         private void btnMinimize_Click(object sender, EventArgs e)
         {
-            this.ParentForm.WindowState = FormWindowState.Minimized;
+            ParentForm.WindowState = FormWindowState.Minimized;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (this.ParentForm.ToString() == "FTrangChu")
+            if (ParentForm.ToString() == "FTrangChu")
                 Application.Exit();
             else
-                this.ParentForm.Close();
-        }
-
-        private void pnlTitleBar_Paint(object sender, PaintEventArgs e)
-        {
-
+                ParentForm.Close();
         }
     }
 }

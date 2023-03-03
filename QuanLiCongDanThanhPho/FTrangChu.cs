@@ -22,12 +22,10 @@ namespace QuanLiCongDanThanhPho
         {
             Application.Exit();
         }
-
         private void lblExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void lblHideApp_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
@@ -94,6 +92,11 @@ namespace QuanLiCongDanThanhPho
         private void cmnusDangKyItemCongDan_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyCongDan());
+        }
+
+        private void FTrangChu_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }

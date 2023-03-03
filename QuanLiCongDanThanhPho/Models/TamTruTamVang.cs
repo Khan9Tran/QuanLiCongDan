@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLiCongDanThanhPho
+namespace QuanLiCongDanThanhPho.Models
 {
     internal class TamTruTamVang
     {
@@ -17,13 +17,13 @@ namespace QuanLiCongDanThanhPho
         public TamTruTamVang() { }
         public TamTruTamVang(string maSo, string trangThai, DateTime ngayBatDau, DateTime ngayKetThuc, string diaChi, string lyDo)
         {
-            this.MaSo = maSo;
-            this.TrangThai = trangThai;
-            this.NgayBatDau = ngayBatDau;
-            this.NgayKetThuc = ngayKetThuc;
-            this.DiaChi = new DiaChi();
+            MaSo = maSo;
+            TrangThai = trangThai;
+            NgayBatDau = ngayBatDau;
+            NgayKetThuc = ngayKetThuc;
+            DiaChi = new DiaChi();
             this.diaChi.DinhDang(diaChi);
-            this.LyDo = lyDo;
+            LyDo = lyDo;
         }
 
         public string MaSo { get => maSo; set => maSo = value; }

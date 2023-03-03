@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLiCongDanThanhPho
+namespace QuanLiCongDanThanhPho.Models
 {
     internal class HonNhan
     {
@@ -15,7 +15,7 @@ namespace QuanLiCongDanThanhPho
         private string tenVo;
         private DiaChi noiDangKy;
         private DateTime ngayDangKy;
-        
+
         public HonNhan() { }
 
         public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, string noiDangKy, DateTime ngayDangKy)

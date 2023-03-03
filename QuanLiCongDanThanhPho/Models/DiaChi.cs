@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLiCongDanThanhPho
+namespace QuanLiCongDanThanhPho.Models
 {
     internal class DiaChi
     {
@@ -13,7 +13,7 @@ namespace QuanLiCongDanThanhPho
         private string quanHuyen;
         private string tinhThanhPho;
         private string quocGia;
-        public DiaChi() 
+        public DiaChi()
         {
             soNha = "";
             duong = "";
@@ -21,7 +21,7 @@ namespace QuanLiCongDanThanhPho
             tinhThanhPho = "";
             quocGia = "";
         }
-        public DiaChi( string soNha, string duong, string quanHuyen, string tinhThanhPho, string quocGia)
+        public DiaChi(string soNha, string duong, string quanHuyen, string tinhThanhPho, string quocGia)
         {
             this.soNha = soNha;
             this.duong = duong;
