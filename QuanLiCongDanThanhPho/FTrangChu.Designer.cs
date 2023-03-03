@@ -58,7 +58,6 @@
             hônNhânToolStripMenuItem = new ToolStripMenuItem();
             cCCDToolStripMenuItem = new ToolStripMenuItem();
             khaiSinhToolStripMenuItem = new ToolStripMenuItem();
-            titleBar1 = new TitleBar();
             pnlKhungTren.SuspendLayout();
             pnlChucNang.SuspendLayout();
             cmnusDangKy.SuspendLayout();
@@ -70,7 +69,6 @@
             // 
             pnlKhungTren.BackColor = Color.FromArgb(50, 49, 69);
             pnlKhungTren.BackgroundImageLayout = ImageLayout.Center;
-            pnlKhungTren.Controls.Add(titleBar1);
             pnlKhungTren.Controls.Add(txtTimKiem);
             pnlKhungTren.Controls.Add(lblHideApp);
             pnlKhungTren.Controls.Add(lblExit);
@@ -324,13 +322,6 @@
             khaiSinhToolStripMenuItem.Size = new Size(142, 24);
             khaiSinhToolStripMenuItem.Text = "Khai sinh";
             // 
-            // titleBar1
-            // 
-            titleBar1.Location = new Point(1608, 6);
-            titleBar1.Name = "titleBar1";
-            titleBar1.Size = new Size(91, 41);
-            titleBar1.TabIndex = 3;
-            // 
             // FTrangChu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -385,7 +376,5 @@
         private ToolStripMenuItem hônNhânToolStripMenuItem;
         private ToolStripMenuItem cCCDToolStripMenuItem;
         private ToolStripMenuItem khaiSinhToolStripMenuItem;
-        private TitleBar titleBar1;
-        private System.CodeDom.CodeTypeReference buttnon1;
     }
 }
