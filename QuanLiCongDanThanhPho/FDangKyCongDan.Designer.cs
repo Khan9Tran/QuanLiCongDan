@@ -75,7 +75,6 @@
             this.cboTonGiao = new System.Windows.Forms.ComboBox();
             this.lblNoiSinh = new System.Windows.Forms.Label();
             this.txtNoiSinh = new System.Windows.Forms.TextBox();
-            this.btnThem = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtQHVoiChuHo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -440,6 +439,7 @@
             this.btnDangKy.TabIndex = 88;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // pictureBox1
             // 
@@ -523,16 +523,6 @@
             this.txtNoiSinh.Size = new System.Drawing.Size(534, 27);
             this.txtNoiSinh.TabIndex = 98;
             // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(1059, 645);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(138, 56);
-            this.btnThem.TabIndex = 99;
-            this.btnThem.Text = "Đăng ký";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -559,7 +549,6 @@
             this.ClientSize = new System.Drawing.Size(1532, 782);
             this.Controls.Add(this.txtQHVoiChuHo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtNoiSinh);
             this.Controls.Add(this.lblNoiSinh);
             this.Controls.Add(this.cboTonGiao);
@@ -667,7 +656,6 @@
         private ComboBox cboTonGiao;
         private Label lblNoiSinh;
         private TextBox txtNoiSinh;
-        private Button btnThem;
         private Label label2;
         private TextBox txtQHVoiChuHo;
     }

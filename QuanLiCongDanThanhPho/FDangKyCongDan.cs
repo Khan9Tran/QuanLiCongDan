@@ -12,10 +12,11 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyCongDan : Form
     {
-        CongDanDAO cdDao = new CongDanDAO();
+        CongDanDAO cdDAO;
         public FDangKyCongDan()
         {
             InitializeComponent();
+            cdDAO = new CongDanDAO();
         }
         
         public void ThemCongDan()
@@ -37,7 +38,8 @@ namespace QuanLiCongDanThanhPho
             else
                 honNhan = new HonNhan(txtMaHonNhan.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, txtCCCD.Text, txtTen.Text, "", DateTime.Now);
             Thue thue = new Thue(txtThue.Text);
-            HoKhau hoKhau = new HoKhau(txtHoKhau.Text,txtDiaChi.Text ,txtQHVoiChuHo.Text);
+            HoKhau hoKhau = new HoKhau(txtHoKhau.Text,txtDiaChi.Text);
+            cdDAO.ThemCongDan(cDan,khaiSinh,hoKhau,honNhan,thue);
         }
 
         private void btnThem_Click(object sender, EventArgs e)

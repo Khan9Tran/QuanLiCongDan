@@ -11,27 +11,23 @@ namespace QuanLiCongDanThanhPho
         private string maHoKhau;
         private DiaChi diaChi;
         private string cCCDChuHo;
-        private string quanHeVoiChuHo;
 
-        public HoKhau(string maHoKhau, string diaChi, string cCCDChuHo, string quanHeVoiChuHo)
+        public HoKhau(string maHoKhau, string diaChi, string cCCDChuHo)
         {
             this.maHoKhau = maHoKhau;
             this.diaChi = new DiaChi();
             this.diaChi.DinhDang(diaChi);
             this.cCCDChuHo = cCCDChuHo;
-            this.quanHeVoiChuHo = quanHeVoiChuHo;
         }
-        public HoKhau(string maHoKhau, string diaChi,string quanHeVoiChuHo)
+        public HoKhau(string maHoKhau, string diaChi)
         {
             this.maHoKhau = maHoKhau;
             this.diaChi = new DiaChi();
             this.diaChi.DinhDang(diaChi);
-            this.quanHeVoiChuHo = quanHeVoiChuHo;
         }
 
         public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
         public string CCCDChuHo { get => cCCDChuHo; set => cCCDChuHo = value; }
-        public string QuanHeVoiChuHo { get => quanHeVoiChuHo; set => quanHeVoiChuHo = value; }
         internal DiaChi DiaChi { get => diaChi; set => diaChi = value; }
     }
 }
