@@ -36,6 +36,15 @@ namespace QuanLiCongDanThanhPho
         public string TinhThanhPho { get => tinhThanhPho; set => tinhThanhPho = value; }
         public string QuocGia { get => quocGia; set => quocGia = value; }
 
+        public void DinhDang(string str)
+        {
+            string[] s = str.Split(',');
+            SoNha = s[0];
+            Duong = s[1];
+            QuanHuyen = s[2];
+            TinhThanhPho = s[3];
+            QuocGia = s[4];
+        }
         public string toString()
         {
             string diaChi = $"{SoNha}, {Duong}, {QuanHuyen}, {TinhThanhPho}, {QuocGia}";

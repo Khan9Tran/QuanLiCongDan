@@ -19,11 +19,23 @@ namespace QuanLiCongDanThanhPho
         }
         public void ThemCongDan()
         {
-            KhaiSinh kS = new KhaiSinh();
-            CongDan cD = new CongDan();
-            TamTruTamVang tTTV = new TamTruTamVang();
-            HonNhan hN = new HonNhan();
-
+            char gioiTinh;
+            if (rdoNam.Checked)
+                gioiTinh = 'm';
+            else
+                gioiTinh = 'f';
+            CongDan cDan = new CongDan(txtCCCD.Text, txtTen.Text,txtNgheNghiep.Text,txtSoDT.Text,cboTonGiao.SelectedText,txtHoKhau.Text);
+            KhaiSinh khaiSinh = new KhaiSinh(txtCCCD.Text, txtTen.Text,
+                                                gioiTinh, cboQuocTich.SelectedText
+                                                , cboDanToc.SelectedText, dtmNgaySinh.Value, DateTime.Now
+                                                , txtNoiSinh.Text, txtQueQuan.Text, txtCCCDCha.Text
+                                               , txtTenCha.Text, txtCCCDMe.Text, txtTenMe.Text);
+            HonNhan honNhan;
+            if (gioiTinh == 'm')
+                honNhan = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, "", DateTime.Now);
+            else
+                honNhan = new HonNhan(txtMaHonNhan.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, txtCCCD.Text, txtTen.Text, "", DateTime.Now);
+            Thue thue = new Thue(txtThue.Text);
         }
     }
 }

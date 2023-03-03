@@ -69,6 +69,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMaHonNhan = new System.Windows.Forms.Label();
             this.txtMaHonNhan = new System.Windows.Forms.TextBox();
+            this.lblSDT = new System.Windows.Forms.Label();
+            this.txtSoDT = new System.Windows.Forms.TextBox();
+            this.lblTonGiao = new System.Windows.Forms.Label();
+            this.cboTonGiao = new System.Windows.Forms.ComboBox();
+            this.lblNoiSinh = new System.Windows.Forms.Label();
+            this.txtNoiSinh = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,7 +171,7 @@
             // lblMaHoKhau
             // 
             this.lblMaHoKhau.AutoSize = true;
-            this.lblMaHoKhau.Location = new System.Drawing.Point(44, 340);
+            this.lblMaHoKhau.Location = new System.Drawing.Point(44, 645);
             this.lblMaHoKhau.Name = "lblMaHoKhau";
             this.lblMaHoKhau.Size = new System.Drawing.Size(124, 28);
             this.lblMaHoKhau.TabIndex = 10;
@@ -279,7 +285,7 @@
             this.txtHoKhau.BackColor = System.Drawing.Color.Gainsboro;
             this.txtHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtHoKhau.Location = new System.Drawing.Point(200, 340);
+            this.txtHoKhau.Location = new System.Drawing.Point(200, 646);
             this.txtHoKhau.Name = "txtHoKhau";
             this.txtHoKhau.Size = new System.Drawing.Size(534, 27);
             this.txtHoKhau.TabIndex = 23;
@@ -459,11 +465,72 @@
             this.txtMaHonNhan.Size = new System.Drawing.Size(341, 27);
             this.txtMaHonNhan.TabIndex = 92;
             // 
+            // lblSDT
+            // 
+            this.lblSDT.AutoSize = true;
+            this.lblSDT.Location = new System.Drawing.Point(740, 190);
+            this.lblSDT.Name = "lblSDT";
+            this.lblSDT.Size = new System.Drawing.Size(50, 28);
+            this.lblSDT.TabIndex = 93;
+            this.lblSDT.Text = "SĐT";
+            // 
+            // txtSoDT
+            // 
+            this.txtSoDT.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtSoDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSoDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSoDT.Location = new System.Drawing.Point(840, 190);
+            this.txtSoDT.Name = "txtSoDT";
+            this.txtSoDT.Size = new System.Drawing.Size(212, 27);
+            this.txtSoDT.TabIndex = 94;
+            // 
+            // lblTonGiao
+            // 
+            this.lblTonGiao.AutoSize = true;
+            this.lblTonGiao.Location = new System.Drawing.Point(740, 140);
+            this.lblTonGiao.Name = "lblTonGiao";
+            this.lblTonGiao.Size = new System.Drawing.Size(93, 28);
+            this.lblTonGiao.TabIndex = 95;
+            this.lblTonGiao.Text = "Tôn giáo";
+            // 
+            // cboTonGiao
+            // 
+            this.cboTonGiao.FormattingEnabled = true;
+            this.cboTonGiao.Location = new System.Drawing.Point(839, 137);
+            this.cboTonGiao.Name = "cboTonGiao";
+            this.cboTonGiao.Size = new System.Drawing.Size(213, 36);
+            this.cboTonGiao.TabIndex = 96;
+            // 
+            // lblNoiSinh
+            // 
+            this.lblNoiSinh.AutoSize = true;
+            this.lblNoiSinh.Location = new System.Drawing.Point(43, 340);
+            this.lblNoiSinh.Name = "lblNoiSinh";
+            this.lblNoiSinh.Size = new System.Drawing.Size(92, 28);
+            this.lblNoiSinh.TabIndex = 97;
+            this.lblNoiSinh.Text = "Nơi sinh";
+            // 
+            // txtNoiSinh
+            // 
+            this.txtNoiSinh.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNoiSinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNoiSinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNoiSinh.Location = new System.Drawing.Point(200, 340);
+            this.txtNoiSinh.Name = "txtNoiSinh";
+            this.txtNoiSinh.Size = new System.Drawing.Size(534, 27);
+            this.txtNoiSinh.TabIndex = 98;
+            // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.txtNoiSinh);
+            this.Controls.Add(this.lblNoiSinh);
+            this.Controls.Add(this.cboTonGiao);
+            this.Controls.Add(this.lblTonGiao);
+            this.Controls.Add(this.txtSoDT);
+            this.Controls.Add(this.lblSDT);
             this.Controls.Add(this.txtMaHonNhan);
             this.Controls.Add(this.lblMaHonNhan);
             this.Controls.Add(this.pictureBox1);
@@ -559,5 +626,11 @@
         private PictureBox pictureBox1;
         private Label lblMaHonNhan;
         private TextBox txtMaHonNhan;
+        private Label lblSDT;
+        private TextBox txtSoDT;
+        private Label lblTonGiao;
+        private ComboBox cboTonGiao;
+        private Label lblNoiSinh;
+        private TextBox txtNoiSinh;
     }
 }
