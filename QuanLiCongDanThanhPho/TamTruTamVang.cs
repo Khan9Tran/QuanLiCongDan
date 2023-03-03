@@ -15,13 +15,14 @@ namespace QuanLiCongDanThanhPho
         private DiaChi diaChi;
         private string lyDo;
         public TamTruTamVang() { }
-        public TamTruTamVang(string maSo, string trangThai, DateTime ngayBatDau, DateTime ngayKetThuc, DiaChi diaChi, string lyDo)
+        public TamTruTamVang(string maSo, string trangThai, DateTime ngayBatDau, DateTime ngayKetThuc, string diaChi, string lyDo)
         {
             this.MaSo = maSo;
             this.TrangThai = trangThai;
             this.NgayBatDau = ngayBatDau;
             this.NgayKetThuc = ngayKetThuc;
-            this.DiaChi = diaChi;
+            this.DiaChi = new DiaChi();
+            this.diaChi.DinhDang(diaChi);
             this.LyDo = lyDo;
         }
 

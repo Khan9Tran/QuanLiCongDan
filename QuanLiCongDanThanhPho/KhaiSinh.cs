@@ -8,48 +8,51 @@ namespace QuanLiCongDanThanhPho
 {
     internal class KhaiSinh
     {
-        private string gioiTinh;
+        private string maKhaiSinh;
+        private string hoTen;
+        private char gioiTinh;
         private string quocTich;
         private string danToc;
         private DateTime ngaySinh;
         private DateTime ngayDangKy;
         private DiaChi noiSinh;
         private DiaChi queQuan;
-        private CongDan cha;
-        private CongDan me;
-        public KhaiSinh () 
+        private string cCCDCha;
+        private string tenCha;
+        private string cCCDMe;
+        private string tenMe;
+
+        public KhaiSinh(string maKhaiSinh, string hoTen, char gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, string noiSinh, string queQuan, string cCCDCha, string tenCha, string cCCDMe, string tenMe)
         {
-            gioiTinh = "";
-            quocTich = "";
-            danToc = "";
-            ngaySinh = DateTime.Now;
-            ngayDangKy = DateTime.Now;
-            noiSinh = new DiaChi();
-            queQuan = new DiaChi();
-            cha = new CongDan();
-            me = new CongDan();
-        }
-        public KhaiSinh(string gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, DiaChi noiSinh, DiaChi queQuan, CongDan cha, CongDan me)
-        {
+            this.maKhaiSinh = maKhaiSinh;
+            this.hoTen = hoTen;
             this.gioiTinh = gioiTinh;
             this.quocTich = quocTich;
             this.danToc = danToc;
             this.ngaySinh = ngaySinh;
             this.ngayDangKy = ngayDangKy;
-            this.noiSinh = noiSinh;
-            this.queQuan = queQuan;
-            this.cha = cha;
-            this.me = me;
+            this.noiSinh = new DiaChi();
+            this.noiSinh.DinhDang(noiSinh);
+            this.queQuan = new DiaChi();
+            this.queQuan.DinhDang(queQuan);
+            this.cCCDCha = cCCDCha;
+            this.tenCha = tenCha;
+            this.cCCDMe = cCCDMe;
+            this.tenMe = tenMe;
         }
 
-        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public string MaKhaiSinh { get => maKhaiSinh; set => maKhaiSinh = value; }
+        public string HoTen { get => hoTen; set => hoTen = value; }
+        public char GioiTinh { get => gioiTinh; set => gioiTinh = value; }
         public string QuocTich { get => quocTich; set => quocTich = value; }
         public string DanToc { get => danToc; set => danToc = value; }
         public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
         public DateTime NgayDangKy { get => ngayDangKy; set => ngayDangKy = value; }
-        public DiaChi QueQuan { get => queQuan; set => queQuan = value; }
+        public string CCCDCha { get => cCCDCha; set => cCCDCha = value; }
+        public string TenCha { get => tenCha; set => tenCha = value; }
+        public string CCCDMe { get => cCCDMe; set => cCCDMe = value; }
+        public string TenMe { get => tenMe; set => tenMe = value; }
         internal DiaChi NoiSinh { get => noiSinh; set => noiSinh = value; }
-        internal CongDan Cha { get => cha; set => cha = value; }
-        internal CongDan Me { get => me; set => me = value; }
+        internal DiaChi QueQuan { get => queQuan; set => queQuan = value; }
     }
 }

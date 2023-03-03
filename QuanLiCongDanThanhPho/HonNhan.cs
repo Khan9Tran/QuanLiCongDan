@@ -8,32 +8,34 @@ namespace QuanLiCongDanThanhPho
 {
     internal class HonNhan
     {
-        private CongDan vo;
-        private CongDan chong;
+        private string maSo;
+        private string cCCDChong;
+        private string tenChong;
+        private string cCCDVo;
+        private string tenVo;
         private DiaChi noiDangKy;
         private DateTime ngayDangKy;
-        private string maSo;
+        
+        public HonNhan() { }
 
-        public HonNhan() {
-            vo = new CongDan();
-            chong = new CongDan();
-            noiDangKy = new DiaChi();
-            ngayDangKy = DateTime.Now;
-            maSo = "";
-        }
-        public HonNhan(CongDan vo, CongDan chong, DiaChi noiDangKy, DateTime ngayDangKy, string maSo)
+        public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, string noiDangKy, DateTime ngayDangKy)
         {
-            this.vo = vo;
-            this.chong = chong;
-            this.noiDangKy = noiDangKy;
-            this.ngayDangKy = ngayDangKy;
             this.maSo = maSo;
+            this.cCCDChong = cCCDChong;
+            this.tenChong = tenChong;
+            this.cCCDVo = cCCDVo;
+            this.tenVo = tenVo;
+            this.noiDangKy = new DiaChi();
+            this.noiDangKy.DinhDang(noiDangKy);
+            this.ngayDangKy = ngayDangKy;
         }
 
-        public DateTime NgayDangKy { get => ngayDangKy; set => ngayDangKy = value; }
         public string MaSo { get => maSo; set => maSo = value; }
-        internal CongDan Vo { get => vo; set => vo = value; }
-        internal CongDan Chong { get => chong; set => chong = value; }
+        public string CCCDChong { get => cCCDChong; set => cCCDChong = value; }
+        public string TenChong { get => tenChong; set => tenChong = value; }
+        public string CCCDVo { get => cCCDVo; set => cCCDVo = value; }
+        public string TenVo { get => tenVo; set => tenVo = value; }
+        public DateTime NgayDangKy { get => ngayDangKy; set => ngayDangKy = value; }
         internal DiaChi NoiDangKy { get => noiDangKy; set => noiDangKy = value; }
     }
 }

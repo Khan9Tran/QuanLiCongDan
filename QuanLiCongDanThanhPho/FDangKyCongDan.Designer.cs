@@ -69,6 +69,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMaHonNhan = new System.Windows.Forms.Label();
             this.txtMaHonNhan = new System.Windows.Forms.TextBox();
+            this.lblSDT = new System.Windows.Forms.Label();
+            this.txtSoDT = new System.Windows.Forms.TextBox();
+            this.lblTonGiao = new System.Windows.Forms.Label();
+            this.cboTonGiao = new System.Windows.Forms.ComboBox();
+            this.lblNoiSinh = new System.Windows.Forms.Label();
+            this.txtNoiSinh = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtQHVoiChuHo = new System.Windows.Forms.TextBox();
+            this.lblDKKhaiSInh = new System.Windows.Forms.Label();
+            this.dtmDKKhaiSinh = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,7 +175,7 @@
             // lblMaHoKhau
             // 
             this.lblMaHoKhau.AutoSize = true;
-            this.lblMaHoKhau.Location = new System.Drawing.Point(44, 340);
+            this.lblMaHoKhau.Location = new System.Drawing.Point(44, 645);
             this.lblMaHoKhau.Name = "lblMaHoKhau";
             this.lblMaHoKhau.Size = new System.Drawing.Size(124, 28);
             this.lblMaHoKhau.TabIndex = 10;
@@ -279,7 +289,7 @@
             this.txtHoKhau.BackColor = System.Drawing.Color.Gainsboro;
             this.txtHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtHoKhau.Location = new System.Drawing.Point(200, 340);
+            this.txtHoKhau.Location = new System.Drawing.Point(200, 646);
             this.txtHoKhau.Name = "txtHoKhau";
             this.txtHoKhau.Size = new System.Drawing.Size(534, 27);
             this.txtHoKhau.TabIndex = 23;
@@ -407,6 +417,9 @@
             // cboDanToc
             // 
             this.cboDanToc.FormattingEnabled = true;
+            this.cboDanToc.Items.AddRange(new object[] {
+            "Kinh",
+            "Khmer"});
             this.cboDanToc.Location = new System.Drawing.Point(546, 182);
             this.cboDanToc.Name = "cboDanToc";
             this.cboDanToc.Size = new System.Drawing.Size(188, 36);
@@ -415,6 +428,9 @@
             // cboQuocTich
             // 
             this.cboQuocTich.FormattingEnabled = true;
+            this.cboQuocTich.Items.AddRange(new object[] {
+            "VietNam",
+            "My"});
             this.cboQuocTich.Location = new System.Drawing.Point(200, 182);
             this.cboQuocTich.Name = "cboQuocTich";
             this.cboQuocTich.Size = new System.Drawing.Size(188, 36);
@@ -431,6 +447,7 @@
             this.btnDangKy.TabIndex = 88;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // pictureBox1
             // 
@@ -459,11 +476,117 @@
             this.txtMaHonNhan.Size = new System.Drawing.Size(341, 27);
             this.txtMaHonNhan.TabIndex = 92;
             // 
+            // lblSDT
+            // 
+            this.lblSDT.AutoSize = true;
+            this.lblSDT.Location = new System.Drawing.Point(740, 190);
+            this.lblSDT.Name = "lblSDT";
+            this.lblSDT.Size = new System.Drawing.Size(50, 28);
+            this.lblSDT.TabIndex = 93;
+            this.lblSDT.Text = "SĐT";
+            // 
+            // txtSoDT
+            // 
+            this.txtSoDT.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtSoDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSoDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSoDT.Location = new System.Drawing.Point(840, 190);
+            this.txtSoDT.Name = "txtSoDT";
+            this.txtSoDT.Size = new System.Drawing.Size(212, 27);
+            this.txtSoDT.TabIndex = 94;
+            // 
+            // lblTonGiao
+            // 
+            this.lblTonGiao.AutoSize = true;
+            this.lblTonGiao.Location = new System.Drawing.Point(740, 140);
+            this.lblTonGiao.Name = "lblTonGiao";
+            this.lblTonGiao.Size = new System.Drawing.Size(93, 28);
+            this.lblTonGiao.TabIndex = 95;
+            this.lblTonGiao.Text = "Tôn giáo";
+            // 
+            // cboTonGiao
+            // 
+            this.cboTonGiao.FormattingEnabled = true;
+            this.cboTonGiao.Items.AddRange(new object[] {
+            "Khong",
+            "Phat"});
+            this.cboTonGiao.Location = new System.Drawing.Point(839, 137);
+            this.cboTonGiao.Name = "cboTonGiao";
+            this.cboTonGiao.Size = new System.Drawing.Size(213, 36);
+            this.cboTonGiao.TabIndex = 96;
+            // 
+            // lblNoiSinh
+            // 
+            this.lblNoiSinh.AutoSize = true;
+            this.lblNoiSinh.Location = new System.Drawing.Point(43, 340);
+            this.lblNoiSinh.Name = "lblNoiSinh";
+            this.lblNoiSinh.Size = new System.Drawing.Size(92, 28);
+            this.lblNoiSinh.TabIndex = 97;
+            this.lblNoiSinh.Text = "Nơi sinh";
+            // 
+            // txtNoiSinh
+            // 
+            this.txtNoiSinh.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNoiSinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNoiSinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNoiSinh.Location = new System.Drawing.Point(200, 340);
+            this.txtNoiSinh.Name = "txtNoiSinh";
+            this.txtNoiSinh.Size = new System.Drawing.Size(534, 27);
+            this.txtNoiSinh.TabIndex = 98;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 697);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 28);
+            this.label2.TabIndex = 100;
+            this.label2.Text = "Quan hệ với chủ hộ";
+            // 
+            // txtQHVoiChuHo
+            // 
+            this.txtQHVoiChuHo.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtQHVoiChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQHVoiChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQHVoiChuHo.Location = new System.Drawing.Point(292, 698);
+            this.txtQHVoiChuHo.Name = "txtQHVoiChuHo";
+            this.txtQHVoiChuHo.Size = new System.Drawing.Size(442, 27);
+            this.txtQHVoiChuHo.TabIndex = 101;
+            // 
+            // lblDKKhaiSInh
+            // 
+            this.lblDKKhaiSInh.AutoSize = true;
+            this.lblDKKhaiSInh.Location = new System.Drawing.Point(740, 646);
+            this.lblDKKhaiSInh.Name = "lblDKKhaiSInh";
+            this.lblDKKhaiSInh.Size = new System.Drawing.Size(235, 28);
+            this.lblDKKhaiSInh.TabIndex = 102;
+            this.lblDKKhaiSInh.Text = "Ngày đăng ký khai sinh";
+            // 
+            // dtmDKKhaiSinh
+            // 
+            this.dtmDKKhaiSinh.CustomFormat = "dd/MM/yyyy";
+            this.dtmDKKhaiSinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmDKKhaiSinh.Location = new System.Drawing.Point(1003, 641);
+            this.dtmDKKhaiSinh.Name = "dtmDKKhaiSinh";
+            this.dtmDKKhaiSinh.Size = new System.Drawing.Size(237, 34);
+            this.dtmDKKhaiSinh.TabIndex = 103;
+            this.dtmDKKhaiSinh.Value = new System.DateTime(2023, 3, 2, 0, 0, 0, 0);
+            // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.dtmDKKhaiSinh);
+            this.Controls.Add(this.lblDKKhaiSInh);
+            this.Controls.Add(this.txtQHVoiChuHo);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtNoiSinh);
+            this.Controls.Add(this.lblNoiSinh);
+            this.Controls.Add(this.cboTonGiao);
+            this.Controls.Add(this.lblTonGiao);
+            this.Controls.Add(this.txtSoDT);
+            this.Controls.Add(this.lblSDT);
             this.Controls.Add(this.txtMaHonNhan);
             this.Controls.Add(this.lblMaHonNhan);
             this.Controls.Add(this.pictureBox1);
@@ -559,5 +682,15 @@
         private PictureBox pictureBox1;
         private Label lblMaHonNhan;
         private TextBox txtMaHonNhan;
+        private Label lblSDT;
+        private TextBox txtSoDT;
+        private Label lblTonGiao;
+        private ComboBox cboTonGiao;
+        private Label lblNoiSinh;
+        private TextBox txtNoiSinh;
+        private Label label2;
+        private TextBox txtQHVoiChuHo;
+        private Label lblDKKhaiSInh;
+        private DateTimePicker dtmDKKhaiSinh;
     }
 }

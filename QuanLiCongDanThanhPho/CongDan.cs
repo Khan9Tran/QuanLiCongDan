@@ -13,48 +13,26 @@ namespace QuanLiCongDanThanhPho
         private string ngheNghiep;
         private string soDienThoai;
         private string tonGiao;
-        private KhaiSinh khaiSinh;
         private string maHoKhau;
-        private string maThue;
-        private TamTruTamVang tamTruTamVang;
-        private HonNhan ketHon;
+        private string qHVoiChuHo;
 
-        public CongDan()
-        {
-            this.maCccd = "";
-            this.hoTen = "";
-            this.ngheNghiep = "";
-            this.soDienThoai = "";
-            this.khaiSinh = new KhaiSinh();
-            this.maHoKhau = "";
-            this.maThue = "";
-            this.tamTruTamVang = new TamTruTamVang();
-            this.ketHon = new HonNhan();
-            this.tonGiao = "";
-        }
-        public CongDan(string maCccd, string hoTen, string ngheNghiep, string soDienThoai, string tonGiao, KhaiSinh khaiSinh, string maHoKhau, string maThue, TamTruTamVang tamTruTamVang, HonNhan ketHon)
+        public CongDan(string maCccd, string hoTen, string ngheNghiep, string soDienThoai, string tonGiao, string maHoKhau, string qHVoiChuHo)
         {
             this.maCccd = maCccd;
             this.hoTen = hoTen;
             this.ngheNghiep = ngheNghiep;
             this.soDienThoai = soDienThoai;
-            this.khaiSinh = khaiSinh;
-            this.maHoKhau = maHoKhau;
-            this.maThue = maThue;
-            this.tamTruTamVang = tamTruTamVang;
-            this.ketHon = ketHon;
             this.tonGiao = tonGiao;
+            this.maHoKhau = maHoKhau;
+            this.qHVoiChuHo = qHVoiChuHo;
         }
 
         public string MaCccd { get => maCccd; set => maCccd = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
         public string NgheNghiep { get => ngheNghiep; set => ngheNghiep = value; }
         public string SoDienThoai { get => soDienThoai; set => soDienThoai = value; }
-        public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
-        public string MaThue { get => maThue; set => maThue = value; }
-        internal KhaiSinh KhaiSinh { get => khaiSinh; set => khaiSinh = value; }
-        internal TamTruTamVang TamTruTamVang { get => tamTruTamVang; set => tamTruTamVang = value; }
-        internal HonNhan KetHon { get => ketHon; set => ketHon = value; }
         public string TonGiao { get => tonGiao; set => tonGiao = value; }
+        public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
+        public string QHVoiChuHo { get => qHVoiChuHo; set => qHVoiChuHo = value; }
     }
 }

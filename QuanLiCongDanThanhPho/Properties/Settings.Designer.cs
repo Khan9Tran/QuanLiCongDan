@@ -25,8 +25,8 @@ namespace QuanLiCongDanThanhPho.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=QuanLiThanhPho;Integrated Secu" +
-            "rity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=QUANLI;Integrated Security=Tru" +
+            "e")]
         public string connStr {
             get {
                 return ((string)(this["connStr"]));

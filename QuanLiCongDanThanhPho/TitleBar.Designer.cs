@@ -28,55 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlTitleBar = new Panel();
-            btnClose = new Button();
-            btnMinimize = new Button();
-            pnlTitleBar.SuspendLayout();
-            SuspendLayout();
+            this.pnlTitleBar = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.pnlTitleBar.SuspendLayout();
+            this.SuspendLayout();
             // 
             // pnlTitleBar
             // 
-            pnlTitleBar.Controls.Add(btnClose);
-            pnlTitleBar.Controls.Add(btnMinimize);
-            pnlTitleBar.Dock = DockStyle.Top;
-            pnlTitleBar.Location = new Point(0, 0);
-            pnlTitleBar.Name = "pnlTitleBar";
-            pnlTitleBar.Size = new Size(200, 32);
-            pnlTitleBar.TabIndex = 0;
+            this.pnlTitleBar.Controls.Add(this.btnClose);
+            this.pnlTitleBar.Controls.Add(this.btnMinimize);
+            this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitleBar.Name = "pnlTitleBar";
+            this.pnlTitleBar.Size = new System.Drawing.Size(200, 32);
+            this.pnlTitleBar.TabIndex = 0;
+            this.pnlTitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitleBar_Paint);
             // 
             // btnClose
             // 
-            btnClose.BackColor = Color.OrangeRed;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.ForeColor = Color.Transparent;
-            btnClose.Location = new Point(52, 0);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(32, 32);
-            btnClose.TabIndex = 1;
-            btnClose.UseVisualStyleBackColor = false;
-            btnClose.Click += btnClose_Click;
+            this.btnClose.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Location = new System.Drawing.Point(52, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // btnMinimize
             // 
-            btnMinimize.BackColor = Color.Gold;
-            btnMinimize.FlatStyle = FlatStyle.Flat;
-            btnMinimize.ForeColor = Color.Transparent;
-            btnMinimize.Location = new Point(0, 0);
-            btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(32, 32);
-            btnMinimize.TabIndex = 0;
-            btnMinimize.UseVisualStyleBackColor = false;
-            btnMinimize.Click += btnMinimize_Click;
+            this.btnMinimize.BackColor = System.Drawing.Color.Gold;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Location = new System.Drawing.Point(0, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(32, 32);
+            this.btnMinimize.TabIndex = 0;
+            this.btnMinimize.UseVisualStyleBackColor = false;
             // 
             // TitleBar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pnlTitleBar);
-            Name = "TitleBar";
-            Size = new Size(200, 36);
-            pnlTitleBar.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnlTitleBar);
+            this.Name = "TitleBar";
+            this.Size = new System.Drawing.Size(200, 36);
+            this.pnlTitleBar.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
