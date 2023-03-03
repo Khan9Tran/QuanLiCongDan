@@ -77,6 +77,8 @@
             this.txtNoiSinh = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtQHVoiChuHo = new System.Windows.Forms.TextBox();
+            this.lblDKKhaiSInh = new System.Windows.Forms.Label();
+            this.dtmDKKhaiSinh = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -415,6 +417,9 @@
             // cboDanToc
             // 
             this.cboDanToc.FormattingEnabled = true;
+            this.cboDanToc.Items.AddRange(new object[] {
+            "Kinh",
+            "Khmer"});
             this.cboDanToc.Location = new System.Drawing.Point(546, 182);
             this.cboDanToc.Name = "cboDanToc";
             this.cboDanToc.Size = new System.Drawing.Size(188, 36);
@@ -423,6 +428,9 @@
             // cboQuocTich
             // 
             this.cboQuocTich.FormattingEnabled = true;
+            this.cboQuocTich.Items.AddRange(new object[] {
+            "VietNam",
+            "My"});
             this.cboQuocTich.Location = new System.Drawing.Point(200, 182);
             this.cboQuocTich.Name = "cboQuocTich";
             this.cboQuocTich.Size = new System.Drawing.Size(188, 36);
@@ -499,6 +507,9 @@
             // cboTonGiao
             // 
             this.cboTonGiao.FormattingEnabled = true;
+            this.cboTonGiao.Items.AddRange(new object[] {
+            "Khong",
+            "Phat"});
             this.cboTonGiao.Location = new System.Drawing.Point(839, 137);
             this.cboTonGiao.Name = "cboTonGiao";
             this.cboTonGiao.Size = new System.Drawing.Size(213, 36);
@@ -542,11 +553,32 @@
             this.txtQHVoiChuHo.Size = new System.Drawing.Size(442, 27);
             this.txtQHVoiChuHo.TabIndex = 101;
             // 
+            // lblDKKhaiSInh
+            // 
+            this.lblDKKhaiSInh.AutoSize = true;
+            this.lblDKKhaiSInh.Location = new System.Drawing.Point(740, 646);
+            this.lblDKKhaiSInh.Name = "lblDKKhaiSInh";
+            this.lblDKKhaiSInh.Size = new System.Drawing.Size(235, 28);
+            this.lblDKKhaiSInh.TabIndex = 102;
+            this.lblDKKhaiSInh.Text = "Ngày đăng ký khai sinh";
+            // 
+            // dtmDKKhaiSinh
+            // 
+            this.dtmDKKhaiSinh.CustomFormat = "dd/MM/yyyy";
+            this.dtmDKKhaiSinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmDKKhaiSinh.Location = new System.Drawing.Point(1003, 641);
+            this.dtmDKKhaiSinh.Name = "dtmDKKhaiSinh";
+            this.dtmDKKhaiSinh.Size = new System.Drawing.Size(237, 34);
+            this.dtmDKKhaiSinh.TabIndex = 103;
+            this.dtmDKKhaiSinh.Value = new System.DateTime(2023, 3, 2, 0, 0, 0, 0);
+            // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.dtmDKKhaiSinh);
+            this.Controls.Add(this.lblDKKhaiSInh);
             this.Controls.Add(this.txtQHVoiChuHo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNoiSinh);
@@ -658,5 +690,7 @@
         private TextBox txtNoiSinh;
         private Label label2;
         private TextBox txtQHVoiChuHo;
+        private Label lblDKKhaiSInh;
+        private DateTimePicker dtmDKKhaiSinh;
     }
 }

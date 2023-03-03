@@ -47,6 +47,7 @@ CREATE TABLE KHAISINH
 	DanToc NVARCHAR(20) NOT NULL,
 	QuocTich NVARCHAR(20) NOT NULL,
 	NoiSinh NVARCHAR(100),
+	QueQuan NVARCHAR(100),
 	CCCDCha VARCHAR(15),
 	TenCha VARCHAR(30),
 	CCCDMe VARCHAR(15),
@@ -78,3 +79,42 @@ CREATE TABLE HONNHAN
 	FOREIGN KEY (CCCDNam) REFERENCES CCCD(MaCCCD),
 	FOREIGN KEY (CCCDNu) REFERENCES CCCD(MaCCCD)
 );
+
+INSERT INTO HOKHAU(MaHK, DiaChi, CCCDChuHo) VALUES ('1a', 'trai dat', '1')
+INSERT INTO HOKHAU(MaHK, DiaChi, CCCDChuHo) VALUES ('1b', 'trai dat', '2')
+INSERT INTO HOKHAU(MaHK, DiaChi, CCCDChuHo) VALUES ('1c', 'trai dat', '3')
+
+INSERT INTO CONGDAN(CCCD, Ten,NgheNghiep,SDT,TonGiao,MaHK, QuanHeVoiChuHo) VALUES ('1', 'nva', 'nghe1', '0123456789', 'khong', '1a', 'none')
+INSERT INTO CONGDAN(CCCD, Ten,NgheNghiep,SDT,TonGiao,MaHK, QuanHeVoiChuHo) VALUES ('2', 'nvb', 'nghe1', '0123456789', 'khong', '1b', 'none')
+INSERT INTO CONGDAN(CCCD, Ten,NgheNghiep,SDT,TonGiao,MaHK, QuanHeVoiChuHo) VALUES ('3', 'nvc', 'nghe1', '0123456789', 'khong', '1c', 'none')
+
+
+INSERT INTO CCCD(MaCCCD, DacDiem, NgayCap) VALUES ('1', 'la nam', '1/1/1')
+INSERT INTO CCCD(MaCCCD, DacDiem, NgayCap) VALUES ('2', 'la nu', '2/2/2')
+INSERT INTO CCCD(MaCCCD, DacDiem, NgayCap) VALUES ('3', 'la nam 2', '3/3/3')
+
+
+
+INSERT INTO KHAISINH(MaKS,Ten,NgaySinh,NgayDangKy,GioiTinh,DanToc,QuocTich,CCCDCha,TenCha,CCCDMe,TenMe) VALUES ('1', 'nva', '1/1/1','1/1/1', 'n', 'kinh', 'vn', '3', 'nvc', '2', 'nvb')
+INSERT INTO KHAISINH(MaKS,Ten,NgaySinh,NgayDangKy,GioiTinh,DanToc,QuocTich,CCCDCha,TenCha,CCCDMe,TenMe) VALUES ('2', 'nvb', '2/2/2','2/2/2', 'n', 'kinh', 'vn', '3', 'nvc', '1', 'nva')
+INSERT INTO KHAISINH(MaKS,Ten,NgaySinh,NgayDangKy,GioiTinh,DanToc,QuocTich,CCCDCha,TenCha,CCCDMe,TenMe) VALUES ('3', 'nvc', '3/3/3','3/3/3', 'n', 'kinh', 'vn', '1', 'nva', '2', 'nvb')
+
+INSERT INTO THUE(MaThue) VALUES ('123')
+INSERT INTO THUE(MaThue) VALUES ('567')
+INSERT INTO THUE(MaThue) VALUES ('890')
+
+INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu) VALUES ('aa', '3', 'nvc', '2', 'nvb')
+INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu) VALUES ('bb', '3', 'nvc', '1', 'nva')
+INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu) VALUES ('cc', '1', 'nva', '2', 'nvb')
+
+INSERT INTO TAMTRUTAMVANG(MaTTTV, TrangThai) VALUES ('mm', 'Tam Tru')
+INSERT INTO TAMTRUTAMVANG(MaTTTV, TrangThai) VALUES ('nn', 'Tam Tru')
+INSERT INTO TAMTRUTAMVANG(MaTTTV, TrangThai) VALUES ('bb', 'Tam Vang')
+
+SELECT *FROM CONGDAN
+SELECT *FROM HOKHAU
+SELECT *FROM HONNHAN
+SELECT *FROM CCCD
+SELECT *FROM HOKHAU
+SELECT *FROM TAMTRUTAMVANG
+SELECT *FROM THUE

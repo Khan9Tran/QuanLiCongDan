@@ -29,7 +29,7 @@ namespace QuanLiCongDanThanhPho
             CongDan cDan = new CongDan(txtCCCD.Text, txtTen.Text,txtNgheNghiep.Text,txtSoDT.Text,cboTonGiao.SelectedText,txtHoKhau.Text, txtQHVoiChuHo.Text);
             KhaiSinh khaiSinh = new KhaiSinh(txtCCCD.Text, txtTen.Text,
                                                 gioiTinh, cboQuocTich.SelectedText
-                                                , cboDanToc.SelectedText, dtmNgaySinh.Value, DateTime.Now
+                                                , cboDanToc.SelectedText, dtmNgaySinh.Value, dtmDKKhaiSinh.Value
                                                 , txtNoiSinh.Text, txtQueQuan.Text, txtCCCDCha.Text
                                                , txtTenCha.Text, txtCCCDMe.Text, txtTenMe.Text);
             HonNhan honNhan;

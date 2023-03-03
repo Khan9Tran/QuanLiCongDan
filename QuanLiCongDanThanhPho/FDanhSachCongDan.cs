@@ -16,7 +16,6 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
         }
-
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
 
