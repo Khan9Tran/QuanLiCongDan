@@ -30,7 +30,6 @@
         {
             this.lblTittleBar = new System.Windows.Forms.Label();
             this.pnlTittleBar = new System.Windows.Forms.Panel();
-            this.picTittleBar = new System.Windows.Forms.PictureBox();
             this.picCongDan = new System.Windows.Forms.PictureBox();
             this.lblTen = new System.Windows.Forms.Label();
             this.lblCccd = new System.Windows.Forms.Label();
@@ -74,8 +73,8 @@
             this.lblMaThue = new System.Windows.Forms.Label();
             this.lblMaHoKhau = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
+            this.sideBar1 = new QuanLiCongDanThanhPho.SideBar();
             this.pnlTittleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTittleBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).BeginInit();
             this.pnlThongTin.SuspendLayout();
             this.pnlTrai.SuspendLayout();
@@ -97,23 +96,13 @@
             // pnlTittleBar
             // 
             this.pnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(9)))));
-            this.pnlTittleBar.Controls.Add(this.picTittleBar);
+            this.pnlTittleBar.Controls.Add(this.sideBar1);
             this.pnlTittleBar.Controls.Add(this.lblTittleBar);
             this.pnlTittleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTittleBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTittleBar.Name = "pnlTittleBar";
             this.pnlTittleBar.Size = new System.Drawing.Size(1298, 100);
             this.pnlTittleBar.TabIndex = 1;
-            // 
-            // picTittleBar
-            // 
-            this.picTittleBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picTittleBar.Location = new System.Drawing.Point(12, 35);
-            this.picTittleBar.Name = "picTittleBar";
-            this.picTittleBar.Size = new System.Drawing.Size(32, 30);
-            this.picTittleBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTittleBar.TabIndex = 1;
-            this.picTittleBar.TabStop = false;
             // 
             // picCongDan
             // 
@@ -610,6 +599,13 @@
             this.lblDiaChi.TabIndex = 31;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
+            // sideBar1
+            // 
+            this.sideBar1.Location = new System.Drawing.Point(625, 3);
+            this.sideBar1.Name = "sideBar1";
+            this.sideBar1.Size = new System.Drawing.Size(48, 102);
+            this.sideBar1.TabIndex = 1;
+            // 
             // FThongTinCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -625,7 +621,6 @@
             this.Text = "FThongTinCongDan";
             this.pnlTittleBar.ResumeLayout(false);
             this.pnlTittleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTittleBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).EndInit();
             this.pnlThongTin.ResumeLayout(false);
             this.pnlThongTin.PerformLayout();
@@ -640,7 +635,6 @@
 
         private Label lblTittleBar;
         private Panel pnlTittleBar;
-        private PictureBox picTittleBar;
         private PictureBox picCongDan;
         private Label lblTen;
         private Label lblCccd;
@@ -684,5 +678,6 @@
         private Button btnHoKhau;
         private TextBox txtGhiChu;
         private Label lblGhiChu;
+        private SideBar sideBar1;
     }
 }

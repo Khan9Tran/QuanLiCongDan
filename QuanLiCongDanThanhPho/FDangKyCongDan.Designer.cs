@@ -54,7 +54,6 @@
             this.txtThue = new System.Windows.Forms.TextBox();
             this.txtTenCha = new System.Windows.Forms.TextBox();
             this.txtTenMe = new System.Windows.Forms.TextBox();
-            this.txtHonNhan = new System.Windows.Forms.TextBox();
             this.txtTenVoChong = new System.Windows.Forms.TextBox();
             this.txtCCCDCha = new System.Windows.Forms.TextBox();
             this.txtCCCDVoChong = new System.Windows.Forms.TextBox();
@@ -79,6 +78,7 @@
             this.txtQHVoiChuHo = new System.Windows.Forms.TextBox();
             this.lblDKKhaiSInh = new System.Windows.Forms.Label();
             this.dtmDKKhaiSinh = new System.Windows.Forms.DateTimePicker();
+            this.cboTinhTrang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -324,16 +324,6 @@
             this.txtTenMe.Size = new System.Drawing.Size(534, 27);
             this.txtTenMe.TabIndex = 26;
             // 
-            // txtHonNhan
-            // 
-            this.txtHonNhan.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtHonNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtHonNhan.Location = new System.Drawing.Point(292, 541);
-            this.txtHonNhan.Name = "txtHonNhan";
-            this.txtHonNhan.Size = new System.Drawing.Size(442, 27);
-            this.txtHonNhan.TabIndex = 27;
-            // 
             // txtTenVoChong
             // 
             this.txtTenVoChong.BackColor = System.Drawing.Color.Gainsboro;
@@ -418,7 +408,9 @@
             // 
             // cboDanToc
             // 
+            this.cboDanToc.BackColor = System.Drawing.Color.Gainsboro;
             this.cboDanToc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDanToc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboDanToc.FormattingEnabled = true;
             this.cboDanToc.Items.AddRange(new object[] {
             "Kinh",
@@ -430,7 +422,9 @@
             // 
             // cboQuocTich
             // 
+            this.cboQuocTich.BackColor = System.Drawing.Color.Gainsboro;
             this.cboQuocTich.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuocTich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboQuocTich.FormattingEnabled = true;
             this.cboQuocTich.Items.AddRange(new object[] {
             "VietNam",
@@ -466,7 +460,7 @@
             // lblMaHonNhan
             // 
             this.lblMaHonNhan.AutoSize = true;
-            this.lblMaHonNhan.Location = new System.Drawing.Point(740, 540);
+            this.lblMaHonNhan.Location = new System.Drawing.Point(610, 542);
             this.lblMaHonNhan.Name = "lblMaHonNhan";
             this.lblMaHonNhan.Size = new System.Drawing.Size(124, 28);
             this.lblMaHonNhan.TabIndex = 91;
@@ -477,9 +471,9 @@
             this.txtMaHonNhan.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaHonNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaHonNhan.Location = new System.Drawing.Point(899, 541);
+            this.txtMaHonNhan.Location = new System.Drawing.Point(840, 542);
             this.txtMaHonNhan.Name = "txtMaHonNhan";
-            this.txtMaHonNhan.Size = new System.Drawing.Size(341, 27);
+            this.txtMaHonNhan.Size = new System.Drawing.Size(400, 27);
             this.txtMaHonNhan.TabIndex = 92;
             // 
             // lblSDT
@@ -512,7 +506,9 @@
             // 
             // cboTonGiao
             // 
+            this.cboTonGiao.BackColor = System.Drawing.Color.Gainsboro;
             this.cboTonGiao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTonGiao.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboTonGiao.FormattingEnabled = true;
             this.cboTonGiao.Items.AddRange(new object[] {
             "Khong",
@@ -571,6 +567,7 @@
             // 
             // dtmDKKhaiSinh
             // 
+            this.dtmDKKhaiSinh.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.dtmDKKhaiSinh.CustomFormat = "dd/MM/yyyy";
             this.dtmDKKhaiSinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtmDKKhaiSinh.Location = new System.Drawing.Point(1003, 641);
@@ -579,11 +576,26 @@
             this.dtmDKKhaiSinh.TabIndex = 103;
             this.dtmDKKhaiSinh.Value = new System.DateTime(2023, 3, 2, 0, 0, 0, 0);
             // 
+            // cboTinhTrang
+            // 
+            this.cboTinhTrang.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTinhTrang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboTinhTrang.FormattingEnabled = true;
+            this.cboTinhTrang.Items.AddRange(new object[] {
+            "Độc thân",
+            "Kết hôn"});
+            this.cboTinhTrang.Location = new System.Drawing.Point(292, 532);
+            this.cboTinhTrang.Name = "cboTinhTrang";
+            this.cboTinhTrang.Size = new System.Drawing.Size(180, 36);
+            this.cboTinhTrang.TabIndex = 104;
+            // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.cboTinhTrang);
             this.Controls.Add(this.dtmDKKhaiSinh);
             this.Controls.Add(this.lblDKKhaiSInh);
             this.Controls.Add(this.txtQHVoiChuHo);
@@ -608,7 +620,6 @@
             this.Controls.Add(this.txtCCCDVoChong);
             this.Controls.Add(this.txtCCCDCha);
             this.Controls.Add(this.txtTenVoChong);
-            this.Controls.Add(this.txtHonNhan);
             this.Controls.Add(this.txtTenMe);
             this.Controls.Add(this.txtTenCha);
             this.Controls.Add(this.txtThue);
@@ -675,7 +686,6 @@
         private TextBox txtThue;
         private TextBox txtTenCha;
         private TextBox txtTenMe;
-        private TextBox txtHonNhan;
         private TextBox txtTenVoChong;
         private TextBox txtCCCDCha;
         private TextBox txtCCCDVoChong;
@@ -700,5 +710,6 @@
         private TextBox txtQHVoiChuHo;
         private Label lblDKKhaiSInh;
         private DateTimePicker dtmDKKhaiSinh;
+        private ComboBox cboTinhTrang;
     }
 }

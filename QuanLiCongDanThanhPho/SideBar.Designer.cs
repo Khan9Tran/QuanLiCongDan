@@ -51,6 +51,7 @@
             this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Image = global::QuanLiCongDanThanhPho.Properties.Resources.left;
             this.btnBack.Location = new System.Drawing.Point(0, 42);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(32, 32);
@@ -64,11 +65,13 @@
             this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Image = global::QuanLiCongDanThanhPho.Properties.Resources.home;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(32, 32);
             this.btnHome.TabIndex = 0;
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // SideBar
             // 
@@ -79,9 +82,6 @@
             this.Size = new System.Drawing.Size(38, 82);
             this.pnlSideBar.ResumeLayout(false);
             this.ResumeLayout(false);
-
-            btnBack.Image = Properties.Resources.left;
-            btnHome.Image = Properties.Resources.home;
 
         }
 

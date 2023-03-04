@@ -22,11 +22,14 @@ namespace QuanLiCongDanThanhPho.Models
         private string cCCDMe;
         private string tenMe;
 
-        public KhaiSinh(string maKhaiSinh, string hoTen, char gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, string noiSinh, string queQuan, string cCCDCha, string tenCha, string cCCDMe, string tenMe)
+        public KhaiSinh(string maKhaiSinh, string hoTen, string gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, string noiSinh, string queQuan, string cCCDCha, string tenCha, string cCCDMe, string tenMe)
         {
             this.maKhaiSinh = maKhaiSinh;
             this.hoTen = hoTen;
-            this.gioiTinh = gioiTinh;
+            if (gioiTinh == "True")
+                this.gioiTinh = 'm';
+            else
+                this.gioiTinh = 'f';
             this.quocTich = quocTich;
             this.danToc = danToc;
             this.ngaySinh = ngaySinh;

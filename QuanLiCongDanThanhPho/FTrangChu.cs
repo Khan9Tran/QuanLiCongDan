@@ -13,7 +13,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FTrangChu : Form
     {
-        private Form currentChildForm;
+        public Form currentChildForm;
         public FTrangChu()
         {
             InitializeComponent();
@@ -102,12 +102,12 @@ namespace QuanLiCongDanThanhPho
             }
             else
             {
-                pnlChucNang.BackColor = Color.WhiteSmoke;
+                pnlChucNang.BackColor = Color.Gray;
+                pnlChucNang.Controls.Add(USHomeAndBack);
                 pnlChucNang.Size = new System.Drawing.Size(256, 752);
 
             }
 
         }
-
     }
 }

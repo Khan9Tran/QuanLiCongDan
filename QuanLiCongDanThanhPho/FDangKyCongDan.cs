@@ -14,15 +14,18 @@ namespace QuanLiCongDanThanhPho
     public partial class FDangKyCongDan : Form
     {
         CongDanDAO cdDAO;
+        KhaiSinhDAO kSDAO;
         public FDangKyCongDan()
         {
             InitializeComponent();
             cdDAO = new CongDanDAO();
+            kSDAO = new KhaiSinhDAO();
         }
         
         public void ThemCongDan()
         {
-
+            CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, cboTonGiao.SelectedItem.ToString(), txtHoKhau.Text, txtQHVoiChuHo.Text);
+             cdDAO.ThemCongDan(cD);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
