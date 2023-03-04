@@ -260,7 +260,7 @@
             this.cmnusDanhMucItemTamTruTamVang.Name = "cmnusDanhMucItemTamTruTamVang";
             this.cmnusDanhMucItemTamTruTamVang.Size = new System.Drawing.Size(267, 32);
             this.cmnusDanhMucItemTamTruTamVang.Text = "Tạm trú/ Tạm vắng";
-            this.cmnusDanhMucItemTamTruTamVang.Click += new System.EventHandler(this.cmnusDanhMucItemThue_Click);
+            this.cmnusDanhMucItemTamTruTamVang.Click += new System.EventHandler(this.cmnusDanhMucItemTamTruTamVang_Click);
             // 
             // pnlHienThiForm
             // 
@@ -270,6 +270,7 @@
             this.pnlHienThiForm.Name = "pnlHienThiForm";
             this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 782);
             this.pnlHienThiForm.TabIndex = 2;
+            this.pnlHienThiForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHienThiForm_Paint);
             // 
             // CmnusSuaDoi
             // 

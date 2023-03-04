@@ -98,5 +98,10 @@ namespace QuanLiCongDanThanhPho
         {
           
         }
+
+        private void pnlHienThiForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
