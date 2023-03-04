@@ -68,20 +68,12 @@
             // 
             this.pnlKhungTren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.pnlKhungTren.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlKhungTren.Controls.Add(this.titleBar1);
             this.pnlKhungTren.Controls.Add(this.txtTimKiem);
             this.pnlKhungTren.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlKhungTren.Location = new System.Drawing.Point(0, 0);
             this.pnlKhungTren.Name = "pnlKhungTren";
             this.pnlKhungTren.Size = new System.Drawing.Size(1782, 71);
             this.pnlKhungTren.TabIndex = 0;
-            // 
-            // titleBar1
-            // 
-            this.titleBar1.Location = new System.Drawing.Point(1693, 12);
-            this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(77, 30);
-            this.titleBar1.TabIndex = 3;
             // 
             // txtTimKiem
             // 
@@ -367,6 +359,5 @@
         private ToolStripMenuItem hônNhânToolStripMenuItem;
         private ToolStripMenuItem cCCDToolStripMenuItem;
         private ToolStripMenuItem khaiSinhToolStripMenuItem;
-        private TitleBar titleBar1;
     }
 }
