@@ -41,6 +41,7 @@
             this.btnTachGop.TabIndex = 10;
             this.btnTachGop.Text = "Tách Gộp Hộ";
             this.btnTachGop.UseVisualStyleBackColor = true;
+            this.btnTachGop.Click += new System.EventHandler(this.btnTachGop_Click);
             // 
             // btnThem
             // 
@@ -50,6 +51,7 @@
             this.btnThem.TabIndex = 11;
             this.btnThem.Text = "Thêm thành viên";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // pnlLuaChon
             // 
