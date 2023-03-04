@@ -28,53 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlSideBar = new Panel();
-            btnBack = new Button();
-            btnHome = new Button();
-            pnlSideBar.SuspendLayout();
-            SuspendLayout();
+            this.pnlSideBar = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.pnlSideBar.SuspendLayout();
+            this.SuspendLayout();
             // 
             // pnlSideBar
             // 
-            pnlSideBar.Controls.Add(btnBack);
-            pnlSideBar.Controls.Add(btnHome);
-            pnlSideBar.Dock = DockStyle.Left;
-            pnlSideBar.Location = new Point(0, 0);
-            pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(32, 131);
-            pnlSideBar.TabIndex = 0;
+            this.pnlSideBar.Controls.Add(this.btnBack);
+            this.pnlSideBar.Controls.Add(this.btnHome);
+            this.pnlSideBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSideBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSideBar.Name = "pnlSideBar";
+            this.pnlSideBar.Size = new System.Drawing.Size(32, 82);
+            this.pnlSideBar.TabIndex = 0;
             // 
             // btnBack
             // 
-            btnBack.BackColor = Color.Tomato;
-            btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.Location = new Point(0, 52);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(32, 32);
-            btnBack.TabIndex = 1;
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Click += btnBack_Click;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(0, 42);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(32, 32);
+            this.btnBack.TabIndex = 1;
+            this.btnBack.UseVisualStyleBackColor = false;
             // 
             // btnHome
             // 
-            btnHome.BackColor = SystemColors.ActiveCaption;
-            btnHome.FlatStyle = FlatStyle.Flat;
-            btnHome.Location = new Point(0, 0);
-            btnHome.Name = "btnHome";
-            btnHome.Size = new Size(32, 32);
-            btnHome.TabIndex = 0;
-            btnHome.UseVisualStyleBackColor = false;
-            btnHome.Click += btnHome_Click;
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Location = new System.Drawing.Point(0, 0);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(32, 32);
+            this.btnHome.TabIndex = 0;
+            this.btnHome.UseVisualStyleBackColor = false;
             // 
             // SideBar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pnlSideBar);
-            Name = "SideBar";
-            Size = new Size(83, 131);
-            pnlSideBar.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnlSideBar);
+            this.Name = "SideBar";
+            this.Size = new System.Drawing.Size(38, 82);
+            this.pnlSideBar.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+            btnBack.Image = Properties.Resources.left;
+            btnHome.Image = Properties.Resources.home;
+
         }
 
         #endregion

@@ -94,9 +94,20 @@ namespace QuanLiCongDanThanhPho
             OpenChildForm(new FDangKyCongDan());
         }
 
-        private void FTrangChu_Load(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
-          
+            if (pnlChucNang.Size.Width > 0 && pnlChucNang.Size.Height > 0)
+            {
+                pnlChucNang.Size = new System.Drawing.Size(0, 0);
+            }
+            else
+            {
+                pnlChucNang.BackColor = Color.WhiteSmoke;
+                pnlChucNang.Size = new System.Drawing.Size(256, 752);
+
+            }
+
         }
+
     }
 }

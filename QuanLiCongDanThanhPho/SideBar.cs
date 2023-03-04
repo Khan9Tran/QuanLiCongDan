@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QuanLiCongDanThanhPho.Properties;
 namespace QuanLiCongDanThanhPho
 {
     public partial class SideBar : UserControl
@@ -19,11 +19,11 @@ namespace QuanLiCongDanThanhPho
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if (this.ParentForm.Name == "Form1")
-            { this.ParentForm.Show(); }
+            if (ParentForm.Name == "Form1")
+            { ParentForm.Show(); }
             else
             {
-                this.ParentForm.Close();
+                ParentForm.Close();
                 FTrangChu fTrangChu = new FTrangChu();
                 fTrangChu.Show();
             }
@@ -33,5 +33,6 @@ namespace QuanLiCongDanThanhPho
         {
 
         }
+
     }
 }

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace QuanLiCongDanThanhPho
 {
     public partial class TitleBar : UserControl
@@ -20,7 +19,7 @@ namespace QuanLiCongDanThanhPho
         {
             ParentForm.WindowState = FormWindowState.Minimized;
         }
-   
+
         private void btnClose_Click(object sender, EventArgs e)
         {
 
@@ -29,5 +28,6 @@ namespace QuanLiCongDanThanhPho
             else
                 ParentForm.Close();
         }
+
     }
 }

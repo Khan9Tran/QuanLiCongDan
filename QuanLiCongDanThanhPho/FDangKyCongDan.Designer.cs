@@ -66,7 +66,7 @@
             this.cboDanToc = new System.Windows.Forms.ComboBox();
             this.cboQuocTich = new System.Windows.Forms.ComboBox();
             this.btnDangKy = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptcHinhDaiDien = new System.Windows.Forms.PictureBox();
             this.lblMaHonNhan = new System.Windows.Forms.Label();
             this.txtMaHonNhan = new System.Windows.Forms.TextBox();
             this.lblSDT = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             this.txtQHVoiChuHo = new System.Windows.Forms.TextBox();
             this.lblDKKhaiSInh = new System.Windows.Forms.Label();
             this.dtmDKKhaiSinh = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTen
@@ -406,6 +406,8 @@
             // 
             // dtmNgaySinh
             // 
+            this.dtmNgaySinh.CalendarForeColor = System.Drawing.Color.Crimson;
+            this.dtmNgaySinh.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
             this.dtmNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtmNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtmNgaySinh.Location = new System.Drawing.Point(899, 333);
@@ -416,6 +418,7 @@
             // 
             // cboDanToc
             // 
+            this.cboDanToc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDanToc.FormattingEnabled = true;
             this.cboDanToc.Items.AddRange(new object[] {
             "Kinh",
@@ -427,6 +430,7 @@
             // 
             // cboQuocTich
             // 
+            this.cboQuocTich.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboQuocTich.FormattingEnabled = true;
             this.cboQuocTich.Items.AddRange(new object[] {
             "VietNam",
@@ -449,13 +453,15 @@
             this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // pictureBox1
+            // ptcHinhDaiDien
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(1080, 80);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 200);
-            this.pictureBox1.TabIndex = 89;
-            this.pictureBox1.TabStop = false;
+            this.ptcHinhDaiDien.BackColor = System.Drawing.Color.Gainsboro;
+            this.ptcHinhDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptcHinhDaiDien.Location = new System.Drawing.Point(1080, 80);
+            this.ptcHinhDaiDien.Name = "ptcHinhDaiDien";
+            this.ptcHinhDaiDien.Size = new System.Drawing.Size(160, 200);
+            this.ptcHinhDaiDien.TabIndex = 89;
+            this.ptcHinhDaiDien.TabStop = false;
             // 
             // lblMaHonNhan
             // 
@@ -506,6 +512,7 @@
             // 
             // cboTonGiao
             // 
+            this.cboTonGiao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTonGiao.FormattingEnabled = true;
             this.cboTonGiao.Items.AddRange(new object[] {
             "Khong",
@@ -589,7 +596,7 @@
             this.Controls.Add(this.lblSDT);
             this.Controls.Add(this.txtMaHonNhan);
             this.Controls.Add(this.lblMaHonNhan);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ptcHinhDaiDien);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.cboQuocTich);
             this.Controls.Add(this.cboDanToc);
@@ -633,7 +640,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDangKyCongDan";
             this.Text = "FDangKyCongDan";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.FDangKyCongDan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -679,7 +687,7 @@
         private ComboBox cboDanToc;
         private ComboBox cboQuocTich;
         private Button btnDangKy;
-        private PictureBox pictureBox1;
+        private PictureBox ptcHinhDaiDien;
         private Label lblMaHonNhan;
         private TextBox txtMaHonNhan;
         private Label lblSDT;

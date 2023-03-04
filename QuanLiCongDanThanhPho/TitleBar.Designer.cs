@@ -46,7 +46,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Transparent;
             this.btnClose.Location = new System.Drawing.Point(50, 0);
@@ -58,7 +61,9 @@
             // 
             // btnMinimize
             // 
-            this.btnMinimize.BackColor = System.Drawing.Color.Gold;
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
             this.btnMinimize.Location = new System.Drawing.Point(20, 0);
@@ -78,20 +83,8 @@
             this.pnlTitleBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
-            //Định dạng
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnMinimize.FlatStyle = FlatStyle.Flat;
-
-            btnClose.BackColor = Color.Transparent;
-            btnMinimize.BackColor = Color.Transparent;
-            btnMinimize.FlatAppearance.MouseOverBackColor = Color.DarkGray;
-            btnClose.FlatAppearance.MouseOverBackColor = Color.DarkGray;
-            btnMinimize.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnClose.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnClose.FlatAppearance.BorderSize = 0;
-            btnMinimize.FlatAppearance.BorderSize = 0;
-            //btnClose.Image = Image.FromFile(@".\Icons\White\24\Cross.png");
-            //btnMinimize.Image = Image.FromFile(@".\Icons\White\24\minus.png");
+            btnClose.Image = Properties.Resources.cross;
+            btnMinimize.Image = Properties.Resources.minus;
 
         }
 
