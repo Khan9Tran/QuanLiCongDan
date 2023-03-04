@@ -12,19 +12,35 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyHoKhau : Form
     {
+        private Form currentChildForm;
         public FDangKyHoKhau()
         {
             InitializeComponent();
         }
 
-        private void btnGopHo_Click(object sender, EventArgs e)
+        private void OpenChildForm(Form childForm)
         {
-
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlLuaChon.Controls.Add(childForm);
+            pnlLuaChon.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        private void btnTachGop_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FTachGopHo());
         }
 
-        private void txtCCCDChong_TextChanged(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FThemNguoiVaoHo());
         }
     }
 }

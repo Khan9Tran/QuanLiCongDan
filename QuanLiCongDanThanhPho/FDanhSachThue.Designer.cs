@@ -35,6 +35,7 @@
             // 
             // gvThue
             // 
+            this.gvThue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvThue.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gvThue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvThue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

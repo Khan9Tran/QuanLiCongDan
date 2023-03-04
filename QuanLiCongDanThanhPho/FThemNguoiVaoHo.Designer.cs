@@ -31,7 +31,7 @@
             this.txtMaHo = new System.Windows.Forms.TextBox();
             this.lblMaHo = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTenNguoiThem = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCCCD = new System.Windows.Forms.TextBox();
@@ -45,15 +45,15 @@
             this.txtMaHo.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaHo.Location = new System.Drawing.Point(546, 180);
+            this.txtMaHo.Location = new System.Drawing.Point(619, 183);
             this.txtMaHo.Name = "txtMaHo";
-            this.txtMaHo.Size = new System.Drawing.Size(442, 27);
+            this.txtMaHo.Size = new System.Drawing.Size(511, 27);
             this.txtMaHo.TabIndex = 22;
             // 
             // lblMaHo
             // 
             this.lblMaHo.AutoSize = true;
-            this.lblMaHo.Location = new System.Drawing.Point(409, 179);
+            this.lblMaHo.Location = new System.Drawing.Point(401, 182);
             this.lblMaHo.Name = "lblMaHo";
             this.lblMaHo.Size = new System.Drawing.Size(78, 28);
             this.lblMaHo.TabIndex = 21;
@@ -61,36 +61,36 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(641, 496);
+            this.btnThem.Location = new System.Drawing.Point(714, 499);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(197, 50);
             this.btnThem.TabIndex = 23;
             this.btnThem.Text = "Thêm thành viên";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblTenNguoiThem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(409, 269);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 28);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Tên";
+            this.lblTenNguoiThem.AutoSize = true;
+            this.lblTenNguoiThem.Location = new System.Drawing.Point(401, 272);
+            this.lblTenNguoiThem.Name = "lblTenNguoiThem";
+            this.lblTenNguoiThem.Size = new System.Drawing.Size(45, 28);
+            this.lblTenNguoiThem.TabIndex = 24;
+            this.lblTenNguoiThem.Text = "Tên";
             // 
             // txtTen
             // 
             this.txtTen.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTen.Location = new System.Drawing.Point(546, 270);
+            this.txtTen.Location = new System.Drawing.Point(619, 273);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(442, 27);
+            this.txtTen.Size = new System.Drawing.Size(511, 27);
             this.txtTen.TabIndex = 25;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(409, 350);
+            this.label2.Location = new System.Drawing.Point(401, 353);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 28);
             this.label2.TabIndex = 26;
@@ -101,14 +101,14 @@
             this.txtCCCD.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCCCD.Location = new System.Drawing.Point(546, 350);
+            this.txtCCCD.Location = new System.Drawing.Point(619, 354);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(292, 27);
+            this.txtCCCD.Size = new System.Drawing.Size(328, 27);
             this.txtCCCD.TabIndex = 27;
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(878, 345);
+            this.btnTim.Location = new System.Drawing.Point(1020, 348);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(110, 39);
             this.btnTim.TabIndex = 28;
@@ -120,19 +120,19 @@
             this.txtQuanHeVoiChuHo.BackColor = System.Drawing.Color.Gainsboro;
             this.txtQuanHeVoiChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuanHeVoiChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtQuanHeVoiChuHo.Location = new System.Drawing.Point(546, 436);
+            this.txtQuanHeVoiChuHo.Location = new System.Drawing.Point(619, 439);
             this.txtQuanHeVoiChuHo.Name = "txtQuanHeVoiChuHo";
-            this.txtQuanHeVoiChuHo.Size = new System.Drawing.Size(442, 27);
+            this.txtQuanHeVoiChuHo.Size = new System.Drawing.Size(511, 27);
             this.txtQuanHeVoiChuHo.TabIndex = 30;
             // 
             // lblQuanHeVoiChuHo
             // 
             this.lblQuanHeVoiChuHo.AutoSize = true;
-            this.lblQuanHeVoiChuHo.Location = new System.Drawing.Point(409, 435);
+            this.lblQuanHeVoiChuHo.Location = new System.Drawing.Point(401, 439);
             this.lblQuanHeVoiChuHo.Name = "lblQuanHeVoiChuHo";
-            this.lblQuanHeVoiChuHo.Size = new System.Drawing.Size(45, 28);
+            this.lblQuanHeVoiChuHo.Size = new System.Drawing.Size(197, 28);
             this.lblQuanHeVoiChuHo.TabIndex = 29;
-            this.lblQuanHeVoiChuHo.Text = "Tên";
+            this.lblQuanHeVoiChuHo.Text = "Quan hệ với chủ hộ";
             // 
             // FThemNguoiVaoHo
             // 
@@ -145,7 +145,7 @@
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTen);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTenNguoiThem);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtMaHo);
             this.Controls.Add(this.lblMaHo);
@@ -164,7 +164,7 @@
         private TextBox txtMaHo;
         private Label lblMaHo;
         private Button btnThem;
-        private Label label1;
+        private Label lblTenNguoiThem;
         private TextBox txtTen;
         private Label label2;
         private TextBox txtCCCD;

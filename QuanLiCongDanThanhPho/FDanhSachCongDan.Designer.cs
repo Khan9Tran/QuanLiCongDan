@@ -35,6 +35,7 @@
             // 
             // gvDanhSachCongDan
             // 
+            this.gvDanhSachCongDan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDanhSachCongDan.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gvDanhSachCongDan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvDanhSachCongDan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
