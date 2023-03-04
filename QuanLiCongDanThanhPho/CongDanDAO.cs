@@ -13,31 +13,9 @@ namespace QuanLiCongDanThanhPho
         public CongDanDAO() { }
         public void ThemCongDan(CongDan cD)
         {
-            string strSql = string.Format(
-                $"INSERT INTO CONGDAN(CCCD, Ten, NgheNghiep, SDT, TonGiao, MaHK, QuanHeVoiChuHo) VALUES ('{cD.CCCD}','{cD.Ten}','{cD.NgheNghiep}','{cD.SDT}','{cD.TonGiao}','{cD.MaHoKhau}', '{cD.QuanHeVoiChuHo}')");
+            string strSql = string.Format($"INSERT INTO CONGDAN(CCCD,Ten,NgheNghiep,SDT,TonGiao,MaHK,QuanHeVoiChuHo) VALUES ('{cD.CCCD}' , N'{cD.Ten}', N'{cD.NgheNghiep}', '{cD.SDT}', N'{cD.TonGiao}', '{cD.MaHoKhau}', N'{cD.QuanHeVoiChuHo}');");
                 conn.ThucThi(strSql);
         }
-        public void ThemHoKhau()
-        {
-
-        }
-        public void ThemCCCD()
-        {
-
-        }
-        public void ThemKhaiSinh() 
-        {
-
-        }
-        public void ThemHonNhan()
-        {
-
-        }
-        public void ThemThue() 
-        {
-
-        }
-
         public DataTable LayDanhSach()
         {
             return conn.LayDanhSach("SELECT CCCD, Ten, SDT FROM CONGDAN");

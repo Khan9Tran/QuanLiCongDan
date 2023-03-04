@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlChucNang = new System.Windows.Forms.Panel();
+            this.pnlChong = new System.Windows.Forms.Panel();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.btnThongTinChong = new System.Windows.Forms.Button();
             this.txtCCCDChong = new System.Windows.Forms.TextBox();
@@ -42,7 +42,7 @@
             this.btnQuayVe = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlVo = new System.Windows.Forms.Panel();
             this.btnThongTinVo = new System.Windows.Forms.Button();
             this.dtpNgayDangKy = new System.Windows.Forms.DateTimePicker();
             this.txtTenVo = new System.Windows.Forms.TextBox();
@@ -50,28 +50,28 @@
             this.lblCCCDVo = new System.Windows.Forms.Label();
             this.lblTenVo = new System.Windows.Forms.Label();
             this.lblDeMuc2 = new System.Windows.Forms.Label();
-            this.pnlChucNang.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlChong.SuspendLayout();
+            this.pnlVo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlChucNang
+            // pnlChong
             // 
-            this.pnlChucNang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.pnlChucNang.Controls.Add(this.btnTrangChu);
-            this.pnlChucNang.Controls.Add(this.btnThongTinChong);
-            this.pnlChucNang.Controls.Add(this.txtCCCDChong);
-            this.pnlChucNang.Controls.Add(this.txtNoiDangKy);
-            this.pnlChucNang.Controls.Add(this.btnSua);
-            this.pnlChucNang.Controls.Add(this.txtTenChong);
-            this.pnlChucNang.Controls.Add(this.lblDeMuc1);
-            this.pnlChucNang.Controls.Add(this.lblCCCDChong);
-            this.pnlChucNang.Controls.Add(this.lblTenChong);
-            this.pnlChucNang.Controls.Add(this.lblNoiDangKy);
-            this.pnlChucNang.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlChucNang.Location = new System.Drawing.Point(0, 0);
-            this.pnlChucNang.Name = "pnlChucNang";
-            this.pnlChucNang.Size = new System.Drawing.Size(600, 720);
-            this.pnlChucNang.TabIndex = 2;
+            this.pnlChong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+            this.pnlChong.Controls.Add(this.btnTrangChu);
+            this.pnlChong.Controls.Add(this.btnThongTinChong);
+            this.pnlChong.Controls.Add(this.txtCCCDChong);
+            this.pnlChong.Controls.Add(this.txtNoiDangKy);
+            this.pnlChong.Controls.Add(this.btnSua);
+            this.pnlChong.Controls.Add(this.txtTenChong);
+            this.pnlChong.Controls.Add(this.lblDeMuc1);
+            this.pnlChong.Controls.Add(this.lblCCCDChong);
+            this.pnlChong.Controls.Add(this.lblTenChong);
+            this.pnlChong.Controls.Add(this.lblNoiDangKy);
+            this.pnlChong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlChong.Location = new System.Drawing.Point(0, 0);
+            this.pnlChong.Name = "pnlChong";
+            this.pnlChong.Size = new System.Drawing.Size(600, 720);
+            this.pnlChong.TabIndex = 2;
             // 
             // btnTrangChu
             // 
@@ -204,23 +204,23 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Ngày đăng ký";
             // 
-            // panel1
+            // pnlVo
             // 
-            this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.btnQuayVe);
-            this.panel1.Controls.Add(this.btnThongTinVo);
-            this.panel1.Controls.Add(this.dtpNgayDangKy);
-            this.panel1.Controls.Add(this.txtTenVo);
-            this.panel1.Controls.Add(this.txtCCCDVo);
-            this.panel1.Controls.Add(this.lblCCCDVo);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.lblTenVo);
-            this.panel1.Controls.Add(this.lblDeMuc2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(600, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 720);
-            this.panel1.TabIndex = 3;
+            this.pnlVo.Controls.Add(this.btnXoa);
+            this.pnlVo.Controls.Add(this.btnQuayVe);
+            this.pnlVo.Controls.Add(this.btnThongTinVo);
+            this.pnlVo.Controls.Add(this.dtpNgayDangKy);
+            this.pnlVo.Controls.Add(this.txtTenVo);
+            this.pnlVo.Controls.Add(this.txtCCCDVo);
+            this.pnlVo.Controls.Add(this.lblCCCDVo);
+            this.pnlVo.Controls.Add(this.label7);
+            this.pnlVo.Controls.Add(this.lblTenVo);
+            this.pnlVo.Controls.Add(this.lblDeMuc2);
+            this.pnlVo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlVo.Location = new System.Drawing.Point(600, 0);
+            this.pnlVo.Name = "pnlVo";
+            this.pnlVo.Size = new System.Drawing.Size(600, 720);
+            this.pnlVo.TabIndex = 3;
             // 
             // btnThongTinVo
             // 
@@ -301,26 +301,26 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 720);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlChucNang);
+            this.Controls.Add(this.pnlVo);
+            this.Controls.Add(this.pnlChong);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FThongTinHonNhan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
-            this.pnlChucNang.ResumeLayout(false);
-            this.pnlChucNang.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlChong.ResumeLayout(false);
+            this.pnlChong.PerformLayout();
+            this.pnlVo.ResumeLayout(false);
+            this.pnlVo.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Panel pnlChucNang;
-        private Panel panel1;
+        private Panel pnlChong;
+        private Panel pnlVo;
         private Label lblDeMuc1;
         private Label label7;
         private Label lblCCCDChong;

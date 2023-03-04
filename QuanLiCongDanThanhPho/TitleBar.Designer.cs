@@ -78,6 +78,21 @@
             this.pnlTitleBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
+            //Định dạng
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+
+            btnClose.BackColor = Color.Transparent;
+            btnMinimize.BackColor = Color.Transparent;
+            btnMinimize.FlatAppearance.MouseOverBackColor = Color.DarkGray;
+            btnClose.FlatAppearance.MouseOverBackColor = Color.DarkGray;
+            btnMinimize.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnClose.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            //btnClose.Image = Image.FromFile(@".\Icons\White\24\Cross.png");
+            //btnMinimize.Image = Image.FromFile(@".\Icons\White\24\minus.png");
+
         }
 
         #endregion

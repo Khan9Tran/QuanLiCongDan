@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlKhungTren = new System.Windows.Forms.Panel();
-            this.titleBar1 = new QuanLiCongDanThanhPho.TitleBar();
+            this.UsExit_Hide = new QuanLiCongDanThanhPho.TitleBar();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.pnlChucNang = new System.Windows.Forms.Panel();
             this.btnSuaDoi = new System.Windows.Forms.Button();
@@ -68,12 +68,20 @@
             // 
             this.pnlKhungTren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.pnlKhungTren.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlKhungTren.Controls.Add(this.UsExit_Hide);
             this.pnlKhungTren.Controls.Add(this.txtTimKiem);
             this.pnlKhungTren.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlKhungTren.Location = new System.Drawing.Point(0, 0);
             this.pnlKhungTren.Name = "pnlKhungTren";
             this.pnlKhungTren.Size = new System.Drawing.Size(1782, 71);
             this.pnlKhungTren.TabIndex = 0;
+            // 
+            // UsExit_Hide
+            // 
+            this.UsExit_Hide.Location = new System.Drawing.Point(1662, 12);
+            this.UsExit_Hide.Name = "UsExit_Hide";
+            this.UsExit_Hide.Size = new System.Drawing.Size(108, 45);
+            this.UsExit_Hide.TabIndex = 3;
             // 
             // txtTimKiem
             // 
@@ -143,6 +151,7 @@
             this.btnDangKy.TabIndex = 2;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // cmnusDangKy
             // 
@@ -194,6 +203,7 @@
             this.cmnusDangKyItemCongDan.Name = "cmnusDangKyItemCongDan";
             this.cmnusDangKyItemCongDan.Size = new System.Drawing.Size(269, 32);
             this.cmnusDangKyItemCongDan.Text = "Công Dân";
+            this.cmnusDangKyItemCongDan.Click += new System.EventHandler(this.cmnusDangKyItemCongDan_Click);
             // 
             // btnDanhMuc
             // 
@@ -208,6 +218,7 @@
             this.btnDanhMuc.TabIndex = 1;
             this.btnDanhMuc.Text = "Danh mục";
             this.btnDanhMuc.UseVisualStyleBackColor = false;
+            this.btnDanhMuc.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // cmnusDanhMuc
             // 
@@ -221,31 +232,35 @@
             this.cmnusDanhMucItemThue,
             this.cmnusDanhMucItemTamTruTamVang});
             this.cmnusDanhMuc.Name = "contextMenuStrip2";
-            this.cmnusDanhMuc.Size = new System.Drawing.Size(268, 132);
+            this.cmnusDanhMuc.Size = new System.Drawing.Size(268, 160);
             // 
             // cmnusDanhMucItemCongDan
             // 
             this.cmnusDanhMucItemCongDan.Name = "cmnusDanhMucItemCongDan";
             this.cmnusDanhMucItemCongDan.Size = new System.Drawing.Size(267, 32);
             this.cmnusDanhMucItemCongDan.Text = "Công Dân";
+            this.cmnusDanhMucItemCongDan.Click += new System.EventHandler(this.cmnusDanhMucItemCongDan_Click);
             // 
             // cmnusDanhMucItemHoKhau
             // 
             this.cmnusDanhMucItemHoKhau.Name = "cmnusDanhMucItemHoKhau";
             this.cmnusDanhMucItemHoKhau.Size = new System.Drawing.Size(267, 32);
             this.cmnusDanhMucItemHoKhau.Text = "Hộ khẩu";
+            this.cmnusDanhMucItemHoKhau.Click += new System.EventHandler(this.cmnusDanhMucItemHoKhau_Click);
             // 
             // cmnusDanhMucItemThue
             // 
             this.cmnusDanhMucItemThue.Name = "cmnusDanhMucItemThue";
             this.cmnusDanhMucItemThue.Size = new System.Drawing.Size(267, 32);
             this.cmnusDanhMucItemThue.Text = "Thuế";
+            this.cmnusDanhMucItemThue.Click += new System.EventHandler(this.cmnusDanhMucItemThue_Click);
             // 
             // cmnusDanhMucItemTamTruTamVang
             // 
             this.cmnusDanhMucItemTamTruTamVang.Name = "cmnusDanhMucItemTamTruTamVang";
             this.cmnusDanhMucItemTamTruTamVang.Size = new System.Drawing.Size(267, 32);
             this.cmnusDanhMucItemTamTruTamVang.Text = "Tạm trú/ Tạm vắng";
+            this.cmnusDanhMucItemTamTruTamVang.Click += new System.EventHandler(this.cmnusDanhMucItemThue_Click);
             // 
             // pnlHienThiForm
             // 
@@ -359,5 +374,6 @@
         private ToolStripMenuItem hônNhânToolStripMenuItem;
         private ToolStripMenuItem cCCDToolStripMenuItem;
         private ToolStripMenuItem khaiSinhToolStripMenuItem;
+        private TitleBar UsExit_Hide;
     }
 }
