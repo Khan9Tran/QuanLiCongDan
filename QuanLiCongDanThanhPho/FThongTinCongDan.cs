@@ -22,6 +22,8 @@ namespace QuanLiCongDanThanhPho
         KhaiSinhDAO ksDAO = new KhaiSinhDAO();
         ThueDAO thueDAO = new ThueDAO();
         HonNhanDAO hnDAO = new HonNhanDAO();
+        HoKhauDAO hkDAO = new HoKhauDAO();
+        TamTruTamVangDAO tttvDAO = new TamTruTamVangDAO();
         public FThongTinCongDan()
         {
             InitializeComponent();
@@ -66,7 +68,17 @@ namespace QuanLiCongDanThanhPho
                 txtHonNhan.Text = "Chưa có hôn nhân";
             else
                 txtHonNhan.Text = hn.MaSo;
-
+            //---------------------//
+            HoKhau hk = new HoKhau();
+            hk = hkDAO.LayThongTin(cd.MaHoKhau);
+            txtDiaChi.Text = hk.DiaChi.toString();
+            //---------------------//
+            TamTruTamVang tttv = new TamTruTamVang();
+            tttv = tttvDAO.LayThongTin(MaCCCD);
+            if (!tttvDAO.KiemTraTamTruTamVang(MaCCCD))
+                txtGhiChu.Text = "Không có ghi chú";
+            else
+                txtGhiChu.Text = tttv.TrangThai;
         }
 
         private void FThongTinCongDan_MouseLeave(object sender, EventArgs e)

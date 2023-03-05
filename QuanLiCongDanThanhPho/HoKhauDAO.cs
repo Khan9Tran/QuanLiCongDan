@@ -21,5 +21,10 @@ namespace QuanLiCongDanThanhPho
         {
             return conn.LayDanhSach("SELECT * FROM HOKHAU");
         }
+        public HoKhau LayThongTin(string maHoKhau)
+        {
+            string sqlStr = string.Format("SELECT * FROM HOKHAU WHERE MaHK = '{0}'", maHoKhau);
+            return conn.LayThongTinHoKhau(sqlStr);
+        }
     }
 }

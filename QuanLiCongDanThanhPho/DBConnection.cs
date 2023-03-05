@@ -208,6 +208,37 @@ namespace QuanLiCongDanThanhPho
             }
             return hn;
         }
+        public TamTruTamVang LayThongTinTamTruTamVang(string sqlStr)
+        {
+            TamTruTamVang tttv = new TamTruTamVang();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    tttv.MaSo = reader["MaTTTV"].ToString();
+                    tttv.CCCD = reader["CCCD"].ToString();
+                    tttv.NgayBatDau = reader.GetDateTime("NgayBD");
+                    tttv.NgayKetThuc = reader.GetDateTime("NgayKT");
+                    tttv.TrangThai = reader["TrangThai"].ToString();
+                    tttv.LyDo = reader["LiDo"].ToString();
+                    DiaChi temp = new DiaChi();
+                    temp.DinhDang(reader["DiaChi"].ToString());
+                    tttv.DiaChi = temp;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("That bai " + ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return tttv;
+        }
         public Boolean KiemTraCoKhong(string sqlStr)
         {
             try
