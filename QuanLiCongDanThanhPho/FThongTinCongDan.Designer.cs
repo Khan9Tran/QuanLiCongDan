@@ -80,15 +80,15 @@
             // 
             // lblTittleBar
             // 
-            this.lblTittleBar.AutoSize = true;
-            this.lblTittleBar.BackColor = System.Drawing.Color.Transparent;
-            this.lblTittleBar.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTittleBar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTittleBar.Location = new System.Drawing.Point(214, 19);
-            this.lblTittleBar.Name = "lblTittleBar";
-            this.lblTittleBar.Size = new System.Drawing.Size(330, 38);
-            this.lblTittleBar.TabIndex = 0;
-            this.lblTittleBar.Text = "THÔNG TIN CÔNG DÂN";
+            lblTittleBar.AutoSize = true;
+            lblTittleBar.BackColor = Color.Transparent;
+            lblTittleBar.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTittleBar.ForeColor = Color.WhiteSmoke;
+            lblTittleBar.Location = new Point(214, 19);
+            lblTittleBar.Name = "lblTittleBar";
+            lblTittleBar.Size = new Size(330, 38);
+            lblTittleBar.TabIndex = 0;
+            lblTittleBar.Text = "THÔNG TIN CÔNG DÂN";
             // 
             // pnlTittleBar
             // 
@@ -118,13 +118,13 @@
             // 
             // picCongDan
             // 
-            this.picCongDan.BackColor = System.Drawing.Color.White;
-            this.picCongDan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picCongDan.Location = new System.Drawing.Point(538, 191);
-            this.picCongDan.Name = "picCongDan";
-            this.picCongDan.Size = new System.Drawing.Size(176, 228);
-            this.picCongDan.TabIndex = 2;
-            this.picCongDan.TabStop = false;
+            picCongDan.BackColor = Color.White;
+            picCongDan.BackgroundImageLayout = ImageLayout.Zoom;
+            picCongDan.Location = new Point(538, 191);
+            picCongDan.Name = "picCongDan";
+            picCongDan.Size = new Size(176, 228);
+            picCongDan.TabIndex = 2;
+            picCongDan.TabStop = false;
             // 
             // lblTen
             // 
@@ -242,44 +242,44 @@
             // 
             // pnlThongTin
             // 
-            this.pnlThongTin.BackColor = System.Drawing.Color.White;
-            this.pnlThongTin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlThongTin.Controls.Add(this.textBox1);
-            this.pnlThongTin.Controls.Add(this.lblTrinhDoHocVan);
-            this.pnlThongTin.Controls.Add(this.panel1);
-            this.pnlThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlThongTin.Location = new System.Drawing.Point(0, 42);
-            this.pnlThongTin.Name = "pnlThongTin";
-            this.pnlThongTin.Size = new System.Drawing.Size(1200, 678);
-            this.pnlThongTin.TabIndex = 29;
+            pnlThongTin.BackColor = Color.White;
+            pnlThongTin.BorderStyle = BorderStyle.FixedSingle;
+            pnlThongTin.Controls.Add(textBox1);
+            pnlThongTin.Controls.Add(lblTrinhDoHocVan);
+            pnlThongTin.Controls.Add(panel1);
+            pnlThongTin.Dock = DockStyle.Fill;
+            pnlThongTin.Location = new Point(0, 42);
+            pnlThongTin.Name = "pnlThongTin";
+            pnlThongTin.Size = new Size(1200, 678);
+            pnlThongTin.TabIndex = 29;
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(885, 174);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(302, 34);
-            this.textBox1.TabIndex = 30;
+            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(885, 174);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(302, 34);
+            textBox1.TabIndex = 30;
             // 
             // lblTrinhDoHocVan
             // 
-            this.lblTrinhDoHocVan.AutoSize = true;
-            this.lblTrinhDoHocVan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTrinhDoHocVan.Location = new System.Drawing.Point(719, 174);
-            this.lblTrinhDoHocVan.Name = "lblTrinhDoHocVan";
-            this.lblTrinhDoHocVan.Size = new System.Drawing.Size(160, 28);
-            this.lblTrinhDoHocVan.TabIndex = 29;
-            this.lblTrinhDoHocVan.Text = "Trình độ học vấn:";
+            lblTrinhDoHocVan.AutoSize = true;
+            lblTrinhDoHocVan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTrinhDoHocVan.Location = new Point(719, 174);
+            lblTrinhDoHocVan.Name = "lblTrinhDoHocVan";
+            lblTrinhDoHocVan.Size = new Size(160, 28);
+            lblTrinhDoHocVan.TabIndex = 29;
+            lblTrinhDoHocVan.Text = "Trình độ học vấn:";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(9)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 676);
-            this.panel1.TabIndex = 31;
+            panel1.BackColor = Color.FromArgb(255, 200, 9);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(352, 676);
+            panel1.TabIndex = 31;
             // 
             // label1
             // 
@@ -359,52 +359,52 @@
             // 
             // btnKhaiSinh
             // 
-            this.btnKhaiSinh.BackColor = System.Drawing.Color.White;
-            this.btnKhaiSinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnKhaiSinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnKhaiSinh.Location = new System.Drawing.Point(538, 132);
-            this.btnKhaiSinh.Name = "btnKhaiSinh";
-            this.btnKhaiSinh.Size = new System.Drawing.Size(176, 47);
-            this.btnKhaiSinh.TabIndex = 50;
-            this.btnKhaiSinh.Text = "Khai Sinh";
-            this.btnKhaiSinh.UseVisualStyleBackColor = false;
-            this.btnKhaiSinh.Click += new System.EventHandler(this.btnKhaiSinh_Click);
+            btnKhaiSinh.BackColor = Color.White;
+            btnKhaiSinh.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnKhaiSinh.ForeColor = Color.FromArgb(44, 53, 60);
+            btnKhaiSinh.Location = new Point(538, 132);
+            btnKhaiSinh.Name = "btnKhaiSinh";
+            btnKhaiSinh.Size = new Size(176, 47);
+            btnKhaiSinh.TabIndex = 50;
+            btnKhaiSinh.Text = "Khai Sinh";
+            btnKhaiSinh.UseVisualStyleBackColor = false;
+            btnKhaiSinh.Click += btnKhaiSinh_Click;
             // 
             // btnThue
             // 
-            this.btnThue.BackColor = System.Drawing.Color.White;
-            this.btnThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnThue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnThue.Location = new System.Drawing.Point(667, 578);
-            this.btnThue.Name = "btnThue";
-            this.btnThue.Size = new System.Drawing.Size(114, 35);
-            this.btnThue.TabIndex = 49;
-            this.btnThue.Text = "Chi tiết";
-            this.btnThue.UseVisualStyleBackColor = false;
+            btnThue.BackColor = Color.White;
+            btnThue.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnThue.ForeColor = Color.FromArgb(44, 53, 60);
+            btnThue.Location = new Point(667, 578);
+            btnThue.Name = "btnThue";
+            btnThue.Size = new Size(114, 35);
+            btnThue.TabIndex = 49;
+            btnThue.Text = "Chi tiết";
+            btnThue.UseVisualStyleBackColor = false;
             // 
             // btnHonNhan
             // 
-            this.btnHonNhan.BackColor = System.Drawing.Color.White;
-            this.btnHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnHonNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnHonNhan.Location = new System.Drawing.Point(667, 633);
-            this.btnHonNhan.Name = "btnHonNhan";
-            this.btnHonNhan.Size = new System.Drawing.Size(114, 35);
-            this.btnHonNhan.TabIndex = 48;
-            this.btnHonNhan.Text = "Chi tiết";
-            this.btnHonNhan.UseVisualStyleBackColor = false;
+            btnHonNhan.BackColor = Color.White;
+            btnHonNhan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHonNhan.ForeColor = Color.FromArgb(44, 53, 60);
+            btnHonNhan.Location = new Point(667, 633);
+            btnHonNhan.Name = "btnHonNhan";
+            btnHonNhan.Size = new Size(114, 35);
+            btnHonNhan.TabIndex = 48;
+            btnHonNhan.Text = "Chi tiết";
+            btnHonNhan.UseVisualStyleBackColor = false;
             // 
             // btnHoKhau
             // 
-            this.btnHoKhau.BackColor = System.Drawing.Color.White;
-            this.btnHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnHoKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnHoKhau.Location = new System.Drawing.Point(667, 687);
-            this.btnHoKhau.Name = "btnHoKhau";
-            this.btnHoKhau.Size = new System.Drawing.Size(114, 35);
-            this.btnHoKhau.TabIndex = 47;
-            this.btnHoKhau.Text = "Chi tiết";
-            this.btnHoKhau.UseVisualStyleBackColor = false;
+            btnHoKhau.BackColor = Color.White;
+            btnHoKhau.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnHoKhau.ForeColor = Color.FromArgb(44, 53, 60);
+            btnHoKhau.Location = new Point(667, 687);
+            btnHoKhau.Name = "btnHoKhau";
+            btnHoKhau.Size = new Size(114, 35);
+            btnHoKhau.TabIndex = 47;
+            btnHoKhau.Text = "Chi tiết";
+            btnHoKhau.UseVisualStyleBackColor = false;
             // 
             // txtHonNhan
             // 
@@ -581,28 +581,27 @@
             // 
             // FThongTinCongDan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(838, 579);
-            this.Controls.Add(this.pnlThongTinCD);
-            this.Controls.Add(this.pnlTittleBar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FThongTinCongDan";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FThongTinCongDan";
-            this.Load += new System.EventHandler(this.FThongTinCongDan_Load);
-            this.MouseLeave += new System.EventHandler(this.FThongTinCongDan_MouseLeave);
-            this.pnlTittleBar.ResumeLayout(false);
-            this.pnlTittleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).EndInit();
-            this.pnlThongTin.ResumeLayout(false);
-            this.pnlThongTin.PerformLayout();
-            this.pnlThongTinCD.ResumeLayout(false);
-            this.pnlThongTinCD.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            BackColor = SystemColors.GradientActiveCaption;
+            ClientSize = new Size(838, 579);
+            Controls.Add(pnlThongTinCD);
+            Controls.Add(pnlTittleBar);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FThongTinCongDan";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FThongTinCongDan";
+            Load += FThongTinCongDan_Load;
+            MouseLeave += FThongTinCongDan_MouseLeave;
+            pnlTittleBar.ResumeLayout(false);
+            pnlTittleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picCongDan).EndInit();
+            pnlThongTin.ResumeLayout(false);
+            pnlThongTin.PerformLayout();
+            pnlThongTinCD.ResumeLayout(false);
+            pnlThongTinCD.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

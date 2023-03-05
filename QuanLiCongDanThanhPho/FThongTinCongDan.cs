@@ -14,8 +14,9 @@ namespace QuanLiCongDanThanhPho
     public partial class FThongTinCongDan : Form
     {
         private string maCCCD;
-        public string MaCCCD { 
-            set { maCCCD = value; } 
+        public string MaCCCD
+        {
+            set { maCCCD = value; }
             get { return maCCCD; }
         }
         CongDanDAO cdDAO = new CongDanDAO();

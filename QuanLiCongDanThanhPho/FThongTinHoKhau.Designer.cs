@@ -28,243 +28,202 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTren = new System.Windows.Forms.Panel();
-            this.lblTieuDe = new System.Windows.Forms.Label();
-            this.pnlHienThongTin = new System.Windows.Forms.Panel();
-            this.lblQuanHe = new System.Windows.Forms.Label();
-            this.gvQuanHeVoiChuHo = new System.Windows.Forms.DataGridView();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.txtCCCDChuHo = new System.Windows.Forms.TextBox();
-            this.txtTenChuHo = new System.Windows.Forms.TextBox();
-            this.txtMaHoKhau = new System.Windows.Forms.TextBox();
-            this.lblDiaChi = new System.Windows.Forms.Label();
-            this.lblMaHoKhau = new System.Windows.Forms.Label();
-            this.lblCCCDChuHo = new System.Windows.Forms.Label();
-            this.lblTenChuHo = new System.Windows.Forms.Label();
-            this.pnlTrai = new System.Windows.Forms.Panel();
-            this.btnQuayLai = new System.Windows.Forms.Button();
-            this.btnTrangChu = new System.Windows.Forms.Button();
-            this.pnlTren.SuspendLayout();
-            this.pnlHienThongTin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvQuanHeVoiChuHo)).BeginInit();
-            this.pnlTrai.SuspendLayout();
-            this.SuspendLayout();
+            pnlTren = new Panel();
+            lblTieuDe = new Label();
+            pnlHienThongTin = new Panel();
+            lblQuanHe = new Label();
+            gvQuanHeVoiChuHo = new DataGridView();
+            txtDiaChi = new TextBox();
+            txtCCCDChuHo = new TextBox();
+            txtTenChuHo = new TextBox();
+            txtMaHoKhau = new TextBox();
+            lblDiaChi = new Label();
+            lblMaHoKhau = new Label();
+            lblCCCDChuHo = new Label();
+            lblTenChuHo = new Label();
+            pnlTren.SuspendLayout();
+            pnlHienThongTin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gvQuanHeVoiChuHo).BeginInit();
+            SuspendLayout();
             // 
             // pnlTren
             // 
-            this.pnlTren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.pnlTren.Controls.Add(this.lblTieuDe);
-            this.pnlTren.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTren.Location = new System.Drawing.Point(0, 0);
-            this.pnlTren.Name = "pnlTren";
-            this.pnlTren.Size = new System.Drawing.Size(1200, 81);
-            this.pnlTren.TabIndex = 0;
+            pnlTren.BackColor = Color.FromArgb(44, 43, 60);
+            pnlTren.Controls.Add(lblTieuDe);
+            pnlTren.Dock = DockStyle.Top;
+            pnlTren.Location = new Point(0, 0);
+            pnlTren.Name = "pnlTren";
+            pnlTren.Size = new Size(838, 81);
+            pnlTren.TabIndex = 0;
             // 
             // lblTieuDe
             // 
-            this.lblTieuDe.AutoSize = true;
-            this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTieuDe.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTieuDe.Location = new System.Drawing.Point(28, 20);
-            this.lblTieuDe.Name = "lblTieuDe";
-            this.lblTieuDe.Size = new System.Drawing.Size(146, 38);
-            this.lblTieuDe.TabIndex = 0;
-            this.lblTieuDe.Text = "HỘ KHẨU";
+            lblTieuDe.AutoSize = true;
+            lblTieuDe.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTieuDe.ForeColor = Color.WhiteSmoke;
+            lblTieuDe.Location = new Point(346, 20);
+            lblTieuDe.Name = "lblTieuDe";
+            lblTieuDe.Size = new Size(146, 38);
+            lblTieuDe.TabIndex = 0;
+            lblTieuDe.Text = "HỘ KHẨU";
             // 
             // pnlHienThongTin
             // 
-            this.pnlHienThongTin.Controls.Add(this.lblQuanHe);
-            this.pnlHienThongTin.Controls.Add(this.gvQuanHeVoiChuHo);
-            this.pnlHienThongTin.Controls.Add(this.txtDiaChi);
-            this.pnlHienThongTin.Controls.Add(this.txtCCCDChuHo);
-            this.pnlHienThongTin.Controls.Add(this.txtTenChuHo);
-            this.pnlHienThongTin.Controls.Add(this.txtMaHoKhau);
-            this.pnlHienThongTin.Controls.Add(this.lblDiaChi);
-            this.pnlHienThongTin.Controls.Add(this.lblMaHoKhau);
-            this.pnlHienThongTin.Controls.Add(this.lblCCCDChuHo);
-            this.pnlHienThongTin.Controls.Add(this.lblTenChuHo);
-            this.pnlHienThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHienThongTin.Location = new System.Drawing.Point(0, 81);
-            this.pnlHienThongTin.Name = "pnlHienThongTin";
-            this.pnlHienThongTin.Size = new System.Drawing.Size(1200, 639);
-            this.pnlHienThongTin.TabIndex = 1;
+            pnlHienThongTin.BackColor = Color.WhiteSmoke;
+            pnlHienThongTin.Controls.Add(lblQuanHe);
+            pnlHienThongTin.Controls.Add(gvQuanHeVoiChuHo);
+            pnlHienThongTin.Controls.Add(txtDiaChi);
+            pnlHienThongTin.Controls.Add(txtCCCDChuHo);
+            pnlHienThongTin.Controls.Add(txtTenChuHo);
+            pnlHienThongTin.Controls.Add(txtMaHoKhau);
+            pnlHienThongTin.Controls.Add(lblDiaChi);
+            pnlHienThongTin.Controls.Add(lblMaHoKhau);
+            pnlHienThongTin.Controls.Add(lblCCCDChuHo);
+            pnlHienThongTin.Controls.Add(lblTenChuHo);
+            pnlHienThongTin.Location = new Point(12, 86);
+            pnlHienThongTin.Name = "pnlHienThongTin";
+            pnlHienThongTin.Size = new Size(826, 780);
+            pnlHienThongTin.TabIndex = 1;
             // 
             // lblQuanHe
             // 
-            this.lblQuanHe.AutoSize = true;
-            this.lblQuanHe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblQuanHe.Location = new System.Drawing.Point(354, 239);
-            this.lblQuanHe.Name = "lblQuanHe";
-            this.lblQuanHe.Size = new System.Drawing.Size(197, 28);
-            this.lblQuanHe.TabIndex = 11;
-            this.lblQuanHe.Text = "Quan hệ với chủ hộ";
+            lblQuanHe.AutoSize = true;
+            lblQuanHe.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblQuanHe.Location = new Point(20, 220);
+            lblQuanHe.Name = "lblQuanHe";
+            lblQuanHe.Size = new Size(197, 28);
+            lblQuanHe.TabIndex = 11;
+            lblQuanHe.Text = "Quan hệ với chủ hộ";
             // 
             // gvQuanHeVoiChuHo
             // 
-            this.gvQuanHeVoiChuHo.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gvQuanHeVoiChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gvQuanHeVoiChuHo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvQuanHeVoiChuHo.Location = new System.Drawing.Point(354, 310);
-            this.gvQuanHeVoiChuHo.Name = "gvQuanHeVoiChuHo";
-            this.gvQuanHeVoiChuHo.RowHeadersWidth = 51;
-            this.gvQuanHeVoiChuHo.RowTemplate.Height = 29;
-            this.gvQuanHeVoiChuHo.Size = new System.Drawing.Size(748, 290);
-            this.gvQuanHeVoiChuHo.TabIndex = 10;
+            gvQuanHeVoiChuHo.BackgroundColor = Color.Gainsboro;
+            gvQuanHeVoiChuHo.BorderStyle = BorderStyle.None;
+            gvQuanHeVoiChuHo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvQuanHeVoiChuHo.Location = new Point(259, 220);
+            gvQuanHeVoiChuHo.Name = "gvQuanHeVoiChuHo";
+            gvQuanHeVoiChuHo.RowHeadersWidth = 51;
+            gvQuanHeVoiChuHo.RowTemplate.Height = 29;
+            gvQuanHeVoiChuHo.Size = new Size(519, 156);
+            gvQuanHeVoiChuHo.TabIndex = 10;
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.txtDiaChi.Location = new System.Drawing.Point(617, 177);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.ReadOnly = true;
-            this.txtDiaChi.Size = new System.Drawing.Size(485, 27);
-            this.txtDiaChi.TabIndex = 9;
+            txtDiaChi.BackColor = Color.Gainsboro;
+            txtDiaChi.BorderStyle = BorderStyle.None;
+            txtDiaChi.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDiaChi.ForeColor = Color.Black;
+            txtDiaChi.Location = new Point(259, 170);
+            txtDiaChi.Name = "txtDiaChi";
+            txtDiaChi.ReadOnly = true;
+            txtDiaChi.Size = new Size(519, 27);
+            txtDiaChi.TabIndex = 9;
             // 
             // txtCCCDChuHo
             // 
-            this.txtCCCDChuHo.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtCCCDChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCCCDChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCCCDChuHo.ForeColor = System.Drawing.Color.Black;
-            this.txtCCCDChuHo.Location = new System.Drawing.Point(617, 127);
-            this.txtCCCDChuHo.Name = "txtCCCDChuHo";
-            this.txtCCCDChuHo.ReadOnly = true;
-            this.txtCCCDChuHo.Size = new System.Drawing.Size(350, 27);
-            this.txtCCCDChuHo.TabIndex = 8;
-            this.txtCCCDChuHo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtCCCDChuHo.BackColor = Color.Gainsboro;
+            txtCCCDChuHo.BorderStyle = BorderStyle.None;
+            txtCCCDChuHo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCCCDChuHo.ForeColor = Color.Black;
+            txtCCCDChuHo.Location = new Point(259, 120);
+            txtCCCDChuHo.Name = "txtCCCDChuHo";
+            txtCCCDChuHo.ReadOnly = true;
+            txtCCCDChuHo.Size = new Size(395, 27);
+            txtCCCDChuHo.TabIndex = 8;
+            txtCCCDChuHo.TextAlign = HorizontalAlignment.Center;
             // 
             // txtTenChuHo
             // 
-            this.txtTenChuHo.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtTenChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTenChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTenChuHo.ForeColor = System.Drawing.Color.Black;
-            this.txtTenChuHo.Location = new System.Drawing.Point(617, 72);
-            this.txtTenChuHo.Name = "txtTenChuHo";
-            this.txtTenChuHo.ReadOnly = true;
-            this.txtTenChuHo.Size = new System.Drawing.Size(350, 27);
-            this.txtTenChuHo.TabIndex = 7;
-            this.txtTenChuHo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtTenChuHo.BackColor = Color.Gainsboro;
+            txtTenChuHo.BorderStyle = BorderStyle.None;
+            txtTenChuHo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTenChuHo.ForeColor = Color.Black;
+            txtTenChuHo.Location = new Point(259, 70);
+            txtTenChuHo.Name = "txtTenChuHo";
+            txtTenChuHo.ReadOnly = true;
+            txtTenChuHo.Size = new Size(395, 27);
+            txtTenChuHo.TabIndex = 7;
+            txtTenChuHo.TextAlign = HorizontalAlignment.Center;
             // 
             // txtMaHoKhau
             // 
-            this.txtMaHoKhau.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtMaHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaHoKhau.ForeColor = System.Drawing.Color.Black;
-            this.txtMaHoKhau.Location = new System.Drawing.Point(617, 19);
-            this.txtMaHoKhau.Name = "txtMaHoKhau";
-            this.txtMaHoKhau.ReadOnly = true;
-            this.txtMaHoKhau.Size = new System.Drawing.Size(350, 27);
-            this.txtMaHoKhau.TabIndex = 6;
-            this.txtMaHoKhau.Text = "Xin chao";
-            this.txtMaHoKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtMaHoKhau.BackColor = Color.Gainsboro;
+            txtMaHoKhau.BorderStyle = BorderStyle.None;
+            txtMaHoKhau.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMaHoKhau.ForeColor = Color.Black;
+            txtMaHoKhau.Location = new Point(259, 20);
+            txtMaHoKhau.Name = "txtMaHoKhau";
+            txtMaHoKhau.ReadOnly = true;
+            txtMaHoKhau.Size = new Size(395, 27);
+            txtMaHoKhau.TabIndex = 6;
+            txtMaHoKhau.Text = "Xin chao";
+            txtMaHoKhau.TextAlign = HorizontalAlignment.Center;
             // 
             // lblDiaChi
             // 
-            this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDiaChi.Location = new System.Drawing.Point(354, 176);
-            this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(78, 28);
-            this.lblDiaChi.TabIndex = 5;
-            this.lblDiaChi.Text = "Địa chỉ";
+            lblDiaChi.AutoSize = true;
+            lblDiaChi.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDiaChi.Location = new Point(20, 170);
+            lblDiaChi.Name = "lblDiaChi";
+            lblDiaChi.Size = new Size(78, 28);
+            lblDiaChi.TabIndex = 5;
+            lblDiaChi.Text = "Địa chỉ";
             // 
             // lblMaHoKhau
             // 
-            this.lblMaHoKhau.AutoSize = true;
-            this.lblMaHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMaHoKhau.Location = new System.Drawing.Point(354, 19);
-            this.lblMaHoKhau.Name = "lblMaHoKhau";
-            this.lblMaHoKhau.Size = new System.Drawing.Size(124, 28);
-            this.lblMaHoKhau.TabIndex = 4;
-            this.lblMaHoKhau.Text = "Mã hộ khẩu";
+            lblMaHoKhau.AutoSize = true;
+            lblMaHoKhau.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblMaHoKhau.Location = new Point(20, 20);
+            lblMaHoKhau.Name = "lblMaHoKhau";
+            lblMaHoKhau.Size = new Size(124, 28);
+            lblMaHoKhau.TabIndex = 4;
+            lblMaHoKhau.Text = "Mã hộ khẩu";
             // 
             // lblCCCDChuHo
             // 
-            this.lblCCCDChuHo.AutoSize = true;
-            this.lblCCCDChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCCCDChuHo.Location = new System.Drawing.Point(354, 127);
-            this.lblCCCDChuHo.Name = "lblCCCDChuHo";
-            this.lblCCCDChuHo.Size = new System.Drawing.Size(61, 28);
-            this.lblCCCDChuHo.TabIndex = 3;
-            this.lblCCCDChuHo.Text = "CCCD";
+            lblCCCDChuHo.AutoSize = true;
+            lblCCCDChuHo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCCCDChuHo.Location = new Point(20, 120);
+            lblCCCDChuHo.Name = "lblCCCDChuHo";
+            lblCCCDChuHo.Size = new Size(61, 28);
+            lblCCCDChuHo.TabIndex = 3;
+            lblCCCDChuHo.Text = "CCCD";
             // 
             // lblTenChuHo
             // 
-            this.lblTenChuHo.AutoSize = true;
-            this.lblTenChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTenChuHo.Location = new System.Drawing.Point(354, 72);
-            this.lblTenChuHo.Name = "lblTenChuHo";
-            this.lblTenChuHo.Size = new System.Drawing.Size(115, 28);
-            this.lblTenChuHo.TabIndex = 2;
-            this.lblTenChuHo.Text = "Tên chủ hộ";
-            // 
-            // pnlTrai
-            // 
-            this.pnlTrai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.pnlTrai.Controls.Add(this.btnQuayLai);
-            this.pnlTrai.Controls.Add(this.btnTrangChu);
-            this.pnlTrai.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlTrai.Location = new System.Drawing.Point(0, 81);
-            this.pnlTrai.Name = "pnlTrai";
-            this.pnlTrai.Size = new System.Drawing.Size(250, 639);
-            this.pnlTrai.TabIndex = 2;
-            // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnQuayLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.btnQuayLai.Location = new System.Drawing.Point(-31, 286);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(190, 50);
-            this.btnQuayLai.TabIndex = 1;
-            this.btnQuayLai.Text = "Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = true;
-            // 
-            // btnTrangChu
-            // 
-            this.btnTrangChu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTrangChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTrangChu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
-            this.btnTrangChu.Location = new System.Drawing.Point(-31, 193);
-            this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(190, 50);
-            this.btnTrangChu.TabIndex = 0;
-            this.btnTrangChu.Text = "Trang Chủ";
-            this.btnTrangChu.UseVisualStyleBackColor = false;
+            lblTenChuHo.AutoSize = true;
+            lblTenChuHo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTenChuHo.Location = new Point(20, 70);
+            lblTenChuHo.Name = "lblTenChuHo";
+            lblTenChuHo.Size = new Size(115, 28);
+            lblTenChuHo.TabIndex = 2;
+            lblTenChuHo.Text = "Tên chủ hộ";
             // 
             // FThongTinHoKhau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1200, 720);
-            this.Controls.Add(this.pnlTrai);
-            this.Controls.Add(this.pnlHienThongTin);
-            this.Controls.Add(this.pnlTren);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FThongTinHoKhau";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "HoKhau";
-            this.pnlTren.ResumeLayout(false);
-            this.pnlTren.PerformLayout();
-            this.pnlHienThongTin.ResumeLayout(false);
-            this.pnlHienThongTin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvQuanHeVoiChuHo)).EndInit();
-            this.pnlTrai.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
+            BackColor = SystemColors.GradientActiveCaption;
+            ClientSize = new Size(838, 507);
+            Controls.Add(pnlHienThongTin);
+            Controls.Add(pnlTren);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FThongTinHoKhau";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "HoKhau";
+            pnlTren.ResumeLayout(false);
+            pnlTren.PerformLayout();
+            pnlHienThongTin.ResumeLayout(false);
+            pnlHienThongTin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gvQuanHeVoiChuHo).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private Panel pnlTren;
         private Panel pnlHienThongTin;
-        private Panel pnlTrai;
         private Label lblDiaChi;
         private Label lblMaHoKhau;
         private Label lblCCCDChuHo;
@@ -275,8 +234,6 @@
         private TextBox txtCCCDChuHo;
         private TextBox txtTenChuHo;
         private TextBox txtMaHoKhau;
-        private Button btnQuayLai;
-        private Button btnTrangChu;
         private Label lblTieuDe;
     }
 }
