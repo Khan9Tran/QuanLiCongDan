@@ -11,7 +11,6 @@ namespace QuanLiCongDanThanhPho
     {
         DBConnection conn = new DBConnection();
         public CongDanDAO() { }
-        KhaiSinhDAO kSDAO;
         public void ThemCongDan(CongDan cD)
         {
             string strSql = string.Format($"INSERT INTO CONGDAN(CCCD,Ten,NgheNghiep,SDT,TonGiao,MaHK,QuanHeVoiChuHo) VALUES ('{cD.CCCD}' , N'{cD.Ten}', N'{cD.NgheNghiep}', '{cD.SDT}', N'{cD.TonGiao}', '{cD.MaHoKhau}', N'{cD.QuanHeVoiChuHo}');");
