@@ -26,7 +26,16 @@ namespace QuanLiCongDanThanhPho.Models
             this.soTienCanNop = soTienCanNop;
             this.soTienDaNop = soTienDaNop;
         }
-
+        public Thue(string maThue, string cCCD)
+        {
+            this.maThue = maThue;
+            this.cCCD = cCCD;
+            this.coQuanQuanLy = "";
+            this.ngayCapMa = DateTime.Now;
+            this.hanNop = DateTime.Now;
+            this.soTienCanNop = "";
+            this.soTienDaNop = "";
+        }
         public string MaThue { get => maThue; set => maThue = value; }
         public string CCCD { get => cCCD; set => cCCD = value; }
         public string CoQuanQuanLy { get => coQuanQuanLy; set => coQuanQuanLy = value; }

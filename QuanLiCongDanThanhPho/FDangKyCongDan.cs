@@ -36,9 +36,8 @@ namespace QuanLiCongDanThanhPho
             cdDAO.ThemCongDan(cD);
             CCCD cCCD = new CCCD(txtCCCD.Text);
             cCCDDAO.ThemCCCD(cCCD);
-            //hKDAO.ThemHoKhau(hK);
-            //Thue thue = new Thue(txtThue.Text, txtCCCD.Text,"",DateTime.Now,DateTime.Now,"","");
-            //thueDAO.ThemThue(thue);
+            Thue thue = new Thue(txtThue.Text, txtCCCD.Text);
+            thueDAO.ThemThue(thue);
         }
 
         private void btnThem_Click(object sender, EventArgs e)

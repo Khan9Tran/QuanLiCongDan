@@ -415,7 +415,8 @@
             this.cboDanToc.FormattingEnabled = true;
             this.cboDanToc.Items.AddRange(new object[] {
             "Kinh",
-            "Khmer"});
+            "Khmer",
+            "Hoa"});
             this.cboDanToc.Location = new System.Drawing.Point(546, 182);
             this.cboDanToc.Name = "cboDanToc";
             this.cboDanToc.Size = new System.Drawing.Size(188, 36);
@@ -428,8 +429,12 @@
             this.cboQuocTich.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboQuocTich.FormattingEnabled = true;
             this.cboQuocTich.Items.AddRange(new object[] {
-            "VietNam",
-            "My"});
+            "Việt Nam",
+            "Hoa Kỳ",
+            "Trung Quốc",
+            "Nhật",
+            "Nga",
+            "Hàn Quốc"});
             this.cboQuocTich.Location = new System.Drawing.Point(200, 182);
             this.cboQuocTich.Name = "cboQuocTich";
             this.cboQuocTich.Size = new System.Drawing.Size(188, 36);
@@ -516,8 +521,12 @@
             this.cboTonGiao.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboTonGiao.FormattingEnabled = true;
             this.cboTonGiao.Items.AddRange(new object[] {
-            "Khong",
-            "Phat"});
+            "Không",
+            "Phật giáo",
+            "Cao đài",
+            "Hòa hảo",
+            "Tin lành",
+            "Thiên chúa"});
             this.cboTonGiao.Location = new System.Drawing.Point(839, 137);
             this.cboTonGiao.Name = "cboTonGiao";
             this.cboTonGiao.Size = new System.Drawing.Size(213, 36);
