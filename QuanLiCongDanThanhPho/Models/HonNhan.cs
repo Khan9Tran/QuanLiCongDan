@@ -43,14 +43,15 @@ namespace QuanLiCongDanThanhPho.Models
             this.ngayDangKy = ngayDangKy;
         }
 
-        public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, DiaChi noiDangKy, DateTime ngayDangKy)
+        public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, string noiDangKy, DateTime ngayDangKy)
         {
             this.maSo = maSo;
             this.cCCDChong = cCCDChong;
             this.tenChong = tenChong;
             this.cCCDVo = cCCDVo;
             this.tenVo = tenVo;
-            this.noiDangKy = noiDangKy;
+            this.noiDangKy = new DiaChi();
+            this.noiDangKy.DinhDang(noiDangKy);
             this.ngayDangKy = ngayDangKy;
         }
 

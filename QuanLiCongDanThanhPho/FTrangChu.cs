@@ -14,6 +14,9 @@ namespace QuanLiCongDanThanhPho
     public partial class FTrangChu : Form
     {
         public Form currentChildForm;
+        const int WM_NCHITTEST = 0x84;
+        const int HTCLIENT = 0x1;
+        const int HTCAPTION = 0x2;
         public FTrangChu()
         {
             InitializeComponent();
@@ -189,6 +192,14 @@ namespace QuanLiCongDanThanhPho
         private void cmnusDangKyItemHoKhau_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyHoKhau());
+        }
+
+        protected override void WndProc(ref Message message)
+        {
+            base.WndProc(ref message);
+
+            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
+                message.Result = (IntPtr)HTCAPTION;
         }
     }
 }

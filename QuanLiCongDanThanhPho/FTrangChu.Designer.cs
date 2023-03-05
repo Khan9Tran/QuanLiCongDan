@@ -190,12 +190,14 @@
             this.cmnusDangKyItemTamTruTamVang.Name = "cmnusDangKyItemTamTruTamVang";
             this.cmnusDangKyItemTamTruTamVang.Size = new System.Drawing.Size(244, 32);
             this.cmnusDangKyItemTamTruTamVang.Text = "Tạm trú / tạm vắng";
+            this.cmnusDangKyItemTamTruTamVang.Click += new System.EventHandler(this.cmnusDangKyItemTamTruTamVang_Click);
             // 
             // cmnusDangKyItemHonNhan
             // 
             this.cmnusDangKyItemHonNhan.Name = "cmnusDangKyItemHonNhan";
             this.cmnusDangKyItemHonNhan.Size = new System.Drawing.Size(244, 32);
             this.cmnusDangKyItemHonNhan.Text = "Hôn nhân";
+            this.cmnusDangKyItemHonNhan.Click += new System.EventHandler(this.cmnusitemDangKyHonNhan_Click);
             // 
             // cmnusDangKyItemCCCD
             // 

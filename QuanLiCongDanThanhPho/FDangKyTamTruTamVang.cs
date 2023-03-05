@@ -12,9 +12,16 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyTamTruTamVang : Form
     {
+        TamTruTamVangDAO tTTVDAO;
         public FDangKyTamTruTamVang()
         {
             InitializeComponent();
+            tTTVDAO = new TamTruTamVangDAO();
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
