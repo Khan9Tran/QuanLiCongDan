@@ -21,7 +21,7 @@ namespace QuanLiCongDanThanhPho
         public void ThemTamTruTamVan(TamTruTamVang tTTV)
         {
             string sqlStr = string.Format($"INSERT INTO TAMTRUTAMVANG(MaTTTV, CCCD, DiaChi, NgayBD, NgayKT, TrangThai, LiDo) VALUES('{tTTV.MaSo}','{tTTV.CCCD}',N'{tTTV.DiaChi}' ,'{tTTV.NgayBatDau}', '{tTTV.NgayKetThuc}', N'{tTTV.TrangThai}', N'{tTTV.LyDo}' );");
-            conn.ThucThi(sqlStr);
+            conn.ThucThi(sqlStr,"Thêm tạm vắng/tạm trú thành công");
         }
     }
 }

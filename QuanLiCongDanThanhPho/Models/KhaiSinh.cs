@@ -10,7 +10,7 @@ namespace QuanLiCongDanThanhPho.Models
     {
         private string maKhaiSinh;
         private string hoTen;
-        private char gioiTinh;
+        private string gioiTinh;
         private string quocTich;
         private string danToc;
         private DateTime ngaySinh;
@@ -27,9 +27,9 @@ namespace QuanLiCongDanThanhPho.Models
             this.maKhaiSinh = maKhaiSinh;
             this.hoTen = hoTen;
             if (gioiTinh == "True")
-                this.gioiTinh = 'm';
+                this.gioiTinh = "m";
             else
-                this.gioiTinh = 'f';
+                this.gioiTinh = "f";
             this.quocTich = quocTich;
             this.danToc = danToc;
             this.ngaySinh = ngaySinh;
@@ -46,7 +46,7 @@ namespace QuanLiCongDanThanhPho.Models
 
         public string MaKhaiSinh { get => maKhaiSinh; set => maKhaiSinh = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
-        public char GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
         public string QuocTich { get => quocTich; set => quocTich = value; }
         public string DanToc { get => danToc; set => danToc = value; }
         public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }

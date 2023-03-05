@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiCongDanThanhPho.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace QuanLiCongDanThanhPho
         private string maHoKhau;
         private string quanHeVoiChuHo;
 
-        public CongDan(string cCCD, string ten, string ngheNghiep, string sDT, string tonGiao, string maHoKhau, string quanHeVoiChuHo)
+        public CongDan(string cCCD, string ten, string ngheNghiep, string sDT, string tonGiao, string maHoKhau, string quanHeVoiChuHo, string diaChi)
         {
             this.cCCD = cCCD;
             this.ten = ten;
@@ -25,6 +26,13 @@ namespace QuanLiCongDanThanhPho
             this.tonGiao = tonGiao;
             this.maHoKhau = maHoKhau;
             this.quanHeVoiChuHo = quanHeVoiChuHo;
+            if (quanHeVoiChuHo == "Chủ hộ")
+            {
+                DiaChi dC = new DiaChi();
+                dC.DinhDang(diaChi);
+                HoKhauDAO hoKhauDAO = new HoKhauDAO();
+                hoKhauDAO.ThemHoKhau(new Models.HoKhau(MaHoKhau,dC.toString(),CCCD));
+            }
         }
 
         public string CCCD { get => cCCD; set => cCCD = value; }

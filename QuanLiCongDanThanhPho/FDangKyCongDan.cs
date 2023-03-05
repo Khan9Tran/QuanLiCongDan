@@ -15,17 +15,30 @@ namespace QuanLiCongDanThanhPho
     {
         CongDanDAO cdDAO;
         KhaiSinhDAO kSDAO;
+        ThueDAO thueDAO;
+        HonNhanDAO hNDAO;
+        TamTruTamVangDAO tTTVDAO;
+        CCCDDAO cCCDDAO;
         public FDangKyCongDan()
         {
             InitializeComponent();
             cdDAO = new CongDanDAO();
             kSDAO = new KhaiSinhDAO();
+            thueDAO = new ThueDAO();
+            hNDAO= new HonNhanDAO();
+            tTTVDAO = new TamTruTamVangDAO();
+            cCCDDAO = new CCCDDAO();
         }
         
         public void ThemCongDan()
         {
-            CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, cboTonGiao.SelectedItem.ToString(), txtHoKhau.Text, txtQHVoiChuHo.Text);
-             cdDAO.ThemCongDan(cD);
+            CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, cboTonGiao.SelectedItem.ToString(), txtHoKhau.Text, cboQuanHe.SelectedItem.ToString(), txtDiaChi.Text);
+            cdDAO.ThemCongDan(cD);
+            CCCD cCCD = new CCCD(txtCCCD.Text);
+            cCCDDAO.ThemCCCD(cCCD);
+            //hKDAO.ThemHoKhau(hK);
+            //Thue thue = new Thue(txtThue.Text, txtCCCD.Text,"",DateTime.Now,DateTime.Now,"","");
+            //thueDAO.ThemThue(thue);
         }
 
         private void btnThem_Click(object sender, EventArgs e)

@@ -107,6 +107,7 @@
             this.btnSuaDoi.TabIndex = 4;
             this.btnSuaDoi.Text = "Sửa";
             this.btnSuaDoi.UseVisualStyleBackColor = false;
+            this.btnSuaDoi.Click += new System.EventHandler(this.btnSuaDoi_Click);
             // 
             // CmnusSuaDoi
             // 
@@ -307,7 +308,6 @@
             this.pnlHienThiForm.Name = "pnlHienThiForm";
             this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 775);
             this.pnlHienThiForm.TabIndex = 2;
-            this.pnlHienThiForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHienThiForm_Paint);
             // 
             // pnlTitleBar
             // 

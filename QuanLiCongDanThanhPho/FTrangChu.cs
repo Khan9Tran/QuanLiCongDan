@@ -110,5 +110,10 @@ namespace QuanLiCongDanThanhPho
 
         }
 
+        private void btnSuaDoi_Click(object sender, EventArgs e)
+        {
+            FThongTinCongDan ttcd = new FThongTinCongDan();
+            ttcd.ShowDialog();
+        }
     }
 }

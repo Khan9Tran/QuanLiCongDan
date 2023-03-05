@@ -21,5 +21,21 @@ namespace QuanLiCongDanThanhPho
         {
             Application.Exit();
         }
+
+
+        private void btnKhaiSinh_Click(object sender, EventArgs e)
+        {
+            FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh();
+            tTKS.ShowDialog();
+        }
+
+        private void FThongTinCongDan_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FThongTinCongDan_MouseLeave(object sender, EventArgs e)
+        {
+        }
     }
 }

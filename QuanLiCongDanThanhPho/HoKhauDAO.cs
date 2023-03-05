@@ -11,9 +11,11 @@ namespace QuanLiCongDanThanhPho
     internal class HoKhauDAO
     {
         DBConnection conn = new DBConnection();
+        public HoKhauDAO() { }
         public void ThemHoKhau(HoKhau hK)
         {
-            string strSql = string.Format($"INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('{hK.MaHoKhau}',N'{hK.DiaChi.toString()}', '{hK.CCCDChuHo}');");
+            string sqlStr = string.Format($"INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('{hK.MaHoKhau}',N'{hK.DiaChi.toString()}', '{hK.CCCDChuHo}');");
+            conn.ThucThi(sqlStr, "Tạo hộ khẩu mới thành công");
         }
         public DataTable LayDanhSach()
         {

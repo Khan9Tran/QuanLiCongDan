@@ -11,6 +11,7 @@ namespace QuanLiCongDanThanhPho
     internal class ThueDAO
     {
         DBConnection conn = new DBConnection();
+        public ThueDAO() { }
         public DataTable LayDanhSach()
         {
             return conn.LayDanhSach("SELECT MaThue, CCCD FROM THUE");
@@ -18,7 +19,7 @@ namespace QuanLiCongDanThanhPho
         public void ThemThue(Thue thue)
         {
             string sqlStr = string.Format($"INSERT INTO THUE(MaThue, CCCD, SoTienCanNop, SoTienDaNop, NgayCap, HanNop) VALUES('{thue.MaThue}','{thue.CCCD}', '{thue.SoTienCanNop}','{thue.SoTienDaNop}', '{thue.NgayCapMa}', '{thue.HanNop}');");
-            conn.ThucThi(sqlStr);
+            conn.ThucThi(sqlStr,"Thêm thông tin thuế thành công");
         }
     }
 }

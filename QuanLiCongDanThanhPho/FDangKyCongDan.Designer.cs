@@ -75,10 +75,11 @@
             this.lblNoiSinh = new System.Windows.Forms.Label();
             this.txtNoiSinh = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtQHVoiChuHo = new System.Windows.Forms.TextBox();
             this.lblDKKhaiSInh = new System.Windows.Forms.Label();
             this.dtmDKKhaiSinh = new System.Windows.Forms.DateTimePicker();
             this.cboTinhTrang = new System.Windows.Forms.ComboBox();
+            this.btnThemHinh = new System.Windows.Forms.Button();
+            this.cboQuanHe = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -436,14 +437,16 @@
             // 
             // btnDangKy
             // 
-            this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
+            this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangKy.FlatAppearance.BorderSize = 0;
+            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDangKy.ForeColor = System.Drawing.Color.White;
-            this.btnDangKy.Location = new System.Drawing.Point(1380, 720);
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.checmark;
+            this.btnDangKy.Location = new System.Drawing.Point(1176, 697);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(140, 50);
+            this.btnDangKy.Size = new System.Drawing.Size(64, 64);
             this.btnDangKy.TabIndex = 88;
-            this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -479,11 +482,13 @@
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
-            this.lblSDT.Location = new System.Drawing.Point(740, 190);
+            this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSDT.Image = global::QuanLiCongDanThanhPho.Properties.Resources.call;
+            this.lblSDT.Location = new System.Drawing.Point(749, 185);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(50, 28);
+            this.lblSDT.Size = new System.Drawing.Size(63, 32);
             this.lblSDT.TabIndex = 93;
-            this.lblSDT.Text = "SĐT";
+            this.lblSDT.Text = "       ";
             // 
             // txtSoDT
             // 
@@ -546,16 +551,6 @@
             this.label2.TabIndex = 100;
             this.label2.Text = "Quan hệ với chủ hộ";
             // 
-            // txtQHVoiChuHo
-            // 
-            this.txtQHVoiChuHo.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtQHVoiChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtQHVoiChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtQHVoiChuHo.Location = new System.Drawing.Point(292, 698);
-            this.txtQHVoiChuHo.Name = "txtQHVoiChuHo";
-            this.txtQHVoiChuHo.Size = new System.Drawing.Size(442, 27);
-            this.txtQHVoiChuHo.TabIndex = 101;
-            // 
             // lblDKKhaiSInh
             // 
             this.lblDKKhaiSInh.AutoSize = true;
@@ -590,15 +585,60 @@
             this.cboTinhTrang.Size = new System.Drawing.Size(180, 36);
             this.cboTinhTrang.TabIndex = 104;
             // 
+            // btnThemHinh
+            // 
+            this.btnThemHinh.BackColor = System.Drawing.Color.Transparent;
+            this.btnThemHinh.FlatAppearance.BorderSize = 0;
+            this.btnThemHinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemHinh.Image = global::QuanLiCongDanThanhPho.Properties.Resources.upload;
+            this.btnThemHinh.Location = new System.Drawing.Point(1208, 286);
+            this.btnThemHinh.Name = "btnThemHinh";
+            this.btnThemHinh.Size = new System.Drawing.Size(32, 32);
+            this.btnThemHinh.TabIndex = 105;
+            this.btnThemHinh.UseVisualStyleBackColor = false;
+            // 
+            // cboQuanHe
+            // 
+            this.cboQuanHe.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboQuanHe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboQuanHe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboQuanHe.FormattingEnabled = true;
+            this.cboQuanHe.Items.AddRange(new object[] {
+            "Chủ hộ",
+            "Vợ",
+            "Chồng",
+            "Cha",
+            "Mẹ",
+            "Con trai",
+            "Con gái",
+            "Em trai",
+            "Em gái",
+            "Anh trai",
+            "Chị gái",
+            "Ông nội",
+            "Bà nội",
+            "Ông ngoại",
+            "Bà ngoại",
+            "Dì ",
+            "Dượng",
+            "Cậu",
+            "Mợ",
+            "Bác"});
+            this.cboQuanHe.Location = new System.Drawing.Point(292, 689);
+            this.cboQuanHe.Name = "cboQuanHe";
+            this.cboQuanHe.Size = new System.Drawing.Size(442, 36);
+            this.cboQuanHe.TabIndex = 106;
+            // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.cboQuanHe);
+            this.Controls.Add(this.btnThemHinh);
             this.Controls.Add(this.cboTinhTrang);
             this.Controls.Add(this.dtmDKKhaiSinh);
             this.Controls.Add(this.lblDKKhaiSInh);
-            this.Controls.Add(this.txtQHVoiChuHo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNoiSinh);
             this.Controls.Add(this.lblNoiSinh);
@@ -707,9 +747,10 @@
         private Label lblNoiSinh;
         private TextBox txtNoiSinh;
         private Label label2;
-        private TextBox txtQHVoiChuHo;
         private Label lblDKKhaiSInh;
         private DateTimePicker dtmDKKhaiSinh;
         private ComboBox cboTinhTrang;
+        private Button btnThemHinh;
+        private ComboBox cboQuanHe;
     }
 }

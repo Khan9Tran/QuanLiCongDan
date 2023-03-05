@@ -18,7 +18,7 @@ namespace QuanLiCongDanThanhPho
         public void ThemKhaSinh(KhaiSinh kS)
         {
             string sqlStr = StringKhaiSinh(kS);
-            conn.ThucThi(sqlStr);
+            conn.ThucThi(sqlStr,"Thêm khai sinh thành công");
         }
     }
 }

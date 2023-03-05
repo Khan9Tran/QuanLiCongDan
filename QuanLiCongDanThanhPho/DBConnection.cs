@@ -11,7 +11,7 @@ namespace QuanLiCongDanThanhPho
     internal class DBConnection
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
-        public void ThucThi(string sqlStr)
+        public void ThucThi(string sqlStr, string thongBao)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace QuanLiCongDanThanhPho
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show("Thanh cong");
+                    MessageBox.Show(thongBao);
                 }
             }
             catch (Exception ex)
@@ -31,6 +31,7 @@ namespace QuanLiCongDanThanhPho
                 conn.Close();
             }
         }
+
         public DataTable LayDanhSach(string sqlStr)
         {
             DataTable ds = new DataTable();

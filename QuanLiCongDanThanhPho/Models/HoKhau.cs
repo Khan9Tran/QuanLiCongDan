@@ -19,12 +19,7 @@ namespace QuanLiCongDanThanhPho.Models
             this.diaChi.DinhDang(diaChi);
             this.cCCDChuHo = cCCDChuHo;
         }
-        public HoKhau(string maHoKhau, string diaChi)
-        {
-            this.maHoKhau = maHoKhau;
-            this.diaChi = new DiaChi();
-            this.diaChi.DinhDang(diaChi);
-        }
+
 
         public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
         public string CCCDChuHo { get => cCCDChuHo; set => cCCDChuHo = value; }
