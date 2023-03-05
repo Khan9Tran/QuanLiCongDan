@@ -61,12 +61,16 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(714, 499);
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.checmark1;
+            this.btnThem.Location = new System.Drawing.Point(1065, 501);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(197, 50);
+            this.btnThem.Size = new System.Drawing.Size(65, 65);
             this.btnThem.TabIndex = 23;
-            this.btnThem.Text = "Thêm thành viên";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lblTenNguoiThem
             // 
@@ -108,12 +112,16 @@
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(1020, 348);
+            this.btnTim.BackColor = System.Drawing.Color.Transparent;
+            this.btnTim.FlatAppearance.BorderSize = 0;
+            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTim.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTim.Location = new System.Drawing.Point(953, 343);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(110, 39);
+            this.btnTim.Size = new System.Drawing.Size(50, 50);
             this.btnTim.TabIndex = 28;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // txtQuanHeVoiChuHo
             // 

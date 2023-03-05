@@ -185,5 +185,10 @@ namespace QuanLiCongDanThanhPho
         {
             pnlThongKe.BackColor = Color.FromArgb(50, 49, 70);
         }
+
+        private void cmnusDangKyItemHoKhau_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDangKyHoKhau());
+        }
     }
 }

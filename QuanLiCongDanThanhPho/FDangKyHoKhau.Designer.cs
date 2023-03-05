@@ -31,26 +31,34 @@
             this.btnTachGop = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.pnlLuaChon = new System.Windows.Forms.Panel();
+            this.pnlBarDuoi = new System.Windows.Forms.Panel();
+            this.pnlBarDuoi.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTachGop
             // 
-            this.btnTachGop.Location = new System.Drawing.Point(12, 720);
+            this.btnTachGop.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTachGop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTachGop.FlatAppearance.BorderSize = 0;
+            this.btnTachGop.Location = new System.Drawing.Point(1172, 17);
             this.btnTachGop.Name = "btnTachGop";
             this.btnTachGop.Size = new System.Drawing.Size(188, 50);
             this.btnTachGop.TabIndex = 10;
             this.btnTachGop.Text = "Tách Gộp Hộ";
-            this.btnTachGop.UseVisualStyleBackColor = true;
+            this.btnTachGop.UseVisualStyleBackColor = false;
             this.btnTachGop.Click += new System.EventHandler(this.btnTachGop_Click);
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(1322, 720);
+            this.btnThem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.add_user__1_;
+            this.btnThem.Location = new System.Drawing.Point(1381, 17);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(198, 50);
+            this.btnThem.Size = new System.Drawing.Size(50, 50);
             this.btnThem.TabIndex = 11;
-            this.btnThem.Text = "Thêm thành viên";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // pnlLuaChon
@@ -58,23 +66,34 @@
             this.pnlLuaChon.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLuaChon.Location = new System.Drawing.Point(0, 0);
             this.pnlLuaChon.Name = "pnlLuaChon";
-            this.pnlLuaChon.Size = new System.Drawing.Size(1532, 695);
+            this.pnlLuaChon.Size = new System.Drawing.Size(1532, 647);
             this.pnlLuaChon.TabIndex = 12;
+            // 
+            // pnlBarDuoi
+            // 
+            this.pnlBarDuoi.BackColor = System.Drawing.Color.CadetBlue;
+            this.pnlBarDuoi.Controls.Add(this.btnThem);
+            this.pnlBarDuoi.Controls.Add(this.btnTachGop);
+            this.pnlBarDuoi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBarDuoi.Location = new System.Drawing.Point(0, 646);
+            this.pnlBarDuoi.Name = "pnlBarDuoi";
+            this.pnlBarDuoi.Size = new System.Drawing.Size(1532, 106);
+            this.pnlBarDuoi.TabIndex = 13;
             // 
             // FDangKyHoKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.ClientSize = new System.Drawing.Size(1532, 752);
+            this.Controls.Add(this.pnlBarDuoi);
             this.Controls.Add(this.pnlLuaChon);
-            this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.btnTachGop);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDangKyHoKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDangKyHoKhau";
+            this.pnlBarDuoi.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -84,5 +103,6 @@
         private Button btnTachGop;
         private Button btnThem;
         private Panel pnlLuaChon;
+        private Panel pnlBarDuoi;
     }
 }

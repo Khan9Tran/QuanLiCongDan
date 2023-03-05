@@ -17,7 +17,6 @@ namespace QuanLiCongDanThanhPho
         KhaiSinhDAO kSDAO;
         ThueDAO thueDAO;
         HonNhanDAO hNDAO;
-        TamTruTamVangDAO tTTVDAO;
         CCCDDAO cCCDDAO;
         public FDangKyCongDan()
         {
@@ -26,7 +25,6 @@ namespace QuanLiCongDanThanhPho
             kSDAO = new KhaiSinhDAO();
             thueDAO = new ThueDAO();
             hNDAO= new HonNhanDAO();
-            tTTVDAO = new TamTruTamVangDAO();
             cCCDDAO = new CCCDDAO();
         }
         
@@ -36,8 +34,15 @@ namespace QuanLiCongDanThanhPho
             cdDAO.ThemCongDan(cD);
             CCCD cCCD = new CCCD(txtCCCD.Text);
             cCCDDAO.ThemCCCD(cCCD);
+            KhaiSinh kS = new KhaiSinh(txtCCCD.Text, txtTen.Text, cboQuocTich.SelectedItem.ToString(), cboDanToc.SelectedItem.ToString(),cboDanToc.SelectedItem.ToString(),dtmNgaySinh.Value, dtmDKKhaiSinh.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCCCDCha.Text, txtTenCha.Text, txtCCCDMe.Text, txtTenMe.Text);
+            kSDAO.ThemKhaSinh(kS);
             Thue thue = new Thue(txtThue.Text, txtCCCD.Text);
             thueDAO.ThemThue(thue);
+            if (cboTinhTrang.SelectedItem.ToString() == "Kết hôn")
+            {
+                HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text,"" ,DateTime.Now, rdoNam.ToString());
+                hNDAO.ThemHonNhan(hN);
+            }    
         }
 
         private void btnThem_Click(object sender, EventArgs e)

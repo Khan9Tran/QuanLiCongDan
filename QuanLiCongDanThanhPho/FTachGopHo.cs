@@ -21,5 +21,10 @@ namespace QuanLiCongDanThanhPho
         {
 
         }
+
+        private void btnTaoHoMoi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

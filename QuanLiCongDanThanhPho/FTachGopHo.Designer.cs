@@ -44,7 +44,7 @@
             // lblMaHoTach
             // 
             this.lblMaHoTach.AutoSize = true;
-            this.lblMaHoTach.Location = new System.Drawing.Point(95, 82);
+            this.lblMaHoTach.Location = new System.Drawing.Point(84, 24);
             this.lblMaHoTach.Name = "lblMaHoTach";
             this.lblMaHoTach.Size = new System.Drawing.Size(119, 28);
             this.lblMaHoTach.TabIndex = 4;
@@ -54,7 +54,7 @@
             // lblMaHoGop
             // 
             this.lblMaHoGop.AutoSize = true;
-            this.lblMaHoGop.Location = new System.Drawing.Point(838, 83);
+            this.lblMaHoGop.Location = new System.Drawing.Point(838, 23);
             this.lblMaHoGop.Name = "lblMaHoGop";
             this.lblMaHoGop.Size = new System.Drawing.Size(114, 28);
             this.lblMaHoGop.TabIndex = 5;
@@ -63,7 +63,7 @@
             // gvHoTach
             // 
             this.gvHoTach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvHoTach.Location = new System.Drawing.Point(95, 176);
+            this.gvHoTach.Location = new System.Drawing.Point(84, 85);
             this.gvHoTach.Name = "gvHoTach";
             this.gvHoTach.RowHeadersWidth = 51;
             this.gvHoTach.RowTemplate.Height = 29;
@@ -73,7 +73,7 @@
             // gvHoGop
             // 
             this.gvHoGop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvHoGop.Location = new System.Drawing.Point(838, 176);
+            this.gvHoGop.Location = new System.Drawing.Point(838, 85);
             this.gvHoGop.Name = "gvHoGop";
             this.gvHoGop.RowHeadersWidth = 51;
             this.gvHoGop.RowTemplate.Height = 29;
@@ -82,37 +82,47 @@
             // 
             // btnTach
             // 
-            this.btnTach.Location = new System.Drawing.Point(447, 623);
+            this.btnTach.BackColor = System.Drawing.Color.Transparent;
+            this.btnTach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTach.FlatAppearance.BorderSize = 0;
+            this.btnTach.Image = global::QuanLiCongDanThanhPho.Properties.Resources.split__1_;
+            this.btnTach.Location = new System.Drawing.Point(732, 248);
             this.btnTach.Name = "btnTach";
-            this.btnTach.Size = new System.Drawing.Size(150, 50);
+            this.btnTach.Size = new System.Drawing.Size(50, 50);
             this.btnTach.TabIndex = 10;
-            this.btnTach.Text = "Tách hộ";
-            this.btnTach.UseVisualStyleBackColor = true;
+            this.btnTach.UseVisualStyleBackColor = false;
             // 
             // btnGopHo
             // 
-            this.btnGopHo.Location = new System.Drawing.Point(689, 623);
+            this.btnGopHo.BackColor = System.Drawing.Color.Transparent;
+            this.btnGopHo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGopHo.FlatAppearance.BorderSize = 0;
+            this.btnGopHo.Image = global::QuanLiCongDanThanhPho.Properties.Resources.merge;
+            this.btnGopHo.Location = new System.Drawing.Point(732, 348);
             this.btnGopHo.Name = "btnGopHo";
-            this.btnGopHo.Size = new System.Drawing.Size(150, 50);
+            this.btnGopHo.Size = new System.Drawing.Size(50, 50);
             this.btnGopHo.TabIndex = 11;
-            this.btnGopHo.Text = "Gộp hộ";
-            this.btnGopHo.UseVisualStyleBackColor = true;
+            this.btnGopHo.UseVisualStyleBackColor = false;
             // 
             // btnTaoHoMoi
             // 
-            this.btnTaoHoMoi.Location = new System.Drawing.Point(937, 623);
+            this.btnTaoHoMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btnTaoHoMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaoHoMoi.FlatAppearance.BorderSize = 0;
+            this.btnTaoHoMoi.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
+            this.btnTaoHoMoi.Location = new System.Drawing.Point(732, 157);
             this.btnTaoHoMoi.Name = "btnTaoHoMoi";
-            this.btnTaoHoMoi.Size = new System.Drawing.Size(150, 50);
+            this.btnTaoHoMoi.Size = new System.Drawing.Size(50, 50);
             this.btnTaoHoMoi.TabIndex = 12;
-            this.btnTaoHoMoi.Text = "Tạo hộ mới";
-            this.btnTaoHoMoi.UseVisualStyleBackColor = true;
+            this.btnTaoHoMoi.UseVisualStyleBackColor = false;
+            this.btnTaoHoMoi.Click += new System.EventHandler(this.btnTaoHoMoi_Click);
             // 
             // txtMaHoTach
             // 
             this.txtMaHoTach.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaHoTach.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaHoTach.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaHoTach.Location = new System.Drawing.Point(232, 83);
+            this.txtMaHoTach.Location = new System.Drawing.Point(232, 25);
             this.txtMaHoTach.Name = "txtMaHoTach";
             this.txtMaHoTach.Size = new System.Drawing.Size(442, 27);
             this.txtMaHoTach.TabIndex = 20;
@@ -122,7 +132,7 @@
             this.txtMaHoGop.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaHoGop.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaHoGop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaHoGop.Location = new System.Drawing.Point(958, 83);
+            this.txtMaHoGop.Location = new System.Drawing.Point(958, 24);
             this.txtMaHoGop.Name = "txtMaHoGop";
             this.txtMaHoGop.Size = new System.Drawing.Size(470, 27);
             this.txtMaHoGop.TabIndex = 21;
@@ -143,7 +153,7 @@
             this.Controls.Add(this.lblMaHoTach);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FTachGopHo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FTachGopHo";

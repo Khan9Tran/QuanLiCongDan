@@ -208,6 +208,7 @@
             this.cmnusDangKyItemHoKhau.Name = "cmnusDangKyItemHoKhau";
             this.cmnusDangKyItemHoKhau.Size = new System.Drawing.Size(244, 32);
             this.cmnusDangKyItemHoKhau.Text = "Hộ khẩu";
+            this.cmnusDangKyItemHoKhau.Click += new System.EventHandler(this.cmnusDangKyItemHoKhau_Click);
             // 
             // cmnusDangKyItemCongDan
             // 
@@ -266,7 +267,7 @@
             this.pnlHienThiForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlHienThiForm.Location = new System.Drawing.Point(88, 81);
             this.pnlHienThiForm.Name = "pnlHienThiForm";
-            this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 752);
+            this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 782);
             this.pnlHienThiForm.TabIndex = 2;
             // 
             // pnlTitleBar

@@ -36,11 +36,15 @@ namespace QuanLiCongDanThanhPho
         private void btnTachGop_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FTachGopHo());
+            btnTachGop.BackColor = Color.Gray;
+            btnThem.BackColor =  Color.WhiteSmoke;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FThemNguoiVaoHo());
+            btnTachGop.BackColor = Color.WhiteSmoke;
+            btnThem.BackColor = Color.Gray;
         }
     }
 }

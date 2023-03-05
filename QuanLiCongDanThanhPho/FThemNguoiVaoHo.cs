@@ -12,9 +12,20 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThemNguoiVaoHo : Form
     {
+       
         public FThemNguoiVaoHo()
         {
             InitializeComponent();
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -18,15 +18,39 @@ namespace QuanLiCongDanThanhPho.Models
 
         public HonNhan() { }
 
-        public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, string noiDangKy, DateTime ngayDangKy)
+        public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, string noiDangKy, DateTime ngayDangKy, string gioiTinh)
+        {
+            this.maSo = maSo;
+            if (gioiTinh == "False")
+            {
+                this.cCCDChong = cCCDVo;
+                this.tenChong = tenVo;
+                this.cCCDVo = cCCDChong;
+                this.tenChong = tenVo;
+            }
+            else
+            {
+                this.cCCDChong = cCCDChong;
+                this.tenChong = tenChong;
+                this.cCCDVo = cCCDVo;
+                this.tenVo = tenVo;
+            }
+            this.noiDangKy = new DiaChi();
+            if (noiDangKy == "")
+                this.noiDangKy.DinhDang("u,u,u,u,u");
+            else 
+                this.noiDangKy.DinhDang(noiDangKy);
+            this.ngayDangKy = ngayDangKy;
+        }
+
+        public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, DiaChi noiDangKy, DateTime ngayDangKy)
         {
             this.maSo = maSo;
             this.cCCDChong = cCCDChong;
             this.tenChong = tenChong;
             this.cCCDVo = cCCDVo;
             this.tenVo = tenVo;
-            this.noiDangKy = new DiaChi();
-            this.noiDangKy.DinhDang(noiDangKy);
+            this.noiDangKy = noiDangKy;
             this.ngayDangKy = ngayDangKy;
         }
 
