@@ -17,6 +17,7 @@ namespace QuanLiCongDanThanhPho
         private string maHoKhau;
         private string quanHeVoiChuHo;
 
+        public CongDan() { }
         public CongDan(string cCCD, string ten, string ngheNghiep, string sDT, string tonGiao, string maHoKhau, string quanHeVoiChuHo, string diaChi)
         {
             this.cCCD = cCCD;

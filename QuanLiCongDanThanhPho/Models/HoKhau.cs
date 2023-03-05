@@ -12,6 +12,7 @@ namespace QuanLiCongDanThanhPho.Models
         private DiaChi diaChi;
         private string cCCDChuHo;
 
+        public HoKhau() { }
         public HoKhau(string maHoKhau, string diaChi, string cCCDChuHo)
         {
             this.maHoKhau = maHoKhau;

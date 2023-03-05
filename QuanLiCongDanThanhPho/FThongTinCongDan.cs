@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiCongDanThanhPho.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,15 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongTinCongDan : Form
     {
+        private string maCCCD;
+        public string MaCCCD { 
+            set { maCCCD = value; } 
+            get { return maCCCD; }
+        }
+        CongDanDAO cdDAO = new CongDanDAO();
+        KhaiSinhDAO ksDAO = new KhaiSinhDAO();
+        ThueDAO thueDAO = new ThueDAO();
+        HonNhanDAO hnDAO = new HonNhanDAO();
         public FThongTinCongDan()
         {
             InitializeComponent();
@@ -31,11 +41,41 @@ namespace QuanLiCongDanThanhPho
 
         private void FThongTinCongDan_Load(object sender, EventArgs e)
         {
+            CongDan cd = cdDAO.LayThongTin(MaCCCD);
+            txtCCCD.Text = cd.CCCD;
+            txtHoVaTen.Text = cd.Ten;
+            txtMaHoKhau.Text = cd.MaHoKhau;
+            txtSDT.Text = cd.SDT;
+            txtTonGiao.Text = cd.TonGiao;
+            txtNgheNghiep.Text = cd.NgheNghiep;
+            //----------------//
+            KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
+            dtpNgaySinh.Value = ks.NgaySinh;
+            txtDanToc.Text = ks.DanToc;
+            txtGioiTinh.Text = ks.GioiTinh;
+            txtDanToc.Text = ks.DanToc;
+            txtQuocTich.Text = ks.QuocTich;
+            txtQueQuan.Text = ks.QueQuan.toString();
+            //-----------------//
+            Thue thue = thueDAO.LayThongTin(MaCCCD);
+            txtMaThue.Text = thue.MaThue.ToString();
+            //------------------//
+            HonNhan hn = new HonNhan();
+            hn = hnDAO.LayThongTin(MaCCCD);
+            if (!hnDAO.KiemTraHonNhan(MaCCCD))
+                txtHonNhan.Text = "Chưa có hôn nhân";
+            else
+                txtHonNhan.Text = hn.MaSo;
 
         }
 
         private void FThongTinCongDan_MouseLeave(object sender, EventArgs e)
         {
+        }
+
+        private void pnlThongTinCD_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

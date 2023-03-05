@@ -45,7 +45,7 @@
             this.gvDanhSachCongDan.RowTemplate.Height = 29;
             this.gvDanhSachCongDan.Size = new System.Drawing.Size(1500, 450);
             this.gvDanhSachCongDan.TabIndex = 0;
-            this.gvDanhSachCongDan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDanhSachCongDan_CellContentClick);
+            this.gvDanhSachCongDan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDanhSachCongDan_CellClick);
             // 
             // txtTimKiem
             // 

@@ -20,5 +20,10 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = StringKhaiSinh(kS);
             conn.ThucThi(sqlStr,"Thêm khai sinh thành công");
         }
+        public KhaiSinh LayThongTin(string MaCCCD)
+        {
+            string strSql = string.Format("SELECT * FROM KHAISINH WHERE MaKS = '{0}'", MaCCCD);
+            return conn.LayThongTinKhaiSinh(strSql);
+        }
     }
 }

@@ -22,6 +22,7 @@ namespace QuanLiCongDanThanhPho.Models
         private string cCCDMe;
         private string tenMe;
 
+        public KhaiSinh() { }
         public KhaiSinh(string maKhaiSinh, string hoTen, string gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, string noiSinh, string queQuan, string cCCDCha, string tenCha, string cCCDMe, string tenMe)
         {
             this.maKhaiSinh = maKhaiSinh;

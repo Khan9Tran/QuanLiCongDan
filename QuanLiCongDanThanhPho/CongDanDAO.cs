@@ -18,7 +18,12 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSach()
         {
-            return conn.LayDanhSach("SELECT CCCD, Ten, SDT FROM CONGDAN");
+            return conn.LayDanhSach("SELECT CCCD, Ten, SDT, NgheNghiep, TonGiao FROM CONGDAN");
+        }
+        public CongDan LayThongTin(string maCCCD)
+        {
+            string strSql = string.Format("SELECT * FROM CONGDAN WHERE CCCD = '{0}'", maCCCD);
+            return conn.LayThongTinCongDan(strSql);
         }
     }
 }

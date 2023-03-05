@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho.Models
         private string soTienCanNop;
         private string soTienDaNop;
 
+        public Thue() { }
         public Thue(string maThue, string cCCD, string coQuanQuanLy, DateTime ngayCapMa, DateTime hanNop, string soTienCanNop, string soTienDaNop)
         {
             this.maThue = maThue;

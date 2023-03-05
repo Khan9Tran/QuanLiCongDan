@@ -30,8 +30,6 @@
         {
             this.lblTittleBar = new System.Windows.Forms.Label();
             this.pnlTittleBar = new System.Windows.Forms.Panel();
-            this.titleBar1 = new QuanLiCongDanThanhPho.TitleBar();
-            this.sideBar1 = new QuanLiCongDanThanhPho.SideBar();
             this.picCongDan = new System.Windows.Forms.PictureBox();
             this.lblTen = new System.Windows.Forms.Label();
             this.lblCccd = new System.Windows.Forms.Label();
@@ -93,29 +91,12 @@
             // pnlTittleBar
             // 
             this.pnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.pnlTittleBar.Controls.Add(this.titleBar1);
-            this.pnlTittleBar.Controls.Add(this.sideBar1);
             this.pnlTittleBar.Controls.Add(this.lblTittleBar);
             this.pnlTittleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTittleBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTittleBar.Name = "pnlTittleBar";
             this.pnlTittleBar.Size = new System.Drawing.Size(827, 80);
             this.pnlTittleBar.TabIndex = 1;
-            // 
-            // titleBar1
-            // 
-            this.titleBar1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.titleBar1.Location = new System.Drawing.Point(756, 12);
-            this.titleBar1.Name = "titleBar1";
-            this.titleBar1.Size = new System.Drawing.Size(108, 29);
-            this.titleBar1.TabIndex = 2;
-            // 
-            // sideBar1
-            // 
-            this.sideBar1.Location = new System.Drawing.Point(12, 0);
-            this.sideBar1.Name = "sideBar1";
-            this.sideBar1.Size = new System.Drawing.Size(48, 102);
-            this.sideBar1.TabIndex = 1;
             // 
             // picCongDan
             // 
@@ -333,6 +314,7 @@
             this.pnlThongTinCD.Name = "pnlThongTinCD";
             this.pnlThongTinCD.Size = new System.Drawing.Size(815, 780);
             this.pnlThongTinCD.TabIndex = 31;
+            this.pnlThongTinCD.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlThongTinCD_Paint);
             // 
             // txtGhiChu
             // 

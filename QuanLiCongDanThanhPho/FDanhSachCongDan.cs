@@ -22,13 +22,16 @@ namespace QuanLiCongDanThanhPho
 
         }
 
-        private void gvDanhSachCongDan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void FDanhSachCongDan_Load(object sender, EventArgs e)
         {
             gvDanhSachCongDan.DataSource = cdDao.LayDanhSach();
+        }
+
+        private void gvDanhSachCongDan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FThongTinCongDan ttCD = new FThongTinCongDan();
+            ttCD.MaCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
+            ttCD.ShowDialog();
         }
     }
 }
