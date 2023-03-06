@@ -18,12 +18,6 @@ namespace QuanLiCongDanThanhPho.Models
             this.ngayCap = ngayCap;
             this.dacDiem = dacDiem;
         }
-        public CCCD(string maCCCD)
-        {
-            this.maCCCD = maCCCD;
-            this.ngayCap = DateTime.Now;
-            this.dacDiem = "Chưa cấp";
-        }
         public string MaCCCD { get => maCCCD; set => maCCCD = value; }
         public DateTime NgayCap { get => ngayCap; set => ngayCap = value; }
         public string DacDiem { get => dacDiem; set => dacDiem = value; }

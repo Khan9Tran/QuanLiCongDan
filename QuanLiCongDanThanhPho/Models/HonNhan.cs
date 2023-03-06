@@ -41,6 +41,7 @@ namespace QuanLiCongDanThanhPho.Models
             else 
                 this.noiDangKy.DinhDang(noiDangKy);
             this.ngayDangKy = ngayDangKy;
+
         }
 
         public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, string noiDangKy, DateTime ngayDangKy)

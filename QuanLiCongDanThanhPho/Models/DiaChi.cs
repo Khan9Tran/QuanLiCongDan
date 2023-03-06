@@ -35,20 +35,27 @@ namespace QuanLiCongDanThanhPho.Models
         public string QuanHuyen { get => quanHuyen; set => quanHuyen = value; }
         public string TinhThanhPho { get => tinhThanhPho; set => tinhThanhPho = value; }
         public string QuocGia { get => quocGia; set => quocGia = value; }
-
-        public void DinhDang(string str)
+        public bool DinhDang(string str)
         {
-            string[] s = str.Split(',');
-            for(int i = 0; i < 5; i++)
+            try
             {
-                s[i] = s[i].Trim();
-            }    
-            SoNha = s[0];
-            Duong = s[1];
-            QuanHuyen = s[2];
-            TinhThanhPho = s[3];
-            QuocGia = s[4];
-
+                string[] s = str.Split(',');
+                for (int i = 0; i < 5; i++)
+                {
+                    s[i] = s[i].Trim();
+                }
+                SoNha = s[0];
+                Duong = s[1];
+                QuanHuyen = s[2];
+                TinhThanhPho = s[3];
+                QuocGia = s[4];
+  
+            }
+            catch(Exception ex) 
+            {
+                return false;
+            }
+            return  true;
         }
         public string toString()
         {

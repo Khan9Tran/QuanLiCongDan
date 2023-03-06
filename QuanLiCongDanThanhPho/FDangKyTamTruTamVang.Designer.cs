@@ -43,6 +43,12 @@
             this.txtLiDo = new System.Windows.Forms.TextBox();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.lblDiaChi = new System.Windows.Forms.Label();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.lblMaSo = new System.Windows.Forms.Label();
+            this.txtMaSo = new System.Windows.Forms.TextBox();
+            this.lblSDT = new System.Windows.Forms.Label();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTen
@@ -50,7 +56,7 @@
             this.lblTen.AutoSize = true;
             this.lblTen.BackColor = System.Drawing.Color.Transparent;
             this.lblTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.lblTen.Location = new System.Drawing.Point(209, 170);
+            this.lblTen.Location = new System.Drawing.Point(209, 169);
             this.lblTen.Name = "lblTen";
             this.lblTen.Size = new System.Drawing.Size(104, 28);
             this.lblTen.TabIndex = 0;
@@ -98,21 +104,22 @@
             // rdoTamTru
             // 
             this.rdoTamTru.AutoSize = true;
+            this.rdoTamTru.BackColor = System.Drawing.Color.Transparent;
             this.rdoTamTru.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdoTamTru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(141)))), ((int)(((byte)(111)))));
+            this.rdoTamTru.ForeColor = System.Drawing.Color.SteelBlue;
             this.rdoTamTru.Location = new System.Drawing.Point(748, 326);
             this.rdoTamTru.Name = "rdoTamTru";
             this.rdoTamTru.Size = new System.Drawing.Size(139, 41);
             this.rdoTamTru.TabIndex = 7;
             this.rdoTamTru.TabStop = true;
             this.rdoTamTru.Text = "Tạm trú";
-            this.rdoTamTru.UseVisualStyleBackColor = true;
+            this.rdoTamTru.UseVisualStyleBackColor = false;
             // 
             // rdoTamVang
             // 
             this.rdoTamVang.AutoSize = true;
             this.rdoTamVang.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdoTamVang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(141)))), ((int)(((byte)(111)))));
+            this.rdoTamVang.ForeColor = System.Drawing.Color.SteelBlue;
             this.rdoTamVang.Location = new System.Drawing.Point(964, 329);
             this.rdoTamVang.Name = "rdoTamVang";
             this.rdoTamVang.Size = new System.Drawing.Size(164, 41);
@@ -208,12 +215,81 @@
             this.btnReset.TabIndex = 90;
             this.btnReset.UseVisualStyleBackColor = false;
             // 
+            // lblDiaChi
+            // 
+            this.lblDiaChi.AutoSize = true;
+            this.lblDiaChi.BackColor = System.Drawing.Color.Transparent;
+            this.lblDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.lblDiaChi.Location = new System.Drawing.Point(209, 570);
+            this.lblDiaChi.Name = "lblDiaChi";
+            this.lblDiaChi.Size = new System.Drawing.Size(228, 28);
+            this.lblDiaChi.TabIndex = 91;
+            this.lblDiaChi.Text = "Nơi tạm trú/ tạm vắng";
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDiaChi.Location = new System.Drawing.Point(476, 570);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(652, 27);
+            this.txtDiaChi.TabIndex = 92;
+            // 
+            // lblMaSo
+            // 
+            this.lblMaSo.AutoSize = true;
+            this.lblMaSo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.lblMaSo.Location = new System.Drawing.Point(209, 100);
+            this.lblMaSo.Name = "lblMaSo";
+            this.lblMaSo.Size = new System.Drawing.Size(69, 28);
+            this.lblMaSo.TabIndex = 93;
+            this.lblMaSo.Text = "Mã số";
+            // 
+            // txtMaSo
+            // 
+            this.txtMaSo.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtMaSo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaSo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaSo.Location = new System.Drawing.Point(390, 100);
+            this.txtMaSo.Name = "txtMaSo";
+            this.txtMaSo.Size = new System.Drawing.Size(411, 27);
+            this.txtMaSo.TabIndex = 95;
+            // 
+            // lblSDT
+            // 
+            this.lblSDT.AutoSize = true;
+            this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.lblSDT.Image = global::QuanLiCongDanThanhPho.Properties.Resources.call;
+            this.lblSDT.Location = new System.Drawing.Point(209, 635);
+            this.lblSDT.Name = "lblSDT";
+            this.lblSDT.Size = new System.Drawing.Size(74, 41);
+            this.lblSDT.TabIndex = 96;
+            this.lblSDT.Text = "       ";
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSDT.Location = new System.Drawing.Point(390, 645);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(411, 27);
+            this.txtSDT.TabIndex = 97;
+            // 
             // FDangKyTamTruTamVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.lblSDT);
+            this.Controls.Add(this.txtMaSo);
+            this.Controls.Add(this.lblMaSo);
+            this.Controls.Add(this.txtDiaChi);
+            this.Controls.Add(this.lblDiaChi);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.txtLiDo);
@@ -257,5 +333,11 @@
         private TextBox txtLiDo;
         private Button btnDangKy;
         private Button btnReset;
+        private Label lblDiaChi;
+        private TextBox txtDiaChi;
+        private Label lblMaSo;
+        private TextBox txtMaSo;
+        private Label lblSDT;
+        private TextBox txtSDT;
     }
 }

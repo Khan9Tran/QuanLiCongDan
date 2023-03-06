@@ -16,14 +16,21 @@ namespace QuanLiCongDanThanhPho.Models
         private DiaChi diaChi;
         private string lyDo;
         public TamTruTamVang() { }
-        public TamTruTamVang(string maSo, string cCCD ,string trangThai, DateTime ngayBatDau, DateTime ngayKetThuc, string diaChi, string lyDo)
+        public TamTruTamVang(string maSo, string cCCD, string trangThai, DateTime ngayBatDau, DateTime ngayKetThuc, string diaChi, string lyDo)
         {
             MaSo = maSo;
             this.cCCD = cCCD;
-            TrangThai = trangThai;
+            if (trangThai == "True")
+            {
+                this.trangThai = "Tạm trú";
+            }   
+            else
+            {
+                this.trangThai = "Tạm vắng";
+            }    
             NgayBatDau = ngayBatDau;
             NgayKetThuc = ngayKetThuc;
-            DiaChi = new DiaChi();
+            this.diaChi = new DiaChi();
             this.diaChi.DinhDang(diaChi);
             LyDo = lyDo;
         }

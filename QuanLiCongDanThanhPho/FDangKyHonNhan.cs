@@ -22,7 +22,7 @@ namespace QuanLiCongDanThanhPho
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtCCCDChong.Text, txtNoiDK.Text, dtmNgayDangKy.Value);
+            HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtTenVo.Text, txtNoiDK.Text, dtmNgayDangKy.Value);
             hNDAO.ThemHonNhan(hN);
         }
 
