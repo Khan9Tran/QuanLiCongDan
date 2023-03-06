@@ -19,14 +19,20 @@ namespace QuanLiCongDanThanhPho
 
         private void btnThongTinChong_Click(object sender, EventArgs e)
         {
-            FThongTinCongDan tTCD = new FThongTinCongDan();
-            tTCD.ShowDialog();
+            if (txtCCCDChong.Text != "")
+            {
+                FThongTinCongDan tTCD = new FThongTinCongDan();
+                tTCD.ShowDialog();
+            }
         }
 
         private void btnThongTinVo_Click(object sender, EventArgs e)
         {
-            FThongTinCongDan tTCD = new FThongTinCongDan();
-            tTCD.ShowDialog();
+            if (txtCCCDVo.Text != "")
+            {
+                FThongTinCongDan tTCD = new FThongTinCongDan();
+                tTCD.ShowDialog();
+            }
         }
     }
 }
