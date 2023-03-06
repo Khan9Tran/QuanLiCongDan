@@ -48,6 +48,7 @@
             btnClose.Size = new Size(24, 24);
             btnClose.TabIndex = 1;
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // btnMinimize
             // 
@@ -62,6 +63,7 @@
             btnMinimize.Size = new Size(24, 24);
             btnMinimize.TabIndex = 0;
             btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
             // 
             // pnlTitleBar
             // 

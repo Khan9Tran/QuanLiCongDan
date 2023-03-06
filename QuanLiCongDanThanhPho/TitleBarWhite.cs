@@ -16,5 +16,18 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (ParentForm.Name == "FTrangChu")
+                Application.Exit();
+            else
+                ParentForm.Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            ParentForm.WindowState = FormWindowState.Minimized;
+        }
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             pnlTittleBar = new Panel();
-            sideBar1 = new SideBar();
-            titleBar1 = new TitleBar();
+            sideBarWhite1 = new SideBarWhite();
+            titleBarWhite1 = new TitleBarWhite();
             lblTittle = new Label();
             pnlThongTinThue = new Panel();
             btnCapNhatThongTinThue = new Button();
@@ -59,8 +59,8 @@
             // pnlTittleBar
             // 
             pnlTittleBar.BackColor = Color.FromArgb(44, 43, 60);
-            pnlTittleBar.Controls.Add(sideBar1);
-            pnlTittleBar.Controls.Add(titleBar1);
+            pnlTittleBar.Controls.Add(sideBarWhite1);
+            pnlTittleBar.Controls.Add(titleBarWhite1);
             pnlTittleBar.Controls.Add(lblTittle);
             pnlTittleBar.Dock = DockStyle.Top;
             pnlTittleBar.Location = new Point(0, 0);
@@ -68,19 +68,19 @@
             pnlTittleBar.Size = new Size(927, 81);
             pnlTittleBar.TabIndex = 0;
             // 
-            // sideBar1
+            // sideBarWhite1
             // 
-            sideBar1.Location = new Point(0, 0);
-            sideBar1.Name = "sideBar1";
-            sideBar1.Size = new Size(48, 102);
-            sideBar1.TabIndex = 2;
+            sideBarWhite1.Location = new Point(-7, -9);
+            sideBarWhite1.Name = "sideBarWhite1";
+            sideBarWhite1.Size = new Size(44, 49);
+            sideBarWhite1.TabIndex = 4;
             // 
-            // titleBar1
+            // titleBarWhite1
             // 
-            titleBar1.Location = new Point(852, 3);
-            titleBar1.Name = "titleBar1";
-            titleBar1.Size = new Size(108, 45);
-            titleBar1.TabIndex = 1;
+            titleBarWhite1.Location = new Point(859, 0);
+            titleBarWhite1.Name = "titleBarWhite1";
+            titleBarWhite1.Size = new Size(68, 60);
+            titleBarWhite1.TabIndex = 3;
             // 
             // lblTittle
             // 
@@ -339,7 +339,7 @@
         private TextBox txtDiaChi;
         private TextBox txtCCCD;
         private TextBox txtTen;
-        private SideBar sideBar1;
-        private TitleBar titleBar1;
+        private TitleBarWhite titleBarWhite1;
+        private SideBarWhite sideBarWhite1;
     }
 }

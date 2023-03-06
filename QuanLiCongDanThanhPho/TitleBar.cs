@@ -23,7 +23,7 @@ namespace QuanLiCongDanThanhPho
         private void btnClose_Click(object sender, EventArgs e)
         {
 
-            if (this.ParentForm.Name == "FTrangChu")
+            if (ParentForm.Name == "FTrangChu")
                 Application.Exit();
             else
                 ParentForm.Close();

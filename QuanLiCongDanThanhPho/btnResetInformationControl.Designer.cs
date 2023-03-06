@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             btnResetInformation = new Button();
-            panel1 = new Panel();
-            panel1.SuspendLayout();
+            pnlReset = new Panel();
+            pnlReset.SuspendLayout();
             SuspendLayout();
             // 
             // btnResetInformation
@@ -45,29 +45,29 @@
             btnResetInformation.UseVisualStyleBackColor = false;
             btnResetInformation.Click += btnResetInformation_Click;
             // 
-            // panel1
+            // pnlReset
             // 
-            panel1.Controls.Add(btnResetInformation);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(41, 43);
-            panel1.TabIndex = 1;
+            pnlReset.Controls.Add(btnResetInformation);
+            pnlReset.Dock = DockStyle.Top;
+            pnlReset.Location = new Point(0, 0);
+            pnlReset.Name = "pnlReset";
+            pnlReset.Size = new Size(41, 43);
+            pnlReset.TabIndex = 1;
             // 
             // btnResetInformationControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
+            Controls.Add(pnlReset);
             Name = "btnResetInformationControl";
             Size = new Size(41, 69);
-            panel1.ResumeLayout(false);
+            pnlReset.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnResetInformation;
-        private Panel panel1;
+        private Panel pnlReset;
     }
 }

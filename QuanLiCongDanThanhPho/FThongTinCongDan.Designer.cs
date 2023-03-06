@@ -30,8 +30,8 @@
         {
             lblTittleBar = new Label();
             pnlTittleBar = new Panel();
-            titleBar1 = new TitleBar();
-            sideBar1 = new SideBar();
+            sideBarWhite1 = new SideBarWhite();
+            titleBarWhite1 = new TitleBarWhite();
             picCongDan = new PictureBox();
             lblTen = new Label();
             lblCccd = new Label();
@@ -50,6 +50,9 @@
             panel1 = new Panel();
             label1 = new Label();
             pnlThongTinCD = new Panel();
+            btnHonNhan = new Button();
+            btnThue = new Button();
+            btnHoKhau = new Button();
             txtGhiChu = new TextBox();
             lblGhiChu = new Label();
             btnKhaiSinh = new Button();
@@ -69,9 +72,6 @@
             lblMaThue = new Label();
             lblMaHoKhau = new Label();
             lblDiaChi = new Label();
-            btnHoKhau = new Button();
-            btnThue = new Button();
-            btnHonNhan = new Button();
             pnlTittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picCongDan).BeginInit();
             pnlThongTin.SuspendLayout();
@@ -93,8 +93,8 @@
             // pnlTittleBar
             // 
             pnlTittleBar.BackColor = Color.FromArgb(44, 43, 60);
-            pnlTittleBar.Controls.Add(titleBar1);
-            pnlTittleBar.Controls.Add(sideBar1);
+            pnlTittleBar.Controls.Add(sideBarWhite1);
+            pnlTittleBar.Controls.Add(titleBarWhite1);
             pnlTittleBar.Controls.Add(lblTittleBar);
             pnlTittleBar.Dock = DockStyle.Top;
             pnlTittleBar.Location = new Point(0, 0);
@@ -102,19 +102,19 @@
             pnlTittleBar.Size = new Size(827, 80);
             pnlTittleBar.TabIndex = 1;
             // 
-            // titleBar1
+            // sideBarWhite1
             // 
-            titleBar1.Location = new Point(751, 3);
-            titleBar1.Name = "titleBar1";
-            titleBar1.Size = new Size(108, 45);
-            titleBar1.TabIndex = 2;
+            sideBarWhite1.Location = new Point(-1, 0);
+            sideBarWhite1.Name = "sideBarWhite1";
+            sideBarWhite1.Size = new Size(104, 52);
+            sideBarWhite1.TabIndex = 3;
             // 
-            // sideBar1
+            // titleBarWhite1
             // 
-            sideBar1.Location = new Point(0, 0);
-            sideBar1.Name = "sideBar1";
-            sideBar1.Size = new Size(48, 102);
-            sideBar1.TabIndex = 1;
+            titleBarWhite1.Location = new Point(759, 3);
+            titleBarWhite1.Name = "titleBarWhite1";
+            titleBarWhite1.Size = new Size(82, 60);
+            titleBarWhite1.TabIndex = 2;
             // 
             // picCongDan
             // 
@@ -336,6 +336,48 @@
             pnlThongTinCD.TabIndex = 31;
             pnlThongTinCD.Paint += pnlThongTinCD_Paint;
             // 
+            // btnHonNhan
+            // 
+            btnHonNhan.BackColor = Color.Transparent;
+            btnHonNhan.DialogResult = DialogResult.OK;
+            btnHonNhan.FlatAppearance.BorderSize = 0;
+            btnHonNhan.FlatStyle = FlatStyle.Flat;
+            btnHonNhan.Image = Properties.Resources.view;
+            btnHonNhan.Location = new Point(677, 701);
+            btnHonNhan.Name = "btnHonNhan";
+            btnHonNhan.Size = new Size(50, 35);
+            btnHonNhan.TabIndex = 98;
+            btnHonNhan.UseVisualStyleBackColor = false;
+            btnHonNhan.Click += btnHonNhan_Click;
+            // 
+            // btnThue
+            // 
+            btnThue.BackColor = Color.Transparent;
+            btnThue.DialogResult = DialogResult.OK;
+            btnThue.FlatAppearance.BorderSize = 0;
+            btnThue.FlatStyle = FlatStyle.Flat;
+            btnThue.Image = Properties.Resources.view;
+            btnThue.Location = new Point(677, 649);
+            btnThue.Name = "btnThue";
+            btnThue.Size = new Size(50, 35);
+            btnThue.TabIndex = 97;
+            btnThue.UseVisualStyleBackColor = false;
+            btnThue.Click += btnThue_Click;
+            // 
+            // btnHoKhau
+            // 
+            btnHoKhau.BackColor = Color.Transparent;
+            btnHoKhau.DialogResult = DialogResult.OK;
+            btnHoKhau.FlatAppearance.BorderSize = 0;
+            btnHoKhau.FlatStyle = FlatStyle.Flat;
+            btnHoKhau.Image = Properties.Resources.view;
+            btnHoKhau.Location = new Point(677, 598);
+            btnHoKhau.Name = "btnHoKhau";
+            btnHoKhau.Size = new Size(50, 35);
+            btnHoKhau.TabIndex = 96;
+            btnHoKhau.UseVisualStyleBackColor = false;
+            btnHoKhau.Click += btnHoKhau_Click;
+            // 
             // txtGhiChu
             // 
             txtGhiChu.BackColor = Color.Gainsboro;
@@ -543,48 +585,6 @@
             lblDiaChi.TabIndex = 31;
             lblDiaChi.Text = "Địa chỉ";
             // 
-            // btnHoKhau
-            // 
-            btnHoKhau.BackColor = Color.Transparent;
-            btnHoKhau.DialogResult = DialogResult.OK;
-            btnHoKhau.FlatAppearance.BorderSize = 0;
-            btnHoKhau.FlatStyle = FlatStyle.Flat;
-            btnHoKhau.Image = Properties.Resources.view;
-            btnHoKhau.Location = new Point(677, 598);
-            btnHoKhau.Name = "btnHoKhau";
-            btnHoKhau.Size = new Size(50, 35);
-            btnHoKhau.TabIndex = 96;
-            btnHoKhau.UseVisualStyleBackColor = false;
-            btnHoKhau.Click += new EventHandler(this.btnHoKhau_Click);
-            // 
-            // btnThue
-            // 
-            btnThue.BackColor = Color.Transparent;
-            btnThue.DialogResult = DialogResult.OK;
-            btnThue.FlatAppearance.BorderSize = 0;
-            btnThue.FlatStyle = FlatStyle.Flat;
-            btnThue.Image = Properties.Resources.view;
-            btnThue.Location = new Point(677, 649);
-            btnThue.Name = "btnThue";
-            btnThue.Size = new Size(50, 35);
-            btnThue.TabIndex = 97;
-            btnThue.UseVisualStyleBackColor = false;
-            btnThue.Click += new EventHandler(this.btnThue_Click);
-            // 
-            // btnHonNhan
-            // 
-            btnHonNhan.BackColor = Color.Transparent;
-            btnHonNhan.DialogResult = DialogResult.OK;
-            btnHonNhan.FlatAppearance.BorderSize = 0;
-            btnHonNhan.FlatStyle = FlatStyle.Flat;
-            btnHonNhan.Image = Properties.Resources.view;
-            btnHonNhan.Location = new Point(677, 701);
-            btnHonNhan.Name = "btnHonNhan";
-            btnHonNhan.Size = new Size(50, 35);
-            btnHonNhan.TabIndex = 98;
-            btnHonNhan.UseVisualStyleBackColor = false;
-            btnHonNhan.Click += new EventHandler(this.btnHonNhan_Click);
-            // 
             // FThongTinCongDan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -651,10 +651,10 @@
         private TextBox txtGhiChu;
         private Label lblGhiChu;
         private TextBox txtQueQuan;
-        private TitleBar titleBar1;
-        private SideBar sideBar1;
         private Button btnHoKhau;
         private Button btnHonNhan;
         private Button btnThue;
+        private SideBarWhite sideBarWhite1;
+        private TitleBarWhite titleBarWhite1;
     }
 }

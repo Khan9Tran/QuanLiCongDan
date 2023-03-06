@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            button1 = new Button();
-            panel1.SuspendLayout();
+            pnlDelete = new Panel();
+            btnDelete = new Button();
+            pnlDelete.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // pnlDelete
             // 
-            panel1.Controls.Add(button1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(61, 61);
-            panel1.TabIndex = 0;
+            pnlDelete.Controls.Add(btnDelete);
+            pnlDelete.Dock = DockStyle.Top;
+            pnlDelete.Location = new Point(0, 0);
+            pnlDelete.Name = "pnlDelete";
+            pnlDelete.Size = new Size(61, 61);
+            pnlDelete.TabIndex = 0;
             // 
-            // button1
+            // btnDelete
             // 
-            button1.BackColor = SystemColors.ControlDark;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = Properties.Resources.delete__1_;
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(32, 32);
-            button1.TabIndex = 0;
-            button1.UseVisualStyleBackColor = false;
+            btnDelete.BackColor = SystemColors.ControlDark;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Image = Properties.Resources.delete__1_;
+            btnDelete.Location = new Point(0, 0);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(32, 32);
+            btnDelete.TabIndex = 0;
+            btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnDeleteInformationControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
+            Controls.Add(pnlDelete);
             Name = "btnDeleteInformationControl";
             Size = new Size(61, 98);
-            panel1.ResumeLayout(false);
+            pnlDelete.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Button button1;
+        private Panel pnlDelete;
+        private Button btnDelete;
     }
 }
