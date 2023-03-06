@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             pnlChong = new Panel();
+            btnThongTinChong = new Button();
             txtCCCDChong = new TextBox();
             txtNoiDangKy = new TextBox();
             txtTenChong = new TextBox();
             lblCCCDChong = new Label();
             lblTenChong = new Label();
             lblNoiDangKy = new Label();
-            btnSua = new Button();
             btnXoa = new Button();
             label7 = new Label();
             pnlVo = new Panel();
+            btnThongTinVo = new Button();
             dtpNgayDangKy = new DateTimePicker();
             txtTenVo = new TextBox();
             txtCCCDVo = new TextBox();
@@ -46,8 +47,7 @@
             lblTenVo = new Label();
             lblDeMuc2 = new Label();
             panel1 = new Panel();
-            btnThongTinChong = new Button();
-            btnThongTinVo = new Button();
+            btnSua = new Button();
             pnlChong.SuspendLayout();
             pnlVo.SuspendLayout();
             panel1.SuspendLayout();
@@ -67,6 +67,19 @@
             pnlChong.Name = "pnlChong";
             pnlChong.Size = new Size(600, 640);
             pnlChong.TabIndex = 2;
+            // 
+            // btnThongTinChong
+            // 
+            btnThongTinChong.BackColor = Color.Transparent;
+            btnThongTinChong.DialogResult = DialogResult.OK;
+            btnThongTinChong.FlatAppearance.BorderSize = 0;
+            btnThongTinChong.FlatStyle = FlatStyle.Flat;
+            btnThongTinChong.Image = Properties.Resources.view;
+            btnThongTinChong.Location = new Point(515, 293);
+            btnThongTinChong.Name = "btnThongTinChong";
+            btnThongTinChong.Size = new Size(50, 50);
+            btnThongTinChong.TabIndex = 95;
+            btnThongTinChong.UseVisualStyleBackColor = false;
             // 
             // txtCCCDChong
             // 
@@ -128,17 +141,6 @@
             lblNoiDangKy.TabIndex = 0;
             lblNoiDangKy.Text = "Nơi đăng ký";
             // 
-            // btnSua
-            // 
-            btnSua.BackColor = Color.White;
-            btnSua.ForeColor = Color.FromArgb(44, 53, 60);
-            btnSua.Location = new Point(389, 550);
-            btnSua.Name = "btnSua";
-            btnSua.Size = new Size(120, 50);
-            btnSua.TabIndex = 10;
-            btnSua.Text = "Chỉnh sửa";
-            btnSua.UseVisualStyleBackColor = false;
-            // 
             // btnXoa
             // 
             btnXoa.Location = new Point(427, 649);
@@ -160,10 +162,10 @@
             // pnlVo
             // 
             pnlVo.BackColor = Color.WhiteSmoke;
+            pnlVo.Controls.Add(btnSua);
             pnlVo.Controls.Add(btnThongTinVo);
             pnlVo.Controls.Add(btnXoa);
             pnlVo.Controls.Add(dtpNgayDangKy);
-            pnlVo.Controls.Add(btnSua);
             pnlVo.Controls.Add(txtTenVo);
             pnlVo.Controls.Add(txtCCCDVo);
             pnlVo.Controls.Add(lblCCCDVo);
@@ -173,6 +175,19 @@
             pnlVo.Name = "pnlVo";
             pnlVo.Size = new Size(600, 640);
             pnlVo.TabIndex = 3;
+            // 
+            // btnThongTinVo
+            // 
+            btnThongTinVo.BackColor = Color.Transparent;
+            btnThongTinVo.DialogResult = DialogResult.OK;
+            btnThongTinVo.FlatAppearance.BorderSize = 0;
+            btnThongTinVo.FlatStyle = FlatStyle.Flat;
+            btnThongTinVo.Image = Properties.Resources.view;
+            btnThongTinVo.Location = new Point(506, 293);
+            btnThongTinVo.Name = "btnThongTinVo";
+            btnThongTinVo.Size = new Size(50, 50);
+            btnThongTinVo.TabIndex = 95;
+            btnThongTinVo.UseVisualStyleBackColor = false;
             // 
             // dtpNgayDangKy
             // 
@@ -248,31 +263,18 @@
             panel1.Size = new Size(1200, 80);
             panel1.TabIndex = 4;
             // 
-            // btnThongTinChong
+            // btnSua
             // 
-            btnThongTinChong.BackColor = Color.Transparent;
-            btnThongTinChong.DialogResult = DialogResult.OK;
-            btnThongTinChong.FlatAppearance.BorderSize = 0;
-            btnThongTinChong.FlatStyle = FlatStyle.Flat;
-            btnThongTinChong.Image = Properties.Resources.view;
-            btnThongTinChong.Location = new Point(515, 293);
-            btnThongTinChong.Name = "btnThongTinChong";
-            btnThongTinChong.Size = new Size(50, 50);
-            btnThongTinChong.TabIndex = 95;
-            btnThongTinChong.UseVisualStyleBackColor = false;
-            // 
-            // btnThongTinVo
-            // 
-            btnThongTinVo.BackColor = Color.Transparent;
-            btnThongTinVo.DialogResult = DialogResult.OK;
-            btnThongTinVo.FlatAppearance.BorderSize = 0;
-            btnThongTinVo.FlatStyle = FlatStyle.Flat;
-            btnThongTinVo.Image = Properties.Resources.view;
-            btnThongTinVo.Location = new Point(506, 293);
-            btnThongTinVo.Name = "btnThongTinVo";
-            btnThongTinVo.Size = new Size(50, 50);
-            btnThongTinVo.TabIndex = 95;
-            btnThongTinVo.UseVisualStyleBackColor = false;
+            btnSua.BackColor = Color.Transparent;
+            btnSua.DialogResult = DialogResult.OK;
+            btnSua.FlatAppearance.BorderSize = 0;
+            btnSua.FlatStyle = FlatStyle.Flat;
+            btnSua.Image = Properties.Resources.editing__1_;
+            btnSua.Location = new Point(506, 541);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(50, 50);
+            btnSua.TabIndex = 96;
+            btnSua.UseVisualStyleBackColor = false;
             // 
             // FThongTinHonNhan
             // 
@@ -315,10 +317,10 @@
         private DateTimePicker dtpNgayDangKy;
         private TextBox txtTenVo;
         private TextBox txtCCCDVo;
-        private Button btnSua;
         private Button btnXoa;
         private Panel panel1;
         private Button btnThongTinChong;
         private Button btnThongTinVo;
+        private Button btnSua;
     }
 }
