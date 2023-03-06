@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiCongDanThanhPho.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
         }
+        KhaiSinhDAO kSDAO = new KhaiSinhDAO();
 
         private void FDangKyKhaiSinh_Load(object sender, EventArgs e)
         {
@@ -42,5 +44,16 @@ namespace QuanLiCongDanThanhPho
             };
             func(Controls);
         }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            CongDanDAO cDDAO = new CongDanDAO();
+            CongDan congDan = new CongDan(txtCccd.Text, txtTen.Text);
+            cDDAO.ThemCongDan(congDan);
+            KhaiSinh kS = new KhaiSinh(txtCccd.Text,txtTen.Text, rdoNam.Checked.ToString(),txtQuocTich.Text,txtDanToc.Text,dtmNgaySinh.Value, dtmNgayDangKy.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCccdCha.Text, txtTenCha.Text, txtCccdMe.Text, txtTenMe.Text);
+            kSDAO.ThemKhaSinh(kS);
+        }
+
+     
     }
 }

@@ -35,6 +35,16 @@ namespace QuanLiCongDanThanhPho
                 hoKhauDAO.ThemHoKhau(new Models.HoKhau(MaHoKhau,dC.toString(),CCCD));
             }
         }
+        public CongDan(string cCCD, string ten)
+        {
+            this.cCCD = cCCD;
+            this.ten = ten;
+            ngheNghiep = "";
+            sDT = "";
+            tonGiao = "";
+            maHoKhau = "000001";
+            quanHeVoiChuHo = "Trẻ sơ sinh chưa nhập khẩu";
+        }
         public CongDan(string cCCD, string ten, string sDT)
         {
             this.cCCD = cCCD;

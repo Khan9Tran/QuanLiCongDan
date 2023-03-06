@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,7 +28,17 @@ namespace QuanLiCongDanThanhPho
             hNDAO = new HonNhanDAO();
             cCCDDAO = new CCCDDAO();
         }
+        public bool isData()
+        {
+            if (!KiemTraDuLieuNhap.isCCCD(txtCCCD.Text))
+            {
+                MessageBox.Show("Nhập CCCD 12 số");
+                txtCCCD.Focus();
+                return false;
+            }
 
+            return true;
+        }    
         public void ThemCongDan()
         {
             CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, cboTonGiao.SelectedItem.ToString(), txtHoKhau.Text, cboQuanHe.SelectedItem.ToString(), txtDiaChi.Text);
@@ -47,10 +58,6 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            ThemCongDan();
-        }
 
         private void FDangKyCongDan_Load(object sender, EventArgs e)
         {
@@ -77,5 +84,11 @@ namespace QuanLiCongDanThanhPho
             };
             func(Controls);
         }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            ThemCongDan();
+        }
+
     }
 }

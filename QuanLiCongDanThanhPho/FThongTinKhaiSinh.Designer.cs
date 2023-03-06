@@ -523,5 +523,7 @@
         private Button btnThongTinCha;
         private Button btnThongTinMe;
         private Button btnSua;
+        private TextBox txtQueQuan;
+        private Label lblQueQuan;
     }
 }
