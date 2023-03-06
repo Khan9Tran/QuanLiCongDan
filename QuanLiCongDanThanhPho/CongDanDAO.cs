@@ -19,6 +19,11 @@ namespace QuanLiCongDanThanhPho
             CCCDDAO cCCDDAO = new CCCDDAO();
             cCCDDAO.ThemCCCD(cCCD);
         }
+        public void ThayDoiHoKhau(CongDan cD)
+        {
+            string strSql = string.Format("UPDATE CONGDAN SET MaHK = '{0}' , QuanHeVoiChuHo = '{1}' WHERE CCCD = '{2}'", cD.MaHoKhau, cD.QuanHeVoiChuHo, cD.CCCD);
+            conn.ThucThi(strSql, "Thêm thành viên thành công");
+        }
         public DataTable LayDanhSach()
         {
             return conn.LayDanhSach("SELECT CCCD, Ten, SDT, NgheNghiep, TonGiao FROM CONGDAN");

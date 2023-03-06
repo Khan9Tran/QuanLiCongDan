@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiCongDanThanhPho.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,9 @@ namespace QuanLiCongDanThanhPho
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            CongDan congDan= new CongDan(txtCCCD.Text,txtTen.Text,"","","",txtMaHo.Text,txtQuanHeVoiChuHo.Text,"u,u,u,u,u");
+            CongDanDAO cDDAO = new CongDanDAO();
+            cDDAO.ThayDoiHoKhau(congDan);
         }
     }
 }
