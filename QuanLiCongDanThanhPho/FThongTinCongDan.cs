@@ -103,5 +103,23 @@ namespace QuanLiCongDanThanhPho
         {
 
         }
+
+        private void btnHoKhau_Click(object sender, EventArgs e)
+        {
+            FThongTinHoKhau tTHK = new FThongTinHoKhau();
+            tTHK.ShowDialog();
+        }
+
+        private void btnThue_Click(object sender, EventArgs e)
+        {
+            FThongTinThue tTThue = new FThongTinThue();
+            tTThue.ShowDialog();
+        }
+
+        private void btnHonNhan_Click(object sender, EventArgs e)
+        {
+            FThongTinHonNhan tTHN = new FThongTinHonNhan();
+            tTHN.ShowDialog();
+        }
     }
 }

@@ -16,5 +16,17 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
         }
+
+        private void btnThongTinCha_Click(object sender, EventArgs e)
+        {
+            FThongTinCongDan tTCD = new FThongTinCongDan();
+            tTCD.ShowDialog();
+        }
+
+        private void btnThongTinMe_Click(object sender, EventArgs e)
+        {
+            FThongTinCongDan tTCD = new FThongTinCongDan();
+            tTCD.ShowDialog();
+        }
     }
 }
