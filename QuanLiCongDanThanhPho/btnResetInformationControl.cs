@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDangKyKhaiSinh : Form
+    public partial class btnResetInformationControl : UserControl
     {
-        public FDangKyKhaiSinh()
+        public btnResetInformationControl()
         {
             InitializeComponent();
         }
 
-        private void FDangKyKhaiSinh_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnResetInformation_Click(object sender, EventArgs e)
         {
             Action<Control.ControlCollection> func = null;
 
@@ -30,7 +25,7 @@ namespace QuanLiCongDanThanhPho
             {
                 foreach (Control control in controls)
                 {
-                    if (control is TextBox)
+                    if (control is TextBox || control is DataGridView)
                     {
                         (control as TextBox).Clear();
                     }

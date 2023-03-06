@@ -125,14 +125,14 @@ namespace QuanLiCongDanThanhPho
 
         private void btnMenuShow_Click(object sender, EventArgs e)
         {
-            if (pnlMenu.Width <= 80) 
+            if (pnlMenu.Width <= 80)
             {
                 tmrPhongTo.Start();
             }
             else
             {
                 tmrThuNho.Start();
-            }    
+            }
         }
 
 
@@ -144,7 +144,7 @@ namespace QuanLiCongDanThanhPho
                 if (pnlMenu.Width <= 80)
                 {
                     tmrThuNho.Stop();
-                }    
+                }
             }
         }
 

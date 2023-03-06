@@ -37,7 +37,7 @@ namespace QuanLiCongDanThanhPho
         {
             OpenChildForm(new FTachGopHo());
             btnTachGop.BackColor = Color.Gray;
-            btnThem.BackColor =  Color.WhiteSmoke;
+            btnThem.BackColor = Color.WhiteSmoke;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -45,6 +45,27 @@ namespace QuanLiCongDanThanhPho
             OpenChildForm(new FThemNguoiVaoHo());
             btnTachGop.BackColor = Color.WhiteSmoke;
             btnThem.BackColor = Color.Gray;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox)
+                    {
+                        (control as TextBox).Clear();
+                    }
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+            };
+            func(Controls);
         }
     }
 }

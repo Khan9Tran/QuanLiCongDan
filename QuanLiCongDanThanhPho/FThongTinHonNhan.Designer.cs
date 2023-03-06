@@ -29,18 +29,16 @@
         private void InitializeComponent()
         {
             pnlChong = new Panel();
-            btnThongTinChong = new Button();
             txtCCCDChong = new TextBox();
             txtNoiDangKy = new TextBox();
-            btnSua = new Button();
             txtTenChong = new TextBox();
             lblCCCDChong = new Label();
             lblTenChong = new Label();
             lblNoiDangKy = new Label();
+            btnSua = new Button();
             btnXoa = new Button();
             label7 = new Label();
             pnlVo = new Panel();
-            btnThongTinVo = new Button();
             dtpNgayDangKy = new DateTimePicker();
             txtTenVo = new TextBox();
             txtCCCDVo = new TextBox();
@@ -48,6 +46,8 @@
             lblTenVo = new Label();
             lblDeMuc2 = new Label();
             panel1 = new Panel();
+            btnThongTinChong = new Button();
+            btnThongTinVo = new Button();
             pnlChong.SuspendLayout();
             pnlVo.SuspendLayout();
             panel1.SuspendLayout();
@@ -67,17 +67,6 @@
             pnlChong.Name = "pnlChong";
             pnlChong.Size = new Size(600, 640);
             pnlChong.TabIndex = 2;
-            // 
-            // btnThongTinChong
-            // 
-            btnThongTinChong.BackColor = Color.White;
-            btnThongTinChong.ForeColor = Color.FromArgb(44, 53, 60);
-            btnThongTinChong.Location = new Point(233, 350);
-            btnThongTinChong.Name = "btnThongTinChong";
-            btnThongTinChong.Size = new Size(133, 50);
-            btnThongTinChong.TabIndex = 8;
-            btnThongTinChong.Text = "Chi tiết";
-            btnThongTinChong.UseVisualStyleBackColor = false;
             // 
             // txtCCCDChong
             // 
@@ -100,17 +89,6 @@
             txtNoiDangKy.ReadOnly = true;
             txtNoiDangKy.Size = new Size(315, 27);
             txtNoiDangKy.TabIndex = 6;
-            // 
-            // btnSua
-            // 
-            btnSua.BackColor = Color.White;
-            btnSua.ForeColor = Color.FromArgb(44, 53, 60);
-            btnSua.Location = new Point(389, 550);
-            btnSua.Name = "btnSua";
-            btnSua.Size = new Size(120, 50);
-            btnSua.TabIndex = 10;
-            btnSua.Text = "Chỉnh sửa";
-            btnSua.UseVisualStyleBackColor = false;
             // 
             // txtTenChong
             // 
@@ -150,6 +128,17 @@
             lblNoiDangKy.TabIndex = 0;
             lblNoiDangKy.Text = "Nơi đăng ký";
             // 
+            // btnSua
+            // 
+            btnSua.BackColor = Color.White;
+            btnSua.ForeColor = Color.FromArgb(44, 53, 60);
+            btnSua.Location = new Point(389, 550);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(120, 50);
+            btnSua.TabIndex = 10;
+            btnSua.Text = "Chỉnh sửa";
+            btnSua.UseVisualStyleBackColor = false;
+            // 
             // btnXoa
             // 
             btnXoa.Location = new Point(427, 649);
@@ -171,8 +160,8 @@
             // pnlVo
             // 
             pnlVo.BackColor = Color.WhiteSmoke;
-            pnlVo.Controls.Add(btnXoa);
             pnlVo.Controls.Add(btnThongTinVo);
+            pnlVo.Controls.Add(btnXoa);
             pnlVo.Controls.Add(dtpNgayDangKy);
             pnlVo.Controls.Add(btnSua);
             pnlVo.Controls.Add(txtTenVo);
@@ -184,17 +173,6 @@
             pnlVo.Name = "pnlVo";
             pnlVo.Size = new Size(600, 640);
             pnlVo.TabIndex = 3;
-            // 
-            // btnThongTinVo
-            // 
-            btnThongTinVo.BackColor = Color.White;
-            btnThongTinVo.ForeColor = Color.FromArgb(44, 53, 60);
-            btnThongTinVo.Location = new Point(233, 350);
-            btnThongTinVo.Name = "btnThongTinVo";
-            btnThongTinVo.Size = new Size(133, 50);
-            btnThongTinVo.TabIndex = 7;
-            btnThongTinVo.Text = "Chi tiết";
-            btnThongTinVo.UseVisualStyleBackColor = false;
             // 
             // dtpNgayDangKy
             // 
@@ -270,6 +248,32 @@
             panel1.Size = new Size(1200, 80);
             panel1.TabIndex = 4;
             // 
+            // btnThongTinChong
+            // 
+            btnThongTinChong.BackColor = Color.Transparent;
+            btnThongTinChong.DialogResult = DialogResult.OK;
+            btnThongTinChong.FlatAppearance.BorderSize = 0;
+            btnThongTinChong.FlatStyle = FlatStyle.Flat;
+            btnThongTinChong.Image = Properties.Resources.view;
+            btnThongTinChong.Location = new Point(515, 293);
+            btnThongTinChong.Name = "btnThongTinChong";
+            btnThongTinChong.Size = new Size(50, 50);
+            btnThongTinChong.TabIndex = 95;
+            btnThongTinChong.UseVisualStyleBackColor = false;
+            // 
+            // btnThongTinVo
+            // 
+            btnThongTinVo.BackColor = Color.Transparent;
+            btnThongTinVo.DialogResult = DialogResult.OK;
+            btnThongTinVo.FlatAppearance.BorderSize = 0;
+            btnThongTinVo.FlatStyle = FlatStyle.Flat;
+            btnThongTinVo.Image = Properties.Resources.view;
+            btnThongTinVo.Location = new Point(506, 293);
+            btnThongTinVo.Name = "btnThongTinVo";
+            btnThongTinVo.Size = new Size(50, 50);
+            btnThongTinVo.TabIndex = 95;
+            btnThongTinVo.UseVisualStyleBackColor = false;
+            // 
             // FThongTinHonNhan
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
@@ -313,8 +317,8 @@
         private TextBox txtCCCDVo;
         private Button btnSua;
         private Button btnXoa;
+        private Panel panel1;
         private Button btnThongTinChong;
         private Button btnThongTinVo;
-        private Panel panel1;
     }
 }

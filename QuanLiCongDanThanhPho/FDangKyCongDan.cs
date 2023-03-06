@@ -24,10 +24,10 @@ namespace QuanLiCongDanThanhPho
             cdDAO = new CongDanDAO();
             kSDAO = new KhaiSinhDAO();
             thueDAO = new ThueDAO();
-            hNDAO= new HonNhanDAO();
+            hNDAO = new HonNhanDAO();
             cCCDDAO = new CCCDDAO();
         }
-        
+
         public void ThemCongDan()
         {
             CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, cboTonGiao.SelectedItem.ToString(), txtHoKhau.Text, cboQuanHe.SelectedItem.ToString(), txtDiaChi.Text);
@@ -44,7 +44,7 @@ namespace QuanLiCongDanThanhPho
 
                 HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text,"" ,DateTime.Now, rdoNam.ToString());
                 hNDAO.ThemHonNhan(hN);
-            }    
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -55,6 +55,27 @@ namespace QuanLiCongDanThanhPho
         private void FDangKyCongDan_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox)
+                    {
+                        (control as TextBox).Clear();
+                    }
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+            };
+            func(Controls);
         }
     }
 }

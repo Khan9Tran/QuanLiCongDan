@@ -17,15 +17,15 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
         }
-        protected override void OnPaintBackground(PaintEventArgs e)
+
+        private void txtTaiKhoan_Click(object sender, EventArgs e)
         {
-            using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle,
-                                                                       Color.FromArgb(44, 43, 69),
-                                                                       Color.FromArgb(255, 200, 0),
-                                                                       90F))
-            {
-                e.Graphics.FillRectangle(brush, this.ClientRectangle);
-            }
+            txtTaiKhoan.Clear();
+        }
+
+        private void txtMatKhau_Click(object sender, EventArgs e)
+        {
+            txtMatKhau.Clear();
         }
     }
 }
