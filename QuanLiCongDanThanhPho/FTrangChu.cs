@@ -21,18 +21,7 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
             this.Controls.Add(this.pnlMenu);
-        }
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void lblExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void lblHideApp_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
+            this.Controls.Add(pnlHienThiForm);
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
@@ -75,6 +64,7 @@ namespace QuanLiCongDanThanhPho
 
         private void cmnusDangKyItemKhaiSinh_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new FDangKyKhaiSinh());
             if (pnlMenu.Width > 80)
                 btnMenuShow_Click(sender, e);
         }
@@ -112,11 +102,7 @@ namespace QuanLiCongDanThanhPho
             if (pnlMenu.Width > 80)
                 btnMenuShow_Click(sender, e);
         }
-        private void btnSuaDoi_Click(object sender, EventArgs e)
-        {
-            FThongTinCongDan ttcd = new FThongTinCongDan();
-            ttcd.ShowDialog();
-        }
+      
 
         private void FTrangChu_Load(object sender, EventArgs e)
         {
@@ -192,6 +178,8 @@ namespace QuanLiCongDanThanhPho
         private void cmnusDangKyItemHoKhau_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyHoKhau());
+            if (pnlMenu.Width > 80)
+                btnMenuShow_Click(sender, e);
         }
 
         protected override void WndProc(ref Message message)
