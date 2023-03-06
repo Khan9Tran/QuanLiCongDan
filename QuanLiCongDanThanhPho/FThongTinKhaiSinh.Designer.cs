@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtQuocTichMe = new System.Windows.Forms.TextBox();
-            this.lblQuocTichMe = new System.Windows.Forms.Label();
-            this.txtQuocTichCha = new System.Windows.Forms.TextBox();
-            this.lblQuocTichCha = new System.Windows.Forms.Label();
-            this.txtCccdMe = new System.Windows.Forms.TextBox();
-            this.txtTenMe = new System.Windows.Forms.TextBox();
-            this.txtCccdCha = new System.Windows.Forms.TextBox();
-            this.txtTenCha = new System.Windows.Forms.TextBox();
-            this.lblCccdMe = new System.Windows.Forms.Label();
-            this.lblCccdCha = new System.Windows.Forms.Label();
-            this.lblTenMe = new System.Windows.Forms.Label();
-            this.lblTenCha = new System.Windows.Forms.Label();
-            this.lblTittle = new System.Windows.Forms.Label();
-            this.lblTen = new System.Windows.Forms.Label();
-            this.lblNgaySinh = new System.Windows.Forms.Label();
-            this.lblGioiTinh = new System.Windows.Forms.Label();
-            this.lblCccd = new System.Windows.Forms.Label();
-            this.lblQuocTich = new System.Windows.Forms.Label();
-            this.lblDanToc = new System.Windows.Forms.Label();
-            this.lblNoiSinh = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
-            this.txtCccd = new System.Windows.Forms.TextBox();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.txtNoiSinh = new System.Windows.Forms.TextBox();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
-            this.txtQuocTich = new System.Windows.Forms.TextBox();
-            this.txtDanToc = new System.Windows.Forms.TextBox();
-            this.pnlTren = new System.Windows.Forms.Panel();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThongTinMe = new System.Windows.Forms.Button();
-            this.btnThongTinCha = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.titleBar1 = new QuanLiCongDanThanhPho.TitleBar();
-            this.sideBar1 = new QuanLiCongDanThanhPho.SideBar();
-            this.pnlTren.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            txtQuocTichMe = new TextBox();
+            lblQuocTichMe = new Label();
+            txtQuocTichCha = new TextBox();
+            lblQuocTichCha = new Label();
+            txtCccdMe = new TextBox();
+            txtTenMe = new TextBox();
+            txtCccdCha = new TextBox();
+            txtTenCha = new TextBox();
+            lblCccdMe = new Label();
+            lblCccdCha = new Label();
+            lblTenMe = new Label();
+            lblTenCha = new Label();
+            lblTittle = new Label();
+            lblTen = new Label();
+            lblNgaySinh = new Label();
+            lblGioiTinh = new Label();
+            lblCccd = new Label();
+            lblQuocTich = new Label();
+            lblDanToc = new Label();
+            lblNoiSinh = new Label();
+            txtTen = new TextBox();
+            txtCccd = new TextBox();
+            dtpNgaySinh = new DateTimePicker();
+            txtNoiSinh = new TextBox();
+            txtGioiTinh = new TextBox();
+            txtQuocTich = new TextBox();
+            txtDanToc = new TextBox();
+            pnlTren = new Panel();
+            btnThongTinMe = new Button();
+            btnThongTinCha = new Button();
+            panel1 = new Panel();
+            titleBar1 = new TitleBar();
+            sideBar1 = new SideBar();
+            btnSua = new Button();
+            pnlTren.SuspendLayout();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // txtQuocTichMe
             // 
@@ -364,53 +364,40 @@
             // 
             // pnlTren
             // 
-            this.pnlTren.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlTren.Controls.Add(this.btnSua);
-            this.pnlTren.Controls.Add(this.btnThongTinMe);
-            this.pnlTren.Controls.Add(this.btnThongTinCha);
-            this.pnlTren.Controls.Add(this.lblCccdMe);
-            this.pnlTren.Controls.Add(this.txtCccdMe);
-            this.pnlTren.Controls.Add(this.lblTenMe);
-            this.pnlTren.Controls.Add(this.txtQuocTichMe);
-            this.pnlTren.Controls.Add(this.txtTenMe);
-            this.pnlTren.Controls.Add(this.txtCccdCha);
-            this.pnlTren.Controls.Add(this.lblQuocTichMe);
-            this.pnlTren.Controls.Add(this.lblCccdCha);
-            this.pnlTren.Controls.Add(this.txtDanToc);
-            this.pnlTren.Controls.Add(this.txtQuocTichCha);
-            this.pnlTren.Controls.Add(this.lblQuocTichCha);
-            this.pnlTren.Controls.Add(this.txtQuocTich);
-            this.pnlTren.Controls.Add(this.txtGioiTinh);
-            this.pnlTren.Controls.Add(this.txtNoiSinh);
-            this.pnlTren.Controls.Add(this.dtpNgaySinh);
-            this.pnlTren.Controls.Add(this.txtTenCha);
-            this.pnlTren.Controls.Add(this.txtCccd);
-            this.pnlTren.Controls.Add(this.txtTen);
-            this.pnlTren.Controls.Add(this.lblNoiSinh);
-            this.pnlTren.Controls.Add(this.lblDanToc);
-            this.pnlTren.Controls.Add(this.lblQuocTich);
-            this.pnlTren.Controls.Add(this.lblTenCha);
-            this.pnlTren.Controls.Add(this.lblCccd);
-            this.pnlTren.Controls.Add(this.lblGioiTinh);
-            this.pnlTren.Controls.Add(this.lblNgaySinh);
-            this.pnlTren.Controls.Add(this.lblTen);
-            this.pnlTren.Location = new System.Drawing.Point(12, 86);
-            this.pnlTren.Name = "pnlTren";
-            this.pnlTren.Size = new System.Drawing.Size(1188, 635);
-            this.pnlTren.TabIndex = 0;
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.Transparent;
-            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.editing__1_;
-            this.btnSua.Location = new System.Drawing.Point(1111, 553);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(50, 50);
-            this.btnSua.TabIndex = 97;
-            this.btnSua.UseVisualStyleBackColor = false;
+            pnlTren.BackColor = Color.WhiteSmoke;
+            pnlTren.Controls.Add(btnSua);
+            pnlTren.Controls.Add(btnThongTinMe);
+            pnlTren.Controls.Add(btnThongTinCha);
+            pnlTren.Controls.Add(lblCccdMe);
+            pnlTren.Controls.Add(txtCccdMe);
+            pnlTren.Controls.Add(lblTenMe);
+            pnlTren.Controls.Add(txtQuocTichMe);
+            pnlTren.Controls.Add(txtTenMe);
+            pnlTren.Controls.Add(txtCccdCha);
+            pnlTren.Controls.Add(lblQuocTichMe);
+            pnlTren.Controls.Add(lblCccdCha);
+            pnlTren.Controls.Add(txtDanToc);
+            pnlTren.Controls.Add(txtQuocTichCha);
+            pnlTren.Controls.Add(lblQuocTichCha);
+            pnlTren.Controls.Add(txtQuocTich);
+            pnlTren.Controls.Add(txtGioiTinh);
+            pnlTren.Controls.Add(txtNoiSinh);
+            pnlTren.Controls.Add(dtpNgaySinh);
+            pnlTren.Controls.Add(txtTenCha);
+            pnlTren.Controls.Add(txtCccd);
+            pnlTren.Controls.Add(txtTen);
+            pnlTren.Controls.Add(lblNoiSinh);
+            pnlTren.Controls.Add(lblDanToc);
+            pnlTren.Controls.Add(lblQuocTich);
+            pnlTren.Controls.Add(lblTenCha);
+            pnlTren.Controls.Add(lblCccd);
+            pnlTren.Controls.Add(lblGioiTinh);
+            pnlTren.Controls.Add(lblNgaySinh);
+            pnlTren.Controls.Add(lblTen);
+            pnlTren.Location = new Point(12, 86);
+            pnlTren.Name = "pnlTren";
+            pnlTren.Size = new Size(1188, 635);
+            pnlTren.TabIndex = 0;
             // 
             // btnThongTinMe
             // 
@@ -461,10 +448,23 @@
             // 
             // sideBar1
             // 
-            this.sideBar1.Location = new System.Drawing.Point(3, 3);
-            this.sideBar1.Name = "sideBar1";
-            this.sideBar1.Size = new System.Drawing.Size(48, 102);
-            this.sideBar1.TabIndex = 1;
+            sideBar1.Location = new Point(3, 3);
+            sideBar1.Name = "sideBar1";
+            sideBar1.Size = new Size(48, 102);
+            sideBar1.TabIndex = 1;
+            // 
+            // btnSua
+            // 
+            btnSua.BackColor = Color.Transparent;
+            btnSua.DialogResult = DialogResult.OK;
+            btnSua.FlatAppearance.BorderSize = 0;
+            btnSua.FlatStyle = FlatStyle.Flat;
+            btnSua.Image = Properties.Resources.editing__1_;
+            btnSua.Location = new Point(1111, 553);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(50, 50);
+            btnSua.TabIndex = 97;
+            btnSua.UseVisualStyleBackColor = false;
             // 
             // FThongTinKhaiSinh
             // 
@@ -523,5 +523,7 @@
         private Button btnThongTinCha;
         private Button btnThongTinMe;
         private Button btnSua;
+        private TextBox txtQueQuan;
+        private Label lblQueQuan;
     }
 }
