@@ -1,6 +1,6 @@
 ﻿namespace QuanLiCongDanThanhPho
 {
-    partial class SideBar
+    partial class SideBarWhite
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlSideBar = new Panel();
             btnBack = new Button();
+            pnlSideBar = new Panel();
             btnHome = new Button();
             pnlSideBar.SuspendLayout();
             SuspendLayout();
-            // 
-            // pnlSideBar
-            // 
-            pnlSideBar.Controls.Add(btnBack);
-            pnlSideBar.Controls.Add(btnHome);
-            pnlSideBar.Dock = DockStyle.Top;
-            pnlSideBar.Location = new Point(0, 0);
-            pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(96, 32);
-            pnlSideBar.TabIndex = 0;
             // 
             // btnBack
             // 
@@ -51,12 +41,22 @@
             btnBack.FlatAppearance.MouseDownBackColor = Color.FromArgb(44, 43, 60);
             btnBack.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnBack.FlatStyle = FlatStyle.Flat;
-            btnBack.Image = Properties.Resources.left1;
+            btnBack.Image = Properties.Resources.leftWhite;
             btnBack.Location = new Point(32, 0);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(32, 32);
             btnBack.TabIndex = 1;
             btnBack.UseVisualStyleBackColor = false;
+            // 
+            // pnlSideBar
+            // 
+            pnlSideBar.Controls.Add(btnBack);
+            pnlSideBar.Controls.Add(btnHome);
+            pnlSideBar.Dock = DockStyle.Top;
+            pnlSideBar.Location = new Point(0, 0);
+            pnlSideBar.Name = "pnlSideBar";
+            pnlSideBar.Size = new Size(83, 32);
+            pnlSideBar.TabIndex = 1;
             // 
             // btnHome
             // 
@@ -65,29 +65,28 @@
             btnHome.FlatAppearance.MouseDownBackColor = Color.FromArgb(44, 43, 60);
             btnHome.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnHome.FlatStyle = FlatStyle.Flat;
-            btnHome.Image = Properties.Resources.home1;
+            btnHome.Image = Properties.Resources.homeWhite;
             btnHome.Location = new Point(0, 0);
             btnHome.Name = "btnHome";
             btnHome.Size = new Size(32, 32);
             btnHome.TabIndex = 0;
             btnHome.UseVisualStyleBackColor = false;
-            btnHome.Click += btnHome_Click;
             // 
-            // SideBar
+            // SideBarWhite
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pnlSideBar);
-            Name = "SideBar";
-            Size = new Size(96, 58);
+            Name = "SideBarWhite";
+            Size = new Size(83, 42);
             pnlSideBar.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel pnlSideBar;
         private Button btnBack;
+        private Panel pnlSideBar;
         private Button btnHome;
     }
 }

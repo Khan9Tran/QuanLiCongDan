@@ -19,8 +19,12 @@ namespace QuanLiCongDanThanhPho
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if (this.ParentForm.Name == "FTrangChu")
-                (this.ParentForm as FTrangChu).currentChildForm.Close();
+            if (ParentForm.Name == "FTrangChu")
+            {
+                if ((ParentForm as FTrangChu).currentChildForm == null)
+                    return;
+                (ParentForm as FTrangChu).currentChildForm.Close();
+            }
             else
                 this.ParentForm.Close();
         }
