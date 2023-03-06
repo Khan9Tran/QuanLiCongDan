@@ -57,11 +57,11 @@
             txtQuocTich = new TextBox();
             txtDanToc = new TextBox();
             pnlTren = new Panel();
+            btnThongTinMe = new Button();
+            btnThongTinCha = new Button();
             panel1 = new Panel();
             titleBar1 = new TitleBar();
             sideBar1 = new SideBar();
-            btnThongTinCha = new Button();
-            btnThongTinMe = new Button();
             pnlTren.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -411,6 +411,32 @@
             pnlTren.Size = new Size(1188, 635);
             pnlTren.TabIndex = 0;
             // 
+            // btnThongTinMe
+            // 
+            btnThongTinMe.BackColor = Color.Transparent;
+            btnThongTinMe.DialogResult = DialogResult.OK;
+            btnThongTinMe.FlatAppearance.BorderSize = 0;
+            btnThongTinMe.FlatStyle = FlatStyle.Flat;
+            btnThongTinMe.Image = Properties.Resources.view;
+            btnThongTinMe.Location = new Point(120, 430);
+            btnThongTinMe.Name = "btnThongTinMe";
+            btnThongTinMe.Size = new Size(50, 50);
+            btnThongTinMe.TabIndex = 94;
+            btnThongTinMe.UseVisualStyleBackColor = false;
+            // 
+            // btnThongTinCha
+            // 
+            btnThongTinCha.BackColor = Color.Transparent;
+            btnThongTinCha.DialogResult = DialogResult.OK;
+            btnThongTinCha.FlatAppearance.BorderSize = 0;
+            btnThongTinCha.FlatStyle = FlatStyle.Flat;
+            btnThongTinCha.Image = Properties.Resources.view;
+            btnThongTinCha.Location = new Point(120, 300);
+            btnThongTinCha.Name = "btnThongTinCha";
+            btnThongTinCha.Size = new Size(50, 50);
+            btnThongTinCha.TabIndex = 93;
+            btnThongTinCha.UseVisualStyleBackColor = false;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(44, 43, 60);
@@ -436,32 +462,6 @@
             sideBar1.Name = "sideBar1";
             sideBar1.Size = new Size(48, 102);
             sideBar1.TabIndex = 1;
-            // 
-            // btnThongTinCha
-            // 
-            btnThongTinCha.BackColor = Color.Transparent;
-            btnThongTinCha.DialogResult = DialogResult.OK;
-            btnThongTinCha.FlatAppearance.BorderSize = 0;
-            btnThongTinCha.FlatStyle = FlatStyle.Flat;
-            btnThongTinCha.Image = Properties.Resources.view;
-            btnThongTinCha.Location = new Point(120, 300);
-            btnThongTinCha.Name = "btnThongTinCha";
-            btnThongTinCha.Size = new Size(50, 50);
-            btnThongTinCha.TabIndex = 93;
-            btnThongTinCha.UseVisualStyleBackColor = false;
-            // 
-            // btnThongTinMe
-            // 
-            btnThongTinMe.BackColor = Color.Transparent;
-            btnThongTinMe.DialogResult = DialogResult.OK;
-            btnThongTinMe.FlatAppearance.BorderSize = 0;
-            btnThongTinMe.FlatStyle = FlatStyle.Flat;
-            btnThongTinMe.Image = Properties.Resources.view;
-            btnThongTinMe.Location = new Point(120, 430);
-            btnThongTinMe.Name = "btnThongTinMe";
-            btnThongTinMe.Size = new Size(50, 50);
-            btnThongTinMe.TabIndex = 94;
-            btnThongTinMe.UseVisualStyleBackColor = false;
             // 
             // FThongTinKhaiSinh
             // 
