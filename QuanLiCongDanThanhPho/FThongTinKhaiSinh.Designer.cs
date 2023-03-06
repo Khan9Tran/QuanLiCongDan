@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnThayDoi = new Button();
             txtQuocTichMe = new TextBox();
             lblQuocTichMe = new Label();
             txtQuocTichCha = new TextBox();
@@ -62,21 +61,10 @@
             panel1 = new Panel();
             titleBar1 = new TitleBar();
             sideBar1 = new SideBar();
+            btnSua = new Button();
             pnlTren.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnThayDoi
-            // 
-            btnThayDoi.BackColor = Color.FromArgb(44, 43, 69);
-            btnThayDoi.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnThayDoi.ForeColor = Color.White;
-            btnThayDoi.Location = new Point(1021, 558);
-            btnThayDoi.Name = "btnThayDoi";
-            btnThayDoi.Size = new Size(140, 50);
-            btnThayDoi.TabIndex = 48;
-            btnThayDoi.Text = "Thay đổi";
-            btnThayDoi.UseVisualStyleBackColor = false;
             // 
             // txtQuocTichMe
             // 
@@ -377,6 +365,7 @@
             // pnlTren
             // 
             pnlTren.BackColor = Color.WhiteSmoke;
+            pnlTren.Controls.Add(btnSua);
             pnlTren.Controls.Add(btnThongTinMe);
             pnlTren.Controls.Add(btnThongTinCha);
             pnlTren.Controls.Add(lblCccdMe);
@@ -385,7 +374,6 @@
             pnlTren.Controls.Add(txtQuocTichMe);
             pnlTren.Controls.Add(txtTenMe);
             pnlTren.Controls.Add(txtCccdCha);
-            pnlTren.Controls.Add(btnThayDoi);
             pnlTren.Controls.Add(lblQuocTichMe);
             pnlTren.Controls.Add(lblCccdCha);
             pnlTren.Controls.Add(txtDanToc);
@@ -463,6 +451,19 @@
             sideBar1.Size = new Size(48, 102);
             sideBar1.TabIndex = 1;
             // 
+            // btnSua
+            // 
+            btnSua.BackColor = Color.Transparent;
+            btnSua.DialogResult = DialogResult.OK;
+            btnSua.FlatAppearance.BorderSize = 0;
+            btnSua.FlatStyle = FlatStyle.Flat;
+            btnSua.Image = Properties.Resources.editing__1_;
+            btnSua.Location = new Point(1111, 553);
+            btnSua.Name = "btnSua";
+            btnSua.Size = new Size(50, 50);
+            btnSua.TabIndex = 97;
+            btnSua.UseVisualStyleBackColor = false;
+            // 
             // FThongTinKhaiSinh
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
@@ -485,7 +486,6 @@
         }
 
         #endregion
-        private Button btnThayDoi;
         private Label lblCccdMe;
         private Label lblCccdCha;
         private Label lblTenMe;
@@ -519,5 +519,6 @@
         private SideBar sideBar1;
         private Button btnThongTinCha;
         private Button btnThongTinMe;
+        private Button btnSua;
     }
 }
