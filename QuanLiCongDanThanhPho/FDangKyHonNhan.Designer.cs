@@ -217,6 +217,7 @@
             // btnReset
             // 
             btnReset.BackColor = Color.Transparent;
+            btnReset.DialogResult = DialogResult.OK;
             btnReset.FlatAppearance.BorderSize = 0;
             btnReset.FlatStyle = FlatStyle.Flat;
             btnReset.Image = Properties.Resources.reset;
@@ -225,6 +226,7 @@
             btnReset.Size = new Size(50, 50);
             btnReset.TabIndex = 59;
             btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
             // 
             // btnDangKy
             // 

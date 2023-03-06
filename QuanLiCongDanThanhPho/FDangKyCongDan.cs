@@ -24,25 +24,25 @@ namespace QuanLiCongDanThanhPho
             cdDAO = new CongDanDAO();
             kSDAO = new KhaiSinhDAO();
             thueDAO = new ThueDAO();
-            hNDAO= new HonNhanDAO();
+            hNDAO = new HonNhanDAO();
             cCCDDAO = new CCCDDAO();
         }
-        
+
         public void ThemCongDan()
         {
             CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, cboTonGiao.SelectedItem.ToString(), txtHoKhau.Text, cboQuanHe.SelectedItem.ToString(), txtDiaChi.Text);
             cdDAO.ThemCongDan(cD);
             CCCD cCCD = new CCCD(txtCCCD.Text);
             cCCDDAO.ThemCCCD(cCCD);
-            KhaiSinh kS = new KhaiSinh(txtCCCD.Text, txtTen.Text, cboQuocTich.SelectedItem.ToString(), cboDanToc.SelectedItem.ToString(),cboDanToc.SelectedItem.ToString(),dtmNgaySinh.Value, dtmDKKhaiSinh.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCCCDCha.Text, txtTenCha.Text, txtCCCDMe.Text, txtTenMe.Text);
+            KhaiSinh kS = new KhaiSinh(txtCCCD.Text, txtTen.Text, cboQuocTich.SelectedItem.ToString(), cboDanToc.SelectedItem.ToString(), cboDanToc.SelectedItem.ToString(), dtmNgaySinh.Value, dtmDKKhaiSinh.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCCCDCha.Text, txtTenCha.Text, txtCCCDMe.Text, txtTenMe.Text);
             kSDAO.ThemKhaSinh(kS);
             Thue thue = new Thue(txtThue.Text, txtCCCD.Text);
             thueDAO.ThemThue(thue);
             if (cboTinhTrang.SelectedItem.ToString() == "Kết hôn")
             {
-                HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text,"" ,DateTime.Now, rdoNam.ToString());
+                HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, "", DateTime.Now, rdoNam.ToString());
                 hNDAO.ThemHonNhan(hN);
-            }    
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -53,6 +53,27 @@ namespace QuanLiCongDanThanhPho
         private void FDangKyCongDan_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox)
+                    {
+                        (control as TextBox).Clear();
+                    }
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+            };
+            func(Controls);
         }
     }
 }

@@ -37,6 +37,7 @@
             textBox1 = new TextBox();
             lblDDNhanDang = new Label();
             btnDangKy = new Button();
+            btnReset = new Button();
             SuspendLayout();
             // 
             // txtTen
@@ -127,12 +128,27 @@
             btnDangKy.Text = "Đăng ký";
             btnDangKy.UseVisualStyleBackColor = false;
             // 
+            // btnReset
+            // 
+            btnReset.BackColor = Color.Transparent;
+            btnReset.DialogResult = DialogResult.OK;
+            btnReset.FlatAppearance.BorderSize = 0;
+            btnReset.FlatStyle = FlatStyle.Flat;
+            btnReset.Image = Properties.Resources.reset;
+            btnReset.Location = new Point(1324, 720);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(50, 50);
+            btnReset.TabIndex = 92;
+            btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click_1;
+            // 
             // FDangKyCCCD
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(193, 185, 174);
             ClientSize = new Size(1532, 782);
+            Controls.Add(btnReset);
             Controls.Add(btnDangKy);
             Controls.Add(textBox1);
             Controls.Add(lblDDNhanDang);
@@ -164,5 +180,6 @@
         private TextBox textBox1;
         private Label lblDDNhanDang;
         private Button btnDangKy;
+        private Button btnReset;
     }
 }

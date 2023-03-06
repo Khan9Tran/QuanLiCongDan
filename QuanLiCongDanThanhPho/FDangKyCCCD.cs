@@ -21,5 +21,49 @@ namespace QuanLiCongDanThanhPho
         {
 
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox || control is DataGridView)
+                    {
+                        (control as TextBox).Clear();
+                    }
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+            };
+            func(Controls);
+        }
+
+        
+
+        private void btnReset_Click_1(object sender, EventArgs e)
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox)
+                    {
+                        (control as TextBox).Clear();
+                    }
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+            };
+            func(Controls);
+        }
     }
 }
