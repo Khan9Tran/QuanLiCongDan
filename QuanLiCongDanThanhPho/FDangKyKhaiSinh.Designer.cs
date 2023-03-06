@@ -71,7 +71,6 @@
             this.txtDanToc.ForeColor = System.Drawing.Color.Black;
             this.txtDanToc.Location = new System.Drawing.Point(987, 218);
             this.txtDanToc.Name = "txtDanToc";
-            this.txtDanToc.ReadOnly = true;
             this.txtDanToc.Size = new System.Drawing.Size(268, 27);
             this.txtDanToc.TabIndex = 74;
             this.txtDanToc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -84,7 +83,6 @@
             this.txtQuocTich.ForeColor = System.Drawing.Color.Black;
             this.txtQuocTich.Location = new System.Drawing.Point(987, 155);
             this.txtQuocTich.Name = "txtQuocTich";
-            this.txtQuocTich.ReadOnly = true;
             this.txtQuocTich.Size = new System.Drawing.Size(268, 27);
             this.txtQuocTich.TabIndex = 73;
             this.txtQuocTich.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -97,7 +95,6 @@
             this.txtNoiSinh.ForeColor = System.Drawing.Color.Black;
             this.txtNoiSinh.Location = new System.Drawing.Point(371, 279);
             this.txtNoiSinh.Name = "txtNoiSinh";
-            this.txtNoiSinh.ReadOnly = true;
             this.txtNoiSinh.Size = new System.Drawing.Size(460, 27);
             this.txtNoiSinh.TabIndex = 71;
             this.txtNoiSinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -105,7 +102,6 @@
             // dtmNgayDangKy
             // 
             this.dtmNgayDangKy.CustomFormat = "dd/MM/yyyy";
-            this.dtmNgayDangKy.Enabled = false;
             this.dtmNgayDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtmNgayDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtmNgayDangKy.Location = new System.Drawing.Point(371, 634);
@@ -122,7 +118,6 @@
             this.txtCccd.ForeColor = System.Drawing.Color.Black;
             this.txtCccd.Location = new System.Drawing.Point(371, 155);
             this.txtCccd.Name = "txtCccd";
-            this.txtCccd.ReadOnly = true;
             this.txtCccd.Size = new System.Drawing.Size(460, 27);
             this.txtCccd.TabIndex = 69;
             this.txtCccd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -135,7 +130,6 @@
             this.txtTen.ForeColor = System.Drawing.Color.Black;
             this.txtTen.Location = new System.Drawing.Point(371, 91);
             this.txtTen.Name = "txtTen";
-            this.txtTen.ReadOnly = true;
             this.txtTen.Size = new System.Drawing.Size(460, 27);
             this.txtTen.TabIndex = 68;
             this.txtTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -211,7 +205,6 @@
             this.txtQuocTichMe.ForeColor = System.Drawing.Color.Black;
             this.txtQuocTichMe.Location = new System.Drawing.Point(987, 488);
             this.txtQuocTichMe.Name = "txtQuocTichMe";
-            this.txtQuocTichMe.ReadOnly = true;
             this.txtQuocTichMe.Size = new System.Drawing.Size(268, 27);
             this.txtQuocTichMe.TabIndex = 86;
             this.txtQuocTichMe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -233,7 +226,6 @@
             this.txtQuocTichCha.ForeColor = System.Drawing.Color.Black;
             this.txtQuocTichCha.Location = new System.Drawing.Point(987, 352);
             this.txtQuocTichCha.Name = "txtQuocTichCha";
-            this.txtQuocTichCha.ReadOnly = true;
             this.txtQuocTichCha.Size = new System.Drawing.Size(268, 27);
             this.txtQuocTichCha.TabIndex = 84;
             this.txtQuocTichCha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -255,7 +247,6 @@
             this.txtCccdMe.ForeColor = System.Drawing.Color.Black;
             this.txtCccdMe.Location = new System.Drawing.Point(371, 559);
             this.txtCccdMe.Name = "txtCccdMe";
-            this.txtCccdMe.ReadOnly = true;
             this.txtCccdMe.Size = new System.Drawing.Size(299, 27);
             this.txtCccdMe.TabIndex = 82;
             this.txtCccdMe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -268,7 +259,6 @@
             this.txtTenMe.ForeColor = System.Drawing.Color.Black;
             this.txtTenMe.Location = new System.Drawing.Point(371, 490);
             this.txtTenMe.Name = "txtTenMe";
-            this.txtTenMe.ReadOnly = true;
             this.txtTenMe.Size = new System.Drawing.Size(460, 27);
             this.txtTenMe.TabIndex = 81;
             this.txtTenMe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -281,7 +271,6 @@
             this.txtCccdCha.ForeColor = System.Drawing.Color.Black;
             this.txtCccdCha.Location = new System.Drawing.Point(371, 421);
             this.txtCccdCha.Name = "txtCccdCha";
-            this.txtCccdCha.ReadOnly = true;
             this.txtCccdCha.Size = new System.Drawing.Size(299, 27);
             this.txtCccdCha.TabIndex = 80;
             this.txtCccdCha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -294,7 +283,6 @@
             this.txtTenCha.ForeColor = System.Drawing.Color.Black;
             this.txtTenCha.Location = new System.Drawing.Point(371, 353);
             this.txtTenCha.Name = "txtTenCha";
-            this.txtTenCha.ReadOnly = true;
             this.txtTenCha.Size = new System.Drawing.Size(460, 27);
             this.txtTenCha.TabIndex = 79;
             this.txtTenCha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -351,7 +339,6 @@
             // dtmNgaySinh
             // 
             this.dtmNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.dtmNgaySinh.Enabled = false;
             this.dtmNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtmNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtmNgaySinh.Location = new System.Drawing.Point(987, 272);
@@ -409,9 +396,9 @@
             this.lblQueQuan.AutoSize = true;
             this.lblQueQuan.Location = new System.Drawing.Point(206, 218);
             this.lblQueQuan.Name = "lblQueQuan";
-            this.lblQueQuan.Size = new System.Drawing.Size(92, 28);
+            this.lblQueQuan.Size = new System.Drawing.Size(103, 28);
             this.lblQueQuan.TabIndex = 95;
-            this.lblQueQuan.Text = "Nơi sinh";
+            this.lblQueQuan.Text = "Quê quán";
             // 
             // txtQueQuan
             // 
@@ -421,7 +408,6 @@
             this.txtQueQuan.ForeColor = System.Drawing.Color.Black;
             this.txtQueQuan.Location = new System.Drawing.Point(371, 218);
             this.txtQueQuan.Name = "txtQueQuan";
-            this.txtQueQuan.ReadOnly = true;
             this.txtQueQuan.Size = new System.Drawing.Size(460, 27);
             this.txtQueQuan.TabIndex = 96;
             this.txtQueQuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

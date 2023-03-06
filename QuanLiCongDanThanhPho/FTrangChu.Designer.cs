@@ -52,6 +52,7 @@
             this.cmnusDanhMucItemThue = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnusDanhMucItemTamTruTamVang = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHienThiForm = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.titleBar1 = new QuanLiCongDanThanhPho.TitleBar();
             this.sideBar1 = new QuanLiCongDanThanhPho.SideBar();
@@ -62,9 +63,12 @@
             this.pnlDangKy = new System.Windows.Forms.Panel();
             this.lblDangKy = new System.Windows.Forms.Label();
             this.tmrPhongTo = new System.Windows.Forms.Timer(this.components);
+            this.lblNameApp = new System.Windows.Forms.Label();
             this.pnlDanhMuc.SuspendLayout();
             this.cmnusDangKy.SuspendLayout();
             this.cmnusDanhMuc.SuspendLayout();
+            this.pnlHienThiForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTitleBar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlThongKe.SuspendLayout();
@@ -183,7 +187,7 @@
             this.cmnusDangKy.Name = "cmnusDangKy";
             this.cmnusDangKy.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusDangKy.ShowImageMargin = false;
-            this.cmnusDangKy.Size = new System.Drawing.Size(245, 192);
+            this.cmnusDangKy.Size = new System.Drawing.Size(245, 164);
             // 
             // cmnusDangKyItemTamTruTamVang
             // 
@@ -289,11 +293,22 @@
             // 
             this.pnlHienThiForm.AutoSize = true;
             this.pnlHienThiForm.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlHienThiForm.Controls.Add(this.lblNameApp);
+            this.pnlHienThiForm.Controls.Add(this.pictureBox1);
             this.pnlHienThiForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlHienThiForm.Location = new System.Drawing.Point(88, 81);
             this.pnlHienThiForm.Name = "pnlHienThiForm";
             this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 782);
             this.pnlHienThiForm.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLiCongDanThanhPho.Properties.Resources.profile;
+            this.pictureBox1.Location = new System.Drawing.Point(479, 163);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(512, 512);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // pnlTitleBar
             // 
@@ -392,6 +407,17 @@
             // 
             this.tmrPhongTo.Tick += new System.EventHandler(this.tmrPhongTo_Tick);
             // 
+            // lblNameApp
+            // 
+            this.lblNameApp.AutoSize = true;
+            this.lblNameApp.Font = new System.Drawing.Font("Segoe UI Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNameApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.lblNameApp.Location = new System.Drawing.Point(479, 135);
+            this.lblNameApp.Name = "lblNameApp";
+            this.lblNameApp.Size = new System.Drawing.Size(441, 46);
+            this.lblNameApp.TabIndex = 1;
+            this.lblNameApp.Text = "QUẢN LÝ THÀNH PHỐ: X";
+            // 
             // FTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -409,6 +435,9 @@
             this.pnlDanhMuc.PerformLayout();
             this.cmnusDangKy.ResumeLayout(false);
             this.cmnusDanhMuc.ResumeLayout(false);
+            this.pnlHienThiForm.ResumeLayout(false);
+            this.pnlHienThiForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTitleBar.ResumeLayout(false);
             this.pnlTitleBar.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
@@ -455,5 +484,7 @@
         private ToolStripMenuItem ItemCongDanChuyenDen;
         private ToolStripMenuItem ItemCongDanChuyenDi;
         private ToolStripMenuItem ItemKhaiSinh;
+        private PictureBox pictureBox1;
+        private Label lblNameApp;
     }
 }

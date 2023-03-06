@@ -118,6 +118,7 @@ namespace QuanLiCongDanThanhPho
             else
             {
                 tmrThuNho.Start();
+
             }
         }
 
