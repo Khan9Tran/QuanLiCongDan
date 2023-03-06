@@ -62,6 +62,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.titleBar1 = new QuanLiCongDanThanhPho.TitleBar();
             this.sideBar1 = new QuanLiCongDanThanhPho.SideBar();
+            this.txtQueQuan = new System.Windows.Forms.TextBox();
+            this.lblQue = new System.Windows.Forms.Label();
             this.pnlTren.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -365,6 +367,8 @@
             // pnlTren
             // 
             this.pnlTren.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlTren.Controls.Add(this.txtQueQuan);
+            this.pnlTren.Controls.Add(this.lblQue);
             this.pnlTren.Controls.Add(this.btnSua);
             this.pnlTren.Controls.Add(this.btnThongTinMe);
             this.pnlTren.Controls.Add(this.btnThongTinCha);
@@ -466,6 +470,28 @@
             this.sideBar1.Size = new System.Drawing.Size(48, 102);
             this.sideBar1.TabIndex = 1;
             // 
+            // txtQueQuan
+            // 
+            this.txtQueQuan.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtQueQuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQueQuan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQueQuan.ForeColor = System.Drawing.Color.Black;
+            this.txtQueQuan.Location = new System.Drawing.Point(893, 200);
+            this.txtQueQuan.Name = "txtQueQuan";
+            this.txtQueQuan.ReadOnly = true;
+            this.txtQueQuan.Size = new System.Drawing.Size(268, 27);
+            this.txtQueQuan.TabIndex = 99;
+            this.txtQueQuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblQue
+            // 
+            this.lblQue.AutoSize = true;
+            this.lblQue.Location = new System.Drawing.Point(770, 200);
+            this.lblQue.Name = "lblQue";
+            this.lblQue.Size = new System.Drawing.Size(103, 28);
+            this.lblQue.TabIndex = 98;
+            this.lblQue.Text = "Quê quán";
+            // 
             // FThongTinKhaiSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
@@ -525,5 +551,6 @@
         private Button btnSua;
         private TextBox txtQueQuan;
         private Label lblQueQuan;
+        private Label lblQue;
     }
 }
