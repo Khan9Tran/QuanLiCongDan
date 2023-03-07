@@ -27,5 +27,27 @@ namespace QuanLiCongDanThanhPho
         {
             txtMatKhau.Clear();
         }
+
+        private void FDangNhap_Load(object sender, EventArgs e)
+        {
+            lblNameApp.Hide();
+        }
+
+        private void txtTaiKhoan_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtTaiKhoan.Clear();
+        }
+
+        private void txtMatKhau_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtMatKhau.Clear();
+            txtMatKhau.UseSystemPasswordChar = true;
+        }
+        
+        public void KiemTraPass()
+        {
+
+        }
+
     }
 }

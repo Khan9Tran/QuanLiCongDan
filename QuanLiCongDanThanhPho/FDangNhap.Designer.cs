@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDangNhap = new System.Windows.Forms.Panel();
             this.btnThongTinMe = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlLine = new System.Windows.Forms.Panel();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.lblNameApp = new System.Windows.Forms.Label();
+            this.pnlDangNhap.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlDangNhap
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.btnThongTinMe);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(330, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(70, 150);
-            this.panel1.TabIndex = 1;
+            this.pnlDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(73)))), ((int)(((byte)(155)))));
+            this.pnlDangNhap.Controls.Add(this.btnThongTinMe);
+            this.pnlDangNhap.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlDangNhap.Location = new System.Drawing.Point(330, 0);
+            this.pnlDangNhap.Name = "pnlDangNhap";
+            this.pnlDangNhap.Size = new System.Drawing.Size(70, 150);
+            this.pnlDangNhap.TabIndex = 1;
             // 
             // btnThongTinMe
             // 
@@ -60,13 +61,13 @@
             this.btnThongTinMe.TabIndex = 95;
             this.btnThongTinMe.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // pnlLine
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Location = new System.Drawing.Point(25, 75);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(280, 2);
-            this.panel2.TabIndex = 2;
+            this.pnlLine.BackColor = System.Drawing.Color.Silver;
+            this.pnlLine.Location = new System.Drawing.Point(25, 75);
+            this.pnlLine.Name = "pnlLine";
+            this.pnlLine.Size = new System.Drawing.Size(280, 2);
+            this.pnlLine.TabIndex = 2;
             // 
             // txtTaiKhoan
             // 
@@ -78,6 +79,7 @@
             this.txtTaiKhoan.Size = new System.Drawing.Size(250, 27);
             this.txtTaiKhoan.TabIndex = 3;
             this.txtTaiKhoan.Text = "Tài Khoản";
+            this.txtTaiKhoan.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTaiKhoan_MouseDown);
             // 
             // txtMatKhau
             // 
@@ -89,6 +91,19 @@
             this.txtMatKhau.Size = new System.Drawing.Size(250, 27);
             this.txtMatKhau.TabIndex = 4;
             this.txtMatKhau.Text = "Mật Khẩu";
+            this.txtMatKhau.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtMatKhau_MouseDown);
+            // 
+            // lblNameApp
+            // 
+            this.lblNameApp.AutoSize = true;
+            this.lblNameApp.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblNameApp.Font = new System.Drawing.Font("Verdana", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNameApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(73)))), ((int)(((byte)(155)))));
+            this.lblNameApp.Location = new System.Drawing.Point(160, 75);
+            this.lblNameApp.Name = "lblNameApp";
+            this.lblNameApp.Size = new System.Drawing.Size(327, 80);
+            this.lblNameApp.TabIndex = 5;
+            this.lblNameApp.Text = "MYCITY";
             // 
             // FDangNhap
             // 
@@ -96,17 +111,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(400, 150);
+            this.Controls.Add(this.lblNameApp);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTaiKhoan);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlLine);
+            this.Controls.Add(this.pnlDangNhap);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDangNhap";
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FDangNhap_Load);
+            this.pnlDangNhap.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,10 +131,11 @@
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
+        private Panel pnlDangNhap;
+        private Panel pnlLine;
         private TextBox txtTaiKhoan;
         private TextBox txtMatKhau;
         private Button btnThongTinMe;
+        private Label lblNameApp;
     }
 }
