@@ -28,161 +28,170 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gvDanhSachCongDan = new System.Windows.Forms.DataGridView();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTatCa = new System.Windows.Forms.Button();
-            this.btnTuoiTac = new System.Windows.Forms.Button();
-            this.btnNam = new System.Windows.Forms.Button();
-            this.btnNu = new System.Windows.Forms.Button();
-            this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnDocThan = new System.Windows.Forms.Button();
-            this.btnKetHon = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).BeginInit();
-            this.flpnlPhanLoai.SuspendLayout();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            gvDanhSachCongDan = new DataGridView();
+            txtTimKiem = new TextBox();
+            btnTatCa = new Button();
+            btnTuoiTac = new Button();
+            btnNam = new Button();
+            btnNu = new Button();
+            flpnlPhanLoai = new FlowLayoutPanel();
+            btnDocThan = new Button();
+            btnKetHon = new Button();
+            ((System.ComponentModel.ISupportInitialize)gvDanhSachCongDan).BeginInit();
+            flpnlPhanLoai.SuspendLayout();
+            SuspendLayout();
             // 
             // gvDanhSachCongDan
             // 
-            this.gvDanhSachCongDan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvDanhSachCongDan.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.gvDanhSachCongDan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gvDanhSachCongDan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDanhSachCongDan.Location = new System.Drawing.Point(20, 281);
-            this.gvDanhSachCongDan.Name = "gvDanhSachCongDan";
-            this.gvDanhSachCongDan.RowHeadersWidth = 51;
-            this.gvDanhSachCongDan.RowTemplate.Height = 29;
-            this.gvDanhSachCongDan.Size = new System.Drawing.Size(1500, 450);
-            this.gvDanhSachCongDan.TabIndex = 0;
-            this.gvDanhSachCongDan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDanhSachCongDan_CellClick);
+            gvDanhSachCongDan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gvDanhSachCongDan.BackgroundColor = Color.Gainsboro;
+            gvDanhSachCongDan.BorderStyle = BorderStyle.None;
+            gvDanhSachCongDan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            gvDanhSachCongDan.DefaultCellStyle = dataGridViewCellStyle1;
+            gvDanhSachCongDan.Location = new Point(20, 281);
+            gvDanhSachCongDan.Name = "gvDanhSachCongDan";
+            gvDanhSachCongDan.RowHeadersWidth = 51;
+            gvDanhSachCongDan.RowTemplate.Height = 29;
+            gvDanhSachCongDan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gvDanhSachCongDan.Size = new Size(1500, 450);
+            gvDanhSachCongDan.TabIndex = 0;
+            gvDanhSachCongDan.CellClick += gvDanhSachCongDan_CellClick;
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimKiem.Location = new System.Drawing.Point(30, 61);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(600, 50);
-            this.txtTimKiem.TabIndex = 1;
+            txtTimKiem.BackColor = Color.Gainsboro;
+            txtTimKiem.BorderStyle = BorderStyle.None;
+            txtTimKiem.Location = new Point(30, 61);
+            txtTimKiem.Multiline = true;
+            txtTimKiem.Name = "txtTimKiem";
+            txtTimKiem.Size = new Size(600, 50);
+            txtTimKiem.TabIndex = 1;
             // 
             // btnTatCa
             // 
-            this.btnTatCa.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnTatCa.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTatCa.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTatCa.ForeColor = System.Drawing.Color.Black;
-            this.btnTatCa.Location = new System.Drawing.Point(3, 3);
-            this.btnTatCa.Name = "btnTatCa";
-            this.btnTatCa.Size = new System.Drawing.Size(125, 40);
-            this.btnTatCa.TabIndex = 4;
-            this.btnTatCa.Text = "Tất cả";
-            this.btnTatCa.UseVisualStyleBackColor = false;
+            btnTatCa.BackColor = Color.Gainsboro;
+            btnTatCa.FlatAppearance.BorderColor = Color.Gray;
+            btnTatCa.FlatStyle = FlatStyle.Flat;
+            btnTatCa.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTatCa.ForeColor = Color.Black;
+            btnTatCa.Location = new Point(3, 3);
+            btnTatCa.Name = "btnTatCa";
+            btnTatCa.Size = new Size(125, 40);
+            btnTatCa.TabIndex = 4;
+            btnTatCa.Text = "Tất cả";
+            btnTatCa.UseVisualStyleBackColor = false;
             // 
             // btnTuoiTac
             // 
-            this.btnTuoiTac.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnTuoiTac.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnTuoiTac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTuoiTac.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTuoiTac.ForeColor = System.Drawing.Color.Black;
-            this.btnTuoiTac.Location = new System.Drawing.Point(134, 3);
-            this.btnTuoiTac.Name = "btnTuoiTac";
-            this.btnTuoiTac.Size = new System.Drawing.Size(125, 40);
-            this.btnTuoiTac.TabIndex = 5;
-            this.btnTuoiTac.Text = "Tuổi tác";
-            this.btnTuoiTac.UseVisualStyleBackColor = false;
+            btnTuoiTac.BackColor = Color.Gainsboro;
+            btnTuoiTac.FlatAppearance.BorderColor = Color.Gray;
+            btnTuoiTac.FlatStyle = FlatStyle.Flat;
+            btnTuoiTac.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTuoiTac.ForeColor = Color.Black;
+            btnTuoiTac.Location = new Point(134, 3);
+            btnTuoiTac.Name = "btnTuoiTac";
+            btnTuoiTac.Size = new Size(125, 40);
+            btnTuoiTac.TabIndex = 5;
+            btnTuoiTac.Text = "Tuổi tác";
+            btnTuoiTac.UseVisualStyleBackColor = false;
             // 
             // btnNam
             // 
-            this.btnNam.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNam.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnNam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNam.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNam.ForeColor = System.Drawing.Color.Black;
-            this.btnNam.Location = new System.Drawing.Point(265, 3);
-            this.btnNam.Name = "btnNam";
-            this.btnNam.Size = new System.Drawing.Size(125, 40);
-            this.btnNam.TabIndex = 6;
-            this.btnNam.Text = "Nam";
-            this.btnNam.UseVisualStyleBackColor = false;
+            btnNam.BackColor = Color.Gainsboro;
+            btnNam.FlatAppearance.BorderColor = Color.Gray;
+            btnNam.FlatStyle = FlatStyle.Flat;
+            btnNam.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNam.ForeColor = Color.Black;
+            btnNam.Location = new Point(265, 3);
+            btnNam.Name = "btnNam";
+            btnNam.Size = new Size(125, 40);
+            btnNam.TabIndex = 6;
+            btnNam.Text = "Nam";
+            btnNam.UseVisualStyleBackColor = false;
             // 
             // btnNu
             // 
-            this.btnNu.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNu.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnNu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNu.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNu.ForeColor = System.Drawing.Color.Black;
-            this.btnNu.Location = new System.Drawing.Point(396, 3);
-            this.btnNu.Name = "btnNu";
-            this.btnNu.Size = new System.Drawing.Size(125, 40);
-            this.btnNu.TabIndex = 7;
-            this.btnNu.Text = "Nữ";
-            this.btnNu.UseVisualStyleBackColor = false;
+            btnNu.BackColor = Color.Gainsboro;
+            btnNu.FlatAppearance.BorderColor = Color.Gray;
+            btnNu.FlatStyle = FlatStyle.Flat;
+            btnNu.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNu.ForeColor = Color.Black;
+            btnNu.Location = new Point(396, 3);
+            btnNu.Name = "btnNu";
+            btnNu.Size = new Size(125, 40);
+            btnNu.TabIndex = 7;
+            btnNu.Text = "Nữ";
+            btnNu.UseVisualStyleBackColor = false;
             // 
             // flpnlPhanLoai
             // 
-            this.flpnlPhanLoai.Controls.Add(this.btnTatCa);
-            this.flpnlPhanLoai.Controls.Add(this.btnTuoiTac);
-            this.flpnlPhanLoai.Controls.Add(this.btnNam);
-            this.flpnlPhanLoai.Controls.Add(this.btnNu);
-            this.flpnlPhanLoai.Controls.Add(this.btnDocThan);
-            this.flpnlPhanLoai.Controls.Add(this.btnKetHon);
-            this.flpnlPhanLoai.Location = new System.Drawing.Point(20, 217);
-            this.flpnlPhanLoai.Name = "flpnlPhanLoai";
-            this.flpnlPhanLoai.Size = new System.Drawing.Size(799, 47);
-            this.flpnlPhanLoai.TabIndex = 8;
+            flpnlPhanLoai.Controls.Add(btnTatCa);
+            flpnlPhanLoai.Controls.Add(btnTuoiTac);
+            flpnlPhanLoai.Controls.Add(btnNam);
+            flpnlPhanLoai.Controls.Add(btnNu);
+            flpnlPhanLoai.Controls.Add(btnDocThan);
+            flpnlPhanLoai.Controls.Add(btnKetHon);
+            flpnlPhanLoai.Location = new Point(20, 217);
+            flpnlPhanLoai.Name = "flpnlPhanLoai";
+            flpnlPhanLoai.Size = new Size(799, 47);
+            flpnlPhanLoai.TabIndex = 8;
             // 
             // btnDocThan
             // 
-            this.btnDocThan.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnDocThan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnDocThan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDocThan.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDocThan.ForeColor = System.Drawing.Color.Black;
-            this.btnDocThan.Location = new System.Drawing.Point(527, 3);
-            this.btnDocThan.Name = "btnDocThan";
-            this.btnDocThan.Size = new System.Drawing.Size(125, 40);
-            this.btnDocThan.TabIndex = 8;
-            this.btnDocThan.Text = "Độc thân";
-            this.btnDocThan.UseVisualStyleBackColor = false;
+            btnDocThan.BackColor = Color.Gainsboro;
+            btnDocThan.FlatAppearance.BorderColor = Color.Gray;
+            btnDocThan.FlatStyle = FlatStyle.Flat;
+            btnDocThan.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDocThan.ForeColor = Color.Black;
+            btnDocThan.Location = new Point(527, 3);
+            btnDocThan.Name = "btnDocThan";
+            btnDocThan.Size = new Size(125, 40);
+            btnDocThan.TabIndex = 8;
+            btnDocThan.Text = "Độc thân";
+            btnDocThan.UseVisualStyleBackColor = false;
             // 
             // btnKetHon
             // 
-            this.btnKetHon.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnKetHon.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnKetHon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKetHon.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnKetHon.ForeColor = System.Drawing.Color.Black;
-            this.btnKetHon.Location = new System.Drawing.Point(658, 3);
-            this.btnKetHon.Name = "btnKetHon";
-            this.btnKetHon.Size = new System.Drawing.Size(125, 40);
-            this.btnKetHon.TabIndex = 9;
-            this.btnKetHon.Text = "Kết hôn";
-            this.btnKetHon.UseVisualStyleBackColor = false;
+            btnKetHon.BackColor = Color.Gainsboro;
+            btnKetHon.FlatAppearance.BorderColor = Color.Gray;
+            btnKetHon.FlatStyle = FlatStyle.Flat;
+            btnKetHon.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnKetHon.ForeColor = Color.Black;
+            btnKetHon.Location = new Point(658, 3);
+            btnKetHon.Name = "btnKetHon";
+            btnKetHon.Size = new Size(125, 40);
+            btnKetHon.TabIndex = 9;
+            btnKetHon.Text = "Kết hôn";
+            btnKetHon.UseVisualStyleBackColor = false;
             // 
             // FDanhSachCongDan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1532, 782);
-            this.Controls.Add(this.flpnlPhanLoai);
-            this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.gvDanhSachCongDan);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FDanhSachCongDan";
-            this.Text = "DanhSachCongDan";
-            this.Load += new System.EventHandler(this.FDanhSachCongDan_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).EndInit();
-            this.flpnlPhanLoai.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(12F, 28F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(1532, 782);
+            Controls.Add(flpnlPhanLoai);
+            Controls.Add(txtTimKiem);
+            Controls.Add(gvDanhSachCongDan);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
+            Name = "FDanhSachCongDan";
+            Text = "DanhSachCongDan";
+            Load += FDanhSachCongDan_Load;
+            ((System.ComponentModel.ISupportInitialize)gvDanhSachCongDan).EndInit();
+            flpnlPhanLoai.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

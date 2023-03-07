@@ -43,7 +43,7 @@
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.ForeColor = Color.Transparent;
             btnClose.Image = Properties.Resources.crossWhite;
-            btnClose.Location = new Point(50, 0);
+            btnClose.Location = new Point(24, 0);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(24, 24);
             btnClose.TabIndex = 1;
@@ -58,7 +58,7 @@
             btnMinimize.FlatStyle = FlatStyle.Flat;
             btnMinimize.ForeColor = Color.Transparent;
             btnMinimize.Image = Properties.Resources.minusWhite;
-            btnMinimize.Location = new Point(20, 0);
+            btnMinimize.Location = new Point(0, 0);
             btnMinimize.Name = "btnMinimize";
             btnMinimize.Size = new Size(24, 24);
             btnMinimize.TabIndex = 0;
@@ -72,7 +72,7 @@
             pnlTitleBar.Dock = DockStyle.Top;
             pnlTitleBar.Location = new Point(0, 0);
             pnlTitleBar.Name = "pnlTitleBar";
-            pnlTitleBar.Size = new Size(105, 33);
+            pnlTitleBar.Size = new Size(48, 33);
             pnlTitleBar.TabIndex = 1;
             // 
             // TitleBarWhite
@@ -81,7 +81,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pnlTitleBar);
             Name = "TitleBarWhite";
-            Size = new Size(105, 48);
+            Size = new Size(48, 48);
             pnlTitleBar.ResumeLayout(false);
             ResumeLayout(false);
         }

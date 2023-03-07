@@ -28,64 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTitleBar = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.pnlTitleBar.SuspendLayout();
-            this.SuspendLayout();
+            pnlTitleBar = new Panel();
+            btnClose = new Button();
+            btnMinimize = new Button();
+            pnlTitleBar.SuspendLayout();
+            SuspendLayout();
             // 
             // pnlTitleBar
             // 
-            this.pnlTitleBar.Controls.Add(this.btnClose);
-            this.pnlTitleBar.Controls.Add(this.btnMinimize);
-            this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitleBar.Name = "pnlTitleBar";
-            this.pnlTitleBar.Size = new System.Drawing.Size(86, 33);
-            this.pnlTitleBar.TabIndex = 0;
+            pnlTitleBar.Controls.Add(btnClose);
+            pnlTitleBar.Controls.Add(btnMinimize);
+            pnlTitleBar.Dock = DockStyle.Top;
+            pnlTitleBar.Location = new Point(0, 0);
+            pnlTitleBar.Name = "pnlTitleBar";
+            pnlTitleBar.Size = new Size(48, 33);
+            pnlTitleBar.TabIndex = 0;
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Location = new System.Drawing.Point(50, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(24, 24);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.BackColor = Color.Transparent;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnClose.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.ForeColor = Color.Transparent;
+            btnClose.Image = Properties.Resources.cross;
+            btnClose.Location = new Point(24, 0);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(24, 24);
+            btnClose.TabIndex = 1;
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // btnMinimize
             // 
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Location = new System.Drawing.Point(20, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(24, 24);
-            this.btnMinimize.TabIndex = 0;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            btnMinimize.BackColor = Color.Transparent;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.ForeColor = Color.Transparent;
+            btnMinimize.Image = Properties.Resources.minus;
+            btnMinimize.Location = new Point(0, 0);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(24, 24);
+            btnMinimize.TabIndex = 0;
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
             // 
             // TitleBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlTitleBar);
-            this.Name = "TitleBar";
-            this.Size = new System.Drawing.Size(86, 36);
-            this.pnlTitleBar.ResumeLayout(false);
-            this.ResumeLayout(false);
-
-            btnClose.Image = Properties.Resources.cross;
-            btnMinimize.Image = Properties.Resources.minus;
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pnlTitleBar);
+            Name = "TitleBar";
+            Size = new Size(48, 36);
+            pnlTitleBar.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
