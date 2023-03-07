@@ -26,5 +26,16 @@ namespace QuanLiCongDanThanhPho
         {
             gvThue.DataSource = thueDAO.LayDanhSach();
         }
+
+        private void gvThue_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string maCCCD = gvThue.CurrentRow.Cells["CCCD"].Value.ToString();
+            if (maCCCD != "")
+            {
+                FThongTinThue ttThue = new FThongTinThue();
+                ttThue.MaCCCD = maCCCD;
+                ttThue.ShowDialog();
+            }
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.gvThue.RowTemplate.Height = 29;
             this.gvThue.Size = new System.Drawing.Size(1400, 450);
             this.gvThue.TabIndex = 0;
+            this.gvThue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThue_CellClick);
             this.gvThue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThue_CellContentClick);
             // 
             // txtTimKiem

@@ -52,6 +52,7 @@ namespace QuanLiCongDanThanhPho
         private void btnKhaiSinh_Click(object sender, EventArgs e)
         {
             FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh();
+            tTKS.MaCCCD = MaCCCD;
             tTKS.ShowDialog();
         }
 
@@ -67,7 +68,6 @@ namespace QuanLiCongDanThanhPho
             //----------------//
             KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
             dtpNgaySinh.Value = ks.NgaySinh;
-            txtDanToc.Text = ks.DanToc;
             txtGioiTinh.Text = ks.GioiTinh;
             txtDanToc.Text = ks.DanToc;
             txtQuocTich.Text = ks.QuocTich;
@@ -113,12 +113,14 @@ namespace QuanLiCongDanThanhPho
         private void btnThue_Click(object sender, EventArgs e)
         {
             FThongTinThue tTThue = new FThongTinThue();
+            tTThue.MaCCCD = MaCCCD;
             tTThue.ShowDialog();
         }
 
         private void btnHonNhan_Click(object sender, EventArgs e)
         {
             FThongTinHonNhan tTHN = new FThongTinHonNhan();
+            tTHN.MaCCCD = MaCCCD;
             tTHN.ShowDialog();
         }
     }
