@@ -37,5 +37,25 @@ namespace QuanLiCongDanThanhPho
                 ttThue.ShowDialog();
             }
         }
+
+        private void btnTatCa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXepLoaiDaNop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXepLoaiCanNop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXepLoaiThoiGian_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
