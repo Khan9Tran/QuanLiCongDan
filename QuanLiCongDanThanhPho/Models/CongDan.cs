@@ -54,8 +54,7 @@ namespace QuanLiCongDanThanhPho
             maHoKhau = "000001";
             quanHeVoiChuHo = "Tạm trú tại địa phương";
 
-        }
-
+        }   
         public string CCCD { get => cCCD; set => cCCD = value; }
         public string Ten { get => ten; set => ten = value; }
         public string NgheNghiep { get => ngheNghiep; set => ngheNghiep = value; }

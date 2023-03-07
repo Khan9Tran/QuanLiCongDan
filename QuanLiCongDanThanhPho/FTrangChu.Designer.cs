@@ -52,6 +52,7 @@
             this.cmnusDanhMucItemThue = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnusDanhMucItemTamTruTamVang = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHienThiForm = new System.Windows.Forms.Panel();
+            this.lblNameApp = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.titleBar1 = new QuanLiCongDanThanhPho.TitleBar();
@@ -63,7 +64,6 @@
             this.pnlDangKy = new System.Windows.Forms.Panel();
             this.lblDangKy = new System.Windows.Forms.Label();
             this.tmrPhongTo = new System.Windows.Forms.Timer(this.components);
-            this.lblNameApp = new System.Windows.Forms.Label();
             this.pnlDanhMuc.SuspendLayout();
             this.cmnusDangKy.SuspendLayout();
             this.cmnusDanhMuc.SuspendLayout();
@@ -187,7 +187,7 @@
             this.cmnusDangKy.Name = "cmnusDangKy";
             this.cmnusDangKy.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusDangKy.ShowImageMargin = false;
-            this.cmnusDangKy.Size = new System.Drawing.Size(245, 164);
+            this.cmnusDangKy.Size = new System.Drawing.Size(245, 192);
             // 
             // cmnusDangKyItemTamTruTamVang
             // 
@@ -208,6 +208,7 @@
             this.cmnusDangKyItemCCCD.Name = "cmnusDangKyItemCCCD";
             this.cmnusDangKyItemCCCD.Size = new System.Drawing.Size(244, 32);
             this.cmnusDangKyItemCCCD.Text = "CCCD";
+            this.cmnusDangKyItemCCCD.Click += new System.EventHandler(this.cmnusDangKyItemCCCD_Click);
             // 
             // cmnusDangKyItemHoKhau
             // 
@@ -300,6 +301,17 @@
             this.pnlHienThiForm.Name = "pnlHienThiForm";
             this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 782);
             this.pnlHienThiForm.TabIndex = 2;
+            // 
+            // lblNameApp
+            // 
+            this.lblNameApp.AutoSize = true;
+            this.lblNameApp.Font = new System.Drawing.Font("Segoe UI Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNameApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.lblNameApp.Location = new System.Drawing.Point(479, 135);
+            this.lblNameApp.Name = "lblNameApp";
+            this.lblNameApp.Size = new System.Drawing.Size(428, 45);
+            this.lblNameApp.TabIndex = 1;
+            this.lblNameApp.Text = "QUẢN LÝ THÀNH PHỐ: X";
             // 
             // pictureBox1
             // 
@@ -406,17 +418,6 @@
             // tmrPhongTo
             // 
             this.tmrPhongTo.Tick += new System.EventHandler(this.tmrPhongTo_Tick);
-            // 
-            // lblNameApp
-            // 
-            this.lblNameApp.AutoSize = true;
-            this.lblNameApp.Font = new System.Drawing.Font("Segoe UI Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNameApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.lblNameApp.Location = new System.Drawing.Point(479, 135);
-            this.lblNameApp.Name = "lblNameApp";
-            this.lblNameApp.Size = new System.Drawing.Size(441, 46);
-            this.lblNameApp.TabIndex = 1;
-            this.lblNameApp.Text = "QUẢN LÝ THÀNH PHỐ: X";
             // 
             // FTrangChu
             // 

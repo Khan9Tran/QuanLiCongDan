@@ -190,5 +190,12 @@ namespace QuanLiCongDanThanhPho
             if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
                 message.Result = (IntPtr)HTCAPTION;
         }
+
+        private void cmnusDangKyItemCCCD_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDangKyCCCD());
+            if (pnlMenu.Width > 80)
+                btnMenuShow_Click(sender, e);
+        }
     }
 }
