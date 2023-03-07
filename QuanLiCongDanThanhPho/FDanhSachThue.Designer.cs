@@ -30,21 +30,20 @@
         {
             this.gvThue = new System.Windows.Forms.DataGridView();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flpnPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnThoiHan = new System.Windows.Forms.Button();
             this.btnTienDaNop = new System.Windows.Forms.Button();
             this.btnTienChuaNop = new System.Windows.Forms.Button();
+            this.btnTimThue = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvThue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flpnPhanLoai.SuspendLayout();
             this.SuspendLayout();
             // 
             // gvThue
             // 
             this.gvThue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvThue.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.gvThue.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvThue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvThue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvThue.Location = new System.Drawing.Point(39, 281);
@@ -65,15 +64,6 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(600, 35);
             this.txtTimKiem.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(668, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // flpnPhanLoai
             // 
@@ -142,14 +132,28 @@
             this.btnTienChuaNop.Text = "Tiền chưa nộp";
             this.btnTienChuaNop.UseVisualStyleBackColor = false;
             // 
+            // btnTimThue
+            // 
+            this.btnTimThue.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimThue.FlatAppearance.BorderSize = 0;
+            this.btnTimThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTimThue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
+            this.btnTimThue.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTimThue.Location = new System.Drawing.Point(645, 42);
+            this.btnTimThue.Name = "btnTimThue";
+            this.btnTimThue.Size = new System.Drawing.Size(50, 50);
+            this.btnTimThue.TabIndex = 54;
+            this.btnTimThue.UseVisualStyleBackColor = false;
+            // 
             // FDanhSachThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.btnTimThue);
             this.Controls.Add(this.flpnPhanLoai);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.gvThue);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -159,7 +163,6 @@
             this.Text = "FDanhSachThue";
             this.Load += new System.EventHandler(this.FDanhSachThue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvThue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flpnPhanLoai.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,11 +173,11 @@
 
         private DataGridView gvThue;
         private TextBox txtTimKiem;
-        private PictureBox pictureBox1;
         private FlowLayoutPanel flpnPhanLoai;
         private Button btnTatCa;
         private Button btnThoiHan;
         private Button btnTienDaNop;
         private Button btnTienChuaNop;
+        private Button btnTimThue;
     }
 }

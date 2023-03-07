@@ -42,7 +42,7 @@ namespace QuanLiCongDanThanhPho
             ngheNghiep = "";
             sDT = "";
             tonGiao = "";
-            maHoKhau = "000001";
+            maHoKhau = "00000A";
             quanHeVoiChuHo = "Trẻ sơ sinh chưa nhập khẩu";
         }
         public CongDan(string cCCD, string ten, string sDT)
@@ -51,7 +51,7 @@ namespace QuanLiCongDanThanhPho
             this.ten = ten;
             this.SDT = sDT;
             tonGiao = "";
-            maHoKhau = "000001";
+            maHoKhau = "00000B";
             quanHeVoiChuHo = "Tạm trú tại địa phương";
 
         }   

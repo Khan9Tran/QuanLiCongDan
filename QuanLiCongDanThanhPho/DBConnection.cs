@@ -32,7 +32,6 @@ namespace QuanLiCongDanThanhPho
                 conn.Close();
             }
         }
-
         public DataTable LayDanhSach(string sqlStr)
         {
             DataTable ds = new DataTable();

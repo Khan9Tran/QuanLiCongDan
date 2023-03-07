@@ -39,7 +39,7 @@
             // gvTamTru
             // 
             this.gvTamTru.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvTamTru.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.gvTamTru.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvTamTru.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvTamTru.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvTamTru.Location = new System.Drawing.Point(28, 86);
@@ -53,7 +53,7 @@
             // gvTamVang
             // 
             this.gvTamVang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvTamVang.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.gvTamVang.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvTamVang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvTamVang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvTamVang.ImeMode = System.Windows.Forms.ImeMode.Disable;

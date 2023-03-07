@@ -41,7 +41,7 @@
             // gvHoKhau
             // 
             this.gvHoKhau.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvHoKhau.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.gvHoKhau.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvHoKhau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvHoKhau.Location = new System.Drawing.Point(20, 281);

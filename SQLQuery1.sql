@@ -175,6 +175,10 @@ INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDa
 INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000003','123456783' , N'Lê Nhật Khôi','123456790' , N'Trần Thị Lan',N'u,u,u,Vĩnh Long, Việt Nam','2021-11-10');
 INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000004','123456784' , N'Trần Hoàng Phúc','123456792' , N'Trần Thị Loan',N'u,u,u,Trà Vinh, Việt Nam','2019-07-10');
 
+
+GO
+INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('00000A',N'Trẻ khai sinh chưa nhập hộ', '000000000000');
+INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('00000B',N'Tạm trú', '000000000001');
 GO
 
 SELECT *FROM CONGDAN

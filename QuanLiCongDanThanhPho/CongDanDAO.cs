@@ -24,9 +24,18 @@ namespace QuanLiCongDanThanhPho
             string strSql = string.Format("UPDATE CONGDAN SET MaHK = '{0}' , QuanHeVoiChuHo = '{1}' WHERE CCCD = '{2}'", cD.MaHoKhau, cD.QuanHeVoiChuHo, cD.CCCD);
             conn.ThucThi(strSql, "Thêm thành viên thành công");
         }
+        public void NhapHoKhau(CongDan cD)
+        {
+            string strSql = string.Format("UPDATE CONGDAN SET MaHK = '{0}' , QuanHeVoiChuHo = 'Vừa nhập hộ' WHERE CCCD = '{1}'", cD.MaHoKhau, cD.CCCD);
+            conn.ThucThi(strSql, "Nhập hộ thành công");
+        }
         public DataTable LayDanhSach()
         {
             return conn.LayDanhSach("SELECT CCCD, Ten as 'Họ và tên', SDT as 'Số điện thoại', NgheNghiep as 'Nghề nghiệp', TonGiao as 'Tôn giáo' FROM CONGDAN");
+        }
+        public DataTable LayDanhSachTheoHoKhau(string maHK)
+        {
+            return conn.LayDanhSach($"SELECT CCCD, Ten as 'Họ và tên', SDT as 'Số điện thoại', NgheNghiep as 'Nghề nghiệp' FROM CONGDAN WHERE MaHK = '{maHK}'");
         }
         public CongDan LayThongTin(string maCCCD)
         {

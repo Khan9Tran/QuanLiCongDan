@@ -152,11 +152,12 @@
             // btnTimChong
             // 
             this.btnTimChong.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimChong.FlatAppearance.BorderSize = 0;
             this.btnTimChong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTimChong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
             this.btnTimChong.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnTimChong.Location = new System.Drawing.Point(549, 337);
+            this.btnTimChong.Location = new System.Drawing.Point(549, 349);
             this.btnTimChong.Name = "btnTimChong";
             this.btnTimChong.Size = new System.Drawing.Size(50, 50);
             this.btnTimChong.TabIndex = 53;
@@ -165,11 +166,12 @@
             // btnTimVo
             // 
             this.btnTimVo.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimVo.FlatAppearance.BorderSize = 0;
             this.btnTimVo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimVo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTimVo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
             this.btnTimVo.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnTimVo.Location = new System.Drawing.Point(1370, 338);
+            this.btnTimVo.Location = new System.Drawing.Point(1351, 349);
             this.btnTimVo.Name = "btnTimVo";
             this.btnTimVo.Size = new System.Drawing.Size(50, 50);
             this.btnTimVo.TabIndex = 54;

@@ -37,6 +37,9 @@
             this.btnTaoHoMoi = new System.Windows.Forms.Button();
             this.txtMaHoTach = new System.Windows.Forms.TextBox();
             this.txtMaHoGop = new System.Windows.Forms.TextBox();
+            this.btnMaHoTach = new System.Windows.Forms.Button();
+            this.btnMaHoGop = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoTach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoGop)).BeginInit();
             this.SuspendLayout();
@@ -49,29 +52,33 @@
             this.lblMaHoTach.Size = new System.Drawing.Size(119, 28);
             this.lblMaHoTach.TabIndex = 4;
             this.lblMaHoTach.Text = "Mã hộ tách";
-            this.lblMaHoTach.Click += new System.EventHandler(this.lblMaHoTach_Click);
             // 
             // lblMaHoGop
             // 
             this.lblMaHoGop.AutoSize = true;
-            this.lblMaHoGop.Location = new System.Drawing.Point(838, 23);
+            this.lblMaHoGop.Location = new System.Drawing.Point(745, 23);
             this.lblMaHoGop.Name = "lblMaHoGop";
-            this.lblMaHoGop.Size = new System.Drawing.Size(114, 28);
+            this.lblMaHoGop.Size = new System.Drawing.Size(207, 28);
             this.lblMaHoGop.TabIndex = 5;
-            this.lblMaHoGop.Text = "Mã hộ gộp";
+            this.lblMaHoGop.Text = "Mã hộ gộp/ Tạo mới";
             // 
             // gvHoTach
             // 
+            this.gvHoTach.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gvHoTach.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvHoTach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvHoTach.Location = new System.Drawing.Point(84, 85);
             this.gvHoTach.Name = "gvHoTach";
             this.gvHoTach.RowHeadersWidth = 51;
             this.gvHoTach.RowTemplate.Height = 29;
+            this.gvHoTach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvHoTach.Size = new System.Drawing.Size(590, 425);
             this.gvHoTach.TabIndex = 6;
             // 
             // gvHoGop
             // 
+            this.gvHoGop.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gvHoGop.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvHoGop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvHoGop.Location = new System.Drawing.Point(838, 85);
             this.gvHoGop.Name = "gvHoGop";
@@ -126,7 +133,7 @@
             this.txtMaHoTach.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaHoTach.Location = new System.Drawing.Point(232, 25);
             this.txtMaHoTach.Name = "txtMaHoTach";
-            this.txtMaHoTach.Size = new System.Drawing.Size(442, 27);
+            this.txtMaHoTach.Size = new System.Drawing.Size(389, 27);
             this.txtMaHoTach.TabIndex = 20;
             // 
             // txtMaHoGop
@@ -136,14 +143,62 @@
             this.txtMaHoGop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaHoGop.Location = new System.Drawing.Point(958, 24);
             this.txtMaHoGop.Name = "txtMaHoGop";
-            this.txtMaHoGop.Size = new System.Drawing.Size(470, 27);
+            this.txtMaHoGop.Size = new System.Drawing.Size(421, 27);
             this.txtMaHoGop.TabIndex = 21;
+            // 
+            // btnMaHoTach
+            // 
+            this.btnMaHoTach.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaHoTach.FlatAppearance.BorderSize = 0;
+            this.btnMaHoTach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaHoTach.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMaHoTach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
+            this.btnMaHoTach.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnMaHoTach.Location = new System.Drawing.Point(644, 14);
+            this.btnMaHoTach.Name = "btnMaHoTach";
+            this.btnMaHoTach.Size = new System.Drawing.Size(50, 50);
+            this.btnMaHoTach.TabIndex = 54;
+            this.btnMaHoTach.UseVisualStyleBackColor = false;
+            this.btnMaHoTach.Click += new System.EventHandler(this.btnMaHoTach_Click);
+            // 
+            // btnMaHoGop
+            // 
+            this.btnMaHoGop.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaHoGop.FlatAppearance.BorderSize = 0;
+            this.btnMaHoGop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaHoGop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMaHoGop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
+            this.btnMaHoGop.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnMaHoGop.Location = new System.Drawing.Point(1403, 14);
+            this.btnMaHoGop.Name = "btnMaHoGop";
+            this.btnMaHoGop.Size = new System.Drawing.Size(50, 50);
+            this.btnMaHoGop.TabIndex = 55;
+            this.btnMaHoGop.UseVisualStyleBackColor = false;
+            this.btnMaHoGop.Click += new System.EventHandler(this.btnMaHoGop_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
+            this.btnReset.Location = new System.Drawing.Point(732, 434);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(50, 50);
+            this.btnReset.TabIndex = 93;
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // FTachGopHo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 695);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnMaHoGop);
+            this.Controls.Add(this.btnMaHoTach);
             this.Controls.Add(this.txtMaHoGop);
             this.Controls.Add(this.txtMaHoTach);
             this.Controls.Add(this.btnTaoHoMoi);
@@ -177,5 +232,8 @@
         private Button btnTaoHoMoi;
         private TextBox txtMaHoTach;
         private TextBox txtMaHoGop;
+        private Button btnMaHoTach;
+        private Button btnMaHoGop;
+        private Button btnReset;
     }
 }

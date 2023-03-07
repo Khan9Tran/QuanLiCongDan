@@ -138,8 +138,8 @@
             // gvDanhSachChuaCapCCCD
             // 
             this.gvDanhSachChuaCapCCCD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvDanhSachChuaCapCCCD.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.gvDanhSachChuaCapCCCD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gvDanhSachChuaCapCCCD.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gvDanhSachChuaCapCCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvDanhSachChuaCapCCCD.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
