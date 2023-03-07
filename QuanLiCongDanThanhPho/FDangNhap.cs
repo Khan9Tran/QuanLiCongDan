@@ -30,7 +30,6 @@ namespace QuanLiCongDanThanhPho
 
         private void FDangNhap_Load(object sender, EventArgs e)
         {
-            lblNameApp.Hide();
         }
 
         private void txtTaiKhoan_MouseDown(object sender, MouseEventArgs e)
