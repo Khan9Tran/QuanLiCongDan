@@ -41,7 +41,7 @@
             pnlSideBar.Dock = DockStyle.Top;
             pnlSideBar.Location = new Point(0, 0);
             pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(96, 32);
+            pnlSideBar.Size = new Size(64, 32);
             pnlSideBar.TabIndex = 0;
             // 
             // btnBack
@@ -79,7 +79,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pnlSideBar);
             Name = "SideBar";
-            Size = new Size(96, 58);
+            Size = new Size(64, 58);
             pnlSideBar.ResumeLayout(false);
             ResumeLayout(false);
         }

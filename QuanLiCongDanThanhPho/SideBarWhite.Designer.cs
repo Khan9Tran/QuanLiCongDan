@@ -47,6 +47,7 @@
             btnBack.Size = new Size(32, 32);
             btnBack.TabIndex = 1;
             btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
             // pnlSideBar
             // 
@@ -55,7 +56,7 @@
             pnlSideBar.Dock = DockStyle.Top;
             pnlSideBar.Location = new Point(0, 0);
             pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(83, 32);
+            pnlSideBar.Size = new Size(64, 32);
             pnlSideBar.TabIndex = 1;
             // 
             // btnHome
@@ -71,6 +72,7 @@
             btnHome.Size = new Size(32, 32);
             btnHome.TabIndex = 0;
             btnHome.UseVisualStyleBackColor = false;
+            btnHome.Click += btnHome_Click;
             // 
             // SideBarWhite
             // 
@@ -78,7 +80,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pnlSideBar);
             Name = "SideBarWhite";
-            Size = new Size(83, 42);
+            Size = new Size(64, 42);
             pnlSideBar.ResumeLayout(false);
             ResumeLayout(false);
         }

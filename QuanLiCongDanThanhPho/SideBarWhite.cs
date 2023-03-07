@@ -16,5 +16,22 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if (ParentForm.Name == "FTrangChu")
+            {
+                if ((ParentForm as FTrangChu).currentChildForm == null)
+                    return;
+                (ParentForm as FTrangChu).currentChildForm.Close();
+            }
+            else
+                this.ParentForm.Close();
+        }
     }
 }

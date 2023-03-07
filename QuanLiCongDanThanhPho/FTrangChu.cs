@@ -102,7 +102,7 @@ namespace QuanLiCongDanThanhPho
             if (pnlMenu.Width > 80)
                 btnMenuShow_Click(sender, e);
         }
-      
+
 
         private void FTrangChu_Load(object sender, EventArgs e)
         {
