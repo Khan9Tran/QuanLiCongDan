@@ -50,6 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlThongTinCD = new System.Windows.Forms.Panel();
+            this.btnSua = new System.Windows.Forms.Button();
             this.btnHonNhan = new System.Windows.Forms.Button();
             this.btnThue = new System.Windows.Forms.Button();
             this.btnHoKhau = new System.Windows.Forms.Button();
@@ -72,7 +73,6 @@
             this.lblMaThue = new System.Windows.Forms.Label();
             this.lblMaHoKhau = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
-            this.btnSua = new System.Windows.Forms.Button();
             this.pnlTittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).BeginInit();
             this.pnlThongTin.SuspendLayout();
@@ -337,6 +337,20 @@
             this.pnlThongTinCD.Size = new System.Drawing.Size(815, 824);
             this.pnlThongTinCD.TabIndex = 31;
             // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Transparent;
+            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
+            this.btnSua.Location = new System.Drawing.Point(722, 137);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(50, 50);
+            this.btnSua.TabIndex = 99;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // btnHonNhan
             // 
             this.btnHonNhan.BackColor = System.Drawing.Color.Transparent;
@@ -349,6 +363,7 @@
             this.btnHonNhan.Size = new System.Drawing.Size(50, 35);
             this.btnHonNhan.TabIndex = 98;
             this.btnHonNhan.UseVisualStyleBackColor = false;
+            this.btnHonNhan.Click += new System.EventHandler(this.btnHonNhan_Click);
             // 
             // btnThue
             // 
@@ -362,6 +377,7 @@
             this.btnThue.Size = new System.Drawing.Size(50, 35);
             this.btnThue.TabIndex = 97;
             this.btnThue.UseVisualStyleBackColor = false;
+            this.btnThue.Click += new System.EventHandler(this.btnThue_Click);
             // 
             // btnHoKhau
             // 
@@ -375,6 +391,7 @@
             this.btnHoKhau.Size = new System.Drawing.Size(50, 35);
             this.btnHoKhau.TabIndex = 96;
             this.btnHoKhau.UseVisualStyleBackColor = false;
+            this.btnHoKhau.Click += new System.EventHandler(this.btnHoKhau_Click);
             // 
             // txtGhiChu
             // 
@@ -408,6 +425,7 @@
             this.btnKhaiSinh.TabIndex = 50;
             this.btnKhaiSinh.Text = "Khai Sinh";
             this.btnKhaiSinh.UseVisualStyleBackColor = false;
+            this.btnKhaiSinh.Click += new System.EventHandler(this.btnKhaiSinh_Click);
             // 
             // txtHonNhan
             // 
@@ -582,20 +600,6 @@
             this.lblDiaChi.TabIndex = 31;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.Transparent;
-            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
-            this.btnSua.Location = new System.Drawing.Point(722, 137);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(50, 50);
-            this.btnSua.TabIndex = 99;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
             // FThongTinCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -609,6 +613,7 @@
             this.Name = "FThongTinCongDan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FThongTinCongDan";
+            this.Load += new System.EventHandler(this.FThongTinCongDan_Load);
             this.pnlTittleBar.ResumeLayout(false);
             this.pnlTittleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).EndInit();

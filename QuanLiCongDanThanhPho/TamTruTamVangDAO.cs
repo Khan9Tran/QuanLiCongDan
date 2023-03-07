@@ -12,7 +12,7 @@ namespace QuanLiCongDanThanhPho
         DBConnection conn = new DBConnection();
         public DataTable LayDanhSachTamTru()
         {
-            return conn.LayDanhSach("SELECT * FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm trú'");
+            return conn.LayDanhSach("SELECT MaTTTV as 'Mã tạm trú', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm trú'");
         }
         public DataTable LayDanhSachTamVang()
         {

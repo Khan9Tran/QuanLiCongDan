@@ -19,7 +19,7 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSach()
         {
-            return conn.LayDanhSach("SELECT * FROM HOKHAU");
+            return conn.LayDanhSach("SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU");
         }
         public HoKhau LayThongTin(string maHoKhau)
         {
