@@ -26,5 +26,15 @@ namespace QuanLiCongDanThanhPho
         {
 
         }
+
+        private void btnTach_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGopHo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

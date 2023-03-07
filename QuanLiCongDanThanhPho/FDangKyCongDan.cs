@@ -90,5 +90,27 @@ namespace QuanLiCongDanThanhPho
             ThemCongDan();
         }
 
+        private void cboTinhTrang_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cboTinhTrang.SelectedItem.ToString() == "Kết hôn")
+            {
+                txtTenVoChong.ReadOnly = false;
+                txtMaHonNhan.ReadOnly = false;
+                txtCCCDVoChong.ReadOnly = false;
+                txtCCCDVoChong.BackColor = Color.Gainsboro;
+                txtMaHonNhan.BackColor = Color.Gainsboro;
+                txtTenVoChong.BackColor = Color.Gainsboro;
+            } 
+            else
+            {
+
+                txtTenVoChong.ReadOnly = true;
+                txtMaHonNhan.ReadOnly = true;
+                txtCCCDVoChong.ReadOnly = true;
+                txtCCCDVoChong.BackColor = Color.DimGray;
+                txtMaHonNhan.BackColor = Color.DimGray;
+                txtTenVoChong.BackColor = Color.DimGray;
+            }    
+        }
     }
 }

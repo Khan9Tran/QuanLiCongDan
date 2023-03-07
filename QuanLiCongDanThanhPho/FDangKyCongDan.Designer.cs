@@ -337,11 +337,12 @@
             // 
             // txtTenVoChong
             // 
-            this.txtTenVoChong.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTenVoChong.BackColor = System.Drawing.Color.DimGray;
             this.txtTenVoChong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenVoChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTenVoChong.Location = new System.Drawing.Point(292, 591);
             this.txtTenVoChong.Name = "txtTenVoChong";
+            this.txtTenVoChong.ReadOnly = true;
             this.txtTenVoChong.Size = new System.Drawing.Size(442, 27);
             this.txtTenVoChong.TabIndex = 28;
             this.txtTenVoChong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -359,11 +360,12 @@
             // 
             // txtCCCDVoChong
             // 
-            this.txtCCCDVoChong.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtCCCDVoChong.BackColor = System.Drawing.Color.DimGray;
             this.txtCCCDVoChong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCCCDVoChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCCCDVoChong.Location = new System.Drawing.Point(839, 591);
             this.txtCCCDVoChong.Name = "txtCCCDVoChong";
+            this.txtCCCDVoChong.ReadOnly = true;
             this.txtCCCDVoChong.Size = new System.Drawing.Size(400, 27);
             this.txtCCCDVoChong.TabIndex = 30;
             this.txtCCCDVoChong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -491,11 +493,12 @@
             // 
             // txtMaHonNhan
             // 
-            this.txtMaHonNhan.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtMaHonNhan.BackColor = System.Drawing.Color.DimGray;
             this.txtMaHonNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaHonNhan.Location = new System.Drawing.Point(840, 542);
             this.txtMaHonNhan.Name = "txtMaHonNhan";
+            this.txtMaHonNhan.ReadOnly = true;
             this.txtMaHonNhan.Size = new System.Drawing.Size(400, 27);
             this.txtMaHonNhan.TabIndex = 92;
             this.txtMaHonNhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -612,6 +615,7 @@
             this.cboTinhTrang.Name = "cboTinhTrang";
             this.cboTinhTrang.Size = new System.Drawing.Size(180, 36);
             this.cboTinhTrang.TabIndex = 104;
+            this.cboTinhTrang.SelectedValueChanged += new System.EventHandler(this.cboTinhTrang_SelectedValueChanged);
             // 
             // btnThemHinh
             // 

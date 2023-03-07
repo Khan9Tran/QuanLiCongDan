@@ -197,5 +197,6 @@ namespace QuanLiCongDanThanhPho
             if (pnlMenu.Width > 80)
                 btnMenuShow_Click(sender, e);
         }
+
     }
 }

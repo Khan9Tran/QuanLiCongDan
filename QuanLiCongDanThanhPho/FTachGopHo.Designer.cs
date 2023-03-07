@@ -83,32 +83,34 @@
             // btnTach
             // 
             this.btnTach.BackColor = System.Drawing.Color.Transparent;
-            this.btnTach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTach.FlatAppearance.BorderSize = 0;
+            this.btnTach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTach.Image = global::QuanLiCongDanThanhPho.Properties.Resources.split__1_;
             this.btnTach.Location = new System.Drawing.Point(732, 248);
             this.btnTach.Name = "btnTach";
             this.btnTach.Size = new System.Drawing.Size(50, 50);
             this.btnTach.TabIndex = 10;
             this.btnTach.UseVisualStyleBackColor = false;
+            this.btnTach.Click += new System.EventHandler(this.btnTach_Click);
             // 
             // btnGopHo
             // 
             this.btnGopHo.BackColor = System.Drawing.Color.Transparent;
-            this.btnGopHo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGopHo.FlatAppearance.BorderSize = 0;
+            this.btnGopHo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGopHo.Image = global::QuanLiCongDanThanhPho.Properties.Resources.merge;
             this.btnGopHo.Location = new System.Drawing.Point(732, 348);
             this.btnGopHo.Name = "btnGopHo";
             this.btnGopHo.Size = new System.Drawing.Size(50, 50);
             this.btnGopHo.TabIndex = 11;
             this.btnGopHo.UseVisualStyleBackColor = false;
+            this.btnGopHo.Click += new System.EventHandler(this.btnGopHo_Click);
             // 
             // btnTaoHoMoi
             // 
             this.btnTaoHoMoi.BackColor = System.Drawing.Color.Transparent;
-            this.btnTaoHoMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaoHoMoi.FlatAppearance.BorderSize = 0;
+            this.btnTaoHoMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaoHoMoi.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
             this.btnTaoHoMoi.Location = new System.Drawing.Point(732, 157);
             this.btnTaoHoMoi.Name = "btnTaoHoMoi";

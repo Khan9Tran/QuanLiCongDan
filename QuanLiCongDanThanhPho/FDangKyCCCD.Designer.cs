@@ -38,9 +38,10 @@
             this.lblNgayCap = new System.Windows.Forms.Label();
             this.txtDDNhanDang = new System.Windows.Forms.TextBox();
             this.lblDDNhanDang = new System.Windows.Forms.Label();
-            this.btnDangKy = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.gvDanhSachChuaCapCCCD = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDangKy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachChuaCapCCCD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,19 +121,6 @@
             this.lblDDNhanDang.TabIndex = 40;
             this.lblDDNhanDang.Text = "Đặc điểm nhận dạng";
             // 
-            // btnDangKy
-            // 
-            this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
-            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDangKy.ForeColor = System.Drawing.Color.White;
-            this.btnDangKy.Location = new System.Drawing.Point(1359, 681);
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(140, 50);
-            this.btnDangKy.TabIndex = 89;
-            this.btnDangKy.Text = "Đăng ký";
-            this.btnDangKy.UseVisualStyleBackColor = false;
-            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
-            // 
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.Color.Transparent;
@@ -140,35 +128,38 @@
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
-            this.btnReset.Location = new System.Drawing.Point(1293, 681);
+            this.btnReset.Location = new System.Drawing.Point(1289, 296);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 50);
             this.btnReset.TabIndex = 92;
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // gvDanhSachChuaCapCCCD
             // 
+            this.gvDanhSachChuaCapCCCD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDanhSachChuaCapCCCD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.gvDanhSachChuaCapCCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gvDanhSachChuaCapCCCD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gvDanhSachChuaCapCCCD.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvDanhSachChuaCapCCCD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gvDanhSachChuaCapCCCD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gvDanhSachChuaCapCCCD.DefaultCellStyle = dataGridViewCellStyle2;
             this.gvDanhSachChuaCapCCCD.GridColor = System.Drawing.Color.Gainsboro;
-            this.gvDanhSachChuaCapCCCD.Location = new System.Drawing.Point(311, 460);
+            this.gvDanhSachChuaCapCCCD.Location = new System.Drawing.Point(311, 482);
             this.gvDanhSachChuaCapCCCD.MultiSelect = false;
             this.gvDanhSachChuaCapCCCD.Name = "gvDanhSachChuaCapCCCD";
             this.gvDanhSachChuaCapCCCD.ReadOnly = true;
@@ -176,9 +167,33 @@
             this.gvDanhSachChuaCapCCCD.RowHeadersWidth = 51;
             this.gvDanhSachChuaCapCCCD.RowTemplate.Height = 29;
             this.gvDanhSachChuaCapCCCD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvDanhSachChuaCapCCCD.Size = new System.Drawing.Size(748, 188);
+            this.gvDanhSachChuaCapCCCD.Size = new System.Drawing.Size(748, 218);
             this.gvDanhSachChuaCapCCCD.TabIndex = 93;
             this.gvDanhSachChuaCapCCCD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDanhSachChuaCapCCCD_CellClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(311, 433);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(525, 28);
+            this.label1.TabIndex = 94;
+            this.label1.Text = "Danh sách công dân địa phương chưa được cấp CCCD:";
+            // 
+            // btnDangKy
+            // 
+            this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangKy.FlatAppearance.BorderSize = 0;
+            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.verify;
+            this.btnDangKy.Location = new System.Drawing.Point(1289, 220);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(50, 50);
+            this.btnDangKy.TabIndex = 95;
+            this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // FDangKyCCCD
             // 
@@ -186,9 +201,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 752);
+            this.Controls.Add(this.btnDangKy);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gvDanhSachChuaCapCCCD);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.txtDDNhanDang);
             this.Controls.Add(this.lblDDNhanDang);
             this.Controls.Add(this.dtmNgayCap);
@@ -220,8 +236,9 @@
         private Label lblNgayCap;
         private TextBox txtDDNhanDang;
         private Label lblDDNhanDang;
-        private Button btnDangKy;
         private Button btnReset;
         private DataGridView gvDanhSachChuaCapCCCD;
+        private Label label1;
+        private Button btnDangKy;
     }
 }

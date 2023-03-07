@@ -83,8 +83,11 @@ namespace QuanLiCongDanThanhPho
         private void gvDanhSachChuaCapCCCD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int dong = e.RowIndex;
-            txtCCCD.Text = gvDanhSachChuaCapCCCD.Rows[dong].Cells["maCCCD"].Value.ToString();
-            txtTen.Text = gvDanhSachChuaCapCCCD.Rows[dong].Cells["Ten"].Value.ToString();
+            if (dong >= 0)
+            {
+                txtCCCD.Text = gvDanhSachChuaCapCCCD.Rows[dong].Cells["maCCCD"].Value.ToString();
+                txtTen.Text = gvDanhSachChuaCapCCCD.Rows[dong].Cells["Ten"].Value.ToString();
+            }
             txtDDNhanDang.Text = "";
             dtmNgayCap.Value = DateTime.Now;
         }
