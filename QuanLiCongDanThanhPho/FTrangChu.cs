@@ -114,11 +114,12 @@ namespace QuanLiCongDanThanhPho
             if (pnlMenu.Width <= 80)
             {
                 tmrPhongTo.Start();
+                pnlHienThiForm.BackColor = Color.Gainsboro;
             }
             else
             {
                 tmrThuNho.Start();
-
+                pnlHienThiForm.BackColor = Color.White;
             }
         }
 

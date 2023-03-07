@@ -337,7 +337,7 @@
             // 
             // txtTenVoChong
             // 
-            this.txtTenVoChong.BackColor = System.Drawing.Color.DimGray;
+            this.txtTenVoChong.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTenVoChong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenVoChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTenVoChong.Location = new System.Drawing.Point(292, 591);
@@ -360,7 +360,7 @@
             // 
             // txtCCCDVoChong
             // 
-            this.txtCCCDVoChong.BackColor = System.Drawing.Color.DimGray;
+            this.txtCCCDVoChong.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCCCDVoChong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCCCDVoChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCCCDVoChong.Location = new System.Drawing.Point(839, 591);
@@ -464,10 +464,10 @@
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDangKy.ForeColor = System.Drawing.Color.White;
-            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.checmark;
-            this.btnDangKy.Location = new System.Drawing.Point(1176, 697);
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnDangKy.Location = new System.Drawing.Point(1365, 104);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(64, 64);
+            this.btnDangKy.Size = new System.Drawing.Size(50, 50);
             this.btnDangKy.TabIndex = 88;
             this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
@@ -493,7 +493,7 @@
             // 
             // txtMaHonNhan
             // 
-            this.txtMaHonNhan.BackColor = System.Drawing.Color.DimGray;
+            this.txtMaHonNhan.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMaHonNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaHonNhan.Location = new System.Drawing.Point(840, 542);
@@ -668,7 +668,7 @@
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
-            this.btnReset.Location = new System.Drawing.Point(1120, 711);
+            this.btnReset.Location = new System.Drawing.Point(1365, 160);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 50);
             this.btnReset.TabIndex = 107;
@@ -679,6 +679,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 782);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.cboQuanHe);

@@ -52,8 +52,6 @@
             this.cmnusDanhMucItemThue = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnusDanhMucItemTamTruTamVang = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHienThiForm = new System.Windows.Forms.Panel();
-            this.lblNameApp = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.titleBar1 = new QuanLiCongDanThanhPho.TitleBar();
             this.sideBar1 = new QuanLiCongDanThanhPho.SideBar();
@@ -67,8 +65,6 @@
             this.pnlDanhMuc.SuspendLayout();
             this.cmnusDangKy.SuspendLayout();
             this.cmnusDanhMuc.SuspendLayout();
-            this.pnlHienThiForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTitleBar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlThongKe.SuspendLayout();
@@ -95,7 +91,7 @@
             this.btnMenuShow.BackColor = System.Drawing.Color.Transparent;
             this.btnMenuShow.FlatAppearance.BorderSize = 0;
             this.btnMenuShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuShow.Image = global::QuanLiCongDanThanhPho.Properties.Resources.menu__2_;
+            this.btnMenuShow.Image = global::QuanLiCongDanThanhPho.Properties.Resources.menu__8_;
             this.btnMenuShow.Location = new System.Drawing.Point(7, 3);
             this.btnMenuShow.Name = "btnMenuShow";
             this.btnMenuShow.Size = new System.Drawing.Size(65, 65);
@@ -105,8 +101,7 @@
             // 
             // pnlDanhMuc
             // 
-            this.pnlDanhMuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(70)))));
-            this.pnlDanhMuc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDanhMuc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlDanhMuc.Controls.Add(this.lblDanhMuc);
             this.pnlDanhMuc.Location = new System.Drawing.Point(0, 69);
             this.pnlDanhMuc.Name = "pnlDanhMuc";
@@ -116,16 +111,17 @@
             // lblDanhMuc
             // 
             this.lblDanhMuc.AutoSize = true;
+            this.lblDanhMuc.BackColor = System.Drawing.Color.Transparent;
             this.lblDanhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDanhMuc.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDanhMuc.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblDanhMuc.Image = global::QuanLiCongDanThanhPho.Properties.Resources.customer;
+            this.lblDanhMuc.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDanhMuc.ForeColor = System.Drawing.Color.Black;
+            this.lblDanhMuc.Image = global::QuanLiCongDanThanhPho.Properties.Resources.user_list;
             this.lblDanhMuc.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblDanhMuc.Location = new System.Drawing.Point(3, 19);
+            this.lblDanhMuc.Location = new System.Drawing.Point(12, 17);
             this.lblDanhMuc.Name = "lblDanhMuc";
-            this.lblDanhMuc.Size = new System.Drawing.Size(290, 46);
+            this.lblDanhMuc.Size = new System.Drawing.Size(249, 46);
             this.lblDanhMuc.TabIndex = 0;
-            this.lblDanhMuc.Text = "         DANH MỤC";
+            this.lblDanhMuc.Text = "        Danh mục";
             this.lblDanhMuc.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lblDanhMuc.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
@@ -294,37 +290,15 @@
             // 
             this.pnlHienThiForm.AutoSize = true;
             this.pnlHienThiForm.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlHienThiForm.Controls.Add(this.lblNameApp);
-            this.pnlHienThiForm.Controls.Add(this.pictureBox1);
             this.pnlHienThiForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlHienThiForm.Location = new System.Drawing.Point(88, 81);
             this.pnlHienThiForm.Name = "pnlHienThiForm";
             this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 782);
             this.pnlHienThiForm.TabIndex = 2;
             // 
-            // lblNameApp
-            // 
-            this.lblNameApp.AutoSize = true;
-            this.lblNameApp.Font = new System.Drawing.Font("Segoe UI Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNameApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.lblNameApp.Location = new System.Drawing.Point(479, 135);
-            this.lblNameApp.Name = "lblNameApp";
-            this.lblNameApp.Size = new System.Drawing.Size(428, 45);
-            this.lblNameApp.TabIndex = 1;
-            this.lblNameApp.Text = "QUẢN LÝ THÀNH PHỐ: X";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLiCongDanThanhPho.Properties.Resources.profile;
-            this.pictureBox1.Location = new System.Drawing.Point(479, 163);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(512, 512);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // pnlTitleBar
             // 
-            this.pnlTitleBar.BackColor = System.Drawing.Color.Silver;
+            this.pnlTitleBar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlTitleBar.Controls.Add(this.titleBar1);
             this.pnlTitleBar.Controls.Add(this.sideBar1);
             this.pnlTitleBar.Controls.Add(this.txtTimKiem);
@@ -353,7 +327,7 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(70)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlMenu.Controls.Add(this.pnlThongKe);
             this.pnlMenu.Controls.Add(this.pnlDangKy);
             this.pnlMenu.Controls.Add(this.pnlDanhMuc);
@@ -365,8 +339,7 @@
             // 
             // pnlThongKe
             // 
-            this.pnlThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(70)))));
-            this.pnlThongKe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlThongKe.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlThongKe.Controls.Add(this.lblThongKe);
             this.pnlThongKe.Location = new System.Drawing.Point(0, 224);
             this.pnlThongKe.Name = "pnlThongKe";
@@ -376,22 +349,22 @@
             // lblThongKe
             // 
             this.lblThongKe.AutoSize = true;
+            this.lblThongKe.BackColor = System.Drawing.Color.Transparent;
             this.lblThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblThongKe.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblThongKe.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblThongKe.Image = global::QuanLiCongDanThanhPho.Properties.Resources.barchart;
+            this.lblThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblThongKe.ForeColor = System.Drawing.Color.Black;
+            this.lblThongKe.Image = global::QuanLiCongDanThanhPho.Properties.Resources.file;
             this.lblThongKe.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblThongKe.Location = new System.Drawing.Point(12, 16);
             this.lblThongKe.Name = "lblThongKe";
-            this.lblThongKe.Size = new System.Drawing.Size(264, 46);
+            this.lblThongKe.Size = new System.Drawing.Size(235, 46);
             this.lblThongKe.TabIndex = 0;
-            this.lblThongKe.Text = "        THỐNG KÊ";
+            this.lblThongKe.Text = "        Thống kê";
             this.lblThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // pnlDangKy
             // 
-            this.pnlDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(70)))));
-            this.pnlDangKy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDangKy.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlDangKy.Controls.Add(this.lblDangKy);
             this.pnlDangKy.Location = new System.Drawing.Point(0, 144);
             this.pnlDangKy.Name = "pnlDangKy";
@@ -402,16 +375,17 @@
             // lblDangKy
             // 
             this.lblDangKy.AutoSize = true;
+            this.lblDangKy.BackColor = System.Drawing.Color.Transparent;
             this.lblDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDangKy.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDangKy.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__1_;
+            this.lblDangKy.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDangKy.ForeColor = System.Drawing.Color.Black;
+            this.lblDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
             this.lblDangKy.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblDangKy.Location = new System.Drawing.Point(12, 18);
             this.lblDangKy.Name = "lblDangKy";
-            this.lblDangKy.Size = new System.Drawing.Size(253, 46);
+            this.lblDangKy.Size = new System.Drawing.Size(218, 46);
             this.lblDangKy.TabIndex = 0;
-            this.lblDangKy.Text = "         ĐĂNG KÝ";
+            this.lblDangKy.Text = "        Đăng ký";
             this.lblDangKy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lblDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
@@ -436,9 +410,6 @@
             this.pnlDanhMuc.PerformLayout();
             this.cmnusDangKy.ResumeLayout(false);
             this.cmnusDanhMuc.ResumeLayout(false);
-            this.pnlHienThiForm.ResumeLayout(false);
-            this.pnlHienThiForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTitleBar.ResumeLayout(false);
             this.pnlTitleBar.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
@@ -485,7 +456,5 @@
         private ToolStripMenuItem ItemCongDanChuyenDen;
         private ToolStripMenuItem ItemCongDanChuyenDi;
         private ToolStripMenuItem ItemKhaiSinh;
-        private PictureBox pictureBox1;
-        private Label lblNameApp;
     }
 }

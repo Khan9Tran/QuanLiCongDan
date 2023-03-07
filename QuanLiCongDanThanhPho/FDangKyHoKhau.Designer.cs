@@ -40,6 +40,7 @@
             this.btnTachGop.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnTachGop.FlatAppearance.BorderSize = 0;
             this.btnTachGop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTachGop.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTachGop.Location = new System.Drawing.Point(1172, 17);
             this.btnTachGop.Name = "btnTachGop";
             this.btnTachGop.Size = new System.Drawing.Size(188, 50);
@@ -63,6 +64,7 @@
             // 
             // pnlLuaChon
             // 
+            this.pnlLuaChon.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlLuaChon.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLuaChon.Location = new System.Drawing.Point(0, 0);
             this.pnlLuaChon.Name = "pnlLuaChon";
@@ -71,7 +73,7 @@
             // 
             // pnlBarDuoi
             // 
-            this.pnlBarDuoi.BackColor = System.Drawing.Color.CadetBlue;
+            this.pnlBarDuoi.BackColor = System.Drawing.Color.Gainsboro;
             this.pnlBarDuoi.Controls.Add(this.btnThem);
             this.pnlBarDuoi.Controls.Add(this.btnTachGop);
             this.pnlBarDuoi.Dock = System.Windows.Forms.DockStyle.Bottom;

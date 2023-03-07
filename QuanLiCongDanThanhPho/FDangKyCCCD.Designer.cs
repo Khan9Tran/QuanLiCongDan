@@ -128,7 +128,7 @@
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
-            this.btnReset.Location = new System.Drawing.Point(1289, 296);
+            this.btnReset.Location = new System.Drawing.Point(1289, 195);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 50);
             this.btnReset.TabIndex = 92;
@@ -138,7 +138,7 @@
             // gvDanhSachChuaCapCCCD
             // 
             this.gvDanhSachChuaCapCCCD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvDanhSachChuaCapCCCD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.gvDanhSachChuaCapCCCD.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.gvDanhSachChuaCapCCCD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gvDanhSachChuaCapCCCD.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
@@ -175,7 +175,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(311, 433);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(525, 28);
@@ -187,8 +187,8 @@
             this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
             this.btnDangKy.FlatAppearance.BorderSize = 0;
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.verify;
-            this.btnDangKy.Location = new System.Drawing.Point(1289, 220);
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnDangKy.Location = new System.Drawing.Point(1289, 127);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(50, 50);
             this.btnDangKy.TabIndex = 95;

@@ -107,9 +107,9 @@ namespace QuanLiCongDanThanhPho
                 txtTenVoChong.ReadOnly = true;
                 txtMaHonNhan.ReadOnly = true;
                 txtCCCDVoChong.ReadOnly = true;
-                txtCCCDVoChong.BackColor = Color.DimGray;
-                txtMaHonNhan.BackColor = Color.DimGray;
-                txtTenVoChong.BackColor = Color.DimGray;
+                txtCCCDVoChong.BackColor = Color.WhiteSmoke;
+                txtMaHonNhan.BackColor = Color.WhiteSmoke;
+                txtTenVoChong.BackColor = Color.WhiteSmoke;
             }    
         }
     }

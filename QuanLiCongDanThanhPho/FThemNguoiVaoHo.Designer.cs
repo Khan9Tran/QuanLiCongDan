@@ -38,6 +38,7 @@
             this.btnTim = new System.Windows.Forms.Button();
             this.txtQuanHeVoiChuHo = new System.Windows.Forms.TextBox();
             this.lblQuanHeVoiChuHo = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtMaHo
@@ -64,10 +65,10 @@
             this.btnThem.BackColor = System.Drawing.Color.Transparent;
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.checmark1;
-            this.btnThem.Location = new System.Drawing.Point(1065, 501);
+            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnThem.Location = new System.Drawing.Point(1285, 122);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(65, 65);
+            this.btnThem.Size = new System.Drawing.Size(50, 50);
             this.btnThem.TabIndex = 23;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -107,7 +108,7 @@
             this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCCCD.Location = new System.Drawing.Point(619, 354);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(328, 27);
+            this.txtCCCD.Size = new System.Drawing.Size(511, 27);
             this.txtCCCD.TabIndex = 27;
             // 
             // btnTim
@@ -116,7 +117,7 @@
             this.btnTim.FlatAppearance.BorderSize = 0;
             this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTim.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnTim.Location = new System.Drawing.Point(953, 343);
+            this.btnTim.Location = new System.Drawing.Point(1285, 250);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(50, 50);
             this.btnTim.TabIndex = 28;
@@ -142,11 +143,25 @@
             this.lblQuanHeVoiChuHo.TabIndex = 29;
             this.lblQuanHeVoiChuHo.Text = "Quan hệ với chủ hộ";
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
+            this.btnReset.Location = new System.Drawing.Point(1285, 183);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(50, 50);
+            this.btnReset.TabIndex = 108;
+            this.btnReset.UseVisualStyleBackColor = false;
+            // 
             // FThemNguoiVaoHo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 695);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtQuanHeVoiChuHo);
             this.Controls.Add(this.lblQuanHeVoiChuHo);
             this.Controls.Add(this.btnTim);
@@ -179,5 +194,6 @@
         private Button btnTim;
         private TextBox txtQuanHeVoiChuHo;
         private Label lblQuanHeVoiChuHo;
+        private Button btnReset;
     }
 }

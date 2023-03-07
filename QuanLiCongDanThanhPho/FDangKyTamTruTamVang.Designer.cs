@@ -64,49 +64,49 @@
             // 
             // lblCCCD
             // 
-            lblCCCD.AutoSize = true;
-            lblCCCD.ForeColor = Color.FromArgb(44, 43, 60);
-            lblCCCD.Location = new Point(209, 256);
-            lblCCCD.Name = "lblCCCD";
-            lblCCCD.Size = new Size(61, 28);
-            lblCCCD.TabIndex = 1;
-            lblCCCD.Text = "CCCD";
+            this.lblCCCD.AutoSize = true;
+            this.lblCCCD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.lblCCCD.Location = new System.Drawing.Point(209, 256);
+            this.lblCCCD.Name = "lblCCCD";
+            this.lblCCCD.Size = new System.Drawing.Size(61, 28);
+            this.lblCCCD.TabIndex = 1;
+            this.lblCCCD.Text = "CCCD";
             // 
             // lblNgayBatDau
             // 
-            lblNgayBatDau.AutoSize = true;
-            lblNgayBatDau.ForeColor = Color.FromArgb(44, 43, 60);
-            lblNgayBatDau.Location = new Point(209, 333);
-            lblNgayBatDau.Name = "lblNgayBatDau";
-            lblNgayBatDau.Size = new Size(141, 28);
-            lblNgayBatDau.TabIndex = 4;
-            lblNgayBatDau.Text = "Ngày bắt đầu";
+            this.lblNgayBatDau.AutoSize = true;
+            this.lblNgayBatDau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.lblNgayBatDau.Location = new System.Drawing.Point(209, 333);
+            this.lblNgayBatDau.Name = "lblNgayBatDau";
+            this.lblNgayBatDau.Size = new System.Drawing.Size(141, 28);
+            this.lblNgayBatDau.TabIndex = 4;
+            this.lblNgayBatDau.Text = "Ngày bắt đầu";
             // 
             // lblNgayKetThuc
             // 
-            lblNgayKetThuc.AutoSize = true;
-            lblNgayKetThuc.ForeColor = Color.FromArgb(44, 43, 60);
-            lblNgayKetThuc.Location = new Point(209, 409);
-            lblNgayKetThuc.Name = "lblNgayKetThuc";
-            lblNgayKetThuc.Size = new Size(146, 28);
-            lblNgayKetThuc.TabIndex = 5;
-            lblNgayKetThuc.Text = "Ngày kết thúc";
+            this.lblNgayKetThuc.AutoSize = true;
+            this.lblNgayKetThuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.lblNgayKetThuc.Location = new System.Drawing.Point(209, 409);
+            this.lblNgayKetThuc.Name = "lblNgayKetThuc";
+            this.lblNgayKetThuc.Size = new System.Drawing.Size(146, 28);
+            this.lblNgayKetThuc.TabIndex = 5;
+            this.lblNgayKetThuc.Text = "Ngày kết thúc";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(694, 377);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 28);
-            label1.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(694, 377);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 28);
+            this.label1.TabIndex = 6;
             // 
             // rdoTamTru
             // 
             this.rdoTamTru.AutoSize = true;
             this.rdoTamTru.BackColor = System.Drawing.Color.Transparent;
             this.rdoTamTru.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdoTamTru.ForeColor = System.Drawing.Color.SteelBlue;
+            this.rdoTamTru.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.rdoTamTru.Location = new System.Drawing.Point(748, 326);
             this.rdoTamTru.Name = "rdoTamTru";
             this.rdoTamTru.Size = new System.Drawing.Size(139, 41);
@@ -119,7 +119,7 @@
             // 
             this.rdoTamVang.AutoSize = true;
             this.rdoTamVang.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdoTamVang.ForeColor = System.Drawing.Color.SteelBlue;
+            this.rdoTamVang.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.rdoTamVang.Location = new System.Drawing.Point(964, 329);
             this.rdoTamVang.Name = "rdoTamVang";
             this.rdoTamVang.Size = new System.Drawing.Size(164, 41);
@@ -130,92 +130,90 @@
             // 
             // lblLiDo
             // 
-            lblLiDo.AutoSize = true;
-            lblLiDo.ForeColor = Color.FromArgb(44, 43, 60);
-            lblLiDo.Location = new Point(209, 492);
-            lblLiDo.Name = "lblLiDo";
-            lblLiDo.Size = new Size(58, 28);
-            lblLiDo.TabIndex = 9;
-            lblLiDo.Text = "Lí do";
+            this.lblLiDo.AutoSize = true;
+            this.lblLiDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.lblLiDo.Location = new System.Drawing.Point(209, 492);
+            this.lblLiDo.Name = "lblLiDo";
+            this.lblLiDo.Size = new System.Drawing.Size(58, 28);
+            this.lblLiDo.TabIndex = 9;
+            this.lblLiDo.Text = "Lí do";
             // 
             // txtTen
             // 
-            txtTen.BackColor = Color.Gainsboro;
-            txtTen.BorderStyle = BorderStyle.None;
-            txtTen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTen.Location = new Point(390, 170);
-            txtTen.Name = "txtTen";
-            txtTen.Size = new Size(411, 27);
-            txtTen.TabIndex = 10;
+            this.txtTen.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTen.Location = new System.Drawing.Point(390, 170);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(411, 27);
+            this.txtTen.TabIndex = 10;
             // 
             // txtCCCD
             // 
-            txtCCCD.BackColor = Color.Gainsboro;
-            txtCCCD.BorderStyle = BorderStyle.None;
-            txtCCCD.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCCCD.Location = new Point(390, 247);
-            txtCCCD.Name = "txtCCCD";
-            txtCCCD.Size = new Size(411, 27);
-            txtCCCD.TabIndex = 11;
+            this.txtCCCD.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCCCD.Location = new System.Drawing.Point(390, 247);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(411, 27);
+            this.txtCCCD.TabIndex = 11;
             // 
             // dtpNgayBatDau
             // 
-            dtpNgayBatDau.CustomFormat = "dd/MM/yyyy";
-            dtpNgayBatDau.Format = DateTimePickerFormat.Custom;
-            dtpNgayBatDau.Location = new Point(390, 333);
-            dtpNgayBatDau.Name = "dtpNgayBatDau";
-            dtpNgayBatDau.Size = new Size(250, 34);
-            dtpNgayBatDau.TabIndex = 13;
-            dtpNgayBatDau.Value = new DateTime(2023, 3, 6, 0, 0, 0, 0);
+            this.dtpNgayBatDau.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(390, 333);
+            this.dtpNgayBatDau.Name = "dtpNgayBatDau";
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(250, 34);
+            this.dtpNgayBatDau.TabIndex = 13;
+            this.dtpNgayBatDau.Value = new System.DateTime(2023, 3, 6, 0, 0, 0, 0);
             // 
             // dtpNgayKetThuc
             // 
-            dtpNgayKetThuc.CustomFormat = "dd/MM/yyyy";
-            dtpNgayKetThuc.Format = DateTimePickerFormat.Custom;
-            dtpNgayKetThuc.Location = new Point(390, 403);
-            dtpNgayKetThuc.Name = "dtpNgayKetThuc";
-            dtpNgayKetThuc.Size = new Size(250, 34);
-            dtpNgayKetThuc.TabIndex = 14;
-            dtpNgayKetThuc.Value = new DateTime(2023, 3, 6, 0, 0, 0, 0);
+            this.dtpNgayKetThuc.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(390, 403);
+            this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(250, 34);
+            this.dtpNgayKetThuc.TabIndex = 14;
+            this.dtpNgayKetThuc.Value = new System.DateTime(2023, 3, 6, 0, 0, 0, 0);
             // 
             // txtLiDo
             // 
-            txtLiDo.BackColor = Color.Gainsboro;
-            txtLiDo.BorderStyle = BorderStyle.None;
-            txtLiDo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtLiDo.Location = new Point(390, 493);
-            txtLiDo.Name = "txtLiDo";
-            txtLiDo.Size = new Size(738, 27);
-            txtLiDo.TabIndex = 15;
+            this.txtLiDo.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtLiDo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLiDo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtLiDo.Location = new System.Drawing.Point(390, 493);
+            this.txtLiDo.Name = "txtLiDo";
+            this.txtLiDo.Size = new System.Drawing.Size(738, 27);
+            this.txtLiDo.TabIndex = 15;
             // 
             // btnDangKy
             // 
-            btnDangKy.BackColor = Color.Transparent;
-            btnDangKy.FlatAppearance.BorderSize = 0;
-            btnDangKy.FlatStyle = FlatStyle.Flat;
-            btnDangKy.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDangKy.ForeColor = Color.White;
-            btnDangKy.Image = Properties.Resources.checmark;
-            btnDangKy.Location = new Point(1391, 666);
-            btnDangKy.Name = "btnDangKy";
-            btnDangKy.Size = new Size(64, 64);
-            btnDangKy.TabIndex = 89;
-            btnDangKy.UseVisualStyleBackColor = false;
-            btnDangKy.Click += btnDangKy_Click;
+            this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangKy.FlatAppearance.BorderSize = 0;
+            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDangKy.ForeColor = System.Drawing.Color.White;
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnDangKy.Location = new System.Drawing.Point(1335, 61);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(50, 50);
+            this.btnDangKy.TabIndex = 89;
+            this.btnDangKy.UseVisualStyleBackColor = false;
             // 
             // btnReset
             // 
-            btnReset.BackColor = Color.Transparent;
-            btnReset.DialogResult = DialogResult.OK;
-            btnReset.FlatAppearance.BorderSize = 0;
-            btnReset.FlatStyle = FlatStyle.Flat;
-            btnReset.Image = Properties.Resources.reset;
-            btnReset.Location = new Point(1335, 680);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(50, 50);
-            btnReset.TabIndex = 92;
-            btnReset.UseVisualStyleBackColor = false;
-            btnReset.Click += btnReset_Click;
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
+            this.btnReset.Location = new System.Drawing.Point(1335, 134);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(50, 50);
+            this.btnReset.TabIndex = 92;
+            this.btnReset.UseVisualStyleBackColor = false;
             // 
             // lblDiaChi
             // 

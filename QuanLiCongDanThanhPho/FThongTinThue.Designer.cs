@@ -33,7 +33,6 @@
             this.titleBarWhite1 = new QuanLiCongDanThanhPho.TitleBarWhite();
             this.lblTittle = new System.Windows.Forms.Label();
             this.pnlThongTinThue = new System.Windows.Forms.Panel();
-            this.btnCapNhatThongTinThue = new System.Windows.Forms.Button();
             this.dtpHanNopThue = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayCapMaSoThue = new System.Windows.Forms.DateTimePicker();
             this.txtSoTienDaNop = new System.Windows.Forms.TextBox();
@@ -52,6 +51,7 @@
             this.lblCCCD = new System.Windows.Forms.Label();
             this.lblTen = new System.Windows.Forms.Label();
             this.lblMaSoThue = new System.Windows.Forms.Label();
+            this.btnCapNhatThongTinThue = new System.Windows.Forms.Button();
             this.pnlTittleBar.SuspendLayout();
             this.pnlThongTinThue.SuspendLayout();
             this.SuspendLayout();
@@ -120,17 +120,6 @@
             this.pnlThongTinThue.Name = "pnlThongTinThue";
             this.pnlThongTinThue.Size = new System.Drawing.Size(915, 566);
             this.pnlThongTinThue.TabIndex = 2;
-            // 
-            // btnCapNhatThongTinThue
-            // 
-            this.btnCapNhatThongTinThue.BackColor = System.Drawing.Color.White;
-            this.btnCapNhatThongTinThue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnCapNhatThongTinThue.Location = new System.Drawing.Point(673, 458);
-            this.btnCapNhatThongTinThue.Name = "btnCapNhatThongTinThue";
-            this.btnCapNhatThongTinThue.Size = new System.Drawing.Size(200, 50);
-            this.btnCapNhatThongTinThue.TabIndex = 18;
-            this.btnCapNhatThongTinThue.Text = "Cập nhật thông tin";
-            this.btnCapNhatThongTinThue.UseVisualStyleBackColor = false;
             // 
             // dtpHanNopThue
             // 
@@ -295,11 +284,25 @@
             this.lblMaSoThue.TabIndex = 1;
             this.lblMaSoThue.Text = "Mã số thuế";
             // 
+            // btnCapNhatThongTinThue
+            // 
+            this.btnCapNhatThongTinThue.BackColor = System.Drawing.Color.Transparent;
+            this.btnCapNhatThongTinThue.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCapNhatThongTinThue.FlatAppearance.BorderSize = 0;
+            this.btnCapNhatThongTinThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhatThongTinThue.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
+            this.btnCapNhatThongTinThue.Location = new System.Drawing.Point(823, 460);
+            this.btnCapNhatThongTinThue.Name = "btnCapNhatThongTinThue";
+            this.btnCapNhatThongTinThue.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCapNhatThongTinThue.Size = new System.Drawing.Size(50, 50);
+            this.btnCapNhatThongTinThue.TabIndex = 98;
+            this.btnCapNhatThongTinThue.UseVisualStyleBackColor = false;
+            // 
             // FThongTinThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(927, 652);
             this.Controls.Add(this.pnlThongTinThue);
             this.Controls.Add(this.pnlTittleBar);
@@ -332,7 +335,6 @@
         private Label lblMaSoThue;
         private TextBox txtMaSoThue;
         private Label lblHanNopThue;
-        private Button btnCapNhatThongTinThue;
         private DateTimePicker dtpHanNopThue;
         private DateTimePicker dtpNgayCapMaSoThue;
         private TextBox txtSoTienDaNop;
@@ -343,5 +345,6 @@
         private TextBox txtTen;
         private TitleBarWhite titleBarWhite1;
         private SideBarWhite sideBarWhite1;
+        private Button btnCapNhatThongTinThue;
     }
 }

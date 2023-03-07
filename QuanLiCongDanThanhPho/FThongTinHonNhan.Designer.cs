@@ -39,7 +39,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlVo = new System.Windows.Forms.Panel();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnThongTinVo = new System.Windows.Forms.Button();
             this.dtpNgayDangKy = new System.Windows.Forms.DateTimePicker();
             this.txtTenVo = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@
             this.lblTenVo = new System.Windows.Forms.Label();
             this.lblDeMuc2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCapNhatThongTinHonNhan = new System.Windows.Forms.Button();
             this.pnlChong.SuspendLayout();
             this.pnlVo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -163,7 +163,7 @@
             // pnlVo
             // 
             this.pnlVo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlVo.Controls.Add(this.btnSua);
+            this.pnlVo.Controls.Add(this.btnCapNhatThongTinHonNhan);
             this.pnlVo.Controls.Add(this.btnThongTinVo);
             this.pnlVo.Controls.Add(this.btnXoa);
             this.pnlVo.Controls.Add(this.dtpNgayDangKy);
@@ -176,19 +176,6 @@
             this.pnlVo.Name = "pnlVo";
             this.pnlVo.Size = new System.Drawing.Size(600, 640);
             this.pnlVo.TabIndex = 3;
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.Transparent;
-            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.editing__1_;
-            this.btnSua.Location = new System.Drawing.Point(506, 541);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(50, 50);
-            this.btnSua.TabIndex = 96;
-            this.btnSua.UseVisualStyleBackColor = false;
             // 
             // btnThongTinVo
             // 
@@ -278,11 +265,24 @@
             this.panel1.Size = new System.Drawing.Size(1200, 80);
             this.panel1.TabIndex = 4;
             // 
+            // btnCapNhatThongTinHonNhan
+            // 
+            this.btnCapNhatThongTinHonNhan.BackColor = System.Drawing.Color.Transparent;
+            this.btnCapNhatThongTinHonNhan.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCapNhatThongTinHonNhan.FlatAppearance.BorderSize = 0;
+            this.btnCapNhatThongTinHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhatThongTinHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
+            this.btnCapNhatThongTinHonNhan.Location = new System.Drawing.Point(506, 528);
+            this.btnCapNhatThongTinHonNhan.Name = "btnCapNhatThongTinHonNhan";
+            this.btnCapNhatThongTinHonNhan.Size = new System.Drawing.Size(50, 50);
+            this.btnCapNhatThongTinHonNhan.TabIndex = 98;
+            this.btnCapNhatThongTinHonNhan.UseVisualStyleBackColor = false;
+            // 
             // FThongTinHonNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1200, 720);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlVo);
@@ -325,6 +325,6 @@
         private Panel panel1;
         private Button btnThongTinChong;
         private Button btnThongTinVo;
-        private Button btnSua;
+        private Button btnCapNhatThongTinHonNhan;
     }
 }

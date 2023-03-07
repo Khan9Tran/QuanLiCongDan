@@ -123,5 +123,10 @@ namespace QuanLiCongDanThanhPho
             tTHN.MaCCCD = MaCCCD;
             tTHN.ShowDialog();
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

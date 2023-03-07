@@ -53,7 +53,6 @@
             this.lblCccdCha = new System.Windows.Forms.Label();
             this.lblTenMe = new System.Windows.Forms.Label();
             this.lblTenCha = new System.Windows.Forms.Label();
-            this.btnDangKy = new System.Windows.Forms.Button();
             this.dtmNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.lblNgaySinh = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
@@ -61,6 +60,7 @@
             this.rdoNu = new System.Windows.Forms.RadioButton();
             this.lblQueQuan = new System.Windows.Forms.Label();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
+            this.btnDangKy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtDanToc
@@ -323,19 +323,6 @@
             this.lblTenCha.TabIndex = 75;
             this.lblTenCha.Text = "Tên cha";
             // 
-            // btnDangKy
-            // 
-            this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(69)))));
-            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDangKy.ForeColor = System.Drawing.Color.White;
-            this.btnDangKy.Location = new System.Drawing.Point(1380, 690);
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(140, 50);
-            this.btnDangKy.TabIndex = 87;
-            this.btnDangKy.Text = "Đăng ký";
-            this.btnDangKy.UseVisualStyleBackColor = false;
-            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
-            // 
             // dtmNgaySinh
             // 
             this.dtmNgaySinh.CustomFormat = "dd/MM/yyyy";
@@ -363,7 +350,7 @@
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
-            this.btnReset.Location = new System.Drawing.Point(1311, 690);
+            this.btnReset.Location = new System.Drawing.Point(1396, 218);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 50);
             this.btnReset.TabIndex = 92;
@@ -412,11 +399,26 @@
             this.txtQueQuan.TabIndex = 96;
             this.txtQueQuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnDangKy
+            // 
+            this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangKy.FlatAppearance.BorderSize = 0;
+            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnDangKy.Location = new System.Drawing.Point(1396, 144);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(50, 50);
+            this.btnDangKy.TabIndex = 97;
+            this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
+            // 
             // FDangKyKhaiSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 752);
+            this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.txtQueQuan);
             this.Controls.Add(this.lblQueQuan);
             this.Controls.Add(this.rdoNu);
@@ -424,7 +426,6 @@
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dtmNgaySinh);
             this.Controls.Add(this.lblNgaySinh);
-            this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.txtQuocTichMe);
             this.Controls.Add(this.lblQuocTichMe);
             this.Controls.Add(this.txtQuocTichCha);
@@ -488,7 +489,6 @@
         private Label lblCccdCha;
         private Label lblTenMe;
         private Label lblTenCha;
-        private Button btnDangKy;
         private DateTimePicker dtmNgaySinh;
         private Label lblNgaySinh;
         private Button btnReset;
@@ -496,5 +496,6 @@
         private RadioButton rdoNu;
         private Label lblQueQuan;
         private TextBox txtQueQuan;
+        private Button btnDangKy;
     }
 }
