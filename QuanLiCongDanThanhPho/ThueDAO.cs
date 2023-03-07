@@ -14,7 +14,7 @@ namespace QuanLiCongDanThanhPho
         public ThueDAO() { }
         public DataTable LayDanhSach()
         {
-            return conn.LayDanhSach("SELECT MaThue, CCCD FROM THUE");
+            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD FROM THUE");
         }
         public void ThemThue(Thue thue)
         {

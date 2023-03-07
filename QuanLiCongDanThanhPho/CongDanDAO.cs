@@ -26,7 +26,7 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSach()
         {
-            return conn.LayDanhSach("SELECT CCCD, Ten, SDT, NgheNghiep, TonGiao FROM CONGDAN");
+            return conn.LayDanhSach("SELECT CCCD, Ten as 'Họ và tên', SDT as 'Số điện thoại', NgheNghiep as 'Nghề nghiệp', TonGiao as 'Tôn giáo' FROM CONGDAN");
         }
         public CongDan LayThongTin(string maCCCD)
         {
