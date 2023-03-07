@@ -19,7 +19,7 @@ namespace QuanLiCongDanThanhPho
 
         public  static bool isDiaChi(string diaChi)
         {
-            string rule = @"^([^#$%*+.@!]{1,20})[,]([^#$%*+.@!]{1,20})[,]([^#$%*+.@!]{1,20})[,]([^#$%*+.@!]{1,20})[,]([^#$%*+.@!]{1,20})$";
+            string rule = @"^([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})$";
             return KiemTra(diaChi, rule);
         }
 

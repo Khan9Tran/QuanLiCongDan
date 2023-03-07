@@ -8,47 +8,45 @@ namespace QuanLiCongDanThanhPho.Models
 {
     internal class DiaChi
     {
-        private string soNha;
-        private string duong;
+        private string soNhaVaDuong;
+        private string xaPhuongTT;
         private string quanHuyen;
         private string tinhThanhPho;
-        private string quocGia;
         public DiaChi()
         {
-            soNha = "";
-            duong = "";
+            soNhaVaDuong = "";
+            xaPhuongTT = "";
             quanHuyen = "";
             tinhThanhPho = "";
-            quocGia = "";
-        }
-        public DiaChi(string soNha, string duong, string quanHuyen, string tinhThanhPho, string quocGia)
-        {
-            this.soNha = soNha;
-            this.duong = duong;
-            this.quanHuyen = quanHuyen;
-            this.tinhThanhPho = tinhThanhPho;
-            this.quocGia = quocGia;
         }
 
-        public string SoNha { get => soNha; set => soNha = value; }
-        public string Duong { get => duong; set => duong = value; }
+        public DiaChi(string soNhaVaDuong, string xaPhuongTT, string quanHuyen, string tinhThanhPho)
+        {
+            this.soNhaVaDuong = soNhaVaDuong;
+            this.xaPhuongTT = xaPhuongTT;
+            this.quanHuyen = quanHuyen;
+            this.tinhThanhPho = tinhThanhPho;
+        }
+
+        public string SoNhaVaDuong { get => soNhaVaDuong; set => soNhaVaDuong = value; }
+        public string XaPhuongTT { get => xaPhuongTT; set => xaPhuongTT = value; }
         public string QuanHuyen { get => quanHuyen; set => quanHuyen = value; }
         public string TinhThanhPho { get => tinhThanhPho; set => tinhThanhPho = value; }
-        public string QuocGia { get => quocGia; set => quocGia = value; }
+
         public bool DinhDang(string str)
         {
             try
             {
                 string[] s = str.Split(',');
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     s[i] = s[i].Trim();
                 }
-                SoNha = s[0];
-                Duong = s[1];
-                QuanHuyen = s[2];
-                TinhThanhPho = s[3];
-                QuocGia = s[4];
+                soNhaVaDuong = s[0];
+                xaPhuongTT = s[1];
+                quanHuyen = s[2];
+                tinhThanhPho = s[3];
+                
   
             }
             catch(Exception ex) 
@@ -59,7 +57,7 @@ namespace QuanLiCongDanThanhPho.Models
         }
         public string toString()
         {
-            string diaChi = $"{SoNha}, {Duong}, {QuanHuyen}, {TinhThanhPho}, {QuocGia}";
+            string diaChi = $"{SoNhaVaDuong}, {XaPhuongTT}, {QuanHuyen}, {TinhThanhPho}";
             return diaChi;
         }
     }
