@@ -29,28 +29,27 @@
         private void InitializeComponent()
         {
             this.pnlDangNhap = new System.Windows.Forms.Panel();
-            this.btnThongTinMe = new System.Windows.Forms.Button();
+            this.btnDangNhap = new System.Windows.Forms.Button();
             this.pnlLine = new System.Windows.Forms.Panel();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.lblNameApp = new System.Windows.Forms.Label();
             this.pnlDangNhap.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDangNhap
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.btnThongTinMe);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(330, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(70, 150);
-            this.panel1.TabIndex = 1;
+            this.pnlDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.pnlDangNhap.Controls.Add(this.btnDangNhap);
+            this.pnlDangNhap.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlDangNhap.Location = new System.Drawing.Point(330, 0);
+            this.pnlDangNhap.Name = "panel1";
+            this.pnlDangNhap.Size = new System.Drawing.Size(70, 150);
+            this.pnlDangNhap.TabIndex = 1;
             // 
             // btnDangNhap
             // 
-            btnDangNhap.BackColor = Color.Transparent;
-            btnDangNhap.DialogResult = DialogResult.OK;
+            this.btnDangNhap.BackColor = Color.Transparent;
+            this.btnDangNhap.DialogResult = DialogResult.OK;
             btnDangNhap.Dock = DockStyle.Fill;
             btnDangNhap.FlatAppearance.BorderSize = 0;
             btnDangNhap.FlatStyle = FlatStyle.Flat;
@@ -63,12 +62,12 @@
             // 
             // pnlLine
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Location = new System.Drawing.Point(25, 75);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(280, 2);
-            this.panel2.TabIndex = 2;
-            // 
+            this.pnlLine.BackColor = System.Drawing.Color.Silver;
+            this.pnlLine.Location = new System.Drawing.Point(25, 75);
+            this.pnlLine.Name = "panel2";
+            this.pnlLine.Size = new System.Drawing.Size(280, 2);
+            this.pnlLine.TabIndex = 2;
+            //  
             // txtTaiKhoan
             // 
             this.txtTaiKhoan.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -99,15 +98,15 @@
             this.ClientSize = new System.Drawing.Size(400, 150);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTaiKhoan);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlLine);
+            this.Controls.Add(this.pnlDangNhap);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDangNhap";
-            this.panel1.ResumeLayout(false);
+            this.pnlDangNhap.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +118,6 @@
         private Panel pnlLine;
         private TextBox txtTaiKhoan;
         private TextBox txtMatKhau;
-        private Button btnThongTinMe;
+        private Button btnDangNhap;
     }
 }
