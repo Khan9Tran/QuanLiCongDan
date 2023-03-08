@@ -30,6 +30,7 @@
         {
             this.pnlHienThiDanhSach = new System.Windows.Forms.Panel();
             this.cmbLuaChon = new System.Windows.Forms.ComboBox();
+            this.lblDanhSach = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pnlHienThiDanhSach
@@ -43,16 +44,32 @@
             // cmbLuaChon
             // 
             this.cmbLuaChon.FormattingEnabled = true;
-            this.cmbLuaChon.Location = new System.Drawing.Point(290, 42);
+            this.cmbLuaChon.Items.AddRange(new object[] {
+            "Công dân",
+            "Thuế",
+            "Tạm Trú/Tạm Vắng",
+            "Hộ khẩu"});
+            this.cmbLuaChon.Location = new System.Drawing.Point(256, 37);
             this.cmbLuaChon.Name = "cmbLuaChon";
-            this.cmbLuaChon.Size = new System.Drawing.Size(151, 36);
+            this.cmbLuaChon.Size = new System.Drawing.Size(226, 36);
             this.cmbLuaChon.TabIndex = 1;
+            this.cmbLuaChon.SelectedIndexChanged += new System.EventHandler(this.cmbLuaChon_SelectedIndexChanged);
+            // 
+            // lblDanhSach
+            // 
+            this.lblDanhSach.AutoSize = true;
+            this.lblDanhSach.Location = new System.Drawing.Point(62, 40);
+            this.lblDanhSach.Name = "lblDanhSach";
+            this.lblDanhSach.Size = new System.Drawing.Size(110, 28);
+            this.lblDanhSach.TabIndex = 2;
+            this.lblDanhSach.Text = "Danh sách";
             // 
             // FDanhSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.lblDanhSach);
             this.Controls.Add(this.cmbLuaChon);
             this.Controls.Add(this.pnlHienThiDanhSach);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -61,6 +78,7 @@
             this.Name = "FDanhSach";
             this.Text = "FDanhSach";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -68,5 +86,6 @@
 
         private Panel pnlHienThiDanhSach;
         private ComboBox cmbLuaChon;
+        private Label lblDanhSach;
     }
 }
