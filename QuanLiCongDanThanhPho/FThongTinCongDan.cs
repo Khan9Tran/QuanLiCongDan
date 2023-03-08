@@ -62,41 +62,44 @@ namespace QuanLiCongDanThanhPho
 
         private void FThongTinCongDan_Load(object sender, EventArgs e)
         {
-            CongDan cd = cdDAO.LayThongTin(MaCCCD);
-            txtCCCD.Text = cd.CCCD;
-            txtHoVaTen.Text = cd.Ten;
-            txtMaHoKhau.Text = cd.MaHoKhau;
-            txtSDT.Text = cd.SDT;
-            txtTonGiao.Text = cd.TonGiao;
-            txtNgheNghiep.Text = cd.NgheNghiep;
-            //----------------//
-            KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
-            dtpNgaySinh.Value = ks.NgaySinh;
-            txtGioiTinh.Text = ks.GioiTinh;
-            txtDanToc.Text = ks.DanToc;
-            txtQuocTich.Text = ks.QuocTich;
-            txtQueQuan.Text = ks.QueQuan.toString();
-            //-----------------//
-            Thue thue = thueDAO.LayThongTin(MaCCCD);
-            txtMaThue.Text = thue.MaThue.ToString();
-            //------------------//
-            HonNhan hn = new HonNhan();
-            hn = hnDAO.LayThongTin(MaCCCD);
-            if (!hnDAO.KiemTraHonNhan(MaCCCD))
-                txtHonNhan.Text = "Chưa có hôn nhân";
-            else
-                txtHonNhan.Text = hn.MaSo;
-            //---------------------//
-            HoKhau hk = new HoKhau();
-            hk = hkDAO.LayThongTin(cd.MaHoKhau);
-            txtDiaChi.Text = hk.DiaChi.toString();
-            //---------------------//
-            TamTruTamVang tttv = new TamTruTamVang();
-            tttv = tttvDAO.LayThongTin(MaCCCD);
-            if (!tttvDAO.KiemTraTamTruTamVang(MaCCCD))
-                txtGhiChu.Text = "Không có ghi chú";
-            else
-                txtGhiChu.Text = tttv.TrangThai;
+            if (maCCCD != null)
+            {
+                CongDan cd = cdDAO.LayThongTin(MaCCCD);
+                txtCCCD.Text = cd.CCCD;
+                txtHoVaTen.Text = cd.Ten;
+                txtMaHoKhau.Text = cd.MaHoKhau;
+                txtSDT.Text = cd.SDT;
+                txtTonGiao.Text = cd.TonGiao;
+                txtNgheNghiep.Text = cd.NgheNghiep;
+                //----------------//
+                KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
+                dtpNgaySinh.Value = ks.NgaySinh;
+                txtGioiTinh.Text = ks.GioiTinh;
+                txtDanToc.Text = ks.DanToc;
+                txtQuocTich.Text = ks.QuocTich;
+                txtQueQuan.Text = ks.QueQuan.toString();
+                //-----------------//
+                Thue thue = thueDAO.LayThongTin(MaCCCD);
+                txtMaThue.Text = thue.MaThue.ToString();
+                //------------------//
+                HonNhan hn = new HonNhan();
+                hn = hnDAO.LayThongTin(MaCCCD);
+                if (!hnDAO.KiemTraHonNhan(MaCCCD))
+                    txtHonNhan.Text = "Chưa có hôn nhân";
+                else
+                    txtHonNhan.Text = hn.MaSo;
+                //---------------------//
+                HoKhau hk = new HoKhau();
+                hk = hkDAO.LayThongTin(cd.MaHoKhau);
+                txtDiaChi.Text = hk.DiaChi.toString();
+                //---------------------//
+                TamTruTamVang tttv = new TamTruTamVang();
+                tttv = tttvDAO.LayThongTin(MaCCCD);
+                if (!tttvDAO.KiemTraTamTruTamVang(MaCCCD))
+                    txtGhiChu.Text = "Không có ghi chú";
+                else
+                    txtGhiChu.Text = tttv.TrangThai;
+            }
         }
 
         private void FThongTinCongDan_MouseLeave(object sender, EventArgs e)

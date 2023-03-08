@@ -33,14 +33,25 @@ namespace QuanLiCongDanThanhPho
 
         private void FThongTinHoKhau_Load(object sender, EventArgs e)
         {
-            HoKhau hk = hkDAO.LayThongTin(MaHoKhau);
-            txtCCCDChuHo.Text = hk.CCCDChuHo;
-            txtMaHoKhau.Text = hk.MaHoKhau;
-            txtDiaChi.Text = hk.DiaChi.toString();
-            //---Thong tin chu ho---//
-            CongDan chuHo = cdDAO.LayThongTin(hk.CCCDChuHo);
-            txtTenChuHo.Text = chuHo.Ten.ToString();
-
+            if (MaHoKhau != null)
+            {
+                HoKhau hk = hkDAO.LayThongTin(MaHoKhau);
+                txtCCCDChuHo.Text = hk.CCCDChuHo;
+                txtMaHoKhau.Text = hk.MaHoKhau;
+                txtDiaChi.Text = hk.DiaChi.toString();
+                //---Thong tin chu ho---//
+                CongDan chuHo = cdDAO.LayThongTin(hk.CCCDChuHo);
+                txtTenChuHo.Text = chuHo.Ten.ToString();
+                //---Quan he voi chu ho---//
+                DataTable dsNguoiTrongHo = cdDAO.LayDanhSachTheoHoKhau(maHoKhau);
+                DataTable dsNguoiKoPhaiChuHo = dsNguoiTrongHo.Clone();
+                foreach (DataRow row in dsNguoiTrongHo.Rows)
+                {
+                    if (row["Quan hệ với chủ hộ"].ToString() != "Chủ hộ")
+                        dsNguoiKoPhaiChuHo.ImportRow(row);
+                }
+                gvQuanHeVoiChuHo.DataSource = dsNguoiKoPhaiChuHo;
+            }
         }
     }
 }

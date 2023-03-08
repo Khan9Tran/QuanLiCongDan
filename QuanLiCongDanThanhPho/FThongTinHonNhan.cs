@@ -50,13 +50,16 @@ namespace QuanLiCongDanThanhPho
 
         private void FThongTinHonNhan_Load(object sender, EventArgs e)
         {
-            HonNhan hn = hnDAO.LayThongTin(maCCCD);
-            txtTenChong.Text = hn.TenChong;
-            txtTenVo.Text = hn.TenVo;
-            txtCCCDChong.Text = hn.CCCDChong;
-            txtCCCDVo.Text = hn.CCCDVo;
-            txtNoiDangKy.Text = hn.NoiDangKy.toString();
-            dtpNgayDangKy.Value = hn.NgayDangKy;
+            if (maCCCD != null)
+            {
+                HonNhan hn = hnDAO.LayThongTin(maCCCD);
+                txtTenChong.Text = hn.TenChong;
+                txtTenVo.Text = hn.TenVo;
+                txtCCCDChong.Text = hn.CCCDChong;
+                txtCCCDVo.Text = hn.CCCDVo;
+                txtNoiDangKy.Text = hn.NoiDangKy.toString();
+                dtpNgayDangKy.Value = hn.NgayDangKy;
+            }
         }
     }
 }

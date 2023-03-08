@@ -35,7 +35,7 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachTheoHoKhau(string maHK)
         {
-            return conn.LayDanhSach($"SELECT CCCD, Ten as 'Họ và tên', SDT as 'Số điện thoại', NgheNghiep as 'Nghề nghiệp' FROM CONGDAN WHERE MaHK = '{maHK}'");
+            return conn.LayDanhSach($"SELECT CCCD, Ten as 'Họ và tên', SDT as 'Số điện thoại', NgheNghiep as 'Nghề nghiệp', QuanHeVoiChuHo as 'Quan hệ với chủ hộ' FROM CONGDAN WHERE MaHK = '{maHK}'");
         }
         public CongDan LayThongTin(string maCCCD)
         {
