@@ -15,6 +15,7 @@ namespace QuanLiCongDanThanhPho
     {
         private string maHoKhau;
         HoKhauDAO hkDAO = new HoKhauDAO();
+        CongDanDAO cdDAO = new CongDanDAO();
         public string MaHoKhau
         {
             get { return maHoKhau; }
@@ -36,6 +37,10 @@ namespace QuanLiCongDanThanhPho
             txtCCCDChuHo.Text = hk.CCCDChuHo;
             txtMaHoKhau.Text = hk.MaHoKhau;
             txtDiaChi.Text = hk.DiaChi.toString();
+            //---Thong tin chu ho---//
+            CongDan chuHo = cdDAO.LayThongTin(hk.CCCDChuHo);
+            txtTenChuHo.Text = chuHo.Ten.ToString();
+
         }
     }
 }
