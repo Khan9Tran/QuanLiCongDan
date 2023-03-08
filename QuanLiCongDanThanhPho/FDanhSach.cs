@@ -12,9 +12,38 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSach : Form
     {
+        public Form currentChildForm;
         public FDanhSach()
         {
             InitializeComponent();
+        }
+
+        private void cmbLuaChon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbLuaChon.SelectedItem == "Công dân")
+                OpenChildForm(new FDanhSachCongDan());
+            else if (cmbLuaChon.SelectedItem == "Thuế")
+                OpenChildForm(new FDanhSachThue());
+            else if (cmbLuaChon.SelectedItem == "Tạm Trú/Tạm Vắng")
+                OpenChildForm(new FDanhSachTamTruTamVang());
+            else if (cmbLuaChon.SelectedItem == "Hộ khẩu")
+                OpenChildForm(new FDanhSachHoKhau());
+
+        }
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlHienThiDanhSach.Controls.Add(childForm);
+            pnlHienThiDanhSach.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }

@@ -30,7 +30,9 @@ namespace QuanLiCongDanThanhPho
         }
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
-            cmnusDanhMuc.Show(this, this.PointToClient(MousePosition));
+            OpenChildForm(new FDanhSach());
+            //cmnusDanhMuc.Show(this, this.PointToClient(MousePosition));
+
         }
         private void OpenChildForm(Form childForm)
         {
