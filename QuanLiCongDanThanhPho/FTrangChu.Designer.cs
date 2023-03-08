@@ -321,7 +321,7 @@
             this.titleBar1.Size = new System.Drawing.Size(48, 45);
             this.titleBar1.TabIndex = 4;
             // 
-            // tmrThuNho
+            // titleBar1
             // 
             this.tmrThuNho.Tick += new System.EventHandler(this.tmrThuNho_Tick);
             // 

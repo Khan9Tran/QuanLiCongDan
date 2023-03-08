@@ -65,6 +65,7 @@
             btnMinimize.BackColor = Color.Transparent;
             btnMinimize.FlatAppearance.BorderSize = 0;
             btnMinimize.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnMinimize.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnMinimize.FlatStyle = FlatStyle.Flat;
             btnMinimize.ForeColor = Color.Transparent;
             btnMinimize.Image = Properties.Resources.minus;
