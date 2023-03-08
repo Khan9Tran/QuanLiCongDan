@@ -97,6 +97,7 @@
             this.btnMenuShow.Size = new System.Drawing.Size(65, 65);
             this.btnMenuShow.TabIndex = 3;
             this.btnMenuShow.UseVisualStyleBackColor = false;
+            this.btnMenuShow.Click += new System.EventHandler(this.btnMenuShow_Click);
             // 
             // pnlDanhMuc
             // 
@@ -225,20 +226,20 @@
             // ItemCongDanChuyenDen
             // 
             this.ItemCongDanChuyenDen.Name = "ItemCongDanChuyenDen";
-            this.ItemCongDanChuyenDen.Size = new System.Drawing.Size(224, 32);
+            this.ItemCongDanChuyenDen.Size = new System.Drawing.Size(210, 32);
             this.ItemCongDanChuyenDen.Text = "Chuyển đến";
             this.ItemCongDanChuyenDen.Click += new System.EventHandler(this.cmnusDangKyItemCongDan_Click);
             // 
             // ItemCongDanChuyenDi
             // 
             this.ItemCongDanChuyenDi.Name = "ItemCongDanChuyenDi";
-            this.ItemCongDanChuyenDi.Size = new System.Drawing.Size(224, 32);
+            this.ItemCongDanChuyenDi.Size = new System.Drawing.Size(210, 32);
             this.ItemCongDanChuyenDi.Text = "Chuyển đi";
             // 
             // ItemKhaiSinh
             // 
             this.ItemKhaiSinh.Name = "ItemKhaiSinh";
-            this.ItemKhaiSinh.Size = new System.Drawing.Size(224, 32);
+            this.ItemKhaiSinh.Size = new System.Drawing.Size(210, 32);
             this.ItemKhaiSinh.Text = "Khai sinh";
             this.ItemKhaiSinh.Click += new System.EventHandler(this.cmnusDangKyItemKhaiSinh_Click);
             // 
@@ -320,6 +321,10 @@
             this.titleBar1.Size = new System.Drawing.Size(48, 45);
             this.titleBar1.TabIndex = 4;
             // 
+            // tmrThuNho
+            // 
+            this.tmrThuNho.Tick += new System.EventHandler(this.tmrThuNho_Tick);
+            // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -382,6 +387,10 @@
             this.lblDangKy.Text = "        Đăng ký";
             this.lblDangKy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lblDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
+            // 
+            // tmrPhongTo
+            // 
+            this.tmrPhongTo.Tick += new System.EventHandler(this.tmrPhongTo_Tick);
             // 
             // FTrangChu
             // 
