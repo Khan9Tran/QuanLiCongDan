@@ -29,11 +29,14 @@ namespace QuanLiCongDanThanhPho
 
         private void gvDanhSachCongDan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
-            if (maCCCD != "")
+            if (e.RowIndex != -1)
             {
-                FThongTinCongDan ttCD = new FThongTinCongDan(maCCCD);
-                ttCD.ShowDialog();
+                string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
+                if (maCCCD != "")
+                {
+                    FThongTinCongDan ttCD = new FThongTinCongDan(maCCCD);
+                    ttCD.ShowDialog();
+                }
             }
         }
     }
