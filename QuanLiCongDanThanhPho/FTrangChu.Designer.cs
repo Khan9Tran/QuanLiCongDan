@@ -226,20 +226,20 @@
             // ItemCongDanChuyenDen
             // 
             this.ItemCongDanChuyenDen.Name = "ItemCongDanChuyenDen";
-            this.ItemCongDanChuyenDen.Size = new System.Drawing.Size(224, 32);
+            this.ItemCongDanChuyenDen.Size = new System.Drawing.Size(210, 32);
             this.ItemCongDanChuyenDen.Text = "Chuyển đến";
             this.ItemCongDanChuyenDen.Click += new System.EventHandler(this.cmnusDangKyItemCongDan_Click);
             // 
             // ItemCongDanChuyenDi
             // 
             this.ItemCongDanChuyenDi.Name = "ItemCongDanChuyenDi";
-            this.ItemCongDanChuyenDi.Size = new System.Drawing.Size(224, 32);
+            this.ItemCongDanChuyenDi.Size = new System.Drawing.Size(210, 32);
             this.ItemCongDanChuyenDi.Text = "Chuyển đi";
             // 
             // ItemKhaiSinh
             // 
             this.ItemKhaiSinh.Name = "ItemKhaiSinh";
-            this.ItemKhaiSinh.Size = new System.Drawing.Size(224, 32);
+            this.ItemKhaiSinh.Size = new System.Drawing.Size(210, 32);
             this.ItemKhaiSinh.Text = "Khai sinh";
             this.ItemKhaiSinh.Click += new System.EventHandler(this.cmnusDangKyItemKhaiSinh_Click);
             // 
@@ -270,18 +270,21 @@
             this.cmnusDanhMucItemHoKhau.Name = "cmnusDanhMucItemHoKhau";
             this.cmnusDanhMucItemHoKhau.Size = new System.Drawing.Size(242, 32);
             this.cmnusDanhMucItemHoKhau.Text = "Hộ khẩu";
+            this.cmnusDanhMucItemHoKhau.Click += new System.EventHandler(this.cmnusDanhMucItemHoKhau_Click);
             // 
             // cmnusDanhMucItemThue
             // 
             this.cmnusDanhMucItemThue.Name = "cmnusDanhMucItemThue";
             this.cmnusDanhMucItemThue.Size = new System.Drawing.Size(242, 32);
             this.cmnusDanhMucItemThue.Text = "Thuế";
+            this.cmnusDanhMucItemThue.Click += new System.EventHandler(this.cmnusDanhMucItemThue_Click);
             // 
             // cmnusDanhMucItemTamTruTamVang
             // 
             this.cmnusDanhMucItemTamTruTamVang.Name = "cmnusDanhMucItemTamTruTamVang";
             this.cmnusDanhMucItemTamTruTamVang.Size = new System.Drawing.Size(242, 32);
             this.cmnusDanhMucItemTamTruTamVang.Text = "Tạm trú/ Tạm vắng";
+            this.cmnusDanhMucItemTamTruTamVang.Click += new System.EventHandler(this.cmnusDanhMucItemTamTruTamVang_Click);
             // 
             // pnlHienThiForm
             // 
@@ -317,6 +320,10 @@
             this.titleBar1.Name = "titleBar1";
             this.titleBar1.Size = new System.Drawing.Size(48, 45);
             this.titleBar1.TabIndex = 4;
+            // 
+            // titleBar1
+            // 
+            this.tmrThuNho.Tick += new System.EventHandler(this.tmrThuNho_Tick);
             // 
             // pnlMenu
             // 
@@ -380,6 +387,10 @@
             this.lblDangKy.Text = "        Đăng ký";
             this.lblDangKy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lblDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
+            // 
+            // tmrPhongTo
+            // 
+            this.tmrPhongTo.Tick += new System.EventHandler(this.tmrPhongTo_Tick);
             // 
             // FTrangChu
             // 

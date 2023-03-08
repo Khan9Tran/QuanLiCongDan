@@ -44,7 +44,7 @@
             this.gvHoKhau.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvHoKhau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvHoKhau.Location = new System.Drawing.Point(20, 281);
+            this.gvHoKhau.Location = new System.Drawing.Point(20, 217);
             this.gvHoKhau.Name = "gvHoKhau";
             this.gvHoKhau.RowHeadersWidth = 51;
             this.gvHoKhau.RowTemplate.Height = 29;
@@ -68,7 +68,7 @@
             this.flpnlPhanLoai.Controls.Add(this.btnTatCa);
             this.flpnlPhanLoai.Controls.Add(this.btnSoTV);
             this.flpnlPhanLoai.Controls.Add(this.btnNgayDangKy);
-            this.flpnlPhanLoai.Location = new System.Drawing.Point(20, 217);
+            this.flpnlPhanLoai.Location = new System.Drawing.Point(20, 138);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
             this.flpnlPhanLoai.Size = new System.Drawing.Size(699, 47);
             this.flpnlPhanLoai.TabIndex = 9;
@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.ClientSize = new System.Drawing.Size(1532, 679);
             this.Controls.Add(this.flpnlPhanLoai);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.gvHoKhau);

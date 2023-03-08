@@ -50,23 +50,26 @@ namespace QuanLiCongDanThanhPho
 
         private void FThongTinKhaiSinh_Load(object sender, EventArgs e)
         {
-            KhaiSinh ks = ksDAO.LayThongTin(maCCCD);
-            KhaiSinh ksCha = ksDAO.LayThongTin(ks.CCCDCha);
-            KhaiSinh ksMe = ksDAO.LayThongTin(ks.CCCDMe);
-            txtTen.Text = ks.HoTen;
-            txtCccd.Text = ks.MaKhaiSinh;
-            txtNoiSinh.Text = ks.NoiSinh.toString();
-            dtpNgaySinh.Value = ks.NgaySinh;
-            txtGioiTinh.Text = ks.GioiTinh;
-            txtDanToc.Text = ks.DanToc;
-            txtQuocTich.Text = ks.QuocTich;
-            txtQueQuan.Text = ks.QueQuan.toString();
-            txtTenCha.Text = ks.TenCha;
-            txtTenMe.Text = ks.TenMe;
-            txtCccdCha.Text = ks.CCCDCha;
-            txtCccdMe.Text = ks.CCCDMe;
-            txtQuocTichCha.Text = ksCha.QuocTich;
-            txtQuocTichMe.Text = ksMe.QuocTich;
+            if (maCCCD != null)
+            {
+                KhaiSinh ks = ksDAO.LayThongTin(maCCCD);
+                KhaiSinh ksCha = ksDAO.LayThongTin(ks.CCCDCha);
+                KhaiSinh ksMe = ksDAO.LayThongTin(ks.CCCDMe);
+                txtTen.Text = ks.HoTen;
+                txtCccd.Text = ks.MaKhaiSinh;
+                txtNoiSinh.Text = ks.NoiSinh.toString();
+                dtpNgaySinh.Value = ks.NgaySinh;
+                txtGioiTinh.Text = ks.GioiTinh;
+                txtDanToc.Text = ks.DanToc;
+                txtQuocTich.Text = ks.QuocTich;
+                txtQueQuan.Text = ks.QueQuan.toString();
+                txtTenCha.Text = ks.TenCha;
+                txtTenMe.Text = ks.TenMe;
+                txtCccdCha.Text = ks.CCCDCha;
+                txtCccdMe.Text = ks.CCCDMe;
+                txtQuocTichCha.Text = ksCha.QuocTich;
+                txtQuocTichMe.Text = ksMe.QuocTich;
+            }
         }
     }
 }
