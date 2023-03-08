@@ -9,11 +9,11 @@ CREATE TABLE HOKHAU
 	DiaChi NVARCHAR(100),
 	CCCDChuHo VARCHAR(15),
 );
-INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000001',N'52, Thầy Linh, Tiểu Cần, Trà Vinh, Việt Nam', '123456777584');
-INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000002',N'52, Điện Biên Phủ, Trà Cú, Trà Vinh, Việt Nam', '123456777580');
-INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000003',N'52, Nguyễn Huệ, Duyên Hải,Trà Vinh, Việt Nam', '123456777581');
-INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000004',N'52, Nguyễn Văn Linh, Càng Long, Trà Vinh, Việt Nam','123456777582');
-INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000005',N'52, Trần Hưng Đạo, Tiểu Cần, Trà Vinh, Việt Nam','123456777583');
+INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000001',N'52, Thầy Linh, Tiểu Cần, Trà Vinh', '123456777584');
+INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000002',N'52, Điện Biên Phủ, Trà Cú, Trà Vinh', '123456777580');
+INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000003',N'52, Nguyễn Huệ, Duyên Hải,Trà Vinh', '123456777581');
+INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000004',N'52, Nguyễn Văn Linh, Càng Long, Trà Vinh','123456777582');
+INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('000005',N'52, Trần Hưng Đạo, Tiểu Cần, Trà Vinh','123456777583');
 
 GO
 
@@ -87,7 +87,7 @@ CREATE TABLE TAMTRUTAMVANG
 
 GO
 
-INSERT INTO TAMTRUTAMVANG(MaTTTV, CCCD, DiaChi, NgayBD, NgayKT, TrangThai, LiDo) VALUES('000001','123456777591',N'484, Lê Văn Việt, Quận 9, Thủ Đức, Việt Nam' ,'2015-01-07', '2022-01-10', N'Tạm trú', N'Học đại học' );
+INSERT INTO TAMTRUTAMVANG(MaTTTV, CCCD, DiaChi, NgayBD, NgayKT, TrangThai, LiDo) VALUES('000001','123456777591',N'484, Lê Văn Việt, Quận 9, Thủ Đức' ,'2015-01-07', '2022-01-10', N'Tạm trú', N'Học đại học' );
 
 GO
 
@@ -111,19 +111,19 @@ CREATE TABLE KHAISINH
 
 GO
 
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777580' , N'Trần Thị Loan', '1992-01-01','1992-01-02', 'f', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u,Trà Vinh, Việt Nam', 'u', N'u', 'u', N'u');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777581' , N'Nguyễn Văn An', '1993-01-01','1993-01-02', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Đồng Tháp, Việt Nam', N'u , u, u,Trà Vinh, Việt Nam', 'u', N'u', 'u', N'u');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777582' , N'Trần Thanh Hải', '1992-01-01','1992-01-01', 'm', N'Khmer', N'Việt Nam', N'u , u, u, Đà Nẵng, Việt Nam', N'u , u, u, Vĩnh Long, Việt Nam', 'u', N'u', 'u', N'u');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777583' , N'Lê Nhật Khôi', '1995-01-01','1995-02-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u,Hồ Chí Minh, Việt Nam', 'u', N'u', 'u', N'u');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777584' , N'Trần Hoàng Phúc', '1992-01-01','1992-01-03', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', 'u', N'u', 'u', N'u');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777585' , N'Nguyễn Văn Hùng', '1992-01-01','1992-01-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u,Trà Vinh, Việt Nam', 'u', N'u', 'u', N'u');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777586' , N'Nguyễn Kim Tuyền', '1992-01-01','1992-01-01', 'f', N'Hoa', N'Việt Nam', N'u , u, u, Vũng Tàu, Việt Nam', N'u , u, u,Trà Vinh, Việt Nam', '123456777585', N'Nguyễn Văn Hùng', '123456777580', N'Trần Thị Loan');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777587' , N'Trần Thị Diệp', '1992-01-01','1992-01-01', 'f', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', 'u', N'u', 'u', N'u');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777588' , N'Trần Văn Kiệt', '1992-01-01','1992-01-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u, Phan Thiết, Việt Nam', 'u', N'u', 'u', N'u');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777589' , N'Lê Văn Liêm', '1992-01-01','1992-01-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u, Nha Trang, Việt Nam', '123456777583', N'Lê Nhật Khôi', '123456777590', N'Trần Thị Lan');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777590' , N'Trần Thị Lan', '1992-01-01','1992-01-01', 'f', N'Hoa', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', 'u', N'u', 'u', N'u');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777591' , N'Trần Công Huy', '1992-01-01','1992-01-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', '123456777591', N'Trần Công Huy', '123456777592', N'Trần thị Loan');
-INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777592' , N'Trần Thị Loan', '1992-01-01','1992-01-01', 'f', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', N'u , u, u, Trà Vinh, Việt Nam', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777580' , N'Trần Thị Loan', '1992-01-01','1992-01-02', 'f', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u,Trà Vinh', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777581' , N'Nguyễn Văn An', '1993-01-01','1993-01-02', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Đồng Tháp', N'u , u, u,Trà Vinh', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777582' , N'Trần Thanh Hải', '1992-01-01','1992-01-01', 'm', N'Khmer', N'Việt Nam', N'u , u, u, Đà Nẵng', N'u , u, u, Vĩnh Long', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777583' , N'Lê Nhật Khôi', '1995-01-01','1995-02-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u,Hồ Chí Minh', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777584' , N'Trần Hoàng Phúc', '1992-01-01','1992-01-03', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u, Trà Vinh', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777585' , N'Nguyễn Văn Hùng', '1992-01-01','1992-01-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u,Trà Vinh', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777586' , N'Nguyễn Kim Tuyền', '1992-01-01','1992-01-01', 'f', N'Hoa', N'Việt Nam', N'u , u, u, Vũng Tàu', N'u , u, u,Trà Vinh', '123456777585', N'Nguyễn Văn Hùng', '123456777580', N'Trần Thị Loan');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777587' , N'Trần Thị Diệp', '1992-01-01','1992-01-01', 'f', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u, Trà Vinh', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777588' , N'Trần Văn Kiệt', '1992-01-01','1992-01-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u, Phan Thiết', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777589' , N'Lê Văn Liêm', '1992-01-01','1992-01-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u, Nha Trang', '123456777583', N'Lê Nhật Khôi', '123456777590', N'Trần Thị Lan');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777590' , N'Trần Thị Lan', '1992-01-01','1992-01-01', 'f', N'Hoa', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u, Trà Vinh', 'u', N'u', 'u', N'u');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777591' , N'Trần Công Huy', '1992-01-01','1992-01-01', 'm', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u, Trà Vinh', '123456777591', N'Trần Công Huy', '123456777592', N'Trần thị Loan');
+INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy , GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('123456777592' , N'Trần Thị Loan', '1992-01-01','1992-01-01', 'f', N'Kinh', N'Việt Nam', N'u , u, u, Trà Vinh', N'u , u, u, Trà Vinh', 'u', N'u', 'u', N'u');
 
 GO
 
@@ -170,10 +170,10 @@ CREATE TABLE HONNHAN
 
 GO
 
-INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000001','123456777585',N'Nguyễn Văn Hùng','123456777580',N'Trần Thị Loan',N'u,u,u,Trà Vinh, Việt Nam','2022-10-26');
-INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000002','123456777581' , N'Nguyễn Văn An','123456777587', N'Trần Thị Diệp',N'u,u,u,Trà Vinh, Việt Nam','2022-10-10');
-INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000003','123456777583' , N'Lê Nhật Khôi','123456777590' , N'Trần Thị Lan',N'u,u,u,Vĩnh Long, Việt Nam','2021-11-10');
-INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000004','123456777584' , N'Trần Hoàng Phúc','123456777592' , N'Trần Thị Loan',N'u,u,u,Trà Vinh, Việt Nam','2019-07-10');
+INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000001','123456777585',N'Nguyễn Văn Hùng','123456777580',N'Trần Thị Loan',N'u,u,u,Trà Vinh','2022-10-26');
+INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000002','123456777581' , N'Nguyễn Văn An','123456777587', N'Trần Thị Diệp',N'u,u,u,Trà Vinh','2022-10-10');
+INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000003','123456777583' , N'Lê Nhật Khôi','123456777590' , N'Trần Thị Lan',N'u,u,u,Vĩnh Long','2021-11-10');
+INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('000004','123456777584' , N'Trần Hoàng Phúc','123456777592' , N'Trần Thị Loan',N'u,u,u,Trà Vinh','2019-07-10');
 
 
 GO
