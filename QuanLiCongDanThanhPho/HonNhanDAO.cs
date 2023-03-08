@@ -51,5 +51,10 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format("SELECT * FROM HONNHAN WHERE CCCDNam = {0} OR CCCDNu = {0}", maCCCD);
             return conn.LayThongTinHonNhan(sqlStr);
         }
+        public HonNhan LayThongTinTheoMaSo(string maHonNhan)
+        {
+            string sqlStr = string.Format("SELECT * FROM HONNHAN WHERE MaHonNhan = {0}", maHonNhan);
+            return conn.LayThongTinHonNhan(sqlStr);
+        }
     }
 }

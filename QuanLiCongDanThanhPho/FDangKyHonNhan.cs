@@ -51,5 +51,26 @@ namespace QuanLiCongDanThanhPho
             };
             func(Controls);
         }
+
+        private void btnTimVo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimChong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMaHonNhan_Click(object sender, EventArgs e)
+        {
+            HonNhan hN = new HonNhan();
+            hN = hNDAO.LayThongTinTheoMaSo(txtMaHonNhan.Text);
+            txtCCCDChong.Text = hN.CCCDChong;
+            txtCCCDVo.Text = hN.CCCDVo;
+            txtTenChong.Text = hN.TenChong;
+            txtTenVo.Text = hN.TenVo;
+            txtNoiDK.Text = hN.NoiDangKy.toString();
+        }
     }
 }
