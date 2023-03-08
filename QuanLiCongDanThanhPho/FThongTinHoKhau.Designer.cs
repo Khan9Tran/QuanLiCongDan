@@ -137,7 +137,7 @@
             this.gvQuanHeVoiChuHo.Name = "gvQuanHeVoiChuHo";
             this.gvQuanHeVoiChuHo.RowHeadersWidth = 51;
             this.gvQuanHeVoiChuHo.RowTemplate.Height = 29;
-            this.gvQuanHeVoiChuHo.Size = new System.Drawing.Size(519, 71);
+            this.gvQuanHeVoiChuHo.Size = new System.Drawing.Size(519, 121);
             this.gvQuanHeVoiChuHo.TabIndex = 10;
             // 
             // txtDiaChi
