@@ -29,11 +29,14 @@ namespace QuanLiCongDanThanhPho
 
         private void gvHoKhau_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string maHoKhau = gvHoKhau.CurrentRow.Cells[0].Value.ToString();
-            if (maHoKhau != "")
+            if (e.RowIndex != -1)
             {
-                FThongTinHoKhau tTHK = new FThongTinHoKhau(maHoKhau);
-                tTHK.ShowDialog();
+                string maHoKhau = gvHoKhau.CurrentRow.Cells[0].Value.ToString();
+                if (maHoKhau != "")
+                {
+                    FThongTinHoKhau tTHK = new FThongTinHoKhau(maHoKhau);
+                    tTHK.ShowDialog();
+                }
             }
         }
     }
