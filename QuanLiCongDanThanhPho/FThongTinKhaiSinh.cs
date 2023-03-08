@@ -28,6 +28,7 @@ namespace QuanLiCongDanThanhPho
         public FThongTinKhaiSinh(string maCCCD)
         {
             MaCCCD = maCCCD;
+            InitializeComponent();
         }
         private void btnThongTinCha_Click(object sender, EventArgs e)
         {

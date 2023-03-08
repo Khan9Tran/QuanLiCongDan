@@ -32,8 +32,7 @@ namespace QuanLiCongDanThanhPho
             string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
             if (maCCCD != "")
             {
-                FThongTinCongDan ttCD = new FThongTinCongDan();
-                ttCD.MaCCCD = maCCCD;
+                FThongTinCongDan ttCD = new FThongTinCongDan(maCCCD);
                 ttCD.ShowDialog();
             }
         }

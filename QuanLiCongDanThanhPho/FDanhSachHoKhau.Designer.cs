@@ -50,6 +50,7 @@
             this.gvHoKhau.RowTemplate.Height = 29;
             this.gvHoKhau.Size = new System.Drawing.Size(1400, 450);
             this.gvHoKhau.TabIndex = 0;
+            this.gvHoKhau.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellClick);
             this.gvHoKhau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellContentClick);
             // 
             // txtTimKiem

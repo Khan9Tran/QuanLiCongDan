@@ -29,6 +29,7 @@ namespace QuanLiCongDanThanhPho
         public FThongTinThue(string maCCCD)
         {
             MaCCCD = maCCCD;
+            InitializeComponent();
         }
         private void FThongTinThue_Load(object sender, EventArgs e)
         {

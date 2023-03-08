@@ -46,6 +46,7 @@ namespace QuanLiCongDanThanhPho
         public FThongTinCongDan(string maCCCD)
         {
             MaCCCD = maCCCD;
+            InitializeComponent();
         }
         private void lblClose_Click(object sender, EventArgs e)
         {
@@ -109,7 +110,8 @@ namespace QuanLiCongDanThanhPho
 
         private void btnHoKhau_Click(object sender, EventArgs e)
         {
-            FThongTinHoKhau tTHK = new FThongTinHoKhau();
+            CongDan cd = cdDAO.LayThongTin(maCCCD);
+            FThongTinHoKhau tTHK = new FThongTinHoKhau(cd.MaHoKhau);
             tTHK.ShowDialog();
         }
 

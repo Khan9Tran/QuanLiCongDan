@@ -26,5 +26,12 @@ namespace QuanLiCongDanThanhPho
         {
             gvHoKhau.DataSource = hkDao.LayDanhSach();
         }
+
+        private void gvHoKhau_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string maHoKhau = gvHoKhau.CurrentRow.Cells[0].Value.ToString();
+            FThongTinHoKhau tTHK = new FThongTinHoKhau(maHoKhau);
+            tTHK.ShowDialog();
+        }
     }
 }
