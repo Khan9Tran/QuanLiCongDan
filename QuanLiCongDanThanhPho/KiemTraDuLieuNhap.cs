@@ -22,7 +22,6 @@ namespace QuanLiCongDanThanhPho
             string rule = @"^([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})$";
             return KiemTra(diaChi, rule);
         }
-
         public static bool isSoDT(string SoDT)
         {
             string rule = @"^\d{9,11}$";
