@@ -13,10 +13,23 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongTinCongDan : Form
     {
+        private string maCCCD;
+        CongDanDAO cdDAO = new CongDanDAO();
+        KhaiSinhDAO ksDAO = new KhaiSinhDAO();
+        ThueDAO thueDAO = new ThueDAO();
+        HonNhanDAO hnDAO = new HonNhanDAO();
+        HoKhauDAO hkDAO = new HoKhauDAO();
+        TamTruTamVangDAO tttvDAO = new TamTruTamVangDAO();
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
-
+        
+        public string MaCCCD
+        {
+            set { maCCCD = value; }
+            get { return maCCCD; }
+        }
+ 
         protected override void WndProc(ref Message message)
         {
             base.WndProc(ref message);
@@ -25,24 +38,15 @@ namespace QuanLiCongDanThanhPho
                 message.Result = (IntPtr)HTCAPTION;
         }
 
-
-        private string maCCCD;
-        public string MaCCCD
-        {
-            set { maCCCD = value; }
-            get { return maCCCD; }
-        }
-        CongDanDAO cdDAO = new CongDanDAO();
-        KhaiSinhDAO ksDAO = new KhaiSinhDAO();
-        ThueDAO thueDAO = new ThueDAO();
-        HonNhanDAO hnDAO = new HonNhanDAO();
-        HoKhauDAO hkDAO = new HoKhauDAO();
-        TamTruTamVangDAO tttvDAO = new TamTruTamVangDAO();
         public FThongTinCongDan()
         {
             InitializeComponent();
         }
 
+        public FThongTinCongDan(string maCCCD)
+        {
+            MaCCCD = maCCCD;
+        }
         private void lblClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -51,8 +55,7 @@ namespace QuanLiCongDanThanhPho
 
         private void btnKhaiSinh_Click(object sender, EventArgs e)
         {
-            FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh();
-            tTKS.MaCCCD = MaCCCD;
+            FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh(MaCCCD);
             tTKS.ShowDialog();
         }
 
@@ -112,15 +115,13 @@ namespace QuanLiCongDanThanhPho
 
         private void btnThue_Click(object sender, EventArgs e)
         {
-            FThongTinThue tTThue = new FThongTinThue();
-            tTThue.MaCCCD = MaCCCD;
+            FThongTinThue tTThue = new FThongTinThue(MaCCCD);
             tTThue.ShowDialog();
         }
 
         private void btnHonNhan_Click(object sender, EventArgs e)
         {
-            FThongTinHonNhan tTHN = new FThongTinHonNhan();
-            tTHN.MaCCCD = MaCCCD;
+            FThongTinHonNhan tTHN = new FThongTinHonNhan(MaCCCD);
             tTHN.ShowDialog();
         }
 

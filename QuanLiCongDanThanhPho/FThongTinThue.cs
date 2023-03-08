@@ -14,19 +14,22 @@ namespace QuanLiCongDanThanhPho
     public partial class FThongTinThue : Form
     {
         private string maCCCD;
+        ThueDAO thueDAO = new ThueDAO();
+        CongDanDAO cdDAO = new CongDanDAO();
+        HoKhauDAO hkDAO = new HoKhauDAO();
         public string MaCCCD
         {
             set { maCCCD = value; }
             get { return maCCCD; }
         }
-        ThueDAO thueDAO = new ThueDAO();
-        CongDanDAO cdDAO = new CongDanDAO();
-        HoKhauDAO hkDAO = new HoKhauDAO();
         public FThongTinThue()
         {
             InitializeComponent();
         }
-
+        public FThongTinThue(string maCCCD)
+        {
+            MaCCCD = maCCCD;
+        }
         private void FThongTinThue_Load(object sender, EventArgs e)
         {
             Thue thue = thueDAO.LayThongTin(MaCCCD);

@@ -103,7 +103,6 @@ namespace QuanLiCongDanThanhPho
             } 
             else
             {
-
                 txtTenVoChong.ReadOnly = true;
                 txtMaHonNhan.ReadOnly = true;
                 txtCCCDVoChong.ReadOnly = true;

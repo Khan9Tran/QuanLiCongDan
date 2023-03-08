@@ -14,23 +14,26 @@ namespace QuanLiCongDanThanhPho
     public partial class FThongTinHonNhan : Form
     {
         private string maCCCD;
+        HonNhanDAO hnDAO = new HonNhanDAO();
+
         public string MaCCCD
         {
             set { maCCCD = value; }
             get { return maCCCD; }
         }
-        HonNhanDAO hnDAO = new HonNhanDAO();
         public FThongTinHonNhan()
         {
             InitializeComponent();
         }
-
+        public FThongTinHonNhan(string maCCCD)
+        {
+            MaCCCD = maCCCD;
+        }
         private void btnThongTinChong_Click(object sender, EventArgs e)
         {
             if (txtCCCDChong.Text != "")
             {
-                FThongTinCongDan tTCD = new FThongTinCongDan();
-                tTCD.MaCCCD = txtCCCDChong.Text;
+                FThongTinCongDan tTCD = new FThongTinCongDan(txtCCCDChong.Text);
                 tTCD.ShowDialog();
             }
         }
@@ -39,8 +42,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (txtCCCDVo.Text != "")
             {
-                FThongTinCongDan tTCD = new FThongTinCongDan();
-                tTCD.MaCCCD = txtCCCDVo.Text;
+                FThongTinCongDan tTCD = new FThongTinCongDan(txtCCCDVo.Text);
                 tTCD.ShowDialog();
             }
         }
