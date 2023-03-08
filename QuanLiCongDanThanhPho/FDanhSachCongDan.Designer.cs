@@ -56,7 +56,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gvDanhSachCongDan.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gvDanhSachCongDan.Location = new System.Drawing.Point(20, 281);
+            this.gvDanhSachCongDan.Location = new System.Drawing.Point(12, 208);
             this.gvDanhSachCongDan.Name = "gvDanhSachCongDan";
             this.gvDanhSachCongDan.RowHeadersWidth = 51;
             this.gvDanhSachCongDan.RowTemplate.Height = 29;
@@ -139,7 +139,7 @@
             this.flpnlPhanLoai.Controls.Add(this.btnNu);
             this.flpnlPhanLoai.Controls.Add(this.btnDocThan);
             this.flpnlPhanLoai.Controls.Add(this.btnKetHon);
-            this.flpnlPhanLoai.Location = new System.Drawing.Point(20, 217);
+            this.flpnlPhanLoai.Location = new System.Drawing.Point(30, 139);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
             this.flpnlPhanLoai.Size = new System.Drawing.Size(799, 47);
             this.flpnlPhanLoai.TabIndex = 8;
@@ -178,7 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.ClientSize = new System.Drawing.Size(1532, 679);
             this.Controls.Add(this.flpnlPhanLoai);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.gvDanhSachCongDan);

@@ -42,11 +42,11 @@
             this.gvTamTru.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvTamTru.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvTamTru.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvTamTru.Location = new System.Drawing.Point(28, 86);
+            this.gvTamTru.Location = new System.Drawing.Point(25, 47);
             this.gvTamTru.Name = "gvTamTru";
             this.gvTamTru.RowHeadersWidth = 51;
             this.gvTamTru.RowTemplate.Height = 29;
-            this.gvTamTru.Size = new System.Drawing.Size(1400, 300);
+            this.gvTamTru.Size = new System.Drawing.Size(1400, 249);
             this.gvTamTru.TabIndex = 0;
             this.gvTamTru.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTamTru_CellContentClick);
             // 
@@ -57,18 +57,18 @@
             this.gvTamVang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvTamVang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvTamVang.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.gvTamVang.Location = new System.Drawing.Point(28, 441);
+            this.gvTamVang.Location = new System.Drawing.Point(25, 406);
             this.gvTamVang.Name = "gvTamVang";
             this.gvTamVang.RowHeadersWidth = 51;
             this.gvTamVang.RowTemplate.Height = 29;
-            this.gvTamVang.Size = new System.Drawing.Size(1400, 300);
+            this.gvTamVang.Size = new System.Drawing.Size(1400, 244);
             this.gvTamVang.TabIndex = 1;
             this.gvTamVang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTamVang_CellContentClick);
             // 
             // lblTamTru
             // 
             this.lblTamTru.AutoSize = true;
-            this.lblTamTru.Location = new System.Drawing.Point(28, 55);
+            this.lblTamTru.Location = new System.Drawing.Point(25, 16);
             this.lblTamTru.Name = "lblTamTru";
             this.lblTamTru.Size = new System.Drawing.Size(87, 28);
             this.lblTamTru.TabIndex = 2;
@@ -77,7 +77,7 @@
             // lblTamVang
             // 
             this.lblTamVang.AutoSize = true;
-            this.lblTamVang.Location = new System.Drawing.Point(28, 404);
+            this.lblTamVang.Location = new System.Drawing.Point(25, 369);
             this.lblTamVang.Name = "lblTamVang";
             this.lblTamVang.Size = new System.Drawing.Size(105, 28);
             this.lblTamVang.TabIndex = 3;
@@ -88,7 +88,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.ClientSize = new System.Drawing.Size(1532, 679);
             this.Controls.Add(this.lblTamVang);
             this.Controls.Add(this.lblTamTru);
             this.Controls.Add(this.gvTamVang);
