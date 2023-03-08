@@ -252,7 +252,6 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
                 return false;
             }
             finally
