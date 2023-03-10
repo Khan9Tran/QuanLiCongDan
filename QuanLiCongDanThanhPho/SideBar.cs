@@ -19,7 +19,8 @@ namespace QuanLiCongDanThanhPho
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            (this.ParentForm as FTrangChu).currentChildForm.Close();
+            (this.ParentForm as FTrangChu).currentChildForm = null;
+            StackForm.ClearAll();
 
         }
 

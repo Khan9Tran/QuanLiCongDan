@@ -37,7 +37,7 @@
             this.lblTenChong = new System.Windows.Forms.Label();
             this.lblNoiDangKy = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblNgayDangKy = new System.Windows.Forms.Label();
             this.pnlVo = new System.Windows.Forms.Panel();
             this.btnCapNhatThongTinHonNhan = new System.Windows.Forms.Button();
             this.btnThongTinVo = new System.Windows.Forms.Button();
@@ -153,14 +153,14 @@
             this.btnXoa.Text = "Xóa đăng ký";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // lblNgayDangKy
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(50, 250);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 28);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Ngày đăng ký";
+            this.lblNgayDangKy.AutoSize = true;
+            this.lblNgayDangKy.Location = new System.Drawing.Point(50, 250);
+            this.lblNgayDangKy.Name = "lblNgayDangKy";
+            this.lblNgayDangKy.Size = new System.Drawing.Size(144, 28);
+            this.lblNgayDangKy.TabIndex = 3;
+            this.lblNgayDangKy.Text = "Ngày đăng ký";
             // 
             // pnlVo
             // 
@@ -172,7 +172,7 @@
             this.pnlVo.Controls.Add(this.txtTenVo);
             this.pnlVo.Controls.Add(this.txtCCCDVo);
             this.pnlVo.Controls.Add(this.lblCCCDVo);
-            this.pnlVo.Controls.Add(this.label7);
+            this.pnlVo.Controls.Add(this.lblNgayDangKy);
             this.pnlVo.Controls.Add(this.lblTenVo);
             this.pnlVo.Location = new System.Drawing.Point(600, 109);
             this.pnlVo.Name = "pnlVo";
@@ -326,7 +326,7 @@
 
         private Panel pnlChong;
         private Panel pnlVo;
-        private Label label7;
+        private Label lblNgayDangKy;
         private Label lblCCCDChong;
         private Label lblTenChong;
         private Label lblNoiDangKy;
