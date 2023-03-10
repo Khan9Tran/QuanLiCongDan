@@ -39,6 +39,7 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlVo = new System.Windows.Forms.Panel();
+            this.btnCapNhatThongTinHonNhan = new System.Windows.Forms.Button();
             this.btnThongTinVo = new System.Windows.Forms.Button();
             this.dtpNgayDangKy = new System.Windows.Forms.DateTimePicker();
             this.txtTenVo = new System.Windows.Forms.TextBox();
@@ -46,11 +47,12 @@
             this.lblCCCDVo = new System.Windows.Forms.Label();
             this.lblTenVo = new System.Windows.Forms.Label();
             this.lblDeMuc2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCapNhatThongTinHonNhan = new System.Windows.Forms.Button();
+            this.pnlTitle = new System.Windows.Forms.Panel();
+            this.titleBarWhite1 = new QuanLiCongDanThanhPho.TitleBarWhite();
+            this.sideBarWhite1 = new QuanLiCongDanThanhPho.SideBarWhite();
             this.pnlChong.SuspendLayout();
             this.pnlVo.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlChong
@@ -63,9 +65,9 @@
             this.pnlChong.Controls.Add(this.lblCCCDChong);
             this.pnlChong.Controls.Add(this.lblTenChong);
             this.pnlChong.Controls.Add(this.lblNoiDangKy);
-            this.pnlChong.Location = new System.Drawing.Point(0, 89);
+            this.pnlChong.Location = new System.Drawing.Point(4, 109);
             this.pnlChong.Name = "pnlChong";
-            this.pnlChong.Size = new System.Drawing.Size(600, 640);
+            this.pnlChong.Size = new System.Drawing.Size(596, 604);
             this.pnlChong.TabIndex = 2;
             // 
             // btnThongTinChong
@@ -172,10 +174,23 @@
             this.pnlVo.Controls.Add(this.lblCCCDVo);
             this.pnlVo.Controls.Add(this.label7);
             this.pnlVo.Controls.Add(this.lblTenVo);
-            this.pnlVo.Location = new System.Drawing.Point(600, 89);
+            this.pnlVo.Location = new System.Drawing.Point(600, 109);
             this.pnlVo.Name = "pnlVo";
-            this.pnlVo.Size = new System.Drawing.Size(600, 640);
+            this.pnlVo.Size = new System.Drawing.Size(595, 604);
             this.pnlVo.TabIndex = 3;
+            // 
+            // btnCapNhatThongTinHonNhan
+            // 
+            this.btnCapNhatThongTinHonNhan.BackColor = System.Drawing.Color.Transparent;
+            this.btnCapNhatThongTinHonNhan.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCapNhatThongTinHonNhan.FlatAppearance.BorderSize = 0;
+            this.btnCapNhatThongTinHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhatThongTinHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
+            this.btnCapNhatThongTinHonNhan.Location = new System.Drawing.Point(506, 528);
+            this.btnCapNhatThongTinHonNhan.Name = "btnCapNhatThongTinHonNhan";
+            this.btnCapNhatThongTinHonNhan.Size = new System.Drawing.Size(50, 50);
+            this.btnCapNhatThongTinHonNhan.TabIndex = 98;
+            this.btnCapNhatThongTinHonNhan.UseVisualStyleBackColor = false;
             // 
             // btnThongTinVo
             // 
@@ -255,39 +270,42 @@
             this.lblDeMuc2.TabIndex = 1;
             this.lblDeMuc2.Text = "HÔN NHÂN";
             // 
-            // panel1
+            // pnlTitle
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.lblDeMuc2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 80);
-            this.panel1.TabIndex = 4;
+            this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.pnlTitle.Controls.Add(this.lblDeMuc2);
+            this.pnlTitle.Location = new System.Drawing.Point(4, 32);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(1194, 79);
+            this.pnlTitle.TabIndex = 4;
             // 
-            // btnCapNhatThongTinHonNhan
+            // titleBarWhite1
             // 
-            this.btnCapNhatThongTinHonNhan.BackColor = System.Drawing.Color.Transparent;
-            this.btnCapNhatThongTinHonNhan.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCapNhatThongTinHonNhan.FlatAppearance.BorderSize = 0;
-            this.btnCapNhatThongTinHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhatThongTinHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
-            this.btnCapNhatThongTinHonNhan.Location = new System.Drawing.Point(506, 528);
-            this.btnCapNhatThongTinHonNhan.Name = "btnCapNhatThongTinHonNhan";
-            this.btnCapNhatThongTinHonNhan.Size = new System.Drawing.Size(50, 50);
-            this.btnCapNhatThongTinHonNhan.TabIndex = 98;
-            this.btnCapNhatThongTinHonNhan.UseVisualStyleBackColor = false;
+            this.titleBarWhite1.Location = new System.Drawing.Point(1147, -3);
+            this.titleBarWhite1.Name = "titleBarWhite1";
+            this.titleBarWhite1.Size = new System.Drawing.Size(60, 35);
+            this.titleBarWhite1.TabIndex = 5;
+            // 
+            // sideBarWhite1
+            // 
+            this.sideBarWhite1.Location = new System.Drawing.Point(4, -3);
+            this.sideBarWhite1.Name = "sideBarWhite1";
+            this.sideBarWhite1.Size = new System.Drawing.Size(75, 35);
+            this.sideBarWhite1.TabIndex = 6;
             // 
             // FThongTinHonNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1200, 720);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.sideBarWhite1);
+            this.Controls.Add(this.titleBarWhite1);
+            this.Controls.Add(this.pnlTitle);
             this.Controls.Add(this.pnlVo);
             this.Controls.Add(this.pnlChong);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FThongTinHonNhan";
@@ -298,8 +316,8 @@
             this.pnlChong.PerformLayout();
             this.pnlVo.ResumeLayout(false);
             this.pnlVo.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -322,9 +340,11 @@
         private TextBox txtTenVo;
         private TextBox txtCCCDVo;
         private Button btnXoa;
-        private Panel panel1;
+        private Panel pnlTitle;
         private Button btnThongTinChong;
         private Button btnThongTinVo;
         private Button btnCapNhatThongTinHonNhan;
+        private TitleBarWhite titleBarWhite1;
+        private SideBarWhite sideBarWhite1;
     }
 }

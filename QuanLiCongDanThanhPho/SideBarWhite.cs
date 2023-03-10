@@ -19,19 +19,18 @@ namespace QuanLiCongDanThanhPho
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-
+            StackForm.Back();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if (ParentForm.Name == "FTrangChu")
-            {
-                if ((ParentForm as FTrangChu).currentChildForm == null)
-                    return;
-                (ParentForm as FTrangChu).currentChildForm.Close();
-            }
-            else
-                this.ParentForm.Close();
+            this.ParentForm.Close();
+            StackForm.Clear();
+        }
+
+        private void SideBarWhite_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

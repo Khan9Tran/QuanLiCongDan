@@ -39,7 +39,7 @@
             btnClose.BackColor = Color.Transparent;
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnClose.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnClose.FlatAppearance.MouseOverBackColor = Color.Red;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.ForeColor = Color.Transparent;
             btnClose.Image = Properties.Resources.crossWhite;
@@ -55,6 +55,7 @@
             btnMinimize.BackColor = Color.Transparent;
             btnMinimize.FlatAppearance.BorderSize = 0;
             btnMinimize.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnMinimize.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnMinimize.FlatStyle = FlatStyle.Flat;
             btnMinimize.ForeColor = Color.Transparent;
             btnMinimize.Image = Properties.Resources.minusWhite;

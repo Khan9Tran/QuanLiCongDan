@@ -27,18 +27,19 @@ namespace QuanLiCongDanThanhPho
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             cmnusDangKy.Show(this, this.PointToClient(MousePosition));
+            TatMenu(sender, e);
         }
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDanhSach());
-            //cmnusDanhMuc.Show(this, this.PointToClient(MousePosition));
+            TatMenu(sender, e);
 
         }
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
-                currentChildForm.Close();
+                //currentChildForm.Close();
             }
             currentChildForm = childForm;
             childForm.TopLevel = false;
@@ -48,61 +49,58 @@ namespace QuanLiCongDanThanhPho
             pnlHienThiForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            StackForm.Add(childForm);
         }
-
+        public void TatMenu(object sender, EventArgs e)
+        {
+            if (pnlMenu.Width > 80)
+                btnMenuShow_Click(sender, e);
+        }    
         private void cmnusDangKyItemTamTruTamVang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyTamTruTamVang());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender,e);
         }
 
         private void cmnusitemDangKyHonNhan_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyHonNhan());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender, e);
         }
 
         private void cmnusDangKyItemKhaiSinh_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyKhaiSinh());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender, e);
         }
 
         private void cmnusDanhMucItemCongDan_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDanhSachCongDan());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender, e);
         }
 
         private void cmnusDanhMucItemHoKhau_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDanhSachHoKhau());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender, e);
         }
         private void cmnusDanhMucItemTamTruTamVang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDanhSachTamTruTamVang());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender, e);
         }
 
         private void cmnusDanhMucItemThue_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDanhSachThue());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender, e);
         }
 
         private void cmnusDangKyItemCongDan_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyCongDan());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender, e);
         }
 
 
@@ -182,8 +180,7 @@ namespace QuanLiCongDanThanhPho
         private void cmnusDangKyItemHoKhau_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyHoKhau());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender, e);
         }
 
         protected override void WndProc(ref Message message)
@@ -197,8 +194,7 @@ namespace QuanLiCongDanThanhPho
         private void cmnusDangKyItemCCCD_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyCCCD());
-            if (pnlMenu.Width > 80)
-                btnMenuShow_Click(sender, e);
+            TatMenu(sender, e);
         }
 
     }

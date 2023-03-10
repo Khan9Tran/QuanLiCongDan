@@ -30,8 +30,6 @@
         {
             this.lblTittleBar = new System.Windows.Forms.Label();
             this.pnlTittleBar = new System.Windows.Forms.Panel();
-            this.sideBarWhite1 = new QuanLiCongDanThanhPho.SideBarWhite();
-            this.titleBarWhite1 = new QuanLiCongDanThanhPho.TitleBarWhite();
             this.picCongDan = new System.Windows.Forms.PictureBox();
             this.lblTen = new System.Windows.Forms.Label();
             this.lblCccd = new System.Windows.Forms.Label();
@@ -73,6 +71,8 @@
             this.lblMaThue = new System.Windows.Forms.Label();
             this.lblMaHoKhau = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
+            this.sideBarWhite1 = new QuanLiCongDanThanhPho.SideBarWhite();
+            this.titleBarWhite1 = new QuanLiCongDanThanhPho.TitleBarWhite();
             this.pnlTittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).BeginInit();
             this.pnlThongTin.SuspendLayout();
@@ -85,7 +85,7 @@
             this.lblTittleBar.BackColor = System.Drawing.Color.Transparent;
             this.lblTittleBar.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTittleBar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTittleBar.Location = new System.Drawing.Point(214, 19);
+            this.lblTittleBar.Location = new System.Drawing.Point(252, 19);
             this.lblTittleBar.Name = "lblTittleBar";
             this.lblTittleBar.Size = new System.Drawing.Size(330, 38);
             this.lblTittleBar.TabIndex = 0;
@@ -94,28 +94,11 @@
             // pnlTittleBar
             // 
             this.pnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.pnlTittleBar.Controls.Add(this.sideBarWhite1);
-            this.pnlTittleBar.Controls.Add(this.titleBarWhite1);
             this.pnlTittleBar.Controls.Add(this.lblTittleBar);
-            this.pnlTittleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTittleBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTittleBar.Location = new System.Drawing.Point(4, 40);
             this.pnlTittleBar.Name = "pnlTittleBar";
-            this.pnlTittleBar.Size = new System.Drawing.Size(827, 80);
+            this.pnlTittleBar.Size = new System.Drawing.Size(833, 77);
             this.pnlTittleBar.TabIndex = 1;
-            // 
-            // sideBarWhite1
-            // 
-            this.sideBarWhite1.Location = new System.Drawing.Point(-1, 0);
-            this.sideBarWhite1.Name = "sideBarWhite1";
-            this.sideBarWhite1.Size = new System.Drawing.Size(104, 52);
-            this.sideBarWhite1.TabIndex = 3;
-            // 
-            // titleBarWhite1
-            // 
-            this.titleBarWhite1.Location = new System.Drawing.Point(759, 3);
-            this.titleBarWhite1.Name = "titleBarWhite1";
-            this.titleBarWhite1.Size = new System.Drawing.Size(82, 60);
-            this.titleBarWhite1.TabIndex = 2;
             // 
             // picCongDan
             // 
@@ -332,9 +315,9 @@
             this.pnlThongTinCD.Controls.Add(this.lblNgaySinh);
             this.pnlThongTinCD.Controls.Add(this.dtpNgaySinh);
             this.pnlThongTinCD.Controls.Add(this.lblDanToc);
-            this.pnlThongTinCD.Location = new System.Drawing.Point(12, 86);
+            this.pnlThongTinCD.Location = new System.Drawing.Point(4, 113);
             this.pnlThongTinCD.Name = "pnlThongTinCD";
-            this.pnlThongTinCD.Size = new System.Drawing.Size(815, 824);
+            this.pnlThongTinCD.Size = new System.Drawing.Size(833, 797);
             this.pnlThongTinCD.TabIndex = 31;
             // 
             // btnSua
@@ -497,7 +480,7 @@
             // 
             this.txtMaHoKhau.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtMaHoKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaHoKhau.Location = new System.Drawing.Point(212, 600);
             this.txtMaHoKhau.Name = "txtMaHoKhau";
             this.txtMaHoKhau.ReadOnly = true;
@@ -519,7 +502,7 @@
             // 
             this.txtQueQuan.BackColor = System.Drawing.Color.Gainsboro;
             this.txtQueQuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtQueQuan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtQueQuan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtQueQuan.Location = new System.Drawing.Point(212, 500);
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.ReadOnly = true;
@@ -541,7 +524,7 @@
             // 
             this.txtNgheNghiep.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNgheNghiep.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNgheNghiep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtNgheNghiep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNgheNghiep.Location = new System.Drawing.Point(212, 251);
             this.txtNgheNghiep.Name = "txtNgheNghiep";
             this.txtNgheNghiep.ReadOnly = true;
@@ -600,13 +583,29 @@
             this.lblDiaChi.TabIndex = 31;
             this.lblDiaChi.Text = "Địa chỉ";
             // 
+            // sideBarWhite1
+            // 
+            this.sideBarWhite1.Location = new System.Drawing.Point(3, 3);
+            this.sideBarWhite1.Name = "sideBarWhite1";
+            this.sideBarWhite1.Size = new System.Drawing.Size(75, 27);
+            this.sideBarWhite1.TabIndex = 32;
+            // 
+            // titleBarWhite1
+            // 
+            this.titleBarWhite1.Location = new System.Drawing.Point(786, 1);
+            this.titleBarWhite1.Name = "titleBarWhite1";
+            this.titleBarWhite1.Size = new System.Drawing.Size(60, 30);
+            this.titleBarWhite1.TabIndex = 33;
+            // 
             // FThongTinCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(838, 579);
+            this.Controls.Add(this.titleBarWhite1);
+            this.Controls.Add(this.sideBarWhite1);
             this.Controls.Add(this.pnlThongTinCD);
             this.Controls.Add(this.pnlTittleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -669,8 +668,8 @@
         private Button btnHoKhau;
         private Button btnHonNhan;
         private Button btnThue;
+        private Button btnSua;
         private SideBarWhite sideBarWhite1;
         private TitleBarWhite titleBarWhite1;
-        private Button btnSua;
     }
 }

@@ -49,7 +49,7 @@
             btnClose.BackColor = Color.Transparent;
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnClose.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnClose.FlatAppearance.MouseOverBackColor = Color.Red;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.ForeColor = Color.Transparent;
             btnClose.Image = Properties.Resources.cross;

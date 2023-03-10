@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlTren = new System.Windows.Forms.Panel();
-            this.sideBarWhite1 = new QuanLiCongDanThanhPho.SideBarWhite();
-            this.titleBarWhite1 = new QuanLiCongDanThanhPho.TitleBarWhite();
             this.lblTieuDe = new System.Windows.Forms.Label();
             this.pnlHienThongTin = new System.Windows.Forms.Panel();
             this.btnCapNhatThongTinHoKhau = new System.Windows.Forms.Button();
@@ -44,6 +42,8 @@
             this.lblMaHoKhau = new System.Windows.Forms.Label();
             this.lblCCCDChuHo = new System.Windows.Forms.Label();
             this.lblTenChuHo = new System.Windows.Forms.Label();
+            this.sideBarWhite1 = new QuanLiCongDanThanhPho.SideBarWhite();
+            this.titleBarWhite1 = new QuanLiCongDanThanhPho.TitleBarWhite();
             this.pnlTren.SuspendLayout();
             this.pnlHienThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvQuanHeVoiChuHo)).BeginInit();
@@ -52,28 +52,11 @@
             // pnlTren
             // 
             this.pnlTren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.pnlTren.Controls.Add(this.sideBarWhite1);
-            this.pnlTren.Controls.Add(this.titleBarWhite1);
             this.pnlTren.Controls.Add(this.lblTieuDe);
-            this.pnlTren.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTren.Location = new System.Drawing.Point(0, 0);
+            this.pnlTren.Location = new System.Drawing.Point(5, 32);
             this.pnlTren.Name = "pnlTren";
-            this.pnlTren.Size = new System.Drawing.Size(838, 81);
+            this.pnlTren.Size = new System.Drawing.Size(828, 72);
             this.pnlTren.TabIndex = 0;
-            // 
-            // sideBarWhite1
-            // 
-            this.sideBarWhite1.Location = new System.Drawing.Point(0, 0);
-            this.sideBarWhite1.Name = "sideBarWhite1";
-            this.sideBarWhite1.Size = new System.Drawing.Size(80, 52);
-            this.sideBarWhite1.TabIndex = 5;
-            // 
-            // titleBarWhite1
-            // 
-            this.titleBarWhite1.Location = new System.Drawing.Point(790, 0);
-            this.titleBarWhite1.Name = "titleBarWhite1";
-            this.titleBarWhite1.Size = new System.Drawing.Size(48, 60);
-            this.titleBarWhite1.TabIndex = 4;
             // 
             // lblTieuDe
             // 
@@ -100,9 +83,9 @@
             this.pnlHienThongTin.Controls.Add(this.lblMaHoKhau);
             this.pnlHienThongTin.Controls.Add(this.lblCCCDChuHo);
             this.pnlHienThongTin.Controls.Add(this.lblTenChuHo);
-            this.pnlHienThongTin.Location = new System.Drawing.Point(12, 86);
+            this.pnlHienThongTin.Location = new System.Drawing.Point(5, 105);
             this.pnlHienThongTin.Name = "pnlHienThongTin";
-            this.pnlHienThongTin.Size = new System.Drawing.Size(826, 780);
+            this.pnlHienThongTin.Size = new System.Drawing.Size(828, 398);
             this.pnlHienThongTin.TabIndex = 1;
             // 
             // btnCapNhatThongTinHoKhau
@@ -151,6 +134,7 @@
             this.txtDiaChi.ReadOnly = true;
             this.txtDiaChi.Size = new System.Drawing.Size(519, 27);
             this.txtDiaChi.TabIndex = 9;
+            this.txtDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCCCDChuHo
             // 
@@ -231,18 +215,34 @@
             this.lblTenChuHo.TabIndex = 2;
             this.lblTenChuHo.Text = "Tên chủ hộ";
             // 
+            // sideBarWhite1
+            // 
+            this.sideBarWhite1.Location = new System.Drawing.Point(5, 2);
+            this.sideBarWhite1.Name = "sideBarWhite1";
+            this.sideBarWhite1.Size = new System.Drawing.Size(75, 29);
+            this.sideBarWhite1.TabIndex = 2;
+            // 
+            // titleBarWhite1
+            // 
+            this.titleBarWhite1.Location = new System.Drawing.Point(783, 2);
+            this.titleBarWhite1.Name = "titleBarWhite1";
+            this.titleBarWhite1.Size = new System.Drawing.Size(60, 27);
+            this.titleBarWhite1.TabIndex = 3;
+            // 
             // FThongTinHoKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(838, 507);
+            this.Controls.Add(this.titleBarWhite1);
+            this.Controls.Add(this.sideBarWhite1);
             this.Controls.Add(this.pnlHienThongTin);
             this.Controls.Add(this.pnlTren);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FThongTinHoKhau";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoKhau";
             this.Load += new System.EventHandler(this.FThongTinHoKhau_Load);
             this.pnlTren.ResumeLayout(false);

@@ -35,6 +35,7 @@ namespace QuanLiCongDanThanhPho
             if (txtCccdCha.Text != "" && txtCccdCha.Text != "u")
             {
                 FThongTinCongDan tTCD = new FThongTinCongDan(txtCccdCha.Text);
+                StackForm.Add(tTCD);
                 tTCD.ShowDialog();
             }
         }
@@ -44,6 +45,7 @@ namespace QuanLiCongDanThanhPho
             if (txtCccdMe.Text != "" && txtCccdMe.Text != "u")
             {
                 FThongTinCongDan tTCD = new FThongTinCongDan(txtCccdMe.Text);
+                StackForm.Add(tTCD);
                 tTCD.ShowDialog();
             }
         }
@@ -70,6 +72,11 @@ namespace QuanLiCongDanThanhPho
                 txtQuocTichCha.Text = ksCha.QuocTich;
                 txtQuocTichMe.Text = ksMe.QuocTich;
             }
+        }
+
+        private void lblTittle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
