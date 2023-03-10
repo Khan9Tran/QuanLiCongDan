@@ -20,7 +20,7 @@ namespace QuanLiCongDanThanhPho
         }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaTen(txtTimKiem.Text);
+            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaTu(txtTimKiem.Text);
         }
 
         private void FDanhSachCongDan_Load(object sender, EventArgs e)

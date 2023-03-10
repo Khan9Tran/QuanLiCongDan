@@ -77,9 +77,9 @@ namespace QuanLiCongDanThanhPho
             string strSql = string.Format("SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN, KHAISINH WHERE CONGDAN.CCCD = KHAISINH.MaKS ORDER BY NgaySinh DESC");
             return conn.LayDanhSach(strSql);
         }
-        public DataTable LayDanhSachChuaTen(string ten)
+        public DataTable LayDanhSachChuaTu(string tu)
         {
-            string strSql = string.Format($"SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN WHERE Ten like N'%{ten}%'");
+            string strSql = string.Format($"SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN WHERE Ten like N'%{tu}%' OR CCCD like '%{tu}%' OR SDT like '%{tu}%' OR NgheNghiep like N'%{tu}%' OR TonGiao like N'%{tu}%'");
             return conn.LayDanhSach(strSql);
         }
     }
