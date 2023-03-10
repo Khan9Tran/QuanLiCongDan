@@ -18,6 +18,7 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
             cCCDDAO = new CCCDDAO();
+            StackForm.Add(this);
         }
         
         private void FDangKyCCCD_Load(object sender, EventArgs e)

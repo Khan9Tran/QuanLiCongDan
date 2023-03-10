@@ -15,6 +15,7 @@ namespace QuanLiCongDanThanhPho
         public FDangKyThue()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void FDangKyThue_Load(object sender, EventArgs e)

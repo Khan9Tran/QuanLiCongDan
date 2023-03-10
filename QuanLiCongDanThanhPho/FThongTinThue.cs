@@ -28,6 +28,7 @@ namespace QuanLiCongDanThanhPho
         public FThongTinThue()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
         public FThongTinThue(string maCCCD)
         {

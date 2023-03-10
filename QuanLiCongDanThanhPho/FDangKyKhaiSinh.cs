@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FDangKyKhaiSinh()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
         KhaiSinhDAO kSDAO = new KhaiSinhDAO();
 

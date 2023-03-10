@@ -22,6 +22,7 @@ namespace QuanLiCongDanThanhPho
         public FDangKyCongDan()
         {
             InitializeComponent();
+            StackForm.Add(this);
             cdDAO = new CongDanDAO();
             kSDAO = new KhaiSinhDAO();
             thueDAO = new ThueDAO();

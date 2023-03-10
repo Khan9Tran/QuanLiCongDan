@@ -18,6 +18,7 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
             hNDAO = new HonNhanDAO();
+            StackForm.Add(this);
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)

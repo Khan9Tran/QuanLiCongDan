@@ -17,6 +17,7 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
             tTTVDAO = new TamTruTamVangDAO();
+            StackForm.Add(this);
         }
         private void btnDangKy_Click(object sender, EventArgs e)
         {

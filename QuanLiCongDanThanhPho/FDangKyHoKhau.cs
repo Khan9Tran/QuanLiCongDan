@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FDangKyHoKhau()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void OpenChildForm(Form childForm)
