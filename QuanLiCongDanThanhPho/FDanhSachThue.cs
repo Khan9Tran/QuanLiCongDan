@@ -75,7 +75,7 @@ namespace QuanLiCongDanThanhPho
 
         private void btnTienChuaNop_Click(object sender, EventArgs e)
         {
-            gvThue.DataSource = thueDAO.LayDanhSachSoTienChuaNop();
+            //gvThue.DataSource = thueDAO.LayDanhSachSoTienChuaNop();
         }
     }
 }
