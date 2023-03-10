@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FDanhSach()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void cmbLuaChon_SelectedIndexChanged(object sender, EventArgs e)

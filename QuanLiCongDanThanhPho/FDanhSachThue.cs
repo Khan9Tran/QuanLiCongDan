@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FDanhSachThue()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void gvThue_CellContentClick(object sender, DataGridViewCellEventArgs e)

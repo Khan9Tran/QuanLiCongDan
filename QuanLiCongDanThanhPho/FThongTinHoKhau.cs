@@ -16,6 +16,9 @@ namespace QuanLiCongDanThanhPho
         private string maHoKhau;
         HoKhauDAO hkDAO = new HoKhauDAO();
         CongDanDAO cdDAO = new CongDanDAO();
+        const int WM_NCHITTEST = 0x84;
+        const int HTCLIENT = 0x1;
+        const int HTCAPTION = 0x2;
         public string MaHoKhau
         {
             get { return maHoKhau; }
@@ -29,6 +32,7 @@ namespace QuanLiCongDanThanhPho
         {
             MaHoKhau = maHoKhau;
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void FThongTinHoKhau_Load(object sender, EventArgs e)
@@ -52,6 +56,13 @@ namespace QuanLiCongDanThanhPho
                 }
                 gvQuanHeVoiChuHo.DataSource = dsNguoiKoPhaiChuHo;
             }
+        }
+        protected override void WndProc(ref Message message)
+        {
+            base.WndProc(ref message);
+
+            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
+                message.Result = (IntPtr)HTCAPTION;
         }
     }
 }

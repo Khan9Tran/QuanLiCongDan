@@ -22,6 +22,7 @@ namespace QuanLiCongDanThanhPho
             InitializeComponent();
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(pnlHienThiForm);
+            StackForm.fTrangChu = this;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)

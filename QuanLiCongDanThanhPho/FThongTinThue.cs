@@ -17,6 +17,9 @@ namespace QuanLiCongDanThanhPho
         ThueDAO thueDAO = new ThueDAO();
         CongDanDAO cdDAO = new CongDanDAO();
         HoKhauDAO hkDAO = new HoKhauDAO();
+        const int WM_NCHITTEST = 0x84;
+        const int HTCLIENT = 0x1;
+        const int HTCAPTION = 0x2;
         public string MaCCCD
         {
             set { maCCCD = value; }
@@ -30,6 +33,7 @@ namespace QuanLiCongDanThanhPho
         {
             MaCCCD = maCCCD;
             InitializeComponent();
+            StackForm.Add(this);
         }
         private void FThongTinThue_Load(object sender, EventArgs e)
         {
@@ -48,6 +52,13 @@ namespace QuanLiCongDanThanhPho
                 dtpNgayCapMaSoThue.Value = thue.NgayCapMa;
                 dtpHanNopThue.Value = thue.HanNop;
             }
+        }
+        protected override void WndProc(ref Message message)
+        {
+            base.WndProc(ref message);
+
+            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
+                message.Result = (IntPtr)HTCAPTION;
         }
     }
 }

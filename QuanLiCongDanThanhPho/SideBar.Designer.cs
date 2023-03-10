@@ -58,6 +58,7 @@
             this.btnBack.Size = new System.Drawing.Size(32, 32);
             this.btnBack.TabIndex = 1;
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnHome
             // 
@@ -72,7 +73,7 @@
             this.btnHome.Size = new System.Drawing.Size(32, 32);
             this.btnHome.TabIndex = 0;
             this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click_1);
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // SideBar
             // 

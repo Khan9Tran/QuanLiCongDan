@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FDanhSachTamTruTamVang()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void gvTamTru_CellContentClick(object sender, DataGridViewCellEventArgs e)

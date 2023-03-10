@@ -15,7 +15,9 @@ namespace QuanLiCongDanThanhPho
     {
         private string maCCCD;
         HonNhanDAO hnDAO = new HonNhanDAO();
-
+        const int WM_NCHITTEST = 0x84;
+        const int HTCLIENT = 0x1;
+        const int HTCAPTION = 0x2;
         public string MaCCCD
         {
             set { maCCCD = value; }
@@ -29,6 +31,7 @@ namespace QuanLiCongDanThanhPho
         {
             MaCCCD = maCCCD;
             InitializeComponent();
+            StackForm.Add(this);
         }
         private void btnThongTinChong_Click(object sender, EventArgs e)
         {
@@ -60,6 +63,13 @@ namespace QuanLiCongDanThanhPho
                 txtNoiDangKy.Text = hn.NoiDangKy.toString();
                 dtpNgayDangKy.Value = hn.NgayDangKy;
             }
+        }
+        protected override void WndProc(ref Message message)
+        {
+            base.WndProc(ref message);
+
+            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
+                message.Result = (IntPtr)HTCAPTION;
         }
     }
 }

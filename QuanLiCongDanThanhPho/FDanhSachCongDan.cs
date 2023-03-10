@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FDanhSachCongDan()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {

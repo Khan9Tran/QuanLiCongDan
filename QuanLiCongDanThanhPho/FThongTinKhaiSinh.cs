@@ -15,6 +15,9 @@ namespace QuanLiCongDanThanhPho
     {
         private string maCCCD;
         KhaiSinhDAO ksDAO = new KhaiSinhDAO();
+        const int WM_NCHITTEST = 0x84;
+        const int HTCLIENT = 0x1;
+        const int HTCAPTION = 0x2;
 
         public string MaCCCD
         {
@@ -29,13 +32,13 @@ namespace QuanLiCongDanThanhPho
         {
             MaCCCD = maCCCD;
             InitializeComponent();
+            StackForm.Add(this);
         }
         private void btnThongTinCha_Click(object sender, EventArgs e)
         {
             if (txtCccdCha.Text != "" && txtCccdCha.Text != "u")
             {
                 FThongTinCongDan tTCD = new FThongTinCongDan(txtCccdCha.Text);
-                StackForm.Add(tTCD);
                 tTCD.ShowDialog();
             }
         }
@@ -45,7 +48,6 @@ namespace QuanLiCongDanThanhPho
             if (txtCccdMe.Text != "" && txtCccdMe.Text != "u")
             {
                 FThongTinCongDan tTCD = new FThongTinCongDan(txtCccdMe.Text);
-                StackForm.Add(tTCD);
                 tTCD.ShowDialog();
             }
         }
@@ -73,7 +75,13 @@ namespace QuanLiCongDanThanhPho
                 txtQuocTichMe.Text = ksMe.QuocTich;
             }
         }
+        protected override void WndProc(ref Message message)
+        {
+            base.WndProc(ref message);
 
+            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
+                message.Result = (IntPtr)HTCAPTION;
+        }
         private void lblTittle_Click(object sender, EventArgs e)
         {
 

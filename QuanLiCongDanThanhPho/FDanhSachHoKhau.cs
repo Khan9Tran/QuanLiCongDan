@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FDanhSachHoKhau()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void gvHoKhau_CellContentClick(object sender, DataGridViewCellEventArgs e)

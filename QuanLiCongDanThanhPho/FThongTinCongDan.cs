@@ -47,12 +47,12 @@ namespace QuanLiCongDanThanhPho
         {
             MaCCCD = maCCCD;
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void btnKhaiSinh_Click(object sender, EventArgs e)
         {
             FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh(MaCCCD);
-            StackForm.Add(tTKS);
             tTKS.ShowDialog();
         }
 
@@ -111,21 +111,18 @@ namespace QuanLiCongDanThanhPho
         {
             CongDan cd = cdDAO.LayThongTin(maCCCD);
             FThongTinHoKhau tTHK = new FThongTinHoKhau(cd.MaHoKhau);
-            StackForm.Add(tTHK);
             tTHK.ShowDialog();
         }
 
         private void btnThue_Click(object sender, EventArgs e)
         {
             FThongTinThue tTThue = new FThongTinThue(MaCCCD);
-            StackForm.Add(tTThue);
             tTThue.ShowDialog();
         }
 
         private void btnHonNhan_Click(object sender, EventArgs e)
         {
             FThongTinHonNhan tTHN = new FThongTinHonNhan(MaCCCD);
-            StackForm.Add(tTHN);
             tTHN.ShowDialog();
         }
 

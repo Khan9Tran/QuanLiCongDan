@@ -19,12 +19,12 @@ namespace QuanLiCongDanThanhPho
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.FindForm().Close();
+            this.ParentForm.Close();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
-            ParentForm.WindowState = FormWindowState.Minimized;
+            this.FindForm().WindowState = FormWindowState.Minimized;
         }
     }
 }
