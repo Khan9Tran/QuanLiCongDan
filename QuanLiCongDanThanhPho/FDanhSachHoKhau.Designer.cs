@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.gvHoKhau = new System.Windows.Forms.DataGridView();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnSoTV = new System.Windows.Forms.Button();
             this.btnNgayDangKy = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoKhau)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
             this.SuspendLayout();
@@ -53,22 +54,12 @@
             this.gvHoKhau.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellClick);
             this.gvHoKhau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellContentClick);
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimKiem.Location = new System.Drawing.Point(20, 58);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(600, 50);
-            this.txtTimKiem.TabIndex = 1;
-            // 
             // flpnlPhanLoai
             // 
             this.flpnlPhanLoai.Controls.Add(this.btnTatCa);
             this.flpnlPhanLoai.Controls.Add(this.btnSoTV);
             this.flpnlPhanLoai.Controls.Add(this.btnNgayDangKy);
-            this.flpnlPhanLoai.Location = new System.Drawing.Point(20, 138);
+            this.flpnlPhanLoai.Location = new System.Drawing.Point(20, 164);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
             this.flpnlPhanLoai.Size = new System.Drawing.Size(699, 47);
             this.flpnlPhanLoai.TabIndex = 9;
@@ -115,14 +106,39 @@
             this.btnNgayDangKy.Text = "Ngày đăng ký";
             this.btnNgayDangKy.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(20, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(600, 31);
+            this.textBox1.TabIndex = 10;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
+            this.btnTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTimKiem.Location = new System.Drawing.Point(626, 3);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(50, 50);
+            this.btnTimKiem.TabIndex = 55;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
             // FDanhSachHoKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.flpnlPhanLoai);
-            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.gvHoKhau);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -140,10 +156,11 @@
         #endregion
 
         private DataGridView gvHoKhau;
-        private TextBox txtTimKiem;
         private FlowLayoutPanel flpnlPhanLoai;
         private Button btnTatCa;
         private Button btnSoTV;
         private Button btnNgayDangKy;
+        private TextBox textBox1;
+        private Button btnTimKiem;
     }
 }

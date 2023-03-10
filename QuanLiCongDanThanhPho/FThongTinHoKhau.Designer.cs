@@ -85,7 +85,7 @@
             this.pnlHienThongTin.Controls.Add(this.lblTenChuHo);
             this.pnlHienThongTin.Location = new System.Drawing.Point(5, 105);
             this.pnlHienThongTin.Name = "pnlHienThongTin";
-            this.pnlHienThongTin.Size = new System.Drawing.Size(828, 398);
+            this.pnlHienThongTin.Size = new System.Drawing.Size(828, 517);
             this.pnlHienThongTin.TabIndex = 1;
             // 
             // btnCapNhatThongTinHoKhau
@@ -95,7 +95,7 @@
             this.btnCapNhatThongTinHoKhau.FlatAppearance.BorderSize = 0;
             this.btnCapNhatThongTinHoKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhatThongTinHoKhau.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
-            this.btnCapNhatThongTinHoKhau.Location = new System.Drawing.Point(728, 342);
+            this.btnCapNhatThongTinHoKhau.Location = new System.Drawing.Point(728, 461);
             this.btnCapNhatThongTinHoKhau.Name = "btnCapNhatThongTinHoKhau";
             this.btnCapNhatThongTinHoKhau.Size = new System.Drawing.Size(50, 50);
             this.btnCapNhatThongTinHoKhau.TabIndex = 98;
@@ -113,15 +113,16 @@
             // 
             // gvQuanHeVoiChuHo
             // 
-            this.gvQuanHeVoiChuHo.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.gvQuanHeVoiChuHo.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvQuanHeVoiChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvQuanHeVoiChuHo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvQuanHeVoiChuHo.Location = new System.Drawing.Point(259, 220);
+            this.gvQuanHeVoiChuHo.Location = new System.Drawing.Point(94, 258);
             this.gvQuanHeVoiChuHo.Name = "gvQuanHeVoiChuHo";
             this.gvQuanHeVoiChuHo.RowHeadersWidth = 51;
             this.gvQuanHeVoiChuHo.RowTemplate.Height = 29;
-            this.gvQuanHeVoiChuHo.Size = new System.Drawing.Size(519, 121);
+            this.gvQuanHeVoiChuHo.Size = new System.Drawing.Size(684, 201);
             this.gvQuanHeVoiChuHo.TabIndex = 10;
+            this.gvQuanHeVoiChuHo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvQuanHeVoiChuHo_CellContentClick);
             // 
             // txtDiaChi
             // 
@@ -235,7 +236,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(838, 507);
+            this.ClientSize = new System.Drawing.Size(838, 628);
             this.Controls.Add(this.titleBarWhite1);
             this.Controls.Add(this.sideBarWhite1);
             this.Controls.Add(this.pnlHienThongTin);

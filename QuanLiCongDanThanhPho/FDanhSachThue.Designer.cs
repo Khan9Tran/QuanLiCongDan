@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.gvThue = new System.Windows.Forms.DataGridView();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.flpnPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnThoiHan = new System.Windows.Forms.Button();
             this.btnTienDaNop = new System.Windows.Forms.Button();
             this.btnTienChuaNop = new System.Windows.Forms.Button();
-            this.btnTimThue = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvThue)).BeginInit();
             this.flpnPhanLoai.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +46,7 @@
             this.gvThue.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvThue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvThue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvThue.Location = new System.Drawing.Point(39, 205);
+            this.gvThue.Location = new System.Drawing.Point(25, 201);
             this.gvThue.Name = "gvThue";
             this.gvThue.RowHeadersWidth = 51;
             this.gvThue.RowTemplate.Height = 29;
@@ -55,23 +55,13 @@
             this.gvThue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThue_CellClick);
             this.gvThue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThue_CellContentClick);
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimKiem.Location = new System.Drawing.Point(39, 53);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(600, 35);
-            this.txtTimKiem.TabIndex = 1;
-            // 
             // flpnPhanLoai
             // 
             this.flpnPhanLoai.Controls.Add(this.btnTatCa);
             this.flpnPhanLoai.Controls.Add(this.btnThoiHan);
             this.flpnPhanLoai.Controls.Add(this.btnTienDaNop);
             this.flpnPhanLoai.Controls.Add(this.btnTienChuaNop);
-            this.flpnPhanLoai.Location = new System.Drawing.Point(39, 124);
+            this.flpnPhanLoai.Location = new System.Drawing.Point(25, 148);
             this.flpnPhanLoai.Name = "flpnPhanLoai";
             this.flpnPhanLoai.Size = new System.Drawing.Size(699, 47);
             this.flpnPhanLoai.TabIndex = 9;
@@ -132,19 +122,29 @@
             this.btnTienChuaNop.Text = "Tiền chưa nộp";
             this.btnTienChuaNop.UseVisualStyleBackColor = false;
             // 
-            // btnTimThue
+            // btnTimKiem
             // 
-            this.btnTimThue.BackColor = System.Drawing.Color.Transparent;
-            this.btnTimThue.FlatAppearance.BorderSize = 0;
-            this.btnTimThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTimThue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnTimThue.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnTimThue.Location = new System.Drawing.Point(645, 42);
-            this.btnTimThue.Name = "btnTimThue";
-            this.btnTimThue.Size = new System.Drawing.Size(50, 50);
-            this.btnTimThue.TabIndex = 54;
-            this.btnTimThue.UseVisualStyleBackColor = false;
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
+            this.btnTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTimKiem.Location = new System.Drawing.Point(631, 3);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(50, 50);
+            this.btnTimKiem.TabIndex = 54;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTimKiem.Location = new System.Drawing.Point(25, 12);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(600, 31);
+            this.txtTimKiem.TabIndex = 55;
             // 
             // FDanhSachThue
             // 
@@ -152,9 +152,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
-            this.Controls.Add(this.btnTimThue);
-            this.Controls.Add(this.flpnPhanLoai);
             this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.flpnPhanLoai);
             this.Controls.Add(this.gvThue);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -172,12 +172,12 @@
         #endregion
 
         private DataGridView gvThue;
-        private TextBox txtTimKiem;
         private FlowLayoutPanel flpnPhanLoai;
         private Button btnTatCa;
         private Button btnThoiHan;
         private Button btnTienDaNop;
         private Button btnTienChuaNop;
-        private Button btnTimThue;
+        private Button btnTimKiem;
+        private TextBox txtTimKiem;
     }
 }

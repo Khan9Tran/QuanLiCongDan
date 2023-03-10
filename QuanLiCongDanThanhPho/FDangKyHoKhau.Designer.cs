@@ -77,9 +77,9 @@
             this.pnlBarDuoi.Controls.Add(this.btnThem);
             this.pnlBarDuoi.Controls.Add(this.btnTachGop);
             this.pnlBarDuoi.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBarDuoi.Location = new System.Drawing.Point(0, 646);
+            this.pnlBarDuoi.Location = new System.Drawing.Point(0, 653);
             this.pnlBarDuoi.Name = "pnlBarDuoi";
-            this.pnlBarDuoi.Size = new System.Drawing.Size(1532, 106);
+            this.pnlBarDuoi.Size = new System.Drawing.Size(1532, 99);
             this.pnlBarDuoi.TabIndex = 13;
             // 
             // FDangKyHoKhau

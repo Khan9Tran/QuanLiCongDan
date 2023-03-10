@@ -38,6 +38,7 @@
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDocThan = new System.Windows.Forms.Button();
             this.btnKetHon = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
             this.SuspendLayout();
@@ -69,10 +70,10 @@
             // 
             this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimKiem.Location = new System.Drawing.Point(30, 61);
-            this.txtTimKiem.Multiline = true;
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTimKiem.Location = new System.Drawing.Point(15, 12);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(600, 50);
+            this.txtTimKiem.Size = new System.Drawing.Size(600, 31);
             this.txtTimKiem.TabIndex = 1;
             // 
             // btnTatCa
@@ -139,7 +140,7 @@
             this.flpnlPhanLoai.Controls.Add(this.btnNu);
             this.flpnlPhanLoai.Controls.Add(this.btnDocThan);
             this.flpnlPhanLoai.Controls.Add(this.btnKetHon);
-            this.flpnlPhanLoai.Location = new System.Drawing.Point(30, 139);
+            this.flpnlPhanLoai.Location = new System.Drawing.Point(12, 155);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
             this.flpnlPhanLoai.Size = new System.Drawing.Size(799, 47);
             this.flpnlPhanLoai.TabIndex = 8;
@@ -172,6 +173,20 @@
             this.btnKetHon.Text = "Kết hôn";
             this.btnKetHon.UseVisualStyleBackColor = false;
             // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
+            this.btnTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTimKiem.Location = new System.Drawing.Point(621, 3);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(50, 50);
+            this.btnTimKiem.TabIndex = 55;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
             // FDanhSachCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
@@ -179,6 +194,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
+            this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.flpnlPhanLoai);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.gvDanhSachCongDan);
@@ -206,5 +222,6 @@
         private FlowLayoutPanel flpnlPhanLoai;
         private Button btnDocThan;
         private Button btnKetHon;
+        private Button btnTimKiem;
     }
 }
