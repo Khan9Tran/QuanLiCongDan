@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,23 +15,19 @@ namespace QuanLiCongDanThanhPho
         {
             forms.Add(form);
         }
-        static bool Remove() 
+        static public void RemoveForm()
         {
-            if (forms.Count == 0) 
-                return false;
-            else
-            {
-                forms[forms.Count - 1].Close();
-                forms.RemoveAt(forms.Count - 1);
-            }
-            return true;
+            forms[forms.Count - 1].Close();
+            forms.RemoveAt(forms.Count - 1);
         }
         static public void Back()
-        {    
-            if (Remove() && (forms.Count - 1 >= 0))
-            {   
-                forms[forms.Count - 1].BringToFront();
-            }    
+        {
+            if (forms.Count > 0)
+            {
+                RemoveForm();
+                if (forms.Count > 0)
+                    forms[forms.Count - 1].Show();
+            }
         }
         static public void ClearAll()
         {

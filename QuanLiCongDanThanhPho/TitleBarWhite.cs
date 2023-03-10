@@ -19,7 +19,7 @@ namespace QuanLiCongDanThanhPho
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.ParentForm.Close();
+            StackForm.RemoveForm();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

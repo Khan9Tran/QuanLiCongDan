@@ -442,7 +442,6 @@
             // btnThongTinMe
             // 
             this.btnThongTinMe.BackColor = System.Drawing.Color.Transparent;
-            this.btnThongTinMe.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnThongTinMe.FlatAppearance.BorderSize = 0;
             this.btnThongTinMe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongTinMe.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;
@@ -455,7 +454,6 @@
             // btnThongTinCha
             // 
             this.btnThongTinCha.BackColor = System.Drawing.Color.Transparent;
-            this.btnThongTinCha.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnThongTinCha.FlatAppearance.BorderSize = 0;
             this.btnThongTinCha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThongTinCha.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;

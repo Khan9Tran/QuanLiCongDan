@@ -36,11 +36,11 @@ namespace QuanLiCongDanThanhPho
             TatMenu(sender, e);
 
         }
-        private void OpenChildForm(Form childForm)
+        public  void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
-                //currentChildForm.Close();
+                currentChildForm.Close();
             }
             currentChildForm = childForm;
             childForm.TopLevel = false;

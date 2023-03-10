@@ -303,7 +303,6 @@
             // btnHonNhan
             // 
             this.btnHonNhan.BackColor = System.Drawing.Color.Transparent;
-            this.btnHonNhan.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnHonNhan.FlatAppearance.BorderSize = 0;
             this.btnHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;
@@ -317,7 +316,6 @@
             // btnThue
             // 
             this.btnThue.BackColor = System.Drawing.Color.Transparent;
-            this.btnThue.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnThue.FlatAppearance.BorderSize = 0;
             this.btnThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThue.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;
@@ -331,7 +329,6 @@
             // btnHoKhau
             // 
             this.btnHoKhau.BackColor = System.Drawing.Color.Transparent;
-            this.btnHoKhau.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnHoKhau.FlatAppearance.BorderSize = 0;
             this.btnHoKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoKhau.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;
