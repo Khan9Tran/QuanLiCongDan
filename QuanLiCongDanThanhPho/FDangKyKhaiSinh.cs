@@ -116,11 +116,28 @@ namespace QuanLiCongDanThanhPho
             };
             func(Controls);
         }
-
+        private bool KiemTraChaMe()
+        {
+            CongDanDAO cDDAOCha = new CongDanDAO();
+            CongDanDAO cDDAOMe = new CongDanDAO();
+            string tenCha = cDDAOCha.LayThongTin(txtCccdCha.Text).Ten;
+            string tenMe = cDDAOMe.LayThongTin(txtCccdMe.Text).Ten;
+            if ((tenCha != null) && (txtTenCha.Text != tenCha))
+            {
+                MessageBox.Show("Tên và căn cước công dân cha không khớp");
+                return false;
+            }
+            if ((tenMe != null ) && (txtTenMe.Text != tenMe))
+            {
+                MessageBox.Show("Tên và căn cước công dân mẹ không khớp");
+                return false;
+            }
+            return true;
+        }
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTin())
-            {
+            if (KiemTraThongTin() && KiemTraChaMe())
+            { 
                 CongDanDAO cDDAO = new CongDanDAO();
                 CongDan congDan = new CongDan(txtCccd.Text, txtTen.Text);
                 cDDAO.ThemCongDan(congDan);
