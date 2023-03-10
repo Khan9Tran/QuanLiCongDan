@@ -37,7 +37,7 @@ namespace QuanLiCongDanThanhPho.Models
             }
             this.noiDangKy = new DiaChi();
             if (noiDangKy == "")
-                this.noiDangKy.DinhDang("u,u,u,u,u");
+                this.noiDangKy.DinhDang("u,u,u,u");
             else 
                 this.noiDangKy.DinhDang(noiDangKy);
             this.ngayDangKy = ngayDangKy;

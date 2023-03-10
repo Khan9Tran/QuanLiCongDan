@@ -12,26 +12,27 @@ namespace QuanLiCongDanThanhPho
         DBConnection conn = new DBConnection();
         public void ThemHonNhan(HonNhan hN)
         {
-            Boolean checkChong = this.KiemTraHonNhan(hN.CCCDChong);
-            Boolean chekVo = this.KiemTraHonNhan(hN.CCCDVo);
+            CongDanDAO congDanDAO = new CongDanDAO();
+            string tenChong = congDanDAO.LayThongTin(hN.CCCDChong).Ten;
+            string tenVo = congDanDAO.LayThongTin(hN.CCCDVo).Ten;
 
-            if (checkChong == false && chekVo == false)
+            if (tenChong == null && tenVo == null)
             {
                 MessageBox.Show("Thông tin không tồn tại trong hệ thống");
             }
             else
             {
-                if (checkChong == false)
+                if (tenChong == null)
                 {
-                    CongDan voChong = new CongDan(hN.CCCDChong, hN.TenChong, "");
+                    CongDan voChong = new CongDan(hN.CCCDChong, hN.TenChong);
                     CongDanDAO cdDAO = new CongDanDAO();
                     cdDAO.ThemCongDan(voChong);
 
                     MessageBox.Show("Thông tin vợ/ chồng đã được tạo, nếu sống trong khu vực hãy bổ sung thông tin");
                 }
-                if  (chekVo == false)
+                if  (tenVo == null)
                 {
-                    CongDan voChong = new CongDan(hN.CCCDChong, hN.TenChong, "");
+                    CongDan voChong = new CongDan(hN.CCCDChong, hN.TenChong);
                     CongDanDAO cdDAO = new CongDanDAO();
                     cdDAO.ThemCongDan(voChong);
 
@@ -43,17 +44,17 @@ namespace QuanLiCongDanThanhPho
         }
         public Boolean KiemTraHonNhan(string maCCCD)
         {
-            string sqlStr = string.Format("SELECT COUNT(*) as COUNT FROM HONNHAN WHERE CCCDNam = {0} OR CCCDNu = {0}", maCCCD);
+            string sqlStr = string.Format("SELECT COUNT(*) as COUNT FROM HONNHAN WHERE CCCDNam = '{0}' OR CCCDNu = '{0}'", maCCCD);
             return conn.KiemTraCoKhong(sqlStr);
         }
         public HonNhan LayThongTin(string maCCCD)
         {
-            string sqlStr = string.Format("SELECT * FROM HONNHAN WHERE CCCDNam = {0} OR CCCDNu = {0}", maCCCD);
+            string sqlStr = string.Format("SELECT * FROM HONNHAN WHERE CCCDNam = '{0}' OR CCCDNu = '{0}'", maCCCD);
             return conn.LayThongTinHonNhan(sqlStr);
         }
         public HonNhan LayThongTinTheoMaSo(string maHonNhan)
         {
-            string sqlStr = string.Format("SELECT * FROM HONNHAN WHERE MaHonNhan = {0}", maHonNhan);
+            string sqlStr = string.Format("SELECT * FROM HONNHAN WHERE MaHonNhan = '{0}'", maHonNhan);
             return conn.LayThongTinHonNhan(sqlStr);
         }
     }

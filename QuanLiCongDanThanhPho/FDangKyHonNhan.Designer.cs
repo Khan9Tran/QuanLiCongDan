@@ -231,6 +231,7 @@
             this.btnReset.Size = new System.Drawing.Size(50, 50);
             this.btnReset.TabIndex = 59;
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnDangKy
             // 
@@ -243,6 +244,7 @@
             this.btnDangKy.Size = new System.Drawing.Size(50, 50);
             this.btnDangKy.TabIndex = 60;
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnDelete
             // 
@@ -255,6 +257,7 @@
             this.btnDelete.Size = new System.Drawing.Size(50, 50);
             this.btnDelete.TabIndex = 61;
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FDangKyHonNhan
             // 

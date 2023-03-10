@@ -201,6 +201,7 @@
             this.btnDangKy.Size = new System.Drawing.Size(50, 50);
             this.btnDangKy.TabIndex = 89;
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnReset
             // 
@@ -214,6 +215,7 @@
             this.btnReset.Size = new System.Drawing.Size(50, 50);
             this.btnReset.TabIndex = 92;
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // lblDiaChi
             // 

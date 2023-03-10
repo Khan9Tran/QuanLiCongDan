@@ -43,7 +43,7 @@ namespace QuanLiCongDanThanhPho
             sDT = "";
             tonGiao = "";
             maHoKhau = "00000A";
-            quanHeVoiChuHo = "Trẻ sơ sinh chưa nhập khẩu";
+            quanHeVoiChuHo = "Trẻ sơ sinh/ Vợ chồng chưa nhập khẩu";
         }
         public CongDan(string cCCD, string ten, string sDT)
         {
