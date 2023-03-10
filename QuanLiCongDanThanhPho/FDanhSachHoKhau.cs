@@ -40,5 +40,16 @@ namespace QuanLiCongDanThanhPho
                 }
             }
         }
+
+        private void btnTatCa_Click(object sender, EventArgs e)
+        {
+            gvHoKhau.DataSource = hkDao.LayDanhSach();
+            txtTimKiem.Clear();
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            gvHoKhau.DataSource = hkDao.LayDanhSachChuaTu(txtTimKiem.Text);
+        }
     }
 }

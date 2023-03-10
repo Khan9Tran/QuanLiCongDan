@@ -79,6 +79,7 @@
             this.btnTatCa.TabIndex = 4;
             this.btnTatCa.Text = "Tất cả";
             this.btnTatCa.UseVisualStyleBackColor = false;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
             // btnThoiHan
             // 
@@ -107,6 +108,7 @@
             this.btnTienDaNop.TabIndex = 6;
             this.btnTienDaNop.Text = "Tiền đã nộp";
             this.btnTienDaNop.UseVisualStyleBackColor = false;
+            this.btnTienDaNop.Click += new System.EventHandler(this.btnTienDaNop_Click);
             // 
             // btnTienChuaNop
             // 
@@ -121,6 +123,7 @@
             this.btnTienChuaNop.TabIndex = 7;
             this.btnTienChuaNop.Text = "Tiền chưa nộp";
             this.btnTienChuaNop.UseVisualStyleBackColor = false;
+            this.btnTienChuaNop.Click += new System.EventHandler(this.btnTienChuaNop_Click);
             // 
             // btnTimKiem
             // 
@@ -145,6 +148,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(600, 31);
             this.txtTimKiem.TabIndex = 55;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // FDanhSachThue
             // 

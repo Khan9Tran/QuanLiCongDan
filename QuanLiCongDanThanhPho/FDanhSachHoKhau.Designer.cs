@@ -33,7 +33,7 @@
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnSoTV = new System.Windows.Forms.Button();
             this.btnNgayDangKy = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoKhau)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
@@ -77,6 +77,7 @@
             this.btnTatCa.TabIndex = 4;
             this.btnTatCa.Text = "Tất cả";
             this.btnTatCa.UseVisualStyleBackColor = false;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
             // btnSoTV
             // 
@@ -106,15 +107,16 @@
             this.btnNgayDangKy.Text = "Ngày đăng ký";
             this.btnNgayDangKy.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtTimKiem
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(20, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(600, 31);
-            this.textBox1.TabIndex = 10;
+            this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTimKiem.Location = new System.Drawing.Point(20, 12);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(600, 31);
+            this.txtTimKiem.TabIndex = 10;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // btnTimKiem
             // 
@@ -137,7 +139,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
             this.Controls.Add(this.btnTimKiem);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.flpnlPhanLoai);
             this.Controls.Add(this.gvHoKhau);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -160,7 +162,7 @@
         private Button btnTatCa;
         private Button btnSoTV;
         private Button btnNgayDangKy;
-        private TextBox textBox1;
+        private TextBox txtTimKiem;
         private Button btnTimKiem;
     }
 }

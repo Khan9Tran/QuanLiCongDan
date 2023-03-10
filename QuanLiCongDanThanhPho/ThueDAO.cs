@@ -26,5 +26,22 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format("SELECT * FROM THUE WHERE CCCD = {0}", maCCCD);
             return conn.LayThongTinThue(sqlStr);
         }
+        public DataTable LayDanhSachChuaTu(string tu)
+        {
+            string strSql = string.Format($"SELECT MaThue as 'Mã thuế', CCCD FROM THUE WHERE MaThue like '%{tu}%' OR CCCD like '%{tu}%'");
+            return conn.LayDanhSach(strSql);
+        }
+        public DataTable LayDanhSachNgayCap()
+        {
+            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD FROM THUE ORDER BY NgayCap DESC");
+        }
+        public DataTable LayDanhSachSoTienDaNop()
+        {
+            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD FROM THUE ORDER BY SoTienDaNop ASC");
+        }
+        public DataTable LayDanhSachSoTienChuaNop()
+        {
+            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD FROM THUE ORDER BY CONVERT(INT(SoTienCanNop)) - CONVERT(INT(SoTienDaNop)) ASC");
+        }
     }
 }

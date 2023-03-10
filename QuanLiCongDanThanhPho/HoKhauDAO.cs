@@ -26,5 +26,10 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format("SELECT * FROM HOKHAU WHERE MaHK = '{0}'", maHoKhau);
             return conn.LayThongTinHoKhau(sqlStr);
         }
+        public DataTable LayDanhSachChuaTu(string tu)
+        {
+            string strSql = string.Format($"SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR MaHK like '%{tu}%'");
+            return conn.LayDanhSach(strSql);
+        }
     }
 }

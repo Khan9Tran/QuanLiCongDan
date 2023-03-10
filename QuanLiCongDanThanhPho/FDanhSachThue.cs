@@ -44,7 +44,8 @@ namespace QuanLiCongDanThanhPho
 
         private void btnTatCa_Click(object sender, EventArgs e)
         {
-
+            gvThue.DataSource = thueDAO.LayDanhSach();
+            txtTimKiem.Clear();
         }
 
         private void btnXepLoaiDaNop_Click(object sender, EventArgs e)
@@ -59,7 +60,22 @@ namespace QuanLiCongDanThanhPho
 
         private void btnXepLoaiThoiGian_Click(object sender, EventArgs e)
         {
+            gvThue.DataSource = thueDAO.LayDanhSachNgayCap();
+        }
 
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            gvThue.DataSource = thueDAO.LayDanhSachChuaTu(txtTimKiem.Text);
+        }
+
+        private void btnTienDaNop_Click(object sender, EventArgs e)
+        {
+            gvThue.DataSource = thueDAO.LayDanhSachSoTienDaNop();
+        }
+
+        private void btnTienChuaNop_Click(object sender, EventArgs e)
+        {
+            gvThue.DataSource = thueDAO.LayDanhSachSoTienChuaNop();
         }
     }
 }
