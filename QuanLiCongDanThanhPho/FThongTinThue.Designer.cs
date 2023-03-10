@@ -311,6 +311,7 @@
             this.Name = "FThongTinThue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FThongTinThue";
+            this.Load += new System.EventHandler(this.FThongTinThue_Load);
             this.pnlTittleBar.ResumeLayout(false);
             this.pnlTittleBar.PerformLayout();
             this.pnlThongTinThue.ResumeLayout(false);

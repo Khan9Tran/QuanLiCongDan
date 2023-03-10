@@ -502,6 +502,7 @@
             this.Name = "FThongTinKhaiSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FThongTinKhaiSinh";
+            this.Load += new System.EventHandler(this.FThongTinKhaiSinh_Load);
             this.pnlTren.ResumeLayout(false);
             this.pnlTren.PerformLayout();
             this.panel1.ResumeLayout(false);
