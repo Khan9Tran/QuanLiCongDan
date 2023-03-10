@@ -450,6 +450,7 @@
             this.btnThongTinMe.Size = new System.Drawing.Size(50, 50);
             this.btnThongTinMe.TabIndex = 94;
             this.btnThongTinMe.UseVisualStyleBackColor = false;
+            this.btnThongTinMe.Click += new System.EventHandler(this.btnThongTinMe_Click);
             // 
             // btnThongTinCha
             // 
@@ -462,6 +463,7 @@
             this.btnThongTinCha.Size = new System.Drawing.Size(50, 50);
             this.btnThongTinCha.TabIndex = 93;
             this.btnThongTinCha.UseVisualStyleBackColor = false;
+            this.btnThongTinCha.Click += new System.EventHandler(this.btnThongTinCha_Click);
             // 
             // panel1
             // 
