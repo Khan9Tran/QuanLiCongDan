@@ -289,7 +289,6 @@
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.Transparent;
-            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;

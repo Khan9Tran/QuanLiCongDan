@@ -70,7 +70,10 @@ namespace QuanLiCongDanThanhPho
                 //----------------//
                 KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
                 dtpNgaySinh.Value = ks.NgaySinh;
-                txtGioiTinh.Text = ks.GioiTinh;
+                if (ks.GioiTinh == "f")
+                    txtGioiTinh.Text = "Nữ";
+                else
+                    txtGioiTinh.Text = "Nam";
                 txtDanToc.Text = ks.DanToc;
                 txtQuocTich.Text = ks.QuocTich;
                 txtQueQuan.Text = ks.QueQuan.toString();
@@ -128,7 +131,11 @@ namespace QuanLiCongDanThanhPho
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            txtNgheNghiep.ReadOnly = false;
+            txtSDT.ReadOnly = false;
+            txtTonGiao.ReadOnly = false;
         }
+
+        
     }
 }
