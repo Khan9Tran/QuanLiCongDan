@@ -35,6 +35,7 @@
             // 
             // pnlHienThiDanhSach
             // 
+            this.pnlHienThiDanhSach.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlHienThiDanhSach.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlHienThiDanhSach.Location = new System.Drawing.Point(0, 103);
             this.pnlHienThiDanhSach.Name = "pnlHienThiDanhSach";
@@ -43,22 +44,25 @@
             // 
             // cmbLuaChon
             // 
+            this.cmbLuaChon.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbLuaChon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLuaChon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbLuaChon.FormattingEnabled = true;
             this.cmbLuaChon.Items.AddRange(new object[] {
             "Công dân",
             "Thuế",
             "Tạm Trú/Tạm Vắng",
             "Hộ khẩu"});
-            this.cmbLuaChon.Location = new System.Drawing.Point(256, 37);
+            this.cmbLuaChon.Location = new System.Drawing.Point(154, 32);
             this.cmbLuaChon.Name = "cmbLuaChon";
-            this.cmbLuaChon.Size = new System.Drawing.Size(226, 36);
+            this.cmbLuaChon.Size = new System.Drawing.Size(286, 36);
             this.cmbLuaChon.TabIndex = 1;
             this.cmbLuaChon.SelectedIndexChanged += new System.EventHandler(this.cmbLuaChon_SelectedIndexChanged);
             // 
             // lblDanhSach
             // 
             this.lblDanhSach.AutoSize = true;
-            this.lblDanhSach.Location = new System.Drawing.Point(62, 40);
+            this.lblDanhSach.Location = new System.Drawing.Point(30, 40);
             this.lblDanhSach.Name = "lblDanhSach";
             this.lblDanhSach.Size = new System.Drawing.Size(110, 28);
             this.lblDanhSach.TabIndex = 2;
@@ -68,6 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1532, 782);
             this.Controls.Add(this.lblDanhSach);
             this.Controls.Add(this.cmbLuaChon);

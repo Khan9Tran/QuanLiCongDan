@@ -64,5 +64,10 @@ namespace QuanLiCongDanThanhPho
             if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
                 message.Result = (IntPtr)HTCAPTION;
         }
+
+        private void gvQuanHeVoiChuHo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
