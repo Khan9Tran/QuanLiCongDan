@@ -20,7 +20,7 @@ namespace QuanLiCongDanThanhPho
         }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-
+            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaTen(txtTimKiem.Text);
         }
 
         private void FDanhSachCongDan_Load(object sender, EventArgs e)
@@ -39,6 +39,42 @@ namespace QuanLiCongDanThanhPho
                     ttCD.ShowDialog();
                 }
             }
+        }
+
+        private void btnNam_Click(object sender, EventArgs e)
+        {
+            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachCongDanNam();
+            txtTimKiem.Clear();
+        }
+
+        private void btnTatCa_Click(object sender, EventArgs e)
+        {
+            gvDanhSachCongDan.DataSource = cdDao.LayDanhSach();
+            txtTimKiem.Clear();
+        }
+
+        private void btnNu_Click(object sender, EventArgs e)
+        {
+            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachCongDanNu();
+            txtTimKiem.Clear();
+        }
+
+        private void btnDocThan_Click(object sender, EventArgs e)
+        {
+            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaKetHon();
+            txtTimKiem.Clear();
+        }
+
+        private void btnKetHon_Click(object sender, EventArgs e)
+        {
+            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachDaKetHon();
+            txtTimKiem.Clear();
+        }
+
+        private void btnTuoiTac_Click(object sender, EventArgs e)
+        {
+            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachTuoiXepTuBeDenLon();
+            txtTimKiem.Clear();
         }
     }
 }

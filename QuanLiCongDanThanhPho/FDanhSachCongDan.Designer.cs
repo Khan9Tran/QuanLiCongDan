@@ -75,6 +75,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(600, 31);
             this.txtTimKiem.TabIndex = 1;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // btnTatCa
             // 
@@ -89,6 +90,7 @@
             this.btnTatCa.TabIndex = 4;
             this.btnTatCa.Text = "Tất cả";
             this.btnTatCa.UseVisualStyleBackColor = false;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
             // btnTuoiTac
             // 
@@ -103,6 +105,7 @@
             this.btnTuoiTac.TabIndex = 5;
             this.btnTuoiTac.Text = "Tuổi tác";
             this.btnTuoiTac.UseVisualStyleBackColor = false;
+            this.btnTuoiTac.Click += new System.EventHandler(this.btnTuoiTac_Click);
             // 
             // btnNam
             // 
@@ -117,6 +120,7 @@
             this.btnNam.TabIndex = 6;
             this.btnNam.Text = "Nam";
             this.btnNam.UseVisualStyleBackColor = false;
+            this.btnNam.Click += new System.EventHandler(this.btnNam_Click);
             // 
             // btnNu
             // 
@@ -131,6 +135,7 @@
             this.btnNu.TabIndex = 7;
             this.btnNu.Text = "Nữ";
             this.btnNu.UseVisualStyleBackColor = false;
+            this.btnNu.Click += new System.EventHandler(this.btnNu_Click);
             // 
             // flpnlPhanLoai
             // 
@@ -158,6 +163,7 @@
             this.btnDocThan.TabIndex = 8;
             this.btnDocThan.Text = "Độc thân";
             this.btnDocThan.UseVisualStyleBackColor = false;
+            this.btnDocThan.Click += new System.EventHandler(this.btnDocThan_Click);
             // 
             // btnKetHon
             // 
@@ -172,6 +178,7 @@
             this.btnKetHon.TabIndex = 9;
             this.btnKetHon.Text = "Kết hôn";
             this.btnKetHon.UseVisualStyleBackColor = false;
+            this.btnKetHon.Click += new System.EventHandler(this.btnKetHon_Click);
             // 
             // btnTimKiem
             // 
