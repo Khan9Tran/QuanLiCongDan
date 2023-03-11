@@ -93,11 +93,13 @@ namespace QuanLiCongDanThanhPho
                 txtDiaChi.Text = hk.DiaChi.toString();
                 //---------------------//
                 TamTruTamVang tttv = new TamTruTamVang();
-                tttv = tttvDAO.LayThongTin(MaCCCD);
                 if (!tttvDAO.KiemTraTamTruTamVang(MaCCCD))
                     txtGhiChu.Text = "Không có ghi chú";
                 else
+                {
+                    tttv = tttvDAO.LayThongTin(MaCCCD);
                     txtGhiChu.Text = tttv.TrangThai;
+                }
             }
         }
 
