@@ -219,10 +219,12 @@
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
-            this.btnReset.Location = new System.Drawing.Point(59, 3);
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(159, 3);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(50, 50);
+            this.btnReset.Size = new System.Drawing.Size(150, 50);
             this.btnReset.TabIndex = 59;
+            this.btnReset.Text = "Tải lại";
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -232,10 +234,12 @@
             this.btnDangKy.FlatAppearance.BorderSize = 0;
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
-            this.btnDangKy.Location = new System.Drawing.Point(115, 3);
+            this.btnDangKy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangKy.Location = new System.Drawing.Point(315, 3);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(50, 50);
+            this.btnDangKy.Size = new System.Drawing.Size(170, 50);
             this.btnDangKy.TabIndex = 60;
+            this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
@@ -245,10 +249,12 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = global::QuanLiCongDanThanhPho.Properties.Resources.delete__1_;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete.Location = new System.Drawing.Point(3, 3);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(50, 50);
+            this.btnDelete.Size = new System.Drawing.Size(150, 50);
             this.btnDelete.TabIndex = 61;
+            this.btnDelete.Text = "Li hôn";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -257,9 +263,9 @@
             this.fpnlChucNang.Controls.Add(this.btnDelete);
             this.fpnlChucNang.Controls.Add(this.btnReset);
             this.fpnlChucNang.Controls.Add(this.btnDangKy);
-            this.fpnlChucNang.Location = new System.Drawing.Point(1270, 688);
+            this.fpnlChucNang.Location = new System.Drawing.Point(941, 688);
             this.fpnlChucNang.Name = "fpnlChucNang";
-            this.fpnlChucNang.Size = new System.Drawing.Size(250, 62);
+            this.fpnlChucNang.Size = new System.Drawing.Size(579, 62);
             this.fpnlChucNang.TabIndex = 62;
             // 
             // btnMaHonNhan
