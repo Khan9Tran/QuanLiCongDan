@@ -62,7 +62,12 @@ namespace QuanLiCongDanThanhPho
                 txtCccd.Text = ks.MaKhaiSinh;
                 txtNoiSinh.Text = ks.NoiSinh.toString();
                 dtpNgaySinh.Value = ks.NgaySinh;
-                txtGioiTinh.Text = ks.GioiTinh;
+                if (ks.GioiTinh == "f")
+                    txtGioiTinh.Text = "Nữ";
+                else if (ks.GioiTinh == "m")
+                    txtGioiTinh.Text = "Nam";
+                else
+                    txtGioiTinh.Text = "unknow";
                 txtDanToc.Text = ks.DanToc;
                 txtQuocTich.Text = ks.QuocTich;
                 txtQueQuan.Text = ks.QueQuan.toString();
