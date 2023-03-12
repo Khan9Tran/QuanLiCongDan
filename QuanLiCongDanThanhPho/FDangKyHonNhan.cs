@@ -62,16 +62,53 @@ namespace QuanLiCongDanThanhPho
         {
 
         }
+        private bool KiemTraThongTin()
+        {
+            if (!KiemTraDuLieuNhap.isMaSo(txtMaHonNhan.Text))
+            {
+                MessageBox.Show("Mã hôn nhân sai định dạng");
+                txtMaHonNhan.Focus();
+                return false;
+            }
+            if (!KiemTraDuLieuNhap.isCCCD(txtCCCDChong.Text))
+            {
+                MessageBox.Show("CCCD chồng sai định dạng");
+                txtCCCDChong.Focus();
+                return false;
+            }
+            if (!KiemTraDuLieuNhap.isCCCD(txtCCCDVo.Text))
+            {
+                MessageBox.Show("CCCD vợ sai định dạng");
+                txtCCCDVo.Focus();
+                return false;
+            }
+            if (!KiemTraDuLieuNhap.isTen(txtTenChong.Text))
+            {
+                MessageBox.Show("Tên chồng sai định dạng");
+                txtTenChong.Focus();
+                return false;
+            }
+            if (!KiemTraDuLieuNhap.isTen(txtTenVo.Text))
+            {
+                MessageBox.Show("Tên vợ sai định dạng");
+                txtTenVo.Focus();
+                return false;
+            }
+            return true;
 
+        }
         private void btnMaHonNhan_Click(object sender, EventArgs e)
         {
-            HonNhan hN = new HonNhan();
-            hN = hNDAO.LayThongTinTheoMaSo(txtMaHonNhan.Text);
-            txtCCCDChong.Text = hN.CCCDChong;
-            txtCCCDVo.Text = hN.CCCDVo;
-            txtTenChong.Text = hN.TenChong;
-            txtTenVo.Text = hN.TenVo;
-            txtNoiDK.Text = hN.NoiDangKy.toString();
+            if (KiemTraThongTin())
+            {
+                HonNhan hN = new HonNhan();
+                hN = hNDAO.LayThongTinTheoMaSo(txtMaHonNhan.Text);
+                txtCCCDChong.Text = hN.CCCDChong;
+                txtCCCDVo.Text = hN.CCCDVo;
+                txtTenChong.Text = hN.TenChong;
+                txtTenVo.Text = hN.TenVo;
+                txtNoiDK.Text = hN.NoiDangKy.toString();
+            }
         }
     }
 }

@@ -122,12 +122,12 @@ namespace QuanLiCongDanThanhPho
             CongDanDAO cDDAOMe = new CongDanDAO();
             string tenCha = cDDAOCha.LayThongTin(txtCccdCha.Text).Ten;
             string tenMe = cDDAOMe.LayThongTin(txtCccdMe.Text).Ten;
-            if ((tenCha != null) && (txtTenCha.Text != tenCha))
+            if ((tenCha != "unknow") && (txtTenCha.Text != tenCha))
             {
                 MessageBox.Show("Tên và căn cước công dân cha không khớp");
                 return false;
             }
-            if ((tenMe != null ) && (txtTenMe.Text != tenMe))
+            if ((tenMe != "unknow" ) && (txtTenMe.Text != tenMe))
             {
                 MessageBox.Show("Tên và căn cước công dân mẹ không khớp");
                 return false;
