@@ -263,9 +263,9 @@
             this.fpnlChucNang.Controls.Add(this.btnDelete);
             this.fpnlChucNang.Controls.Add(this.btnReset);
             this.fpnlChucNang.Controls.Add(this.btnDangKy);
-            this.fpnlChucNang.Location = new System.Drawing.Point(941, 688);
+            this.fpnlChucNang.Location = new System.Drawing.Point(1040, 708);
             this.fpnlChucNang.Name = "fpnlChucNang";
-            this.fpnlChucNang.Size = new System.Drawing.Size(579, 62);
+            this.fpnlChucNang.Size = new System.Drawing.Size(507, 62);
             this.fpnlChucNang.TabIndex = 62;
             // 
             // btnMaHonNhan

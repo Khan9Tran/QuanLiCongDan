@@ -49,6 +49,8 @@
             this.txtMaSo = new System.Windows.Forms.TextBox();
             this.lblSDT = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
+            this.fpnlChucNang = new System.Windows.Forms.FlowLayoutPanel();
+            this.fpnlChucNang.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTen
@@ -194,12 +196,14 @@
             this.btnDangKy.FlatAppearance.BorderSize = 0;
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDangKy.ForeColor = System.Drawing.Color.White;
+            this.btnDangKy.ForeColor = System.Drawing.Color.Black;
             this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
-            this.btnDangKy.Location = new System.Drawing.Point(1335, 61);
+            this.btnDangKy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangKy.Location = new System.Drawing.Point(159, 3);
             this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(50, 50);
+            this.btnDangKy.Size = new System.Drawing.Size(150, 50);
             this.btnDangKy.TabIndex = 89;
+            this.btnDangKy.Text = "      Xác nhận";
             this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
@@ -210,10 +214,12 @@
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
-            this.btnReset.Location = new System.Drawing.Point(1335, 134);
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(3, 3);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(50, 50);
+            this.btnReset.Size = new System.Drawing.Size(150, 50);
             this.btnReset.TabIndex = 92;
+            this.btnReset.Text = "Tải lại";
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -280,20 +286,28 @@
             this.txtSDT.Size = new System.Drawing.Size(411, 27);
             this.txtSDT.TabIndex = 97;
             // 
+            // fpnlChucNang
+            // 
+            this.fpnlChucNang.Controls.Add(this.btnReset);
+            this.fpnlChucNang.Controls.Add(this.btnDangKy);
+            this.fpnlChucNang.Location = new System.Drawing.Point(1155, 700);
+            this.fpnlChucNang.Name = "fpnlChucNang";
+            this.fpnlChucNang.Size = new System.Drawing.Size(349, 59);
+            this.fpnlChucNang.TabIndex = 98;
+            // 
             // FDangKyTamTruTamVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.fpnlChucNang);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.lblSDT);
             this.Controls.Add(this.txtMaSo);
             this.Controls.Add(this.lblMaSo);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.lblDiaChi);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.txtLiDo);
             this.Controls.Add(this.dtpNgayKetThuc);
             this.Controls.Add(this.dtpNgayBatDau);
@@ -313,6 +327,7 @@
             this.Name = "FDangKyTamTruTamVang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDangKyTamTruTamVang";
+            this.fpnlChucNang.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,5 +356,6 @@
         private TextBox txtMaSo;
         private Label lblSDT;
         private TextBox txtSDT;
+        private FlowLayoutPanel fpnlChucNang;
     }
 }

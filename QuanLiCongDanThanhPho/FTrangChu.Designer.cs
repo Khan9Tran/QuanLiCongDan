@@ -177,7 +177,7 @@
             this.cmnusDangKy.Name = "cmnusDangKy";
             this.cmnusDangKy.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusDangKy.ShowImageMargin = false;
-            this.cmnusDangKy.Size = new System.Drawing.Size(245, 192);
+            this.cmnusDangKy.Size = new System.Drawing.Size(245, 164);
             // 
             // cmnusDangKyItemTamTruTamVang
             // 
@@ -285,7 +285,7 @@
             this.pnlMenu.Controls.Add(this.btnMenuShow);
             this.pnlMenu.Location = new System.Drawing.Point(0, 81);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(80, 775);
+            this.pnlMenu.Size = new System.Drawing.Size(80, 782);
             this.pnlMenu.TabIndex = 4;
             // 
             // pnlThongKe
@@ -348,7 +348,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1632, 840);
+            this.ClientSize = new System.Drawing.Size(1632, 870);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlTitleBar);
             this.Controls.Add(this.pnlHienThiForm);
