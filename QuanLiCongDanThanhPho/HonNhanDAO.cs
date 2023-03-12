@@ -52,7 +52,11 @@ namespace QuanLiCongDanThanhPho
             conn.ThucThi(sqlStr, "Thêm hôn nhân thành công");
         }
 
-
+        public void CapNhatHonNhan(HonNhan hN)
+        {
+            string sqlStr = string.Format($"UPDATE HONNHAN SET CCCDNam = '{hN.CCCDChong}', TenNam = N'{hN.TenChong}', CCCDNu = '{hN.CCCDVo}', TenNu = N'{hN.TenVo}', NoiDangKy = N'{hN.NoiDangKy.toString()}', NgayDangKy = '{hN.NgayDangKy}' WHERE MaHonNhan = '{hN.MaSo}'");
+            conn.ThucThi(sqlStr, "Cập nhật thành công");
+        }
         public Boolean KiemTraHonNhan(string maCCCD)
         {
             string sqlStr = string.Format("SELECT COUNT(*) as COUNT FROM HONNHAN WHERE CCCDNam = '{0}' OR CCCDNu = '{0}'", maCCCD);

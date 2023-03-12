@@ -50,8 +50,7 @@ namespace QuanLiCongDanThanhPho
                 tTCD.ShowDialog();
             }
         }
-
-        private void FThongTinHonNhan_Load(object sender, EventArgs e)
+        public void LayThongTinHonNhan()
         {
             if (maCCCD != null)
             {
@@ -63,6 +62,10 @@ namespace QuanLiCongDanThanhPho
                 txtNoiDangKy.Text = hn.NoiDangKy.toString();
                 dtmNgayDangKy.Value = hn.NgayDangKy;
             }
+        }    
+        private void FThongTinHonNhan_Load(object sender, EventArgs e)
+        {
+            LayThongTinHonNhan();
         }
         protected override void WndProc(ref Message message)
         {
@@ -71,7 +74,56 @@ namespace QuanLiCongDanThanhPho
             if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
                 message.Result = (IntPtr)HTCAPTION;
         }
+        private void ChoPhepThayDoi()
+        {
+            if (txtNoiDangKy.ReadOnly == false)
+            {
+                dtmNgayDangKy.Enabled = false;
+                txtNoiDangKy.ReadOnly = true;
+                btnXacNhan.Enabled = false;
+            }
+            else
+            {
+                dtmNgayDangKy.Enabled = true;
+                txtNoiDangKy.ReadOnly = false;
+                btnXacNhan.Enabled = true;
+            }
+        }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            ChoPhepThayDoi();
+        }
+        private bool KiemTraThongTin()
+        {
+            if (!KiemTraDuLieuNhap.isDiaChi(txtNoiDangKy.Text))
+            {
+                MessageBox.Show("Kiểm tra lại nơi đăng ký");
+                txtNoiDangKy.Focus();
+                return false;
+            }    
+            return true;
+        }    
+        private void CapNhat()
+        {   if (KiemTraThongTin())
+            {
+                HonNhan hN = hnDAO.LayThongTin(maCCCD);
+                hN.NoiDangKy.DinhDang(txtNoiDangKy.Text);
+                hN.NgayDangKy = dtmNgayDangKy.Value;
+                hnDAO.CapNhatHonNhan(hN);
+            }
+            ChoPhepThayDoi();
+        }
 
- 
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            CapNhat();
+            LayThongTinHonNhan();
+        }
+
+
+        private void btnReLoad_Click(object sender, EventArgs e)
+        {
+            LayThongTinHonNhan();
+        }
     }
 }

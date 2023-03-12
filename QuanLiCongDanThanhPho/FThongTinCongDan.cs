@@ -130,7 +130,6 @@ namespace QuanLiCongDanThanhPho
             FThongTinHonNhan tTHN = new FThongTinHonNhan(MaCCCD);
             tTHN.ShowDialog();
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             txtNgheNghiep.ReadOnly = false;
