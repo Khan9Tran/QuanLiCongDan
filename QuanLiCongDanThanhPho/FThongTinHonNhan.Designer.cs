@@ -39,9 +39,8 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.lblNgayDangKy = new System.Windows.Forms.Label();
             this.pnlVo = new System.Windows.Forms.Panel();
-            this.btnCapNhatThongTinHonNhan = new System.Windows.Forms.Button();
             this.btnThongTinVo = new System.Windows.Forms.Button();
-            this.dtpNgayDangKy = new System.Windows.Forms.DateTimePicker();
+            this.dtmNgayDangKy = new System.Windows.Forms.DateTimePicker();
             this.txtTenVo = new System.Windows.Forms.TextBox();
             this.txtCCCDVo = new System.Windows.Forms.TextBox();
             this.lblCCCDVo = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.titleBarWhite1 = new QuanLiCongDanThanhPho.TitleBarWhite();
             this.sideBarWhite1 = new QuanLiCongDanThanhPho.SideBarWhite();
+            this.btnSua = new System.Windows.Forms.Button();
             this.pnlChong.SuspendLayout();
             this.pnlVo.SuspendLayout();
             this.pnlTitle.SuspendLayout();
@@ -164,10 +164,10 @@
             // pnlVo
             // 
             this.pnlVo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlVo.Controls.Add(this.btnCapNhatThongTinHonNhan);
+            this.pnlVo.Controls.Add(this.btnSua);
             this.pnlVo.Controls.Add(this.btnThongTinVo);
             this.pnlVo.Controls.Add(this.btnXoa);
-            this.pnlVo.Controls.Add(this.dtpNgayDangKy);
+            this.pnlVo.Controls.Add(this.dtmNgayDangKy);
             this.pnlVo.Controls.Add(this.txtTenVo);
             this.pnlVo.Controls.Add(this.txtCCCDVo);
             this.pnlVo.Controls.Add(this.lblCCCDVo);
@@ -177,19 +177,6 @@
             this.pnlVo.Name = "pnlVo";
             this.pnlVo.Size = new System.Drawing.Size(595, 604);
             this.pnlVo.TabIndex = 3;
-            // 
-            // btnCapNhatThongTinHonNhan
-            // 
-            this.btnCapNhatThongTinHonNhan.BackColor = System.Drawing.Color.Transparent;
-            this.btnCapNhatThongTinHonNhan.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCapNhatThongTinHonNhan.FlatAppearance.BorderSize = 0;
-            this.btnCapNhatThongTinHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhatThongTinHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
-            this.btnCapNhatThongTinHonNhan.Location = new System.Drawing.Point(506, 528);
-            this.btnCapNhatThongTinHonNhan.Name = "btnCapNhatThongTinHonNhan";
-            this.btnCapNhatThongTinHonNhan.Size = new System.Drawing.Size(50, 50);
-            this.btnCapNhatThongTinHonNhan.TabIndex = 98;
-            this.btnCapNhatThongTinHonNhan.UseVisualStyleBackColor = false;
             // 
             // btnThongTinVo
             // 
@@ -204,17 +191,17 @@
             this.btnThongTinVo.UseVisualStyleBackColor = false;
             this.btnThongTinVo.Click += new System.EventHandler(this.btnThongTinVo_Click);
             // 
-            // dtpNgayDangKy
+            // dtmNgayDangKy
             // 
-            this.dtpNgayDangKy.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpNgayDangKy.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
-            this.dtpNgayDangKy.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayDangKy.Location = new System.Drawing.Point(241, 244);
-            this.dtpNgayDangKy.Name = "dtpNgayDangKy";
-            this.dtpNgayDangKy.Size = new System.Drawing.Size(315, 34);
-            this.dtpNgayDangKy.TabIndex = 6;
-            this.dtpNgayDangKy.Value = new System.DateTime(2023, 2, 28, 0, 0, 0, 0);
+            this.dtmNgayDangKy.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtmNgayDangKy.CalendarMonthBackground = System.Drawing.Color.Gainsboro;
+            this.dtmNgayDangKy.CustomFormat = "dd/MM/yyyy";
+            this.dtmNgayDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmNgayDangKy.Location = new System.Drawing.Point(241, 244);
+            this.dtmNgayDangKy.Name = "dtmNgayDangKy";
+            this.dtmNgayDangKy.Size = new System.Drawing.Size(315, 34);
+            this.dtmNgayDangKy.TabIndex = 6;
+            this.dtmNgayDangKy.Value = new System.DateTime(2023, 2, 28, 0, 0, 0, 0);
             // 
             // txtTenVo
             // 
@@ -291,6 +278,18 @@
             this.sideBarWhite1.Size = new System.Drawing.Size(75, 35);
             this.sideBarWhite1.TabIndex = 6;
             // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Transparent;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
+            this.btnSua.Location = new System.Drawing.Point(489, 515);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(50, 50);
+            this.btnSua.TabIndex = 100;
+            this.btnSua.UseVisualStyleBackColor = false;
+            // 
             // FThongTinHonNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
@@ -334,15 +333,15 @@
         private TextBox txtCCCDChong;
         private TextBox txtNoiDangKy;
         private TextBox txtTenChong;
-        private DateTimePicker dtpNgayDangKy;
+        private DateTimePicker dtmNgayDangKy;
         private TextBox txtTenVo;
         private TextBox txtCCCDVo;
         private Button btnXoa;
         private Panel pnlTitle;
         private Button btnThongTinChong;
         private Button btnThongTinVo;
-        private Button btnCapNhatThongTinHonNhan;
         private TitleBarWhite titleBarWhite1;
         private SideBarWhite sideBarWhite1;
+        private Button btnSua;
     }
 }

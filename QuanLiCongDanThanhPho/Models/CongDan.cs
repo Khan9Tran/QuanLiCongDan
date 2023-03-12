@@ -51,13 +51,13 @@ namespace QuanLiCongDanThanhPho
             sDT = "unknow";
             tonGiao = "unknow";
             maHoKhau = "00000A";
-            quanHeVoiChuHo = "chưa nhập hộ";
+            quanHeVoiChuHo = "Chưa nhập hộ";
         }
         public CongDan(string cCCD, string ten, string sDT)
         {
             this.cCCD = cCCD;
             this.ten = ten;
-            this.SDT = "unknow";
+            this.SDT = sDT;
             maHoKhau = "00000B";
             ngheNghiep = "unknow";
             tonGiao = "unknow";

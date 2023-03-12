@@ -58,12 +58,12 @@
             this.pnlTren = new System.Windows.Forms.Panel();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.lblQue = new System.Windows.Forms.Label();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnThongTinMe = new System.Windows.Forms.Button();
             this.btnThongTinCha = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.titleBarWhite1 = new QuanLiCongDanThanhPho.TitleBarWhite();
             this.sideBarWhite1 = new QuanLiCongDanThanhPho.SideBarWhite();
+            this.btnSua = new System.Windows.Forms.Button();
             this.pnlTren.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -368,9 +368,9 @@
             // pnlTren
             // 
             this.pnlTren.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlTren.Controls.Add(this.btnSua);
             this.pnlTren.Controls.Add(this.txtQueQuan);
             this.pnlTren.Controls.Add(this.lblQue);
-            this.pnlTren.Controls.Add(this.btnSua);
             this.pnlTren.Controls.Add(this.btnThongTinMe);
             this.pnlTren.Controls.Add(this.btnThongTinCha);
             this.pnlTren.Controls.Add(this.lblCccdMe);
@@ -426,19 +426,6 @@
             this.lblQue.TabIndex = 98;
             this.lblQue.Text = "Quê quán";
             // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.Transparent;
-            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
-            this.btnSua.Location = new System.Drawing.Point(1111, 553);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(50, 50);
-            this.btnSua.TabIndex = 97;
-            this.btnSua.UseVisualStyleBackColor = false;
-            // 
             // btnThongTinMe
             // 
             this.btnThongTinMe.BackColor = System.Drawing.Color.Transparent;
@@ -487,6 +474,18 @@
             this.sideBarWhite1.Name = "sideBarWhite1";
             this.sideBarWhite1.Size = new System.Drawing.Size(75, 29);
             this.sideBarWhite1.TabIndex = 3;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Transparent;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
+            this.btnSua.Location = new System.Drawing.Point(1111, 563);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(50, 50);
+            this.btnSua.TabIndex = 100;
+            this.btnSua.UseVisualStyleBackColor = false;
             // 
             // FThongTinKhaiSinh
             // 
@@ -545,11 +544,11 @@
         private Panel panel1;
         private Button btnThongTinCha;
         private Button btnThongTinMe;
-        private Button btnSua;
         private TextBox txtQueQuan;
         private Label lblQueQuan;
         private Label lblQue;
         private TitleBarWhite titleBarWhite1;
         private SideBarWhite sideBarWhite1;
+        private Button btnSua;
     }
 }

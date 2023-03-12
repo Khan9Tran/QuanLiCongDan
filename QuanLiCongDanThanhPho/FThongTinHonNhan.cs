@@ -61,7 +61,7 @@ namespace QuanLiCongDanThanhPho
                 txtCCCDChong.Text = hn.CCCDChong;
                 txtCCCDVo.Text = hn.CCCDVo;
                 txtNoiDangKy.Text = hn.NoiDangKy.toString();
-                dtpNgayDangKy.Value = hn.NgayDangKy;
+                dtmNgayDangKy.Value = hn.NgayDangKy;
             }
         }
         protected override void WndProc(ref Message message)
@@ -71,5 +71,7 @@ namespace QuanLiCongDanThanhPho
             if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
                 message.Result = (IntPtr)HTCAPTION;
         }
+
+ 
     }
 }
