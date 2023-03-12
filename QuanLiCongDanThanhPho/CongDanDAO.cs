@@ -53,29 +53,29 @@ namespace QuanLiCongDanThanhPho
             tmpCD = LayThongTin("SELECT Ten FROM CONGDAN WHERE CCCD = '{maCCCD}'");
             return tmpCD.Ten;
         } */
-        public DataTable LayDanhSachCongDanNam()
+        public DataTable LayDanhSachCongDanNam(string tu)
         {
-            string strSql = string.Format("SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN, KHAISINH WHERE CONGDAN.CCCD = KHAISINH.MaKS AND KHAISINH.GioiTinh like 'm'");
+            string strSql = string.Format($"SELECT distinct CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN INNER JOIN KHAISINH ON CONGDAN.CCCD = KHAISINH.MaKS AND KHAISINH.GioiTinh like 'm' WHERE CONGDAN.Ten like N'%{tu}%' OR CCCD like '%{tu}%' OR SDT like '%{tu}%' OR NgheNghiep like N'%{tu}%' OR TonGiao like N'%{tu}%'");
             return conn.LayDanhSach(strSql);
         }
-        public DataTable LayDanhSachCongDanNu()
+        public DataTable LayDanhSachCongDanNu(string tu)
         {
-            string strSql = string.Format("SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN, KHAISINH WHERE CONGDAN.CCCD = KHAISINH.MaKS AND KHAISINH.GioiTinh like 'f'");
+            string strSql = string.Format($"SELECT distinct CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN INNER JOIN KHAISINH ON CONGDAN.CCCD = KHAISINH.MaKS AND KHAISINH.GioiTinh like 'f' WHERE CONGDAN.Ten like N'%{tu}%' OR CCCD like '%{tu}%' OR SDT like '%{tu}%' OR NgheNghiep like N'%{tu}%' OR TonGiao like N'%{tu}%'");
             return conn.LayDanhSach(strSql);
         }
-        public DataTable LayDanhSachDaKetHon()
+        public DataTable LayDanhSachDaKetHon(string tu)
         { 
-            string strSql = string.Format("SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN, HONNHAN WHERE CONGDAN.CCCD = HONNHAN.CCCDNam OR CONGDAN.CCCD = HONNHAN.CCCDNu");
+            string strSql = string.Format($"SELECT distinct CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN INNER JOIN HONNHAN ON CONGDAN.CCCD = HONNHAN.CCCDNam OR CONGDAN.CCCD = HONNHAN.CCCDNu WHERE CONGDAN.Ten like N'%{tu}%' OR CCCD like '%{tu}%' OR SDT like '%{tu}%' OR NgheNghiep like N'%{tu}%' OR TonGiao like N'%{tu}%'");
             return conn.LayDanhSach(strSql);
         }
-        public DataTable LayDanhSachChuaKetHon()
+        public DataTable LayDanhSachChuaKetHon(string tu)
         {
-            string strSql = string.Format("SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN EXCEPT SELECT CONGDAN.CCCD, CONGDAN.Ten, CONGDAN.SDT, CONGDAN.NgheNghiep, CONGDAN.TonGiao FROM CONGDAN, HONNHAN WHERE CONGDAN.CCCD = HONNHAN.CCCDNam OR CONGDAN.CCCD = HONNHAN.CCCDNu");
+            string strSql = string.Format($"SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM (SELECT CD.CCCD, CD.Ten, CD.SDT, CD.NgheNghiep, CD.TonGiao FROM CONGDAN AS CD EXCEPT SELECT CONGDAN.CCCD, CONGDAN.Ten, CONGDAN.SDT, CONGDAN.NgheNghiep, CONGDAN.TonGiao FROM CONGDAN, HONNHAN WHERE CONGDAN.CCCD = HONNHAN.CCCDNam OR CONGDAN.CCCD = HONNHAN.CCCDNu) as CONGDAN WHERE  CONGDAN.Ten like N'%{tu}%' OR CCCD like '%{tu}%' OR SDT like '%{tu}%' OR NgheNghiep like N'%{tu}%' OR TonGiao like N'%{tu}%'");
             return conn.LayDanhSach(strSql);
         }
-        public DataTable LayDanhSachTuoiXepTuBeDenLon()
+        public DataTable LayDanhSachTuoiXepTuBeDenLon(string tu)
         {
-            string strSql = string.Format("SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN, KHAISINH WHERE CONGDAN.CCCD = KHAISINH.MaKS ORDER BY NgaySinh DESC");
+            string strSql = string.Format($"SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN INNER JOIN KHAISINH ON CONGDAN.CCCD = KHAISINH.MaKS WHERE CONGDAN.Ten like N'%{tu}%' OR CCCD like '%{tu}%' OR SDT like '%{tu}%' OR NgheNghiep like N'%{tu}%' OR TonGiao like N'%{tu}%' ORDER BY NgaySinh DESC");
             return conn.LayDanhSach(strSql);
         }
         public DataTable LayDanhSachChuaTu(string tu)

@@ -13,10 +13,12 @@ namespace QuanLiCongDanThanhPho
     public partial class FDanhSachThue : Form
     {
         ThueDAO thueDAO = new ThueDAO();
+        private string luaChon;
         public FDanhSachThue()
         {
             InitializeComponent();
             StackForm.Add(this);
+            luaChon = "tat ca";
         }
 
         private void gvThue_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,8 +46,8 @@ namespace QuanLiCongDanThanhPho
 
         private void btnTatCa_Click(object sender, EventArgs e)
         {
-            gvThue.DataSource = thueDAO.LayDanhSach();
-            txtTimKiem.Clear();
+            luaChon = "tat ca";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void btnXepLoaiDaNop_Click(object sender, EventArgs e)
@@ -58,24 +60,35 @@ namespace QuanLiCongDanThanhPho
 
         }
 
-        private void btnXepLoaiThoiGian_Click(object sender, EventArgs e)
+        private void btnHanNop_Click(object sender, EventArgs e)
         {
-            gvThue.DataSource = thueDAO.LayDanhSachNgayCap();
+            luaChon = "han nop";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            gvThue.DataSource = thueDAO.LayDanhSachChuaTu(txtTimKiem.Text);
+            if (luaChon == "tat ca")
+                gvThue.DataSource = thueDAO.LayDanhSachChuaTu(txtTimKiem.Text);
+            else if (luaChon == "han nop")
+                gvThue.DataSource = thueDAO.LayDanhSachHanNop(txtTimKiem.Text);
+            else if (luaChon == "da nop")
+                gvThue.DataSource = thueDAO.LayDanhSachSoTienDaNop(txtTimKiem.Text);
+            else if (luaChon == "can nop")
+                gvThue.DataSource = thueDAO.LayDanhSachSoTienChuaNop(txtTimKiem.Text);
+
         }
 
         private void btnTienDaNop_Click(object sender, EventArgs e)
         {
-            gvThue.DataSource = thueDAO.LayDanhSachSoTienDaNop();
+            luaChon = "da nop";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void btnTienChuaNop_Click(object sender, EventArgs e)
         {
-            //gvThue.DataSource = thueDAO.LayDanhSachSoTienChuaNop();
+            luaChon = "can nop";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
     }
 }

@@ -28,60 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gvTamTru = new System.Windows.Forms.DataGridView();
-            this.gvTamVang = new System.Windows.Forms.DataGridView();
-            this.lblTamTru = new System.Windows.Forms.Label();
-            this.lblTamVang = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTamTru)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTamVang)).BeginInit();
+            this.gvTVTT = new System.Windows.Forms.DataGridView();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnTatCa = new System.Windows.Forms.Button();
+            this.btnTV = new System.Windows.Forms.Button();
+            this.btnTT = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).BeginInit();
+            this.flpnlPhanLoai.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gvTamTru
+            // gvTVTT
             // 
-            this.gvTamTru.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvTamTru.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gvTamTru.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gvTamTru.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvTamTru.Location = new System.Drawing.Point(25, 47);
-            this.gvTamTru.Name = "gvTamTru";
-            this.gvTamTru.RowHeadersWidth = 51;
-            this.gvTamTru.RowTemplate.Height = 29;
-            this.gvTamTru.Size = new System.Drawing.Size(1400, 249);
-            this.gvTamTru.TabIndex = 0;
-            this.gvTamTru.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTamTru_CellContentClick);
+            this.gvTVTT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvTVTT.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gvTVTT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gvTVTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvTVTT.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.gvTVTT.Location = new System.Drawing.Point(25, 231);
+            this.gvTVTT.Name = "gvTVTT";
+            this.gvTVTT.RowHeadersWidth = 51;
+            this.gvTVTT.RowTemplate.Height = 29;
+            this.gvTVTT.Size = new System.Drawing.Size(1400, 419);
+            this.gvTVTT.TabIndex = 1;
             // 
-            // gvTamVang
+            // btnTimKiem
             // 
-            this.gvTamVang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvTamVang.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gvTamVang.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gvTamVang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvTamVang.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.gvTamVang.Location = new System.Drawing.Point(25, 406);
-            this.gvTamVang.Name = "gvTamVang";
-            this.gvTamVang.RowHeadersWidth = 51;
-            this.gvTamVang.RowTemplate.Height = 29;
-            this.gvTamVang.Size = new System.Drawing.Size(1400, 244);
-            this.gvTamVang.TabIndex = 1;
-            this.gvTamVang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTamVang_CellContentClick);
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
+            this.btnTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTimKiem.Location = new System.Drawing.Point(631, 13);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(50, 50);
+            this.btnTimKiem.TabIndex = 57;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // lblTamTru
+            // txtTimKiem
             // 
-            this.lblTamTru.AutoSize = true;
-            this.lblTamTru.Location = new System.Drawing.Point(25, 16);
-            this.lblTamTru.Name = "lblTamTru";
-            this.lblTamTru.Size = new System.Drawing.Size(87, 28);
-            this.lblTamTru.TabIndex = 2;
-            this.lblTamTru.Text = "Tạm trú";
+            this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTimKiem.Location = new System.Drawing.Point(25, 22);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(600, 31);
+            this.txtTimKiem.TabIndex = 56;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
-            // lblTamVang
+            // flpnlPhanLoai
             // 
-            this.lblTamVang.AutoSize = true;
-            this.lblTamVang.Location = new System.Drawing.Point(25, 369);
-            this.lblTamVang.Name = "lblTamVang";
-            this.lblTamVang.Size = new System.Drawing.Size(105, 28);
-            this.lblTamVang.TabIndex = 3;
-            this.lblTamVang.Text = "Tạm vắng";
+            this.flpnlPhanLoai.Controls.Add(this.btnTatCa);
+            this.flpnlPhanLoai.Controls.Add(this.btnTV);
+            this.flpnlPhanLoai.Controls.Add(this.btnTT);
+            this.flpnlPhanLoai.Location = new System.Drawing.Point(25, 178);
+            this.flpnlPhanLoai.Name = "flpnlPhanLoai";
+            this.flpnlPhanLoai.Size = new System.Drawing.Size(699, 47);
+            this.flpnlPhanLoai.TabIndex = 58;
+            // 
+            // btnTatCa
+            // 
+            this.btnTatCa.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnTatCa.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTatCa.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTatCa.ForeColor = System.Drawing.Color.Black;
+            this.btnTatCa.Location = new System.Drawing.Point(3, 3);
+            this.btnTatCa.Name = "btnTatCa";
+            this.btnTatCa.Size = new System.Drawing.Size(125, 40);
+            this.btnTatCa.TabIndex = 4;
+            this.btnTatCa.Text = "Tất cả";
+            this.btnTatCa.UseVisualStyleBackColor = false;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
+            // 
+            // btnTV
+            // 
+            this.btnTV.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnTV.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnTV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTV.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTV.ForeColor = System.Drawing.Color.Black;
+            this.btnTV.Location = new System.Drawing.Point(134, 3);
+            this.btnTV.Name = "btnTV";
+            this.btnTV.Size = new System.Drawing.Size(125, 40);
+            this.btnTV.TabIndex = 5;
+            this.btnTV.Text = "Tạm vắng";
+            this.btnTV.UseVisualStyleBackColor = false;
+            this.btnTV.Click += new System.EventHandler(this.btnTV_Click);
+            // 
+            // btnTT
+            // 
+            this.btnTT.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnTT.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnTT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTT.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTT.ForeColor = System.Drawing.Color.Black;
+            this.btnTT.Location = new System.Drawing.Point(265, 3);
+            this.btnTT.Name = "btnTT";
+            this.btnTT.Size = new System.Drawing.Size(144, 40);
+            this.btnTT.TabIndex = 6;
+            this.btnTT.Text = "Tạm trú";
+            this.btnTT.UseVisualStyleBackColor = false;
+            this.btnTT.Click += new System.EventHandler(this.btnTT_Click);
             // 
             // FDanhSachTamTruTamVang
             // 
@@ -89,10 +139,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
-            this.Controls.Add(this.lblTamVang);
-            this.Controls.Add(this.lblTamTru);
-            this.Controls.Add(this.gvTamVang);
-            this.Controls.Add(this.gvTamTru);
+            this.Controls.Add(this.flpnlPhanLoai);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.gvTVTT);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -100,18 +150,20 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDanhSachTamTruTamVang";
             this.Load += new System.EventHandler(this.FDanhSachTamTruTamVang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gvTamTru)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvTamVang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).EndInit();
+            this.flpnlPhanLoai.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DataGridView gvTamTru;
-        private DataGridView gvTamVang;
-        private Label lblTamTru;
-        private Label lblTamVang;
+        private DataGridView gvTVTT;
+        private Button btnTimKiem;
+        private TextBox txtTimKiem;
+        private FlowLayoutPanel flpnlPhanLoai;
+        private Button btnTatCa;
+        private Button btnTV;
+        private Button btnTT;
     }
 }
