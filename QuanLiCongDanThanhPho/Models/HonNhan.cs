@@ -16,7 +16,11 @@ namespace QuanLiCongDanThanhPho.Models
         private DiaChi noiDangKy;
         private DateTime ngayDangKy;
 
-        public HonNhan() { }
+        public HonNhan()
+        {
+            noiDangKy = new DiaChi();
+            ngayDangKy = DateTime.Now;
+        }
 
         public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, string noiDangKy, DateTime ngayDangKy, string gioiTinh)
         {
@@ -37,7 +41,7 @@ namespace QuanLiCongDanThanhPho.Models
             }
             this.noiDangKy = new DiaChi();
             if (noiDangKy == "")
-                this.noiDangKy.DinhDang("u,u,u,u");
+                this.noiDangKy.DinhDang("unknow,unknow,unknow,unknow");
             else 
                 this.noiDangKy.DinhDang(noiDangKy);
             this.ngayDangKy = ngayDangKy;

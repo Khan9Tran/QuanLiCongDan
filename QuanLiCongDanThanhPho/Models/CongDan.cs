@@ -17,7 +17,15 @@ namespace QuanLiCongDanThanhPho
         private string maHoKhau;
         private string quanHeVoiChuHo;
 
-        public CongDan() { }
+        public CongDan()
+        {
+            ten = "unknow";
+            ngheNghiep = "unknow";
+            SDT = "unknow";
+            tonGiao = "unknow";
+            maHoKhau = "unknow";
+            quanHeVoiChuHo = "unknow";
+        }
         public CongDan(string cCCD, string ten, string ngheNghiep, string sDT, string tonGiao, string maHoKhau, string quanHeVoiChuHo, string diaChi)
         {
             this.cCCD = cCCD;
@@ -39,22 +47,24 @@ namespace QuanLiCongDanThanhPho
         {
             this.cCCD = cCCD;
             this.ten = ten;
-            ngheNghiep = "";
-            sDT = "";
-            tonGiao = "";
+            ngheNghiep = "unknow";
+            sDT = "unknow";
+            tonGiao = "unknow";
             maHoKhau = "00000A";
-            quanHeVoiChuHo = "Trẻ sơ sinh/ Vợ chồng chưa nhập khẩu";
+            quanHeVoiChuHo = "chưa nhập hộ";
         }
         public CongDan(string cCCD, string ten, string sDT)
         {
             this.cCCD = cCCD;
             this.ten = ten;
-            this.SDT = sDT;
-            tonGiao = "";
+            this.SDT = "unknow";
             maHoKhau = "00000B";
+            ngheNghiep = "unknow";
+            tonGiao = "unknow";
             quanHeVoiChuHo = "Tạm trú tại địa phương";
 
         }   
+
         public string CCCD { get => cCCD; set => cCCD = value; }
         public string Ten { get => ten; set => ten = value; }
         public string NgheNghiep { get => ngheNghiep; set => ngheNghiep = value; }

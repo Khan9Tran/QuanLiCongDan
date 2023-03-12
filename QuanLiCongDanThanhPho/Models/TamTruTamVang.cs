@@ -15,7 +15,18 @@ namespace QuanLiCongDanThanhPho.Models
         private DateTime ngayKetThuc;
         private DiaChi diaChi;
         private string lyDo;
-        public TamTruTamVang() { }
+        public TamTruTamVang()
+        {
+            trangThai = "unknow";
+            ngayBatDau = DateTime.Now;
+            ngayKetThuc = DateTime.Now;
+            diaChi = new DiaChi();
+            lyDo = "unknow";
+        }
+        public bool KiemTraThongTin()
+        {
+            return true;
+        }
         public TamTruTamVang(string maSo, string cCCD, string trangThai, DateTime ngayBatDau, DateTime ngayKetThuc, string diaChi, string lyDo)
         {
             MaSo = maSo;

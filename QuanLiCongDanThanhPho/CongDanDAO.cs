@@ -15,7 +15,7 @@ namespace QuanLiCongDanThanhPho
         {
             string strSql = string.Format($"INSERT INTO CONGDAN(CCCD,Ten,NgheNghiep,SDT,TonGiao,MaHK,QuanHeVoiChuHo) VALUES ('{cD.CCCD}' , N'{cD.Ten}', N'{cD.NgheNghiep}', '{cD.SDT}', N'{cD.TonGiao}', '{cD.MaHoKhau}', N'{cD.QuanHeVoiChuHo}');");
             conn.ThucThi(strSql, "Công dân hợp lệ");
-            CCCD cCCD = new CCCD(cD.CCCD, DateTime.Now, "Không xác định");
+            CCCD cCCD = new CCCD(cD.CCCD);
             CCCDDAO cCCDDAO = new CCCDDAO();
             cCCDDAO.ThemCCCD(cCCD);
         }

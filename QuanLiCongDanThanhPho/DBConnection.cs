@@ -252,6 +252,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Lỗi" + ex);
                 return false;
             }
             finally

@@ -14,10 +14,10 @@ namespace QuanLiCongDanThanhPho.Models
         private string tinhThanhPho;
         public DiaChi()
         {
-            soNhaVaDuong = "";
-            xaPhuongTT = "";
-            quanHuyen = "";
-            tinhThanhPho = "";
+            soNhaVaDuong = "unknow";
+            xaPhuongTT = "unknow";
+            quanHuyen = "unknow";
+            tinhThanhPho = "unknow";
         }
 
         public DiaChi(string soNhaVaDuong, string xaPhuongTT, string quanHuyen, string tinhThanhPho)
