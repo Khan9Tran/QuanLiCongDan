@@ -36,7 +36,7 @@ namespace QuanLiCongDanThanhPho
         }
         private void btnThongTinCha_Click(object sender, EventArgs e)
         {
-            if (txtCccdCha.Text != "" && txtCccdCha.Text != "u")
+            if (txtCccdCha.Text != "" && txtCccdCha.Text != "unknow")
             {
                 FThongTinCongDan tTCD = new FThongTinCongDan(txtCccdCha.Text);
                 tTCD.ShowDialog();
@@ -45,14 +45,13 @@ namespace QuanLiCongDanThanhPho
 
         private void btnThongTinMe_Click(object sender, EventArgs e)
         {
-            if (txtCccdMe.Text != "" && txtCccdMe.Text != "u")
+            if (txtCccdMe.Text != "" && txtCccdMe.Text != "unknow")
             {
                 FThongTinCongDan tTCD = new FThongTinCongDan(txtCccdMe.Text);
                 tTCD.ShowDialog();
             }
         }
-
-        private void FThongTinKhaiSinh_Load(object sender, EventArgs e)
+        public void LayThongTinKhaiKhaiSinh()
         {
             if (maCCCD != null)
             {
@@ -74,6 +73,10 @@ namespace QuanLiCongDanThanhPho
                 txtQuocTichCha.Text = ksCha.QuocTich;
                 txtQuocTichMe.Text = ksMe.QuocTich;
             }
+        }
+        private void FThongTinKhaiSinh_Load(object sender, EventArgs e)
+        {
+            LayThongTinKhaiKhaiSinh();
         }
         protected override void WndProc(ref Message message)
         {

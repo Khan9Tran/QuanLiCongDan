@@ -31,7 +31,6 @@
             this.pnlTittleBar = new System.Windows.Forms.Panel();
             this.lblTittle = new System.Windows.Forms.Label();
             this.pnlThongTinThue = new System.Windows.Forms.Panel();
-            this.btnCapNhatThongTinThue = new System.Windows.Forms.Button();
             this.dtpHanNopThue = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayCapMaSoThue = new System.Windows.Forms.DateTimePicker();
             this.txtSoTienDaNop = new System.Windows.Forms.TextBox();
@@ -52,8 +51,13 @@
             this.lblMaSoThue = new System.Windows.Forms.Label();
             this.sideBarWhite1 = new QuanLiCongDanThanhPho.SideBarWhite();
             this.titleBarWhite1 = new QuanLiCongDanThanhPho.TitleBarWhite();
+            this.fpnlChucNang = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnXacNhan = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnReLoad = new System.Windows.Forms.Button();
             this.pnlTittleBar.SuspendLayout();
             this.pnlThongTinThue.SuspendLayout();
+            this.fpnlChucNang.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTittleBar
@@ -80,7 +84,7 @@
             // pnlThongTinThue
             // 
             this.pnlThongTinThue.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlThongTinThue.Controls.Add(this.btnCapNhatThongTinThue);
+            this.pnlThongTinThue.Controls.Add(this.fpnlChucNang);
             this.pnlThongTinThue.Controls.Add(this.dtpHanNopThue);
             this.pnlThongTinThue.Controls.Add(this.dtpNgayCapMaSoThue);
             this.pnlThongTinThue.Controls.Add(this.txtSoTienDaNop);
@@ -103,20 +107,6 @@
             this.pnlThongTinThue.Name = "pnlThongTinThue";
             this.pnlThongTinThue.Size = new System.Drawing.Size(920, 560);
             this.pnlThongTinThue.TabIndex = 2;
-            // 
-            // btnCapNhatThongTinThue
-            // 
-            this.btnCapNhatThongTinThue.BackColor = System.Drawing.Color.Transparent;
-            this.btnCapNhatThongTinThue.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCapNhatThongTinThue.FlatAppearance.BorderSize = 0;
-            this.btnCapNhatThongTinThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhatThongTinThue.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
-            this.btnCapNhatThongTinThue.Location = new System.Drawing.Point(823, 460);
-            this.btnCapNhatThongTinThue.Name = "btnCapNhatThongTinThue";
-            this.btnCapNhatThongTinThue.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCapNhatThongTinThue.Size = new System.Drawing.Size(50, 50);
-            this.btnCapNhatThongTinThue.TabIndex = 98;
-            this.btnCapNhatThongTinThue.UseVisualStyleBackColor = false;
             // 
             // dtpHanNopThue
             // 
@@ -295,6 +285,57 @@
             this.titleBarWhite1.Size = new System.Drawing.Size(60, 28);
             this.titleBarWhite1.TabIndex = 5;
             // 
+            // fpnlChucNang
+            // 
+            this.fpnlChucNang.Controls.Add(this.btnXacNhan);
+            this.fpnlChucNang.Controls.Add(this.btnSua);
+            this.fpnlChucNang.Controls.Add(this.btnReLoad);
+            this.fpnlChucNang.Location = new System.Drawing.Point(730, 501);
+            this.fpnlChucNang.Name = "fpnlChucNang";
+            this.fpnlChucNang.Size = new System.Drawing.Size(190, 59);
+            this.fpnlChucNang.TabIndex = 97;
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.BackColor = System.Drawing.Color.Transparent;
+            this.btnXacNhan.Enabled = false;
+            this.btnXacNhan.FlatAppearance.BorderSize = 0;
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnXacNhan.ForeColor = System.Drawing.Color.White;
+            this.btnXacNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnXacNhan.Location = new System.Drawing.Point(3, 3);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(50, 50);
+            this.btnXacNhan.TabIndex = 109;
+            this.btnXacNhan.UseVisualStyleBackColor = false;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Transparent;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
+            this.btnSua.Location = new System.Drawing.Point(59, 3);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(50, 50);
+            this.btnSua.TabIndex = 100;
+            this.btnSua.UseVisualStyleBackColor = false;
+            // 
+            // btnReLoad
+            // 
+            this.btnReLoad.BackColor = System.Drawing.Color.Transparent;
+            this.btnReLoad.FlatAppearance.BorderSize = 0;
+            this.btnReLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReLoad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReLoad.ForeColor = System.Drawing.Color.White;
+            this.btnReLoad.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
+            this.btnReLoad.Location = new System.Drawing.Point(115, 3);
+            this.btnReLoad.Name = "btnReLoad";
+            this.btnReLoad.Size = new System.Drawing.Size(50, 50);
+            this.btnReLoad.TabIndex = 110;
+            this.btnReLoad.UseVisualStyleBackColor = false;
+            // 
             // FThongTinThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
@@ -316,6 +357,7 @@
             this.pnlTittleBar.PerformLayout();
             this.pnlThongTinThue.ResumeLayout(false);
             this.pnlThongTinThue.PerformLayout();
+            this.fpnlChucNang.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -343,8 +385,11 @@
         private TextBox txtDiaChi;
         private TextBox txtCCCD;
         private TextBox txtTen;
-        private Button btnCapNhatThongTinThue;
         private SideBarWhite sideBarWhite1;
         private TitleBarWhite titleBarWhite1;
+        private FlowLayoutPanel fpnlChucNang;
+        private Button btnXacNhan;
+        private Button btnSua;
+        private Button btnReLoad;
     }
 }

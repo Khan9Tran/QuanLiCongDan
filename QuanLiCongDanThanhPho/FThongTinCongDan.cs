@@ -55,8 +55,7 @@ namespace QuanLiCongDanThanhPho
             FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh(MaCCCD);
             tTKS.ShowDialog();
         }
-
-        private void FThongTinCongDan_Load(object sender, EventArgs e)
+        public void LayThongTinCongDan()
         {
             if (maCCCD != null)
             {
@@ -101,6 +100,10 @@ namespace QuanLiCongDanThanhPho
                     txtGhiChu.Text = tttv.TrangThai;
                 }
             }
+        }
+        private void FThongTinCongDan_Load(object sender, EventArgs e)
+        {
+                LayThongTinCongDan();
         }
 
         private void FThongTinCongDan_MouseLeave(object sender, EventArgs e)

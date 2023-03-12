@@ -34,8 +34,7 @@ namespace QuanLiCongDanThanhPho
             InitializeComponent();
             StackForm.Add(this);
         }
-
-        private void FThongTinHoKhau_Load(object sender, EventArgs e)
+        public void LayThongTinHoKhau()
         {
             if (MaHoKhau != null)
             {
@@ -56,6 +55,10 @@ namespace QuanLiCongDanThanhPho
                 }
                 gvQuanHeVoiChuHo.DataSource = dsNguoiKoPhaiChuHo;
             }
+        }
+        private void FThongTinHoKhau_Load(object sender, EventArgs e)
+        {
+            LayThongTinHoKhau();
         }
         protected override void WndProc(ref Message message)
         {

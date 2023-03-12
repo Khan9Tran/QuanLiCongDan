@@ -187,7 +187,7 @@
             this.fpnlChucNang.Controls.Add(this.btnXacNhan);
             this.fpnlChucNang.Controls.Add(this.btnSua);
             this.fpnlChucNang.Controls.Add(this.btnReLoad);
-            this.fpnlChucNang.Location = new System.Drawing.Point(387, 518);
+            this.fpnlChucNang.Location = new System.Drawing.Point(405, 540);
             this.fpnlChucNang.Name = "fpnlChucNang";
             this.fpnlChucNang.Size = new System.Drawing.Size(190, 59);
             this.fpnlChucNang.TabIndex = 96;
