@@ -23,34 +23,60 @@ namespace QuanLiCongDanThanhPho
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtTenVo.Text, txtNoiDK.Text, dtmNgayDangKy.Value);
-            hNDAO.ThemHonNhan(hN);
+            if (KiemTraThongTin())
+            {
+                HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtTenVo.Text, txtNoiDK.Text, dtmNgayDangKy.Value);
+                hNDAO.ThemHonNhan(hN);
+            }
         }
-
+        public void ReadOnly()
+        {
+            txtCCCDChong.ReadOnly = true;
+            txtCCCDVo.ReadOnly = true;
+            txtTenChong.ReadOnly = true;
+            txtTenVo.ReadOnly = true;
+            txtNoiDK.ReadOnly = true;
+            dtmNgayDangKy.Enabled = false;
+            btnDelete.Enabled = true;
+            btnDangKy.Enabled = false;
+        }   
+        public void UnReadOnly()
+        {
+            txtCCCDChong.ReadOnly = false;
+            txtCCCDVo.ReadOnly = false;
+            txtTenChong.ReadOnly = false;
+            txtTenVo.ReadOnly = false;
+            txtNoiDK.ReadOnly = false;
+            dtmNgayDangKy.Enabled = true;
+            btnDelete.Enabled = false;
+            btnDangKy.Enabled = true;
+        }    
+        private void AutoReadOnly()
+        {
+            if (txtCCCDChong.ReadOnly == false)
+            {
+                ReadOnly();
+            }
+            else
+            {
+                UnReadOnly();
+            }
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtCCCDChong.Text, txtNoiDK.Text, dtmNgayDangKy.Value);
+            hNDAO.Xoa(hN);
+            Reset();
         }
-
+        private void Reset()
+        {
+            Clear();
+            txtMaHonNhan.Clear();
+            UnReadOnly();
+        }
         private void btnReset_Click(object sender, EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
-
-            func = (controls) =>
-            {
-                foreach (Control control in controls)
-                {
-                    if (control is TextBox)
-                    {
-                        (control as TextBox).Clear();
-                    }
-                    else
-                    {
-                        func(control.Controls);
-                    }
-                }
-            };
-            func(Controls);
+            Reset();
         }
 
         private void btnTimVo_Click(object sender, EventArgs e)
@@ -97,10 +123,20 @@ namespace QuanLiCongDanThanhPho
             return true;
 
         }
+        public void Clear()
+        {
+            txtCCCDChong.Clear();
+            txtCCCDVo.Clear();
+            txtTenChong.Clear();
+            txtTenVo.Clear();
+            txtNoiDK.Clear();
+            dtmNgayDangKy.Value = DateTime.Now;
+        }    
         private void btnMaHonNhan_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTin())
+            if (KiemTraDuLieuNhap.isMaSo(txtMaHonNhan.Text))
             {
+                Clear();
                 HonNhan hN = new HonNhan();
                 hN = hNDAO.LayThongTinTheoMaSo(txtMaHonNhan.Text);
                 txtCCCDChong.Text = hN.CCCDChong;
@@ -108,7 +144,15 @@ namespace QuanLiCongDanThanhPho
                 txtTenChong.Text = hN.TenChong;
                 txtTenVo.Text = hN.TenVo;
                 txtNoiDK.Text = hN.NoiDangKy.toString();
+                if (txtTenChong.Text.Length > 0  )
+                {
+                    AutoReadOnly();
+                }
             }
+            else
+            {
+                MessageBox.Show("Mã số sai định dạng");
+            }    
         }
     }
 }

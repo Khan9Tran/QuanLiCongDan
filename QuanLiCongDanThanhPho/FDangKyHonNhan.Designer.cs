@@ -42,11 +42,14 @@
             this.btnTimVo = new System.Windows.Forms.Button();
             this.lblNoiDangKy = new System.Windows.Forms.Label();
             this.txtNoiDK = new System.Windows.Forms.TextBox();
-            this.btnMaHonNhan = new System.Windows.Forms.Button();
             this.txtMaHonNhan = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.fpnlChucNang = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnMaHonNhan = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.fpnlChucNang.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTen
@@ -199,22 +202,12 @@
             this.txtNoiDK.Size = new System.Drawing.Size(511, 27);
             this.txtNoiDK.TabIndex = 56;
             // 
-            // btnMaHonNhan
-            // 
-            this.btnMaHonNhan.Location = new System.Drawing.Point(108, 93);
-            this.btnMaHonNhan.Name = "btnMaHonNhan";
-            this.btnMaHonNhan.Size = new System.Drawing.Size(163, 48);
-            this.btnMaHonNhan.TabIndex = 57;
-            this.btnMaHonNhan.Text = "Mã đăng ký";
-            this.btnMaHonNhan.UseVisualStyleBackColor = true;
-            this.btnMaHonNhan.Click += new System.EventHandler(this.btnMaHonNhan_Click);
-            // 
             // txtMaHonNhan
             // 
             this.txtMaHonNhan.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaHonNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaHonNhan.Location = new System.Drawing.Point(326, 114);
+            this.txtMaHonNhan.Location = new System.Drawing.Point(305, 116);
             this.txtMaHonNhan.Name = "txtMaHonNhan";
             this.txtMaHonNhan.Size = new System.Drawing.Size(244, 27);
             this.txtMaHonNhan.TabIndex = 58;
@@ -226,7 +219,7 @@
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
-            this.btnReset.Location = new System.Drawing.Point(1264, 31);
+            this.btnReset.Location = new System.Drawing.Point(59, 3);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 50);
             this.btnReset.TabIndex = 59;
@@ -239,7 +232,7 @@
             this.btnDangKy.FlatAppearance.BorderSize = 0;
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
-            this.btnDangKy.Location = new System.Drawing.Point(1339, 31);
+            this.btnDangKy.Location = new System.Drawing.Point(115, 3);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(50, 50);
             this.btnDangKy.TabIndex = 60;
@@ -252,12 +245,47 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = global::QuanLiCongDanThanhPho.Properties.Resources.delete__1_;
-            this.btnDelete.Location = new System.Drawing.Point(1186, 31);
+            this.btnDelete.Location = new System.Drawing.Point(3, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(50, 50);
             this.btnDelete.TabIndex = 61;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // fpnlChucNang
+            // 
+            this.fpnlChucNang.Controls.Add(this.btnDelete);
+            this.fpnlChucNang.Controls.Add(this.btnReset);
+            this.fpnlChucNang.Controls.Add(this.btnDangKy);
+            this.fpnlChucNang.Location = new System.Drawing.Point(1270, 688);
+            this.fpnlChucNang.Name = "fpnlChucNang";
+            this.fpnlChucNang.Size = new System.Drawing.Size(250, 62);
+            this.fpnlChucNang.TabIndex = 62;
+            // 
+            // btnMaHonNhan
+            // 
+            this.btnMaHonNhan.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaHonNhan.FlatAppearance.BorderSize = 0;
+            this.btnMaHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMaHonNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
+            this.btnMaHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnMaHonNhan.Location = new System.Drawing.Point(592, 105);
+            this.btnMaHonNhan.Name = "btnMaHonNhan";
+            this.btnMaHonNhan.Size = new System.Drawing.Size(50, 50);
+            this.btnMaHonNhan.TabIndex = 63;
+            this.btnMaHonNhan.UseVisualStyleBackColor = false;
+            this.btnMaHonNhan.Click += new System.EventHandler(this.btnMaHonNhan_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.label1.Location = new System.Drawing.Point(112, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 28);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "Mã hôn nhân";
             // 
             // FDangKyHonNhan
             // 
@@ -265,11 +293,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 782);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnDangKy);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.txtMaHonNhan);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMaHonNhan);
+            this.Controls.Add(this.fpnlChucNang);
+            this.Controls.Add(this.txtMaHonNhan);
             this.Controls.Add(this.txtNoiDK);
             this.Controls.Add(this.lblNoiDangKy);
             this.Controls.Add(this.btnTimVo);
@@ -290,6 +317,7 @@
             this.Name = "FDangKyHonNhan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDangKyKetHon";
+            this.fpnlChucNang.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,10 +339,12 @@
         private Button btnTimVo;
         private Label lblNoiDangKy;
         private TextBox txtNoiDK;
-        private Button btnMaHonNhan;
         private TextBox txtMaHonNhan;
         private Button btnReset;
         private Button btnDangKy;
         private Button btnDelete;
+        private FlowLayoutPanel fpnlChucNang;
+        private Button btnMaHonNhan;
+        private Label label1;
     }
 }

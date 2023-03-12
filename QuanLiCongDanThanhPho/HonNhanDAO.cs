@@ -62,6 +62,11 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format("SELECT COUNT(*) as COUNT FROM HONNHAN WHERE CCCDNam = '{0}' OR CCCDNu = '{0}'", maCCCD);
             return conn.KiemTraCoKhong(sqlStr);
         }
+        public void Xoa(HonNhan honNhan)
+        {
+            string sqlStr = string.Format("DELETE HONNHAN WHERE MaHonNhan = {0}", honNhan.MaSo);
+            conn.ThucThi(sqlStr, "Li hôn thành công");
+        }    
         public HonNhan LayThongTin(string maCCCD)
         {
             string sqlStr = string.Format("SELECT * FROM HONNHAN WHERE CCCDNam = '{0}' OR CCCDNu = '{0}'", maCCCD);
