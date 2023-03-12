@@ -94,6 +94,7 @@
             this.btnThoiHan.TabIndex = 5;
             this.btnThoiHan.Text = "Thời hạn";
             this.btnThoiHan.UseVisualStyleBackColor = false;
+            this.btnThoiHan.Click += new System.EventHandler(this.btnHanNop_Click);
             // 
             // btnTienDaNop
             // 

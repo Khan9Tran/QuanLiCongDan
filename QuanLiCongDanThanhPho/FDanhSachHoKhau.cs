@@ -13,10 +13,12 @@ namespace QuanLiCongDanThanhPho
     public partial class FDanhSachHoKhau : Form
     {
         HoKhauDAO hkDao = new HoKhauDAO();
+        private string luaChon;
         public FDanhSachHoKhau()
         {
             InitializeComponent();
             StackForm.Add(this);
+            luaChon = "tat ca";
         }
 
         private void gvHoKhau_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,13 +45,22 @@ namespace QuanLiCongDanThanhPho
 
         private void btnTatCa_Click(object sender, EventArgs e)
         {
-            gvHoKhau.DataSource = hkDao.LayDanhSach();
-            txtTimKiem.Clear();
+            luaChon = "tat ca";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            gvHoKhau.DataSource = hkDao.LayDanhSachChuaTu(txtTimKiem.Text);
+            if (luaChon == "tat ca")
+                gvHoKhau.DataSource = hkDao.LayDanhSachChuaTu(txtTimKiem.Text);
+            else if (luaChon == "sotv")
+                gvHoKhau.DataSource = hkDao.LayDanhSachXepTheoSoTV(txtTimKiem.Text);
+        }
+
+        private void btnSoTV_Click(object sender, EventArgs e)
+        {
+            luaChon = "sotv";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
     }
 }

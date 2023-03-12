@@ -13,24 +13,45 @@ namespace QuanLiCongDanThanhPho
     public partial class FDanhSachTamTruTamVang : Form
     {
         TamTruTamVangDAO tttvDao = new TamTruTamVangDAO();
+        private string luaChon;
         public FDanhSachTamTruTamVang()
         {
             InitializeComponent();
             StackForm.Add(this);
-        }
-
-        private void gvTamTru_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void gvTamVang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            luaChon = "tat ca";
         }
 
         private void FDanhSachTamTruTamVang_Load(object sender, EventArgs e)
         {
-            gvTamTru.DataSource = tttvDao.LayDanhSachTamTru();
-            gvTamVang.DataSource = tttvDao.LayDanhSachTamVang();
+            gvTVTT.DataSource = tttvDao.LayDanhSach();
+        }
+
+        private void btnTatCa_Click(object sender, EventArgs e)
+        {
+            luaChon = "tat ca";
+            txtTimKiem_TextChanged(txtTimKiem, null);
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            if (luaChon == "tat ca")
+                gvTVTT.DataSource = tttvDao.LayDanhSachChuaTu(txtTimKiem.Text);
+            else if (luaChon == "tam tru")
+                gvTVTT.DataSource = tttvDao.LayDanhSachTamTru(txtTimKiem.Text);
+            else if (luaChon == "tam vang")
+                gvTVTT.DataSource = tttvDao.LayDanhSachTamVang(txtTimKiem.Text);
+        }
+
+        private void btnTV_Click(object sender, EventArgs e)
+        {
+            luaChon = "tam vang";
+            txtTimKiem_TextChanged(txtTimKiem, null);
+        }
+
+        private void btnTT_Click(object sender, EventArgs e)
+        {
+            luaChon = "tam tru";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
     }
 }

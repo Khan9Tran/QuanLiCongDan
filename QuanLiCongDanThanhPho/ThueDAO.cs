@@ -14,7 +14,7 @@ namespace QuanLiCongDanThanhPho
         public ThueDAO() { }
         public DataTable LayDanhSach()
         {
-            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD FROM THUE");
+            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', HanNop as 'Hạn nộp' FROM THUE");
         }
         public void ThemThue(Thue thue)
         {
@@ -28,20 +28,20 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachChuaTu(string tu)
         {
-            string strSql = string.Format($"SELECT MaThue as 'Mã thuế', CCCD FROM THUE WHERE MaThue like '%{tu}%' OR CCCD like '%{tu}%'");
+            string strSql = string.Format($"SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', HanNop as 'Hạn nộp' FROM THUE WHERE MaThue like '%{tu}%' OR CCCD like '%{tu}%' OR SoTienCanNop like '%{tu}%' OR Convert(varchar,Format(HanNop, 'dd/MM/yyyy')) like '%{tu}%'");
             return conn.LayDanhSach(strSql);
         }
-        public DataTable LayDanhSachNgayCap()
+        public DataTable LayDanhSachHanNop(string tu)
         {
-            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD FROM THUE ORDER BY NgayCap DESC");
+            return conn.LayDanhSach($"SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', HanNop as 'Hạn nộp' FROM THUE WHERE MaThue like '%{tu}%' OR CCCD like '%{tu}%' OR SoTienCanNop like '%{tu}%' OR Convert(varchar,Format(HanNop, 'dd/MM/yyyy')) like '%{tu}%' ORDER BY HanNop DESC");
         }
-        public DataTable LayDanhSachSoTienDaNop()
+        public DataTable LayDanhSachSoTienDaNop(string tu)
         {
-            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD FROM THUE ORDER BY SoTienDaNop ASC");
+            return conn.LayDanhSach($"SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', HanNop as 'Hạn nộp' FROM THUE WHERE MaThue like '%{tu}%' OR CCCD like '%{tu}%' OR SoTienCanNop like '%{tu}%' OR Convert(varchar,Format(HanNop, 'dd/MM/yyyy')) like '%{tu}%' ORDER BY SoTienDaNop ASC");
         }
-        public DataTable LayDanhSachSoTienChuaNop()
+        public DataTable LayDanhSachSoTienChuaNop(string tu)
         {
-            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD FROM THUE ORDER BY CONVERT(INT(SoTienCanNop)) - CONVERT(INT(SoTienDaNop)) ASC");
+            return conn.LayDanhSach($"SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', HanNop as 'Hạn nộp' FROM THUE WHERE MaThue like '%{tu}%' OR CCCD like '%{tu}%' OR SoTienCanNop like '%{tu}%' OR Convert(varchar,Format(HanNop, 'dd/MM/yyyy')) like '%{tu}%' ORDER BY SoTienCanNop ASC");
         }
     }
 }

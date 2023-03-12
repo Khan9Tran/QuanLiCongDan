@@ -13,14 +13,27 @@ namespace QuanLiCongDanThanhPho
     public partial class FDanhSachCongDan : Form
     {
         CongDanDAO cdDao = new CongDanDAO();
+        private string luaChon;
         public FDanhSachCongDan()
         {
             InitializeComponent();
             StackForm.Add(this);
+            luaChon = "tat ca";
         }
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaTu(txtTimKiem.Text);
+            if (luaChon == "tat ca")
+                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaTu(txtTimKiem.Text);
+            else if (luaChon == "nam")
+                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachCongDanNam(txtTimKiem.Text);
+            else if (luaChon == "nu")
+                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachCongDanNu(txtTimKiem.Text);
+            else if (luaChon == "ket hon")
+                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachDaKetHon(txtTimKiem.Text);
+            else if (luaChon == "doc than")
+                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaKetHon(txtTimKiem.Text);
+            else if (luaChon == "tuoi tac")
+                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachTuoiXepTuBeDenLon(txtTimKiem.Text);
         }
 
         private void FDanhSachCongDan_Load(object sender, EventArgs e)
@@ -43,38 +56,38 @@ namespace QuanLiCongDanThanhPho
 
         private void btnNam_Click(object sender, EventArgs e)
         {
-            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachCongDanNam();
-            txtTimKiem.Clear();
+            luaChon = "nam";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void btnTatCa_Click(object sender, EventArgs e)
         {
-            gvDanhSachCongDan.DataSource = cdDao.LayDanhSach();
-            txtTimKiem.Clear();
+            luaChon = "tat ca";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void btnNu_Click(object sender, EventArgs e)
         {
-            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachCongDanNu();
-            txtTimKiem.Clear();
+            luaChon = "nu";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void btnDocThan_Click(object sender, EventArgs e)
         {
-            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaKetHon();
-            txtTimKiem.Clear();
+            luaChon = "doc than";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void btnKetHon_Click(object sender, EventArgs e)
         {
-            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachDaKetHon();
-            txtTimKiem.Clear();
+            luaChon = "ket hon";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void btnTuoiTac_Click(object sender, EventArgs e)
         {
-            gvDanhSachCongDan.DataSource = cdDao.LayDanhSachTuoiXepTuBeDenLon();
-            txtTimKiem.Clear();
+            luaChon = "tuoi tac";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
     }
 }

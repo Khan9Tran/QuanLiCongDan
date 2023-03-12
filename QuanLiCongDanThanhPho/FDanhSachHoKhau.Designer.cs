@@ -92,6 +92,7 @@
             this.btnSoTV.TabIndex = 5;
             this.btnSoTV.Text = "Thành viên";
             this.btnSoTV.UseVisualStyleBackColor = false;
+            this.btnSoTV.Click += new System.EventHandler(this.btnSoTV_Click);
             // 
             // btnNgayDangKy
             // 
