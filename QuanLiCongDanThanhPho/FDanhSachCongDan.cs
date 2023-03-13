@@ -89,5 +89,11 @@ namespace QuanLiCongDanThanhPho
             luaChon = "tuoi tac";
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            FDangKyCongDan dangKyCongDan = new FDangKyCongDan();
+            (StackForm.fTrangChu).OpenChildForm(dangKyCongDan);
+        }
     }
 }

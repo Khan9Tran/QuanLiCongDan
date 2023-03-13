@@ -39,6 +39,7 @@
             this.btnDocThan = new System.Windows.Forms.Button();
             this.btnKetHon = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
             this.SuspendLayout();
@@ -194,6 +195,21 @@
             this.btnTimKiem.TabIndex = 55;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(1362, 152);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(150, 50);
+            this.btnThem.TabIndex = 56;
+            this.btnThem.Text = "Thêm ";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // FDanhSachCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
@@ -201,6 +217,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.flpnlPhanLoai);
             this.Controls.Add(this.txtTimKiem);
@@ -230,5 +247,6 @@
         private Button btnDocThan;
         private Button btnKetHon;
         private Button btnTimKiem;
+        private Button btnThem;
     }
 }

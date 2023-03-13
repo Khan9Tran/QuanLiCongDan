@@ -31,11 +31,11 @@ namespace QuanLiCongDanThanhPho
                 OpenChildForm(new FDanhSachHoKhau());
 
         }
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
-                currentChildForm.Close();
+                currentChildForm.Hide();
             }
             currentChildForm = childForm;
             childForm.TopLevel = false;
