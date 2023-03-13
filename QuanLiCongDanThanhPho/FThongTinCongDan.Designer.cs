@@ -34,7 +34,7 @@
             this.lblTen = new System.Windows.Forms.Label();
             this.lblCccd = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.dtmNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.lblDanToc = new System.Windows.Forms.Label();
             this.lblTonGiao = new System.Windows.Forms.Label();
@@ -141,18 +141,18 @@
             this.lblNgaySinh.TabIndex = 7;
             this.lblNgaySinh.Text = "Ngày sinh";
             // 
-            // dtpNgaySinh
+            // dtmNgaySinh
             // 
-            this.dtpNgaySinh.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
-            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgaySinh.Enabled = false;
-            this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(212, 144);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(174, 34);
-            this.dtpNgaySinh.TabIndex = 8;
-            this.dtpNgaySinh.Value = new System.DateTime(2023, 2, 28, 0, 0, 0, 0);
+            this.dtmNgaySinh.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
+            this.dtmNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtmNgaySinh.Enabled = false;
+            this.dtmNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtmNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmNgaySinh.Location = new System.Drawing.Point(212, 144);
+            this.dtmNgaySinh.Name = "dtmNgaySinh";
+            this.dtmNgaySinh.Size = new System.Drawing.Size(174, 34);
+            this.dtmNgaySinh.TabIndex = 8;
+            this.dtmNgaySinh.Value = new System.DateTime(2023, 2, 28, 0, 0, 0, 0);
             // 
             // lblGioiTinh
             // 
@@ -283,7 +283,7 @@
             this.pnlThongTinCD.Controls.Add(this.lblQueQuan);
             this.pnlThongTinCD.Controls.Add(this.lblGioiTinh);
             this.pnlThongTinCD.Controls.Add(this.lblNgaySinh);
-            this.pnlThongTinCD.Controls.Add(this.dtpNgaySinh);
+            this.pnlThongTinCD.Controls.Add(this.dtmNgaySinh);
             this.pnlThongTinCD.Controls.Add(this.lblDanToc);
             this.pnlThongTinCD.Location = new System.Drawing.Point(4, 113);
             this.pnlThongTinCD.Name = "pnlThongTinCD";
@@ -638,7 +638,7 @@
         private Label lblTen;
         private Label lblCccd;
         private Label lblNgaySinh;
-        private DateTimePicker dtpNgaySinh;
+        private DateTimePicker dtmNgaySinh;
         private Label lblGioiTinh;
         private Label lblDanToc;
         private Label lblTonGiao;

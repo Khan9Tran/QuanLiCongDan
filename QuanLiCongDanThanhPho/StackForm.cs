@@ -51,6 +51,7 @@ namespace QuanLiCongDanThanhPho
                             {
                                 fTrangChu.OpenChildForm(forms[i]);
                                 (forms[i] as FDanhSach).OpenChildForm(forms[forms.Count - 1]);
+                                break;
                             }
                         }
                     }
@@ -63,6 +64,7 @@ namespace QuanLiCongDanThanhPho
                             {
                                 fTrangChu.OpenChildForm(forms[i]);
                                 (forms[i] as FDangKyHoKhau).OpenChildForm(forms[forms.Count - 1]);
+                                break;
                             }
                         }
                     }

@@ -42,7 +42,9 @@
             this.gvDanhSachChuaCapCCCD = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDangKy = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachChuaCapCCCD)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTen
@@ -128,7 +130,7 @@
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
-            this.btnReset.Location = new System.Drawing.Point(1289, 195);
+            this.btnReset.Location = new System.Drawing.Point(59, 3);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 50);
             this.btnReset.TabIndex = 92;
@@ -188,12 +190,21 @@
             this.btnDangKy.FlatAppearance.BorderSize = 0;
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
-            this.btnDangKy.Location = new System.Drawing.Point(1289, 127);
+            this.btnDangKy.Location = new System.Drawing.Point(3, 3);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(50, 50);
             this.btnDangKy.TabIndex = 95;
             this.btnDangKy.UseVisualStyleBackColor = false;
             this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnDangKy);
+            this.flowLayoutPanel1.Controls.Add(this.btnReset);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1344, 668);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(137, 59);
+            this.flowLayoutPanel1.TabIndex = 96;
             // 
             // FDangKyCCCD
             // 
@@ -201,10 +212,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 752);
-            this.Controls.Add(this.btnDangKy);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvDanhSachChuaCapCCCD);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtDDNhanDang);
             this.Controls.Add(this.lblDDNhanDang);
             this.Controls.Add(this.dtmNgayCap);
@@ -221,6 +231,7 @@
             this.Text = "FDangKyCCCD";
             this.Load += new System.EventHandler(this.FDangKyCCCD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachChuaCapCCCD)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +251,6 @@
         private DataGridView gvDanhSachChuaCapCCCD;
         private Label label1;
         private Button btnDangKy;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

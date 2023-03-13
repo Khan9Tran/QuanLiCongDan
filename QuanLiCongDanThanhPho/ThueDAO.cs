@@ -43,5 +43,10 @@ namespace QuanLiCongDanThanhPho
         {
             return conn.LayDanhSach($"SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', HanNop as 'Hạn nộp' FROM THUE WHERE MaThue like '%{tu}%' OR CCCD like '%{tu}%' OR SoTienCanNop like '%{tu}%' OR Convert(varchar,Format(HanNop, 'dd/MM/yyyy')) like '%{tu}%' ORDER BY SoTienCanNop ASC");
         }
+        public void CapNhatThue(Thue thue) 
+        {
+            string sqlStr = string.Format($"UPDATE THUE SET CCCD = '{thue.CCCD}', SoTienCanNop = '{thue.SoTienCanNop}', SoTienDaNop = '{thue.SoTienDaNop}', NgayCap = '{thue.NgayCapMa}', HanNop = '{thue.HanNop}' WHERE MaThue = '{thue.MaThue}'");
+            conn.ThucThi(sqlStr, $"Cập nhật thuế thành công");
+        }
     }
 }
