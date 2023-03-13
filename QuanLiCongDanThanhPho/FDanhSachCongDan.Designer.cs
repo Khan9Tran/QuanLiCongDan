@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gvDanhSachCongDan = new System.Windows.Forms.DataGridView();
+            this.cmnusMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmnusMenuChiTiet = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnTuoiTac = new System.Windows.Forms.Button();
@@ -41,6 +45,7 @@
             this.picTimKiem = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).BeginInit();
+            this.cmnusMenu.SuspendLayout();
             this.flpnlPhanLoai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
             this.SuspendLayout();
@@ -51,14 +56,15 @@
             this.gvDanhSachCongDan.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvDanhSachCongDan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvDanhSachCongDan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvDanhSachCongDan.DefaultCellStyle = dataGridViewCellStyle4;
+            this.gvDanhSachCongDan.ContextMenuStrip = this.cmnusMenu;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvDanhSachCongDan.DefaultCellStyle = dataGridViewCellStyle1;
             this.gvDanhSachCongDan.Location = new System.Drawing.Point(12, 208);
             this.gvDanhSachCongDan.Name = "gvDanhSachCongDan";
             this.gvDanhSachCongDan.RowHeadersWidth = 51;
@@ -67,6 +73,33 @@
             this.gvDanhSachCongDan.Size = new System.Drawing.Size(1500, 450);
             this.gvDanhSachCongDan.TabIndex = 0;
             this.gvDanhSachCongDan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDanhSachCongDan_CellClick);
+            // 
+            // cmnusMenu
+            // 
+            this.cmnusMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmnusMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmnusMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmnusMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmnusMenuChiTiet,
+            this.cmnusMenuXoa});
+            this.cmnusMenu.Name = "contextMenuStrip1";
+            this.cmnusMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.cmnusMenu.ShowImageMargin = false;
+            this.cmnusMenu.Size = new System.Drawing.Size(129, 68);
+            // 
+            // cmnusMenuChiTiet
+            // 
+            this.cmnusMenuChiTiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmnusMenuChiTiet.Name = "cmnusMenuChiTiet";
+            this.cmnusMenuChiTiet.Size = new System.Drawing.Size(128, 32);
+            this.cmnusMenuChiTiet.Text = "Chi tiết";
+            this.cmnusMenuChiTiet.Click += new System.EventHandler(this.cmnusMenuChiTiet_Click);
+            // 
+            // cmnusMenuXoa
+            // 
+            this.cmnusMenuXoa.Name = "cmnusMenuXoa";
+            this.cmnusMenuXoa.Size = new System.Drawing.Size(128, 32);
+            this.cmnusMenuXoa.Text = "Xóa";
             // 
             // txtTimKiem
             // 
@@ -225,6 +258,7 @@
             this.Text = "DanhSachCongDan";
             this.Load += new System.EventHandler(this.FDanhSachCongDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).EndInit();
+            this.cmnusMenu.ResumeLayout(false);
             this.flpnlPhanLoai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).EndInit();
             this.ResumeLayout(false);
@@ -245,5 +279,8 @@
         private Button btnKetHon;
         private PictureBox picTimKiem;
         private Button btnThem;
+        private ContextMenuStrip cmnusMenu;
+        private ToolStripMenuItem cmnusMenuChiTiet;
+        private ToolStripMenuItem cmnusMenuXoa;
     }
 }

@@ -102,5 +102,11 @@ namespace QuanLiCongDanThanhPho
                 ttThue.ShowDialog();
             }
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            FDangKyThue dangKyThue = new FDangKyThue();
+            (StackForm.fTrangChu).OpenChildForm(dangKyThue);
+        }
     }
 }

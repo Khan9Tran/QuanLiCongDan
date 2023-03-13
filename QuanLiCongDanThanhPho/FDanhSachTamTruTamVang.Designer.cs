@@ -35,6 +35,7 @@
             this.btnTV = new System.Windows.Forms.Button();
             this.btnTT = new System.Windows.Forms.Button();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
@@ -51,7 +52,7 @@
             this.gvTVTT.Name = "gvTVTT";
             this.gvTVTT.RowHeadersWidth = 51;
             this.gvTVTT.RowTemplate.Height = 29;
-            this.gvTVTT.Size = new System.Drawing.Size(1400, 419);
+            this.gvTVTT.Size = new System.Drawing.Size(1480, 419);
             this.gvTVTT.TabIndex = 1;
             // 
             // txtTimKiem
@@ -129,12 +130,28 @@
             this.picTimKiem.TabIndex = 59;
             this.picTimKiem.TabStop = false;
             // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(1355, 171);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(150, 50);
+            this.btnThem.TabIndex = 60;
+            this.btnThem.Text = "Thêm ";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // FDanhSachTamTruTamVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.picTimKiem);
             this.Controls.Add(this.flpnlPhanLoai);
             this.Controls.Add(this.txtTimKiem);
@@ -162,5 +179,6 @@
         private Button btnTV;
         private Button btnTT;
         private PictureBox picTimKiem;
+        private Button btnThem;
     }
 }

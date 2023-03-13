@@ -45,12 +45,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (e.RowIndex != -1)
             {
-                string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
-                if (maCCCD != "")
-                {
-                    FThongTinCongDan ttCD = new FThongTinCongDan(maCCCD);
-                    ttCD.ShowDialog();
-                }
+                cmnusMenu.Show(this, this.PointToClient(MousePosition));
             }
         }
 
@@ -94,6 +89,16 @@ namespace QuanLiCongDanThanhPho
         {
             FDangKyCongDan dangKyCongDan = new FDangKyCongDan();
             (StackForm.fTrangChu).OpenChildForm(dangKyCongDan);
+        }
+
+        private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
+        {
+            string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
+            if (maCCCD != "")
+            {
+                FThongTinCongDan ttCD = new FThongTinCongDan(maCCCD);
+                ttCD.ShowDialog();
+            }
         }
     }
 }

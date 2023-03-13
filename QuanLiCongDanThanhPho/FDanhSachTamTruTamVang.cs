@@ -53,5 +53,11 @@ namespace QuanLiCongDanThanhPho
             luaChon = "tam tru";
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            FDangKyTamTruTamVang dangKyTTTV = new FDangKyTamTruTamVang();
+            (StackForm.fTrangChu).OpenChildForm(dangKyTTTV);
+        }
     }
 }

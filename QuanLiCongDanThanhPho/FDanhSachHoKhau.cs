@@ -67,5 +67,11 @@ namespace QuanLiCongDanThanhPho
                 tTHK.ShowDialog();
             }
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau();
+            (StackForm.fTrangChu).OpenChildForm(dangKyHoKhau);
+        }
     }
 }

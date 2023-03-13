@@ -78,7 +78,7 @@ namespace QuanLiCongDanThanhPho
             txtGioiTinh.BackColor = Color.Gainsboro;
             txtGhiChu.ReadOnly = true;
             txtGhiChu.BackColor = Color.Gainsboro;
-            dtmNgaySinh.Enabled = false;
+            dtpNgaySinh.Enabled = false;
         }
         private void UnReadOnLy()
         {
@@ -102,7 +102,7 @@ namespace QuanLiCongDanThanhPho
             txtGioiTinh.ReadOnly = false;
             txtGioiTinh.BackColor = Color.SteelBlue;
             txtGhiChu.ReadOnly = false;
-            dtmNgaySinh.Enabled = true;
+            dtpNgaySinh.Enabled = true;
         }
         private void AutoReadOnly()
         {
@@ -128,7 +128,7 @@ namespace QuanLiCongDanThanhPho
                 txtNgheNghiep.Text = cd.NgheNghiep;
                 //----------------//
                 KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
-                dtmNgaySinh.Value = ks.NgaySinh;
+                dtpNgaySinh.Value = ks.NgaySinh;
                 if (ks.GioiTinh == "f")
                     txtGioiTinh.Text = "Nữ";
                 else
@@ -255,7 +255,7 @@ namespace QuanLiCongDanThanhPho
             KhaiSinh khaiSinh = ksDAO.LayThongTin(MaCCCD);
             khaiSinh.HoTen = txtHoVaTen.Text;
             khaiSinh.QueQuan.DinhDang(txtQueQuan.Text);
-            khaiSinh.NgaySinh = dtmNgaySinh.Value;
+            khaiSinh.NgaySinh = dtpNgaySinh.Value;
             khaiSinh.DanToc = txtDanToc.Text;
             khaiSinh.QuocTich = txtQuocTich.Text;
             khaiSinh.GioiTinh = txtGioiTinh.Text;
