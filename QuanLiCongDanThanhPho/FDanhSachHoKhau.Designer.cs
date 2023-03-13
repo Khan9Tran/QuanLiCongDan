@@ -28,15 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gvHoKhau = new System.Windows.Forms.DataGridView();
+            this.cmnusMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmnusMenuChiTiet = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnSoTV = new System.Windows.Forms.Button();
             this.btnNgayDangKy = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.picTimKiem = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoKhau)).BeginInit();
+            this.cmnusMenu.SuspendLayout();
             this.flpnlPhanLoai.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
             this.SuspendLayout();
             // 
             // gvHoKhau
@@ -45,6 +51,7 @@
             this.gvHoKhau.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvHoKhau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvHoKhau.ContextMenuStrip = this.cmnusMenu;
             this.gvHoKhau.Location = new System.Drawing.Point(20, 217);
             this.gvHoKhau.Name = "gvHoKhau";
             this.gvHoKhau.RowHeadersWidth = 51;
@@ -53,6 +60,33 @@
             this.gvHoKhau.TabIndex = 0;
             this.gvHoKhau.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellClick);
             this.gvHoKhau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellContentClick);
+            // 
+            // cmnusMenu
+            // 
+            this.cmnusMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmnusMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmnusMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmnusMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmnusMenuChiTiet,
+            this.cmnusMenuXoa});
+            this.cmnusMenu.Name = "contextMenuStrip1";
+            this.cmnusMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.cmnusMenu.ShowImageMargin = false;
+            this.cmnusMenu.Size = new System.Drawing.Size(129, 68);
+            // 
+            // cmnusMenuChiTiet
+            // 
+            this.cmnusMenuChiTiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmnusMenuChiTiet.Name = "cmnusMenuChiTiet";
+            this.cmnusMenuChiTiet.Size = new System.Drawing.Size(128, 32);
+            this.cmnusMenuChiTiet.Text = "Chi tiết";
+            this.cmnusMenuChiTiet.Click += new System.EventHandler(this.cmnusMenuChiTiet_Click);
+            // 
+            // cmnusMenuXoa
+            // 
+            this.cmnusMenuXoa.Name = "cmnusMenuXoa";
+            this.cmnusMenuXoa.Size = new System.Drawing.Size(128, 32);
+            this.cmnusMenuXoa.Text = "Xóa";
             // 
             // flpnlPhanLoai
             // 
@@ -119,19 +153,14 @@
             this.txtTimKiem.TabIndex = 10;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
-            // btnTimKiem
+            // picTimKiem
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.FlatAppearance.BorderSize = 0;
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnTimKiem.Location = new System.Drawing.Point(626, 3);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(50, 50);
-            this.btnTimKiem.TabIndex = 55;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.picTimKiem.Location = new System.Drawing.Point(635, 12);
+            this.picTimKiem.Name = "picTimKiem";
+            this.picTimKiem.Size = new System.Drawing.Size(37, 31);
+            this.picTimKiem.TabIndex = 57;
+            this.picTimKiem.TabStop = false;
             // 
             // FDanhSachHoKhau
             // 
@@ -139,7 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
-            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.picTimKiem);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.flpnlPhanLoai);
             this.Controls.Add(this.gvHoKhau);
@@ -150,7 +179,9 @@
             this.Text = "FDanhSachHoKhau";
             this.Load += new System.EventHandler(this.FDanhSachHoKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvHoKhau)).EndInit();
+            this.cmnusMenu.ResumeLayout(false);
             this.flpnlPhanLoai.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,6 +195,9 @@
         private Button btnSoTV;
         private Button btnNgayDangKy;
         private TextBox txtTimKiem;
-        private Button btnTimKiem;
+        private PictureBox picTimKiem;
+        private ContextMenuStrip cmnusMenu;
+        private ToolStripMenuItem cmnusMenuChiTiet;
+        private ToolStripMenuItem cmnusMenuXoa;
     }
 }

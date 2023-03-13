@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gvDanhSachCongDan = new System.Windows.Forms.DataGridView();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTatCa = new System.Windows.Forms.Button();
@@ -38,9 +38,10 @@
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDocThan = new System.Windows.Forms.Button();
             this.btnKetHon = new System.Windows.Forms.Button();
-            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.picTimKiem = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
             this.SuspendLayout();
             // 
             // gvDanhSachCongDan
@@ -49,14 +50,14 @@
             this.gvDanhSachCongDan.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvDanhSachCongDan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvDanhSachCongDan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvDanhSachCongDan.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvDanhSachCongDan.DefaultCellStyle = dataGridViewCellStyle4;
             this.gvDanhSachCongDan.Location = new System.Drawing.Point(12, 208);
             this.gvDanhSachCongDan.Name = "gvDanhSachCongDan";
             this.gvDanhSachCongDan.RowHeadersWidth = 51;
@@ -180,19 +181,14 @@
             this.btnKetHon.UseVisualStyleBackColor = false;
             this.btnKetHon.Click += new System.EventHandler(this.btnKetHon_Click);
             // 
-            // btnTimKiem
+            // picTimKiem
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.FlatAppearance.BorderSize = 0;
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnTimKiem.Location = new System.Drawing.Point(621, 3);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(50, 50);
-            this.btnTimKiem.TabIndex = 55;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.picTimKiem.Location = new System.Drawing.Point(627, 12);
+            this.picTimKiem.Name = "picTimKiem";
+            this.picTimKiem.Size = new System.Drawing.Size(37, 31);
+            this.picTimKiem.TabIndex = 56;
+            this.picTimKiem.TabStop = false;
             // 
             // FDanhSachCongDan
             // 
@@ -201,7 +197,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
-            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.picTimKiem);
             this.Controls.Add(this.flpnlPhanLoai);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.gvDanhSachCongDan);
@@ -213,6 +209,7 @@
             this.Load += new System.EventHandler(this.FDanhSachCongDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).EndInit();
             this.flpnlPhanLoai.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,6 +226,6 @@
         private FlowLayoutPanel flpnlPhanLoai;
         private Button btnDocThan;
         private Button btnKetHon;
-        private Button btnTimKiem;
+        private PictureBox picTimKiem;
     }
 }

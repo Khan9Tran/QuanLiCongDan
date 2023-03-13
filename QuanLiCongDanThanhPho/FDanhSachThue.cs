@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiCongDanThanhPho.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,14 +35,9 @@ namespace QuanLiCongDanThanhPho
         {
             if (e.RowIndex != -1)
             {
-                string maCCCD = gvThue.CurrentRow.Cells["CCCD"].Value.ToString();
-                if (maCCCD != "")
-                {
-                    FThongTinThue ttThue = new FThongTinThue();
-                    ttThue.MaCCCD = maCCCD;
-                    ttThue.ShowDialog();
-                }
+                cmnusMenu.Show(this, this.PointToClient(MousePosition));
             }
+ 
         }
 
         private void btnTatCa_Click(object sender, EventArgs e)
@@ -89,6 +85,22 @@ namespace QuanLiCongDanThanhPho
         {
             luaChon = "can nop";
             txtTimKiem_TextChanged(txtTimKiem, null);
+        }
+
+        private void cmnusMenuXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
+        {
+            string maCCCD = gvThue.CurrentRow.Cells["CCCD"].Value.ToString();
+            if (maCCCD != "")
+            {
+                FThongTinThue ttThue = new FThongTinThue();
+                ttThue.MaCCCD = maCCCD;
+                ttThue.ShowDialog();
+            }
         }
     }
 }

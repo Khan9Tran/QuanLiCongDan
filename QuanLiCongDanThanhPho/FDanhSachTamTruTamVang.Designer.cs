@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.gvTVTT = new System.Windows.Forms.DataGridView();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnTV = new System.Windows.Forms.Button();
             this.btnTT = new System.Windows.Forms.Button();
+            this.picTimKiem = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
             this.SuspendLayout();
             // 
             // gvTVTT
@@ -53,26 +54,12 @@
             this.gvTVTT.Size = new System.Drawing.Size(1400, 419);
             this.gvTVTT.TabIndex = 1;
             // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
-            this.btnTimKiem.FlatAppearance.BorderSize = 0;
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnTimKiem.Location = new System.Drawing.Point(631, 13);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(50, 50);
-            this.btnTimKiem.TabIndex = 57;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            // 
             // txtTimKiem
             // 
             this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTimKiem.Location = new System.Drawing.Point(25, 22);
+            this.txtTimKiem.Location = new System.Drawing.Point(25, 12);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(600, 31);
             this.txtTimKiem.TabIndex = 56;
@@ -133,14 +120,23 @@
             this.btnTT.UseVisualStyleBackColor = false;
             this.btnTT.Click += new System.EventHandler(this.btnTT_Click);
             // 
+            // picTimKiem
+            // 
+            this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.picTimKiem.Location = new System.Drawing.Point(644, 12);
+            this.picTimKiem.Name = "picTimKiem";
+            this.picTimKiem.Size = new System.Drawing.Size(37, 31);
+            this.picTimKiem.TabIndex = 59;
+            this.picTimKiem.TabStop = false;
+            // 
             // FDanhSachTamTruTamVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
+            this.Controls.Add(this.picTimKiem);
             this.Controls.Add(this.flpnlPhanLoai);
-            this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.gvTVTT);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -152,6 +148,7 @@
             this.Load += new System.EventHandler(this.FDanhSachTamTruTamVang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).EndInit();
             this.flpnlPhanLoai.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,11 +156,11 @@
 
         #endregion
         private DataGridView gvTVTT;
-        private Button btnTimKiem;
         private TextBox txtTimKiem;
         private FlowLayoutPanel flpnlPhanLoai;
         private Button btnTatCa;
         private Button btnTV;
         private Button btnTT;
+        private PictureBox picTimKiem;
     }
 }
