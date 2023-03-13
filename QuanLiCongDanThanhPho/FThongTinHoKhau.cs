@@ -72,5 +72,18 @@ namespace QuanLiCongDanThanhPho
         {
 
         }
+
+        private void gvQuanHeVoiChuHo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                string maCCCD = gvQuanHeVoiChuHo.CurrentRow.Cells[0].Value.ToString();
+                if (maCCCD != "")
+                {
+                    FThongTinCongDan ttCD = new FThongTinCongDan(maCCCD);
+                    ttCD.ShowDialog();
+                }
+            }
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSach()
         {
-            return conn.LayDanhSach("SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU");
+            return conn.LayDanhSach("SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU EXCEPT SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE MaHK like '00000A' OR MaHK like '00000B'");
         }
         public HoKhau LayThongTin(string maHoKhau)
         {
@@ -28,12 +28,12 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachChuaTu(string tu)
         {
-            string strSql = string.Format($"SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR MaHK like '%{tu}%'");
+            string strSql = string.Format($"SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR MaHK like '%{tu}%' EXCEPT SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE MaHK like '00000A' OR MaHK like '00000B'");
             return conn.LayDanhSach(strSql);
         }
         public DataTable LayDanhSachXepTheoSoTV(string tu)
         {
-            string strSql = string.Format($"SELECT HOKHAU.MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU INNER JOIN (SELECT MaHK, count(CCCD) as SL FROM CONGDAN GROUP BY MaHK) AS CONGDAN ON HOKHAU.MaHK = CONGDAN.MAHK WHERE DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR HOKHAU.MaHK like '%{tu}%' ORDER BY SL ASC");
+            string strSql = string.Format($"SELECT HOKHAU.MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU INNER JOIN (SELECT MaHK, count(CCCD) as SL FROM CONGDAN GROUP BY MaHK) AS CONGDAN ON HOKHAU.MaHK = CONGDAN.MAHK WHERE DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR HOKHAU.MaHK like '%{tu}%' ORDER BY SL ASC EXCEPT SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE MaHK like '00000A' OR MaHK like '00000B'");
             return conn.LayDanhSach(strSql);
         }
     }
