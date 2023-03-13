@@ -55,6 +55,66 @@ namespace QuanLiCongDanThanhPho
             FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh(MaCCCD);
             tTKS.ShowDialog();
         }
+        private void ReadOnly()
+        {
+            txtNgheNghiep.ReadOnly = true;
+            txtNgheNghiep.BackColor = Color.Gainsboro;
+            txtHoVaTen.ReadOnly = true;
+            txtHoVaTen.BackColor = Color.Gainsboro;
+            txtSDT.ReadOnly= true;
+            txtSDT.BackColor = Color.Gainsboro;
+            txtTonGiao.ReadOnly= true;
+            txtTonGiao.BackColor = Color.Gainsboro;
+            btnXacNhan.Enabled = false;
+            txtDanToc.ReadOnly = true;
+            txtDanToc.BackColor= Color.Gainsboro;
+            txtQueQuan.ReadOnly = true;
+            txtQueQuan.BackColor = Color.Gainsboro;
+            txtQuocTich.ReadOnly = true;
+            txtQuocTich.BackColor = Color.Gainsboro;
+            txtDiaChi.ReadOnly = true;
+            txtDiaChi.BackColor = Color.Gainsboro;
+            txtGioiTinh.ReadOnly = true;
+            txtGioiTinh.BackColor = Color.Gainsboro;
+            txtGhiChu.ReadOnly = true;
+            txtGhiChu.BackColor = Color.Gainsboro;
+            dtmNgaySinh.Enabled = false;
+        }
+        private void UnReadOnLy()
+        {
+            txtNgheNghiep.ReadOnly = false;
+            txtNgheNghiep.BackColor = Color.SteelBlue;
+            txtHoVaTen.ReadOnly = false;
+            txtHoVaTen.BackColor= Color.SteelBlue;  
+            txtSDT.ReadOnly = false;
+            txtSDT.BackColor= Color.SteelBlue;
+            txtTonGiao.ReadOnly = false;
+            txtTonGiao.BackColor= Color.SteelBlue;
+            btnXacNhan.Enabled = true;
+            txtDanToc.ReadOnly = false;
+            txtDanToc.BackColor = Color.SteelBlue;
+            txtQueQuan.ReadOnly = false;
+            txtQueQuan.BackColor = Color.SteelBlue;
+            txtQuocTich.ReadOnly= false;
+            txtQuocTich.BackColor = Color.SteelBlue;
+            txtDiaChi.ReadOnly = false;
+            txtDiaChi.BackColor = Color.SteelBlue;
+            txtGioiTinh.ReadOnly = false;
+            txtGioiTinh.BackColor = Color.SteelBlue;
+            txtGhiChu.ReadOnly = false;
+            dtmNgaySinh.Enabled = true;
+        }
+        private void AutoReadOnly()
+        {
+            if (txtHoVaTen.ReadOnly == true)
+            {
+                UnReadOnLy();
+            }
+            else
+            {
+                ReadOnly();
+            }
+        }
         public void LayThongTinCongDan()
         {
             if (maCCCD != null)
@@ -68,7 +128,7 @@ namespace QuanLiCongDanThanhPho
                 txtNgheNghiep.Text = cd.NgheNghiep;
                 //----------------//
                 KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
-                dtpNgaySinh.Value = ks.NgaySinh;
+                dtmNgaySinh.Value = ks.NgaySinh;
                 if (ks.GioiTinh == "f")
                     txtGioiTinh.Text = "Nữ";
                 else
@@ -127,19 +187,124 @@ namespace QuanLiCongDanThanhPho
             FThongTinThue tTThue = new FThongTinThue(MaCCCD);
             tTThue.ShowDialog();
         }
-
+        private bool KiemTraThongTin()
+        {
+            if (!KiemTraDuLieuNhap.isTen(txtHoVaTen.Text))
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại họ và tên");
+                txtHoVaTen.Focus();
+                return false;
+            }
+            if (!KiemTraDuLieuNhap.isGioiTinh(txtGioiTinh.Text))
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại giới tính");
+                txtGioiTinh.Focus();
+                return false;
+            }
+            if (txtNgheNghiep.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại nghề nghiệp");
+                txtNgheNghiep.Focus();
+                return false;
+            }
+            if (txtQuocTich.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại quốc tịch");
+                txtQuocTich.Focus();
+                return false;
+            }
+            if (txtDanToc.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại dân tộc");
+                txtDanToc.Focus();
+                return false;
+            }
+            if (txtTonGiao.Text == "")
+            {
+                MessageBox.Show("Tôn giáo không được để trống");
+                txtTonGiao.Focus();
+                return false;
+            }
+            if (!KiemTraDuLieuNhap.isDiaChi(txtDiaChi.Text))
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại địa chỉ");
+                txtDiaChi.Focus();
+                return false;
+            }
+            if (!KiemTraDuLieuNhap.isDiaChi(txtQueQuan.Text))
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại quê quán");
+                txtQueQuan.Focus();
+                return false;
+            }
+            if (!KiemTraDuLieuNhap.isSoDT(txtSDT.Text))
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại số điện thoại");
+                txtSDT.Focus();
+                return false;
+            }      
+            return true;
+        }
         private void btnHonNhan_Click(object sender, EventArgs e)
         {
             FThongTinHonNhan tTHN = new FThongTinHonNhan(MaCCCD);
             tTHN.ShowDialog();
         }
-        private void btnSua_Click(object sender, EventArgs e)
+        private void CapNhatKhaiSinh()
         {
-            txtNgheNghiep.ReadOnly = false;
-            txtSDT.ReadOnly = false;
-            txtTonGiao.ReadOnly = false;
+            KhaiSinh khaiSinh = ksDAO.LayThongTin(MaCCCD);
+            khaiSinh.HoTen = txtHoVaTen.Text;
+            khaiSinh.QueQuan.DinhDang(txtQueQuan.Text);
+            khaiSinh.NgaySinh = dtmNgaySinh.Value;
+            khaiSinh.DanToc = txtDanToc.Text;
+            khaiSinh.QuocTich = txtQuocTich.Text;
+            khaiSinh.GioiTinh = txtGioiTinh.Text;
+            khaiSinh.DinhDangGioiTinh();
+            ksDAO.CapNhatKhaiSinh(khaiSinh);  
+        }    
+        private void CapNhatCongDan()
+        {
+            CongDan cd = cdDAO.LayThongTin(MaCCCD);
+            cd.Ten = txtHoVaTen.Text;
+            cd.SDT = txtSDT.Text;
+            cd.NgheNghiep = txtNgheNghiep.Text;
+            cd.TonGiao = txtTonGiao.Text;
+            cdDAO.CapNhatCongDan(cd);
+
+        }
+        private void btnSua_Click(object sender, EventArgs e)
+        {  
+            AutoReadOnly();
+        }
+        private void CapNhatHonNhan()
+        {
+            if (txtHonNhan.Text != "Chưa có hôn nhân" && txtHonNhan.Text != "")
+            {
+                HonNhan hn = hnDAO.LayThongTin(MaCCCD);
+                if (txtCCCD.Text == hn.CCCDChong)
+                    hn.TenChong = txtHoVaTen.Text;  
+                else
+                    hn.TenVo = txtHoVaTen.Text;
+                hnDAO.CapNhatHonNhan(hn);
+            }
+        }
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {  
+            if (KiemTraThongTin())
+            {
+                CapNhatCongDan();
+                CapNhatKhaiSinh();
+                CapNhatHonNhan();
+                LayThongTinCongDan();
+                ReadOnly();
+            }
         }
 
-        
+        private void btnReLoad_Click(object sender, EventArgs e)
+        {
+            LayThongTinCongDan();
+            ReadOnly();
+        }
+
     }
 }

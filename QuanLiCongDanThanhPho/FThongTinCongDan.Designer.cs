@@ -34,7 +34,7 @@
             this.lblTen = new System.Windows.Forms.Label();
             this.lblCccd = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.dtmNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.lblDanToc = new System.Windows.Forms.Label();
             this.lblTonGiao = new System.Windows.Forms.Label();
@@ -45,6 +45,10 @@
             this.pnlThongTin = new System.Windows.Forms.Panel();
             this.lblSoDT = new System.Windows.Forms.Label();
             this.pnlThongTinCD = new System.Windows.Forms.Panel();
+            this.fpnlChucNang = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnXacNhan = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnReLoad = new System.Windows.Forms.Button();
             this.btnHonNhan = new System.Windows.Forms.Button();
             this.btnThue = new System.Windows.Forms.Button();
             this.btnHoKhau = new System.Windows.Forms.Button();
@@ -69,10 +73,6 @@
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.sideBarWhite = new QuanLiCongDanThanhPho.SideBarWhite();
             this.titleBarWhite = new QuanLiCongDanThanhPho.TitleBarWhite();
-            this.fpnlChucNang = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnXacNhan = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnReLoad = new System.Windows.Forms.Button();
             this.pnlTittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).BeginInit();
             this.pnlThongTinCD.SuspendLayout();
@@ -141,18 +141,18 @@
             this.lblNgaySinh.TabIndex = 7;
             this.lblNgaySinh.Text = "Ngày sinh";
             // 
-            // dtpNgaySinh
+            // dtmNgaySinh
             // 
-            this.dtpNgaySinh.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
-            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgaySinh.Enabled = false;
-            this.dtpNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(212, 144);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(174, 34);
-            this.dtpNgaySinh.TabIndex = 8;
-            this.dtpNgaySinh.Value = new System.DateTime(2023, 2, 28, 0, 0, 0, 0);
+            this.dtmNgaySinh.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
+            this.dtmNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtmNgaySinh.Enabled = false;
+            this.dtmNgaySinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtmNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmNgaySinh.Location = new System.Drawing.Point(212, 144);
+            this.dtmNgaySinh.Name = "dtmNgaySinh";
+            this.dtmNgaySinh.Size = new System.Drawing.Size(174, 34);
+            this.dtmNgaySinh.TabIndex = 8;
+            this.dtmNgaySinh.Value = new System.DateTime(2023, 2, 28, 0, 0, 0, 0);
             // 
             // lblGioiTinh
             // 
@@ -283,12 +283,66 @@
             this.pnlThongTinCD.Controls.Add(this.lblQueQuan);
             this.pnlThongTinCD.Controls.Add(this.lblGioiTinh);
             this.pnlThongTinCD.Controls.Add(this.lblNgaySinh);
-            this.pnlThongTinCD.Controls.Add(this.dtpNgaySinh);
+            this.pnlThongTinCD.Controls.Add(this.dtmNgaySinh);
             this.pnlThongTinCD.Controls.Add(this.lblDanToc);
             this.pnlThongTinCD.Location = new System.Drawing.Point(4, 113);
             this.pnlThongTinCD.Name = "pnlThongTinCD";
             this.pnlThongTinCD.Size = new System.Drawing.Size(833, 797);
             this.pnlThongTinCD.TabIndex = 31;
+            // 
+            // fpnlChucNang
+            // 
+            this.fpnlChucNang.Controls.Add(this.btnXacNhan);
+            this.fpnlChucNang.Controls.Add(this.btnSua);
+            this.fpnlChucNang.Controls.Add(this.btnReLoad);
+            this.fpnlChucNang.Location = new System.Drawing.Point(716, 144);
+            this.fpnlChucNang.Name = "fpnlChucNang";
+            this.fpnlChucNang.Size = new System.Drawing.Size(65, 284);
+            this.fpnlChucNang.TabIndex = 99;
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.BackColor = System.Drawing.Color.Transparent;
+            this.btnXacNhan.Enabled = false;
+            this.btnXacNhan.FlatAppearance.BorderSize = 0;
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnXacNhan.ForeColor = System.Drawing.Color.White;
+            this.btnXacNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnXacNhan.Location = new System.Drawing.Point(3, 3);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(50, 50);
+            this.btnXacNhan.TabIndex = 109;
+            this.btnXacNhan.UseVisualStyleBackColor = false;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Transparent;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
+            this.btnSua.Location = new System.Drawing.Point(3, 59);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(50, 50);
+            this.btnSua.TabIndex = 100;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnReLoad
+            // 
+            this.btnReLoad.BackColor = System.Drawing.Color.Transparent;
+            this.btnReLoad.FlatAppearance.BorderSize = 0;
+            this.btnReLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReLoad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReLoad.ForeColor = System.Drawing.Color.White;
+            this.btnReLoad.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
+            this.btnReLoad.Location = new System.Drawing.Point(3, 115);
+            this.btnReLoad.Name = "btnReLoad";
+            this.btnReLoad.Size = new System.Drawing.Size(50, 50);
+            this.btnReLoad.TabIndex = 110;
+            this.btnReLoad.UseVisualStyleBackColor = false;
+            this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
             // 
             // btnHonNhan
             // 
@@ -550,57 +604,6 @@
             this.titleBarWhite.Size = new System.Drawing.Size(60, 30);
             this.titleBarWhite.TabIndex = 33;
             // 
-            // fpnlChucNang
-            // 
-            this.fpnlChucNang.Controls.Add(this.btnXacNhan);
-            this.fpnlChucNang.Controls.Add(this.btnSua);
-            this.fpnlChucNang.Controls.Add(this.btnReLoad);
-            this.fpnlChucNang.Location = new System.Drawing.Point(716, 144);
-            this.fpnlChucNang.Name = "fpnlChucNang";
-            this.fpnlChucNang.Size = new System.Drawing.Size(65, 284);
-            this.fpnlChucNang.TabIndex = 99;
-            // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.BackColor = System.Drawing.Color.Transparent;
-            this.btnXacNhan.Enabled = false;
-            this.btnXacNhan.FlatAppearance.BorderSize = 0;
-            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnXacNhan.ForeColor = System.Drawing.Color.White;
-            this.btnXacNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
-            this.btnXacNhan.Location = new System.Drawing.Point(3, 3);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(50, 50);
-            this.btnXacNhan.TabIndex = 109;
-            this.btnXacNhan.UseVisualStyleBackColor = false;
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.Transparent;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
-            this.btnSua.Location = new System.Drawing.Point(3, 59);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(50, 50);
-            this.btnSua.TabIndex = 100;
-            this.btnSua.UseVisualStyleBackColor = false;
-            // 
-            // btnReLoad
-            // 
-            this.btnReLoad.BackColor = System.Drawing.Color.Transparent;
-            this.btnReLoad.FlatAppearance.BorderSize = 0;
-            this.btnReLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReLoad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnReLoad.ForeColor = System.Drawing.Color.White;
-            this.btnReLoad.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
-            this.btnReLoad.Location = new System.Drawing.Point(3, 115);
-            this.btnReLoad.Name = "btnReLoad";
-            this.btnReLoad.Size = new System.Drawing.Size(50, 50);
-            this.btnReLoad.TabIndex = 110;
-            this.btnReLoad.UseVisualStyleBackColor = false;
-            // 
             // FThongTinCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -635,7 +638,7 @@
         private Label lblTen;
         private Label lblCccd;
         private Label lblNgaySinh;
-        private DateTimePicker dtpNgaySinh;
+        private DateTimePicker dtmNgaySinh;
         private Label lblGioiTinh;
         private Label lblDanToc;
         private Label lblTonGiao;

@@ -74,19 +74,29 @@ namespace QuanLiCongDanThanhPho
             if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
                 message.Result = (IntPtr)HTCAPTION;
         }
+        private void ReadOnly()
+        {
+            dtmNgayDangKy.Enabled = false;
+            txtNoiDangKy.ReadOnly = true;
+            btnXacNhan.Enabled = false;
+            txtNoiDangKy.BackColor = Color.Gainsboro;
+        }
+        private void UnReadOnLy()
+        {
+            dtmNgayDangKy.Enabled = true;
+            txtNoiDangKy.ReadOnly = false;
+            btnXacNhan.Enabled = true;
+            txtNoiDangKy.BackColor = Color.SteelBlue;
+        }
         private void ChoPhepThayDoi()
         {
             if (txtNoiDangKy.ReadOnly == false)
             {
-                dtmNgayDangKy.Enabled = false;
-                txtNoiDangKy.ReadOnly = true;
-                btnXacNhan.Enabled = false;
+                ReadOnly();
             }
             else
             {
-                dtmNgayDangKy.Enabled = true;
-                txtNoiDangKy.ReadOnly = false;
-                btnXacNhan.Enabled = true;
+                UnReadOnLy();
             }
         }
         private void btnSua_Click(object sender, EventArgs e)
@@ -103,20 +113,24 @@ namespace QuanLiCongDanThanhPho
             }    
             return true;
         }    
+        public void CapNhatHonNhan()
+        {
+            HonNhan hN = hnDAO.LayThongTin(maCCCD);
+            hN.NoiDangKy.DinhDang(txtNoiDangKy.Text);
+            hN.NgayDangKy = dtmNgayDangKy.Value;
+            hnDAO.CapNhatHonNhan(hN);
+        }
         private void CapNhat()
         {   if (KiemTraThongTin())
             {
-                HonNhan hN = hnDAO.LayThongTin(maCCCD);
-                hN.NoiDangKy.DinhDang(txtNoiDangKy.Text);
-                hN.NgayDangKy = dtmNgayDangKy.Value;
-                hnDAO.CapNhatHonNhan(hN);
+                CapNhatHonNhan();
             }
-            ChoPhepThayDoi();
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             CapNhat();
+            ReadOnly();
             LayThongTinHonNhan();
         }
 

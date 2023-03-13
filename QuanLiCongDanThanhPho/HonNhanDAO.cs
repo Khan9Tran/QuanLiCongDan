@@ -55,7 +55,7 @@ namespace QuanLiCongDanThanhPho
         public void CapNhatHonNhan(HonNhan hN)
         {
             string sqlStr = string.Format($"UPDATE HONNHAN SET CCCDNam = '{hN.CCCDChong}', TenNam = N'{hN.TenChong}', CCCDNu = '{hN.CCCDVo}', TenNu = N'{hN.TenVo}', NoiDangKy = N'{hN.NoiDangKy.toString()}', NgayDangKy = '{hN.NgayDangKy}' WHERE MaHonNhan = '{hN.MaSo}'");
-            conn.ThucThi(sqlStr, "Cập nhật thành công");
+            conn.ThucThi(sqlStr, "Cập nhật hôn nhân thành công");
         }
         public Boolean KiemTraHonNhan(string maCCCD)
         {

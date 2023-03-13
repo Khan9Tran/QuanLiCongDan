@@ -56,7 +56,13 @@ namespace QuanLiCongDanThanhPho.Models
             this.cCCDMe = cCCDMe;
             this.tenMe = tenMe;
         }
-
+        public void DinhDangGioiTinh()
+        {
+            if (gioiTinh == "Nam" || gioiTinh == "True" || gioiTinh == "nam" || gioiTinh == "NAM" || gioiTinh == "m")
+                gioiTinh = "m";
+            else
+                gioiTinh = "f";
+        }
         public string MaKhaiSinh { get => maKhaiSinh; set => maKhaiSinh = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
         public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }

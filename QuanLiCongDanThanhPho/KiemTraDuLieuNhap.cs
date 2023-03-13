@@ -16,7 +16,6 @@ namespace QuanLiCongDanThanhPho
         {
             return Regex.IsMatch(s, rule);
         }
-
         public  static bool isDiaChi(string diaChi)
         {
             string rule = @"^([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})$";
@@ -46,7 +45,7 @@ namespace QuanLiCongDanThanhPho
         }
         public static bool isGioiTinh(string GioiTinh)
         {
-            string rule = @"^[fm]$";
+            string rule = @"^([Nn]{1})((\u1EEE{1})|(\u1EEF{1})|([Uu]{1})|([Aa]{1}[Mm]{1}))$";
             return KiemTra(GioiTinh, rule);
         }
 
