@@ -34,12 +34,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (e.RowIndex != -1)
             {
-                string maHoKhau = gvHoKhau.CurrentRow.Cells[0].Value.ToString();
-                if (maHoKhau != "")
-                {
-                    FThongTinHoKhau tTHK = new FThongTinHoKhau(maHoKhau);
-                    tTHK.ShowDialog();
-                }
+                cmnusMenu.Show(this, this.PointToClient(MousePosition));
             }
         }
 
@@ -61,6 +56,16 @@ namespace QuanLiCongDanThanhPho
         {
             luaChon = "sotv";
             txtTimKiem_TextChanged(txtTimKiem, null);
+        }
+
+        private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
+        {
+            string maHoKhau = gvHoKhau.CurrentRow.Cells[0].Value.ToString();
+            if (maHoKhau != "")
+            {
+                FThongTinHoKhau tTHK = new FThongTinHoKhau(maHoKhau);
+                tTHK.ShowDialog();
+            }
         }
     }
 }
