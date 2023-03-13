@@ -40,7 +40,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (currentChildForm != null)
             {
-                currentChildForm.Close();
+                currentChildForm.Hide();
             }
             currentChildForm = childForm;
             childForm.TopLevel = false;
@@ -50,7 +50,6 @@ namespace QuanLiCongDanThanhPho
             pnlHienThiForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            StackForm.Add(childForm);
         }
         public void TatMenu(object sender, EventArgs e)
         {
