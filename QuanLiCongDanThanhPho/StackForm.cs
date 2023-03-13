@@ -53,8 +53,23 @@ namespace QuanLiCongDanThanhPho
                                 (forms[i] as FDanhSach).OpenChildForm(forms[forms.Count - 1]);
                             }
                         }
-                    }    
+                    }
+                    else if (forms[forms.Count - 1].Name == "FTachGopHo" ||
+                            forms[forms.Count - 1].Name == "FThemNguoiVaoHo")
+                    {
+                        for (int i = forms.Count - 2; i >= 0; i--)
+                        {
+                            if (forms[i].Name == "FDangKyHoKhau")
+                            {
+                                fTrangChu.OpenChildForm(forms[i]);
+                                (forms[i] as FDangKyHoKhau).OpenChildForm(forms[forms.Count - 1]);
+                            }
+                        }
+                    }
+                    else
+                    {
                         forms[forms.Count - 1].Show();
+                    }
                 }
             }
         }

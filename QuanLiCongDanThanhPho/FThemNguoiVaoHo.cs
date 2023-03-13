@@ -19,6 +19,7 @@ namespace QuanLiCongDanThanhPho
             InitializeComponent();
             cDDAO = new CongDanDAO();
             lblThongTin.Hide();
+            StackForm.Add(this);
         }
         private void LoadDanhSachChuaHoKhau()
         {

@@ -19,6 +19,7 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
             cDDAO = new CongDanDAO();
+            StackForm.Add(this);
         }
 
         private bool isTach = false;
