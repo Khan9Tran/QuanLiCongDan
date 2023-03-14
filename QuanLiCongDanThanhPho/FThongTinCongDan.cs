@@ -115,49 +115,74 @@ namespace QuanLiCongDanThanhPho
                 ReadOnly();
             }
         }
+        private void LayCongDan()
+        {
+            CongDan cd = cdDAO.LayThongTin(MaCCCD);
+            txtCCCD.Text = cd.CCCD;
+            txtHoVaTen.Text = cd.Ten;
+            txtMaHoKhau.Text = cd.MaHoKhau;
+            txtSDT.Text = cd.SDT;
+            txtTonGiao.Text = cd.TonGiao;
+            txtNgheNghiep.Text = cd.NgheNghiep;
+        }
+        private void LayKhaiSinh()
+        {
+            KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
+            dtmNgaySinh.Value = ks.NgaySinh;
+            if (ks.GioiTinh == "f")
+                txtGioiTinh.Text = "Nữ";
+            else
+                txtGioiTinh.Text = "Nam";
+            txtDanToc.Text = ks.DanToc;
+            txtQuocTich.Text = ks.QuocTich;
+            txtQueQuan.Text = ks.QueQuan.toString();
+        }
+        private void LayThue()
+        {
+            Thue thue = thueDAO.LayThongTin(MaCCCD);
+            txtMaThue.Text = thue.MaThue;
+            if (thue.MaThue == "")
+                btnThue.Enabled = false;
+        }
+        private void LayHonNhan()
+        {
+            HonNhan hn = new HonNhan();
+            hn = hnDAO.LayThongTin(MaCCCD);
+            if (!hnDAO.KiemTraHonNhan(MaCCCD))
+            {
+                txtHonNhan.Text = "Chưa có hôn nhân";
+                btnHonNhan.Enabled = false;
+            }
+            else
+                txtHonNhan.Text = hn.MaSo;
+        }
+        private void LayHoKhau()
+        {
+            CongDan cd = cdDAO.LayThongTin(MaCCCD);
+            HoKhau hk = hkDAO.LayThongTin(cd.MaHoKhau);
+            txtDiaChi.Text = hk.DiaChi.toString();
+        }
+        private void LayTamTruTamVang()
+        {
+            TamTruTamVang tttv = new TamTruTamVang();
+            if (!tttvDAO.KiemTraTamTruTamVang(MaCCCD))
+                txtGhiChu.Text = "Không có ghi chú";
+            else
+            {
+                tttv = tttvDAO.LayThongTin(MaCCCD);
+                txtGhiChu.Text = tttv.TrangThai;
+            }
+        }
         public void LayThongTinCongDan()
         {
             if (maCCCD != null)
             {
-                CongDan cd = cdDAO.LayThongTin(MaCCCD);
-                txtCCCD.Text = cd.CCCD;
-                txtHoVaTen.Text = cd.Ten;
-                txtMaHoKhau.Text = cd.MaHoKhau;
-                txtSDT.Text = cd.SDT;
-                txtTonGiao.Text = cd.TonGiao;
-                txtNgheNghiep.Text = cd.NgheNghiep;
-                //----------------//
-                KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
-                dtmNgaySinh.Value = ks.NgaySinh;
-                if (ks.GioiTinh == "f")
-                    txtGioiTinh.Text = "Nữ";
-                else
-                    txtGioiTinh.Text = "Nam";
-                txtDanToc.Text = ks.DanToc;
-                txtQuocTich.Text = ks.QuocTich;
-                txtQueQuan.Text = ks.QueQuan.toString();
-                //-----------------//
-                Thue thue = thueDAO.LayThongTin(MaCCCD);
-                txtMaThue.Text = thue.MaThue;
-                //------------------//
-                HonNhan hn = new HonNhan();
-                hn = hnDAO.LayThongTin(MaCCCD);
-                if (!hnDAO.KiemTraHonNhan(MaCCCD))
-                    txtHonNhan.Text = "Chưa có hôn nhân";
-                else
-                    txtHonNhan.Text = hn.MaSo;
-                //---------------------//
-                HoKhau hk = hkDAO.LayThongTin(cd.MaHoKhau);
-                txtDiaChi.Text = hk.DiaChi.toString();
-                //---------------------//
-                TamTruTamVang tttv = new TamTruTamVang();
-                if (!tttvDAO.KiemTraTamTruTamVang(MaCCCD))
-                    txtGhiChu.Text = "Không có ghi chú";
-                else
-                {
-                    tttv = tttvDAO.LayThongTin(MaCCCD);
-                    txtGhiChu.Text = tttv.TrangThai;
-                }
+                LayCongDan();
+                LayKhaiSinh();
+                LayThue();
+                LayHonNhan();
+                LayHoKhau();
+                LayTamTruTamVang();
             }
         }
         private void FThongTinCongDan_Load(object sender, EventArgs e)
