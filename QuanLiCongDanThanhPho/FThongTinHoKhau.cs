@@ -56,6 +56,16 @@ namespace QuanLiCongDanThanhPho
                 gvQuanHeVoiChuHo.DataSource = dsNguoiKoPhaiChuHo;
             }
         }
+
+        private void CapNhatHoKhau()
+        {
+            HoKhau hoKhau = hkDAO.LayThongTin(maHoKhau);
+            if(txtDiaChi.Text != "")
+            {
+                hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
+            }
+            hkDAO.CapNhatHoKhau(hoKhau);
+        }
         private void FThongTinHoKhau_Load(object sender, EventArgs e)
         {
             LayThongTinHoKhau();
@@ -72,6 +82,31 @@ namespace QuanLiCongDanThanhPho
         {
 
         }
+        private void ReadOnly()
+        {
+            txtDiaChi.ReadOnly = true;
+            txtDiaChi.BackColor = Color.Gainsboro;
+            btnXacNhan.Enabled = false;
+        }
+
+        private void UnReadOnly()
+        {
+            txtDiaChi.ReadOnly = false;
+            txtDiaChi.BackColor = Color.SteelBlue;
+            btnXacNhan.Enabled = true;
+        }
+
+        private void AutoReadOnly()
+        {
+            if (txtDiaChi.ReadOnly == false)
+            {
+                ReadOnly();
+            }
+            else
+            {
+                UnReadOnly();
+            }
+        }
 
         private void gvQuanHeVoiChuHo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -84,6 +119,18 @@ namespace QuanLiCongDanThanhPho
                     ttCD.ShowDialog();
                 }
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            AutoReadOnly();
+        }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            CapNhatHoKhau();
+            LayThongTinHoKhau();
+            ReadOnly();
         }
     }
 }
