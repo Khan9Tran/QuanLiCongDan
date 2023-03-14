@@ -60,7 +60,7 @@ namespace QuanLiCongDanThanhPho
         private void CapNhatHoKhau()
         {
             HoKhau hoKhau = hkDAO.LayThongTin(maHoKhau);
-            if(txtDiaChi.Text != "")
+            if (txtDiaChi.Text != "")
             {
                 hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
             }
@@ -129,6 +129,12 @@ namespace QuanLiCongDanThanhPho
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             CapNhatHoKhau();
+            LayThongTinHoKhau();
+            ReadOnly();
+        }
+
+        private void btnReLoad_Click(object sender, EventArgs e)
+        {
             LayThongTinHoKhau();
             ReadOnly();
         }

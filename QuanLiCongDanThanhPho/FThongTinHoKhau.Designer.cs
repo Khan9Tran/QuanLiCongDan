@@ -144,6 +144,7 @@
             btnReLoad.Size = new Size(50, 50);
             btnReLoad.TabIndex = 110;
             btnReLoad.UseVisualStyleBackColor = false;
+            btnReLoad.Click += btnReLoad_Click;
             // 
             // lblQuanHe
             // 
