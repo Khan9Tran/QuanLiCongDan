@@ -58,6 +58,7 @@
             this.gvThue.Name = "gvThue";
             this.gvThue.RowHeadersWidth = 51;
             this.gvThue.RowTemplate.Height = 29;
+            this.gvThue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvThue.Size = new System.Drawing.Size(1477, 450);
             this.gvThue.TabIndex = 0;
             this.gvThue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThue_CellClick);

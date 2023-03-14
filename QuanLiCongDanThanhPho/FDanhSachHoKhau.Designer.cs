@@ -57,6 +57,7 @@
             this.gvHoKhau.Name = "gvHoKhau";
             this.gvHoKhau.RowHeadersWidth = 51;
             this.gvHoKhau.RowTemplate.Height = 29;
+            this.gvHoKhau.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvHoKhau.Size = new System.Drawing.Size(1490, 450);
             this.gvHoKhau.TabIndex = 0;
             this.gvHoKhau.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellClick);

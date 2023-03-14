@@ -52,6 +52,7 @@
             this.gvTVTT.Name = "gvTVTT";
             this.gvTVTT.RowHeadersWidth = 51;
             this.gvTVTT.RowTemplate.Height = 29;
+            this.gvTVTT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvTVTT.Size = new System.Drawing.Size(1480, 419);
             this.gvTVTT.TabIndex = 1;
             // 

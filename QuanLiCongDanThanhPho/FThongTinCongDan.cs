@@ -45,8 +45,8 @@ namespace QuanLiCongDanThanhPho
 
         public FThongTinCongDan(string maCCCD)
         {
-            MaCCCD = maCCCD;
             InitializeComponent();
+            MaCCCD = maCCCD;
             StackForm.Add(this);
         }
 
@@ -138,7 +138,7 @@ namespace QuanLiCongDanThanhPho
                 txtQueQuan.Text = ks.QueQuan.toString();
                 //-----------------//
                 Thue thue = thueDAO.LayThongTin(MaCCCD);
-                txtMaThue.Text = thue.MaThue.ToString();
+                txtMaThue.Text = thue.MaThue;
                 //------------------//
                 HonNhan hn = new HonNhan();
                 hn = hnDAO.LayThongTin(MaCCCD);
@@ -147,8 +147,7 @@ namespace QuanLiCongDanThanhPho
                 else
                     txtHonNhan.Text = hn.MaSo;
                 //---------------------//
-                HoKhau hk = new HoKhau();
-                hk = hkDAO.LayThongTin(cd.MaHoKhau);
+                HoKhau hk = hkDAO.LayThongTin(cd.MaHoKhau);
                 txtDiaChi.Text = hk.DiaChi.toString();
                 //---------------------//
                 TamTruTamVang tttv = new TamTruTamVang();

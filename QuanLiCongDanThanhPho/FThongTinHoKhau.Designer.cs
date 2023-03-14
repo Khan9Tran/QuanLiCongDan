@@ -162,6 +162,7 @@
             this.gvQuanHeVoiChuHo.Name = "gvQuanHeVoiChuHo";
             this.gvQuanHeVoiChuHo.RowHeadersWidth = 51;
             this.gvQuanHeVoiChuHo.RowTemplate.Height = 29;
+            this.gvQuanHeVoiChuHo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvQuanHeVoiChuHo.Size = new System.Drawing.Size(684, 201);
             this.gvQuanHeVoiChuHo.TabIndex = 10;
             this.gvQuanHeVoiChuHo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvQuanHeVoiChuHo_CellClick);
