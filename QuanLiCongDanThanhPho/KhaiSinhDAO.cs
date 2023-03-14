@@ -27,6 +27,11 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = StringKhaiSinh(kS);
             conn.ThucThi(sqlStr,"Thêm khai sinh thành công");
         }
+        public void XoaKhaiSinh(string maKhaiSinh)
+        {
+            string sqlStr = string.Format($"DELETE FROM KHAISINH WHERE MaKS = '{maKhaiSinh}'");
+            conn.ThucThi(sqlStr, "Xóa khai sinh thành công");
+        }
         public KhaiSinh LayThongTin(string maCCCD)
         {
             string strSql = string.Format("SELECT * FROM KHAISINH WHERE MaKS = '{0}'", maCCCD);

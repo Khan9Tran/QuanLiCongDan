@@ -19,6 +19,28 @@ namespace QuanLiCongDanThanhPho
             CCCDDAO cCCDDAO = new CCCDDAO();
             cCCDDAO.ThemCCCD(cCCD);
         }
+        public void XoaCongDan(CongDan cD)
+        {
+            ThueDAO thueDAO = new ThueDAO();
+            KhaiSinhDAO ksDAO = new KhaiSinhDAO();
+            TamTruTamVangDAO tTTTVDAO = new TamTruTamVangDAO();
+            HonNhanDAO hnDAO = new HonNhanDAO();
+            CCCDDAO cCCCDAO = new CCCDDAO();
+            thueDAO.XoaThue(cD.CCCD);
+            ksDAO.XoaKhaiSinh(cD.CCCD);
+            if (tTTTVDAO.KiemTraTamTruTamVang(cD.CCCD))
+            {
+                tTTTVDAO.XoaTamTruTamVang(cD.CCCD);
+            }
+            if (hnDAO.KiemTraHonNhan(cD.CCCD))
+            {
+                HonNhan hn = hnDAO.LayThongTin(cD.CCCD);
+                hnDAO.Xoa(hn);
+            }
+            cCCCDAO.XoaCCCD(cD.CCCD);
+            string strSql = string.Format($"DELETE FROM CONGDAN WHERE CCCD = '{cD.CCCD}'");
+            conn.ThucThi(strSql, "Xóa công dân thành công");
+        }
         public void CapNhatCongDan(CongDan cD )
         {
             string strSql = string.Format($"UPDATE CONGDAN SET Ten = N'{cD.Ten}', NgheNghiep = N'{cD.NgheNghiep}', TonGiao = N'{cD.TonGiao}', SDT = '{cD.SDT}', MaHK = '{cD.MaHoKhau}', QuanHeVoiChuHo = N'{cD.QuanHeVoiChuHo}' WHERE CCCD = '{cD.CCCD}'");

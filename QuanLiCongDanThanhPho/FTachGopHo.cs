@@ -15,15 +15,23 @@ namespace QuanLiCongDanThanhPho
     public partial class FTachGopHo : Form
     {
         private CongDanDAO cDDAO;
+        private bool isTach = false;
+        private CongDan cD;
         public FTachGopHo()
         {
             InitializeComponent();
             cDDAO = new CongDanDAO();
             StackForm.Add(this);
         }
+        public FTachGopHo(string maHoTach)
+        {
+            InitializeComponent();
+            cDDAO = new CongDanDAO();
+            StackForm.Add(this);
+            txtMaHoTach.Text = maHoTach;
+            LoadHoTach();
+        }
 
-        private bool isTach = false;
-        private CongDan cD;
         private void btnTach_Click(object sender, EventArgs e)
         {
             if (KiemTraThongTin())

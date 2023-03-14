@@ -13,10 +13,20 @@ namespace QuanLiCongDanThanhPho
     public partial class FDangKyHoKhau : Form
     {
         private Form currentChildForm;
+        private string maHoTach;
         public FDangKyHoKhau()
         {
             InitializeComponent();
             StackForm.Add(this);
+        }
+        public FDangKyHoKhau(string maHoTach)
+        {
+            InitializeComponent();
+            StackForm.Add(this);
+            this.maHoTach = maHoTach;
+            OpenChildForm(new FTachGopHo(maHoTach));
+            btnTachGop.BackColor = Color.Gray;
+            btnThem.BackColor = Color.WhiteSmoke;
         }
 
         public void OpenChildForm(Form childForm)
