@@ -36,7 +36,6 @@
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnSoTV = new System.Windows.Forms.Button();
-            this.btnNgayDangKy = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.Button();
@@ -94,7 +93,6 @@
             // 
             this.flpnlPhanLoai.Controls.Add(this.btnTatCa);
             this.flpnlPhanLoai.Controls.Add(this.btnSoTV);
-            this.flpnlPhanLoai.Controls.Add(this.btnNgayDangKy);
             this.flpnlPhanLoai.Location = new System.Drawing.Point(20, 164);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
             this.flpnlPhanLoai.Size = new System.Drawing.Size(699, 47);
@@ -129,20 +127,6 @@
             this.btnSoTV.Text = "Thành viên";
             this.btnSoTV.UseVisualStyleBackColor = false;
             this.btnSoTV.Click += new System.EventHandler(this.btnSoTV_Click);
-            // 
-            // btnNgayDangKy
-            // 
-            this.btnNgayDangKy.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNgayDangKy.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnNgayDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNgayDangKy.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNgayDangKy.ForeColor = System.Drawing.Color.Black;
-            this.btnNgayDangKy.Location = new System.Drawing.Point(265, 3);
-            this.btnNgayDangKy.Name = "btnNgayDangKy";
-            this.btnNgayDangKy.Size = new System.Drawing.Size(144, 40);
-            this.btnNgayDangKy.TabIndex = 6;
-            this.btnNgayDangKy.Text = "Ngày đăng ký";
-            this.btnNgayDangKy.UseVisualStyleBackColor = false;
             // 
             // txtTimKiem
             // 
@@ -211,7 +195,6 @@
         private FlowLayoutPanel flpnlPhanLoai;
         private Button btnTatCa;
         private Button btnSoTV;
-        private Button btnNgayDangKy;
         private TextBox txtTimKiem;
         private PictureBox picTimKiem;
         private ContextMenuStrip cmnusMenu;
