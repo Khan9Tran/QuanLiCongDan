@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiCongDanThanhPho.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,6 +59,24 @@ namespace QuanLiCongDanThanhPho
         {
             FDangKyTamTruTamVang dangKyTTTV = new FDangKyTamTruTamVang();
             (StackForm.fTrangChu).OpenChildForm(dangKyTTTV);
+        }
+
+        private void gvTVTT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                cmnusMenu.Show(this, this.PointToClient(MousePosition));
+            }
+        }
+
+        private void cmnusMenuXoa_Click(object sender, EventArgs e)
+        {
+            string maCCCD = gvTVTT.CurrentRow.Cells["CCCD"].Value.ToString();
+            if (maCCCD != "")
+            {
+                tttvDao.XoaTamTruTamVang(maCCCD);
+                txtTimKiem_TextChanged(txtTimKiem, null);
+            }
         }
     }
 }

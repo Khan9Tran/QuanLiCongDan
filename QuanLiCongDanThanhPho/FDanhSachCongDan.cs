@@ -100,5 +100,16 @@ namespace QuanLiCongDanThanhPho
                 ttCD.ShowDialog();
             }
         }
+
+        private void cmnusMenuXoa_Click(object sender, EventArgs e)
+        {
+            string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
+            if (maCCCD != "")
+            {
+                CongDan cd = cdDao.LayThongTin(maCCCD);
+                cdDao.XoaCongDan(cd);
+                txtTimKiem_TextChanged(txtTimKiem, null);
+            }
+        }
     }
 }

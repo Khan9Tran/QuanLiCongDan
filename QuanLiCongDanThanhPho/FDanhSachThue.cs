@@ -89,7 +89,12 @@ namespace QuanLiCongDanThanhPho
 
         private void cmnusMenuXoa_Click(object sender, EventArgs e)
         {
-
+            string maCCCD = gvThue.CurrentRow.Cells["CCCD"].Value.ToString();
+            if (maCCCD != "")
+            {
+                thueDAO.XoaThue(maCCCD);
+                txtTimKiem_TextChanged(txtTimKiem, null);
+            }
         }
 
         private void cmnusMenuChiTiet_Click(object sender, EventArgs e)

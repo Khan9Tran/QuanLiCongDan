@@ -85,21 +85,22 @@
             this.cmnusMenu.Name = "contextMenuStrip1";
             this.cmnusMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusMenu.ShowImageMargin = false;
-            this.cmnusMenu.Size = new System.Drawing.Size(129, 68);
+            this.cmnusMenu.Size = new System.Drawing.Size(186, 96);
             // 
             // cmnusMenuChiTiet
             // 
             this.cmnusMenuChiTiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusMenuChiTiet.Name = "cmnusMenuChiTiet";
-            this.cmnusMenuChiTiet.Size = new System.Drawing.Size(128, 32);
+            this.cmnusMenuChiTiet.Size = new System.Drawing.Size(185, 32);
             this.cmnusMenuChiTiet.Text = "Chi tiết";
             this.cmnusMenuChiTiet.Click += new System.EventHandler(this.cmnusMenuChiTiet_Click);
             // 
             // cmnusMenuXoa
             // 
             this.cmnusMenuXoa.Name = "cmnusMenuXoa";
-            this.cmnusMenuXoa.Size = new System.Drawing.Size(128, 32);
+            this.cmnusMenuXoa.Size = new System.Drawing.Size(185, 32);
             this.cmnusMenuXoa.Text = "Xóa";
+            this.cmnusMenuXoa.Click += new System.EventHandler(this.cmnusMenuXoa_Click);
             // 
             // txtTimKiem
             // 

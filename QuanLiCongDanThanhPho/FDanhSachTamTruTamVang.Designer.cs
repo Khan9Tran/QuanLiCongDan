@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gvTVTT = new System.Windows.Forms.DataGridView();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
@@ -36,9 +37,12 @@
             this.btnTT = new System.Windows.Forms.Button();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.Button();
+            this.cmnusMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
+            this.cmnusMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gvTVTT
@@ -55,6 +59,7 @@
             this.gvTVTT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvTVTT.Size = new System.Drawing.Size(1480, 419);
             this.gvTVTT.TabIndex = 1;
+            this.gvTVTT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTVTT_CellClick);
             // 
             // txtTimKiem
             // 
@@ -146,6 +151,26 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // cmnusMenu
+            // 
+            this.cmnusMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmnusMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmnusMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmnusMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmnusMenuXoa});
+            this.cmnusMenu.Name = "contextMenuStrip1";
+            this.cmnusMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.cmnusMenu.ShowImageMargin = false;
+            this.cmnusMenu.Size = new System.Drawing.Size(186, 64);
+            // 
+            // cmnusMenuXoa
+            // 
+            this.cmnusMenuXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cmnusMenuXoa.Name = "cmnusMenuXoa";
+            this.cmnusMenuXoa.Size = new System.Drawing.Size(185, 32);
+            this.cmnusMenuXoa.Text = "Xóa";
+            this.cmnusMenuXoa.Click += new System.EventHandler(this.cmnusMenuXoa_Click);
+            // 
             // FDanhSachTamTruTamVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
@@ -167,6 +192,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).EndInit();
             this.flpnlPhanLoai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).EndInit();
+            this.cmnusMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +207,7 @@
         private Button btnTT;
         private PictureBox picTimKiem;
         private Button btnThem;
+        private ContextMenuStrip cmnusMenu;
+        private ToolStripMenuItem cmnusMenuXoa;
     }
 }

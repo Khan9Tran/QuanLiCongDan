@@ -32,7 +32,7 @@
             this.gvHoKhau = new System.Windows.Forms.DataGridView();
             this.cmnusMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmnusMenuChiTiet = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmnusMenuTachGop = new System.Windows.Forms.ToolStripMenuItem();
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnSoTV = new System.Windows.Forms.Button();
@@ -69,25 +69,26 @@
             this.cmnusMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmnusMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmnusMenuChiTiet,
-            this.cmnusMenuXoa});
+            this.cmnusMenuTachGop});
             this.cmnusMenu.Name = "contextMenuStrip1";
             this.cmnusMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusMenu.ShowImageMargin = false;
-            this.cmnusMenu.Size = new System.Drawing.Size(129, 68);
+            this.cmnusMenu.Size = new System.Drawing.Size(232, 96);
             // 
             // cmnusMenuChiTiet
             // 
             this.cmnusMenuChiTiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusMenuChiTiet.Name = "cmnusMenuChiTiet";
-            this.cmnusMenuChiTiet.Size = new System.Drawing.Size(128, 32);
+            this.cmnusMenuChiTiet.Size = new System.Drawing.Size(231, 32);
             this.cmnusMenuChiTiet.Text = "Chi tiết";
             this.cmnusMenuChiTiet.Click += new System.EventHandler(this.cmnusMenuChiTiet_Click);
             // 
-            // cmnusMenuXoa
+            // cmnusMenuTachGop
             // 
-            this.cmnusMenuXoa.Name = "cmnusMenuXoa";
-            this.cmnusMenuXoa.Size = new System.Drawing.Size(128, 32);
-            this.cmnusMenuXoa.Text = "Xóa";
+            this.cmnusMenuTachGop.Name = "cmnusMenuTachGop";
+            this.cmnusMenuTachGop.Size = new System.Drawing.Size(231, 32);
+            this.cmnusMenuTachGop.Text = "Tách/Gộp hộ khẩu";
+            this.cmnusMenuTachGop.Click += new System.EventHandler(this.cmnusMenuTachGop_Click);
             // 
             // flpnlPhanLoai
             // 
@@ -199,7 +200,7 @@
         private PictureBox picTimKiem;
         private ContextMenuStrip cmnusMenu;
         private ToolStripMenuItem cmnusMenuChiTiet;
-        private ToolStripMenuItem cmnusMenuXoa;
+        private ToolStripMenuItem cmnusMenuTachGop;
         private Button btnThem;
     }
 }

@@ -16,7 +16,11 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format($"INSERT INTO CCCD(MaCCCD, DacDiem, NgayCap) VALUES('{canCuoc.MaCCCD}', N'{canCuoc.DacDiem}', '{canCuoc.NgayCap}');");
             conn.ThucThi(sqlStr, "Căn cước đã khởi tạo");
         }
-        public void XoaCCCD(CCCD canCuoc) { }
+        public void XoaCCCD(string maCanCuoc) 
+        {
+            string sqlStr = string.Format($"DELETE FROM CCCD WHERE MaCCCD = '{maCanCuoc}'");
+            conn.ThucThi(sqlStr, "Xóa căn cước thành công");
+        }
         public void CapNhatCCCD(CCCD canCuoc) 
         {
             string sqlStr = string.Format($"UPDATE CCCD SET DacDiem = N'{canCuoc.DacDiem}', NgayCap = '{canCuoc.NgayCap}' WHERE MaCCCD = '{canCuoc.MaCCCD}'");
