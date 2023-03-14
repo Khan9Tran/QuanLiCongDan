@@ -102,8 +102,9 @@ namespace QuanLiCongDanThanhPho
                     DiaChi temp = new DiaChi();
                     temp.DinhDang(reader["NoiSinh"].ToString());
                     ks.NoiSinh = temp;
-                    temp.DinhDang(reader["QueQuan"].ToString());
-                    ks.QueQuan = temp;
+                    DiaChi temp2 = new DiaChi();
+                    temp2.DinhDang(reader["QueQuan"].ToString());
+                    ks.QueQuan = temp2;
                     ks.CCCDCha = reader["CCCDCha"].ToString();
                     ks.TenCha = reader["TenCha"].ToString();
                     ks.CCCDMe = reader["CCCDMe"].ToString();

@@ -39,6 +39,7 @@ namespace QuanLiCongDanThanhPho
         private void FDanhSachCongDan_Load(object sender, EventArgs e)
         {
             gvDanhSachCongDan.DataSource = cdDao.LayDanhSach();
+            fpnlPhanLoai.Width = 45;
         }
 
         private void gvDanhSachCongDan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -98,6 +99,18 @@ namespace QuanLiCongDanThanhPho
             {
                 FThongTinCongDan ttCD = new FThongTinCongDan(maCCCD);
                 ttCD.ShowDialog();
+            }
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            if (fpnlPhanLoai.Width > 50)
+            {
+                fpnlPhanLoai.Width = 45;
+            }    
+            else 
+            {
+                fpnlPhanLoai.Width = 800;
             }
         }
     }

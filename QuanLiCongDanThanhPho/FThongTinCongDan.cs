@@ -76,8 +76,6 @@ namespace QuanLiCongDanThanhPho
             txtDiaChi.BackColor = Color.Gainsboro;
             txtGioiTinh.ReadOnly = true;
             txtGioiTinh.BackColor = Color.Gainsboro;
-            txtGhiChu.ReadOnly = true;
-            txtGhiChu.BackColor = Color.Gainsboro;
             dtmNgaySinh.Enabled = false;
         }
         private void UnReadOnLy()
@@ -101,7 +99,6 @@ namespace QuanLiCongDanThanhPho
             txtDiaChi.BackColor = Color.SteelBlue;
             txtGioiTinh.ReadOnly = false;
             txtGioiTinh.BackColor = Color.SteelBlue;
-            txtGhiChu.ReadOnly = false;
             dtmNgaySinh.Enabled = true;
         }
         private void AutoReadOnly()
