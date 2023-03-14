@@ -137,9 +137,9 @@ namespace QuanLiCongDanThanhPho
         private void LayThue()
         {
             Thue thue = thueDAO.LayThongTin(MaCCCD);
-            txtMaThue.Text = thue.MaThue;
-            if (thue.MaThue == "")
+            if (thue.MaThue == null || thue.MaThue == "")
                 btnThue.Enabled = false;
+            txtMaThue.Text = thue.MaThue;
         }
         private void LayHonNhan()
         {

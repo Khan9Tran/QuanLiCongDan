@@ -71,11 +71,15 @@ namespace QuanLiCongDanThanhPho
 
         private void cmnusMenuXoa_Click(object sender, EventArgs e)
         {
-            string maCCCD = gvTVTT.CurrentRow.Cells["CCCD"].Value.ToString();
-            if (maCCCD != "")
+            DialogResult exit = MessageBox.Show("Bạn có thật sự muốn xóa thông tin tạm trú/tạm vắng?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (exit == DialogResult.Yes)
             {
-                tttvDao.XoaTamTruTamVang(maCCCD);
-                txtTimKiem_TextChanged(txtTimKiem, null);
+                string maCCCD = gvTVTT.CurrentRow.Cells["CCCD"].Value.ToString();
+                if (maCCCD != "")
+                {
+                    tttvDao.XoaTamTruTamVang(maCCCD);
+                    txtTimKiem_TextChanged(txtTimKiem, null);
+                }
             }
         }
     }

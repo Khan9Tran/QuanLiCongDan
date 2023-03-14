@@ -104,12 +104,16 @@ namespace QuanLiCongDanThanhPho
 
         private void cmnusMenuXoa_Click(object sender, EventArgs e)
         {
-            string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
-            if (maCCCD != "")
+            DialogResult message = MessageBox.Show("Bạn có thật sự muốn xóa công dân?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (message == DialogResult.Yes)
             {
-                CongDan cd = cdDao.LayThongTin(maCCCD);
-                cdDao.XoaCongDan(cd);
-                txtTimKiem_TextChanged(txtTimKiem, null);
+                string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
+                if (maCCCD != "")
+                {
+                    CongDan cd = cdDao.LayThongTin(maCCCD);
+                    cdDao.XoaCongDan(cd);
+                    txtTimKiem_TextChanged(txtTimKiem, null);
+                }
             }
         }
 

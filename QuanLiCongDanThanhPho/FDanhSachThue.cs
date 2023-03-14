@@ -89,11 +89,15 @@ namespace QuanLiCongDanThanhPho
 
         private void cmnusMenuXoa_Click(object sender, EventArgs e)
         {
-            string maCCCD = gvThue.CurrentRow.Cells["CCCD"].Value.ToString();
-            if (maCCCD != "")
+            DialogResult exit = MessageBox.Show("Bạn có thật sự muốn xóa thông tin thuế?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (exit == DialogResult.Yes)
             {
-                thueDAO.XoaThue(maCCCD);
-                txtTimKiem_TextChanged(txtTimKiem, null);
+                string maCCCD = gvThue.CurrentRow.Cells["CCCD"].Value.ToString();
+                if (maCCCD != "")
+                {
+                    thueDAO.XoaThue(maCCCD);
+                    txtTimKiem_TextChanged(txtTimKiem, null);
+                }
             }
         }
 
