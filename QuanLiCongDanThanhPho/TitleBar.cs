@@ -21,8 +21,14 @@ namespace QuanLiCongDanThanhPho
         }
 
         private void btnClose_Click(object sender, EventArgs e)
-        { 
-            Application.Exit();
+        {
+   
+            DialogResult exit = MessageBox.Show("Bạn có thật sự muốn thoát", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (exit == DialogResult.Yes)
+            {
+                StackForm.ClearAll();
+                Application.Exit();
+            }
         }
 
     }

@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FDangNhap()
         {
             InitializeComponent();
+            KeyPreview = true;
         }
 
         private void txtTaiKhoan_Click(object sender, EventArgs e)
@@ -26,10 +27,6 @@ namespace QuanLiCongDanThanhPho
         private void txtMatKhau_Click(object sender, EventArgs e)
         {
             txtMatKhau.Clear();
-        }
-
-        private void FDangNhap_Load(object sender, EventArgs e)
-        {
         }
 
         private void txtTaiKhoan_MouseDown(object sender, MouseEventArgs e)
@@ -48,5 +45,36 @@ namespace QuanLiCongDanThanhPho
 
         }
 
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            FTrangChu newTrangChu = new FTrangChu();
+            newTrangChu.ShowDialog();
+            this.Hide();
+        }
+
+        private bool checkTK = false;
+        private bool checkPass = false;
+        private void txtTaiKhoan_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            if (checkTK == false)
+            {
+                txtTaiKhoan.Clear();
+            }
+            checkTK = true;
+        }
+
+        private void txtMatKhau_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            if (checkPass == false)
+            {
+                txtMatKhau.Clear();
+            }
+            checkPass = true;
+        }
+        private void FDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) { Close(); }
+            base.OnKeyDown(e);
+        }
     }
 }

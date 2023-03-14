@@ -197,5 +197,27 @@ namespace QuanLiCongDanThanhPho
             TatMenu(sender, e);
         }
 
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            cmnusTaiKhoan.Show(new Point(1500,142));
+        }
+
+        private void TaiKhoanItemDangXuat_Click(object sender, EventArgs e)
+        {
+            StackForm.ClearAll();
+            FDangNhap newDangNhap = new FDangNhap();
+            newDangNhap.Show();
+            this.Close();
+        }
+
+        private void cmnusTaiKhoanItemThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult exit = MessageBox.Show("Bạn có thật sự muốn thoát", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (exit == DialogResult.Yes)
+            {
+                StackForm.ClearAll();
+                Application.Exit();
+            }
+        }
     }
 }

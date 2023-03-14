@@ -38,36 +38,37 @@
             // 
             // pnlDangNhap
             // 
-            this.pnlDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.pnlDangNhap.BackColor = System.Drawing.Color.CornflowerBlue;
             this.pnlDangNhap.Controls.Add(this.btnDangNhap);
             this.pnlDangNhap.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlDangNhap.Location = new System.Drawing.Point(330, 0);
-            this.pnlDangNhap.Name = "panel1";
+            this.pnlDangNhap.Name = "pnlDangNhap";
             this.pnlDangNhap.Size = new System.Drawing.Size(70, 150);
             this.pnlDangNhap.TabIndex = 1;
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.BackColor = Color.Transparent;
-            this.btnDangNhap.DialogResult = DialogResult.OK;
-            btnDangNhap.Dock = DockStyle.Fill;
-            btnDangNhap.FlatAppearance.BorderSize = 0;
-            btnDangNhap.FlatStyle = FlatStyle.Flat;
-            btnDangNhap.Image = Properties.Resources.right;
-            btnDangNhap.Location = new Point(0, 0);
-            btnDangNhap.Name = "btnDangNhap";
-            btnDangNhap.Size = new Size(70, 150);
-            btnDangNhap.TabIndex = 95;
-            btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDangNhap.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnDangNhap.FlatAppearance.BorderSize = 0;
+            this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangNhap.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDangNhap.Image = global::QuanLiCongDanThanhPho.Properties.Resources.right;
+            this.btnDangNhap.Location = new System.Drawing.Point(-3, 0);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(73, 150);
+            this.btnDangNhap.TabIndex = 95;
+            this.btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // pnlLine
             // 
             this.pnlLine.BackColor = System.Drawing.Color.Silver;
             this.pnlLine.Location = new System.Drawing.Point(25, 75);
-            this.pnlLine.Name = "panel2";
+            this.pnlLine.Name = "pnlLine";
             this.pnlLine.Size = new System.Drawing.Size(280, 2);
             this.pnlLine.TabIndex = 2;
-            //  
+            // 
             // txtTaiKhoan
             // 
             this.txtTaiKhoan.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -78,6 +79,7 @@
             this.txtTaiKhoan.Size = new System.Drawing.Size(250, 27);
             this.txtTaiKhoan.TabIndex = 3;
             this.txtTaiKhoan.Text = "Tài Khoản";
+            this.txtTaiKhoan.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTaiKhoan_MouseDown_1);
             // 
             // txtMatKhau
             // 
@@ -89,6 +91,7 @@
             this.txtMatKhau.Size = new System.Drawing.Size(250, 27);
             this.txtMatKhau.TabIndex = 4;
             this.txtMatKhau.Text = "Mật Khẩu";
+            this.txtMatKhau.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtMatKhau_MouseDown_1);
             // 
             // FDangNhap
             // 
@@ -106,6 +109,8 @@
             this.Name = "FDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDangNhap";
+            this.Enter += new System.EventHandler(this.btnDangNhap_Click);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FDangNhap_KeyDown);
             this.pnlDangNhap.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
