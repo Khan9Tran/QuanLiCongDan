@@ -78,7 +78,7 @@ namespace QuanLiCongDanThanhPho
         }
         public HonNhan LayThongTinGoiYTheoMaSo(string maHonNhan)
         {
-            string sqlStr = string.Format($"SELECT * FROM HONNHAN WHERE MaHonNhan like '%{maHonNhan}%'");
+            string sqlStr = string.Format($"SELECT * FROM HONNHAN WHERE MaHonNhan like '{maHonNhan}'");
             return conn.LayThongTinHonNhan(sqlStr);
         }
     }

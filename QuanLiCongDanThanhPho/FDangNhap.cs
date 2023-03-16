@@ -73,8 +73,11 @@ namespace QuanLiCongDanThanhPho
         }
         private void FDangNhap_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape) { Close(); }
-            base.OnKeyDown(e);
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+                base.OnKeyDown(e);
+            }
         }
     }
 }

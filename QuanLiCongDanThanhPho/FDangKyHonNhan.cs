@@ -31,7 +31,7 @@ namespace QuanLiCongDanThanhPho
                 hNDAO.ThemHonNhan(hN);
             }
         }
-        public void ReadOnly()
+        public void ChoPhepLiHon()
         {
             txtCCCDChong.ReadOnly = true;
             txtCCCDVo.ReadOnly = true;
@@ -42,7 +42,7 @@ namespace QuanLiCongDanThanhPho
             btnDelete.Enabled = true;
             btnDangKy.Enabled = false;
         }   
-        public void UnReadOnly()
+        public void ChoPhepDangKy()
         {
             txtCCCDChong.ReadOnly = false;
             txtCCCDVo.ReadOnly = false;
@@ -52,17 +52,6 @@ namespace QuanLiCongDanThanhPho
             dtpNgayDangKy.Enabled = true;
             btnDelete.Enabled = false;
             btnDangKy.Enabled = true;
-        }    
-        private void AutoReadOnly()
-        {
-            if (txtCCCDChong.ReadOnly == false)
-            {
-                ReadOnly();
-            }
-            else
-            {
-                UnReadOnly();
-            }
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -74,22 +63,13 @@ namespace QuanLiCongDanThanhPho
         {
             Clear();
             txtMaHonNhan.Clear();
-            UnReadOnly();
+            ChoPhepDangKy();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
             Reset();
         }
 
-        private void btnTimVo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnTimChong_Click(object sender, EventArgs e)
-        {
-
-        }
         private bool KiemTraThongTin()
         {
             if (!KiemTraDuLieuNhap.isMaSo(txtMaHonNhan.Text))
@@ -134,29 +114,6 @@ namespace QuanLiCongDanThanhPho
             txtNoiDK.Clear();
             dtpNgayDangKy.Value = DateTime.Now;
         }    
-        private void btnMaHonNhan_Click(object sender, EventArgs e)
-        {
-            if (KiemTraDuLieuNhap.isMaSo(txtMaHonNhan.Text))
-            {
-                Clear();
-                HonNhan hN = new HonNhan();
-                hN = hNDAO.LayThongTinTheoMaSo(txtMaHonNhan.Text);
-                txtCCCDChong.Text = hN.CCCDChong;
-                txtCCCDVo.Text = hN.CCCDVo;
-                txtTenChong.Text = hN.TenChong;
-                txtTenVo.Text = hN.TenVo;
-                txtNoiDK.Text = hN.NoiDangKy.toString();
-                if (txtTenChong.Text.Length > 0  )
-                {
-                    AutoReadOnly();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Mã số sai định dạng");
-            }    
-        }
-
         private void txtMaHonNhan_TextChanged(object sender, EventArgs e)
         {
             if (txtMaHonNhan.Text.Length > 0)
@@ -168,6 +125,10 @@ namespace QuanLiCongDanThanhPho
                 txtTenVo.Text = hn.TenVo;
                 txtNoiDK.Text = hn.NoiDangKy.toString();
                 dtpNgayDangKy.Value = hn.NgayDangKy;
+                if (hn.CCCDChong != null)
+                    ChoPhepLiHon();
+                else
+                    ChoPhepDangKy();
             }
 
         }

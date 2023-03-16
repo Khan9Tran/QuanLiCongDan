@@ -167,7 +167,6 @@
             this.btnTimChong.Size = new System.Drawing.Size(50, 50);
             this.btnTimChong.TabIndex = 53;
             this.btnTimChong.UseVisualStyleBackColor = false;
-            this.btnTimChong.Click += new System.EventHandler(this.btnTimChong_Click);
             // 
             // btnTimVo
             // 
@@ -182,7 +181,6 @@
             this.btnTimVo.Size = new System.Drawing.Size(50, 50);
             this.btnTimVo.TabIndex = 54;
             this.btnTimVo.UseVisualStyleBackColor = false;
-            this.btnTimVo.Click += new System.EventHandler(this.btnTimVo_Click);
             // 
             // lblNoiDangKy
             // 
@@ -249,6 +247,7 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Enabled = false;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Image = global::QuanLiCongDanThanhPho.Properties.Resources.delete__1_;
@@ -284,7 +283,6 @@
             this.btnMaHonNhan.Size = new System.Drawing.Size(50, 50);
             this.btnMaHonNhan.TabIndex = 63;
             this.btnMaHonNhan.UseVisualStyleBackColor = false;
-            this.btnMaHonNhan.Click += new System.EventHandler(this.btnMaHonNhan_Click);
             // 
             // label1
             // 
