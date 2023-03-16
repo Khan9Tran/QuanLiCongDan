@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QuanLiCongDanThanhPho.Models;
 using System.Data.SqlTypes;
+using System.Data;
 
 namespace QuanLiCongDanThanhPho
 {
@@ -36,6 +37,11 @@ namespace QuanLiCongDanThanhPho
         {
             string strSql = string.Format("SELECT * FROM KHAISINH WHERE MaKS = '{0}'", maCCCD);
             return conn.LayThongTinKhaiSinh(strSql);
+        }
+        public DataTable LayDanhSachVeSoNamNu()
+        {
+            string sqlStr = string.Format("SELECT GioiTinh, COUNT(GioiTinh) as 'Số lượng' FROM KHAISINH GROUP BY GioiTinh");
+            return conn.LayDanhSach(sqlStr);
         }
     }
 }
