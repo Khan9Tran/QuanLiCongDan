@@ -19,6 +19,7 @@ namespace QuanLiCongDanThanhPho
             InitializeComponent();
             cDDAO = new CongDanDAO();
             lblThongTin.Hide();
+            gvNguoiChuaCoHoKhau.Hide();
             StackForm.Add(this);
         }
         private void LoadDanhSachChuaHoKhau()
@@ -28,6 +29,7 @@ namespace QuanLiCongDanThanhPho
         private void btnTim_Click(object sender, EventArgs e)
         {
             lblThongTin.Show();
+            gvNguoiChuaCoHoKhau.Show();
             LoadDanhSachChuaHoKhau();
         }
 
@@ -51,11 +53,13 @@ namespace QuanLiCongDanThanhPho
             txtTen.Text = "";
             txtMaHo.Text = "";
             txtQuanHeVoiChuHo.Text = "";
+            gvNguoiChuaCoHoKhau.Hide();
+            lblThongTin.Hide();
             LoadDanhSachChuaHoKhau();
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
-           
+            Reset();
         }
     }
 }
