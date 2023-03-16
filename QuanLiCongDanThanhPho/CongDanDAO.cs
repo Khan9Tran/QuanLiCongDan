@@ -115,5 +115,10 @@ namespace QuanLiCongDanThanhPho
             string strSql = string.Format("SELECT COUNT(*) as 'Số công dân' FROM CONGDAN");
             return conn.LayDanhSach(strSql);
         }
+        public DataTable LayDanhSachDiaChi()
+        {
+            string sqlStr = string.Format("SELECT DiaChi FROM CONGDAN INNER JOIN HOKHAU ON CONGDAN.MaHK = HOKHAU.MaHK WHERE HOKHAU.DiaChi <> N'Tạm trú' AND HOKHAU.DiaChi <> N'Tạm vắng' UNION ALL SELECT DiaChi FROM TAMTRUTAMVANG");
+            return conn.LayDanhSach(sqlStr);
+        }
     }
 }
