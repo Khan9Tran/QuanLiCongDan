@@ -14,10 +14,12 @@ namespace QuanLiCongDanThanhPho
     public partial class FDangKyHonNhan : Form
     {
         HonNhanDAO hNDAO;
+        KhaiSinhDAO ksDAO;
         public FDangKyHonNhan()
         {
             InitializeComponent();
             hNDAO = new HonNhanDAO();
+            ksDAO = new KhaiSinhDAO();
             StackForm.Add(this);
         }
 
@@ -25,7 +27,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (KiemTraThongTin())
             {
-                HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtTenVo.Text, txtNoiDK.Text, dtmNgayDangKy.Value);
+                HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtTenVo.Text, txtNoiDK.Text, dtpNgayDangKy.Value);
                 hNDAO.ThemHonNhan(hN);
             }
         }
@@ -36,7 +38,7 @@ namespace QuanLiCongDanThanhPho
             txtTenChong.ReadOnly = true;
             txtTenVo.ReadOnly = true;
             txtNoiDK.ReadOnly = true;
-            dtmNgayDangKy.Enabled = false;
+            dtpNgayDangKy.Enabled = false;
             btnDelete.Enabled = true;
             btnDangKy.Enabled = false;
         }   
@@ -47,7 +49,7 @@ namespace QuanLiCongDanThanhPho
             txtTenChong.ReadOnly = false;
             txtTenVo.ReadOnly = false;
             txtNoiDK.ReadOnly = false;
-            dtmNgayDangKy.Enabled = true;
+            dtpNgayDangKy.Enabled = true;
             btnDelete.Enabled = false;
             btnDangKy.Enabled = true;
         }    
@@ -64,7 +66,7 @@ namespace QuanLiCongDanThanhPho
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtCCCDChong.Text, txtNoiDK.Text, dtmNgayDangKy.Value);
+            HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtCCCDChong.Text, txtNoiDK.Text, dtpNgayDangKy.Value);
             hNDAO.Xoa(hN);
             Reset();
         }
@@ -130,7 +132,7 @@ namespace QuanLiCongDanThanhPho
             txtTenChong.Clear();
             txtTenVo.Clear();
             txtNoiDK.Clear();
-            dtmNgayDangKy.Value = DateTime.Now;
+            dtpNgayDangKy.Value = DateTime.Now;
         }    
         private void btnMaHonNhan_Click(object sender, EventArgs e)
         {
@@ -153,6 +155,39 @@ namespace QuanLiCongDanThanhPho
             {
                 MessageBox.Show("Mã số sai định dạng");
             }    
+        }
+
+        private void txtMaHonNhan_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMaHonNhan.Text.Length > 0)
+            {
+                HonNhan hn = hNDAO.LayThongTinGoiYTheoMaSo(txtMaHonNhan.Text);
+                txtCCCDChong.Text = hn.CCCDChong;
+                txtCCCDVo.Text = hn.CCCDVo;
+                txtTenChong.Text = hn.TenChong;
+                txtTenVo.Text = hn.TenVo;
+                txtNoiDK.Text = hn.NoiDangKy.toString();
+                dtpNgayDangKy.Value = hn.NgayDangKy;
+            }
+
+        }
+
+        private void txtCCCDChong_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCCCDChong.Text.Length > 0)
+            {
+                KhaiSinh ks = ksDAO.LayThongTinNamNuTheoTu(txtCCCDChong.Text, "m");
+                txtTenChong.Text = ks.HoTen;
+            }
+        }
+
+        private void txtCCCDVo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCCCDVo.Text.Length > 0)
+            {
+                KhaiSinh ks = ksDAO.LayThongTinNamNuTheoTu(txtCCCDVo.Text, "f");
+                txtTenVo.Text = ks.HoTen;
+            }
         }
     }
 }

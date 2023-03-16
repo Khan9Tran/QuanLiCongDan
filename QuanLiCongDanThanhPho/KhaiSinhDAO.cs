@@ -43,5 +43,14 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format("SELECT GioiTinh, COUNT(GioiTinh) as 'Số lượng' FROM KHAISINH GROUP BY GioiTinh");
             return conn.LayDanhSach(sqlStr);
         }
+        public KhaiSinh LayThongTinNamNuTheoTu(string tu, string dieuKien)
+        {
+            string strSql = string.Format($"SELECT * FROM KHAISINH WHERE MaKS like '%{tu}%'");
+            if (dieuKien.Length > 0)
+            {
+                strSql += string.Format($" AND GioiTinh = '{dieuKien}'");
+            }
+            return conn.LayThongTinKhaiSinh(strSql);
+        }
     }
 }

@@ -112,8 +112,8 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachhVeSoCongDan()
         {
-            string sqlStr = string.Format("SELECT COUNT(*) as 'Số công dân' FROM CONGDAN");
-            return conn.LayDanhSach
+            string strSql = string.Format("SELECT COUNT(*) as 'Số công dân' FROM CONGDAN");
+            return conn.LayDanhSach(strSql);
         }
     }
 }

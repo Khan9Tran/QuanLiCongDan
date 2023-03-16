@@ -34,7 +34,7 @@
             this.lblCCCD = new System.Windows.Forms.Label();
             this.txtCCCDChong = new System.Windows.Forms.TextBox();
             this.txtCCCDVo = new System.Windows.Forms.TextBox();
-            this.dtmNgayDangKy = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayDangKy = new System.Windows.Forms.DateTimePicker();
             this.lblNgayDangKy = new System.Windows.Forms.Label();
             this.lblChong = new System.Windows.Forms.Label();
             this.lblVo = new System.Windows.Forms.Label();
@@ -101,6 +101,7 @@
             this.txtCCCDChong.Name = "txtCCCDChong";
             this.txtCCCDChong.Size = new System.Drawing.Size(397, 27);
             this.txtCCCDChong.TabIndex = 15;
+            this.txtCCCDChong.TextChanged += new System.EventHandler(this.txtCCCDChong_TextChanged);
             // 
             // txtCCCDVo
             // 
@@ -111,16 +112,17 @@
             this.txtCCCDVo.Name = "txtCCCDVo";
             this.txtCCCDVo.Size = new System.Drawing.Size(397, 27);
             this.txtCCCDVo.TabIndex = 17;
+            this.txtCCCDVo.TextChanged += new System.EventHandler(this.txtCCCDVo_TextChanged);
             // 
-            // dtmNgayDangKy
+            // dtpNgayDangKy
             // 
-            this.dtmNgayDangKy.CustomFormat = "dd/MM/yyyy";
-            this.dtmNgayDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtmNgayDangKy.Location = new System.Drawing.Point(326, 531);
-            this.dtmNgayDangKy.Name = "dtmNgayDangKy";
-            this.dtmNgayDangKy.Size = new System.Drawing.Size(250, 34);
-            this.dtmNgayDangKy.TabIndex = 19;
-            this.dtmNgayDangKy.Value = new System.DateTime(2023, 3, 6, 0, 0, 0, 0);
+            this.dtpNgayDangKy.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDangKy.Location = new System.Drawing.Point(326, 531);
+            this.dtpNgayDangKy.Name = "dtpNgayDangKy";
+            this.dtpNgayDangKy.Size = new System.Drawing.Size(250, 34);
+            this.dtpNgayDangKy.TabIndex = 19;
+            this.dtpNgayDangKy.Value = new System.DateTime(2023, 3, 6, 0, 0, 0, 0);
             // 
             // lblNgayDangKy
             // 
@@ -211,6 +213,7 @@
             this.txtMaHonNhan.Name = "txtMaHonNhan";
             this.txtMaHonNhan.Size = new System.Drawing.Size(244, 27);
             this.txtMaHonNhan.TabIndex = 58;
+            this.txtMaHonNhan.TextChanged += new System.EventHandler(this.txtMaHonNhan_TextChanged);
             // 
             // btnReset
             // 
@@ -309,7 +312,7 @@
             this.Controls.Add(this.btnTimChong);
             this.Controls.Add(this.lblVo);
             this.Controls.Add(this.lblChong);
-            this.Controls.Add(this.dtmNgayDangKy);
+            this.Controls.Add(this.dtpNgayDangKy);
             this.Controls.Add(this.lblNgayDangKy);
             this.Controls.Add(this.txtCCCDVo);
             this.Controls.Add(this.txtCCCDChong);
@@ -337,7 +340,7 @@
         private Label lblCCCD;
         private TextBox txtCCCDChong;
         private TextBox txtCCCDVo;
-        private DateTimePicker dtmNgayDangKy;
+        private DateTimePicker dtpNgayDangKy;
         private Label lblNgayDangKy;
         private Label lblChong;
         private Label lblVo;
