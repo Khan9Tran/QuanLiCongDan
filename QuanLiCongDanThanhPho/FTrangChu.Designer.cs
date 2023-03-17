@@ -48,6 +48,7 @@
             this.ItemKhaiSinh = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHienThiForm = new System.Windows.Forms.Panel();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
+            this.lblNameApp = new System.Windows.Forms.Label();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.cmnusTaiKhoan = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmnusTaiKhoanItemCaNhan = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,14 +76,13 @@
             // 
             this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimKiem.Enabled = false;
             this.txtTimKiem.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(394, 20);
+            this.txtTimKiem.Location = new System.Drawing.Point(365, 20);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(20);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(387, 35);
+            this.txtTimKiem.Size = new System.Drawing.Size(672, 35);
             this.txtTimKiem.TabIndex = 2;
             this.txtTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -256,6 +256,7 @@
             // pnlTitleBar
             // 
             this.pnlTitleBar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlTitleBar.Controls.Add(this.lblNameApp);
             this.pnlTitleBar.Controls.Add(this.btnTaiKhoan);
             this.pnlTitleBar.Controls.Add(this.sideBar1);
             this.pnlTitleBar.Controls.Add(this.titleBar1);
@@ -265,17 +266,30 @@
             this.pnlTitleBar.Size = new System.Drawing.Size(1630, 75);
             this.pnlTitleBar.TabIndex = 3;
             // 
+            // lblNameApp
+            // 
+            this.lblNameApp.AutoSize = true;
+            this.lblNameApp.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblNameApp.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNameApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
+            this.lblNameApp.Location = new System.Drawing.Point(114, 17);
+            this.lblNameApp.Name = "lblNameApp";
+            this.lblNameApp.Size = new System.Drawing.Size(176, 37);
+            this.lblNameApp.TabIndex = 7;
+            this.lblNameApp.Text = "SMART CITY";
+            // 
             // btnTaiKhoan
             // 
-            this.btnTaiKhoan.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTaiKhoan.BackColor = System.Drawing.Color.Transparent;
             this.btnTaiKhoan.ContextMenuStrip = this.cmnusTaiKhoan;
             this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTaiKhoan.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
             this.btnTaiKhoan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.user__4_;
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(1356, 3);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(1364, 20);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Size = new System.Drawing.Size(209, 35);
             this.btnTaiKhoan.TabIndex = 6;
@@ -287,7 +301,8 @@
             // cmnusTaiKhoan
             // 
             this.cmnusTaiKhoan.AutoSize = false;
-            this.cmnusTaiKhoan.BackColor = System.Drawing.Color.Black;
+            this.cmnusTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
+            this.cmnusTaiKhoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cmnusTaiKhoan.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmnusTaiKhoan.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmnusTaiKhoanItemCaNhan,
@@ -300,16 +315,17 @@
             // 
             // cmnusTaiKhoanItemCaNhan
             // 
-            this.cmnusTaiKhoanItemCaNhan.BackColor = System.Drawing.Color.Black;
+            this.cmnusTaiKhoanItemCaNhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
             this.cmnusTaiKhoanItemCaNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusTaiKhoanItemCaNhan.ForeColor = System.Drawing.Color.White;
             this.cmnusTaiKhoanItemCaNhan.Name = "cmnusTaiKhoanItemCaNhan";
             this.cmnusTaiKhoanItemCaNhan.Size = new System.Drawing.Size(179, 32);
             this.cmnusTaiKhoanItemCaNhan.Text = "Cá nhân";
+            this.cmnusTaiKhoanItemCaNhan.Click += new System.EventHandler(this.cmnusTaiKhoanItemCaNhan_Click);
             // 
             // cmnusTaiKhoanItemDangXuat
             // 
-            this.cmnusTaiKhoanItemDangXuat.BackColor = System.Drawing.Color.Black;
+            this.cmnusTaiKhoanItemDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
             this.cmnusTaiKhoanItemDangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusTaiKhoanItemDangXuat.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cmnusTaiKhoanItemDangXuat.Name = "cmnusTaiKhoanItemDangXuat";
@@ -319,7 +335,7 @@
             // 
             // cmnusTaiKhoanItemThoat
             // 
-            this.cmnusTaiKhoanItemThoat.BackColor = System.Drawing.Color.Black;
+            this.cmnusTaiKhoanItemThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
             this.cmnusTaiKhoanItemThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusTaiKhoanItemThoat.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cmnusTaiKhoanItemThoat.Name = "cmnusTaiKhoanItemThoat";
@@ -476,5 +492,6 @@
         private ToolStripMenuItem cmnusTaiKhoanItemCaNhan;
         private ToolStripMenuItem cmnusTaiKhoanItemDangXuat;
         private ToolStripMenuItem cmnusTaiKhoanItemThoat;
+        private Label lblNameApp;
     }
 }

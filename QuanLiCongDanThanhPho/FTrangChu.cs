@@ -17,6 +17,7 @@ namespace QuanLiCongDanThanhPho
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
+        private Account account;
         public FTrangChu()
         {
             InitializeComponent();
@@ -24,7 +25,17 @@ namespace QuanLiCongDanThanhPho
             this.Controls.Add(pnlHienThiForm);
             StackForm.fTrangChu = this;
         }
-
+        public FTrangChu(Account acc)
+        {
+            InitializeComponent();
+            this.Controls.Add(this.pnlMenu);
+            this.Controls.Add(pnlHienThiForm);
+            StackForm.fTrangChu = this;
+            AccountDAO accountDAO = new AccountDAO();
+            account = accountDAO.LayThongTinTaiKhoan(acc);
+            tmrPhongTo.Interval = 1;
+            tmrThuNho.Interval = 1;
+        }
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             cmnusDangKy.Show(this, this.PointToClient(MousePosition));
@@ -128,7 +139,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (pnlMenu.Width >= 80)
             {
-                pnlMenu.Width -= 70;
+                pnlMenu.Width -= 35;
                 if (pnlMenu.Width <= 80)
                 {
                     tmrThuNho.Stop();
@@ -140,7 +151,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (pnlMenu.Width < 290)
             {
-                pnlMenu.Width += 70;
+                pnlMenu.Width += 35;
                 if (pnlMenu.Width >= 290)
                 {
                     tmrPhongTo.Stop();
@@ -220,6 +231,10 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        private void cmnusTaiKhoanItemCaNhan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FTaiKhoan());
+        }
         private void lblThongKe_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FThongKe());
