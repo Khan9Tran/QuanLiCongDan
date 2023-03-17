@@ -304,7 +304,7 @@
             this.cmnusTaiKhoanItemCaNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusTaiKhoanItemCaNhan.ForeColor = System.Drawing.Color.White;
             this.cmnusTaiKhoanItemCaNhan.Name = "cmnusTaiKhoanItemCaNhan";
-            this.cmnusTaiKhoanItemCaNhan.Size = new System.Drawing.Size(210, 32);
+            this.cmnusTaiKhoanItemCaNhan.Size = new System.Drawing.Size(179, 32);
             this.cmnusTaiKhoanItemCaNhan.Text = "Cá nhân";
             // 
             // cmnusTaiKhoanItemDangXuat
@@ -313,7 +313,7 @@
             this.cmnusTaiKhoanItemDangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusTaiKhoanItemDangXuat.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cmnusTaiKhoanItemDangXuat.Name = "cmnusTaiKhoanItemDangXuat";
-            this.cmnusTaiKhoanItemDangXuat.Size = new System.Drawing.Size(210, 32);
+            this.cmnusTaiKhoanItemDangXuat.Size = new System.Drawing.Size(179, 32);
             this.cmnusTaiKhoanItemDangXuat.Text = "Đăng xuất";
             this.cmnusTaiKhoanItemDangXuat.Click += new System.EventHandler(this.TaiKhoanItemDangXuat_Click);
             // 
@@ -323,7 +323,7 @@
             this.cmnusTaiKhoanItemThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusTaiKhoanItemThoat.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cmnusTaiKhoanItemThoat.Name = "cmnusTaiKhoanItemThoat";
-            this.cmnusTaiKhoanItemThoat.Size = new System.Drawing.Size(210, 32);
+            this.cmnusTaiKhoanItemThoat.Size = new System.Drawing.Size(179, 32);
             this.cmnusTaiKhoanItemThoat.Text = "Thoát";
             this.cmnusTaiKhoanItemThoat.Click += new System.EventHandler(this.cmnusTaiKhoanItemThoat_Click);
             // 
@@ -381,6 +381,7 @@
             this.lblThongKe.TabIndex = 0;
             this.lblThongKe.Text = "        Thống kê";
             this.lblThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblThongKe.Click += new System.EventHandler(this.lblThongKe_Click);
             // 
             // pnlDangKy
             // 

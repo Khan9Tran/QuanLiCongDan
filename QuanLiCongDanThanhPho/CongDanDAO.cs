@@ -120,5 +120,24 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format("SELECT DiaChi FROM CONGDAN INNER JOIN HOKHAU ON CONGDAN.MaHK = HOKHAU.MaHK WHERE HOKHAU.DiaChi <> N'Tạm trú' AND HOKHAU.DiaChi <> N'Tạm vắng' UNION ALL SELECT DiaChi FROM TAMTRUTAMVANG");
             return conn.LayDanhSach(sqlStr);
         }
+        public DataTable LayDanhSachNgheNghiep()
+        {
+            string sqlStr = string.Format("SELECT NgheNghiep, COUNT(NgheNghiep) as SL FROM CONGDAN GROUP BY NgheNghiep");
+            return conn.LayDanhSach(sqlStr);
+        }
+        public int LaySoLuongDocThan()
+        {
+            string strSql = string.Format($"SELECT COUNT(*) as SoLuong FROM (SELECT CD.CCCD, CD.Ten, CD.SDT, CD.NgheNghiep, CD.TonGiao FROM CONGDAN AS CD EXCEPT SELECT CONGDAN.CCCD, CONGDAN.Ten, CONGDAN.SDT, CONGDAN.NgheNghiep, CONGDAN.TonGiao FROM CONGDAN, HONNHAN WHERE CONGDAN.CCCD = HONNHAN.CCCDNam OR CONGDAN.CCCD = HONNHAN.CCCDNu) as CONGDAN \r\n          \r\n\r\n");
+            DataTable dt = conn.LayDanhSach(strSql);
+            int count = dt.Rows[0].Field<int>("SoLuong");
+            return count;
+        }
+        public int LaySoLuongDaKetHon()
+        {
+            string strSql = string.Format($"SELECT COUNT(*) as SoLuong FROM (SELECT distinct * FROM CONGDAN INNER JOIN HONNHAN ON CONGDAN.CCCD = HONNHAN.CCCDNam OR CONGDAN.CCCD = HONNHAN.CCCDNu) as CONGDAN");
+            DataTable dt = conn.LayDanhSach(strSql);
+            int count = dt.Rows[0].Field<int>("SoLuong");
+            return count;
+        }
     }
 }

@@ -219,5 +219,11 @@ namespace QuanLiCongDanThanhPho
                 Application.Exit();
             }
         }
+
+        private void lblThongKe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FThongKe());
+            TatMenu(sender, e);
+        }
     }
 }

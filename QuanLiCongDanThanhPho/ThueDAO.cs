@@ -53,5 +53,15 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format($"UPDATE THUE SET CCCD = '{thue.CCCD}', SoTienCanNop = '{thue.SoTienCanNop}', SoTienDaNop = '{thue.SoTienDaNop}', NgayCap = '{thue.NgayCapMa}', HanNop = '{thue.HanNop}' WHERE MaThue = '{thue.MaThue}'");
             conn.ThucThi(sqlStr, $"Cập nhật thuế thành công");
         }
+        public double[] LayTongTienTatCa()
+        {
+            string sqlStr = string.Format("SELECT SUM(CONVERT(INT,SoTienCanNop)) as TongTienCanNop, SUM(CONVERT(INT,SoTienDaNop)) as TongTienDaNop, AVG(CONVERT(INT,SoTienCanNop)) as TrungBinhThue FROM THUE");
+            DataTable dt = conn.LayDanhSach(sqlStr);
+            double[] thues = new double[3];
+            thues[0] = dt.Rows[0].Field<int>("TongTienCanNop");
+            thues[1] = dt.Rows[0].Field<int>("TongTienDaNop");
+            thues[2] = dt.Rows[0].Field<int>("TrungBinhThue");
+            return thues;
+        }
     }
 }
