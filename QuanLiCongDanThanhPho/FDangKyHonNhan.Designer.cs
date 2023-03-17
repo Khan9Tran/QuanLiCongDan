@@ -101,7 +101,6 @@
             this.txtCCCDChong.Name = "txtCCCDChong";
             this.txtCCCDChong.Size = new System.Drawing.Size(397, 27);
             this.txtCCCDChong.TabIndex = 15;
-            this.txtCCCDChong.TextChanged += new System.EventHandler(this.txtCCCDChong_TextChanged);
             // 
             // txtCCCDVo
             // 
@@ -112,7 +111,6 @@
             this.txtCCCDVo.Name = "txtCCCDVo";
             this.txtCCCDVo.Size = new System.Drawing.Size(397, 27);
             this.txtCCCDVo.TabIndex = 17;
-            this.txtCCCDVo.TextChanged += new System.EventHandler(this.txtCCCDVo_TextChanged);
             // 
             // dtpNgayDangKy
             // 
@@ -167,6 +165,7 @@
             this.btnTimChong.Size = new System.Drawing.Size(50, 50);
             this.btnTimChong.TabIndex = 53;
             this.btnTimChong.UseVisualStyleBackColor = false;
+            this.btnTimChong.Click += new System.EventHandler(this.btnTimChong_Click);
             // 
             // btnTimVo
             // 
@@ -181,6 +180,7 @@
             this.btnTimVo.Size = new System.Drawing.Size(50, 50);
             this.btnTimVo.TabIndex = 54;
             this.btnTimVo.UseVisualStyleBackColor = false;
+            this.btnTimVo.Click += new System.EventHandler(this.btnTimVo_Click);
             // 
             // lblNoiDangKy
             // 
