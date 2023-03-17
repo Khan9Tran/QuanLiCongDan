@@ -25,7 +25,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai" + ex);
+                MessageBox.Show("Thất bại" + ex);
             }
             finally
             {
@@ -43,7 +43,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
+                MessageBox.Show("Thất bại" + ex);
             }
             finally
             {
@@ -81,7 +81,32 @@ namespace QuanLiCongDanThanhPho
             }
             return cd;
         }
-
+        public Account LayThongTinTaiKhoan(string sqlStr)
+        {
+            Account accTmp = new Account();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    accTmp.UserName = reader["UserName"].ToString();
+                    accTmp.Password = reader["StrPassword"].ToString();
+                    accTmp.DisplayName = reader["DisplayName"].ToString();
+                    accTmp.Type = int.Parse(reader["QuyenTruyCap"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("That bai " + ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return accTmp;
+        }
         public KhaiSinh LayThongTinKhaiSinh(string sqlStr)
         {
             KhaiSinh ks = new KhaiSinh();

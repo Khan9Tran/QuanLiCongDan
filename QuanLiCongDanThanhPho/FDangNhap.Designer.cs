@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlDangNhap = new System.Windows.Forms.Panel();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.pnlLine = new System.Windows.Forms.Panel();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.tmrShowTime = new System.Windows.Forms.Timer(this.components);
             this.pnlDangNhap.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
             this.btnDangNhap.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnDangNhap.FlatAppearance.BorderSize = 0;
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -79,7 +81,8 @@
             this.txtTaiKhoan.Size = new System.Drawing.Size(250, 27);
             this.txtTaiKhoan.TabIndex = 3;
             this.txtTaiKhoan.Text = "Tài Khoản";
-            this.txtTaiKhoan.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTaiKhoan_MouseDown_1);
+            this.txtTaiKhoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTaiKhoan_KeyDown);
+            this.txtTaiKhoan.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTaiKhoan_MouseDown);
             // 
             // txtMatKhau
             // 
@@ -91,7 +94,12 @@
             this.txtMatKhau.Size = new System.Drawing.Size(250, 27);
             this.txtMatKhau.TabIndex = 4;
             this.txtMatKhau.Text = "Mật Khẩu";
-            this.txtMatKhau.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtMatKhau_MouseDown_1);
+            this.txtMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhau_KeyDown);
+            this.txtMatKhau.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtMatKhau_MouseDown);
+            // 
+            // tmrShowTime
+            // 
+            this.tmrShowTime.Tick += new System.EventHandler(this.tmrShowTime_Tick);
             // 
             // FDangNhap
             // 
@@ -124,5 +132,6 @@
         private TextBox txtTaiKhoan;
         private TextBox txtMatKhau;
         private Button btnDangNhap;
+        private System.Windows.Forms.Timer tmrShowTime;
     }
 }
