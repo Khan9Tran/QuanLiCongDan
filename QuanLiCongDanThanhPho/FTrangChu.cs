@@ -235,10 +235,10 @@ namespace QuanLiCongDanThanhPho
         {
             OpenChildForm(new FTaiKhoan());
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void lblThongKe_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FThongKe());
+            TatMenu(sender, e);
         }
     }
 }

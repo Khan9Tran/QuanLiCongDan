@@ -48,5 +48,19 @@ namespace QuanLiCongDanThanhPho
             string strSql = string.Format($"SELECT MaTTTV as 'Mã tạm trú/tạm vắng', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG WHERE MaTTTV like '%{tu}%' OR CCCD like '%{tu}%' OR DiaChi like N'%{tu}%' OR Convert(varchar,Format(NgayBD, 'dd/MM/yyyy')) like '%{tu}%' OR Convert(varchar,Format(NgayKT, 'dd/MM/yyyy')) like '%{tu}%' OR TrangThai like N'%{tu}%' OR LiDo like N'%{tu}%'");
             return conn.LayDanhSach(strSql);
         }
+        public int LaySoLuongTamTru()
+        {
+            string strSql = string.Format($"SELECT COUNT(*) as SoLuong FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm trú'");
+            DataTable dt = conn.LayDanhSach(strSql);
+            int count = dt.Rows[0].Field<int>("SoLuong");
+            return count;
+        }
+        public int LaySoLuongTamVang()
+        {
+            string strSql = string.Format($"SELECT COUNT(*) as SoLuong FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm vắng");
+            DataTable dt = conn.LayDanhSach(strSql);
+            int count = dt.Rows[0].Field<int>("SoLuong");
+            return count;
+        }
     }
 }

@@ -385,6 +385,7 @@
             this.lblThongKe.TabIndex = 0;
             this.lblThongKe.Text = "        Thống kê";
             this.lblThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblThongKe.Click += new System.EventHandler(this.lblThongKe_Click);
             // 
             // pnlDangKy
             // 

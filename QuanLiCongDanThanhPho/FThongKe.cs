@@ -12,9 +12,11 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongKe : Form
     {
+        KhaiSinhDAO ksDAO = new KhaiSinhDAO();
         public FThongKe()
         {
             InitializeComponent();
+            dataGridView1.DataSource = ksDAO.LayTuoiCongDan();
         }
     }
 }
