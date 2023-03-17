@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Resources;
 using System.Text;
@@ -59,6 +60,8 @@ namespace QuanLiCongDanThanhPho
                     HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, "", DateTime.Now, rdoNam.ToString());
                     hNDAO.ThemHonNhan(hN);
                 }
+                if (ptcHinhDaiDien.Image != null) 
+                    SaveHinhDaiDien();
             }
         }
 
@@ -225,6 +228,11 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Vui lòng chọn mối quan hệ");
                 return false;
             }    
+            if (ptcHinhDaiDien.Image == null)
+            {
+                MessageBox.Show("Vui lòng thêm ảnh đại diện");
+                return false;
+            }
             return true;
         }    
 
@@ -248,6 +256,42 @@ namespace QuanLiCongDanThanhPho
                 txtMaHonNhan.BackColor = Color.WhiteSmoke;
                 txtTenVoChong.BackColor = Color.WhiteSmoke;
             }    
+        }
+
+        private void btnThemHinh_Click(object sender, EventArgs e)
+        {
+            ofdHinhDaiDien.Filter = "PImage Files (*.jpg, *.png)|*.jpg;*.png";
+            try
+            {
+                if (ofdHinhDaiDien.ShowDialog() == DialogResult.OK)
+                {
+                    ptcHinhDaiDien.Image = new Bitmap(ofdHinhDaiDien.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không mở được ảnh" + ex);
+            }
+        }
+
+        private void SaveHinhDaiDien()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string fileName = string.Format($"{txtCCCD.Text}");
+            string folderPath = string.Format(System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\..\HinhCongDan"));
+            string fullPath;
+            if (ofdHinhDaiDien.FileName.Contains(".jpg"))
+            {
+                fileName += ".jpg";
+                fullPath = Path.Combine(folderPath, fileName);
+                ptcHinhDaiDien.Image.Save(fullPath, ImageFormat.Jpeg);
+            }
+            else
+            {
+                fileName += ".png";
+                fullPath = Path.Combine(folderPath, fileName);
+                ptcHinhDaiDien.Image.Save(fullPath, ImageFormat.Png);
+            }
         }
     }
 }
