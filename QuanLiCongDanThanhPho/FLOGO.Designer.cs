@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.lblNameApp = new System.Windows.Forms.Label();
+            this.ptcLogo = new System.Windows.Forms.PictureBox();
             this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -45,26 +46,25 @@
             // pnlLogo
             // 
             this.pnlLogo.BackColor = System.Drawing.Color.Transparent;
-            this.pnlLogo.Controls.Add(this.lblNameApp);
+            this.pnlLogo.Controls.Add(this.ptcLogo);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(1632, 870);
             this.pnlLogo.TabIndex = 1;
             // 
-            // lblNameApp
+            // ptcLogo
             // 
-            this.lblNameApp.AutoSize = true;
-            this.lblNameApp.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblNameApp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblNameApp.Font = new System.Drawing.Font("Segoe UI", 80F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNameApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
-            this.lblNameApp.Location = new System.Drawing.Point(418, 387);
-            this.lblNameApp.Name = "lblNameApp";
-            this.lblNameApp.Size = new System.Drawing.Size(861, 177);
-            this.lblNameApp.TabIndex = 1;
-            this.lblNameApp.Text = "SMART CITY";
-            this.lblNameApp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ptcLogo.BackColor = System.Drawing.Color.White;
+            this.ptcLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ptcLogo.Image = global::QuanLiCongDanThanhPho.Properties.Resources.smartcity;
+            this.ptcLogo.Location = new System.Drawing.Point(189, 253);
+            this.ptcLogo.Name = "ptcLogo";
+            this.ptcLogo.Size = new System.Drawing.Size(1135, 441);
+            this.ptcLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptcLogo.TabIndex = 0;
+            this.ptcLogo.TabStop = false;
+            this.ptcLogo.Click += new System.EventHandler(this.ptcLogo_Click);
             // 
             // FLOGO
             // 
@@ -78,7 +78,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FLOGO";
             this.pnlLogo.ResumeLayout(false);
-            this.pnlLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -87,6 +87,6 @@
 
         private ContextMenuStrip contextMenuStrip1;
         private Panel pnlLogo;
-        private Label lblNameApp;
+        private PictureBox ptcLogo;
     }
 }

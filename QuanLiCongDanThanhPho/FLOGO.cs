@@ -18,5 +18,10 @@ namespace QuanLiCongDanThanhPho
             FormBorderStyle = FormBorderStyle.None;
             TransparencyKey = Color.White;
         }
+
+        private void ptcLogo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

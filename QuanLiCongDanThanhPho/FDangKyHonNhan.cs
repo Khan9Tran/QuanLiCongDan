@@ -118,7 +118,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (txtMaHonNhan.Text.Length > 0)
             {
-                HonNhan hn = hNDAO.LayThongTinGoiYTheoMaSo(txtMaHonNhan.Text);
+                HonNhan hn = hNDAO.LayThongTinTheoMaSo(txtMaHonNhan.Text);
                 txtCCCDChong.Text = hn.CCCDChong;
                 txtCCCDVo.Text = hn.CCCDVo;
                 txtTenChong.Text = hn.TenChong;
@@ -133,22 +133,16 @@ namespace QuanLiCongDanThanhPho
 
         }
 
-        private void txtCCCDChong_TextChanged(object sender, EventArgs e)
+        private void btnTimChong_Click(object sender, EventArgs e)
         {
-            if (txtCCCDChong.Text.Length > 0)
-            {
-                KhaiSinh ks = ksDAO.LayThongTinNamNuTheoTu(txtCCCDChong.Text, "m");
-                txtTenChong.Text = ks.HoTen;
-            }
+            KhaiSinh ks = ksDAO.LayThongTin(txtCCCDChong.Text);
+            txtTenChong.Text = ks.HoTen;
         }
 
-        private void txtCCCDVo_TextChanged(object sender, EventArgs e)
+        private void btnTimVo_Click(object sender, EventArgs e)
         {
-            if (txtCCCDVo.Text.Length > 0)
-            {
-                KhaiSinh ks = ksDAO.LayThongTinNamNuTheoTu(txtCCCDVo.Text, "f");
-                txtTenVo.Text = ks.HoTen;
-            }
+            KhaiSinh ks = ksDAO.LayThongTin(txtCCCDVo.Text);
+            txtTenVo.Text = ks.HoTen;
         }
     }
 }

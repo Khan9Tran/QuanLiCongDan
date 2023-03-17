@@ -24,7 +24,7 @@ namespace QuanLiCongDanThanhPho
             accDAO = new AccountDAO();
             KeyPreview = true;
             flogo = new FLOGO();
-            tmrShowTime.Interval = 1;
+            tmrShowTime.Interval = 5;
         }
 
         private void txtTaiKhoan_MouseDown(object sender, MouseEventArgs e)

@@ -236,5 +236,9 @@ namespace QuanLiCongDanThanhPho
             OpenChildForm(new FTaiKhoan());
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
