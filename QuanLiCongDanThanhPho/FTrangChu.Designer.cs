@@ -48,6 +48,7 @@
             this.ItemKhaiSinh = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHienThiForm = new System.Windows.Forms.Panel();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
+            this.ptcNameApp = new System.Windows.Forms.PictureBox();
             this.btnTaiKhoan = new System.Windows.Forms.Button();
             this.cmnusTaiKhoan = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmnusTaiKhoanItemCaNhan = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,15 +63,14 @@
             this.pnlDangKy = new System.Windows.Forms.Panel();
             this.lblDangKy = new System.Windows.Forms.Label();
             this.tmrPhongTo = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlDanhMuc.SuspendLayout();
             this.cmnusDangKy.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcNameApp)).BeginInit();
             this.cmnusTaiKhoan.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlThongKe.SuspendLayout();
             this.pnlDangKy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTimKiem
@@ -257,7 +257,7 @@
             // pnlTitleBar
             // 
             this.pnlTitleBar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlTitleBar.Controls.Add(this.pictureBox1);
+            this.pnlTitleBar.Controls.Add(this.ptcNameApp);
             this.pnlTitleBar.Controls.Add(this.btnTaiKhoan);
             this.pnlTitleBar.Controls.Add(this.sideBar1);
             this.pnlTitleBar.Controls.Add(this.titleBar1);
@@ -266,6 +266,17 @@
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.Size = new System.Drawing.Size(1630, 75);
             this.pnlTitleBar.TabIndex = 3;
+            // 
+            // ptcNameApp
+            // 
+            this.ptcNameApp.BackColor = System.Drawing.Color.Transparent;
+            this.ptcNameApp.Image = global::QuanLiCongDanThanhPho.Properties.Resources.smartcity2;
+            this.ptcNameApp.Location = new System.Drawing.Point(71, 3);
+            this.ptcNameApp.Name = "ptcNameApp";
+            this.ptcNameApp.Size = new System.Drawing.Size(202, 69);
+            this.ptcNameApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcNameApp.TabIndex = 0;
+            this.ptcNameApp.TabStop = false;
             // 
             // btnTaiKhoan
             // 
@@ -417,17 +428,6 @@
             // 
             this.tmrPhongTo.Tick += new System.EventHandler(this.tmrPhongTo_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::QuanLiCongDanThanhPho.Properties.Resources.smartcity2;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // FTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -446,13 +446,13 @@
             this.cmnusDangKy.ResumeLayout(false);
             this.pnlTitleBar.ResumeLayout(false);
             this.pnlTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcNameApp)).EndInit();
             this.cmnusTaiKhoan.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.pnlThongKe.ResumeLayout(false);
             this.pnlThongKe.PerformLayout();
             this.pnlDangKy.ResumeLayout(false);
             this.pnlDangKy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,6 +492,6 @@
         private ToolStripMenuItem cmnusTaiKhoanItemCaNhan;
         private ToolStripMenuItem cmnusTaiKhoanItemDangXuat;
         private ToolStripMenuItem cmnusTaiKhoanItemThoat;
-        private PictureBox pictureBox1;
+        private PictureBox ptcNameApp;
     }
 }

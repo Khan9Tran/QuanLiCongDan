@@ -617,7 +617,6 @@
         private Button btnThongTinCha;
         private Button btnThongTinMe;
         private TextBox txtQueQuan;
-        private Label lblQueQuan;
         private Label lblQue;
         private TitleBarWhite titleBarWhite1;
         private SideBarWhite sideBarWhite1;
