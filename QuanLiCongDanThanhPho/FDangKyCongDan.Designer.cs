@@ -81,6 +81,8 @@
             this.btnThemHinh = new System.Windows.Forms.Button();
             this.cboQuanHe = new System.Windows.Forms.ComboBox();
             this.btnReset = new System.Windows.Forms.Button();
+            this.ofdHinhDaiDien = new System.Windows.Forms.OpenFileDialog();
+            this.sfdHinhDaiDien = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -479,6 +481,7 @@
             this.ptcHinhDaiDien.Location = new System.Drawing.Point(1080, 80);
             this.ptcHinhDaiDien.Name = "ptcHinhDaiDien";
             this.ptcHinhDaiDien.Size = new System.Drawing.Size(160, 200);
+            this.ptcHinhDaiDien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptcHinhDaiDien.TabIndex = 89;
             this.ptcHinhDaiDien.TabStop = false;
             // 
@@ -628,6 +631,7 @@
             this.btnThemHinh.Size = new System.Drawing.Size(32, 32);
             this.btnThemHinh.TabIndex = 105;
             this.btnThemHinh.UseVisualStyleBackColor = false;
+            this.btnThemHinh.Click += new System.EventHandler(this.btnThemHinh_Click);
             // 
             // cboQuanHe
             // 
@@ -674,6 +678,10 @@
             this.btnReset.TabIndex = 107;
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // ofdHinhDaiDien
+            // 
+            this.ofdHinhDaiDien.FileName = "openFileDialog1";
             // 
             // FDangKyCongDan
             // 
@@ -800,5 +808,7 @@
         private Button btnThemHinh;
         private ComboBox cboQuanHe;
         private Button btnReset;
+        private OpenFileDialog ofdHinhDaiDien;
+        private SaveFileDialog sfdHinhDaiDien;
     }
 }
