@@ -170,6 +170,20 @@ namespace QuanLiCongDanThanhPho
                 txtGhiChu.Text = tttv.TrangThai;
             }
         }
+        private void LayHinhDaiDien()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string folderPath = string.Format(System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\..\HinhCongDan"));
+            string imagePath = string.Format(@$"{folderPath}\{txtCCCD.Text}");
+            string png = imagePath + ".png";
+            string jpg = imagePath + ".jpg";
+            if (File.Exists(png))
+                picCongDan.Image = Image.FromFile(png);
+            else if (File.Exists(jpg))
+                picCongDan.Image = Image.FromFile(jpg);
+            else
+                MessageBox.Show("Công dân chưa có ảnh");
+        }
         public void LayThongTinCongDan()
         {
             if (maCCCD != null)
@@ -180,6 +194,7 @@ namespace QuanLiCongDanThanhPho
                 LayHonNhan();
                 LayHoKhau();
                 LayTamTruTamVang();
+                LayHinhDaiDien();
             }
         }
         private void FThongTinCongDan_Load(object sender, EventArgs e)

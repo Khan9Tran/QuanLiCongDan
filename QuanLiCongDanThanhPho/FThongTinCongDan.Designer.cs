@@ -107,6 +107,7 @@
             this.picCongDan.Location = new System.Drawing.Point(474, 200);
             this.picCongDan.Name = "picCongDan";
             this.picCongDan.Size = new System.Drawing.Size(176, 228);
+            this.picCongDan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCongDan.TabIndex = 2;
             this.picCongDan.TabStop = false;
             // 
