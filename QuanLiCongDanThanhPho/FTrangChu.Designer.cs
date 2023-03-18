@@ -271,7 +271,7 @@
             // 
             this.ptcNameApp.BackColor = System.Drawing.Color.Transparent;
             this.ptcNameApp.Image = global::QuanLiCongDanThanhPho.Properties.Resources.smartcity2;
-            this.ptcNameApp.Location = new System.Drawing.Point(71, 3);
+            this.ptcNameApp.Location = new System.Drawing.Point(71, 0);
             this.ptcNameApp.Name = "ptcNameApp";
             this.ptcNameApp.Size = new System.Drawing.Size(202, 69);
             this.ptcNameApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -47,7 +47,6 @@
             this.btnDangKy = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.fpnlChucNang = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnMaHonNhan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.fpnlChucNang.SuspendLayout();
             this.SuspendLayout();
@@ -270,20 +269,6 @@
             this.fpnlChucNang.Size = new System.Drawing.Size(507, 62);
             this.fpnlChucNang.TabIndex = 62;
             // 
-            // btnMaHonNhan
-            // 
-            this.btnMaHonNhan.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaHonNhan.FlatAppearance.BorderSize = 0;
-            this.btnMaHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnMaHonNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnMaHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnMaHonNhan.Location = new System.Drawing.Point(592, 105);
-            this.btnMaHonNhan.Name = "btnMaHonNhan";
-            this.btnMaHonNhan.Size = new System.Drawing.Size(50, 50);
-            this.btnMaHonNhan.TabIndex = 63;
-            this.btnMaHonNhan.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -301,7 +286,6 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 782);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnMaHonNhan);
             this.Controls.Add(this.fpnlChucNang);
             this.Controls.Add(this.txtMaHonNhan);
             this.Controls.Add(this.txtNoiDK);
@@ -351,7 +335,6 @@
         private Button btnDangKy;
         private Button btnDelete;
         private FlowLayoutPanel fpnlChucNang;
-        private Button btnMaHonNhan;
         private Label label1;
     }
 }
