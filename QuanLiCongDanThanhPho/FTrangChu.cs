@@ -18,6 +18,9 @@ namespace QuanLiCongDanThanhPho
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
         private Account account;
+
+        public Account Account { get => account; set => account = value; }
+
         public FTrangChu()
         {
             InitializeComponent();
@@ -36,6 +39,11 @@ namespace QuanLiCongDanThanhPho
             tmrPhongTo.Interval = 1;
             tmrThuNho.Interval = 1;
         }
+        public void LoadTaiKhoan()
+        {
+            btnTaiKhoan.Text = "Xin chào: " + account.DisplayName;
+            LayHinhDaiDien();
+        }
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             cmnusDangKy.Show(this, this.PointToClient(MousePosition));
@@ -47,7 +55,7 @@ namespace QuanLiCongDanThanhPho
             TatMenu(sender, e);
 
         }
-        public  void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
@@ -66,11 +74,11 @@ namespace QuanLiCongDanThanhPho
         {
             if (pnlMenu.Width > 80)
                 btnMenuShow_Click(sender, e);
-        }    
+        }
         private void cmnusDangKyItemTamTruTamVang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyTamTruTamVang());
-            TatMenu(sender,e);
+            TatMenu(sender, e);
         }
 
         private void cmnusitemDangKyHonNhan_Click(object sender, EventArgs e)
@@ -118,6 +126,7 @@ namespace QuanLiCongDanThanhPho
         private void FTrangChu_Load(object sender, EventArgs e)
         {
             pnlMenu.BringToFront();
+            LoadTaiKhoan();
         }
 
         private void btnMenuShow_Click(object sender, EventArgs e)
@@ -158,8 +167,26 @@ namespace QuanLiCongDanThanhPho
                 }
             }
         }
+        private void LayHinhDaiDien()
+        {
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string folderPath = string.Format(System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\..\HinhTaiKhoan"));
+            string imagePath = string.Format(@$"{folderPath}\{account.UserName}");
+            string png = imagePath + ".png";
+            string jpg = imagePath + ".jpg";
+            if (File.Exists(png))
+            {
+                ptcHinhDaiDien.Image = Image.FromFile(png);
+                return;
+            }
+            if (File.Exists(jpg))
+            {
+                ptcHinhDaiDien.Image = Image.FromFile(jpg);
+                return;
+            }
+        } 
 
-        private void pnlDanhMuc_MouseHover(object sender, EventArgs e)
+            private void pnlDanhMuc_MouseHover(object sender, EventArgs e)
         {
             pnlDanhMuc.BackColor = Color.FromArgb(44, 43, 60);
         }
@@ -233,12 +260,17 @@ namespace QuanLiCongDanThanhPho
 
         private void cmnusTaiKhoanItemCaNhan_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FTaiKhoan());
+            OpenChildForm(new FTaiKhoan(account));
         }
         private void lblThongKe_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FThongKe());
             TatMenu(sender, e);
+        }
+
+        private void ptcHinhDaiDien_Click(object sender, EventArgs e)
+        {
+            cmnusTaiKhoan.Show(new Point(1500, 142));
         }
     }
 }

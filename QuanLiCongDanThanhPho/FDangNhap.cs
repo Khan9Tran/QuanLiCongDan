@@ -105,6 +105,7 @@ namespace QuanLiCongDanThanhPho
                 Account acc = new Account(txtTaiKhoan.Text, txtMatKhau.Text);
                 FTrangChu newTrangChu = new FTrangChu(acc);
                 newTrangChu.ShowDialog();
+                Close();
             }
         }
     }

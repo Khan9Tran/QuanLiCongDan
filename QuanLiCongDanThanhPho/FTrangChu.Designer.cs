@@ -47,13 +47,15 @@
             this.ItemCongDanChuyenDi = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemKhaiSinh = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHienThiForm = new System.Windows.Forms.Panel();
-            this.pnlTitleBar = new System.Windows.Forms.Panel();
-            this.ptcNameApp = new System.Windows.Forms.PictureBox();
-            this.btnTaiKhoan = new System.Windows.Forms.Button();
+            this.pnlTaiKhoan = new System.Windows.Forms.Panel();
+            this.ptcHinhDaiDien = new System.Windows.Forms.PictureBox();
             this.cmnusTaiKhoan = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmnusTaiKhoanItemCaNhan = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnusTaiKhoanItemDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnusTaiKhoanItemThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTaiKhoan = new System.Windows.Forms.Button();
+            this.pnlTitleBar = new System.Windows.Forms.Panel();
+            this.ptcNameApp = new System.Windows.Forms.PictureBox();
             this.sideBar1 = new QuanLiCongDanThanhPho.SideBar();
             this.titleBar1 = new QuanLiCongDanThanhPho.TitleBar();
             this.tmrThuNho = new System.Windows.Forms.Timer(this.components);
@@ -65,9 +67,11 @@
             this.tmrPhongTo = new System.Windows.Forms.Timer(this.components);
             this.pnlDanhMuc.SuspendLayout();
             this.cmnusDangKy.SuspendLayout();
+            this.pnlTaiKhoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).BeginInit();
+            this.cmnusTaiKhoan.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptcNameApp)).BeginInit();
-            this.cmnusTaiKhoan.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlThongKe.SuspendLayout();
             this.pnlDangKy.SuspendLayout();
@@ -254,48 +258,25 @@
             this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 782);
             this.pnlHienThiForm.TabIndex = 2;
             // 
-            // pnlTitleBar
+            // pnlTaiKhoan
             // 
-            this.pnlTitleBar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlTitleBar.Controls.Add(this.ptcNameApp);
-            this.pnlTitleBar.Controls.Add(this.btnTaiKhoan);
-            this.pnlTitleBar.Controls.Add(this.sideBar1);
-            this.pnlTitleBar.Controls.Add(this.titleBar1);
-            this.pnlTitleBar.Controls.Add(this.txtTimKiem);
-            this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitleBar.Name = "pnlTitleBar";
-            this.pnlTitleBar.Size = new System.Drawing.Size(1630, 75);
-            this.pnlTitleBar.TabIndex = 3;
+            this.pnlTaiKhoan.Controls.Add(this.ptcHinhDaiDien);
+            this.pnlTaiKhoan.Controls.Add(this.btnTaiKhoan);
+            this.pnlTaiKhoan.Location = new System.Drawing.Point(1287, 12);
+            this.pnlTaiKhoan.Name = "pnlTaiKhoan";
+            this.pnlTaiKhoan.Size = new System.Drawing.Size(286, 51);
+            this.pnlTaiKhoan.TabIndex = 0;
             // 
-            // ptcNameApp
+            // ptcHinhDaiDien
             // 
-            this.ptcNameApp.BackColor = System.Drawing.Color.Transparent;
-            this.ptcNameApp.Image = global::QuanLiCongDanThanhPho.Properties.Resources.smartcity2;
-            this.ptcNameApp.Location = new System.Drawing.Point(71, 0);
-            this.ptcNameApp.Name = "ptcNameApp";
-            this.ptcNameApp.Size = new System.Drawing.Size(202, 69);
-            this.ptcNameApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptcNameApp.TabIndex = 0;
-            this.ptcNameApp.TabStop = false;
-            // 
-            // btnTaiKhoan
-            // 
-            this.btnTaiKhoan.BackColor = System.Drawing.Color.Transparent;
-            this.btnTaiKhoan.ContextMenuStrip = this.cmnusTaiKhoan;
-            this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
-            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
-            this.btnTaiKhoan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.user__4_;
-            this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(1364, 20);
-            this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(209, 35);
-            this.btnTaiKhoan.TabIndex = 6;
-            this.btnTaiKhoan.Text = "Coming soon";
-            this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.UseVisualStyleBackColor = false;
-            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
+            this.ptcHinhDaiDien.ContextMenuStrip = this.cmnusTaiKhoan;
+            this.ptcHinhDaiDien.Location = new System.Drawing.Point(238, 0);
+            this.ptcHinhDaiDien.Name = "ptcHinhDaiDien";
+            this.ptcHinhDaiDien.Size = new System.Drawing.Size(45, 51);
+            this.ptcHinhDaiDien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcHinhDaiDien.TabIndex = 7;
+            this.ptcHinhDaiDien.TabStop = false;
+            this.ptcHinhDaiDien.Click += new System.EventHandler(this.ptcHinhDaiDien_Click);
             // 
             // cmnusTaiKhoan
             // 
@@ -341,6 +322,47 @@
             this.cmnusTaiKhoanItemThoat.Size = new System.Drawing.Size(179, 32);
             this.cmnusTaiKhoanItemThoat.Text = "Thoát";
             this.cmnusTaiKhoanItemThoat.Click += new System.EventHandler(this.cmnusTaiKhoanItemThoat_Click);
+            // 
+            // btnTaiKhoan
+            // 
+            this.btnTaiKhoan.BackColor = System.Drawing.Color.Transparent;
+            this.btnTaiKhoan.ContextMenuStrip = this.cmnusTaiKhoan;
+            this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(74)))), ((int)(((byte)(155)))));
+            this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTaiKhoan.Location = new System.Drawing.Point(3, 3);
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.Size = new System.Drawing.Size(239, 45);
+            this.btnTaiKhoan.TabIndex = 6;
+            this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
+            // 
+            // pnlTitleBar
+            // 
+            this.pnlTitleBar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlTitleBar.Controls.Add(this.pnlTaiKhoan);
+            this.pnlTitleBar.Controls.Add(this.ptcNameApp);
+            this.pnlTitleBar.Controls.Add(this.sideBar1);
+            this.pnlTitleBar.Controls.Add(this.titleBar1);
+            this.pnlTitleBar.Controls.Add(this.txtTimKiem);
+            this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitleBar.Name = "pnlTitleBar";
+            this.pnlTitleBar.Size = new System.Drawing.Size(1630, 75);
+            this.pnlTitleBar.TabIndex = 3;
+            // 
+            // ptcNameApp
+            // 
+            this.ptcNameApp.BackColor = System.Drawing.Color.Transparent;
+            this.ptcNameApp.Image = global::QuanLiCongDanThanhPho.Properties.Resources.smartcity2;
+            this.ptcNameApp.Location = new System.Drawing.Point(71, 0);
+            this.ptcNameApp.Name = "ptcNameApp";
+            this.ptcNameApp.Size = new System.Drawing.Size(202, 69);
+            this.ptcNameApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcNameApp.TabIndex = 0;
+            this.ptcNameApp.TabStop = false;
             // 
             // sideBar1
             // 
@@ -441,13 +463,16 @@
             this.Name = "FTrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrangChu";
+            this.Load += new System.EventHandler(this.FTrangChu_Load);
             this.pnlDanhMuc.ResumeLayout(false);
             this.pnlDanhMuc.PerformLayout();
             this.cmnusDangKy.ResumeLayout(false);
+            this.pnlTaiKhoan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).EndInit();
+            this.cmnusTaiKhoan.ResumeLayout(false);
             this.pnlTitleBar.ResumeLayout(false);
             this.pnlTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptcNameApp)).EndInit();
-            this.cmnusTaiKhoan.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.pnlThongKe.ResumeLayout(false);
             this.pnlThongKe.PerformLayout();
@@ -493,5 +518,7 @@
         private ToolStripMenuItem cmnusTaiKhoanItemDangXuat;
         private ToolStripMenuItem cmnusTaiKhoanItemThoat;
         private PictureBox ptcNameApp;
+        private Panel pnlTaiKhoan;
+        private PictureBox ptcHinhDaiDien;
     }
 }

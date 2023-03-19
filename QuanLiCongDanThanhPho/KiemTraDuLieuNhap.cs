@@ -21,6 +21,11 @@ namespace QuanLiCongDanThanhPho
             string rule = @"^\d{1,15}$";
             return KiemTra(tien, rule);
         }
+        public static bool isPass(string pass)
+        {;
+            string rule = @"^.*(?=.{6,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@ #$%^&+=]).*$";
+            return KiemTra(pass, rule);
+        }
         public  static bool isDiaChi(string diaChi)
         {
             string rule = @"^([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})$";

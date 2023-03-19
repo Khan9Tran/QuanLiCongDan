@@ -39,7 +39,7 @@
             this.lblNgheNghiep = new System.Windows.Forms.Label();
             this.lblTenMe = new System.Windows.Forms.Label();
             this.lblMaHoKhau = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMaThue = new System.Windows.Forms.Label();
             this.lblCCCMe = new System.Windows.Forms.Label();
             this.lblCCCDCha = new System.Windows.Forms.Label();
             this.lblGioiTinh = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             this.cboTonGiao = new System.Windows.Forms.ComboBox();
             this.lblNoiSinh = new System.Windows.Forms.Label();
             this.txtNoiSinh = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblQuanHeChuHo = new System.Windows.Forms.Label();
             this.lblDKKhaiSInh = new System.Windows.Forms.Label();
             this.dtmDKKhaiSinh = new System.Windows.Forms.DateTimePicker();
             this.cboTinhTrang = new System.Windows.Forms.ComboBox();
@@ -185,14 +185,14 @@
             this.lblMaHoKhau.TabIndex = 10;
             this.lblMaHoKhau.Text = "Mã hộ khẩu";
             // 
-            // label1
+            // lblMaThue
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 390);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 28);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Mã thuế";
+            this.lblMaThue.AutoSize = true;
+            this.lblMaThue.Location = new System.Drawing.Point(44, 390);
+            this.lblMaThue.Name = "lblMaThue";
+            this.lblMaThue.Size = new System.Drawing.Size(91, 28);
+            this.lblMaThue.TabIndex = 11;
+            this.lblMaThue.Text = "Mã thuế";
             // 
             // lblCCCMe
             // 
@@ -477,7 +477,6 @@
             // ptcHinhDaiDien
             // 
             this.ptcHinhDaiDien.BackColor = System.Drawing.Color.Gainsboro;
-            this.ptcHinhDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ptcHinhDaiDien.Location = new System.Drawing.Point(1080, 80);
             this.ptcHinhDaiDien.Name = "ptcHinhDaiDien";
             this.ptcHinhDaiDien.Size = new System.Drawing.Size(160, 200);
@@ -576,14 +575,14 @@
             this.txtNoiSinh.TabIndex = 98;
             this.txtNoiSinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label2
+            // lblQuanHeChuHo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 697);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 28);
-            this.label2.TabIndex = 100;
-            this.label2.Text = "Quan hệ với chủ hộ";
+            this.lblQuanHeChuHo.AutoSize = true;
+            this.lblQuanHeChuHo.Location = new System.Drawing.Point(43, 697);
+            this.lblQuanHeChuHo.Name = "lblQuanHeChuHo";
+            this.lblQuanHeChuHo.Size = new System.Drawing.Size(197, 28);
+            this.lblQuanHeChuHo.TabIndex = 100;
+            this.lblQuanHeChuHo.Text = "Quan hệ với chủ hộ";
             // 
             // lblDKKhaiSInh
             // 
@@ -695,7 +694,7 @@
             this.Controls.Add(this.cboTinhTrang);
             this.Controls.Add(this.dtmDKKhaiSinh);
             this.Controls.Add(this.lblDKKhaiSInh);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblQuanHeChuHo);
             this.Controls.Add(this.txtNoiSinh);
             this.Controls.Add(this.lblNoiSinh);
             this.Controls.Add(this.cboTonGiao);
@@ -730,7 +729,7 @@
             this.Controls.Add(this.lblGioiTinh);
             this.Controls.Add(this.lblCCCDCha);
             this.Controls.Add(this.lblCCCMe);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMaThue);
             this.Controls.Add(this.lblMaHoKhau);
             this.Controls.Add(this.lblTenMe);
             this.Controls.Add(this.lblNgheNghiep);
@@ -766,7 +765,7 @@
         private Label lblNgheNghiep;
         private Label lblTenMe;
         private Label lblMaHoKhau;
-        private Label label1;
+        private Label lblMaThue;
         private Label lblCCCMe;
         private Label lblCCCDCha;
         private Label lblGioiTinh;
@@ -801,7 +800,7 @@
         private ComboBox cboTonGiao;
         private Label lblNoiSinh;
         private TextBox txtNoiSinh;
-        private Label label2;
+        private Label lblQuanHeChuHo;
         private Label lblDKKhaiSInh;
         private DateTimePicker dtmDKKhaiSinh;
         private ComboBox cboTinhTrang;
