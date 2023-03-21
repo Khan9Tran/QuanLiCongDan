@@ -51,7 +51,6 @@ namespace QuanLiCongDanThanhPho
             }
             return ds;
         }
-
         public CongDan LayThongTinCongDan(string sqlStr)
         {
             CongDan cd = new CongDan();

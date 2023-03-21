@@ -41,14 +41,16 @@
             this.btnNu = new System.Windows.Forms.Button();
             this.fpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnLoc = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.btnDocThan = new System.Windows.Forms.Button();
             this.btnKetHon = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
+            this.nudPage = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCongDan)).BeginInit();
             this.cmnusMenu.SuspendLayout();
             this.fpnlPhanLoai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPage)).BeginInit();
             this.SuspendLayout();
             // 
             // gvDanhSachCongDan
@@ -71,7 +73,7 @@
             this.gvDanhSachCongDan.RowHeadersWidth = 51;
             this.gvDanhSachCongDan.RowTemplate.Height = 29;
             this.gvDanhSachCongDan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvDanhSachCongDan.Size = new System.Drawing.Size(1500, 528);
+            this.gvDanhSachCongDan.Size = new System.Drawing.Size(1500, 502);
             this.gvDanhSachCongDan.TabIndex = 0;
             this.gvDanhSachCongDan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvDanhSachCongDan_CellClick);
             // 
@@ -86,20 +88,20 @@
             this.cmnusMenu.Name = "contextMenuStrip1";
             this.cmnusMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusMenu.ShowImageMargin = false;
-            this.cmnusMenu.Size = new System.Drawing.Size(186, 96);
+            this.cmnusMenu.Size = new System.Drawing.Size(129, 68);
             // 
             // cmnusMenuChiTiet
             // 
             this.cmnusMenuChiTiet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusMenuChiTiet.Name = "cmnusMenuChiTiet";
-            this.cmnusMenuChiTiet.Size = new System.Drawing.Size(185, 32);
+            this.cmnusMenuChiTiet.Size = new System.Drawing.Size(128, 32);
             this.cmnusMenuChiTiet.Text = "Chi tiết";
             this.cmnusMenuChiTiet.Click += new System.EventHandler(this.cmnusMenuChiTiet_Click);
             // 
             // cmnusMenuXoa
             // 
             this.cmnusMenuXoa.Name = "cmnusMenuXoa";
-            this.cmnusMenuXoa.Size = new System.Drawing.Size(185, 32);
+            this.cmnusMenuXoa.Size = new System.Drawing.Size(128, 32);
             this.cmnusMenuXoa.Text = "Xóa";
             this.cmnusMenuXoa.Click += new System.EventHandler(this.cmnusMenuXoa_Click);
             // 
@@ -200,21 +202,6 @@
             this.btnLoc.UseVisualStyleBackColor = true;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.Transparent;
-            this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(1365, 67);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(150, 50);
-            this.btnThem.TabIndex = 56;
-            this.btnThem.Text = "Thêm ";
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // btnDocThan
             // 
             this.btnDocThan.BackColor = System.Drawing.Color.Gainsboro;
@@ -245,6 +232,21 @@
             this.btnKetHon.UseVisualStyleBackColor = false;
             this.btnKetHon.Click += new System.EventHandler(this.btnKetHon_Click);
             // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(1365, 67);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(150, 50);
+            this.btnThem.TabIndex = 56;
+            this.btnThem.Text = "Thêm ";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // picTimKiem
             // 
             this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
@@ -254,6 +256,24 @@
             this.picTimKiem.TabIndex = 56;
             this.picTimKiem.TabStop = false;
             // 
+            // nudPage
+            // 
+            this.nudPage.Location = new System.Drawing.Point(1370, 631);
+            this.nudPage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPage.Name = "nudPage";
+            this.nudPage.Size = new System.Drawing.Size(150, 34);
+            this.nudPage.TabIndex = 57;
+            this.nudPage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPage.ValueChanged += new System.EventHandler(this.nudPage_ValueChanged);
+            // 
             // FDanhSachCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
@@ -261,6 +281,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
+            this.Controls.Add(this.nudPage);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.picTimKiem);
             this.Controls.Add(this.fpnlPhanLoai);
@@ -276,6 +297,7 @@
             this.cmnusMenu.ResumeLayout(false);
             this.fpnlPhanLoai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +320,6 @@
         private ToolStripMenuItem cmnusMenuChiTiet;
         private ToolStripMenuItem cmnusMenuXoa;
         private Button btnLoc;
+        private NumericUpDown nudPage;
     }
 }
