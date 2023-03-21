@@ -69,17 +69,6 @@ namespace QuanLiCongDanThanhPho
             string strSql = string.Format("SELECT * FROM CONGDAN WHERE CCCD = '{0}'", maCCCD);
             return conn.LayThongTinCongDan(strSql);
         }
-        /*
-        public string LayTenCongDan(string maCCCD) 
-        {   
-            CongDan tmpCD = new CongDan();
-            if (!conn.KiemTraCoKhong("SELECT Ten FROM CONGDAN WHERE CCCD = '{maCCCD}'"))
-            {
-                return "Căn cước không tồn tại";
-            }
-            tmpCD = LayThongTin("SELECT Ten FROM CONGDAN WHERE CCCD = '{maCCCD}'");
-            return tmpCD.Ten;
-        } */
         public DataTable LayDanhSachCongDanNam(string tu)
         {
             string strSql = string.Format($"SELECT distinct CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN INNER JOIN KHAISINH ON CONGDAN.CCCD = KHAISINH.MaKS AND KHAISINH.GioiTinh like 'm' WHERE CONGDAN.Ten like N'%{tu}%' OR CCCD like '%{tu}%' OR SDT like '%{tu}%' OR NgheNghiep like N'%{tu}%' OR TonGiao like N'%{tu}%'");

@@ -12,33 +12,62 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSachCongDan : Form
     {
-        CongDanDAO cdDao = new CongDanDAO();
+        CongDanDAO cdDao;
         private string luaChon;
+        private DataTable ds;
         public FDanhSachCongDan()
         {
+
             InitializeComponent();
+            cdDao = new CongDanDAO();
+            ds = new DataTable();
             StackForm.Add(this);
             luaChon = "tat ca";
+            btnTatCa_Click(btnTatCa, null);
         }
+
+        //Tìm kiếm công dân theo các điều kiện
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if (luaChon == "tat ca")
-                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaTu(txtTimKiem.Text);
+            {
+                ds = cdDao.LayDanhSachChuaTu(txtTimKiem.Text);
+            }
             else if (luaChon == "nam")
-                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachCongDanNam(txtTimKiem.Text);
+            {
+                ds = cdDao.LayDanhSachCongDanNam(txtTimKiem.Text);
+            }
             else if (luaChon == "nu")
-                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachCongDanNu(txtTimKiem.Text);
+            {
+                ds = cdDao.LayDanhSachCongDanNu(txtTimKiem.Text);
+
+            }
             else if (luaChon == "ket hon")
-                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachDaKetHon(txtTimKiem.Text);
+            {
+                ds = cdDao.LayDanhSachDaKetHon(txtTimKiem.Text);
+            }
             else if (luaChon == "doc than")
-                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachChuaKetHon(txtTimKiem.Text);
+            {
+                ds = cdDao.LayDanhSachChuaKetHon(txtTimKiem.Text);
+            }
             else if (luaChon == "tuoi tac")
-                gvDanhSachCongDan.DataSource = cdDao.LayDanhSachTuoiXepTuBeDenLon(txtTimKiem.Text);
+            {
+                ds = cdDao.LayDanhSachTuoiXepTuBeDenLon(txtTimKiem.Text);
+            }
+            nudPage.Value = 1;
+            nudPage_ValueChanged(nudPage, null);
         }
+
+        //Tải danh sách lên datagridview
+        private void LoadDanhSach()
+        {
+            gvDanhSachCongDan.DataSource = NgatTrang(ds,5); 
+        }
+
 
         private void FDanhSachCongDan_Load(object sender, EventArgs e)
         {
-            gvDanhSachCongDan.DataSource = cdDao.LayDanhSach();
+            LoadDanhSach();
             fpnlPhanLoai.Width = 45;
         }
 
@@ -50,55 +79,81 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Lọc giới tính: Nam
         private void btnNam_Click(object sender, EventArgs e)
         {
             luaChon = "nam";
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
+        //Show tất cả
         private void btnTatCa_Click(object sender, EventArgs e)
         {
             luaChon = "tat ca";
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
+        //Lọc giới tính: nữ
         private void btnNu_Click(object sender, EventArgs e)
         {
             luaChon = "nu";
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
+        //Lọc người chưa kết hôn
         private void btnDocThan_Click(object sender, EventArgs e)
         {
             luaChon = "doc than";
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
+        //Lọc người đã kết hôn
         private void btnKetHon_Click(object sender, EventArgs e)
         {
             luaChon = "ket hon";
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
+        //Sắp xếp theo tuổi tác
         private void btnTuoiTac_Click(object sender, EventArgs e)
         {
             luaChon = "tuoi tac";
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
+        //Đưa đến form đăng ký công dân
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyCongDan dangKyCongDan = new FDangKyCongDan();
             (StackForm.fTrangChu).OpenChildForm(dangKyCongDan);
         }
 
+        //Lấy mã cccd bằng kick vào gridview
+        private string GetCCCD()
+        {
+            return gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        //Menu
         private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
         {
-            string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
+            string maCCCD = GetCCCD();
             if (maCCCD != "")
             {
                 FThongTinCongDan ttCD = new FThongTinCongDan(maCCCD);
                 ttCD.ShowDialog();
+            }
+        }
+
+        //Xóa công dân
+        private void XoaCongDan()
+        {
+            string maCCCD = GetCCCD();
+            if (maCCCD != "")
+            {
+                CongDan cd = cdDao.LayThongTin(maCCCD);
+                cdDao.XoaCongDan(cd);
+                txtTimKiem_TextChanged(txtTimKiem, null);
             }
         }
 
@@ -107,16 +162,25 @@ namespace QuanLiCongDanThanhPho
             DialogResult message = MessageBox.Show("Bạn có thật sự muốn xóa công dân?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (message == DialogResult.Yes)
             {
-                string maCCCD = gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
-                if (maCCCD != "")
-                {
-                    CongDan cd = cdDao.LayThongTin(maCCCD);
-                    cdDao.XoaCongDan(cd);
-                    txtTimKiem_TextChanged(txtTimKiem, null);
-                }
+                XoaCongDan();
             }
         }
 
+        //Phân trang cho datagridview
+        private DataTable NgatTrang(DataTable ds, int recordNum)
+        {
+            int totalRecord = ds.Rows.Count;
+            if (totalRecord <= 0)
+                return ds;
+            if (totalRecord % recordNum != 0)
+                nudPage.Maximum = (totalRecord / recordNum) + 1;
+            else
+                nudPage.Maximum =  totalRecord / recordNum;
+            int page = int.Parse(nudPage.Value.ToString());
+            return ds.AsEnumerable().Skip((page -1)* recordNum).Take(recordNum).CopyToDataTable();
+        }
+
+        //Đóng mở các nút lọc
         private void btnLoc_Click(object sender, EventArgs e)
         {
             if (fpnlPhanLoai.Width > 50)
@@ -127,6 +191,12 @@ namespace QuanLiCongDanThanhPho
             {
                 fpnlPhanLoai.Width = 800;
             }
+        }
+
+        //Thay đổi ngắt trang
+        private void nudPage_ValueChanged(object sender, EventArgs e)
+        {
+            LoadDanhSach();
         }
     }
 }
