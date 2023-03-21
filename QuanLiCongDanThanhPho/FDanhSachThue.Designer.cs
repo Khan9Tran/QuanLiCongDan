@@ -35,9 +35,8 @@
             this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.flpnPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTatCa = new System.Windows.Forms.Button();
-            this.btnThoiHan = new System.Windows.Forms.Button();
             this.btnTienDaNop = new System.Windows.Forms.Button();
-            this.btnTienChuaNop = new System.Windows.Forms.Button();
+            this.btnTreHan = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.Button();
@@ -62,7 +61,6 @@
             this.gvThue.Size = new System.Drawing.Size(1477, 450);
             this.gvThue.TabIndex = 0;
             this.gvThue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThue_CellClick);
-            this.gvThue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThue_CellContentClick);
             // 
             // cmnusMenu
             // 
@@ -95,9 +93,8 @@
             // flpnPhanLoai
             // 
             this.flpnPhanLoai.Controls.Add(this.btnTatCa);
-            this.flpnPhanLoai.Controls.Add(this.btnThoiHan);
             this.flpnPhanLoai.Controls.Add(this.btnTienDaNop);
-            this.flpnPhanLoai.Controls.Add(this.btnTienChuaNop);
+            this.flpnPhanLoai.Controls.Add(this.btnTreHan);
             this.flpnPhanLoai.Location = new System.Drawing.Point(25, 148);
             this.flpnPhanLoai.Name = "flpnPhanLoai";
             this.flpnPhanLoai.Size = new System.Drawing.Size(699, 47);
@@ -118,21 +115,6 @@
             this.btnTatCa.UseVisualStyleBackColor = false;
             this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
             // 
-            // btnThoiHan
-            // 
-            this.btnThoiHan.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnThoiHan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnThoiHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoiHan.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThoiHan.ForeColor = System.Drawing.Color.Black;
-            this.btnThoiHan.Location = new System.Drawing.Point(134, 3);
-            this.btnThoiHan.Name = "btnThoiHan";
-            this.btnThoiHan.Size = new System.Drawing.Size(125, 40);
-            this.btnThoiHan.TabIndex = 5;
-            this.btnThoiHan.Text = "Thời hạn";
-            this.btnThoiHan.UseVisualStyleBackColor = false;
-            this.btnThoiHan.Click += new System.EventHandler(this.btnHanNop_Click);
-            // 
             // btnTienDaNop
             // 
             this.btnTienDaNop.BackColor = System.Drawing.Color.Gainsboro;
@@ -140,7 +122,7 @@
             this.btnTienDaNop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTienDaNop.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTienDaNop.ForeColor = System.Drawing.Color.Black;
-            this.btnTienDaNop.Location = new System.Drawing.Point(265, 3);
+            this.btnTienDaNop.Location = new System.Drawing.Point(134, 3);
             this.btnTienDaNop.Name = "btnTienDaNop";
             this.btnTienDaNop.Size = new System.Drawing.Size(125, 40);
             this.btnTienDaNop.TabIndex = 6;
@@ -148,20 +130,20 @@
             this.btnTienDaNop.UseVisualStyleBackColor = false;
             this.btnTienDaNop.Click += new System.EventHandler(this.btnTienDaNop_Click);
             // 
-            // btnTienChuaNop
+            // btnTreHan
             // 
-            this.btnTienChuaNop.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnTienChuaNop.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnTienChuaNop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTienChuaNop.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTienChuaNop.ForeColor = System.Drawing.Color.Black;
-            this.btnTienChuaNop.Location = new System.Drawing.Point(396, 3);
-            this.btnTienChuaNop.Name = "btnTienChuaNop";
-            this.btnTienChuaNop.Size = new System.Drawing.Size(153, 40);
-            this.btnTienChuaNop.TabIndex = 7;
-            this.btnTienChuaNop.Text = "Tiền chưa nộp";
-            this.btnTienChuaNop.UseVisualStyleBackColor = false;
-            this.btnTienChuaNop.Click += new System.EventHandler(this.btnTienChuaNop_Click);
+            this.btnTreHan.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnTreHan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnTreHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTreHan.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTreHan.ForeColor = System.Drawing.Color.Black;
+            this.btnTreHan.Location = new System.Drawing.Point(265, 3);
+            this.btnTreHan.Name = "btnTreHan";
+            this.btnTreHan.Size = new System.Drawing.Size(128, 40);
+            this.btnTreHan.TabIndex = 59;
+            this.btnTreHan.Text = "Trễ Hạn";
+            this.btnTreHan.UseVisualStyleBackColor = false;
+            this.btnTreHan.Click += new System.EventHandler(this.btnTreHan_Click);
             // 
             // txtTimKiem
             // 
@@ -229,14 +211,13 @@
         private DataGridView gvThue;
         private FlowLayoutPanel flpnPhanLoai;
         private Button btnTatCa;
-        private Button btnThoiHan;
         private Button btnTienDaNop;
-        private Button btnTienChuaNop;
         private TextBox txtTimKiem;
         private PictureBox picTimKiem;
         private ContextMenuStrip cmnusMenu;
         private ToolStripMenuItem cmnusMenuChiTiet;
         private ToolStripMenuItem cmnusMenuXoa;
         private Button btnThem;
+        private Button btnTreHan;
     }
 }

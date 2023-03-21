@@ -30,7 +30,7 @@
         {
             this.pnlHienThiDanhSach = new System.Windows.Forms.Panel();
             this.cmbLuaChon = new System.Windows.Forms.ComboBox();
-            this.lblDanhSach = new System.Windows.Forms.Label();
+            this.lblThongKe = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pnlHienThiDanhSach
@@ -59,14 +59,14 @@
             this.cmbLuaChon.TabIndex = 1;
             this.cmbLuaChon.SelectedIndexChanged += new System.EventHandler(this.cmbLuaChon_SelectedIndexChanged);
             // 
-            // lblDanhSach
+            // lblThongKe
             // 
-            this.lblDanhSach.AutoSize = true;
-            this.lblDanhSach.Location = new System.Drawing.Point(30, 40);
-            this.lblDanhSach.Name = "lblDanhSach";
-            this.lblDanhSach.Size = new System.Drawing.Size(110, 28);
-            this.lblDanhSach.TabIndex = 2;
-            this.lblDanhSach.Text = "Danh sách";
+            this.lblThongKe.AutoSize = true;
+            this.lblThongKe.Location = new System.Drawing.Point(30, 40);
+            this.lblThongKe.Name = "lblThongKe";
+            this.lblThongKe.Size = new System.Drawing.Size(100, 28);
+            this.lblThongKe.TabIndex = 2;
+            this.lblThongKe.Text = "Thống kê";
             // 
             // FDanhSach
             // 
@@ -74,7 +74,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1532, 782);
-            this.Controls.Add(this.lblDanhSach);
+            this.Controls.Add(this.lblThongKe);
             this.Controls.Add(this.cmbLuaChon);
             this.Controls.Add(this.pnlHienThiDanhSach);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -91,6 +91,6 @@
 
         private Panel pnlHienThiDanhSach;
         private ComboBox cmbLuaChon;
-        private Label lblDanhSach;
+        private Label lblThongKe;
     }
 }

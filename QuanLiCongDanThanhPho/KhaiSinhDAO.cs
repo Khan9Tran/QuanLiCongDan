@@ -40,8 +40,18 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachVeSoNamNu()
         {
-            string sqlStr = string.Format("SELECT GioiTinh, COUNT(GioiTinh) as 'Số lượng' FROM KHAISINH GROUP BY GioiTinh");
-            return conn.LayDanhSach(sqlStr);
+            string sqlStr = string.Format("SELECT GioiTinh as 'Giới tính', COUNT(*) as 'Số lượng' FROM KHAISINH RIGHT JOIN CONGDAN ON CONGDAN.CCCD = KHAISINH.MaKS GROUP BY GioiTinh");
+            DataTable dt = conn.LayDanhSach(sqlStr);
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr["Giới tính"] != DBNull.Value && (string)dr["Giới tính"] == "f")
+                    dr["Giới tính"] = "Nữ";
+                else if (dr["Giới tính"] != DBNull.Value && (string)dr["Giới tính"] == "m")
+                    dr["Giới tính"] = "Nam";
+                else
+                    dr["Giới tính"] = "Unknown";
+            }
+            return dt;
         }
         public KhaiSinh LayThongTinNamNuTheoTu(string tu, string dieuKien)
         {

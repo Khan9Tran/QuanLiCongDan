@@ -28,38 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblDanhSach = new System.Windows.Forms.Label();
+            this.cmbLuaChon = new System.Windows.Forms.ComboBox();
+            this.pnlHienThiThongKe = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // lblDanhSach
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(175, 137);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(581, 188);
-            this.dataGridView1.TabIndex = 0;
+            this.lblDanhSach.AutoSize = true;
+            this.lblDanhSach.Location = new System.Drawing.Point(30, 40);
+            this.lblDanhSach.Name = "lblDanhSach";
+            this.lblDanhSach.Size = new System.Drawing.Size(110, 28);
+            this.lblDanhSach.TabIndex = 4;
+            this.lblDanhSach.Text = "Danh sách";
+            // 
+            // cmbLuaChon
+            // 
+            this.cmbLuaChon.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbLuaChon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLuaChon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbLuaChon.FormattingEnabled = true;
+            this.cmbLuaChon.Items.AddRange(new object[] {
+            "Công dân",
+            "Ngành nghề",
+            "Phân bố dân cư"});
+            this.cmbLuaChon.Location = new System.Drawing.Point(146, 37);
+            this.cmbLuaChon.Name = "cmbLuaChon";
+            this.cmbLuaChon.Size = new System.Drawing.Size(286, 36);
+            this.cmbLuaChon.TabIndex = 3;
+            this.cmbLuaChon.SelectedIndexChanged += new System.EventHandler(this.cmbLuaChon_SelectedIndexChanged);
+            // 
+            // pnlHienThiThongKe
+            // 
+            this.pnlHienThiThongKe.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlHienThiThongKe.Location = new System.Drawing.Point(0, 103);
+            this.pnlHienThiThongKe.Name = "pnlHienThiThongKe";
+            this.pnlHienThiThongKe.Size = new System.Drawing.Size(1532, 679);
+            this.pnlHienThiThongKe.TabIndex = 5;
             // 
             // FThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 782);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pnlHienThiThongKe);
+            this.Controls.Add(this.lblDanhSach);
+            this.Controls.Add(this.cmbLuaChon);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FThongKe";
             this.Text = "FThongKe";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private Label lblDanhSach;
+        private ComboBox cmbLuaChon;
+        private Panel pnlHienThiThongKe;
     }
 }

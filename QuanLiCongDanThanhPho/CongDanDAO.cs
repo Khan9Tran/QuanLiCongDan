@@ -110,15 +110,42 @@ namespace QuanLiCongDanThanhPho
             string strSql = string.Format($"SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN WHERE Ten like N'%{tu}%' OR CCCD like '%{tu}%' OR SDT like '%{tu}%' OR NgheNghiep like N'%{tu}%' OR TonGiao like N'%{tu}%'");
             return conn.LayDanhSach(strSql);
         }
-        public DataTable LayDanhSachhVeSoCongDan()
+        public int LaySoLuongCongDan()
         {
-            string strSql = string.Format("SELECT COUNT(*) as 'Số công dân' FROM CONGDAN");
-            return conn.LayDanhSach(strSql);
+            string strSql = string.Format("SELECT COUNT(*) as 'SoLuong' FROM CONGDAN");
+            DataTable dt = conn.LayDanhSach(strSql);
+            int count = dt.Rows[0].Field<int>("SoLuong");
+            return count;
         }
         public DataTable LayDanhSachDiaChi()
         {
+            DiaChi dc = new DiaChi();
             string sqlStr = string.Format("SELECT DiaChi FROM CONGDAN INNER JOIN HOKHAU ON CONGDAN.MaHK = HOKHAU.MaHK WHERE HOKHAU.DiaChi <> N'Tạm trú' AND HOKHAU.DiaChi <> N'Tạm vắng' UNION ALL SELECT DiaChi FROM TAMTRUTAMVANG");
-            return conn.LayDanhSach(sqlStr);
+            DataTable dt = conn.LayDanhSach(sqlStr);
+            foreach(DataRow dr in dt.Rows)
+            {
+                dr["DiaChi"] = dc.DinhDang((string)dr["DiaChi"]);
+                dr["DiaChi"] = dc.QuanHuyen;
+            }
+            //-------------------------------------------//
+            var groups = dt.AsEnumerable().GroupBy(row => row["DiaChi"]);
+
+            var resultTable = new DataTable();
+            resultTable.Columns.Add("Value", typeof(object));
+            resultTable.Columns.Add("Count", typeof(int));
+
+            foreach (var group in groups)
+            {
+                var value = group.Key;
+                var count = group.Count();
+
+                var newRow = resultTable.NewRow();
+                newRow["Value"] = value;
+                newRow["Count"] = count;
+                resultTable.Rows.Add(newRow);
+            }
+            //--------------------------------------------//
+            return resultTable;
         }
         public DataTable LayDanhSachNgheNghiep()
         {
