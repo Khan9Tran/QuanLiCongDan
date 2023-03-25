@@ -64,9 +64,9 @@
             this.lblThongKe.AutoSize = true;
             this.lblThongKe.Location = new System.Drawing.Point(30, 40);
             this.lblThongKe.Name = "lblThongKe";
-            this.lblThongKe.Size = new System.Drawing.Size(100, 28);
+            this.lblThongKe.Size = new System.Drawing.Size(110, 28);
             this.lblThongKe.TabIndex = 2;
-            this.lblThongKe.Text = "Thống kê";
+            this.lblThongKe.Text = "Danh sách";
             // 
             // FDanhSach
             // 

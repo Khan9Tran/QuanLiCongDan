@@ -38,9 +38,9 @@
             this.lblDanhSach.AutoSize = true;
             this.lblDanhSach.Location = new System.Drawing.Point(30, 40);
             this.lblDanhSach.Name = "lblDanhSach";
-            this.lblDanhSach.Size = new System.Drawing.Size(110, 28);
+            this.lblDanhSach.Size = new System.Drawing.Size(100, 28);
             this.lblDanhSach.TabIndex = 4;
-            this.lblDanhSach.Text = "Danh sách";
+            this.lblDanhSach.Text = "Thống kê";
             // 
             // cmbLuaChon
             // 
