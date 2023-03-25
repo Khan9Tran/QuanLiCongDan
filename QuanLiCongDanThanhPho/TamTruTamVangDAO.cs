@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.SqlServer.Server;
 using QuanLiCongDanThanhPho.Models;
 namespace QuanLiCongDanThanhPho
 {
@@ -15,13 +16,20 @@ namespace QuanLiCongDanThanhPho
         {
             return conn.LayDanhSach("SELECT MaTTTV as 'Mã tạm trú/tạm vắng', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG");
         }
+        public string ChuoiLayDanhSachTheoTu(string tu)
+        {
+            string str = string.Format($"SELECT MaTTTV as 'Mã', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG WHERE (MaTTTV like '%{tu}%' OR CCCD like '%{tu}%' OR DiaChi like N'%{tu}%' OR Convert(varchar,Format(NgayBD, 'dd/MM/yyyy')) like '%{tu}%' OR Convert(varchar,Format(NgayKT, 'dd/MM/yyyy')) like '%{tu}%' OR TrangThai like N'%{tu}%' OR LiDo like N'%{tu}%')");
+            return str;
+        }
         public DataTable LayDanhSachTamTru(string tu)
         {
-            return conn.LayDanhSach($"SELECT MaTTTV as 'Mã tạm trú', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm trú' AND (MaTTTV like '%{tu}%' OR CCCD like '%{tu}%' OR DiaChi like N'%{tu}%' OR Convert(varchar,Format(NgayBD, 'dd/MM/yyyy')) like '%{tu}%' OR Convert(varchar,Format(NgayKT, 'dd/MM/yyyy')) like '%{tu}%' OR TrangThai like N'%{tu}%' OR LiDo like N'%{tu}%')");
+            string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND TrangThai = N'Tạm trú'";
+            return conn.LayDanhSach(sqlStr);
         }
         public DataTable LayDanhSachTamVang(string tu)
         {
-            return conn.LayDanhSach($"SELECT MaTTTV as 'Mã tạm vắng', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm vắng' AND (MaTTTV like '%{tu}%' OR CCCD like '%{tu}%' OR DiaChi like N'%{tu}%' OR Convert(varchar,Format(NgayBD, 'dd/MM/yyyy')) like '%{tu}%' OR Convert(varchar,Format(NgayKT, 'dd/MM/yyyy')) like '%{tu}%' OR TrangThai like N'%{tu}%' OR LiDo like N'%{tu}%')");
+            string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND TrangThai = N'Tạm vắng'";
+            return conn.LayDanhSach(sqlStr);
         }
         public void ThemTamTruTamVang(TamTruTamVang tTTV)
         {
@@ -45,22 +53,27 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachChuaTu(string tu)
         {
-            string strSql = string.Format($"SELECT MaTTTV as 'Mã tạm trú/tạm vắng', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG WHERE MaTTTV like '%{tu}%' OR CCCD like '%{tu}%' OR DiaChi like N'%{tu}%' OR Convert(varchar,Format(NgayBD, 'dd/MM/yyyy')) like '%{tu}%' OR Convert(varchar,Format(NgayKT, 'dd/MM/yyyy')) like '%{tu}%' OR TrangThai like N'%{tu}%' OR LiDo like N'%{tu}%'");
-            return conn.LayDanhSach(strSql);
+            string sqlStr = ChuoiLayDanhSachTheoTu(tu);
+            return conn.LayDanhSach(sqlStr);
         }
         public int LaySoLuongTamTru()
         {
-            string strSql = string.Format($"SELECT COUNT(*) as SoLuong FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm trú'");
-            DataTable dt = conn.LayDanhSach(strSql);
+            string sqlStr = string.Format($"SELECT COUNT(*) as SoLuong FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm trú'");
+            DataTable dt = conn.LayDanhSach(sqlStr);
             int count = dt.Rows[0].Field<int>("SoLuong");
             return count;
         }
         public int LaySoLuongTamVang()
         {
-            string strSql = string.Format($"SELECT COUNT(*) as SoLuong FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm vắng");
-            DataTable dt = conn.LayDanhSach(strSql);
+            string sqlStr = string.Format($"SELECT COUNT(*) as SoLuong FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm vắng");
+            DataTable dt = conn.LayDanhSach(sqlStr);
             int count = dt.Rows[0].Field<int>("SoLuong");
             return count;
+        }
+        public DataTable LayDanhSachQuaHan(string tu)
+        {
+            string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND GETDATE() > NgayKT";
+            return conn.LayDanhSach(sqlStr);
         }
     }
 }

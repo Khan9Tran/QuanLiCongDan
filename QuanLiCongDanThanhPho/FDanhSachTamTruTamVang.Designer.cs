@@ -39,6 +39,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.cmnusMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnQuaHan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
@@ -77,6 +78,7 @@
             this.flpnlPhanLoai.Controls.Add(this.btnTatCa);
             this.flpnlPhanLoai.Controls.Add(this.btnTV);
             this.flpnlPhanLoai.Controls.Add(this.btnTT);
+            this.flpnlPhanLoai.Controls.Add(this.btnQuaHan);
             this.flpnlPhanLoai.Location = new System.Drawing.Point(25, 178);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
             this.flpnlPhanLoai.Size = new System.Drawing.Size(699, 47);
@@ -161,15 +163,30 @@
             this.cmnusMenu.Name = "contextMenuStrip1";
             this.cmnusMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusMenu.ShowImageMargin = false;
-            this.cmnusMenu.Size = new System.Drawing.Size(186, 64);
+            this.cmnusMenu.Size = new System.Drawing.Size(96, 36);
             // 
             // cmnusMenuXoa
             // 
             this.cmnusMenuXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusMenuXoa.Name = "cmnusMenuXoa";
-            this.cmnusMenuXoa.Size = new System.Drawing.Size(185, 32);
+            this.cmnusMenuXoa.Size = new System.Drawing.Size(95, 32);
             this.cmnusMenuXoa.Text = "Xóa";
             this.cmnusMenuXoa.Click += new System.EventHandler(this.cmnusMenuXoa_Click);
+            // 
+            // btnQuaHan
+            // 
+            this.btnQuaHan.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnQuaHan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnQuaHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuaHan.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnQuaHan.ForeColor = System.Drawing.Color.Black;
+            this.btnQuaHan.Location = new System.Drawing.Point(415, 3);
+            this.btnQuaHan.Name = "btnQuaHan";
+            this.btnQuaHan.Size = new System.Drawing.Size(144, 40);
+            this.btnQuaHan.TabIndex = 61;
+            this.btnQuaHan.Text = "Quá hạn";
+            this.btnQuaHan.UseVisualStyleBackColor = false;
+            this.btnQuaHan.Click += new System.EventHandler(this.btnQuaHan_Click);
             // 
             // FDanhSachTamTruTamVang
             // 
@@ -209,5 +226,6 @@
         private Button btnThem;
         private ContextMenuStrip cmnusMenu;
         private ToolStripMenuItem cmnusMenuXoa;
+        private Button btnQuaHan;
     }
 }

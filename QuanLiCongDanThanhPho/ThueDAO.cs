@@ -60,10 +60,11 @@ namespace QuanLiCongDanThanhPho
         {
             string sqlStr = string.Format("SELECT SUM(CONVERT(INT,SoTienCanNop)) as TongTienCanNop, SUM(CONVERT(INT,SoTienDaNop)) as TongTienDaNop, AVG(CONVERT(INT,SoTienCanNop)) as TrungBinhThue FROM THUE");
             DataTable dt = conn.LayDanhSach(sqlStr);
-            double[] thues = new double[3];
+            double[] thues = new double[4];
             thues[0] = dt.Rows[0].Field<int>("TongTienCanNop");
             thues[1] = dt.Rows[0].Field<int>("TongTienDaNop");
-            thues[2] = dt.Rows[0].Field<int>("TrungBinhThue");
+            thues[2] = thues[0] + thues[1];
+            thues[3] = dt.Rows[0].Field<int>("TrungBinhThue");
             return thues;
         }
     }

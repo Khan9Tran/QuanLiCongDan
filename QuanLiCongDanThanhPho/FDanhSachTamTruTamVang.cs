@@ -36,11 +36,18 @@ namespace QuanLiCongDanThanhPho
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if (luaChon == "tat ca")
-                gvTVTT.DataSource = tttvDao.LayDanhSachChuaTu(txtTimKiem.Text);
+                LoadDanhSach(tttvDao.LayDanhSachChuaTu(txtTimKiem.Text));
             else if (luaChon == "tam tru")
-                gvTVTT.DataSource = tttvDao.LayDanhSachTamTru(txtTimKiem.Text);
+                LoadDanhSach(tttvDao.LayDanhSachTamTru(txtTimKiem.Text));
             else if (luaChon == "tam vang")
-                gvTVTT.DataSource = tttvDao.LayDanhSachTamVang(txtTimKiem.Text);
+                LoadDanhSach(tttvDao.LayDanhSachTamVang(txtTimKiem.Text));
+            else if (luaChon == "qua han")
+                LoadDanhSach(tttvDao.LayDanhSachQuaHan(txtTimKiem.Text));
+        }
+
+        private void LoadDanhSach(DataTable ds)
+        {
+            gvTVTT.DataSource = ds;
         }
 
         private void btnTV_Click(object sender, EventArgs e)
@@ -81,6 +88,12 @@ namespace QuanLiCongDanThanhPho
                     txtTimKiem_TextChanged(txtTimKiem, null);
                 }
             }
+        }
+
+        private void btnQuaHan_Click(object sender, EventArgs e)
+        {
+            luaChon = "qua han";
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
     }
 }

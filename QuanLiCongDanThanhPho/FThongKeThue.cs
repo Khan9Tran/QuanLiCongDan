@@ -12,9 +12,19 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongKeThue : Form
     {
+        ThueDAO thueDAO = new ThueDAO();
         public FThongKeThue()
         {
             InitializeComponent();
+        }
+
+        private void FThongKeThue_Load(object sender, EventArgs e)
+        {
+            double[] thues = thueDAO.LayTongTienTatCa();
+            lblTongTienThue.Text += " " + thues[2].ToString();
+            lblTongThueCanDong.Text += " " + thues[1].ToString();
+            lblTongThueDaDong.Text += " " + thues[0].ToString();
+           
         }
     }
 }
