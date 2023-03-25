@@ -48,7 +48,8 @@
             // gvSoLuongNamNu
             // 
             this.gvSoLuongNamNu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvSoLuongNamNu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gvSoLuongNamNu.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gvSoLuongNamNu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvSoLuongNamNu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvSoLuongNamNu.Location = new System.Drawing.Point(41, 110);
             this.gvSoLuongNamNu.Name = "gvSoLuongNamNu";

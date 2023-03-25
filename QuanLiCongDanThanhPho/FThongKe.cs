@@ -25,6 +25,8 @@ namespace QuanLiCongDanThanhPho
                 OpenChildForm(new FThongKeCongDan());
             else if (cmbLuaChon.SelectedItem == "Phân bố dân cư")
                 OpenChildForm(new FThongKePhanBo());
+            else if (cmbLuaChon.SelectedItem == "Ngành nghề")
+                OpenChildForm(new FThongKeNganhNghe());
 
         }
         public void OpenChildForm(Form childForm)

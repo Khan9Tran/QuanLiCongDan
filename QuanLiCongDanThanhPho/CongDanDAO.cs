@@ -106,6 +106,24 @@ namespace QuanLiCongDanThanhPho
             int count = dt.Rows[0].Field<int>("SoLuong");
             return count;
         }
+        // Hàm tương tự như group by và count 1 cột nhưng cho DataTable
+        private DataTable GroupByVaCountChoDataTable(DataTable dt, string tenCot1, string tenCot2)
+        {
+            var groups = dt.AsEnumerable().GroupBy(row => row[0]);
+            var resultTable = new DataTable();
+            resultTable.Columns.Add(tenCot1, typeof(object));
+            resultTable.Columns.Add(tenCot2, typeof(int));
+            foreach (var group in groups)
+            {
+                var value = group.Key;
+                var count = group.Count();
+                var newRow = resultTable.NewRow();
+                newRow[tenCot1] = value;
+                newRow[tenCot2] = count;
+                resultTable.Rows.Add(newRow);
+            }
+            return resultTable;
+        }
         public DataTable LayDanhSachDiaChi()
         {
             DiaChi dc = new DiaChi();
@@ -116,25 +134,7 @@ namespace QuanLiCongDanThanhPho
                 dr["DiaChi"] = dc.DinhDang((string)dr["DiaChi"]);
                 dr["DiaChi"] = dc.QuanHuyen;
             }
-            //-------------------------------------------//
-            var groups = dt.AsEnumerable().GroupBy(row => row["DiaChi"]);
-
-            var resultTable = new DataTable();
-            resultTable.Columns.Add("Value", typeof(object));
-            resultTable.Columns.Add("Count", typeof(int));
-
-            foreach (var group in groups)
-            {
-                var value = group.Key;
-                var count = group.Count();
-
-                var newRow = resultTable.NewRow();
-                newRow["Value"] = value;
-                newRow["Count"] = count;
-                resultTable.Rows.Add(newRow);
-            }
-            //--------------------------------------------//
-            return resultTable;
+            return GroupByVaCountChoDataTable(dt, "Quận", "Số lượng người");
         }
         public DataTable LayDanhSachNgheNghiep()
         {
