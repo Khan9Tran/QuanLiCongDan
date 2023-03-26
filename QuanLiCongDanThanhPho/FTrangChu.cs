@@ -174,19 +174,34 @@ namespace QuanLiCongDanThanhPho
             string imagePath = string.Format(@$"{folderPath}\{account.UserName}");
             string png = imagePath + ".png";
             string jpg = imagePath + ".jpg";
+            Bitmap bitmap = null;
+
             if (File.Exists(png))
             {
-                ptcHinhDaiDien.Image = Image.FromFile(png);
-                return;
-            }
-            if (File.Exists(jpg))
-            {
-                ptcHinhDaiDien.Image = Image.FromFile(jpg);
-                return;
-            }
-        } 
+                bitmap?.Dispose();
+                ptcHinhDaiDien.Image?.Dispose();
 
-            private void pnlDanhMuc_MouseHover(object sender, EventArgs e)
+                using (Bitmap tempImage = new Bitmap(png, true)) //Giúp k bị lỗi không thể truy cập file đang hoạt động khi xóa
+                {
+                    bitmap = new Bitmap(tempImage);
+                    ptcHinhDaiDien.Image = bitmap;
+                }
+            }
+            else if (File.Exists(jpg))
+            {
+                bitmap?.Dispose();
+                ptcHinhDaiDien.Image?.Dispose();
+
+                using (Bitmap tempImage = new Bitmap(jpg, true))
+                {
+                    bitmap = new Bitmap(tempImage);
+                    ptcHinhDaiDien.Image = bitmap;
+                }
+            }
+
+        }
+
+        private void pnlDanhMuc_MouseHover(object sender, EventArgs e)
         {
             pnlDanhMuc.BackColor = Color.FromArgb(44, 43, 60);
         }
@@ -242,10 +257,11 @@ namespace QuanLiCongDanThanhPho
 
         private void TaiKhoanItemDangXuat_Click(object sender, EventArgs e)
         {
+            Hide();
+            FDangNhap fDangNhap= new FDangNhap();
+            fDangNhap.ShowDialog();
             StackForm.ClearAll();
-            FDangNhap newDangNhap = new FDangNhap();
-            newDangNhap.Show();
-            this.Close();
+            Close();
         }
 
         private void cmnusTaiKhoanItemThoat_Click(object sender, EventArgs e)

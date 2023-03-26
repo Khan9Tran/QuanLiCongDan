@@ -65,12 +65,6 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
-
-        private void FDangKyCongDan_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             Action<Control.ControlCollection> func = null;
@@ -257,8 +251,7 @@ namespace QuanLiCongDanThanhPho
                 txtTenVoChong.BackColor = Color.WhiteSmoke;
             }    
         }
-
-        private void btnThemHinh_Click(object sender, EventArgs e)
+        private void ThemHinh()
         {
             ofdHinhDaiDien.Filter = "PImage Files (*.jpg, *.png)|*.jpg;*.png";
             try
@@ -272,6 +265,11 @@ namespace QuanLiCongDanThanhPho
             {
                 MessageBox.Show("Không mở được ảnh" + ex);
             }
+        }
+
+        private void btnThemHinh_Click(object sender, EventArgs e)
+        {
+            ThemHinh();
         }
 
         private void SaveHinhDaiDien()

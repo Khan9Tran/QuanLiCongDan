@@ -30,7 +30,7 @@
         {
             this.lblTittleBar = new System.Windows.Forms.Label();
             this.pnlTittleBar = new System.Windows.Forms.Panel();
-            this.picCongDan = new System.Windows.Forms.PictureBox();
+            this.ptcHinhDaiDien = new System.Windows.Forms.PictureBox();
             this.lblTen = new System.Windows.Forms.Label();
             this.lblCccd = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
@@ -45,6 +45,8 @@
             this.pnlThongTin = new System.Windows.Forms.Panel();
             this.lblSoDT = new System.Windows.Forms.Label();
             this.pnlThongTinCD = new System.Windows.Forms.Panel();
+            this.lblQuanHeVoiChuHo = new System.Windows.Forms.Label();
+            this.txtQuanHeVoiChuHo = new System.Windows.Forms.TextBox();
             this.fpnlChucNang = new System.Windows.Forms.FlowLayoutPanel();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -73,8 +75,10 @@
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.sideBarWhite = new QuanLiCongDanThanhPho.SideBarWhite();
             this.titleBarWhite = new QuanLiCongDanThanhPho.TitleBarWhite();
+            this.ofdHinhDaiDien = new System.Windows.Forms.OpenFileDialog();
+            this.sfdHinhDaiDien = new System.Windows.Forms.SaveFileDialog();
             this.pnlTittleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).BeginInit();
             this.pnlThongTinCD.SuspendLayout();
             this.fpnlChucNang.SuspendLayout();
             this.SuspendLayout();
@@ -100,16 +104,18 @@
             this.pnlTittleBar.Size = new System.Drawing.Size(833, 77);
             this.pnlTittleBar.TabIndex = 1;
             // 
-            // picCongDan
+            // ptcHinhDaiDien
             // 
-            this.picCongDan.BackColor = System.Drawing.Color.White;
-            this.picCongDan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picCongDan.Location = new System.Drawing.Point(474, 200);
-            this.picCongDan.Name = "picCongDan";
-            this.picCongDan.Size = new System.Drawing.Size(176, 228);
-            this.picCongDan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCongDan.TabIndex = 2;
-            this.picCongDan.TabStop = false;
+            this.ptcHinhDaiDien.BackColor = System.Drawing.Color.White;
+            this.ptcHinhDaiDien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ptcHinhDaiDien.Enabled = false;
+            this.ptcHinhDaiDien.Location = new System.Drawing.Point(474, 200);
+            this.ptcHinhDaiDien.Name = "ptcHinhDaiDien";
+            this.ptcHinhDaiDien.Size = new System.Drawing.Size(176, 228);
+            this.ptcHinhDaiDien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcHinhDaiDien.TabIndex = 2;
+            this.ptcHinhDaiDien.TabStop = false;
+            this.ptcHinhDaiDien.Click += new System.EventHandler(this.picCongDan_Click);
             // 
             // lblTen
             // 
@@ -250,11 +256,13 @@
             // pnlThongTinCD
             // 
             this.pnlThongTinCD.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlThongTinCD.Controls.Add(this.lblQuanHeVoiChuHo);
+            this.pnlThongTinCD.Controls.Add(this.txtQuanHeVoiChuHo);
             this.pnlThongTinCD.Controls.Add(this.fpnlChucNang);
             this.pnlThongTinCD.Controls.Add(this.btnHonNhan);
             this.pnlThongTinCD.Controls.Add(this.btnThue);
             this.pnlThongTinCD.Controls.Add(this.btnHoKhau);
-            this.pnlThongTinCD.Controls.Add(this.picCongDan);
+            this.pnlThongTinCD.Controls.Add(this.ptcHinhDaiDien);
             this.pnlThongTinCD.Controls.Add(this.txtGhiChu);
             this.pnlThongTinCD.Controls.Add(this.lblGhiChu);
             this.pnlThongTinCD.Controls.Add(this.btnKhaiSinh);
@@ -290,6 +298,27 @@
             this.pnlThongTinCD.Name = "pnlThongTinCD";
             this.pnlThongTinCD.Size = new System.Drawing.Size(833, 797);
             this.pnlThongTinCD.TabIndex = 31;
+            // 
+            // lblQuanHeVoiChuHo
+            // 
+            this.lblQuanHeVoiChuHo.AutoSize = true;
+            this.lblQuanHeVoiChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblQuanHeVoiChuHo.Location = new System.Drawing.Point(30, 650);
+            this.lblQuanHeVoiChuHo.Name = "lblQuanHeVoiChuHo";
+            this.lblQuanHeVoiChuHo.Size = new System.Drawing.Size(197, 28);
+            this.lblQuanHeVoiChuHo.TabIndex = 101;
+            this.lblQuanHeVoiChuHo.Text = "Quan hệ với chủ hộ";
+            // 
+            // txtQuanHeVoiChuHo
+            // 
+            this.txtQuanHeVoiChuHo.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtQuanHeVoiChuHo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQuanHeVoiChuHo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtQuanHeVoiChuHo.Location = new System.Drawing.Point(261, 650);
+            this.txtQuanHeVoiChuHo.Name = "txtQuanHeVoiChuHo";
+            this.txtQuanHeVoiChuHo.ReadOnly = true;
+            this.txtQuanHeVoiChuHo.Size = new System.Drawing.Size(530, 27);
+            this.txtQuanHeVoiChuHo.TabIndex = 100;
             // 
             // fpnlChucNang
             // 
@@ -351,7 +380,7 @@
             this.btnHonNhan.FlatAppearance.BorderSize = 0;
             this.btnHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;
-            this.btnHonNhan.Location = new System.Drawing.Point(677, 701);
+            this.btnHonNhan.Location = new System.Drawing.Point(742, 699);
             this.btnHonNhan.Name = "btnHonNhan";
             this.btnHonNhan.Size = new System.Drawing.Size(50, 35);
             this.btnHonNhan.TabIndex = 98;
@@ -364,7 +393,7 @@
             this.btnThue.FlatAppearance.BorderSize = 0;
             this.btnThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThue.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;
-            this.btnThue.Location = new System.Drawing.Point(677, 649);
+            this.btnThue.Location = new System.Drawing.Point(748, 601);
             this.btnThue.Name = "btnThue";
             this.btnThue.Size = new System.Drawing.Size(50, 35);
             this.btnThue.TabIndex = 97;
@@ -377,7 +406,7 @@
             this.btnHoKhau.FlatAppearance.BorderSize = 0;
             this.btnHoKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoKhau.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;
-            this.btnHoKhau.Location = new System.Drawing.Point(677, 598);
+            this.btnHoKhau.Location = new System.Drawing.Point(399, 596);
             this.btnHoKhau.Name = "btnHoKhau";
             this.btnHoKhau.Size = new System.Drawing.Size(50, 35);
             this.btnHoKhau.TabIndex = 96;
@@ -392,7 +421,7 @@
             this.txtGhiChu.Location = new System.Drawing.Point(212, 758);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.ReadOnly = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(438, 27);
+            this.txtGhiChu.Size = new System.Drawing.Size(525, 27);
             this.txtGhiChu.TabIndex = 52;
             // 
             // lblGhiChu
@@ -426,7 +455,7 @@
             this.txtHonNhan.Location = new System.Drawing.Point(212, 700);
             this.txtHonNhan.Name = "txtHonNhan";
             this.txtHonNhan.ReadOnly = true;
-            this.txtHonNhan.Size = new System.Drawing.Size(438, 27);
+            this.txtHonNhan.Size = new System.Drawing.Size(525, 27);
             this.txtHonNhan.TabIndex = 46;
             // 
             // txtTonGiao
@@ -478,10 +507,10 @@
             this.txtMaThue.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaThue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaThue.Location = new System.Drawing.Point(212, 650);
+            this.txtMaThue.Location = new System.Drawing.Point(564, 604);
             this.txtMaThue.Name = "txtMaThue";
             this.txtMaThue.ReadOnly = true;
-            this.txtMaThue.Size = new System.Drawing.Size(438, 27);
+            this.txtMaThue.Size = new System.Drawing.Size(174, 27);
             this.txtMaThue.TabIndex = 41;
             // 
             // txtMaHoKhau
@@ -492,7 +521,7 @@
             this.txtMaHoKhau.Location = new System.Drawing.Point(212, 600);
             this.txtMaHoKhau.Name = "txtMaHoKhau";
             this.txtMaHoKhau.ReadOnly = true;
-            this.txtMaHoKhau.Size = new System.Drawing.Size(438, 27);
+            this.txtMaHoKhau.Size = new System.Drawing.Size(174, 27);
             this.txtMaHoKhau.TabIndex = 40;
             // 
             // txtSDT
@@ -503,7 +532,7 @@
             this.txtSDT.Location = new System.Drawing.Point(212, 550);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.ReadOnly = true;
-            this.txtSDT.Size = new System.Drawing.Size(438, 27);
+            this.txtSDT.Size = new System.Drawing.Size(570, 27);
             this.txtSDT.TabIndex = 39;
             // 
             // txtQueQuan
@@ -565,7 +594,7 @@
             // 
             this.lblMaThue.AutoSize = true;
             this.lblMaThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMaThue.Location = new System.Drawing.Point(30, 650);
+            this.lblMaThue.Location = new System.Drawing.Point(465, 604);
             this.lblMaThue.Name = "lblMaThue";
             this.lblMaThue.Size = new System.Drawing.Size(91, 28);
             this.lblMaThue.TabIndex = 33;
@@ -623,7 +652,7 @@
             this.Load += new System.EventHandler(this.FThongTinCongDan_Load);
             this.pnlTittleBar.ResumeLayout(false);
             this.pnlTittleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCongDan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).EndInit();
             this.pnlThongTinCD.ResumeLayout(false);
             this.pnlThongTinCD.PerformLayout();
             this.fpnlChucNang.ResumeLayout(false);
@@ -635,7 +664,7 @@
 
         private Label lblTittleBar;
         private Panel pnlTittleBar;
-        private PictureBox picCongDan;
+        private PictureBox ptcHinhDaiDien;
         private Label lblTen;
         private Label lblCccd;
         private Label lblNgaySinh;
@@ -678,5 +707,9 @@
         private Button btnXacNhan;
         private Button btnSua;
         private Button btnReLoad;
+        private Label lblQuanHeVoiChuHo;
+        private TextBox txtQuanHeVoiChuHo;
+        private OpenFileDialog ofdHinhDaiDien;
+        private SaveFileDialog sfdHinhDaiDien;
     }
 }

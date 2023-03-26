@@ -113,6 +113,7 @@
             // 
             this.ptcHinhDaiDien.BackColor = System.Drawing.Color.Gainsboro;
             this.ptcHinhDaiDien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ptcHinhDaiDien.Enabled = false;
             this.ptcHinhDaiDien.Location = new System.Drawing.Point(162, 66);
             this.ptcHinhDaiDien.Name = "ptcHinhDaiDien";
             this.ptcHinhDaiDien.Size = new System.Drawing.Size(232, 284);
