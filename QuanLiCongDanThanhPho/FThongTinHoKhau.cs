@@ -47,16 +47,10 @@ namespace QuanLiCongDanThanhPho
                 txtTenChuHo.Text = chuHo.Ten.ToString();
                 //---Quan he voi chu ho---//
                 DataTable dsNguoiTrongHo = cdDAO.LayDanhSachTheoHoKhau(maHoKhau);
-                DataTable dsNguoiKoPhaiChuHo = dsNguoiTrongHo.Clone();
-                foreach (DataRow row in dsNguoiTrongHo.Rows)
-                {
-                    if (row["Quan hệ với chủ hộ"].ToString() != "Chủ hộ")
-                        dsNguoiKoPhaiChuHo.ImportRow(row);
-                }
-                gvQuanHeVoiChuHo.DataSource = dsNguoiKoPhaiChuHo;
+                gvQuanHeVoiChuHo.DataSource = dsNguoiTrongHo;
+                lblTong.Text = "Tổng thành viên: " + dsNguoiTrongHo.Rows.Count.ToString();
             }
         }
-
         private void CapNhatHoKhau()
         {
             HoKhau hoKhau = hkDAO.LayThongTin(maHoKhau);
@@ -70,6 +64,7 @@ namespace QuanLiCongDanThanhPho
         {
             LayThongTinHoKhau();
         }
+
         protected override void WndProc(ref Message message)
         {
             base.WndProc(ref message);
@@ -78,10 +73,7 @@ namespace QuanLiCongDanThanhPho
                 message.Result = (IntPtr)HTCAPTION;
         }
 
-        private void gvQuanHeVoiChuHo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+    
         private void ReadOnly()
         {
             txtDiaChi.ReadOnly = true;

@@ -38,8 +38,13 @@ namespace QuanLiCongDanThanhPho
         }
         public void CapNhatHoKhau(HoKhau hK)
         {
-            string sqlStr = string.Format($"UPDATE HOKHAU SET DiaChi = N'{hK.DiaChi.toString()}' WHERE MaHK = '{hK.MaHoKhau}'");
+            string sqlStr = string.Format($"UPDATE HOKHAU SET DiaChi = N'{hK.DiaChi.toString()}', CCCDChuHo = '{hK.CCCDChuHo}' WHERE MaHK = '{hK.MaHoKhau}'");
             conn.ThucThi(sqlStr, $"Cập nhật hộ khẩu thành công");
+        }
+        public void XoaHoKhau(HoKhau hK)
+        {
+            string sqlStr = string.Format($"DELETE HOKHAU WHERE MaHK = '{hK.MaHoKhau}'");
+            conn.ThucThi(sqlStr, "Đã xóa hộ không còn thành viên");
         }
     }
 }

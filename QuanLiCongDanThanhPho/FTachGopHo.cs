@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -67,12 +68,28 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
                 
-        }    
+        }
+
+        private void TaoHoMoi()
+        {
+            //Kiểm tra 
+            HoKhauDAO hKDAO = new HoKhauDAO();
+            HoKhau hK = new HoKhau(txtMaHoGop.Text, "unknow, unknow, unknow,uknow", cD.CCCD);
+            hKDAO.ThemHoKhau(hK);
+            cD.QuanHeVoiChuHo = "Chủ hộ";
+            cD.MaHoKhau = txtMaHoGop.Text;
+            cDDAO.ThayDoiHoKhau(cD);
+            LoadHoTach();
+            LoadHoGop();
+            XoaHoThua();
+            
+        }
         private void btnTaoHoMoi_Click(object sender, EventArgs e)
         { 
             if (KiemTraThongTin())
                 if (isTach == true)
                 {
+                    //Kiểm tra 
                     if (gvHoGop.Rows.Count != 1)
                     {
                         MessageBox.Show("Hộ đã tồn tại");
@@ -83,17 +100,22 @@ namespace QuanLiCongDanThanhPho
                     }
                     else
                     {
-                        HoKhauDAO hKDAO = new HoKhauDAO();
-                        HoKhau hK = new HoKhau(txtMaHoGop.Text, "unknow, unknow, unknow,uknow", cD.CCCD);
-                        hKDAO.ThemHoKhau(hK);
-                        cD.QuanHeVoiChuHo = "Chủ hộ";
-                        cD.MaHoKhau = txtMaHoGop.Text;
-                        cDDAO.ThayDoiHoKhau(cD);
+                        TaoHoMoi();
                     }
                     isTach = false;
-                    LoadHoTach();
-                    LoadHoGop();
                 }
+        }
+
+        //Thực hiện xóa hộ nếu không còn thành viên
+        private void XoaHoThua()
+        {
+
+            HoKhauDAO hKDAO = new HoKhauDAO();
+            HoKhau hK = new HoKhau(txtMaHoTach.Text, "unknow, unknow, unknow,uknow", cD.CCCD);
+            if (gvHoTach.Rows.Count <=1)
+            {
+                hKDAO.XoaHoKhau(hK);
+            }
         }
         public void ThemVaoHo()
         {
@@ -101,6 +123,7 @@ namespace QuanLiCongDanThanhPho
             cDDAO.NhapHoKhau(cD);   
             LoadHoTach();
             LoadHoGop();
+            XoaHoThua();
         }
         private void btnGopHo_Click(object sender, EventArgs e)
         {   

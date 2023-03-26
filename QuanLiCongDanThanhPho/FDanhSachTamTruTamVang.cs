@@ -56,6 +56,8 @@ namespace QuanLiCongDanThanhPho
         private void LoadDanhSach()
         {
             gvTVTT.DataSource = NgatTrang(ds, 10);
+            gvTVTT.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
+            gvTVTT.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
         private void btnTV_Click(object sender, EventArgs e)

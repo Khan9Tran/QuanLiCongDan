@@ -63,7 +63,9 @@ namespace QuanLiCongDanThanhPho
         private void LoadDanhSach()
         {
             gvThue.DataSource = NgatTrang(ds,10);
+            gvThue.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
+
         // Sắp xếp danh sách tăng dần theo số tiền đã nộp
         private void btnTienDaNop_Click(object sender, EventArgs e)
         {
@@ -85,6 +87,7 @@ namespace QuanLiCongDanThanhPho
                 }
             }
         }
+
         // Mở ra form thông tin thuế của công dân được chọn
         private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
         {
@@ -96,12 +99,14 @@ namespace QuanLiCongDanThanhPho
                 ttThue.ShowDialog();
             }
         }
+
         // Mở ra form đăng kí thuế
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyThue dangKyThue = new FDangKyThue();
             (StackForm.fTrangChu).OpenChildForm(dangKyThue);
         }
+
         // Lọc danh sách những người đóng tiền trẽ hạn/ chưa đủ tiền khi quá thời gian
         private void btnTreHan_Click(object sender, EventArgs e)
         {

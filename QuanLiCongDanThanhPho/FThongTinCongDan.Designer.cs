@@ -393,7 +393,7 @@
             this.btnThue.FlatAppearance.BorderSize = 0;
             this.btnThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThue.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;
-            this.btnThue.Location = new System.Drawing.Point(748, 601);
+            this.btnThue.Location = new System.Drawing.Point(748, 600);
             this.btnThue.Name = "btnThue";
             this.btnThue.Size = new System.Drawing.Size(50, 35);
             this.btnThue.TabIndex = 97;
@@ -507,7 +507,7 @@
             this.txtMaThue.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMaThue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaThue.Location = new System.Drawing.Point(564, 604);
+            this.txtMaThue.Location = new System.Drawing.Point(564, 600);
             this.txtMaThue.Name = "txtMaThue";
             this.txtMaThue.ReadOnly = true;
             this.txtMaThue.Size = new System.Drawing.Size(174, 27);
@@ -594,7 +594,7 @@
             // 
             this.lblMaThue.AutoSize = true;
             this.lblMaThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMaThue.Location = new System.Drawing.Point(465, 604);
+            this.lblMaThue.Location = new System.Drawing.Point(461, 600);
             this.lblMaThue.Name = "lblMaThue";
             this.lblMaThue.Size = new System.Drawing.Size(91, 28);
             this.lblMaThue.TabIndex = 33;
