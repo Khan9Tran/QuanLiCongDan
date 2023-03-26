@@ -78,7 +78,7 @@ namespace QuanLiCongDanThanhPho
         }
         private void LoadDanhSach()
         {
-            gvDanhSachChuaCapCCCD.DataSource = cCCDDAO.DanhSachCCCDTheoDacDiem("Không xác định");
+            gvDanhSachChuaCapCCCD.DataSource = cCCDDAO.DanhSachCCCDTheoDacDiem("Unknow");
             Reset();
         }    
         private void gvDanhSachChuaCapCCCD_CellClick(object sender, DataGridViewCellEventArgs e)

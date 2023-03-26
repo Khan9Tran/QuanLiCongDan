@@ -18,6 +18,7 @@ namespace QuanLiCongDanThanhPho
         public FThongKe()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
         private void cmbLuaChon_SelectedIndexChanged(object sender, EventArgs e)
         {

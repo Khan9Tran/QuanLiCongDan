@@ -14,10 +14,12 @@ namespace QuanLiCongDanThanhPho
     {
         HoKhauDAO hkDao = new HoKhauDAO();
         private string luaChon;
+        private DataTable ds;
         public FDanhSachHoKhau()
         {
             InitializeComponent();
             StackForm.Add(this);
+            ds = new DataTable();
             luaChon = "tat ca";
         }
 
@@ -27,7 +29,7 @@ namespace QuanLiCongDanThanhPho
 
         private void FDanhSachHoKhau_Load(object sender, EventArgs e)
         {
-            gvHoKhau.DataSource = hkDao.LayDanhSach();
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void gvHoKhau_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -44,12 +46,19 @@ namespace QuanLiCongDanThanhPho
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
+        private void LayDanhSach()
+        {
+            gvHoKhau.DataSource = NgatTrang(ds, 10);
+        }
+
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if (luaChon == "tat ca")
-                gvHoKhau.DataSource = hkDao.LayDanhSachChuaTu(txtTimKiem.Text);
+               ds = hkDao.LayDanhSachChuaTu(txtTimKiem.Text);
             else if (luaChon == "sotv")
-                gvHoKhau.DataSource = hkDao.LayDanhSachXepTheoSoTV(txtTimKiem.Text);
+               ds = hkDao.LayDanhSachXepTheoSoTV(txtTimKiem.Text);
+            nudPage.Value = 1;
+            LayDanhSach();
         }
 
         private void btnSoTV_Click(object sender, EventArgs e)
@@ -82,6 +91,25 @@ namespace QuanLiCongDanThanhPho
                 FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau(maHoKhau);
                 (StackForm.fTrangChu).OpenChildForm(dangKyHoKhau);
             }
+        }
+
+        //Tạo ngắt trang
+        private DataTable NgatTrang(DataTable ds, int recordNum)
+        {
+            int totalRecord = ds.Rows.Count;
+            if (totalRecord <= 0)
+                return ds;
+            if (totalRecord % recordNum != 0)
+                nudPage.Maximum = (totalRecord / recordNum) + 1;
+            else
+                nudPage.Maximum = totalRecord / recordNum;
+            int page = int.Parse(nudPage.Value.ToString());
+            return ds.AsEnumerable().Skip((page - 1) * recordNum).Take(recordNum).CopyToDataTable();
+        }
+
+        private void nudPage_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

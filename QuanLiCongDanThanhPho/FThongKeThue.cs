@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FThongKeThue()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void FThongKeThue_Load(object sender, EventArgs e)

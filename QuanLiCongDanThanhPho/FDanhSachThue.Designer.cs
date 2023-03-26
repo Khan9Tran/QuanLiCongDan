@@ -40,10 +40,12 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.Button();
+            this.nudPage = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.gvThue)).BeginInit();
             this.cmnusMenu.SuspendLayout();
             this.flpnPhanLoai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPage)).BeginInit();
             this.SuspendLayout();
             // 
             // gvThue
@@ -58,7 +60,7 @@
             this.gvThue.RowHeadersWidth = 51;
             this.gvThue.RowTemplate.Height = 29;
             this.gvThue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvThue.Size = new System.Drawing.Size(1477, 450);
+            this.gvThue.Size = new System.Drawing.Size(1477, 466);
             this.gvThue.TabIndex = 0;
             this.gvThue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThue_CellClick);
             // 
@@ -152,14 +154,14 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTimKiem.Location = new System.Drawing.Point(25, 12);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(600, 31);
+            this.txtTimKiem.Size = new System.Drawing.Size(1418, 31);
             this.txtTimKiem.TabIndex = 55;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // picTimKiem
             // 
             this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.picTimKiem.Location = new System.Drawing.Point(640, 12);
+            this.picTimKiem.Location = new System.Drawing.Point(1465, 12);
             this.picTimKiem.Name = "picTimKiem";
             this.picTimKiem.Size = new System.Drawing.Size(37, 31);
             this.picTimKiem.TabIndex = 57;
@@ -172,7 +174,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(1352, 146);
+            this.btnThem.Location = new System.Drawing.Point(1209, 139);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(150, 50);
             this.btnThem.TabIndex = 58;
@@ -180,12 +182,35 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // nudPage
+            // 
+            this.nudPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(75)))), ((int)(((byte)(150)))));
+            this.nudPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudPage.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.nudPage.Location = new System.Drawing.Point(1352, 148);
+            this.nudPage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPage.Name = "nudPage";
+            this.nudPage.Size = new System.Drawing.Size(150, 30);
+            this.nudPage.TabIndex = 59;
+            this.nudPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudPage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPage.ValueChanged += new System.EventHandler(this.nudPage_ValueChanged);
+            // 
             // FDanhSachThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
+            this.Controls.Add(this.nudPage);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.picTimKiem);
             this.Controls.Add(this.txtTimKiem);
@@ -201,6 +226,7 @@
             this.cmnusMenu.ResumeLayout(false);
             this.flpnPhanLoai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +245,6 @@
         private ToolStripMenuItem cmnusMenuXoa;
         private Button btnThem;
         private Button btnTreHan;
+        private NumericUpDown nudPage;
     }
 }

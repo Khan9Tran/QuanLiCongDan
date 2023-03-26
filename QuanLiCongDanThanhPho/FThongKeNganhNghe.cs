@@ -16,6 +16,7 @@ namespace QuanLiCongDanThanhPho
         public FThongKeNganhNghe()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
 
         private void FThongKeNganhNghe_Load(object sender, EventArgs e)

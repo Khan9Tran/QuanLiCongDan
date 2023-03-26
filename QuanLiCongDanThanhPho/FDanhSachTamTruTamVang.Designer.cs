@@ -35,15 +35,17 @@
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnTV = new System.Windows.Forms.Button();
             this.btnTT = new System.Windows.Forms.Button();
+            this.btnQuaHan = new System.Windows.Forms.Button();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.cmnusMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnQuaHan = new System.Windows.Forms.Button();
+            this.nudPage = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
             this.cmnusMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPage)).BeginInit();
             this.SuspendLayout();
             // 
             // gvTVTT
@@ -53,12 +55,12 @@
             this.gvTVTT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvTVTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvTVTT.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.gvTVTT.Location = new System.Drawing.Point(25, 231);
+            this.gvTVTT.Location = new System.Drawing.Point(25, 162);
             this.gvTVTT.Name = "gvTVTT";
             this.gvTVTT.RowHeadersWidth = 51;
             this.gvTVTT.RowTemplate.Height = 29;
             this.gvTVTT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvTVTT.Size = new System.Drawing.Size(1480, 419);
+            this.gvTVTT.Size = new System.Drawing.Size(1480, 488);
             this.gvTVTT.TabIndex = 1;
             this.gvTVTT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTVTT_CellClick);
             // 
@@ -69,7 +71,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTimKiem.Location = new System.Drawing.Point(25, 12);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(600, 31);
+            this.txtTimKiem.Size = new System.Drawing.Size(1422, 31);
             this.txtTimKiem.TabIndex = 56;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -79,7 +81,7 @@
             this.flpnlPhanLoai.Controls.Add(this.btnTV);
             this.flpnlPhanLoai.Controls.Add(this.btnTT);
             this.flpnlPhanLoai.Controls.Add(this.btnQuaHan);
-            this.flpnlPhanLoai.Location = new System.Drawing.Point(25, 178);
+            this.flpnlPhanLoai.Location = new System.Drawing.Point(25, 108);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
             this.flpnlPhanLoai.Size = new System.Drawing.Size(699, 47);
             this.flpnlPhanLoai.TabIndex = 58;
@@ -129,10 +131,25 @@
             this.btnTT.UseVisualStyleBackColor = false;
             this.btnTT.Click += new System.EventHandler(this.btnTT_Click);
             // 
+            // btnQuaHan
+            // 
+            this.btnQuaHan.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnQuaHan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnQuaHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuaHan.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnQuaHan.ForeColor = System.Drawing.Color.Black;
+            this.btnQuaHan.Location = new System.Drawing.Point(415, 3);
+            this.btnQuaHan.Name = "btnQuaHan";
+            this.btnQuaHan.Size = new System.Drawing.Size(144, 40);
+            this.btnQuaHan.TabIndex = 61;
+            this.btnQuaHan.Text = "Quá hạn";
+            this.btnQuaHan.UseVisualStyleBackColor = false;
+            this.btnQuaHan.Click += new System.EventHandler(this.btnQuaHan_Click);
+            // 
             // picTimKiem
             // 
             this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.picTimKiem.Location = new System.Drawing.Point(644, 12);
+            this.picTimKiem.Location = new System.Drawing.Point(1468, 12);
             this.picTimKiem.Name = "picTimKiem";
             this.picTimKiem.Size = new System.Drawing.Size(37, 31);
             this.picTimKiem.TabIndex = 59;
@@ -145,9 +162,9 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(1355, 171);
+            this.btnThem.Location = new System.Drawing.Point(1190, 101);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(150, 50);
+            this.btnThem.Size = new System.Drawing.Size(162, 50);
             this.btnThem.TabIndex = 60;
             this.btnThem.Text = "Thêm ";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -173,20 +190,27 @@
             this.cmnusMenuXoa.Text = "Xóa";
             this.cmnusMenuXoa.Click += new System.EventHandler(this.cmnusMenuXoa_Click);
             // 
-            // btnQuaHan
+            // nudPage
             // 
-            this.btnQuaHan.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnQuaHan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnQuaHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuaHan.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnQuaHan.ForeColor = System.Drawing.Color.Black;
-            this.btnQuaHan.Location = new System.Drawing.Point(415, 3);
-            this.btnQuaHan.Name = "btnQuaHan";
-            this.btnQuaHan.Size = new System.Drawing.Size(144, 40);
-            this.btnQuaHan.TabIndex = 61;
-            this.btnQuaHan.Text = "Quá hạn";
-            this.btnQuaHan.UseVisualStyleBackColor = false;
-            this.btnQuaHan.Click += new System.EventHandler(this.btnQuaHan_Click);
+            this.nudPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(75)))), ((int)(((byte)(150)))));
+            this.nudPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudPage.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.nudPage.Location = new System.Drawing.Point(1355, 108);
+            this.nudPage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPage.Name = "nudPage";
+            this.nudPage.Size = new System.Drawing.Size(150, 30);
+            this.nudPage.TabIndex = 61;
+            this.nudPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudPage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPage.ValueChanged += new System.EventHandler(this.nudPage_ValueChanged);
             // 
             // FDanhSachTamTruTamVang
             // 
@@ -194,6 +218,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
+            this.Controls.Add(this.nudPage);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.picTimKiem);
             this.Controls.Add(this.flpnlPhanLoai);
@@ -210,6 +235,7 @@
             this.flpnlPhanLoai.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).EndInit();
             this.cmnusMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +253,6 @@
         private ContextMenuStrip cmnusMenu;
         private ToolStripMenuItem cmnusMenuXoa;
         private Button btnQuaHan;
+        private NumericUpDown nudPage;
     }
 }

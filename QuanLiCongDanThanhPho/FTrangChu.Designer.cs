@@ -188,7 +188,7 @@
             this.cmnusDangKy.Name = "cmnusDangKy";
             this.cmnusDangKy.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusDangKy.ShowImageMargin = false;
-            this.cmnusDangKy.Size = new System.Drawing.Size(245, 164);
+            this.cmnusDangKy.Size = new System.Drawing.Size(245, 192);
             // 
             // cmnusDangKyItemTamTruTamVang
             // 

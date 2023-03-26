@@ -39,12 +39,12 @@ namespace QuanLiCongDanThanhPho
             { 
 
                 int index = gvHoTach.CurrentCell.RowIndex;
-                if (index >= 0)
-                {
-                    cD = new CongDan();
-                    cD.CCCD = gvHoTach.Rows[index].Cells[0].Value.ToString();
-                }
-                isTach = true;
+                    if (index >= 0)
+                    {
+                        cD = new CongDan();
+                        cD.CCCD = gvHoTach.Rows[index].Cells[0].Value.ToString();
+                        isTach = true;
+                    }
             }
             catch 
             {
@@ -84,18 +84,21 @@ namespace QuanLiCongDanThanhPho
                     else
                     {
                         HoKhauDAO hKDAO = new HoKhauDAO();
-                        HoKhau hK = new HoKhau(txtMaHoGop.Text, "u,u,u,u", cD.CCCD);
+                        HoKhau hK = new HoKhau(txtMaHoGop.Text, "unknow, unknow, unknow,uknow", cD.CCCD);
                         hKDAO.ThemHoKhau(hK);
-                        cDDAO.NhapHoKhau(cD);
-                        ThemVaoHo();
+                        cD.QuanHeVoiChuHo = "Chủ hộ";
+                        cD.MaHoKhau = txtMaHoGop.Text;
+                        cDDAO.ThayDoiHoKhau(cD);
                     }
                     isTach = false;
+                    LoadHoTach();
+                    LoadHoGop();
                 }
         }
         public void ThemVaoHo()
         {
             cD.MaHoKhau = txtMaHoGop.Text;
-            cDDAO.NhapHoKhau(cD);
+            cDDAO.NhapHoKhau(cD);   
             LoadHoTach();
             LoadHoGop();
         }
