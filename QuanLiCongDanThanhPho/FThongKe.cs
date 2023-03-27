@@ -22,13 +22,11 @@ namespace QuanLiCongDanThanhPho
         }
         private void cmbLuaChon_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbLuaChon.SelectedItem == "Công dân")
+            if (cmbLuaChon.SelectedItem.ToString() == "Công dân")
                 OpenChildForm(new FThongKeCongDan());
-            else if (cmbLuaChon.SelectedItem == "Phân bố dân cư")
+            else if (cmbLuaChon.SelectedItem.ToString() == "Phân bố dân cư")
                 OpenChildForm(new FThongKePhanBo());
-            else if (cmbLuaChon.SelectedItem == "Ngành nghề")
-                OpenChildForm(new FThongKeNganhNghe());
-            else if (cmbLuaChon.SelectedItem == "Thuế")
+            else if (cmbLuaChon.SelectedItem.ToString() == "Thuế")
                 OpenChildForm(new FThongKeThue());
         }
         public void OpenChildForm(Form childForm)

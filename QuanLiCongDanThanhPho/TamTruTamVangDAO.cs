@@ -21,6 +21,11 @@ namespace QuanLiCongDanThanhPho
             string str = string.Format($"SELECT MaTTTV as 'Mã', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG WHERE (MaTTTV like '%{tu}%' OR CCCD like '%{tu}%' OR DiaChi like N'%{tu}%' OR Convert(varchar,Format(NgayBD, 'dd/MM/yyyy')) like '%{tu}%' OR Convert(varchar,Format(NgayKT, 'dd/MM/yyyy')) like '%{tu}%' OR TrangThai like N'%{tu}%' OR LiDo like N'%{tu}%')");
             return str;
         }
+        public string ChuoiDemSoLuong()
+        {
+            string str = string.Format("SELECT COUNT(*) as COUNT FROM TAMTRUTAMVANG");
+            return str;
+        }
         public DataTable LayDanhSachTamTru(string tu)
         {
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND TrangThai = N'Tạm trú'";
@@ -43,7 +48,7 @@ namespace QuanLiCongDanThanhPho
         }
         public Boolean KiemTraTamTruTamVang(string maCCCD)
         {
-            string sqlStr = string.Format("SELECT COUNT(*) as COUNT FROM TAMTRUTAMVANG WHERE CCCD = '{0}'", maCCCD);
+            string sqlStr = ChuoiDemSoLuong() + $" WHERE CCCD = '{maCCCD}'"; //string.Format("SELECT COUNT(*) as COUNT FROM TAMTRUTAMVANG WHERE CCCD = '{0}'", maCCCD);
             return conn.KiemTraCoKhong(sqlStr);
         }
         public TamTruTamVang LayThongTin(string maCCCD)
@@ -58,22 +63,31 @@ namespace QuanLiCongDanThanhPho
         }
         public int LaySoLuongTamTru()
         {
-            string sqlStr = string.Format($"SELECT COUNT(*) as SoLuong FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm trú'");
-            DataTable dt = conn.LayDanhSach(sqlStr);
-            int count = dt.Rows[0].Field<int>("SoLuong");
-            return count;
+            return LaySoLuong(ChuoiDemSoLuong() + " WHERE TrangThai = N'Tạm trú'");
         }
         public int LaySoLuongTamVang()
         {
-            string sqlStr = string.Format($"SELECT COUNT(*) as SoLuong FROM TAMTRUTAMVANG WHERE TrangThai = N'Tạm vắng");
-            DataTable dt = conn.LayDanhSach(sqlStr);
-            int count = dt.Rows[0].Field<int>("SoLuong");
-            return count;
+            return LaySoLuong(ChuoiDemSoLuong() + " WHERE TrangThai = N'Tạm vắng'");
         }
         public DataTable LayDanhSachQuaHan(string tu)
         {
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND GETDATE() > NgayKT";
             return conn.LayDanhSach(sqlStr);
+        }
+        public int LaySoLuongQuaHanTamTru()
+        {
+            return LaySoLuong(ChuoiDemSoLuong() + " WHERE TrangThai = N'Tạm trú' AND GETDATE() > NgayKT");
+     
+        }
+        public int LaySoLuongQuaHanTamVang()
+        {
+            return LaySoLuong(ChuoiDemSoLuong() + " WHERE TrangThai = N'Tạm vắng' AND GETDATE() > NgayKT");
+        }
+        public int LaySoLuong(string sqlStr)
+        {
+            DataTable dt = conn.LayDanhSach(sqlStr);
+            int count = dt.Rows[0].Field<int>("COUNT");
+            return count;
         }
     }
 }

@@ -32,6 +32,7 @@
             this.lblTongThueDaDong = new System.Windows.Forms.Label();
             this.lblTongThueCanDong = new System.Windows.Forms.Label();
             this.lblSoNguoiTreHan = new System.Windows.Forms.Label();
+            this.lblTrungBinhThue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTongTienThue
@@ -48,27 +49,36 @@
             this.lblTongThueDaDong.AutoSize = true;
             this.lblTongThueDaDong.Location = new System.Drawing.Point(29, 88);
             this.lblTongThueDaDong.Name = "lblTongThueDaDong";
-            this.lblTongThueDaDong.Size = new System.Drawing.Size(249, 28);
+            this.lblTongThueDaDong.Size = new System.Drawing.Size(292, 28);
             this.lblTongThueDaDong.TabIndex = 1;
-            this.lblTongThueDaDong.Text = "Tổng thuế đã được đóng";
+            this.lblTongThueDaDong.Text = "Tổng tiền thuế đã được đóng";
             // 
             // lblTongThueCanDong
             // 
             this.lblTongThueCanDong.AutoSize = true;
             this.lblTongThueCanDong.Location = new System.Drawing.Point(29, 148);
             this.lblTongThueCanDong.Name = "lblTongThueCanDong";
-            this.lblTongThueCanDong.Size = new System.Drawing.Size(203, 28);
+            this.lblTongThueCanDong.Size = new System.Drawing.Size(246, 28);
             this.lblTongThueCanDong.TabIndex = 2;
-            this.lblTongThueCanDong.Text = "Tổng thuế cần đóng";
+            this.lblTongThueCanDong.Text = "Tổng tiền thuế cần đóng";
             // 
             // lblSoNguoiTreHan
             // 
             this.lblSoNguoiTreHan.AutoSize = true;
-            this.lblSoNguoiTreHan.Location = new System.Drawing.Point(29, 210);
+            this.lblSoNguoiTreHan.Location = new System.Drawing.Point(29, 275);
             this.lblSoNguoiTreHan.Name = "lblSoNguoiTreHan";
-            this.lblSoNguoiTreHan.Size = new System.Drawing.Size(171, 28);
+            this.lblSoNguoiTreHan.Size = new System.Drawing.Size(226, 28);
             this.lblSoNguoiTreHan.TabIndex = 3;
-            this.lblSoNguoiTreHan.Text = "Số người trễ hạn";
+            this.lblSoNguoiTreHan.Text = "Số người trễ hạn đóng";
+            // 
+            // lblTrungBinhThue
+            // 
+            this.lblTrungBinhThue.AutoSize = true;
+            this.lblTrungBinhThue.Location = new System.Drawing.Point(29, 210);
+            this.lblTrungBinhThue.Name = "lblTrungBinhThue";
+            this.lblTrungBinhThue.Size = new System.Drawing.Size(414, 28);
+            this.lblTrungBinhThue.TabIndex = 4;
+            this.lblTrungBinhThue.Text = "Trung bình tiền thuế một người phải đóng";
             // 
             // FThongKeThue
             // 
@@ -76,6 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 679);
+            this.Controls.Add(this.lblTrungBinhThue);
             this.Controls.Add(this.lblSoNguoiTreHan);
             this.Controls.Add(this.lblTongThueCanDong);
             this.Controls.Add(this.lblTongThueDaDong);
@@ -97,5 +108,6 @@
         private Label lblTongThueDaDong;
         private Label lblTongThueCanDong;
         private Label lblSoNguoiTreHan;
+        private Label lblTrungBinhThue;
     }
 }

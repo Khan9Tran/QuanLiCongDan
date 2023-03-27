@@ -51,7 +51,6 @@
             this.cmbLuaChon.Items.AddRange(new object[] {
             "Công dân",
             "Thuế",
-            "Ngành nghề",
             "Phân bố dân cư"});
             this.cmbLuaChon.Location = new System.Drawing.Point(146, 37);
             this.cmbLuaChon.Name = "cmbLuaChon";

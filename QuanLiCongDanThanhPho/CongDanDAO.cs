@@ -124,6 +124,11 @@ namespace QuanLiCongDanThanhPho
             }
             return resultTable;
         }
+        public int LaySoNguoiTrungBinhCuaMotQuan()
+        {
+            int cnt = (int)LayDanhSachDiaChi().Compute("AVG([Số lượng người])", "");
+            return cnt;
+        }
         public DataTable LayDanhSachDiaChi()
         {
             DiaChi dc = new DiaChi();
@@ -138,7 +143,7 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachNgheNghiep()
         {
-            string sqlStr = string.Format("SELECT NgheNghiep, COUNT(NgheNghiep) as SL FROM CONGDAN GROUP BY NgheNghiep");
+            string sqlStr = string.Format("SELECT NgheNghiep as 'Nghề nghiệp', COUNT(NgheNghiep) as 'Số lượng' FROM CONGDAN GROUP BY NgheNghiep");
             return conn.LayDanhSach(sqlStr);
         }
         public int LaySoLuongDocThan()
