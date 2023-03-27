@@ -84,6 +84,16 @@ namespace QuanLiCongDanThanhPho
             } 
                 
         }
+        private string DinhDangTienTe(string s)
+        {
+            string result = s;
+            for (int i = result.Length - 3; i > 0; i -= 3)
+            {
+                result = result.Insert(i, ".");
+            }
+            return result + " VND";
+        }
+
         private void LayThongTinThue()
         {
             if (MaCCCD != null)
@@ -96,8 +106,8 @@ namespace QuanLiCongDanThanhPho
                 txtCCCD.Text = cd.CCCD;
                 txtSdt.Text = cd.SDT;
                 txtDiaChi.Text = hk.DiaChi.toString();
-                txtSoTienCanNop.Text = thue.SoTienCanNop;
-                txtSoTienDaNop.Text = thue.SoTienDaNop;
+                txtSoTienCanNop.Text = DinhDangTienTe(thue.SoTienCanNop);
+                txtSoTienDaNop.Text = DinhDangTienTe(thue.SoTienDaNop);
                 dtmNgayCapMaSoThue.Value = thue.NgayCapMa;
                 dtmHanNopThue.Value = thue.HanNop;
             }

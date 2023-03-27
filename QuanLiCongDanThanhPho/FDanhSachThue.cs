@@ -64,8 +64,29 @@ namespace QuanLiCongDanThanhPho
         {
             gvThue.DataSource = NgatTrang(ds,10);
             gvThue.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
-        }
+            for (int i = 0; i < gvThue.Rows.Count; i++)
+            {
+                try
+                {
+                    gvThue.Rows[i].Cells[2].Value = DinhDangTienTe(gvThue.Rows[i].Cells[2].Value.ToString());
+                }
+                catch
+                {
 
+                }
+            }
+        }
+        
+        //Dinh dang tien VND
+        private string DinhDangTienTe(string s)
+        {
+            string result = s;
+            for (int i = result.Length - 3; i >0; i -= 3)
+            {
+                result = result.Insert(i, ".");
+            }
+            return result + " VND";
+        }
         // Sắp xếp danh sách tăng dần theo số tiền đã nộp
         private void btnTienDaNop_Click(object sender, EventArgs e)
         {

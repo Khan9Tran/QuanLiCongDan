@@ -54,7 +54,7 @@
             this.gvDanhSachNganhNghe.RowHeadersVisible = false;
             this.gvDanhSachNganhNghe.RowHeadersWidth = 51;
             this.gvDanhSachNganhNghe.RowTemplate.Height = 29;
-            this.gvDanhSachNganhNghe.Size = new System.Drawing.Size(315, 327);
+            this.gvDanhSachNganhNghe.Size = new System.Drawing.Size(364, 427);
             this.gvDanhSachNganhNghe.TabIndex = 26;
             // 
             // FThongKeNganhNghe
@@ -67,7 +67,7 @@
             this.Controls.Add(this.gvDanhSachNganhNghe);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FThongKeNganhNghe";
             this.Text = "FThongKeNganhNghe";
             this.Load += new System.EventHandler(this.FThongKeNganhNghe_Load);

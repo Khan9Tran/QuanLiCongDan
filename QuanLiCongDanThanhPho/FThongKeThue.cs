@@ -19,13 +19,21 @@ namespace QuanLiCongDanThanhPho
             StackForm.Add(this);
         }
 
+        private string DinhDangTienTe(string s)
+        {
+            string result = s;
+            for (int i = result.Length-3; i > 0; i -= 3)
+            {
+                result = result.Insert(i, ".");
+            }
+            return result +" VND";
+        }
         private void FThongKeThue_Load(object sender, EventArgs e)
         {
             double[] thues = thueDAO.LayTongTienTatCa();
-            lblTongTienThue.Text += " " + thues[2].ToString();
-            lblTongThueCanDong.Text += " " + thues[1].ToString();
-            lblTongThueDaDong.Text += " " + thues[0].ToString();
-           
+            lblTongTienThue.Text += " " + DinhDangTienTe(thues[2].ToString());
+            lblTongThueCanDong.Text += " " + DinhDangTienTe(thues[1].ToString());
+            lblTongThueDaDong.Text += " " + DinhDangTienTe(thues[0].ToString());
         }
     }
 }

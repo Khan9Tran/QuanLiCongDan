@@ -45,7 +45,7 @@
             this.gvDanhSachQuan.RowHeadersVisible = false;
             this.gvDanhSachQuan.RowHeadersWidth = 51;
             this.gvDanhSachQuan.RowTemplate.Height = 29;
-            this.gvDanhSachQuan.Size = new System.Drawing.Size(315, 327);
+            this.gvDanhSachQuan.Size = new System.Drawing.Size(375, 479);
             this.gvDanhSachQuan.TabIndex = 24;
             // 
             // lblQuan
