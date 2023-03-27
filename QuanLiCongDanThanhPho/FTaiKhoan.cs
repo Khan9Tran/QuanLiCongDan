@@ -68,6 +68,7 @@ namespace QuanLiCongDanThanhPho
         {
             account.DisplayName = newDisplayName;
             accountDAO.CapNhatDisplayName(account);
+            StackForm.fTrangChu.LoadTaiKhoan();
         }
 
         private void Reset()

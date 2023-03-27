@@ -18,6 +18,7 @@ namespace QuanLiCongDanThanhPho
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
         private Account account;
+        private AccountDAO accountDAO;
 
         public Account Account { get => account; set => account = value; }
 
@@ -34,13 +35,14 @@ namespace QuanLiCongDanThanhPho
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(pnlHienThiForm);
             StackForm.fTrangChu = this;
-            AccountDAO accountDAO = new AccountDAO();
+            accountDAO = new AccountDAO();
             account = accountDAO.LayThongTinTaiKhoan(acc);
             tmrPhongTo.Interval = 1;
             tmrThuNho.Interval = 1;
         }
         public void LoadTaiKhoan()
         {
+            account = accountDAO.LayThongTinTaiKhoan(account);
             btnTaiKhoan.Text = "Xin chào: " + account.DisplayName;
             LayHinhDaiDien();
         }
