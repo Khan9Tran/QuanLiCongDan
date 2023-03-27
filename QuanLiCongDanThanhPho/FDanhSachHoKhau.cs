@@ -48,7 +48,7 @@ namespace QuanLiCongDanThanhPho
 
         private void LayDanhSach()
         {
-            gvHoKhau.DataSource = NgatTrang(ds, 10);
+            gvHoKhau.DataSource = NgatTrang(ds, 13);
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)

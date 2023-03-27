@@ -60,7 +60,7 @@ namespace QuanLiCongDanThanhPho
         //Tải danh sách lên datagridview
         private void LoadDanhSach()
         {
-            gvDanhSachCongDan.DataSource = NgatTrang(ds,10); 
+            gvDanhSachCongDan.DataSource = NgatTrang(ds,15); 
         }
 
 

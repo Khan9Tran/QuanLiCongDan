@@ -127,6 +127,7 @@ namespace QuanLiCongDanThanhPho
         {
             pnlMenu.BringToFront();
             LoadTaiKhoan();
+            tmrNgayHienTai.Start();
         }
 
         private void btnMenuShow_Click(object sender, EventArgs e)
@@ -287,6 +288,18 @@ namespace QuanLiCongDanThanhPho
         private void ptcHinhDaiDien_Click(object sender, EventArgs e)
         {
             cmnusTaiKhoan.Show(new Point(1500, 142));
+        }
+
+        private void ItemCongDanChuyenDi_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FKhaiTu());
+            TatMenu(sender, e);
+        }
+
+        private void tmrNgayHienTai_Tick(object sender, EventArgs e)
+        {
+            lblNgayHienTai.Text = DateTime.Now.ToLongDateString();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }
