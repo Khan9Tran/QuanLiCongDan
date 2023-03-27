@@ -30,10 +30,13 @@ namespace QuanLiCongDanThanhPho
         }
         private void FThongKeThue_Load(object sender, EventArgs e)
         {
-            double[] thues = thueDAO.LayTongTienTatCa();
+            int[] thues = thueDAO.LayThongKeThue();
+            int soNguoiTreHan = thueDAO.LaySoNguoiTreHan();
             lblTongTienThue.Text += " " + DinhDangTienTe(thues[2].ToString());
             lblTongThueCanDong.Text += " " + DinhDangTienTe(thues[1].ToString());
             lblTongThueDaDong.Text += " " + DinhDangTienTe(thues[0].ToString());
+            lblTrungBinhThue.Text += " " + DinhDangTienTe(((int)(thues[2] / thues[3])).ToString());
+            lblSoNguoiTreHan.Text += " " + soNguoiTreHan.ToString();
         }
     }
 }
