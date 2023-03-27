@@ -28,18 +28,23 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachChuaTu(string tu)
         {
-            string strSql = string.Format($"SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR MaHK like '%{tu}%' EXCEPT SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE MaHK like '00000A' OR MaHK like '00000B'");
-            return conn.LayDanhSach(strSql);
+            string sqlStr = string.Format($"SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR MaHK like '%{tu}%' EXCEPT SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE MaHK like '00000A' OR MaHK like '00000B'");
+            return conn.LayDanhSach(sqlStr);
         }
         public DataTable LayDanhSachXepTheoSoTV(string tu)
         {
-            string strSql = string.Format($"SELECT HOKHAU.MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU INNER JOIN (SELECT MaHK, count(CCCD) as SL FROM CONGDAN GROUP BY MaHK) AS CONGDAN ON HOKHAU.MaHK = CONGDAN.MAHK WHERE DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR HOKHAU.MaHK like '%{tu}%' ORDER BY SL ASC EXCEPT SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE MaHK like '00000A' OR MaHK like '00000B'");
-            return conn.LayDanhSach(strSql);
+            string sqlStr = string.Format($"SELECT HOKHAU.MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU INNER JOIN (SELECT MaHK, count(CCCD) as SL FROM CONGDAN GROUP BY MaHK) AS CONGDAN ON HOKHAU.MaHK = CONGDAN.MAHK WHERE DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR HOKHAU.MaHK like '%{tu}%' ORDER BY SL ASC EXCEPT SELECT MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' FROM HOKHAU WHERE MaHK like '00000A' OR MaHK like '00000B'");
+            return conn.LayDanhSach(sqlStr);
         }
         public void CapNhatHoKhau(HoKhau hK)
         {
             string sqlStr = string.Format($"UPDATE HOKHAU SET DiaChi = N'{hK.DiaChi.toString()}' WHERE MaHK = '{hK.MaHoKhau}'");
             conn.ThucThi(sqlStr, $"Cập nhật hộ khẩu thành công");
+        }
+        public DataTable TimHoNhieuNguoiNhat()
+        {
+            string sqlStr = string.Format("SELECT MaHK as 'Mã hộ', count(CCCD) as 'Số lượng' FROM CONGDAN GROUP BY MaHK HAVING count(CCCD) = (SELECT max(SL) FROM (SELECT count(CCCD) as SL FROM CONGDAN WHERE MaHK != '00000B' AND MaHK != '00000A' GROUP BY MaHK) as A)");
+            return conn.LayDanhSach(sqlStr);
         }
     }
 }

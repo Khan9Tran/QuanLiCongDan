@@ -26,6 +26,9 @@ namespace QuanLiCongDanThanhPho
             lblSoCongDan.Text += string.Format($" {cdDAO.LaySoLuongCongDan()}");
             lblSoLuongDaKetHon.Text += string.Format($" {cdDAO.LaySoLuongDaKetHon()}");
             lblSoLuongChuaKetHon.Text += string.Format($" {cdDAO.LaySoLuongDocThan()}");
+            gvNhomTuoi.DataSource = ksDAO.LayTuoiCongDan();
+            gvNgheNghiep.DataSource = cdDAO.LayDanhSachNgheNghiep();
+
         }
     }
 }
