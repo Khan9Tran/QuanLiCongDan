@@ -86,7 +86,7 @@ namespace QuanLiCongDanThanhPho
         public void Xoa(HonNhan honNhan)
         {
             string sqlStr = string.Format("DELETE HONNHAN WHERE MaHonNhan = {0}", honNhan.MaSo);
-            conn.ThucThi(sqlStr, "Li hôn thành công");
+            conn.ThucThi(sqlStr, "Xóa hôn nhân thành công");
         }    
 
         //Lấy tất cả thông tin của hôn nhân theo CCCD

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +15,13 @@ namespace QuanLiCongDanThanhPho
     public partial class FThongTinCongDan : Form
     {
         private string maCCCD;
-        CongDanDAO cdDAO = new CongDanDAO();
-        KhaiSinhDAO ksDAO = new KhaiSinhDAO();
-        ThueDAO thueDAO = new ThueDAO();
-        HonNhanDAO hnDAO = new HonNhanDAO();
-        HoKhauDAO hkDAO = new HoKhauDAO();
-        TamTruTamVangDAO tttvDAO = new TamTruTamVangDAO();
+        CongDanDAO cdDAO;
+        KhaiSinhDAO ksDAO;
+        ThueDAO thueDAO;
+        HonNhanDAO hnDAO;
+        HoKhauDAO hkDAO;
+        TamTruTamVangDAO tttvDAO;
+
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
@@ -48,13 +50,22 @@ namespace QuanLiCongDanThanhPho
             InitializeComponent();
             MaCCCD = maCCCD;
             StackForm.Add(this);
+            cdDAO = new CongDanDAO();
+            ksDAO = new KhaiSinhDAO();
+            thueDAO = new ThueDAO();
+            hkDAO = new HoKhauDAO();
+            hnDAO = new HonNhanDAO();
+            tttvDAO = new TamTruTamVangDAO();
         }
-
+        
+        //Mở F khai sinh
         private void btnKhaiSinh_Click(object sender, EventArgs e)
         {
             FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh(MaCCCD);
             tTKS.ShowDialog();
         }
+
+        //Chỉ cho phép xem
         private void ReadOnly()
         {
             txtNgheNghiep.ReadOnly = true;
@@ -76,31 +87,46 @@ namespace QuanLiCongDanThanhPho
             txtDiaChi.BackColor = Color.Gainsboro;
             txtGioiTinh.ReadOnly = true;
             txtGioiTinh.BackColor = Color.Gainsboro;
+            txtQuanHeVoiChuHo.ReadOnly = true;
+            txtQuanHeVoiChuHo.BackColor = Color.Gainsboro;
             dtmNgaySinh.Enabled = false;
+            ptcHinhDaiDien.Enabled = false;
+            ptcHinhDaiDien.BackColor = Color.Transparent;
         }
+
+        //Cho phép sửa đổi
         private void UnReadOnLy()
         {
             txtNgheNghiep.ReadOnly = false;
             txtNgheNghiep.BackColor = Color.SteelBlue;
             txtHoVaTen.ReadOnly = false;
-            txtHoVaTen.BackColor= Color.SteelBlue;  
+            txtHoVaTen.BackColor = Color.SteelBlue;  
             txtSDT.ReadOnly = false;
-            txtSDT.BackColor= Color.SteelBlue;
+            txtSDT.BackColor = Color.SteelBlue;
             txtTonGiao.ReadOnly = false;
-            txtTonGiao.BackColor= Color.SteelBlue;
+            txtTonGiao.BackColor = Color.SteelBlue;
             btnXacNhan.Enabled = true;
             txtDanToc.ReadOnly = false;
             txtDanToc.BackColor = Color.SteelBlue;
             txtQueQuan.ReadOnly = false;
             txtQueQuan.BackColor = Color.SteelBlue;
-            txtQuocTich.ReadOnly= false;
+            txtQuocTich.ReadOnly = false;
             txtQuocTich.BackColor = Color.SteelBlue;
             txtDiaChi.ReadOnly = false;
             txtDiaChi.BackColor = Color.SteelBlue;
             txtGioiTinh.ReadOnly = false;
             txtGioiTinh.BackColor = Color.SteelBlue;
+            if (txtMaHoKhau.Text != "Unknow")
+            {
+                txtQuanHeVoiChuHo.ReadOnly = false;
+                txtQuanHeVoiChuHo.BackColor = Color.SteelBlue;
+            }
             dtmNgaySinh.Enabled = true;
+            ptcHinhDaiDien.Enabled = true;
+            ptcHinhDaiDien.BackColor = Color.SteelBlue;
         }
+
+        //Tự động đổi chế độ
         private void AutoReadOnly()
         {
             if (txtHoVaTen.ReadOnly == true)
@@ -112,6 +138,8 @@ namespace QuanLiCongDanThanhPho
                 ReadOnly();
             }
         }
+
+        //Lấy ảnh công dân hiện lên picturebox
         private void LayCongDan()
         {
             CongDan cd = cdDAO.LayThongTin(MaCCCD);
@@ -121,12 +149,14 @@ namespace QuanLiCongDanThanhPho
             txtSDT.Text = cd.SDT;
             txtTonGiao.Text = cd.TonGiao;
             txtNgheNghiep.Text = cd.NgheNghiep;
+            txtQuanHeVoiChuHo.Text = cd.QuanHeVoiChuHo;
         }
+
         private void LayKhaiSinh()
         {
             KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
             dtmNgaySinh.Value = ks.NgaySinh;
-            if (ks.GioiTinh == "f")
+            if (ks.GioiTinh == "f")  // "f" là giới tính nữ, "m" là nam
                 txtGioiTinh.Text = "Nữ";
             else
                 txtGioiTinh.Text = "Nam";
@@ -134,6 +164,7 @@ namespace QuanLiCongDanThanhPho
             txtQuocTich.Text = ks.QuocTich;
             txtQueQuan.Text = ks.QueQuan.toString();
         }
+
         private void LayThue()
         {
             Thue thue = thueDAO.LayThongTin(MaCCCD);
@@ -141,6 +172,7 @@ namespace QuanLiCongDanThanhPho
                 btnThue.Enabled = false;
             txtMaThue.Text = thue.MaThue;
         }
+
         private void LayHonNhan()
         {
             HonNhan hn = new HonNhan();
@@ -153,12 +185,14 @@ namespace QuanLiCongDanThanhPho
             else
                 txtHonNhan.Text = hn.MaSo;
         }
+
         private void LayHoKhau()
         {
             CongDan cd = cdDAO.LayThongTin(MaCCCD);
             HoKhau hk = hkDAO.LayThongTin(cd.MaHoKhau);
             txtDiaChi.Text = hk.DiaChi.toString();
         }
+
         private void LayTamTruTamVang()
         {
             TamTruTamVang tttv = new TamTruTamVang();
@@ -170,6 +204,8 @@ namespace QuanLiCongDanThanhPho
                 txtGhiChu.Text = tttv.TrangThai;
             }
         }
+
+        //Lấy hình công dân từ folder HinhCongDan
         private void LayHinhDaiDien()
         {
             string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -177,13 +213,31 @@ namespace QuanLiCongDanThanhPho
             string imagePath = string.Format(@$"{folderPath}\{txtCCCD.Text}");
             string png = imagePath + ".png";
             string jpg = imagePath + ".jpg";
+            Bitmap bitmap = null;
             if (File.Exists(png))
-                picCongDan.Image = Image.FromFile(png);
+            { 
+                bitmap?.Dispose();
+                ptcHinhDaiDien.Image?.Dispose();
+
+                using (Bitmap tempImage = new Bitmap(png, true)) //Giúp k bị lỗi không thể truy cập file đang hoạt động khi xóa
+                {
+                    bitmap = new Bitmap(tempImage);
+                    ptcHinhDaiDien.Image = bitmap;
+                }
+            }
             else if (File.Exists(jpg))
-                picCongDan.Image = Image.FromFile(jpg);
-            else
-                MessageBox.Show("Công dân chưa có ảnh");
+            {
+                bitmap?.Dispose();
+                ptcHinhDaiDien.Image?.Dispose();
+
+                using (Bitmap tempImage = new Bitmap(jpg, true))
+                {
+                    bitmap = new Bitmap(tempImage);
+                    ptcHinhDaiDien.Image = bitmap;
+                }
+            }
         }
+
         public void LayThongTinCongDan()
         {
             if (maCCCD != null)
@@ -202,14 +256,6 @@ namespace QuanLiCongDanThanhPho
                 LayThongTinCongDan();
         }
 
-        private void FThongTinCongDan_MouseLeave(object sender, EventArgs e)
-        {
-        }
-
-        private void pnlThongTinCD_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnHoKhau_Click(object sender, EventArgs e)
         {
@@ -223,6 +269,7 @@ namespace QuanLiCongDanThanhPho
             FThongTinThue tTThue = new FThongTinThue(MaCCCD);
             tTThue.ShowDialog();
         }
+
         private bool KiemTraThongTin()
         {
             if (!KiemTraDuLieuNhap.isTen(txtHoVaTen.Text))
@@ -279,13 +326,21 @@ namespace QuanLiCongDanThanhPho
                 txtSDT.Focus();
                 return false;
             }      
+            if (txtQuanHeVoiChuHo.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mối quan hệ với chủ hộ");
+                txtQuanHeVoiChuHo.Focus();
+                return false;
+            }    
             return true;
         }
+
         private void btnHonNhan_Click(object sender, EventArgs e)
         {
             FThongTinHonNhan tTHN = new FThongTinHonNhan(MaCCCD);
             tTHN.ShowDialog();
         }
+
         private void CapNhatKhaiSinh()
         {
             KhaiSinh khaiSinh = ksDAO.LayThongTin(MaCCCD);
@@ -298,6 +353,7 @@ namespace QuanLiCongDanThanhPho
             khaiSinh.DinhDangGioiTinh();
             ksDAO.CapNhatKhaiSinh(khaiSinh);  
         }    
+
         private void CapNhatCongDan()
         {
             CongDan cd = cdDAO.LayThongTin(MaCCCD);
@@ -305,13 +361,33 @@ namespace QuanLiCongDanThanhPho
             cd.SDT = txtSDT.Text;
             cd.NgheNghiep = txtNgheNghiep.Text;
             cd.TonGiao = txtTonGiao.Text;
+            cd.QuanHeVoiChuHo = txtQuanHeVoiChuHo.Text;
             cdDAO.CapNhatCongDan(cd);
 
+        }
+
+        //Thay đổi chủ hộ ở table hộ khẩu nếu có
+        private void CapNhatHoKhau()
+        {
+            if (txtQuanHeVoiChuHo.Text == "Chủ hộ")
+            {
+                HoKhauDAO hKDAO = new HoKhauDAO();
+                HoKhau hoKhau = hKDAO.LayThongTin(txtMaHoKhau.Text);
+                if (hoKhau.CCCDChuHo != txtCCCD.Text)
+                {
+                    CongDan cD = cdDAO.LayThongTin(hoKhau.CCCDChuHo);
+                    cD.QuanHeVoiChuHo = "Unknow";
+                    cdDAO.CapNhatCongDan(cD);
+                    hoKhau.CCCDChuHo = txtCCCD.Text;
+                    hKDAO.CapNhatHoKhau(hoKhau);
+                }    
+            }    
         }
         private void btnSua_Click(object sender, EventArgs e)
         {  
             AutoReadOnly();
         }
+
         private void CapNhatHonNhan()
         {
             if (txtHonNhan.Text != "Chưa có hôn nhân" && txtHonNhan.Text != "")
@@ -324,6 +400,7 @@ namespace QuanLiCongDanThanhPho
                 hnDAO.CapNhatHonNhan(hn);
             }
         }
+
         private void btnXacNhan_Click(object sender, EventArgs e)
         {  
             if (KiemTraThongTin())
@@ -332,8 +409,9 @@ namespace QuanLiCongDanThanhPho
                 CapNhatKhaiSinh();
                 CapNhatHonNhan();
                 LayThongTinCongDan();
+                CapNhatHoKhau();
                 ReadOnly();
-            }
+            }    
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
@@ -342,5 +420,67 @@ namespace QuanLiCongDanThanhPho
             ReadOnly();
         }
 
+        //Xóa file ảnh tồn tại
+        public void DeleteDirectory(string folderPath, string fileName)
+        {
+            string fileNamePng = fileName + ".png";
+            string fullPathPng = Path.Combine(folderPath, fileNamePng);
+
+            string fileNameJpg = fileName + ".jpg";
+            string fullPathJpg = Path.Combine(folderPath, fileNameJpg);
+
+            if (File.Exists(fullPathPng)) 
+            {
+                File.Delete(fullPathPng);
+            }
+            if (File.Exists(fullPathJpg)) 
+            {
+                File.Delete(fullPathJpg);
+            }
+            
+        }
+
+        private void SaveHinhDaiDien()
+        {
+
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string fileName = string.Format($"{txtCCCD.Text}");
+            string folderPath = string.Format(System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\..\HinhCongDan"));
+            DeleteDirectory(folderPath, fileName);
+            string fullPath;
+            if (ofdHinhDaiDien.FileName.Contains(".jpg"))
+            {
+                fileName += ".jpg";
+                fullPath = Path.Combine(folderPath, fileName);
+                ptcHinhDaiDien.Image.Save(fullPath, ImageFormat.Jpeg);
+            }
+            else
+            {
+                fileName += ".png";
+                fullPath = Path.Combine(folderPath, fileName);
+                ptcHinhDaiDien.Image.Save(fullPath, ImageFormat.Png);
+            }
+        }
+        private void ThemHinh()
+        {
+            ofdHinhDaiDien.Filter = "PImage Files (*.jpg, *.png)|*.jpg;*.png";
+            try
+            {
+                if (ofdHinhDaiDien.ShowDialog() == DialogResult.OK)
+                {
+                    ptcHinhDaiDien.Image = new Bitmap(ofdHinhDaiDien.FileName);
+                    SaveHinhDaiDien();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không mở được ảnh" + ex);
+            }
+        }
+        private void picCongDan_Click(object sender, EventArgs e)
+        {
+            ptcHinhDaiDien.Image = null;
+            ThemHinh();
+        }
     }
 }

@@ -13,20 +13,24 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSachThue : Form
     {
-        ThueDAO thueDAO = new ThueDAO();
-        private string luaChon;
+        ThueDAO thueDAO;
+        private string luaChon; // Khởi tạo lựa chọn bộ lọc
+        private DataTable ds; //Khởi tạo danh sách cho datagridview
         public FDanhSachThue()
         {
             InitializeComponent();
             StackForm.Add(this);
+            thueDAO = new ThueDAO();
+            ds = new DataTable();
             luaChon = "tat ca";
         }
 
         private void FDanhSachThue_Load(object sender, EventArgs e)
         {
-            gvThue.DataSource = thueDAO.LayDanhSach();
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
       
+
         private void gvThue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -46,18 +50,22 @@ namespace QuanLiCongDanThanhPho
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if (luaChon == "tat ca")
-                LoadDanhSach(thueDAO.LayDanhSachChuaTu(txtTimKiem.Text));
+                ds = thueDAO.LayDanhSachChuaTu(txtTimKiem.Text);
             else if (luaChon == "da nop")
-                LoadDanhSach(thueDAO.LayDanhSachSoTienDaNop(txtTimKiem.Text));
+                ds = thueDAO.LayDanhSachSoTienDaNop(txtTimKiem.Text);
             else if (luaChon == "tre han")
-                LoadDanhSach(thueDAO.LayDanhSachTreHan(txtTimKiem.Text));
+                ds = thueDAO.LayDanhSachTreHan(txtTimKiem.Text);
+            nudPage.Value = 1;
+            LoadDanhSach();
 
         }
         // Hàm sửa gán datatable cho datagridview
-        private void LoadDanhSach(DataTable ds)
+        private void LoadDanhSach()
         {
-            gvThue.DataSource = ds;
+            gvThue.DataSource = NgatTrang(ds,10);
+            gvThue.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
+
         // Sắp xếp danh sách tăng dần theo số tiền đã nộp
         private void btnTienDaNop_Click(object sender, EventArgs e)
         {
@@ -79,6 +87,7 @@ namespace QuanLiCongDanThanhPho
                 }
             }
         }
+
         // Mở ra form thông tin thuế của công dân được chọn
         private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
         {
@@ -90,17 +99,39 @@ namespace QuanLiCongDanThanhPho
                 ttThue.ShowDialog();
             }
         }
+
         // Mở ra form đăng kí thuế
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyThue dangKyThue = new FDangKyThue();
             (StackForm.fTrangChu).OpenChildForm(dangKyThue);
         }
+
         // Lọc danh sách những người đóng tiền trẽ hạn/ chưa đủ tiền khi quá thời gian
         private void btnTreHan_Click(object sender, EventArgs e)
         {
             luaChon = "tre han";
             txtTimKiem_TextChanged(txtTimKiem, null);
+        }
+
+        //Ngắt trang
+        private DataTable NgatTrang(DataTable ds, int recordNum)
+        {
+            int totalRecord = ds.Rows.Count;
+            if (totalRecord <= 0)
+                return ds;
+            if (totalRecord % recordNum != 0)
+                nudPage.Maximum = (totalRecord / recordNum) + 1;
+            else
+                nudPage.Maximum = totalRecord / recordNum;
+            int page = int.Parse(nudPage.Value.ToString());
+            return ds.AsEnumerable().Skip((page - 1) * recordNum).Take(recordNum).CopyToDataTable();
+        }
+
+        //Thay đổi page
+        private void nudPage_ValueChanged(object sender, EventArgs e)
+        {
+            LoadDanhSach();
         }
     }
 }

@@ -48,12 +48,14 @@ namespace QuanLiCongDanThanhPho
                 btnDoiMK.Text = "Đổi mật khẩu";
             }
         }
+
         private void HienThiThongTin()
         {
             txtDisplayName.Text = account.DisplayName;
             txtUserName.Text = account.UserName;
             LayHinhDaiDien();
         }
+
         private void CapNhatMatKhau(string matKhauMoi, string userName)
         {
             Account acc = new Account();
@@ -61,11 +63,14 @@ namespace QuanLiCongDanThanhPho
             acc.UserName = userName;
             accountDAO.CapNhatMatKhau(acc);
         }
+
         private void CapNhatDisplayName(string newDisplayName, string userName)
         {
             account.DisplayName = newDisplayName;
             accountDAO.CapNhatDisplayName(account);
+            StackForm.fTrangChu.LoadTaiKhoan();
         }
+
         private void Reset()
         {
             txtMatKhauMoi.Clear();
@@ -143,6 +148,8 @@ namespace QuanLiCongDanThanhPho
                 UnReadOnly();
             }
         }
+        
+        //Cập nhật thông tin DisplayName 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             if (txtDisplayName.Text != "" && KiemTraDuLieuNhap.isTen(txtUserName.Text))
@@ -155,9 +162,7 @@ namespace QuanLiCongDanThanhPho
             {
                 MessageBox.Show("Tên hiển thị sai định dạng");
             }
-            SaveHinhDaiDien();
             HienThiThongTin();
-            StackForm.fTrangChu.LoadTaiKhoan();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -214,6 +219,8 @@ namespace QuanLiCongDanThanhPho
                 if (ofdHinhDaiDien.ShowDialog() == DialogResult.OK)
                 {
                     ptcHinhDaiDien.Image = new Bitmap(ofdHinhDaiDien.FileName);
+                    SaveHinhDaiDien();
+                    StackForm.fTrangChu.LoadTaiKhoan();
                 }
             }
             catch (Exception ex)
@@ -221,12 +228,14 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Không mở được ảnh" + ex);
             }
         }
+        //Lưu ảnh
         private void SaveHinhDaiDien()
         {
             string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string fileName = string.Format($"{account.UserName}");
             string folderPath = string.Format(System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\..\HinhTaiKhoan"));
             string fullPath;
+            DeleteDirectory(folderPath, fileName); //Xóa ảnh cũ
             if (ofdHinhDaiDien.FileName.Contains(".jpg"))
             {
                 fileName += ".jpg";
@@ -240,6 +249,26 @@ namespace QuanLiCongDanThanhPho
                 ptcHinhDaiDien.Image.Save(fullPath, ImageFormat.Png);
             }
         }
+
+        //Xóa ảnh
+        public void DeleteDirectory(string folderPath, string fileName)
+        {
+            string fileNamePng = fileName + ".png";
+            string fullPathPng = Path.Combine(folderPath, fileNamePng);
+
+            string fileNameJpg = fileName + ".jpg";
+            string fullPathJpg = Path.Combine(folderPath, fileNameJpg);
+
+            if (File.Exists(fullPathPng))
+            {
+                File.Delete(fullPathPng);
+            }
+            if (File.Exists(fullPathJpg))
+            {
+                File.Delete(fullPathJpg);
+            }
+
+        }
         private void LayHinhDaiDien()
         {
             string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -247,15 +276,29 @@ namespace QuanLiCongDanThanhPho
             string imagePath = string.Format(@$"{folderPath}\{account.UserName}");
             string png = imagePath + ".png";
             string jpg = imagePath + ".jpg";
+            Bitmap bitmap = null;
+
             if (File.Exists(png))
             {
-                ptcHinhDaiDien.Image = Image.FromFile(png);
-                return;
+                bitmap?.Dispose();
+                ptcHinhDaiDien.Image?.Dispose();
+
+                using (Bitmap tempImage = new Bitmap(png, true)) //Giúp k bị lỗi không thể truy cập file đang hoạt động khi xóa
+                {
+                    bitmap = new Bitmap(tempImage);
+                    ptcHinhDaiDien.Image = bitmap;
+                }
             }
-            if (File.Exists(jpg))
+            else if (File.Exists(jpg))
             {
-                ptcHinhDaiDien.Image = Image.FromFile(jpg);
-                return;
+                bitmap?.Dispose();
+                ptcHinhDaiDien.Image?.Dispose();
+
+                using (Bitmap tempImage = new Bitmap(jpg, true))
+                {
+                    bitmap = new Bitmap(tempImage);
+                    ptcHinhDaiDien.Image = bitmap;
+                }
             }
 
         }

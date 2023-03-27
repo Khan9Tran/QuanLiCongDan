@@ -112,7 +112,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTimKiem.Location = new System.Drawing.Point(15, 12);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(687, 31);
+            this.txtTimKiem.Size = new System.Drawing.Size(1462, 31);
             this.txtTimKiem.TabIndex = 1;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -239,7 +239,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(1365, 67);
+            this.btnThem.Location = new System.Drawing.Point(1214, 67);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(150, 50);
             this.btnThem.TabIndex = 56;
@@ -250,7 +250,7 @@
             // picTimKiem
             // 
             this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.picTimKiem.Location = new System.Drawing.Point(728, 12);
+            this.picTimKiem.Location = new System.Drawing.Point(1483, 12);
             this.picTimKiem.Name = "picTimKiem";
             this.picTimKiem.Size = new System.Drawing.Size(37, 31);
             this.picTimKiem.TabIndex = 56;
@@ -258,15 +258,19 @@
             // 
             // nudPage
             // 
-            this.nudPage.Location = new System.Drawing.Point(1370, 631);
+            this.nudPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(75)))), ((int)(((byte)(150)))));
+            this.nudPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudPage.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.nudPage.Location = new System.Drawing.Point(1370, 76);
             this.nudPage.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudPage.Name = "nudPage";
-            this.nudPage.Size = new System.Drawing.Size(150, 34);
+            this.nudPage.Size = new System.Drawing.Size(150, 30);
             this.nudPage.TabIndex = 57;
+            this.nudPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudPage.Value = new decimal(new int[] {
             1,
             0,
@@ -319,7 +323,7 @@
         private ContextMenuStrip cmnusMenu;
         private ToolStripMenuItem cmnusMenuChiTiet;
         private ToolStripMenuItem cmnusMenuXoa;
-        private Button btnLoc;
         private NumericUpDown nudPage;
+        private Button btnLoc;
     }
 }

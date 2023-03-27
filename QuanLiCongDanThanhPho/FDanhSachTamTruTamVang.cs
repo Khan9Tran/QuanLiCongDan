@@ -13,18 +13,22 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSachTamTruTamVang : Form
     {
-        TamTruTamVangDAO tttvDao = new TamTruTamVangDAO();
+        TamTruTamVangDAO tttvDao;
         private string luaChon;
+        private DataTable ds;
         public FDanhSachTamTruTamVang()
         {
             InitializeComponent();
             StackForm.Add(this);
+            ds = new DataTable();
+            tttvDao = new TamTruTamVangDAO();
             luaChon = "tat ca";
         }
 
+        //Load danh sách ban đầu
         private void FDanhSachTamTruTamVang_Load(object sender, EventArgs e)
         {
-            gvTVTT.DataSource = tttvDao.LayDanhSach();
+            txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void btnTatCa_Click(object sender, EventArgs e)
@@ -33,21 +37,27 @@ namespace QuanLiCongDanThanhPho
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
+
+        //Tìm kiếm
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if (luaChon == "tat ca")
-                LoadDanhSach(tttvDao.LayDanhSachChuaTu(txtTimKiem.Text));
+                ds = tttvDao.LayDanhSachChuaTu(txtTimKiem.Text);
             else if (luaChon == "tam tru")
-                LoadDanhSach(tttvDao.LayDanhSachTamTru(txtTimKiem.Text));
+                ds = tttvDao.LayDanhSachTamTru(txtTimKiem.Text);
             else if (luaChon == "tam vang")
-                LoadDanhSach(tttvDao.LayDanhSachTamVang(txtTimKiem.Text));
+                ds = tttvDao.LayDanhSachTamVang(txtTimKiem.Text);
             else if (luaChon == "qua han")
-                LoadDanhSach(tttvDao.LayDanhSachQuaHan(txtTimKiem.Text));
+                ds = tttvDao.LayDanhSachQuaHan(txtTimKiem.Text);
+            nudPage.Value = 1;
+            LoadDanhSach();
         }
 
-        private void LoadDanhSach(DataTable ds)
+        private void LoadDanhSach()
         {
-            gvTVTT.DataSource = ds;
+            gvTVTT.DataSource = NgatTrang(ds, 10);
+            gvTVTT.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
+            gvTVTT.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
         private void btnTV_Click(object sender, EventArgs e)
@@ -76,6 +86,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Xóa thông tin
         private void cmnusMenuXoa_Click(object sender, EventArgs e)
         {
             DialogResult exit = MessageBox.Show("Bạn có thật sự muốn xóa thông tin tạm trú/tạm vắng?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -90,10 +101,30 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Lọc danh sách hết hạn tạm trú tạm vắng
         private void btnQuaHan_Click(object sender, EventArgs e)
         {
             luaChon = "qua han";
             txtTimKiem_TextChanged(txtTimKiem, null);
+        }
+
+        //Ngắt trang
+        private DataTable NgatTrang(DataTable ds, int recordNum)
+        {
+            int totalRecord = ds.Rows.Count;
+            if (totalRecord <= 0)
+                return ds;
+            if (totalRecord % recordNum != 0)
+                nudPage.Maximum = (totalRecord / recordNum) + 1;
+            else
+                nudPage.Maximum = totalRecord / recordNum;
+            int page = int.Parse(nudPage.Value.ToString());
+            return ds.AsEnumerable().Skip((page - 1) * recordNum).Take(recordNum).CopyToDataTable();
+        }
+
+        private void nudPage_ValueChanged(object sender, EventArgs e)
+        {
+            LoadDanhSach();
         }
     }
 }

@@ -18,6 +18,7 @@ namespace QuanLiCongDanThanhPho
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
         private Account account;
+        private AccountDAO accountDAO;
 
         public Account Account { get => account; set => account = value; }
 
@@ -34,13 +35,14 @@ namespace QuanLiCongDanThanhPho
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(pnlHienThiForm);
             StackForm.fTrangChu = this;
-            AccountDAO accountDAO = new AccountDAO();
+            accountDAO = new AccountDAO();
             account = accountDAO.LayThongTinTaiKhoan(acc);
             tmrPhongTo.Interval = 1;
             tmrThuNho.Interval = 1;
         }
         public void LoadTaiKhoan()
         {
+            account = accountDAO.LayThongTinTaiKhoan(account);
             btnTaiKhoan.Text = "Xin chào: " + account.DisplayName;
             LayHinhDaiDien();
         }
@@ -127,6 +129,7 @@ namespace QuanLiCongDanThanhPho
         {
             pnlMenu.BringToFront();
             LoadTaiKhoan();
+            tmrNgayHienTai.Start();
         }
 
         private void btnMenuShow_Click(object sender, EventArgs e)
@@ -174,19 +177,34 @@ namespace QuanLiCongDanThanhPho
             string imagePath = string.Format(@$"{folderPath}\{account.UserName}");
             string png = imagePath + ".png";
             string jpg = imagePath + ".jpg";
+            Bitmap bitmap = null;
+
             if (File.Exists(png))
             {
-                ptcHinhDaiDien.Image = Image.FromFile(png);
-                return;
-            }
-            if (File.Exists(jpg))
-            {
-                ptcHinhDaiDien.Image = Image.FromFile(jpg);
-                return;
-            }
-        } 
+                bitmap?.Dispose();
+                ptcHinhDaiDien.Image?.Dispose();
 
-            private void pnlDanhMuc_MouseHover(object sender, EventArgs e)
+                using (Bitmap tempImage = new Bitmap(png, true)) //Giúp k bị lỗi không thể truy cập file đang hoạt động khi xóa
+                {
+                    bitmap = new Bitmap(tempImage);
+                    ptcHinhDaiDien.Image = bitmap;
+                }
+            }
+            else if (File.Exists(jpg))
+            {
+                bitmap?.Dispose();
+                ptcHinhDaiDien.Image?.Dispose();
+
+                using (Bitmap tempImage = new Bitmap(jpg, true))
+                {
+                    bitmap = new Bitmap(tempImage);
+                    ptcHinhDaiDien.Image = bitmap;
+                }
+            }
+
+        }
+
+        private void pnlDanhMuc_MouseHover(object sender, EventArgs e)
         {
             pnlDanhMuc.BackColor = Color.FromArgb(44, 43, 60);
         }
@@ -242,10 +260,11 @@ namespace QuanLiCongDanThanhPho
 
         private void TaiKhoanItemDangXuat_Click(object sender, EventArgs e)
         {
+            Hide();
+            FDangNhap fDangNhap= new FDangNhap();
+            fDangNhap.ShowDialog();
             StackForm.ClearAll();
-            FDangNhap newDangNhap = new FDangNhap();
-            newDangNhap.Show();
-            this.Close();
+            Close();
         }
 
         private void cmnusTaiKhoanItemThoat_Click(object sender, EventArgs e)
@@ -271,6 +290,18 @@ namespace QuanLiCongDanThanhPho
         private void ptcHinhDaiDien_Click(object sender, EventArgs e)
         {
             cmnusTaiKhoan.Show(new Point(1500, 142));
+        }
+
+        private void ItemCongDanChuyenDi_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FKhaiTu());
+            TatMenu(sender, e);
+        }
+
+        private void tmrNgayHienTai_Tick(object sender, EventArgs e)
+        {
+            lblNgayHienTai.Text = DateTime.Now.ToLongDateString();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

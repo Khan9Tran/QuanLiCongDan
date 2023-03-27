@@ -23,7 +23,6 @@ namespace QuanLiCongDanThanhPho
             ds = new DataTable();
             StackForm.Add(this);
             luaChon = "tat ca";
-            btnTatCa_Click(btnTatCa, null);
         }
 
         //Tìm kiếm công dân theo các điều kiện
@@ -55,19 +54,19 @@ namespace QuanLiCongDanThanhPho
                 ds = cdDao.LayDanhSachTuoiXepTuBeDenLon(txtTimKiem.Text);
             }
             nudPage.Value = 1;
-            nudPage_ValueChanged(nudPage, null);
+            LoadDanhSach();
         }
 
         //Tải danh sách lên datagridview
         private void LoadDanhSach()
         {
-            gvDanhSachCongDan.DataSource = NgatTrang(ds,5); 
+            gvDanhSachCongDan.DataSource = NgatTrang(ds,15); 
         }
 
 
         private void FDanhSachCongDan_Load(object sender, EventArgs e)
         {
-            LoadDanhSach();
+            txtTimKiem_TextChanged(txtTimKiem, null);
             fpnlPhanLoai.Width = 45;
         }
 
