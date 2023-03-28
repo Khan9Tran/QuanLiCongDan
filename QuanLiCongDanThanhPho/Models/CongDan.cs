@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuanLiCongDanThanhPho
 {
-    internal class CongDan
+    public partial class CongDan
     {
         private string cCCD;
         private string ten;

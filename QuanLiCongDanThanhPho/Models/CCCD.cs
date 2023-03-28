@@ -12,6 +12,7 @@ namespace QuanLiCongDanThanhPho.Models
         DateTime ngayCap;
         string dacDiem;
 
+        public CCCD() { }
         public CCCD(string maCCCD, DateTime ngayCap, string dacDiem)
         {
             this.maCCCD = maCCCD;

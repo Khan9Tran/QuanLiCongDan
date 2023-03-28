@@ -80,6 +80,32 @@ namespace QuanLiCongDanThanhPho
             }
             return cd;
         }
+
+        public CCCD LayThongTinCCCD(string sqlStr)
+        {
+           CCCD cCCD = new CCCD();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    cCCD.MaCCCD = reader["MaCCCD"].ToString();
+                    cCCD.NgayCap = reader.GetDateTime("NgayCap");
+                    cCCD.DacDiem = reader["DacDiem"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("That bai " + ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return cCCD;
+        }
         public Account LayThongTinTaiKhoan(string sqlStr)
         {
             Account accTmp = new Account();

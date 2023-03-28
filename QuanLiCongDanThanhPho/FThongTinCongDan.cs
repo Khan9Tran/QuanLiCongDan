@@ -482,5 +482,11 @@ namespace QuanLiCongDanThanhPho
             ptcHinhDaiDien.Image = null;
             ThemHinh();
         }
+
+        private void btnThongTinCCCD_Click(object sender, EventArgs e)
+        {
+            FThongTinCCCD thongTinCCCD = new FThongTinCCCD(cdDAO.LayThongTin(maCCCD));
+            thongTinCCCD.ShowDialog();
+        }
     }
 }

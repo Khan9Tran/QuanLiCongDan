@@ -31,5 +31,10 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format($"SELECT CCCD.MaCCCD, CONGDAN.Ten FROM CCCD INNER JOIN CONGDAN ON CCCD.MaCCCD = CONGDAN.CCCD WHERE DacDiem = N'{dacDiem}'");
             return conn.LayDanhSach(sqlStr);
         }
+        public CCCD LayThongTin(CCCD cCCD)
+        {
+            string sqlStr = string.Format($"SELECT * FROM CCCD WHERE MaCCCD = '{cCCD.MaCCCD}'");
+            return conn.LayThongTinCCCD(sqlStr);
+        }
     }
 }

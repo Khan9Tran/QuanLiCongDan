@@ -45,6 +45,7 @@
             this.pnlThongTin = new System.Windows.Forms.Panel();
             this.lblSoDT = new System.Windows.Forms.Label();
             this.pnlThongTinCD = new System.Windows.Forms.Panel();
+            this.btnThongTinCCCD = new System.Windows.Forms.Button();
             this.lblQuanHeVoiChuHo = new System.Windows.Forms.Label();
             this.txtQuanHeVoiChuHo = new System.Windows.Forms.TextBox();
             this.fpnlChucNang = new System.Windows.Forms.FlowLayoutPanel();
@@ -256,6 +257,7 @@
             // pnlThongTinCD
             // 
             this.pnlThongTinCD.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlThongTinCD.Controls.Add(this.btnThongTinCCCD);
             this.pnlThongTinCD.Controls.Add(this.lblQuanHeVoiChuHo);
             this.pnlThongTinCD.Controls.Add(this.txtQuanHeVoiChuHo);
             this.pnlThongTinCD.Controls.Add(this.fpnlChucNang);
@@ -298,6 +300,19 @@
             this.pnlThongTinCD.Name = "pnlThongTinCD";
             this.pnlThongTinCD.Size = new System.Drawing.Size(833, 797);
             this.pnlThongTinCD.TabIndex = 31;
+            // 
+            // btnThongTinCCCD
+            // 
+            this.btnThongTinCCCD.BackColor = System.Drawing.Color.Transparent;
+            this.btnThongTinCCCD.FlatAppearance.BorderSize = 0;
+            this.btnThongTinCCCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongTinCCCD.Image = global::QuanLiCongDanThanhPho.Properties.Resources.view;
+            this.btnThongTinCCCD.Location = new System.Drawing.Point(739, 99);
+            this.btnThongTinCCCD.Name = "btnThongTinCCCD";
+            this.btnThongTinCCCD.Size = new System.Drawing.Size(50, 27);
+            this.btnThongTinCCCD.TabIndex = 102;
+            this.btnThongTinCCCD.UseVisualStyleBackColor = false;
+            this.btnThongTinCCCD.Click += new System.EventHandler(this.btnThongTinCCCD_Click);
             // 
             // lblQuanHeVoiChuHo
             // 
@@ -576,7 +591,7 @@
             this.txtCCCD.Location = new System.Drawing.Point(212, 99);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.ReadOnly = true;
-            this.txtCCCD.Size = new System.Drawing.Size(569, 27);
+            this.txtCCCD.Size = new System.Drawing.Size(521, 27);
             this.txtCCCD.TabIndex = 35;
             // 
             // txtHoVaTen
@@ -711,5 +726,6 @@
         private TextBox txtQuanHeVoiChuHo;
         private OpenFileDialog ofdHinhDaiDien;
         private SaveFileDialog sfdHinhDaiDien;
+        private Button btnThongTinCCCD;
     }
 }

@@ -233,6 +233,26 @@ namespace QuanLiCongDanThanhPho.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mặt_sau_thẻ_cccd {
+            get {
+                object obj = ResourceManager.GetObject("mặt sau thẻ cccd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mặt_trước_thẻ_cccd {
+            get {
+                object obj = ResourceManager.GetObject("mặt trước thẻ cccd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu__5_ {
             get {
                 object obj = ResourceManager.GetObject("menu (5)", resourceCulture);
