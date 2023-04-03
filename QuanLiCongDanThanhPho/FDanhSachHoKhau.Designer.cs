@@ -34,6 +34,7 @@
             this.cmnusMenuChiTiet = new System.Windows.Forms.ToolStripMenuItem();
             this.cmnusMenuTachGop = new System.Windows.Forms.ToolStripMenuItem();
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnLoc = new System.Windows.Forms.Button();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnSoTV = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -94,12 +95,25 @@
             // 
             // flpnlPhanLoai
             // 
+            this.flpnlPhanLoai.Controls.Add(this.btnLoc);
             this.flpnlPhanLoai.Controls.Add(this.btnTatCa);
             this.flpnlPhanLoai.Controls.Add(this.btnSoTV);
             this.flpnlPhanLoai.Location = new System.Drawing.Point(20, 123);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
             this.flpnlPhanLoai.Size = new System.Drawing.Size(699, 47);
             this.flpnlPhanLoai.TabIndex = 9;
+            // 
+            // btnLoc
+            // 
+            this.btnLoc.FlatAppearance.BorderSize = 0;
+            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoc.Image = global::QuanLiCongDanThanhPho.Properties.Resources.dots__2_;
+            this.btnLoc.Location = new System.Drawing.Point(3, 3);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(32, 40);
+            this.btnLoc.TabIndex = 60;
+            this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // btnTatCa
             // 
@@ -108,7 +122,7 @@
             this.btnTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTatCa.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTatCa.ForeColor = System.Drawing.Color.Black;
-            this.btnTatCa.Location = new System.Drawing.Point(3, 3);
+            this.btnTatCa.Location = new System.Drawing.Point(41, 3);
             this.btnTatCa.Name = "btnTatCa";
             this.btnTatCa.Size = new System.Drawing.Size(125, 40);
             this.btnTatCa.TabIndex = 4;
@@ -123,7 +137,7 @@
             this.btnSoTV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSoTV.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSoTV.ForeColor = System.Drawing.Color.Black;
-            this.btnSoTV.Location = new System.Drawing.Point(134, 3);
+            this.btnSoTV.Location = new System.Drawing.Point(172, 3);
             this.btnSoTV.Name = "btnSoTV";
             this.btnSoTV.Size = new System.Drawing.Size(125, 40);
             this.btnSoTV.TabIndex = 5;
@@ -229,5 +243,6 @@
         private ToolStripMenuItem cmnusMenuTachGop;
         private Button btnThem;
         private NumericUpDown nudPage;
+        private Button btnLoc;
     }
 }
