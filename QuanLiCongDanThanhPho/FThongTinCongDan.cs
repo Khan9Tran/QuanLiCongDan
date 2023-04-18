@@ -14,7 +14,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongTinCongDan : Form
     {
-        private string maCCCD;
+        CongDan congDan;
         CongDanDAO cdDAO;
         KhaiSinhDAO ksDAO;
         ThueDAO thueDAO;
@@ -25,12 +25,6 @@ namespace QuanLiCongDanThanhPho
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
-        
-        public string MaCCCD
-        {
-            set { maCCCD = value; }
-            get { return maCCCD; }
-        }
  
         protected override void WndProc(ref Message message)
         {
@@ -45,10 +39,9 @@ namespace QuanLiCongDanThanhPho
             InitializeComponent();
         }
 
-        public FThongTinCongDan(string maCCCD)
+        public FThongTinCongDan(CongDan congDan)
         {
             InitializeComponent();
-            MaCCCD = maCCCD;
             StackForm.Add(this);
             cdDAO = new CongDanDAO();
             ksDAO = new KhaiSinhDAO();
@@ -56,12 +49,13 @@ namespace QuanLiCongDanThanhPho
             hkDAO = new HoKhauDAO();
             hnDAO = new HonNhanDAO();
             tttvDAO = new TamTruTamVangDAO();
+            this.congDan = congDan;
         }
         
         //Mở F khai sinh
         private void btnKhaiSinh_Click(object sender, EventArgs e)
         {
-            FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh(MaCCCD);
+            FThongTinKhaiSinh tTKS = new FThongTinKhaiSinh(congDan.CCCD);
             tTKS.ShowDialog();
         }
 
@@ -142,7 +136,7 @@ namespace QuanLiCongDanThanhPho
         //Lấy ảnh công dân hiện lên picturebox
         private void LayCongDan()
         {
-            CongDan cd = cdDAO.LayThongTin(MaCCCD);
+            CongDan cd = cdDAO.LayThongTin(congDan.CCCD);
             txtCCCD.Text = cd.CCCD;
             txtHoVaTen.Text = cd.Ten;
             txtMaHoKhau.Text = cd.MaHoKhau;
@@ -154,7 +148,7 @@ namespace QuanLiCongDanThanhPho
 
         private void LayKhaiSinh()
         {
-            KhaiSinh ks = ksDAO.LayThongTin(MaCCCD);
+            KhaiSinh ks = ksDAO.LayThongTin(congDan.CCCD);
             dtmNgaySinh.Value = ks.NgaySinh;
             if (ks.GioiTinh == "f")  // "f" là giới tính nữ, "m" là nam
                 txtGioiTinh.Text = "Nữ";
@@ -167,7 +161,7 @@ namespace QuanLiCongDanThanhPho
 
         private void LayThue()
         {
-            Thue thue = thueDAO.LayThongTin(MaCCCD);
+            Thue thue = thueDAO.LayThongTin(congDan.CCCD);
             if (thue.MaThue == null || thue.MaThue == "")
                 btnThue.Enabled = false;
             txtMaThue.Text = thue.MaThue;
@@ -176,8 +170,8 @@ namespace QuanLiCongDanThanhPho
         private void LayHonNhan()
         {
             HonNhan hn = new HonNhan();
-            hn = hnDAO.LayThongTin(MaCCCD);
-            if (!hnDAO.KiemTraHonNhan(MaCCCD))
+            hn = hnDAO.LayThongTin(congDan.CCCD);
+            if (!hnDAO.KiemTraHonNhan(congDan.CCCD))
             {
                 txtHonNhan.Text = "Chưa có hôn nhân";
                 btnHonNhan.Enabled = false;
@@ -188,7 +182,7 @@ namespace QuanLiCongDanThanhPho
 
         private void LayHoKhau()
         {
-            CongDan cd = cdDAO.LayThongTin(MaCCCD);
+            CongDan cd = cdDAO.LayThongTin(congDan.CCCD);
             HoKhau hk = hkDAO.LayThongTin(cd.MaHoKhau);
             txtDiaChi.Text = hk.DiaChi.toString();
         }
@@ -196,11 +190,11 @@ namespace QuanLiCongDanThanhPho
         private void LayTamTruTamVang()
         {
             TamTruTamVang tttv = new TamTruTamVang();
-            if (!tttvDAO.KiemTraTamTruTamVang(MaCCCD))
+            if (!tttvDAO.KiemTraTamTruTamVang(congDan.CCCD))
                 txtGhiChu.Text = "Không có ghi chú";
             else
             {
-                tttv = tttvDAO.LayThongTin(MaCCCD);
+                tttv = tttvDAO.LayThongTin(congDan.CCCD);
                 txtGhiChu.Text = tttv.TrangThai;
             }
         }
@@ -240,7 +234,7 @@ namespace QuanLiCongDanThanhPho
 
         public void LayThongTinCongDan()
         {
-            if (maCCCD != null)
+            if (congDan != null)
             {
                 LayCongDan();
                 LayKhaiSinh();
@@ -259,14 +253,14 @@ namespace QuanLiCongDanThanhPho
 
         private void btnHoKhau_Click(object sender, EventArgs e)
         {
-            CongDan cd = cdDAO.LayThongTin(maCCCD);
+            CongDan cd = cdDAO.LayThongTin(congDan.CCCD);
             FThongTinHoKhau tTHK = new FThongTinHoKhau(cd.MaHoKhau);
             tTHK.ShowDialog();
         }
 
         private void btnThue_Click(object sender, EventArgs e)
         {
-            FThongTinThue tTThue = new FThongTinThue(MaCCCD);
+            FThongTinThue tTThue = new FThongTinThue(congDan.CCCD);
             tTThue.ShowDialog();
         }
 
@@ -337,13 +331,13 @@ namespace QuanLiCongDanThanhPho
 
         private void btnHonNhan_Click(object sender, EventArgs e)
         {
-            FThongTinHonNhan tTHN = new FThongTinHonNhan(MaCCCD);
+            FThongTinHonNhan tTHN = new FThongTinHonNhan(congDan.CCCD);
             tTHN.ShowDialog();
         }
 
         private void CapNhatKhaiSinh()
         {
-            KhaiSinh khaiSinh = ksDAO.LayThongTin(MaCCCD);
+            KhaiSinh khaiSinh = ksDAO.LayThongTin(congDan.CCCD);
             khaiSinh.HoTen = txtHoVaTen.Text;
             khaiSinh.QueQuan.DinhDang(txtQueQuan.Text);
             khaiSinh.NgaySinh = dtmNgaySinh.Value;
@@ -356,13 +350,12 @@ namespace QuanLiCongDanThanhPho
 
         private void CapNhatCongDan()
         {
-            CongDan cd = cdDAO.LayThongTin(MaCCCD);
-            cd.Ten = txtHoVaTen.Text;
-            cd.SDT = txtSDT.Text;
-            cd.NgheNghiep = txtNgheNghiep.Text;
-            cd.TonGiao = txtTonGiao.Text;
-            cd.QuanHeVoiChuHo = txtQuanHeVoiChuHo.Text;
-            cdDAO.CapNhatCongDan(cd);
+            congDan.Ten = txtHoVaTen.Text;
+            congDan.SDT = txtSDT.Text;
+            congDan.NgheNghiep = txtNgheNghiep.Text;
+            congDan.TonGiao = txtTonGiao.Text;
+            congDan.QuanHeVoiChuHo = txtQuanHeVoiChuHo.Text;
+            cdDAO.CapNhatCongDan(congDan);
 
         }
 
@@ -392,7 +385,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (txtHonNhan.Text != "Chưa có hôn nhân" && txtHonNhan.Text != "")
             {
-                HonNhan hn = hnDAO.LayThongTin(MaCCCD);
+                HonNhan hn = hnDAO.LayThongTin(congDan.CCCD);
                 if (txtCCCD.Text == hn.CCCDChong)
                     hn.TenChong = txtHoVaTen.Text;  
                 else
@@ -485,7 +478,7 @@ namespace QuanLiCongDanThanhPho
 
         private void btnThongTinCCCD_Click(object sender, EventArgs e)
         {
-            FThongTinCCCD thongTinCCCD = new FThongTinCCCD(cdDAO.LayThongTin(maCCCD));
+            FThongTinCCCD thongTinCCCD = new FThongTinCCCD(cdDAO.LayThongTin(congDan.CCCD));
             thongTinCCCD.ShowDialog();
         }
     }

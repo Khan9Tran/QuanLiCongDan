@@ -107,7 +107,7 @@ namespace QuanLiCongDanThanhPho
                 string maCCCD = gvQuanHeVoiChuHo.CurrentRow.Cells[0].Value.ToString();
                 if (maCCCD != "")
                 {
-                    FThongTinCongDan ttCD = new FThongTinCongDan(maCCCD);
+                    FThongTinCongDan ttCD = new FThongTinCongDan(cdDAO.LayThongTin(maCCCD));
                     ttCD.ShowDialog();
                 }
             }

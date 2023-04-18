@@ -15,6 +15,7 @@ namespace QuanLiCongDanThanhPho
     {
         private string maCCCD;
         KhaiSinhDAO ksDAO = new KhaiSinhDAO();
+        CongDanDAO cdDAO = new CongDanDAO();
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
@@ -38,7 +39,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (txtCccdCha.Text != "" && txtCccdCha.Text != "unknow")
             {
-                FThongTinCongDan tTCD = new FThongTinCongDan(txtCccdCha.Text);
+                FThongTinCongDan tTCD = new FThongTinCongDan(cdDAO.LayThongTin(txtCccdCha.Text));
                 tTCD.ShowDialog();
             }
         }
@@ -123,7 +124,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (txtCccdMe.Text != "" && txtCccdMe.Text != "unknow")
             {
-                FThongTinCongDan tTCD = new FThongTinCongDan(txtCccdMe.Text);
+                FThongTinCongDan tTCD = new FThongTinCongDan(cdDAO.LayThongTin(txtCccdMe.Text));
                 tTCD.ShowDialog();
             }
         }
