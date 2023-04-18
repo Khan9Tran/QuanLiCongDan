@@ -55,12 +55,12 @@
             this.gvHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvHoKhau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvHoKhau.ContextMenuStrip = this.cmnusMenu;
-            this.gvHoKhau.Location = new System.Drawing.Point(20, 177);
+            this.gvHoKhau.Location = new System.Drawing.Point(20, 123);
             this.gvHoKhau.Name = "gvHoKhau";
             this.gvHoKhau.RowHeadersWidth = 51;
             this.gvHoKhau.RowTemplate.Height = 29;
             this.gvHoKhau.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvHoKhau.Size = new System.Drawing.Size(1500, 490);
+            this.gvHoKhau.Size = new System.Drawing.Size(1500, 502);
             this.gvHoKhau.TabIndex = 0;
             this.gvHoKhau.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellClick);
             this.gvHoKhau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellContentClick);
@@ -98,9 +98,9 @@
             this.flpnlPhanLoai.Controls.Add(this.btnLoc);
             this.flpnlPhanLoai.Controls.Add(this.btnTatCa);
             this.flpnlPhanLoai.Controls.Add(this.btnSoTV);
-            this.flpnlPhanLoai.Location = new System.Drawing.Point(20, 123);
+            this.flpnlPhanLoai.Location = new System.Drawing.Point(12, 64);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
-            this.flpnlPhanLoai.Size = new System.Drawing.Size(699, 47);
+            this.flpnlPhanLoai.Size = new System.Drawing.Size(843, 47);
             this.flpnlPhanLoai.TabIndex = 9;
             // 
             // btnLoc
@@ -150,9 +150,9 @@
             this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTimKiem.Location = new System.Drawing.Point(20, 12);
+            this.txtTimKiem.Location = new System.Drawing.Point(15, 12);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(1441, 31);
+            this.txtTimKiem.Size = new System.Drawing.Size(1462, 31);
             this.txtTimKiem.TabIndex = 10;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -172,7 +172,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(1214, 120);
+            this.btnThem.Location = new System.Drawing.Point(1214, 64);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(150, 50);
             this.btnThem.TabIndex = 58;
@@ -185,7 +185,7 @@
             this.nudPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(75)))), ((int)(((byte)(150)))));
             this.nudPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudPage.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.nudPage.Location = new System.Drawing.Point(1370, 126);
+            this.nudPage.Location = new System.Drawing.Point(1370, 76);
             this.nudPage.Minimum = new decimal(new int[] {
             1,
             0,

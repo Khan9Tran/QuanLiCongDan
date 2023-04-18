@@ -188,7 +188,7 @@ namespace QuanLiCongDanThanhPho
             }    
             else 
             {
-                fpnlPhanLoai.Width = 800;
+                fpnlPhanLoai.Width = 900;
             }
         }
 

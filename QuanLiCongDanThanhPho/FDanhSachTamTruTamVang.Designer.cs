@@ -32,6 +32,7 @@
             this.gvTVTT = new System.Windows.Forms.DataGridView();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.flpnlPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnLoc = new System.Windows.Forms.Button();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnTV = new System.Windows.Forms.Button();
             this.btnTT = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.cmnusMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.nudPage = new System.Windows.Forms.NumericUpDown();
-            this.btnLoc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
@@ -56,12 +56,12 @@
             this.gvTVTT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvTVTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvTVTT.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.gvTVTT.Location = new System.Drawing.Point(25, 162);
+            this.gvTVTT.Location = new System.Drawing.Point(20, 123);
             this.gvTVTT.Name = "gvTVTT";
             this.gvTVTT.RowHeadersWidth = 51;
             this.gvTVTT.RowTemplate.Height = 29;
             this.gvTVTT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvTVTT.Size = new System.Drawing.Size(1480, 488);
+            this.gvTVTT.Size = new System.Drawing.Size(1500, 502);
             this.gvTVTT.TabIndex = 1;
             this.gvTVTT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvTVTT_CellClick);
             // 
@@ -70,9 +70,9 @@
             this.txtTimKiem.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTimKiem.Location = new System.Drawing.Point(25, 12);
+            this.txtTimKiem.Location = new System.Drawing.Point(15, 12);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(1422, 31);
+            this.txtTimKiem.Size = new System.Drawing.Size(1462, 31);
             this.txtTimKiem.TabIndex = 56;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -83,10 +83,22 @@
             this.flpnlPhanLoai.Controls.Add(this.btnTV);
             this.flpnlPhanLoai.Controls.Add(this.btnTT);
             this.flpnlPhanLoai.Controls.Add(this.btnQuaHan);
-            this.flpnlPhanLoai.Location = new System.Drawing.Point(25, 108);
+            this.flpnlPhanLoai.Location = new System.Drawing.Point(12, 64);
             this.flpnlPhanLoai.Name = "flpnlPhanLoai";
             this.flpnlPhanLoai.Size = new System.Drawing.Size(699, 47);
             this.flpnlPhanLoai.TabIndex = 58;
+            // 
+            // btnLoc
+            // 
+            this.btnLoc.FlatAppearance.BorderSize = 0;
+            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoc.Image = global::QuanLiCongDanThanhPho.Properties.Resources.dots__2_;
+            this.btnLoc.Location = new System.Drawing.Point(3, 3);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(32, 40);
+            this.btnLoc.TabIndex = 62;
+            this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // btnTatCa
             // 
@@ -151,7 +163,7 @@
             // picTimKiem
             // 
             this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.picTimKiem.Location = new System.Drawing.Point(1468, 12);
+            this.picTimKiem.Location = new System.Drawing.Point(1483, 12);
             this.picTimKiem.Name = "picTimKiem";
             this.picTimKiem.Size = new System.Drawing.Size(37, 31);
             this.picTimKiem.TabIndex = 59;
@@ -164,10 +176,10 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.page;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(1190, 101);
+            this.btnThem.Location = new System.Drawing.Point(1214, 64);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(162, 50);
-            this.btnThem.TabIndex = 60;
+            this.btnThem.Size = new System.Drawing.Size(150, 50);
+            this.btnThem.TabIndex = 56;
             this.btnThem.Text = "Thêm ";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -197,7 +209,7 @@
             this.nudPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(75)))), ((int)(((byte)(150)))));
             this.nudPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudPage.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.nudPage.Location = new System.Drawing.Point(1355, 108);
+            this.nudPage.Location = new System.Drawing.Point(1370, 76);
             this.nudPage.Minimum = new decimal(new int[] {
             1,
             0,
@@ -213,18 +225,6 @@
             0,
             0});
             this.nudPage.ValueChanged += new System.EventHandler(this.nudPage_ValueChanged);
-            // 
-            // btnLoc
-            // 
-            this.btnLoc.FlatAppearance.BorderSize = 0;
-            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoc.Image = global::QuanLiCongDanThanhPho.Properties.Resources.dots__2_;
-            this.btnLoc.Location = new System.Drawing.Point(3, 3);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(32, 40);
-            this.btnLoc.TabIndex = 62;
-            this.btnLoc.UseVisualStyleBackColor = true;
-            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // FDanhSachTamTruTamVang
             // 

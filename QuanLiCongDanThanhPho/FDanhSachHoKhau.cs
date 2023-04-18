@@ -47,7 +47,7 @@ namespace QuanLiCongDanThanhPho
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
-        private void LayDanhSach()
+        private void LoadDanhSach()
         {
             gvHoKhau.DataSource = NgatTrang(ds, 13);
         }
@@ -59,7 +59,7 @@ namespace QuanLiCongDanThanhPho
             else if (luaChon == "sotv")
                ds = hkDao.LayDanhSachXepTheoSoTV(txtTimKiem.Text);
             nudPage.Value = 1;
-            LayDanhSach();
+            LoadDanhSach();
         }
 
         private void btnSoTV_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace QuanLiCongDanThanhPho
 
         private void nudPage_ValueChanged(object sender, EventArgs e)
         {
-
+            LoadDanhSach();
         }
 
         private void btnLoc_Click(object sender, EventArgs e)

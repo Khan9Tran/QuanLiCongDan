@@ -17,20 +17,16 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
             StackForm.Add(this);
+            FlatStyle();
         }
-
-        private void cmbLuaChon_SelectedIndexChanged(object sender, EventArgs e)
+        private void FlatStyle()
         {
-            if (cmbLuaChon.SelectedItem == "Công dân")
-                OpenChildForm(new FDanhSachCongDan());
-            else if (cmbLuaChon.SelectedItem == "Thuế")
-                OpenChildForm(new FDanhSachThue());
-            else if (cmbLuaChon.SelectedItem == "Tạm Trú/Tạm Vắng")
-                OpenChildForm(new FDanhSachTamTruTamVang());
-            else if (cmbLuaChon.SelectedItem == "Hộ khẩu")
-                OpenChildForm(new FDanhSachHoKhau());
-
+            btnCongDan.FlatAppearance.BorderSize = 0;
+            btnHoKhau.FlatAppearance.BorderSize = 0;
+            btnThue.FlatAppearance.BorderSize = 0;
+            btnTTTV.FlatAppearance.BorderSize = 0;
         }
+
         public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
@@ -45,6 +41,39 @@ namespace QuanLiCongDanThanhPho
             pnlHienThiDanhSach.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+        }
+
+        private void FDanhSach_Load(object sender, EventArgs e)
+        {
+            flpnlPhanLoai.Width = 45;
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            if (flpnlPhanLoai.Width > 50)
+                flpnlPhanLoai.Width = 45;
+            else
+                flpnlPhanLoai.Width = 1600;
+        }
+
+        private void btnCongDan_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDanhSachCongDan());
+        }
+
+        private void btnThue_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDanhSachThue());
+        }
+
+        private void btnHoKhau_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDanhSachTamTruTamVang());
+        }
+
+        private void btnTTTV_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDanhSachHoKhau());
         }
     }
 }
