@@ -68,12 +68,12 @@ namespace QuanLiCongDanThanhPho
 
         private void btnHoKhau_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FDanhSachTamTruTamVang());
+            OpenChildForm(new FDanhSachHoKhau());
         }
 
         private void btnTTTV_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FDanhSachHoKhau());
+            OpenChildForm(new FDanhSachTamTruTamVang());
         }
     }
 }

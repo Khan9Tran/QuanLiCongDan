@@ -23,6 +23,8 @@ namespace QuanLiCongDanThanhPho
             ds = new DataTable();
             StackForm.Add(this);
             luaChon = "tat ca";
+            btnTamVang.Enabled = false;
+            btnThue.Enabled = false;
         }
 
         //Tìm kiếm công dân theo các điều kiện
@@ -74,6 +76,18 @@ namespace QuanLiCongDanThanhPho
         {
             if (e.RowIndex != -1)
             {
+                ThueDAO thueDAO = new ThueDAO();
+                // Kiểm tra nếu không có trong ds thuế thì có thể đăng kí
+                if (thueDAO.LayThongTin(GetCCCD()) != null)
+                {
+                    btnThue.Enabled = true;
+                }
+                TamTruTamVangDAO tttvDAO = new TamTruTamVangDAO();
+                // Kiểm tra nếu không có trogn ds tạm trú, tạm vắng thì có thể đắng kí
+                if (tttvDAO.LayThongTin(GetCCCD()) != null)
+                {
+                    btnTamVang.Enabled = true;
+                }
                 cmnusMenu.Show(this, this.PointToClient(MousePosition));
             }
         }
@@ -197,6 +211,18 @@ namespace QuanLiCongDanThanhPho
         private void nudPage_ValueChanged(object sender, EventArgs e)
         {
             LoadDanhSach();
+        }
+
+        private void btnThue_Click(object sender, EventArgs e)
+        {
+            FDangKyThue dangKyThue = new FDangKyThue(GetCCCD());
+            (StackForm.fTrangChu).OpenChildForm(dangKyThue); 
+        }
+
+        private void btnTamVang_Click(object sender, EventArgs e)
+        {
+            FDangKyTamTruTamVang dKTamTruTamVang = new FDangKyTamTruTamVang(GetCCCD());
+            (StackForm.fTrangChu).OpenChildForm(dKTamTruTamVang);
         }
     }
 }

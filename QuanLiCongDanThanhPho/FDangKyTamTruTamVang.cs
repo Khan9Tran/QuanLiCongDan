@@ -19,6 +19,28 @@ namespace QuanLiCongDanThanhPho
             tTTVDAO = new TamTruTamVangDAO();
             StackForm.Add(this);
         }
+        public FDangKyTamTruTamVang(string cCCD)
+        {
+            InitializeComponent();
+            tTTVDAO = new TamTruTamVangDAO();
+            StackForm.Add(this);
+            LoadThongTin(cCCD);
+        }
+
+        private void LoadThongTin(string cCCD)
+        {
+            if (cCCD != null)
+            {
+                CongDanDAO congDanDAO = new CongDanDAO();
+                CongDan congDan = congDanDAO.LayThongTin(cCCD);
+                txtTen.Text = congDan.Ten;
+                txtCCCD.Text = congDan.CCCD;
+                txtMaSo.Text = congDan.CCCD;
+                txtSDT.Text = congDan.SDT;
+                rdoTamVang.Checked = true;
+            }
+        }
+
         private bool KiemTraThongTin()
         {
             if (!KiemTraDuLieuNhap.isMaSo(txtMaSo.Text))
@@ -71,10 +93,21 @@ namespace QuanLiCongDanThanhPho
                 {
                     CongDan cDTamTru = new CongDan(txtCCCD.Text, txtTen.Text, txtSDT.Text);
                     CongDanDAO cDTamTruDAO = new CongDanDAO();
-                    cDTamTruDAO.ThemCongDan(cDTamTru);
+                    try
+                    {
+                        cDTamTruDAO.ThemCongDan(cDTamTru);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Không thể dùng tùy chọn này");
+                        return;
+                    }
                 }
                 TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);
-                tTTVDAO.ThemTamTruTamVang(tTTV);
+                if (tTTVDAO.LayThongTin(tTTV.CCCD) == null)
+                    tTTVDAO.ThemTamTruTamVang(tTTV);
+                else
+                    MessageBox.Show("Thêm thất bại");
             }
         }
 
