@@ -47,7 +47,7 @@ namespace QuanLiCongDanThanhPho.Models
             {
                 return false;
             }
-            this.soTienCanNop = (int.Parse(this.soTienDaNop)-tien).ToString();
+            this.soTienCanNop = (int.Parse(this.soTienCanNop)-tien).ToString();
             int tongThu = int.Parse(this.soTienDaNop) + tien;
             this.soTienDaNop = tongThu.ToString();
             return true;

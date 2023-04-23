@@ -34,7 +34,8 @@ namespace QuanLiCongDanThanhPho
 
         private void gvThue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            //Kiểm tra xem ô/dòng click nếu ko phải là header hoặc dòng trống cuối cùng mới thực hiện
+            if (e.RowIndex != -1 && gvThue.Rows[e.RowIndex].Cells[0].Value.ToString().Length > 0)
             {
                 cmnusMenu.Show(this, this.PointToClient(MousePosition));
                 LoadLblThue(e.RowIndex);
@@ -188,7 +189,15 @@ namespace QuanLiCongDanThanhPho
         {
             if (ThanhToan())
             {
+                int lastSelectedRowIndex;   // Lấy số chỉ dòng trong gridview dang chọn vì lát nữa load danh sách thì dòng được chọn sẽ chuyển về dòng đầu
+                int lastSelectedColumnIndex;    // Lấy số chỉ cột trong gridvew đang chọn vì tương tự như trên
                 MessageBox.Show("Thanh toán thành công");
+                lastSelectedRowIndex = gvThue.CurrentCell.RowIndex; // Tìm lại dòng đã chọn trước khi load lại
+                lastSelectedColumnIndex = gvThue.CurrentCell.ColumnIndex;   // Tìm lại ô đã chọn
+                txtTimKiem_TextChanged(txtTimKiem, null);
+                DataGridViewRow lastSelectedRow = gvThue.Rows[lastSelectedRowIndex];
+                gvThue.CurrentCell = lastSelectedRow.Cells[lastSelectedColumnIndex];
+                LoadLblThue(gvThue.CurrentCell.RowIndex);
             }
             else
             {
