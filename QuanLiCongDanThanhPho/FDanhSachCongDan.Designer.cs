@@ -265,7 +265,7 @@
             this.nudPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(75)))), ((int)(((byte)(150)))));
             this.nudPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudPage.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.nudPage.Location = new System.Drawing.Point(1370, 76);
+            this.nudPage.Location = new System.Drawing.Point(1370, 70);
             this.nudPage.Minimum = new decimal(new int[] {
             1,
             0,
@@ -287,7 +287,7 @@
             this.fpnlChucNang.Controls.Add(this.btnThem);
             this.fpnlChucNang.Controls.Add(this.btnThue);
             this.fpnlChucNang.Controls.Add(this.btnTamVang);
-            this.fpnlChucNang.Location = new System.Drawing.Point(861, 64);
+            this.fpnlChucNang.Location = new System.Drawing.Point(861, 55);
             this.fpnlChucNang.Name = "fpnlChucNang";
             this.fpnlChucNang.Size = new System.Drawing.Size(520, 62);
             this.fpnlChucNang.TabIndex = 58;

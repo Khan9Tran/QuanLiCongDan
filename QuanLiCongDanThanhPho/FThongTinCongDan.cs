@@ -362,19 +362,17 @@ namespace QuanLiCongDanThanhPho
         //Thay đổi chủ hộ ở table hộ khẩu nếu có
         private void CapNhatHoKhau()
         {
-            if (txtQuanHeVoiChuHo.Text == "Chủ hộ")
+            HoKhauDAO hKDAO = new HoKhauDAO();
+            HoKhau hoKhau = hKDAO.LayThongTin(txtMaHoKhau.Text);
+            if (txtQuanHeVoiChuHo.Text == "Chủ hộ" && hoKhau.CCCDChuHo != txtCCCD.Text)
             {
-                HoKhauDAO hKDAO = new HoKhauDAO();
-                HoKhau hoKhau = hKDAO.LayThongTin(txtMaHoKhau.Text);
-                if (hoKhau.CCCDChuHo != txtCCCD.Text)
-                {
                     CongDan cD = cdDAO.LayThongTin(hoKhau.CCCDChuHo);
                     cD.QuanHeVoiChuHo = "Unknow";
-                    cdDAO.CapNhatCongDan(cD);
                     hoKhau.CCCDChuHo = txtCCCD.Text;
-                    hKDAO.CapNhatHoKhau(hoKhau);
-                }    
-            }    
+                    cdDAO.CapNhatCongDan(cD);
+            }
+            hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
+            hKDAO.CapNhatHoKhau(hoKhau);
         }
         private void btnSua_Click(object sender, EventArgs e)
         {  
