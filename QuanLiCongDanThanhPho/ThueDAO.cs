@@ -53,7 +53,7 @@ namespace QuanLiCongDanThanhPho
         }
         public void CapNhatThue(Thue thue) 
         {
-            string sqlStr = string.Format($"UPDATE THUE SET CCCD = '{thue.CCCD}', SoTienCanNop = '{thue.SoTienCanNop}', SoTienDaNop = '{thue.SoTienDaNop}', NgayCap = '{thue.NgayCapMa}', HanNop = '{thue.HanNop}' WHERE MaThue = '{thue.MaThue}'");
+            string sqlStr = string.Format($"UPDATE THUE SET SoTienCanNop = '{thue.SoTienCanNop}', SoTienDaNop = '{thue.SoTienDaNop}', NgayCap = '{thue.NgayCapMa}', HanNop = '{thue.HanNop}' WHERE MaThue = '{thue.MaThue}'");
             conn.ThucThi(sqlStr, $"Cập nhật thuế thành công");
         }
         public int[] LayThongKeThue()

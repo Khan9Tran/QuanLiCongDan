@@ -23,7 +23,6 @@ namespace QuanLiCongDanThanhPho
             InitializeComponent();
             accDAO = new AccountDAO();
             KeyPreview = true;
-            flogo = new FLOGO();
             tmrShowTime.Interval = 5;
         }
 
@@ -57,6 +56,7 @@ namespace QuanLiCongDanThanhPho
             {
                 Hide();
                 tmrShowTime.Start();
+                flogo = new FLOGO();
                 flogo.Show();
             }    
         }
@@ -103,9 +103,8 @@ namespace QuanLiCongDanThanhPho
                 tmrShowTime.Stop();
                 flogo.Close();
                 Account acc = new Account(txtTaiKhoan.Text, txtMatKhau.Text);
-                FTrangChu newTrangChu = new FTrangChu(acc);
-                newTrangChu.ShowDialog();
-                Close();
+                FTrangChu newTrangChu = new FTrangChu(acc, this);
+                newTrangChu.Show();
             }
         }
     }

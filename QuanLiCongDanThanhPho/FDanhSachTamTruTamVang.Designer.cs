@@ -41,6 +41,11 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.cmnusMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.giaHạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ngayToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tuanToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.thangToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.namToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nudPage = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.gvTVTT)).BeginInit();
             this.flpnlPhanLoai.SuspendLayout();
@@ -190,19 +195,59 @@
             this.cmnusMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmnusMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmnusMenuXoa});
+            this.cmnusMenuXoa,
+            this.giaHạnToolStripMenuItem});
             this.cmnusMenu.Name = "contextMenuStrip1";
             this.cmnusMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusMenu.ShowImageMargin = false;
-            this.cmnusMenu.Size = new System.Drawing.Size(96, 36);
+            this.cmnusMenu.Size = new System.Drawing.Size(132, 68);
             // 
             // cmnusMenuXoa
             // 
             this.cmnusMenuXoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cmnusMenuXoa.Name = "cmnusMenuXoa";
-            this.cmnusMenuXoa.Size = new System.Drawing.Size(95, 32);
+            this.cmnusMenuXoa.Size = new System.Drawing.Size(131, 32);
             this.cmnusMenuXoa.Text = "Xóa";
             this.cmnusMenuXoa.Click += new System.EventHandler(this.cmnusMenuXoa_Click);
+            // 
+            // giaHạnToolStripMenuItem
+            // 
+            this.giaHạnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ngayToolStripMenuItem1,
+            this.tuanToolStripMenuItem1,
+            this.thangToolStripMenuItem1,
+            this.namToolStripMenuItem1});
+            this.giaHạnToolStripMenuItem.Name = "giaHạnToolStripMenuItem";
+            this.giaHạnToolStripMenuItem.Size = new System.Drawing.Size(131, 32);
+            this.giaHạnToolStripMenuItem.Text = "Gia hạn";
+            // 
+            // ngayToolStripMenuItem1
+            // 
+            this.ngayToolStripMenuItem1.Name = "ngayToolStripMenuItem1";
+            this.ngayToolStripMenuItem1.Size = new System.Drawing.Size(224, 32);
+            this.ngayToolStripMenuItem1.Text = "3 ngày";
+            this.ngayToolStripMenuItem1.Click += new System.EventHandler(this.ngayToolStripMenuItem1_Click);
+            // 
+            // tuanToolStripMenuItem1
+            // 
+            this.tuanToolStripMenuItem1.Name = "tuanToolStripMenuItem1";
+            this.tuanToolStripMenuItem1.Size = new System.Drawing.Size(224, 32);
+            this.tuanToolStripMenuItem1.Text = "1 tuần";
+            this.tuanToolStripMenuItem1.Click += new System.EventHandler(this.tuanToolStripMenuItem1_Click);
+            // 
+            // thangToolStripMenuItem1
+            // 
+            this.thangToolStripMenuItem1.Name = "thangToolStripMenuItem1";
+            this.thangToolStripMenuItem1.Size = new System.Drawing.Size(224, 32);
+            this.thangToolStripMenuItem1.Text = "1 tháng";
+            this.thangToolStripMenuItem1.Click += new System.EventHandler(this.thangToolStripMenuItem1_Click);
+            // 
+            // namToolStripMenuItem1
+            // 
+            this.namToolStripMenuItem1.Name = "namToolStripMenuItem1";
+            this.namToolStripMenuItem1.Size = new System.Drawing.Size(224, 32);
+            this.namToolStripMenuItem1.Text = "1 năm";
+            this.namToolStripMenuItem1.Click += new System.EventHandler(this.namToolStripMenuItem1_Click);
             // 
             // nudPage
             // 
@@ -269,5 +314,10 @@
         private Button btnQuaHan;
         private NumericUpDown nudPage;
         private Button btnLoc;
+        private ToolStripMenuItem giaHạnToolStripMenuItem;
+        private ToolStripMenuItem ngayToolStripMenuItem1;
+        private ToolStripMenuItem tuanToolStripMenuItem1;
+        private ToolStripMenuItem thangToolStripMenuItem1;
+        private ToolStripMenuItem namToolStripMenuItem1;
     }
 }

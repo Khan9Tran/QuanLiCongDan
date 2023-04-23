@@ -120,14 +120,14 @@ namespace QuanLiCongDanThanhPho
         {
             CongDanDAO cDDAOCha = new CongDanDAO();
             CongDanDAO cDDAOMe = new CongDanDAO();
-            string tenCha = cDDAOCha.LayThongTin(txtCccdCha.Text).Ten;
-            string tenMe = cDDAOMe.LayThongTin(txtCccdMe.Text).Ten;
-            if ((tenCha != "unknow") && (txtTenCha.Text != tenCha))
+            CongDan cha = cDDAOCha.LayThongTin(txtCccdCha.Text);
+            CongDan me = cDDAOMe.LayThongTin(txtCccdMe.Text);
+            if ((cha != null) && (txtTenCha.Text != cha.Ten))
             {
                 MessageBox.Show("Tên và căn cước công dân cha không khớp");
                 return false;
             }
-            if ((tenMe != "unknow" ) && (txtTenMe.Text != tenMe))
+            if ((me != null) && (txtTenMe.Text != me.Ten))
             {
                 MessageBox.Show("Tên và căn cước công dân mẹ không khớp");
                 return false;

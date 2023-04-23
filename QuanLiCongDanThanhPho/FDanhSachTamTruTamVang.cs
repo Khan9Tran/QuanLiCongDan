@@ -54,12 +54,24 @@ namespace QuanLiCongDanThanhPho
             LoadDanhSach();
         }
 
+        private string GetCCCD()
+        {
+            return gvTVTT.CurrentRow.Cells["CCCD"].Value.ToString();
+        }
+
         private void LoadDanhSach()
         {
             gvTVTT.DataSource = NgatTrang(ds, 10);
             gvTVTT.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
             gvTVTT.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
             HightLightQuaHan();
+        }
+
+        private void GiaHan(int day)
+        {
+            TamTruTamVang tTTV = tttvDao.LayThongTin(GetCCCD());
+            tTTV.NgayKetThuc = tTTV.NgayKetThuc.AddDays(day);
+            tttvDao.CapNhat(tTTV);
         }
 
         private void HightLightQuaHan()
@@ -146,6 +158,26 @@ namespace QuanLiCongDanThanhPho
                 flpnlPhanLoai.Width = 45;
             else
                 flpnlPhanLoai.Width = 800;
+        }
+
+        private void ngayToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GiaHan(3);
+        }
+
+        private void tuanToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GiaHan(7);
+        }
+
+        private void thangToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GiaHan(30);
+        }
+
+        private void namToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GiaHan(365);
         }
     }
 }

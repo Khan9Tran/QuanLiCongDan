@@ -19,7 +19,7 @@ namespace QuanLiCongDanThanhPho
         const int HTCAPTION = 0x2;
         private Account account;
         private AccountDAO accountDAO;
-
+        FDangNhap fDangNhap;
         public Account Account { get => account; set => account = value; }
 
         public FTrangChu()
@@ -29,7 +29,7 @@ namespace QuanLiCongDanThanhPho
             this.Controls.Add(pnlHienThiForm);
             StackForm.fTrangChu = this;
         }
-        public FTrangChu(Account acc)
+        public FTrangChu(Account acc, FDangNhap fDangNhap)
         {
             InitializeComponent();
             this.Controls.Add(this.pnlMenu);
@@ -39,6 +39,7 @@ namespace QuanLiCongDanThanhPho
             account = accountDAO.LayThongTinTaiKhoan(acc);
             tmrPhongTo.Interval = 1;
             tmrThuNho.Interval = 1;
+            this.fDangNhap = fDangNhap;
         }
         public void LoadTaiKhoan()
         {
@@ -261,10 +262,8 @@ namespace QuanLiCongDanThanhPho
         private void TaiKhoanItemDangXuat_Click(object sender, EventArgs e)
         {
             Hide();
-            FDangNhap fDangNhap= new FDangNhap();
-            fDangNhap.ShowDialog();
+            fDangNhap.Show();
             StackForm.ClearAll();
-            Close();
         }
 
         private void cmnusTaiKhoanItemThoat_Click(object sender, EventArgs e)

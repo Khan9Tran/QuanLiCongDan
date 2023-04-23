@@ -20,11 +20,6 @@ namespace QuanLiCongDanThanhPho
             congDanDAO = new CongDanDAO();
         }
         CongDanDAO congDanDAO;
-        private void picTimKiem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private bool KiemTraThongTin()
         {
             CongDan cD = congDanDAO.LayThongTin(txtCCCD.Text);
@@ -67,8 +62,11 @@ namespace QuanLiCongDanThanhPho
         }
         private void txtCCCD_TextChanged(object sender, EventArgs e)
         {
-            
-            txtTen.Text = congDanDAO.LayThongTin(txtCCCD.Text).Ten;
+            CongDan cD = congDanDAO.LayThongTin(txtCCCD.Text);
+            if (cD != null)
+            {
+                txtTen.Text = cD.Ten;
+            }
         }
     }
 }
