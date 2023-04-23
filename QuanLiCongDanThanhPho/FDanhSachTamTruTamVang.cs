@@ -59,6 +59,18 @@ namespace QuanLiCongDanThanhPho
             gvTVTT.DataSource = NgatTrang(ds, 10);
             gvTVTT.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
             gvTVTT.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+            HightLightQuaHan();
+        }
+
+        private void HightLightQuaHan()
+        {
+            for (int index = 0; index < gvTVTT.Rows.Count; index++)
+            {
+                if (gvTVTT.Rows[index].Cells[4].Value != null && (DateTime)(gvTVTT.Rows[index].Cells[4]).Value < DateTime.Now)
+                {
+                    gvTVTT.Rows[index].DefaultCellStyle.BackColor = Color.Red;
+                } 
+            }
         }
 
         private void btnTV_Click(object sender, EventArgs e)

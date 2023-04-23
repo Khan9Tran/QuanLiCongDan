@@ -40,6 +40,19 @@ namespace QuanLiCongDanThanhPho.Models
             this.soTienCanNop = "0";
             this.soTienDaNop = "0";
         }
+
+        public bool ThanhToan(int tien)
+        {
+            if (tien > int.Parse(this.soTienCanNop))
+            {
+                return false;
+            }
+            this.soTienCanNop = (int.Parse(this.soTienDaNop)-tien).ToString();
+            int tongThu = int.Parse(this.soTienDaNop) + tien;
+            this.soTienDaNop = tongThu.ToString();
+            return true;
+        }
+
         public string MaThue { get => maThue; set => maThue = value; }
         public string CCCD { get => cCCD; set => cCCD = value; }
         public DateTime NgayCapMa { get => ngayCapMa; set => ngayCapMa = value; }

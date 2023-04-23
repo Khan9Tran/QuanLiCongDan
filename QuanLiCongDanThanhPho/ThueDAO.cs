@@ -74,5 +74,11 @@ namespace QuanLiCongDanThanhPho
             int cnt = dt.Rows[0].Field<int>("SL");
             return cnt;
         }
+
+        public DataTable DuTuoiDongThue()
+        {
+            string sqlStr = string.Format("SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN JOIN KHAISINH ON CONGDAN.CCCD = KHAISINH.MaKS WHERE (GETDATE() < DATEADD(year, YEAR(GETDATE()) - YEAR(NgaySinh), NgaySinh) AND YEAR(GETDATE())- YEAR(NgaySinh) - 1 >= 18) OR (GETDATE() >= DATEADD(year, YEAR(GETDATE()) - YEAR(NgaySinh), NgaySinh) AND YEAR(GETDATE()) - YEAR(NgaySinh) >= 18) EXCEPT SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM THUE, CONGDAN WHERE THUE.CCCD = CONGDAN.CCCD");
+            return conn.LayDanhSach(sqlStr);
+        }
     }
 }
