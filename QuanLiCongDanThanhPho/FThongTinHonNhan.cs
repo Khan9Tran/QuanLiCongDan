@@ -24,16 +24,27 @@ namespace QuanLiCongDanThanhPho
             set { maCCCD = value; }
             get { return maCCCD; }
         }
+
+        private void KhoiTao()
+        {
+            hnDAO = new HonNhanDAO();
+            cdDAO = new CongDanDAO();
+            StackForm.Add(this);
+        }
+
         public FThongTinHonNhan()
         {
             InitializeComponent();
+            StackForm.Add(this);
         }
+
         public FThongTinHonNhan(string maCCCD)
         {
             MaCCCD = maCCCD;
             InitializeComponent();
-            StackForm.Add(this);
+            KhoiTao();
         }
+
         private void btnThongTinChong_Click(object sender, EventArgs e)
         {
             if (txtCCCDChong.Text != "")
@@ -51,6 +62,7 @@ namespace QuanLiCongDanThanhPho
                 tTCD.ShowDialog();
             }
         }
+
         public void LayThongTinHonNhan()
         {
             if (maCCCD != null)
@@ -64,10 +76,12 @@ namespace QuanLiCongDanThanhPho
                 dtmNgayDangKy.Value = hn.NgayDangKy;
             }
         }    
+
         private void FThongTinHonNhan_Load(object sender, EventArgs e)
         {
             LayThongTinHonNhan();
         }
+
         protected override void WndProc(ref Message message)
         {
             base.WndProc(ref message);
@@ -75,6 +89,7 @@ namespace QuanLiCongDanThanhPho
             if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
                 message.Result = (IntPtr)HTCAPTION;
         }
+
         private void ReadOnly()
         {
             dtmNgayDangKy.Enabled = false;
@@ -82,6 +97,7 @@ namespace QuanLiCongDanThanhPho
             btnXacNhan.Enabled = false;
             txtNoiDangKy.BackColor = Color.Gainsboro;
         }
+
         private void UnReadOnLy()
         {
             dtmNgayDangKy.Enabled = true;
@@ -89,6 +105,7 @@ namespace QuanLiCongDanThanhPho
             btnXacNhan.Enabled = true;
             txtNoiDangKy.BackColor = Color.SteelBlue;
         }
+
         private void ChoPhepThayDoi()
         {
             if (txtNoiDangKy.ReadOnly == false)
@@ -100,10 +117,12 @@ namespace QuanLiCongDanThanhPho
                 UnReadOnLy();
             }
         }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             ChoPhepThayDoi();
         }
+
         private bool KiemTraThongTin()
         {
             if (!KiemTraDuLieuNhap.isDiaChi(txtNoiDangKy.Text))
@@ -114,6 +133,7 @@ namespace QuanLiCongDanThanhPho
             }    
             return true;
         }    
+
         public void CapNhatHonNhan()
         {
             HonNhan hN = hnDAO.LayThongTin(maCCCD);
@@ -121,6 +141,7 @@ namespace QuanLiCongDanThanhPho
             hN.NgayDangKy = dtmNgayDangKy.Value;
             hnDAO.CapNhatHonNhan(hN);
         }
+
         private void CapNhat()
         {   if (KiemTraThongTin())
             {
@@ -134,7 +155,6 @@ namespace QuanLiCongDanThanhPho
             ReadOnly();
             LayThongTinHonNhan();
         }
-
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {

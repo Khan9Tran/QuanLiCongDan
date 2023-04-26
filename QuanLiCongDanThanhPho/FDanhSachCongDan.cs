@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiCongDanThanhPho.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,48 +14,67 @@ namespace QuanLiCongDanThanhPho
     public partial class FDanhSachCongDan : Form
     {
         CongDanDAO cdDao;
-        private string luaChon;
+        private dynamic luaChon;
         private DataTable ds;
-
         public DataTable Ds { get => ds; set => ds = value; }
+
+        enum Loc
+        {
+            tatCa,
+            nam,
+            nu,
+            ketHon,
+            docThan,
+            tuoiTac,
+        }
+
+        private void KhoiTao()
+        {
+            cdDao = new CongDanDAO();
+            StackForm.Add(this);
+            luaChon = Loc.tatCa;
+            btnTamVang.Enabled = false;
+            btnThue.Enabled = false;
+        }
 
         public FDanhSachCongDan()
         {
-
             InitializeComponent();
-            cdDao = new CongDanDAO();
             ds = new DataTable();
-            StackForm.Add(this);
-            luaChon = "tat ca";
-            btnTamVang.Enabled = false;
-            btnThue.Enabled = false;
+            KhoiTao();
+        }
+
+        public FDanhSachCongDan(DataTable ds)
+        {
+            InitializeComponent();
+            Ds = ds;
+            KhoiTao();
         }
 
         //Tìm kiếm công dân theo các điều kiện
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            if (luaChon == "tat ca")
+            if (luaChon == Loc.tatCa)
             {
                 ds = cdDao.LayDanhSachChuaTu(txtTimKiem.Text);
             }
-            else if (luaChon == "nam")
+            else if (luaChon == Loc.nam)
             {
                 ds = cdDao.LayDanhSachCongDanNam(txtTimKiem.Text);
             }
-            else if (luaChon == "nu")
+            else if (luaChon == Loc.nu)
             {
                 ds = cdDao.LayDanhSachCongDanNu(txtTimKiem.Text);
-
             }
-            else if (luaChon == "ket hon")
+            else if (luaChon == Loc.ketHon)
             {
                 ds = cdDao.LayDanhSachDaKetHon(txtTimKiem.Text);
             }
-            else if (luaChon == "doc than")
+            else if (luaChon == Loc.docThan)
             {
                 ds = cdDao.LayDanhSachChuaKetHon(txtTimKiem.Text);
             }
-            else if (luaChon == "tuoi tac")
+            else if (luaChon == Loc.tuoiTac)
             {
                 ds = cdDao.LayDanhSachTuoiXepTuBeDenLon(txtTimKiem.Text);
             }
@@ -71,13 +91,13 @@ namespace QuanLiCongDanThanhPho
 
         private void FDanhSachCongDan_Load(object sender, EventArgs e)
         {
-            txtTimKiem_TextChanged(txtTimKiem, null);
+            TimKiem(Loc.tatCa);
             fpnlPhanLoai.Width = 45;
         }
 
         private void gvDanhSachCongDan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            if (e.RowIndex != -1 && gvDanhSachCongDan.Rows[e.RowIndex].Cells[0].Value.ToString().Length > 0)
             {
                 ThueDAO thueDAO = new ThueDAO();
                 // Kiểm tra nếu không có trong ds thuế thì có thể đăng kí
@@ -95,45 +115,45 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
-        //Lọc giới tính: Nam
+        //Lọc những người có giới tính: Nam
         private void btnNam_Click(object sender, EventArgs e)
         {
-            luaChon = "nam";
-            txtTimKiem_TextChanged(txtTimKiem, null);
+            TimKiem(Loc.nam);
         }
 
         //Show tất cả
         private void btnTatCa_Click(object sender, EventArgs e)
         {
-            luaChon = "tat ca";
-            txtTimKiem_TextChanged(txtTimKiem, null);
+            TimKiem(Loc.tatCa);
         }
 
-        //Lọc giới tính: nữ
+        //Lọc những người có giới tính: nữ
         private void btnNu_Click(object sender, EventArgs e)
         {
-            luaChon = "nu";
-            txtTimKiem_TextChanged(txtTimKiem, null);
+            TimKiem(Loc.nu);
         }
 
-        //Lọc người chưa kết hôn
+        //Lọc ra người chưa kết hôn
         private void btnDocThan_Click(object sender, EventArgs e)
         {
-            luaChon = "doc than";
-            txtTimKiem_TextChanged(txtTimKiem, null);
+            TimKiem(Loc.docThan);
         }
 
-        //Lọc người đã kết hôn
+        //Lọc ra người đã kết hôn
         private void btnKetHon_Click(object sender, EventArgs e)
         {
-            luaChon = "ket hon";
-            txtTimKiem_TextChanged(txtTimKiem, null);
+            TimKiem(Loc.ketHon);
         }
 
-        //Sắp xếp theo tuổi tác
+        //Sắp xếp danh sách theo tuổi tác
         private void btnTuoiTac_Click(object sender, EventArgs e)
         {
-            luaChon = "tuoi tac";
+            TimKiem(Loc.tuoiTac);
+        }
+
+        private void TimKiem(dynamic type)
+        {
+            luaChon = type;
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
@@ -147,16 +167,16 @@ namespace QuanLiCongDanThanhPho
         //Lấy mã cccd bằng kick vào gridview
         private string GetCCCD()
         {
-            return gvDanhSachCongDan.CurrentRow.Cells[0].Value.ToString();
+            return (string)gvDanhSachCongDan.CurrentRow.Cells[0].Value;
         }
 
         //Menu
         private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
         {
             string maCCCD = GetCCCD();
-            CongDan cD = cdDao.LayThongTin(maCCCD);
             if (maCCCD != "")
             {
+                CongDan cD = cdDao.LayThongTin(maCCCD);
                 FThongTinCongDan ttCD = new FThongTinCongDan(cD);
                 ttCD.ShowDialog();
             }
@@ -168,8 +188,8 @@ namespace QuanLiCongDanThanhPho
             string maCCCD = GetCCCD();
             if (maCCCD != "")
             {
-                CongDan cd = cdDao.LayThongTin(maCCCD);
-                cdDao.XoaCongDan(cd);
+                CongDan cD = cdDao.LayThongTin(maCCCD);
+                cdDao.XoaCongDan(cD);
                 txtTimKiem_TextChanged(txtTimKiem, null);
             }
         }

@@ -12,10 +12,12 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongKeThue : Form
     {
-        ThueDAO thueDAO = new ThueDAO();
+        ThueDAO thueDAO;
+
         public FThongKeThue()
         {
             InitializeComponent();
+            thueDAO = new ThueDAO();
             StackForm.Add(this);
         }
 
@@ -28,6 +30,7 @@ namespace QuanLiCongDanThanhPho
             }
             return result +" VND";
         }
+
         private void FThongKeThue_Load(object sender, EventArgs e)
         {
             int[] thues = thueDAO.LayThongKeThue();

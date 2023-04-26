@@ -63,7 +63,6 @@
             this.gvHoKhau.Size = new System.Drawing.Size(1500, 502);
             this.gvHoKhau.TabIndex = 0;
             this.gvHoKhau.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellClick);
-            this.gvHoKhau.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvHoKhau_CellContentClick);
             // 
             // cmnusMenu
             // 

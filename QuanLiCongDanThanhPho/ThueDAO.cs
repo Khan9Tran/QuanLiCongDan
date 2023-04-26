@@ -14,7 +14,7 @@ namespace QuanLiCongDanThanhPho
         public ThueDAO() { }
         public DataTable LayDanhSach()
         {
-            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', HanNop as 'Hạn nộp' FROM THUE");
+            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', SoTienDaNop as 'Số tiền đã nộp', NgayCap as 'Ngày cấp',HanNop as 'Hạn nộp' FROM THUE");
         }
         public void ThemThue(Thue thue)
         {
@@ -33,7 +33,7 @@ namespace QuanLiCongDanThanhPho
         }
         public string ChuoiLayDanhSachTheoTu(string tu)
         {
-            string str = string.Format($"SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', HanNop as 'Hạn nộp' FROM THUE WHERE (MaThue like '%{tu}%' OR CCCD like '%{tu}%' OR SoTienCanNop like '%{tu}%' OR Convert(varchar,Format(HanNop, 'dd/MM/yyyy')) like '%{tu}%')");
+            string str = string.Format($"SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', SoTienDaNop as 'Số tiền đã nộp', NgayCap as 'Ngày cấp', HanNop as 'Hạn nộp' FROM THUE WHERE (MaThue like '%{tu}%' OR CCCD like '%{tu}%' OR SoTienCanNop like '%{tu}%' OR Convert(varchar,Format(HanNop, 'dd/MM/yyyy')) like '%{tu}%')");
             return str;
         }
         public DataTable LayDanhSachChuaTu(string tu)

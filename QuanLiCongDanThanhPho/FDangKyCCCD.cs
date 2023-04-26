@@ -13,11 +13,13 @@ namespace QuanLiCongDanThanhPho
     public partial class FDangKyCCCD : Form
     {
         CCCDDAO cCCDDAO;
+        CongDanDAO cDDAO;
 
         public FDangKyCCCD()
         {
             InitializeComponent();
             cCCDDAO = new CCCDDAO();
+            cDDAO = new CongDanDAO();
             StackForm.Add(this);
         }
         
@@ -59,7 +61,6 @@ namespace QuanLiCongDanThanhPho
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            CongDanDAO cDDAO = new CongDanDAO();
             if (KiemTraThongTin())
             { 
                 if (cDDAO.LayThongTin(txtCCCD.Text).Ten == txtTen.Text)

@@ -16,19 +16,28 @@ namespace QuanLiCongDanThanhPho
     public partial class FTachGopHo : Form
     {
         private CongDanDAO cDDAO;
+        private HoKhauDAO hKDAO;
         private bool isTach = false;
         private CongDan cD;
+
+        private void KhoiTao()
+        {
+            cDDAO = new CongDanDAO();
+            hKDAO = new HoKhauDAO();
+            cD = new CongDan();
+            StackForm.Add(this);
+        }
+
         public FTachGopHo()
         {
             InitializeComponent();
-            cDDAO = new CongDanDAO();
-            StackForm.Add(this);
+            KhoiTao();
         }
+
         public FTachGopHo(string maHoTach)
         {
             InitializeComponent();
-            cDDAO = new CongDanDAO();
-            StackForm.Add(this);
+            KhoiTao();
             txtMaHoTach.Text = maHoTach;
             LoadHoTach();
         }
@@ -42,7 +51,6 @@ namespace QuanLiCongDanThanhPho
                 int index = gvHoTach.CurrentCell.RowIndex;
                     if (index >= 0)
                     {
-                        cD = new CongDan();
                         cD.CCCD = gvHoTach.Rows[index].Cells[0].Value.ToString();
                         isTach = true;
                     }
@@ -52,6 +60,7 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
             }
         } 
+
         private bool KiemTraThongTin()
         {
             if (txtMaHoTach.Text == "")
@@ -67,13 +76,11 @@ namespace QuanLiCongDanThanhPho
                 return false;
             }
             return true;
-                
         }
 
         private void TaoHoMoi()
         {
             //Kiểm tra 
-            HoKhauDAO hKDAO = new HoKhauDAO();
             HoKhau hK = new HoKhau(txtMaHoGop.Text, "unknow, unknow, unknow,uknow", cD.CCCD);
             hKDAO.ThemHoKhau(hK);
             cD.QuanHeVoiChuHo = "Chủ hộ";
@@ -82,8 +89,8 @@ namespace QuanLiCongDanThanhPho
             LoadHoTach();
             LoadHoGop();
             XoaHoThua();
-            
         }
+
         private void btnTaoHoMoi_Click(object sender, EventArgs e)
         { 
             if (KiemTraThongTin())
@@ -109,14 +116,13 @@ namespace QuanLiCongDanThanhPho
         //Thực hiện xóa hộ nếu không còn thành viên
         private void XoaHoThua()
         {
-
-            HoKhauDAO hKDAO = new HoKhauDAO();
             HoKhau hK = new HoKhau(txtMaHoTach.Text, "unknow, unknow, unknow,uknow", cD.CCCD);
             if (gvHoTach.Rows.Count <=1)
             {
                 hKDAO.XoaHoKhau(hK);
             }
         }
+
         public void ThemVaoHo()
         {
             cD.MaHoKhau = txtMaHoGop.Text;
@@ -125,6 +131,7 @@ namespace QuanLiCongDanThanhPho
             LoadHoGop();
             XoaHoThua();
         }
+
         private void btnGopHo_Click(object sender, EventArgs e)
         {   
             if (KiemTraThongTin())
@@ -145,10 +152,12 @@ namespace QuanLiCongDanThanhPho
                     isTach = false;
                 }
         }
+
         private void LoadHoTach()
         {
              gvHoTach.DataSource = cDDAO.LayDanhSachTheoHoKhau(txtMaHoTach.Text);
         }
+
         private void LoadHoGop()
         {
             gvHoGop.DataSource = cDDAO.LayDanhSachTheoHoKhau(txtMaHoGop.Text);
@@ -163,6 +172,7 @@ namespace QuanLiCongDanThanhPho
         {
             LoadHoGop();
         }
+
         private void Reset()
         {
             txtMaHoGop.Text = "";

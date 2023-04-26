@@ -216,7 +216,6 @@
             this.lblTittle.Size = new System.Drawing.Size(324, 38);
             this.lblTittle.TabIndex = 0;
             this.lblTittle.Text = "THÔNG TIN KHAI SINH";
-            this.lblTittle.Click += new System.EventHandler(this.lblTittle_Click);
             // 
             // lblTen
             // 

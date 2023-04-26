@@ -12,12 +12,16 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongKePhanBo : Form
     {
-        CongDanDAO cdDAO = new CongDanDAO();
-        TamTruTamVangDAO tttvDAO = new TamTruTamVangDAO();
-        HoKhauDAO hkDAO = new HoKhauDAO();
+        CongDanDAO cdDAO;
+        TamTruTamVangDAO tttvDAO;
+        HoKhauDAO hkDAO;
+
         public FThongKePhanBo()
         {
             InitializeComponent();
+            cdDAO = new CongDanDAO();
+            tttvDAO = new TamTruTamVangDAO();
+            hkDAO = new HoKhauDAO();
             StackForm.Add(this);
         }
 

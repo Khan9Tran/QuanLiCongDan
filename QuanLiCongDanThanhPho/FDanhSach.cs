@@ -13,12 +13,14 @@ namespace QuanLiCongDanThanhPho
     public partial class FDanhSach : Form
     {
         public Form currentChildForm;
+
         public FDanhSach()
         {
             InitializeComponent();
             StackForm.Add(this);
             FlatStyle();
         }
+
         private void FlatStyle()
         {
             btnCongDan.FlatAppearance.BorderSize = 0;

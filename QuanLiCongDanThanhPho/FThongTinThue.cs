@@ -14,28 +14,40 @@ namespace QuanLiCongDanThanhPho
     public partial class FThongTinThue : Form
     {
         private string maCCCD;
-        ThueDAO thueDAO = new ThueDAO();
-        CongDanDAO cdDAO = new CongDanDAO();
-        HoKhauDAO hkDAO = new HoKhauDAO();
+        ThueDAO thueDAO;
+        CongDanDAO cdDAO;
+        HoKhauDAO hkDAO;
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
+
         public string MaCCCD
         {
             set { maCCCD = value; }
             get { return maCCCD; }
         }
+
+        private void KhoiTao()
+        {
+            thueDAO = new ThueDAO();
+            cdDAO = new CongDanDAO();
+            hkDAO = new HoKhauDAO();
+            StackForm.Add(this);
+        }
+
         public FThongTinThue()
         {
             InitializeComponent();
-            StackForm.Add(this);
+            KhoiTao();
         }
+
         public FThongTinThue(string maCCCD)
         {
             MaCCCD = maCCCD;
             InitializeComponent();
-            StackForm.Add(this);
+            KhoiTao();
         }
+
         private bool KiemTraThongTin()
         {
             if (!KiemTraDuLieuNhap.isTien(txtSoTienCanNop.Text))
@@ -52,6 +64,7 @@ namespace QuanLiCongDanThanhPho
             }   
             return true;
         }
+
         private void ReadOnly()
         {
             txtSoTienCanNop.ReadOnly = true;
@@ -62,6 +75,7 @@ namespace QuanLiCongDanThanhPho
             dtmNgayCapMaSoThue.Enabled = false;
             btnXacNhan.Enabled = false;
         }
+
         private void UnReanOnly()
         {
             txtSoTienCanNop.ReadOnly = false;
@@ -72,6 +86,7 @@ namespace QuanLiCongDanThanhPho
             dtmNgayCapMaSoThue.Enabled = true;
             btnXacNhan.Enabled = true;
         }
+
         private void AutoReadOnly()
         {
             if (txtSoTienCanNop.ReadOnly == false)
@@ -103,10 +118,12 @@ namespace QuanLiCongDanThanhPho
                 dtmHanNopThue.Value = thue.HanNop;
             }
         }
+
         private void FThongTinThue_Load(object sender, EventArgs e)
         {
             LayThongTinThue();
         }
+
         protected override void WndProc(ref Message message)
         {
             base.WndProc(ref message);
@@ -114,6 +131,7 @@ namespace QuanLiCongDanThanhPho
             if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
                 message.Result = (IntPtr)HTCAPTION;
         }
+
         private void CapNhatThue()
         {
             Thue thue = thueDAO.LayThongTin(MaCCCD);
@@ -127,6 +145,7 @@ namespace QuanLiCongDanThanhPho
             }
             thueDAO.CapNhatThue(thue);
         }    
+
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             if (KiemTraThongTin())

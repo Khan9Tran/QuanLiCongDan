@@ -18,6 +18,7 @@ namespace QuanLiCongDanThanhPho
         private bool checkTK = false;
         private bool checkPass = false;
         FLOGO flogo;
+
         public FDangNhap()
         {
             InitializeComponent();

@@ -15,6 +15,7 @@ namespace QuanLiCongDanThanhPho
     {
         HonNhanDAO hNDAO;
         KhaiSinhDAO ksDAO;
+
         public FDangKyHonNhan()
         {
             InitializeComponent();

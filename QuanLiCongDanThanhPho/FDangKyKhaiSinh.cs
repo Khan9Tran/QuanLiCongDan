@@ -13,16 +13,20 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyKhaiSinh : Form
     {
+        /*
+
+        CHECK LAIIIIIIIIII
+        Hàm lấy thông tin ko có trả về null ?
+
+        */
+        KhaiSinhDAO kSDAO;
+        CongDanDAO cDDAO;
         public FDangKyKhaiSinh()
         {
             InitializeComponent();
+            kSDAO = new KhaiSinhDAO();
+            cDDAO = new CongDanDAO();
             StackForm.Add(this);
-        }
-        KhaiSinhDAO kSDAO = new KhaiSinhDAO();
-
-        private void FDangKyKhaiSinh_Load(object sender, EventArgs e)
-        {
-
         }
 
         private bool KiemTraThongTin()
@@ -116,12 +120,15 @@ namespace QuanLiCongDanThanhPho
             };
             func(Controls);
         }
+
+        /*
+        Nếu cha me đã ở trong thành phố thì phải kết hôn mới sinh con được
+        */
+
         private bool KiemTraChaMe()
         {
-            CongDanDAO cDDAOCha = new CongDanDAO();
-            CongDanDAO cDDAOMe = new CongDanDAO();
-            CongDan cha = cDDAOCha.LayThongTin(txtCccdCha.Text);
-            CongDan me = cDDAOMe.LayThongTin(txtCccdMe.Text);
+            CongDan cha = cDDAO.LayThongTin(txtCccdCha.Text);
+            CongDan me = cDDAO.LayThongTin(txtCccdMe.Text);
             if ((cha != null) && (txtTenCha.Text != cha.Ten))
             {
                 MessageBox.Show("Tên và căn cước công dân cha không khớp");
@@ -134,14 +141,15 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
+
+        // Nếu 2 người cùng trong thành phố thì phải kiểm tra hai người phải kết hôn rồi
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             if (KiemTraThongTin() && KiemTraChaMe())
             { 
-                CongDanDAO cDDAO = new CongDanDAO();
                 CongDan congDan = new CongDan(txtCccd.Text, txtTen.Text);
                 cDDAO.ThemCongDan(congDan);
-                KhaiSinh kS = new KhaiSinh(txtCccd.Text, txtTen.Text, rdoNam.Checked.ToString(), cboQuocTich.SelectedItem.ToString(), cboDanToc.SelectedItem.ToString(), dtmNgaySinh.Value, dtmNgayDangKy.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCccdCha.Text, txtTenCha.Text, txtCccdMe.Text, txtTenMe.Text);
+                KhaiSinh kS = new KhaiSinh(txtCccd.Text, txtTen.Text, rdoNam.Checked.ToString(), (string)cboQuocTich.SelectedItem, (string)cboDanToc.SelectedItem, dtmNgaySinh.Value, dtmNgayDangKy.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCccdCha.Text, txtTenCha.Text, txtCccdMe.Text, txtTenMe.Text);
                 kSDAO.ThemKhaSinh(kS);
             }
         }

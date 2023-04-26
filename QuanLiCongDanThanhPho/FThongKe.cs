@@ -12,23 +12,31 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongKe : Form
     {
-        KhaiSinhDAO ksDAO = new KhaiSinhDAO();
-        public Form currentChildForm;
+        private Form currentChildForm;
+
+        enum ThongKe
+        {
+            congDan,
+            thue,
+            phanBoDanCu,
+        }
 
         public FThongKe()
         {
             InitializeComponent();
             StackForm.Add(this);
         }
+
         private void cmbLuaChon_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbLuaChon.SelectedItem.ToString() == "Công dân")
+            if (cmbLuaChon.SelectedIndex == (int)ThongKe.congDan)
                 OpenChildForm(new FThongKeCongDan());
-            else if (cmbLuaChon.SelectedItem.ToString() == "Phân bố dân cư")
+            else if (cmbLuaChon.SelectedIndex == (int)ThongKe.phanBoDanCu)
                 OpenChildForm(new FThongKePhanBo());
-            else if (cmbLuaChon.SelectedItem.ToString() == "Thuế")
+            else if (cmbLuaChon.SelectedIndex == (int)ThongKe.thue)
                 OpenChildForm(new FThongKeThue());
         }
+
         public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)

@@ -13,28 +13,38 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyThue : Form
     {
+        CongDanDAO cDDAO;
+        ThueDAO thueDAO;
+
+        private void KhoiTao()
+        {
+            StackForm.Add(this);
+            cDDAO = new CongDanDAO();
+            thueDAO = new ThueDAO();
+        }
+
         public FDangKyThue()
         {
             InitializeComponent();
-            StackForm.Add(this);
+            KhoiTao();
         }
         public FDangKyThue(string cCCD)
         {
             InitializeComponent();
-            StackForm.Add(this);
+            KhoiTao();
             LoadThongTin(cCCD);
         }
         private void LoadThongTin(string cCCD)
         {
             if (cCCD != null)
             {
-                CongDanDAO congDanDAO = new CongDanDAO();
-                CongDan congDan = congDanDAO.LayThongTin(cCCD);
+                CongDan congDan = cDDAO.LayThongTin(cCCD);
                 txtCCCD.Text = congDan.CCCD;
                 txtMaSoThue.Text = congDan.CCCD;
                 txtSoTienDaNop.Text = "0";
             }
         }
+
         private bool KiemTraThongTin()
         {
             if (!KiemTraDuLieuNhap.isMaSo(txtMaSoThue.Text))
@@ -63,10 +73,6 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
-        private void FDangKyThue_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -94,8 +100,7 @@ namespace QuanLiCongDanThanhPho
             if (KiemTraThongTin())
             {
                 Thue thue = new Thue(txtMaSoThue.Text, txtCCCD.Text, dtpNgayCapMa.Value, dtpHanNop.Value, txtSoTienCanNop.Text, txtSoTienDaNop.Text);
-                ThueDAO congDanNopThue = new ThueDAO();
-                congDanNopThue.ThemThue(thue);
+                thueDAO.ThemThue(thue);
             }
         }
     }

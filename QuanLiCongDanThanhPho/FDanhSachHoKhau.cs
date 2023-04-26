@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiCongDanThanhPho.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,29 +14,32 @@ namespace QuanLiCongDanThanhPho
     public partial class FDanhSachHoKhau : Form
     {
         HoKhauDAO hkDao = new HoKhauDAO();
-        private string luaChon;
+        private dynamic luaChon;
         private DataTable ds;
+
+        enum Loc
+        {
+            tatCa,
+            soThanhVien,
+        }
+
         public FDanhSachHoKhau()
         {
             InitializeComponent();
             StackForm.Add(this);
             ds = new DataTable();
-            luaChon = "tat ca";
-        }
-
-        private void gvHoKhau_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            luaChon = Loc.tatCa;
         }
 
         private void FDanhSachHoKhau_Load(object sender, EventArgs e)
         {
-            txtTimKiem_TextChanged(txtTimKiem, null);
+            TimKiem(Loc.tatCa);
             flpnlPhanLoai.Width = 45;
         }
 
         private void gvHoKhau_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            if (e.RowIndex != -1 && gvHoKhau.Rows[e.RowIndex].Cells[0].Value.ToString().Length > 0)
             {
                 cmnusMenu.Show(this, this.PointToClient(MousePosition));
             }
@@ -43,8 +47,7 @@ namespace QuanLiCongDanThanhPho
 
         private void btnTatCa_Click(object sender, EventArgs e)
         {
-            luaChon = "tat ca";
-            txtTimKiem_TextChanged(txtTimKiem, null);
+            TimKiem(Loc.tatCa);
         }
 
         private void LoadDanhSach()
@@ -54,23 +57,33 @@ namespace QuanLiCongDanThanhPho
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            if (luaChon == "tat ca")
+            if (luaChon == Loc.tatCa)
                ds = hkDao.LayDanhSachChuaTu(txtTimKiem.Text);
-            else if (luaChon == "sotv")
+            else if (luaChon == Loc.soThanhVien)
                ds = hkDao.LayDanhSachXepTheoSoTV(txtTimKiem.Text);
             nudPage.Value = 1;
             LoadDanhSach();
         }
 
+        private string GetMaHoKhau()
+        {
+            return (string)gvHoKhau.CurrentRow.Cells["Mã hộ khẩu"].Value;
+        }
+
         private void btnSoTV_Click(object sender, EventArgs e)
         {
-            luaChon = "sotv";
+            TimKiem(Loc.soThanhVien);
+        }
+
+        private void TimKiem(dynamic type)
+        {
+            luaChon = type;
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
         {
-            string maHoKhau = gvHoKhau.CurrentRow.Cells["Mã hộ khẩu"].Value.ToString();
+            string maHoKhau = GetMaHoKhau();
             if (maHoKhau != "")
             {
                 FThongTinHoKhau tTHK = new FThongTinHoKhau(maHoKhau);
@@ -86,7 +99,7 @@ namespace QuanLiCongDanThanhPho
 
         private void cmnusMenuTachGop_Click(object sender, EventArgs e)
         {
-            string maHoKhau = gvHoKhau.CurrentRow.Cells["Mã hộ khẩu"].Value.ToString();
+            string maHoKhau = GetMaHoKhau();
             if (maHoKhau != "")
             {
                 FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau(maHoKhau);

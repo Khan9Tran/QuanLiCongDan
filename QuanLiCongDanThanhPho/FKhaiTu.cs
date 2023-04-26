@@ -13,13 +13,15 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FKhaiTu : Form
     {
+        CongDanDAO congDanDAO;
+
         public FKhaiTu()
         {
             InitializeComponent();
             StackForm.Add(this);
             congDanDAO = new CongDanDAO();
         }
-        CongDanDAO congDanDAO;
+
         private bool KiemTraThongTin()
         {
             CongDan cD = congDanDAO.LayThongTin(txtCCCD.Text);
@@ -38,16 +40,19 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
+
         private void XoaCongDan()
         {
             CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text);
             congDanDAO.XoaCongDan(cD);
         }
+
         private void Reset()
         {
             txtCCCD.Clear();
             txtTen.Clear();
         }
+
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             if (KiemTraThongTin())
@@ -56,10 +61,12 @@ namespace QuanLiCongDanThanhPho
                 Reset();
             }
         }
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             Reset();
         }
+
         private void txtCCCD_TextChanged(object sender, EventArgs e)
         {
             CongDan cD = congDanDAO.LayThongTin(txtCCCD.Text);

@@ -14,19 +14,26 @@ namespace QuanLiCongDanThanhPho
     {
         private Form currentChildForm;
         private string maHoTach;
+
         public FDangKyHoKhau()
         {
             InitializeComponent();
             StackForm.Add(this);
         }
+
+        private void SetButton()
+        {
+            btnTachGop.BackColor = Color.Gray;
+            btnThem.BackColor = Color.WhiteSmoke;
+        }
+
         public FDangKyHoKhau(string maHoTach)
         {
             InitializeComponent();
             StackForm.Add(this);
             this.maHoTach = maHoTach;
             OpenChildForm(new FTachGopHo(maHoTach));
-            btnTachGop.BackColor = Color.Gray;
-            btnThem.BackColor = Color.WhiteSmoke;
+            SetButton();
         }
 
         public void OpenChildForm(Form childForm)
@@ -47,8 +54,7 @@ namespace QuanLiCongDanThanhPho
         private void btnTachGop_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FTachGopHo());
-            btnTachGop.BackColor = Color.Gray;
-            btnThem.BackColor = Color.WhiteSmoke;
+            SetButton();
         }
 
         private void btnThem_Click(object sender, EventArgs e)

@@ -13,17 +13,25 @@ namespace QuanLiCongDanThanhPho
     public partial class FDangKyTamTruTamVang : Form
     {
         TamTruTamVangDAO tTTVDAO;
+        CongDanDAO cDDAO;
+
+        private void KhoiTao()
+        {
+            tTTVDAO = new TamTruTamVangDAO();
+            cDDAO = new CongDanDAO();
+            StackForm.Add(this);
+        }
+
         public FDangKyTamTruTamVang()
         {
             InitializeComponent();
-            tTTVDAO = new TamTruTamVangDAO();
-            StackForm.Add(this);
+            KhoiTao();
         }
+
         public FDangKyTamTruTamVang(string cCCD)
         {
             InitializeComponent();
-            tTTVDAO = new TamTruTamVangDAO();
-            StackForm.Add(this);
+            KhoiTao();
             LoadThongTin(cCCD);
         }
 
@@ -31,8 +39,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (cCCD != null)
             {
-                CongDanDAO congDanDAO = new CongDanDAO();
-                CongDan congDan = congDanDAO.LayThongTin(cCCD);
+                CongDan congDan = cDDAO.LayThongTin(cCCD);
                 txtTen.Text = congDan.Ten;
                 txtCCCD.Text = congDan.CCCD;
                 txtMaSo.Text = congDan.CCCD;
@@ -85,6 +92,7 @@ namespace QuanLiCongDanThanhPho
             }  
             return true;
         }
+
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             if (KiemTraThongTin())
@@ -92,10 +100,9 @@ namespace QuanLiCongDanThanhPho
                 if (rdoTamTru.Checked == true)
                 {
                     CongDan cDTamTru = new CongDan(txtCCCD.Text, txtTen.Text, txtSDT.Text);
-                    CongDanDAO cDTamTruDAO = new CongDanDAO();
                     try
                     {
-                        cDTamTruDAO.ThemCongDan(cDTamTru);
+                        cDDAO.ThemCongDan(cDTamTru);
                     }
                     catch(Exception ex)
                     {

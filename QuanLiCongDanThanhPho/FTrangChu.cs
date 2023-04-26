@@ -13,7 +13,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FTrangChu : Form
     {
-        public Form currentChildForm;
+        private Form currentChildForm;
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
@@ -21,6 +21,7 @@ namespace QuanLiCongDanThanhPho
         private AccountDAO accountDAO;
         FDangNhap fDangNhap;
         public Account Account { get => account; set => account = value; }
+        public Form CurrentChildForm { get => currentChildForm; set => currentChildForm = value; }
 
         public FTrangChu()
         {
@@ -29,6 +30,7 @@ namespace QuanLiCongDanThanhPho
             this.Controls.Add(pnlHienThiForm);
             StackForm.fTrangChu = this;
         }
+
         public FTrangChu(Account acc, FDangNhap fDangNhap)
         {
             InitializeComponent();
@@ -41,23 +43,27 @@ namespace QuanLiCongDanThanhPho
             tmrThuNho.Interval = 1;
             this.fDangNhap = fDangNhap;
         }
+
         public void LoadTaiKhoan()
         {
             account = accountDAO.LayThongTinTaiKhoan(account);
             btnTaiKhoan.Text = "Xin chào: " + account.DisplayName;
             LayHinhDaiDien();
         }
+
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             cmnusDangKy.Show(this, this.PointToClient(MousePosition));
             TatMenu(sender, e);
         }
+
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDanhSach());
             TatMenu(sender, e);
 
         }
+
         public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
@@ -73,11 +79,13 @@ namespace QuanLiCongDanThanhPho
             childForm.BringToFront();
             childForm.Show();
         }
+
         public void TatMenu(object sender, EventArgs e)
         {
             if (pnlMenu.Width > 80)
                 btnMenuShow_Click(sender, e);
         }
+
         private void cmnusDangKyItemTamTruTamVang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FDangKyTamTruTamVang());
@@ -171,6 +179,20 @@ namespace QuanLiCongDanThanhPho
                 }
             }
         }
+
+        private void GanHinh(string filename)
+        {
+            Bitmap bitmap = null;
+            bitmap?.Dispose();
+            ptcHinhDaiDien.Image?.Dispose();
+
+            using (Bitmap tempImage = new Bitmap(filename, true)) //Giúp k bị lỗi không thể truy cập file đang hoạt động khi xóa
+            {
+                bitmap = new Bitmap(tempImage);
+                ptcHinhDaiDien.Image = bitmap;
+            }
+        }
+
         private void LayHinhDaiDien()
         {
             string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -178,31 +200,15 @@ namespace QuanLiCongDanThanhPho
             string imagePath = string.Format(@$"{folderPath}\{account.UserName}");
             string png = imagePath + ".png";
             string jpg = imagePath + ".jpg";
-            Bitmap bitmap = null;
 
             if (File.Exists(png))
             {
-                bitmap?.Dispose();
-                ptcHinhDaiDien.Image?.Dispose();
-
-                using (Bitmap tempImage = new Bitmap(png, true)) //Giúp k bị lỗi không thể truy cập file đang hoạt động khi xóa
-                {
-                    bitmap = new Bitmap(tempImage);
-                    ptcHinhDaiDien.Image = bitmap;
-                }
+                GanHinh(png);
             }
             else if (File.Exists(jpg))
             {
-                bitmap?.Dispose();
-                ptcHinhDaiDien.Image?.Dispose();
-
-                using (Bitmap tempImage = new Bitmap(jpg, true))
-                {
-                    bitmap = new Bitmap(tempImage);
-                    ptcHinhDaiDien.Image = bitmap;
-                }
+                GanHinh(jpg);
             }
-
         }
 
         private void pnlDanhMuc_MouseHover(object sender, EventArgs e)

@@ -22,10 +22,12 @@ namespace QuanLiCongDanThanhPho
             gvNguoiChuaCoHoKhau.Hide();
             StackForm.Add(this);
         }
+
         private void LoadDanhSachChuaHoKhau()
         {
             gvNguoiChuaCoHoKhau.DataSource = cDDAO.LayDanhSachTheoHoKhau("00000A");
         }
+
         private void btnTim_Click(object sender, EventArgs e)
         {
             lblThongTin.Show();
@@ -36,7 +38,6 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             CongDan congDan= new CongDan(txtCCCD.Text,txtTen.Text,"","","",txtMaHo.Text,txtQuanHeVoiChuHo.Text,"u,u,u,u,u");
-            CongDanDAO cDDAO = new CongDanDAO();
             cDDAO.ThayDoiHoKhau(congDan);
             LoadDanhSachChuaHoKhau();
         }
@@ -47,6 +48,7 @@ namespace QuanLiCongDanThanhPho
             txtCCCD.Text = gvNguoiChuaCoHoKhau.Rows[dong].Cells[0].Value.ToString();
             txtTen.Text = gvNguoiChuaCoHoKhau.Rows[dong].Cells[1].Value.ToString();
         }
+
         private void Reset()
         {
             txtCCCD.Text = "";
@@ -57,6 +59,7 @@ namespace QuanLiCongDanThanhPho
             lblThongTin.Hide();
             LoadDanhSachChuaHoKhau();
         }
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             Reset();

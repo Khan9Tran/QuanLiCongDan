@@ -14,8 +14,8 @@ namespace QuanLiCongDanThanhPho
     public partial class FThongTinHoKhau : Form
     {
         private string maHoKhau;
-        HoKhauDAO hkDAO = new HoKhauDAO();
-        CongDanDAO cdDAO = new CongDanDAO();
+        HoKhauDAO hkDAO;
+        CongDanDAO cdDAO;
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
@@ -24,33 +24,62 @@ namespace QuanLiCongDanThanhPho
             get { return maHoKhau; }
             set { maHoKhau = value; }
         }
+
+        private void KhoiTao()
+        {
+            hkDAO = new HoKhauDAO();
+            cdDAO = new CongDanDAO();
+            StackForm.Add(this);
+        }
+
         public FThongTinHoKhau()
         {
             InitializeComponent();
+            KhoiTao();
         }
+
         public FThongTinHoKhau(string maHoKhau)
         {
             MaHoKhau = maHoKhau;
             InitializeComponent();
-            StackForm.Add(this);
+            KhoiTao();
         }
+
+        // Hiển thị thông tin của hổ khẩu
+        private void HienThiHoKhau()
+        {
+            HoKhau hk = hkDAO.LayThongTin(MaHoKhau);
+            txtCCCDChuHo.Text = hk.CCCDChuHo;
+            txtMaHoKhau.Text = hk.MaHoKhau;
+            txtDiaChi.Text = hk.DiaChi.toString();
+        }
+
+        // Hiện thị thông tin của chủ hộ
+        private void HienThiCongDan()
+        {
+            HoKhau hk = hkDAO.LayThongTin(MaHoKhau);
+            CongDan chuHo = cdDAO.LayThongTin(hk.CCCDChuHo);
+            txtTenChuHo.Text = chuHo.Ten.ToString();
+        }
+
+        // Hiện thị danh sách những người trong hộ
+        private void HienThiNguoiTrongHo()
+        {
+            DataTable dsNguoiTrongHo = cdDAO.LayDanhSachTheoHoKhau(maHoKhau);
+            gvQuanHeVoiChuHo.DataSource = dsNguoiTrongHo;
+            lblTong.Text = "Tổng thành viên: " + dsNguoiTrongHo.Rows.Count.ToString();
+        }
+
         public void LayThongTinHoKhau()
         {
             if (MaHoKhau != null)
             {
-                HoKhau hk = hkDAO.LayThongTin(MaHoKhau);
-                txtCCCDChuHo.Text = hk.CCCDChuHo;
-                txtMaHoKhau.Text = hk.MaHoKhau;
-                txtDiaChi.Text = hk.DiaChi.toString();
-                //---Thong tin chu ho---//
-                CongDan chuHo = cdDAO.LayThongTin(hk.CCCDChuHo);
-                txtTenChuHo.Text = chuHo.Ten.ToString();
-                //---Quan he voi chu ho---//
-                DataTable dsNguoiTrongHo = cdDAO.LayDanhSachTheoHoKhau(maHoKhau);
-                gvQuanHeVoiChuHo.DataSource = dsNguoiTrongHo;
-                lblTong.Text = "Tổng thành viên: " + dsNguoiTrongHo.Rows.Count.ToString();
+                HienThiHoKhau();
+                HienThiCongDan();
+                HienThiNguoiTrongHo();
             }
         }
+
         private void CapNhatHoKhau()
         {
             HoKhau hoKhau = hkDAO.LayThongTin(maHoKhau);
@@ -60,6 +89,7 @@ namespace QuanLiCongDanThanhPho
             }
             hkDAO.CapNhatHoKhau(hoKhau);
         }
+
         private void FThongTinHoKhau_Load(object sender, EventArgs e)
         {
             LayThongTinHoKhau();
@@ -73,7 +103,6 @@ namespace QuanLiCongDanThanhPho
                 message.Result = (IntPtr)HTCAPTION;
         }
 
-    
         private void ReadOnly()
         {
             txtDiaChi.ReadOnly = true;

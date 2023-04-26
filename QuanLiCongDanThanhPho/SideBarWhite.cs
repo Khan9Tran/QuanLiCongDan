@@ -27,10 +27,5 @@ namespace QuanLiCongDanThanhPho
             StackForm.ClearAll();
             StackForm.fTrangChu.BringToFront();
         }
-
-        private void SideBarWhite_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

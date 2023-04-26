@@ -20,6 +20,13 @@ namespace QuanLiCongDanThanhPho
         ThueDAO thueDAO;
         HonNhanDAO hNDAO;
         CCCDDAO cCCDDAO;
+
+        enum LuaChon
+        {
+            docThan,
+            ketHon,
+        }
+
         public FDangKyCongDan()
         {
             InitializeComponent();
@@ -30,31 +37,21 @@ namespace QuanLiCongDanThanhPho
             hNDAO = new HonNhanDAO();
             cCCDDAO = new CCCDDAO();
         }
-        public bool isData()
-        {
-            if (!KiemTraDuLieuNhap.isCCCD(txtCCCD.Text))
-            {
-                MessageBox.Show("Nhập CCCD 12 số");
-                txtCCCD.Focus();
-                return false;
-            }
 
-            return true;
-        }    
         public void ThemCongDan()
         {
             if (KiemTraThongTin())
             {
-                CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, cboTonGiao.SelectedItem.ToString(), txtHoKhau.Text, cboQuanHe.SelectedItem.ToString(), txtDiaChi.Text);
+                CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, (string)cboTonGiao.SelectedItem, txtHoKhau.Text, (string)cboQuanHe.SelectedItem, txtDiaChi.Text);
                 cdDAO.ThemCongDan(cD);
 
-                KhaiSinh kS = new KhaiSinh(txtCCCD.Text, txtTen.Text, rdoNam.Checked.ToString(), cboQuocTich.SelectedItem.ToString(), cboDanToc.SelectedItem.ToString(), dtmNgaySinh.Value, dtmDKKhaiSinh.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCCCDCha.Text, txtTenCha.Text, txtCCCDMe.Text, txtTenMe.Text);
+                KhaiSinh kS = new KhaiSinh(txtCCCD.Text, txtTen.Text, rdoNam.Checked.ToString(), (string)cboQuocTich.SelectedItem, (string)cboDanToc.SelectedItem, dtmNgaySinh.Value, dtmDKKhaiSinh.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCCCDCha.Text, txtTenCha.Text, txtCCCDMe.Text, txtTenMe.Text);
                 kSDAO.ThemKhaSinh(kS);
 
                 Thue thue = new Thue(txtThue.Text, txtCCCD.Text);
                 thueDAO.ThemThue(thue);
-
-                if (cboTinhTrang.SelectedItem.ToString() == "Kết hôn")
+                
+                if (cboTinhTrang.SelectedIndex == (int)LuaChon.ketHon)
                 {
 
                     HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, "", DateTime.Now, rdoNam.ToString());
@@ -90,6 +87,7 @@ namespace QuanLiCongDanThanhPho
         {
             ThemCongDan();
         }
+
         private bool KiemTraThongTin()
         {
             if (!KiemTraDuLieuNhap.isCCCD(txtCCCD.Text))
@@ -232,7 +230,7 @@ namespace QuanLiCongDanThanhPho
 
         private void cboTinhTrang_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cboTinhTrang.SelectedItem.ToString() == "Kết hôn")
+            if (cboTinhTrang.SelectedIndex == (int)LuaChon.ketHon)
             {
                 txtTenVoChong.ReadOnly = false;
                 txtMaHonNhan.ReadOnly = false;
@@ -251,6 +249,7 @@ namespace QuanLiCongDanThanhPho
                 txtTenVoChong.BackColor = Color.WhiteSmoke;
             }    
         }
+
         private void ThemHinh()
         {
             ofdHinhDaiDien.Filter = "PImage Files (*.jpg, *.png)|*.jpg;*.png";
