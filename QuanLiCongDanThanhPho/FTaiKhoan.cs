@@ -1,16 +1,5 @@
 ﻿using QuanLiCongDanThanhPho.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Security.Cryptography;
 using System.Drawing.Imaging;
-using System.Net.NetworkInformation;
 
 namespace QuanLiCongDanThanhPho
 {

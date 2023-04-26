@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace QuanLiCongDanThanhPho.Models
 {
     internal class TamTruTamVang
@@ -15,6 +10,7 @@ namespace QuanLiCongDanThanhPho.Models
         private DateTime ngayKetThuc;
         private DiaChi diaChi;
         private string lyDo;
+
         public TamTruTamVang()
         {
             trangThai = "unknow";
@@ -23,10 +19,7 @@ namespace QuanLiCongDanThanhPho.Models
             diaChi = new DiaChi();
             lyDo = "unknow";
         }
-        public bool KiemTraThongTin()
-        {
-            return true;
-        }
+
         public TamTruTamVang(string maSo, string cCCD, string trangThai, DateTime ngayBatDau, DateTime ngayKetThuc, string diaChi, string lyDo)
         {
             MaSo = maSo;

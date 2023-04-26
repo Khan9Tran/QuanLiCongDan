@@ -1,28 +1,36 @@
 ﻿using QuanLiCongDanThanhPho.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLiCongDanThanhPho
 {
     internal class HonNhanDAO
     {
         DBConnection conn = new DBConnection();
-        
+
         //Kiểm tra tên nhập vào có trùng khớp với trong hệ thống không
-        public bool isGiongNhau(string a, string b)
+        private bool isGiongNhau(string a, string b)
         {
             if (a != b) return false;
             return true;
+        }
+
+        // Thêm công dân chưa có vào tạm trong hệ thống
+        private void ThemTamCongDan(string cCCD, string ten, string mess)
+        {
+            CongDanDAO congDanDAO = new CongDanDAO();
+            KhaiSinhDAO ksDao = new KhaiSinhDAO();
+            CongDan congDan;
+            KhaiSinh khaiSinh;
+            congDan = new CongDan(cCCD, ten);
+            khaiSinh = new KhaiSinh(cCCD, ten);
+            MessageBox.Show(mess);
+            congDanDAO.ThemCongDan(congDan);
+            ksDao.ThemKhaSinh(khaiSinh);
         }
 
         //Đnăng ký hôn nhân
         public void ThemHonNhan(HonNhan hN)
         {
             CongDanDAO congDanDAO = new CongDanDAO();
-            KhaiSinhDAO ksDao = new KhaiSinhDAO();
             string tenChong = congDanDAO.LayThongTin(hN.CCCDChong).Ten;
             string tenVo = congDanDAO.LayThongTin(hN.CCCDVo).Ten;
 
@@ -46,23 +54,13 @@ namespace QuanLiCongDanThanhPho
             }
 
             //Thêm công dân chưa có vào tạm trong hệ thống
-            CongDan congDan;
-            KhaiSinh khaiSinh;
             if (tenChong == "unknow")
             {
-                congDan = new CongDan(hN.CCCDChong, hN.TenChong);
-                khaiSinh = new KhaiSinh(hN.CCCDChong, hN.TenChong);
-                MessageBox.Show("Thông chồng đã được tạo, nếu sống trong khu vực hãy bổ sung thông tin");
-                congDanDAO.ThemCongDan(congDan);
-                ksDao.ThemKhaSinh(khaiSinh);
+                ThemTamCongDan(hN.CCCDChong, hN.TenChong, "Thông tin chồng đã được tạo, nếu sống trong khu vực hãy bổ sung thông tin");
             }
             if (tenVo == "unknow")
             {
-                congDan = new CongDan(hN.CCCDVo, hN.TenVo);
-                khaiSinh = new KhaiSinh(hN.CCCDVo, hN.TenVo);
-                MessageBox.Show("Thông tin vợ đã được tạo, nếu sống trong khu vực hãy bổ sung thông tin");
-                congDanDAO.ThemCongDan(congDan);
-                ksDao.ThemKhaSinh(khaiSinh);
+                ThemTamCongDan(hN.CCCDVo, hN.TenVo, "Thông tin vợ đã được tạo, nếu sống trong khu vực hãy bổ sung thông tin");
             }
             string sqlStr = string.Format($"INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('{hN.MaSo}','{hN.CCCDChong}',N'{hN.TenChong}','{hN.CCCDVo}',N'{hN.TenVo}',N'{hN.NoiDangKy.toString()}','{hN.NgayDangKy}');");
             conn.ThucThi(sqlStr, "Thêm hôn nhân thành công");

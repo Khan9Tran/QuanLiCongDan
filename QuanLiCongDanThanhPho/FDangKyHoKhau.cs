@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿
 namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyHoKhau : Form
     {
         private Form currentChildForm;
-        private string maHoTach;
 
         public FDangKyHoKhau()
         {
@@ -31,7 +21,6 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
             StackForm.Add(this);
-            this.maHoTach = maHoTach;
             OpenChildForm(new FTachGopHo(maHoTach));
             SetButton();
         }

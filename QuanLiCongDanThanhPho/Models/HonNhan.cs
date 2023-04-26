@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace QuanLiCongDanThanhPho.Models
 {
     internal class HonNhan
@@ -22,22 +17,24 @@ namespace QuanLiCongDanThanhPho.Models
             ngayDangKy = DateTime.Now;
         }
 
+        private void GanVoChong(string tenChong, string cCCDChong, string tenVo, string cCCDVo)
+        {
+            this.tenChong = tenChong;
+            this.cCCDChong = cCCDChong;
+            this.tenVo = tenVo;
+            this.cCCDVo = cCCDVo;
+        }
+
         public HonNhan(string maSo, string cCCDChong, string tenChong, string cCCDVo, string tenVo, string noiDangKy, DateTime ngayDangKy, string gioiTinh)
         {
             this.maSo = maSo;
             if (gioiTinh == "False")
             {
-                this.cCCDChong = cCCDVo;
-                this.tenChong = tenVo;
-                this.cCCDVo = cCCDChong;
-                this.tenChong = tenVo;
+                GanVoChong(tenVo, cCCDVo, tenChong, cCCDChong);
             }
             else
             {
-                this.cCCDChong = cCCDChong;
-                this.tenChong = tenChong;
-                this.cCCDVo = cCCDVo;
-                this.tenVo = tenVo;
+                GanVoChong(tenChong, cCCDChong, tenVo, cCCDVo);
             }
             this.noiDangKy = new DiaChi();
             if (noiDangKy == "")

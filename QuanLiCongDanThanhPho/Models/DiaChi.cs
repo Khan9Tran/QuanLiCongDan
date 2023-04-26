@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace QuanLiCongDanThanhPho.Models
 {
     internal class DiaChi
@@ -12,6 +7,7 @@ namespace QuanLiCongDanThanhPho.Models
         private string xaPhuongTT;
         private string quanHuyen;
         private string tinhThanhPho;
+
         public DiaChi()
         {
             soNhaVaDuong = "unknow";
@@ -55,6 +51,7 @@ namespace QuanLiCongDanThanhPho.Models
             }
             return  true;
         }
+
         public string toString()
         {
             string diaChi = $"{SoNhaVaDuong}, {XaPhuongTT}, {QuanHuyen}, {TinhThanhPho}";

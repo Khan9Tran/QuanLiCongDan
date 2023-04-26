@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.SqlServer.Server;
+﻿using System.Data;
 using QuanLiCongDanThanhPho.Models;
 namespace QuanLiCongDanThanhPho
 {
@@ -12,13 +6,16 @@ namespace QuanLiCongDanThanhPho
     {
         DBConnection conn = new DBConnection();
 
-        public DataTable LayDanhSach()
+        //Chuỗi đặt bí danh cho các thuộc tính trong sql
+        private string DatTenThuocTinh()
         {
-            return conn.LayDanhSach("SELECT MaTTTV as 'Mã tạm trú/tạm vắng', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG");
+            string str = " MaTTTV as 'Mã tạm trú/tạm vắng', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' ";
+            return str;
         }
+
         public string ChuoiLayDanhSachTheoTu(string tu)
         {
-            string str = string.Format($"SELECT MaTTTV as 'Mã', CCCD, DiaChi as 'Địa chỉ', NgayBD as 'Ngày bắt đầu', NgayKT as 'Ngày kết thúc', TrangThai as 'Trạng thái', LiDo as 'Lí do' FROM TAMTRUTAMVANG WHERE (MaTTTV like '%{tu}%' OR CCCD like '%{tu}%' OR DiaChi like N'%{tu}%' OR Convert(varchar,Format(NgayBD, 'dd/MM/yyyy')) like '%{tu}%' OR Convert(varchar,Format(NgayKT, 'dd/MM/yyyy')) like '%{tu}%' OR TrangThai like N'%{tu}%' OR LiDo like N'%{tu}%')");
+            string str = string.Format($"SELECT " + DatTenThuocTinh() + $" FROM TAMTRUTAMVANG WHERE (MaTTTV like '%{tu}%' OR CCCD like '%{tu}%' OR DiaChi like N'%{tu}%' OR Convert(varchar,Format(NgayBD, 'dd/MM/yyyy')) like '%{tu}%' OR Convert(varchar,Format(NgayKT, 'dd/MM/yyyy')) like '%{tu}%' OR TrangThai like N'%{tu}%' OR LiDo like N'%{tu}%')");
             return str;
         }
         public string ChuoiDemSoLuong()
@@ -48,7 +45,7 @@ namespace QuanLiCongDanThanhPho
         }
         public Boolean KiemTraTamTruTamVang(string maCCCD)
         {
-            string sqlStr = ChuoiDemSoLuong() + $" WHERE CCCD = '{maCCCD}'"; //string.Format("SELECT COUNT(*) as COUNT FROM TAMTRUTAMVANG WHERE CCCD = '{0}'", maCCCD);
+            string sqlStr = ChuoiDemSoLuong() + $" WHERE CCCD = '{maCCCD}'"; 
             return conn.KiemTraCoKhong(sqlStr);
         }
         public TamTruTamVang LayThongTin(string maCCCD)

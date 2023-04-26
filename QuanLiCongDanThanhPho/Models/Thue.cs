@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace QuanLiCongDanThanhPho.Models
 {
     internal class Thue
@@ -15,13 +10,19 @@ namespace QuanLiCongDanThanhPho.Models
         private string soTienCanNop;
         private string soTienDaNop;
 
-        public Thue() 
+        private void GanMacDinh()
         {
             ngayCapMa = DateTime.Now;
             hanNop = DateTime.Now;
             soTienCanNop = "0";
             soTienDaNop = "0";
         }
+
+        public Thue() 
+        {
+            GanMacDinh();
+        }
+
         public Thue(string maThue, string cCCD, DateTime ngayCapMa, DateTime hanNop, string soTienCanNop, string soTienDaNop)
         {
             this.maThue = maThue;
@@ -31,14 +32,12 @@ namespace QuanLiCongDanThanhPho.Models
             this.soTienCanNop = soTienCanNop;
             this.soTienDaNop = soTienDaNop;
         }
+
         public Thue(string maThue, string cCCD)
         {
             this.maThue = maThue;
             this.cCCD = cCCD;
-            this.ngayCapMa = DateTime.Now;
-            this.hanNop = DateTime.Now;
-            this.soTienCanNop = "0";
-            this.soTienDaNop = "0";
+            GanMacDinh();
         }
 
         public bool ThanhToan(int tien)

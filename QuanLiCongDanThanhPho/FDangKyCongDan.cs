@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Drawing.Imaging;
 using QuanLiCongDanThanhPho.Models;
 
 namespace QuanLiCongDanThanhPho
@@ -19,7 +9,6 @@ namespace QuanLiCongDanThanhPho
         KhaiSinhDAO kSDAO;
         ThueDAO thueDAO;
         HonNhanDAO hNDAO;
-        CCCDDAO cCCDDAO;
 
         enum LuaChon
         {
@@ -35,7 +24,6 @@ namespace QuanLiCongDanThanhPho
             kSDAO = new KhaiSinhDAO();
             thueDAO = new ThueDAO();
             hNDAO = new HonNhanDAO();
-            cCCDDAO = new CCCDDAO();
         }
 
         public void ThemCongDan()

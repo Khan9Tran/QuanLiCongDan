@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace QuanLiCongDanThanhPho.Models
 {
     internal class KhaiSinh
@@ -22,9 +17,8 @@ namespace QuanLiCongDanThanhPho.Models
         private string cCCDMe;
         private string tenMe;
 
-        public KhaiSinh() 
+        private void GanMacDinh()
         {
-            hoTen = "unknow";
             gioiTinh = "u";
             quocTich = "unknow";
             danToc = "unknow";
@@ -35,20 +29,20 @@ namespace QuanLiCongDanThanhPho.Models
             tenCha = "unknow";
             tenMe = "unknow";
         }
+
+        public KhaiSinh() 
+        {
+            hoTen = "unknow";
+            GanMacDinh();
+        }
+
         public KhaiSinh(string cCCD, string ten)
         {
             hoTen = ten;
             maKhaiSinh = cCCD;
-            gioiTinh = "u";
-            quocTich = "unknow";
-            danToc = "unknow";
-            ngaySinh = DateTime.Now;
-            ngayDangKy = DateTime.Now;
-            noiSinh = new DiaChi();
-            queQuan = new DiaChi();
-            tenCha = "unknow";
-            tenMe = "unknow";
+            GanMacDinh();
         }
+
         public KhaiSinh(string maKhaiSinh, string hoTen, string gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, string noiSinh, string queQuan, string cCCDCha, string tenCha, string cCCDMe, string tenMe)
         {
             this.maKhaiSinh = maKhaiSinh;
@@ -70,6 +64,7 @@ namespace QuanLiCongDanThanhPho.Models
             this.cCCDMe = cCCDMe;
             this.tenMe = tenMe;
         }
+
         public void DinhDangGioiTinh()
         {
             if (gioiTinh == "Nam" || gioiTinh == "True" || gioiTinh == "nam" || gioiTinh == "NAM" || gioiTinh == "m")
@@ -77,6 +72,7 @@ namespace QuanLiCongDanThanhPho.Models
             else
                 gioiTinh = "f";
         }
+
         public string MaKhaiSinh { get => maKhaiSinh; set => maKhaiSinh = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
         public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }

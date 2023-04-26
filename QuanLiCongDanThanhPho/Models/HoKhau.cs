@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace QuanLiCongDanThanhPho.Models
 {
     internal class HoKhau
@@ -16,6 +11,7 @@ namespace QuanLiCongDanThanhPho.Models
         {
             DiaChi diaChi= new DiaChi();
         }
+
         public HoKhau(string maHoKhau, string diaChi, string cCCDChuHo)
         {
             this.maHoKhau = maHoKhau;
@@ -23,7 +19,6 @@ namespace QuanLiCongDanThanhPho.Models
             this.diaChi.DinhDang(diaChi);
             this.cCCDChuHo = cCCDChuHo;
         }
-
 
         public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
         public string CCCDChuHo { get => cCCDChuHo; set => cCCDChuHo = value; }

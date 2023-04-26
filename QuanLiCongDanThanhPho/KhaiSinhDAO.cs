@@ -1,11 +1,4 @@
 ﻿using QuanLiCongDanThanhPho.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using QuanLiCongDanThanhPho.Models;
-using System.Data.SqlTypes;
 using System.Data;
 
 namespace QuanLiCongDanThanhPho
@@ -38,6 +31,7 @@ namespace QuanLiCongDanThanhPho
             string strSql = string.Format("SELECT * FROM KHAISINH WHERE MaKS = '{0}'", maCCCD);
             return conn.LayThongTinKhaiSinh(strSql);
         }
+
         public DataTable LayDanhSachVeSoNamNu()
         {
             string sqlStr = string.Format("SELECT GioiTinh as 'Giới tính', COUNT(*) as 'Số lượng' FROM KHAISINH RIGHT JOIN CONGDAN ON CONGDAN.CCCD = KHAISINH.MaKS GROUP BY GioiTinh");
@@ -53,6 +47,7 @@ namespace QuanLiCongDanThanhPho
             }
             return dt;
         }
+
         public KhaiSinh LayThongTinNamNuTheoTu(string tu, string dieuKien)
         {
             string strSql = string.Format($"SELECT * FROM KHAISINH WHERE MaKS like '%{tu}%'");
@@ -62,6 +57,7 @@ namespace QuanLiCongDanThanhPho
             }
             return conn.LayThongTinKhaiSinh(strSql);
         }
+
         private int[] SoLuongNguoiTrongNhomTuoi(DataTable dt)
         {
             int[] cntNhomTuoi = { 0, 0 ,0 };
@@ -81,22 +77,13 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format("SELECT YEAR(GETDATE()) - YEAR(NgaySinh) as SoTuoi FROM KHAISINH");
             DataTable duLieu = conn.LayDanhSach(sqlStr);
             DataTable dtNhomTuoi = new DataTable();
-            dtNhomTuoi.Clear();
             dtNhomTuoi.Columns.Add("Nhóm tuổi");
             dtNhomTuoi.Columns.Add("Số lượng");
+
             int[] soLuongNhomTuoi = SoLuongNguoiTrongNhomTuoi(duLieu);
-            DataRow row1 = dtNhomTuoi.NewRow();
-            row1["Nhóm tuổi"] = "0-14";
-            row1["Số lượng"] = soLuongNhomTuoi[0];
-            DataRow row2 = dtNhomTuoi.NewRow();
-            row2["Nhóm tuổi"] = "15-64";
-            row2["Số lượng"] = soLuongNhomTuoi[1];
-            DataRow row3 = dtNhomTuoi.NewRow();
-            row3["Nhóm tuổi"] = "65+";
-            row3["Số lượng"] = soLuongNhomTuoi[2];
-            dtNhomTuoi.Rows.Add(row1);
-            dtNhomTuoi.Rows.Add(row2);
-            dtNhomTuoi.Rows.Add(row3);
+            dtNhomTuoi.Rows.Add("0-14", soLuongNhomTuoi[0]);
+            dtNhomTuoi.Rows.Add("15-64", soLuongNhomTuoi[1]);
+            dtNhomTuoi.Rows.Add("65+", soLuongNhomTuoi[2]);
             return dtNhomTuoi;
         }
     }

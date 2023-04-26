@@ -1,21 +1,14 @@
 ﻿using QuanLiCongDanThanhPho.Models;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLiCongDanThanhPho
 {
     internal class ThueDAO
     {
         DBConnection conn = new DBConnection();
+
         public ThueDAO() { }
-        public DataTable LayDanhSach()
-        {
-            return conn.LayDanhSach("SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', SoTienDaNop as 'Số tiền đã nộp', NgayCap as 'Ngày cấp',HanNop as 'Hạn nộp' FROM THUE");
-        }
+
         public void ThemThue(Thue thue)
         {
             string sqlStr = string.Format($"INSERT INTO THUE(MaThue, CCCD, SoTienCanNop, SoTienDaNop, NgayCap, HanNop) VALUES('{thue.MaThue}','{thue.CCCD}', '{thue.SoTienCanNop}','{thue.SoTienDaNop}', '{thue.NgayCapMa}', '{thue.HanNop}');");

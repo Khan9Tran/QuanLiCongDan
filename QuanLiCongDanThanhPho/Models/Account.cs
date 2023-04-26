@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace QuanLiCongDanThanhPho.Models
 {
     public class Account
@@ -20,6 +15,7 @@ namespace QuanLiCongDanThanhPho.Models
             displayName = "unknow";
             type = -1;
         }
+
         public Account(string userName, string password, string displayName, int type)
         {
             this.userName = userName;
@@ -27,6 +23,7 @@ namespace QuanLiCongDanThanhPho.Models
             this.displayName = displayName;
             this.type = type;
         }
+
         public Account(string userName, string password)
         {
             this.userName = userName;
