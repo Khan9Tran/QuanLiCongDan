@@ -66,11 +66,16 @@ namespace QuanLiCongDanThanhPho
             return (string)gvTVTT.CurrentRow.Cells["CCCD"].Value;
         }
 
+        private string DayFormat()
+        {
+            return "dd/MM/yyyy";
+        }
+
         private void LoadDanhSach()
         {
             gvTVTT.DataSource = NgatTrang(ds, 10);
-            gvTVTT.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
-            gvTVTT.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+            gvTVTT.Columns[4].DefaultCellStyle.Format = DayFormat();
+            gvTVTT.Columns[3].DefaultCellStyle.Format = DayFormat();
             HightLightQuaHan();
         }
 

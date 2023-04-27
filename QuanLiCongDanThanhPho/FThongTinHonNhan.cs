@@ -73,6 +73,7 @@ namespace QuanLiCongDanThanhPho
             LayThongTinHonNhan();
         }
 
+        // Tạo kéo thả form
         protected override void WndProc(ref Message message)
         {
             base.WndProc(ref message);

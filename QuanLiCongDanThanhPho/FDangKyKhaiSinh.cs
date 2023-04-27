@@ -4,19 +4,15 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyKhaiSinh : Form
     {
-        /*
-
-        CHECK LAIIIIIIIIII
-        Hàm lấy thông tin ko có trả về null ?
-
-        */
         KhaiSinhDAO kSDAO;
         CongDanDAO cDDAO;
+        HonNhanDAO hNDAO;
         public FDangKyKhaiSinh()
         {
             InitializeComponent();
             kSDAO = new KhaiSinhDAO();
             cDDAO = new CongDanDAO();
+            hNDAO = new HonNhanDAO();
             StackForm.Add(this);
         }
 
@@ -112,22 +108,27 @@ namespace QuanLiCongDanThanhPho
             func(Controls);
         }
 
-        /*
-        Nếu cha me đã ở trong thành phố thì phải kết hôn mới sinh con được
-        */
-
+        // Kiểm tra thông tin cha mẹ nhập có hợp lệ không
         private bool KiemTraChaMe()
         {
             CongDan cha = cDDAO.LayThongTin(txtCccdCha.Text);
             CongDan me = cDDAO.LayThongTin(txtCccdMe.Text);
-            if ((cha != null) && (txtTenCha.Text != cha.Ten))
+            if ((cha.Ten != "unknow") && (txtTenCha.Text != cha.Ten))
             {
                 MessageBox.Show("Tên và căn cước công dân cha không khớp");
                 return false;
             }
-            if ((me != null) && (txtTenMe.Text != me.Ten))
+            if ((me.Ten != "unknow") && (txtTenMe.Text != me.Ten))
             {
                 MessageBox.Show("Tên và căn cước công dân mẹ không khớp");
+                return false;
+            }
+            HonNhan Chong = hNDAO.LayThongTin(txtCccdCha.Text);
+            HonNhan Vo = hNDAO.LayThongTin(txtCccdMe.Text);
+            //Cả vợ và chồng đều có thông tin hôn nhân ở khu vực mới có thể đăng kí khai sinh cho con
+            if (Chong.MaSo != Vo.MaSo || Chong.MaSo == "unknow" || Vo.MaSo == "unknow")
+            {
+                MessageBox.Show("Hôn nhân không khớp");
                 return false;
             }
             return true;

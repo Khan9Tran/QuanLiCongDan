@@ -11,30 +11,15 @@ namespace QuanLiCongDanThanhPho
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
 
-        public string MaCCCD
-        {
-            set { maCCCD = value; }
-            get { return maCCCD; }
-        }
-
-        private void KhoiTao()
-        {
-            ksDAO = new KhaiSinhDAO();
-            cdDAO = new CongDanDAO();
-            StackForm.Add(this);
-        }
-
-        public FThongTinKhaiSinh()
-        {
-            InitializeComponent();
-            KhoiTao();
-        }
+        public string MaCCCD { get => maCCCD; set => maCCCD = value; }
 
         public FThongTinKhaiSinh(string maCCCD)
         {
             MaCCCD = maCCCD;
             InitializeComponent();
-            KhoiTao();
+            ksDAO = new KhaiSinhDAO();
+            cdDAO = new CongDanDAO();
+            StackForm.Add(this);
         }
 
         private void btnThongTinCha_Click(object sender, EventArgs e)
@@ -139,17 +124,15 @@ namespace QuanLiCongDanThanhPho
         private void HienThiCha(KhaiSinh con)
         {
             KhaiSinh ksCha = ksDAO.LayThongTin(con.CCCDCha);
-            txtTenCha.Text = ksCha.HoTen;
-            txtCccdCha.Text = ksCha.MaKhaiSinh;
-            txtQuocTichCha.Text = ksCha.QuocTich;
+            if (con.CCCDCha != "")
+                txtQuocTichCha.Text = ksCha.QuocTich;
         }
 
         private void HienThiMe(KhaiSinh con)
         {
             KhaiSinh ksMe = ksDAO.LayThongTin(con.CCCDMe);
-            txtTenCha.Text = ksMe.HoTen;
-            txtCccdCha.Text = ksMe.MaKhaiSinh;
-            txtQuocTichCha.Text = ksMe.QuocTich;
+            if (con.CCCDMe != "")
+                txtQuocTichMe.Text = ksMe.QuocTich;
         }
 
         private void HienThiThongTin(KhaiSinh ks)
@@ -168,6 +151,11 @@ namespace QuanLiCongDanThanhPho
             txtQuocTich.Text = ks.QuocTich;
             txtQueQuan.Text = ks.QueQuan.toString();
             dtmNgayDangKy.Value = ks.NgayDangKy;
+
+            txtTenCha.Text = ks.TenCha;
+            txtTenMe.Text = ks.TenMe;
+            txtCccdCha.Text = ks.CCCDCha;
+            txtCccdMe.Text = ks.CCCDMe;
         }
 
         public void LayThongTinKhaiKhaiSinh()
@@ -186,6 +174,7 @@ namespace QuanLiCongDanThanhPho
             LayThongTinKhaiKhaiSinh();
         }
 
+        // Tạo kéo thả form
         protected override void WndProc(ref Message message)
         {
             base.WndProc(ref message);

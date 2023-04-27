@@ -13,10 +13,14 @@ namespace QuanLiCongDanThanhPho
         HoKhauDAO hkDAO;
         TamTruTamVangDAO tttvDAO;
 
+        private string maTamTru = "00000B";
+        private string maChuaCoHK = "00000A";
+
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
  
+        // Tạo kéo thả form
         protected override void WndProc(ref Message message)
         {
             base.WndProc(ref message);
@@ -107,7 +111,7 @@ namespace QuanLiCongDanThanhPho
             txtDiaChi.BackColor = Color.SteelBlue;
             txtGioiTinh.ReadOnly = false;
             txtGioiTinh.BackColor = Color.SteelBlue;
-            if (txtMaHoKhau.Text != "Unknow")
+            if (txtMaHoKhau.Text != "")
             {
                 txtQuanHeVoiChuHo.ReadOnly = false;
                 txtQuanHeVoiChuHo.BackColor = Color.SteelBlue;
@@ -135,7 +139,10 @@ namespace QuanLiCongDanThanhPho
         {
             txtCCCD.Text = congDan.CCCD;
             txtHoVaTen.Text = congDan.Ten;
-            txtMaHoKhau.Text = congDan.MaHoKhau;
+
+            if (isMaHK(congDan.MaHoKhau)) 
+                txtMaHoKhau.Text = congDan.MaHoKhau;
+
             txtSDT.Text = congDan.SDT;
             txtTonGiao.Text = congDan.TonGiao;
             txtNgheNghiep.Text = congDan.NgheNghiep;
@@ -179,7 +186,14 @@ namespace QuanLiCongDanThanhPho
         private void LayHoKhau()
         {
             HoKhau hk = hkDAO.LayThongTin(congDan.MaHoKhau);
-            txtDiaChi.Text = hk.DiaChi.toString();
+            if (hk.MaHoKhau != "unknow" && isMaHK(hk.MaHoKhau))
+            {
+                txtDiaChi.Text = hk.DiaChi.toString();
+            }
+            else
+            {
+                btnHoKhau.Enabled = false;
+            }
         }
 
         private void LayTamTruTamVang()
@@ -250,10 +264,19 @@ namespace QuanLiCongDanThanhPho
                 LayThongTinCongDan();
         }
 
+        private bool isMaHK(string? maHK)
+        {
+            return maHK != maTamTru && maHK != maChuaCoHK;
+        }
+
         private void btnHoKhau_Click(object sender, EventArgs e)
         {
-            FThongTinHoKhau tTHK = new FThongTinHoKhau(congDan.MaHoKhau);
-            tTHK.ShowDialog();
+            CongDan cd = cdDAO.LayThongTin(congDan.CCCD);
+            if (isMaHK(cd.MaHoKhau))
+            {
+                FThongTinHoKhau tTHK = new FThongTinHoKhau(congDan.MaHoKhau);
+                tTHK.ShowDialog();
+            }
         }
 
         private void btnThue_Click(object sender, EventArgs e)

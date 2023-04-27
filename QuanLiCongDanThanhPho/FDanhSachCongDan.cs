@@ -180,8 +180,11 @@ namespace QuanLiCongDanThanhPho
             if (maCCCD != "")
             {
                 CongDan cD = cdDao.LayThongTin(maCCCD);
-                cdDao.XoaCongDan(cD);
-                txtTimKiem_TextChanged(txtTimKiem, null);
+                if (cD != null)
+                {
+                    cdDao.XoaCongDan(cD);
+                    txtTimKiem_TextChanged(txtTimKiem, null);
+                }
             }
         }
 

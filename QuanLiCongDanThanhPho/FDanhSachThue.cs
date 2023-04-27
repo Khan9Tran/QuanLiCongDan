@@ -33,7 +33,6 @@ namespace QuanLiCongDanThanhPho
             flpnPhanLoai.Width = 45;
         }
       
-
         private void gvThue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Kiểm tra xem ô/dòng click nếu ko phải là header hoặc dòng trống cuối cùng mới thực hiện

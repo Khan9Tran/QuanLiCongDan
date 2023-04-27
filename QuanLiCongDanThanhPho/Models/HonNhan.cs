@@ -13,6 +13,7 @@ namespace QuanLiCongDanThanhPho.Models
 
         public HonNhan()
         {
+            maSo = "unknow";
             noiDangKy = new DiaChi();
             ngayDangKy = DateTime.Now;
         }
