@@ -7,7 +7,12 @@ namespace QuanLiCongDanThanhPho.Models
         DateTime ngayCap;
         string dacDiem;
 
-        public CCCD() { }
+        public CCCD() 
+        {
+            maCCCD = "unknow";
+            ngayCap = DateTime.Now;
+            dacDiem = "unknow";
+        }
 
         public CCCD(string maCCCD, DateTime ngayCap, string dacDiem)
         {

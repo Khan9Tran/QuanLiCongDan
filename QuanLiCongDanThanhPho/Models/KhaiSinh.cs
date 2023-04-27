@@ -32,6 +32,7 @@ namespace QuanLiCongDanThanhPho.Models
 
         public KhaiSinh() 
         {
+            maKhaiSinh = "unknow";
             hoTen = "unknow";
             GanMacDinh();
         }

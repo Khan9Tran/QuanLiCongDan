@@ -12,9 +12,11 @@ namespace QuanLiCongDanThanhPho
         HonNhanDAO hnDAO;
         HoKhauDAO hkDAO;
         TamTruTamVangDAO tttvDAO;
+        CCCDDAO cCCDDAO;
 
         private string maTamTru = "00000B";
         private string maChuaCoHK = "00000A";
+        private string path = @"..\..\..\..\HinhCongDan";
 
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
@@ -29,8 +31,9 @@ namespace QuanLiCongDanThanhPho
                 message.Result = (IntPtr)HTCAPTION;
         }
 
-        private void KhoiTao()
+        public FThongTinCongDan(CongDan congDan)
         {
+            InitializeComponent();
             StackForm.Add(this);
             cdDAO = new CongDanDAO();
             ksDAO = new KhaiSinhDAO();
@@ -38,18 +41,7 @@ namespace QuanLiCongDanThanhPho
             hkDAO = new HoKhauDAO();
             hnDAO = new HonNhanDAO();
             tttvDAO = new TamTruTamVangDAO();
-        }
-
-        public FThongTinCongDan()
-        {
-            InitializeComponent();
-            KhoiTao();
-        }
-
-        public FThongTinCongDan(CongDan congDan)
-        {
-            InitializeComponent();
-            KhoiTao();
+            cCCDDAO = new CCCDDAO();
             this.congDan = congDan;
         }
         
@@ -208,43 +200,6 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
-        private void GanHinh(string filename)
-        {
-            Bitmap bitmap = null;
-            bitmap?.Dispose();
-            ptcHinhDaiDien.Image?.Dispose();
-
-            using (Bitmap tempImage = new Bitmap(filename, true)) //Giúp k bị lỗi không thể truy cập file đang hoạt động khi xóa
-            {
-                bitmap = new Bitmap(tempImage);
-                ptcHinhDaiDien.Image = bitmap;
-            }
-        }
-
-        private string GetFolderPath()
-        {
-            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string folderPath = string.Format(System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\..\HinhCongDan"));
-            return folderPath;
-        }
-
-        //Lấy hình công dân từ folder HinhCongDan
-        private void LayHinhDaiDien()
-        {
-            string folderPath = GetFolderPath();
-            string imagePath = string.Format(@$"{folderPath}\{txtCCCD.Text}");
-            string png = imagePath + ".png";
-            string jpg = imagePath + ".jpg";
-            if (File.Exists(png))
-            {
-                GanHinh(png);
-            }
-            else if (File.Exists(jpg))
-            {
-                GanHinh(jpg);
-            }
-        }
-
         public void LayThongTinCongDan()
         {
             if (congDan != null)
@@ -255,13 +210,25 @@ namespace QuanLiCongDanThanhPho
                 LayHonNhan();
                 LayHoKhau();
                 LayTamTruTamVang();
-                LayHinhDaiDien();
+                HinhDaiDien.LayHinhDaiDien(txtCCCD.Text, ptcHinhDaiDien, path);
             }
+        }
+
+        private void TatXemCCCD()
+        {
+            CCCD cccd = new CCCD(congDan.CCCD);
+            cccd = cCCDDAO.LayThongTin(cccd);
+            if (cccd.DacDiem == "unknow")
+            {
+                btnThongTinCCCD.Enabled = false;
+            }
+
         }
 
         private void FThongTinCongDan_Load(object sender, EventArgs e)
         {
-                LayThongTinCongDan();
+            LayThongTinCongDan();
+            TatXemCCCD();
         }
 
         private bool isMaHK(string? maHK)
@@ -431,60 +398,11 @@ namespace QuanLiCongDanThanhPho
             ReadOnly();
         }
 
-        //Xóa file ảnh tồn tại
-        public void DeleteDirectory(string folderPath, string fileName)
-        {
-            //Phải kiểm tra từng phần đuôi file, vì ofdHinhDaiDien được gán cho giá trị mới rồi, ko thể dùng để lấy đuôi ảnh cũ được
-            string fileNamePng = fileName + ".png";
-            string fullPathPng = Path.Combine(folderPath, fileNamePng);
-
-            string fileNameJpg = fileName + ".jpg";
-            string fullPathJpg = Path.Combine(folderPath, fileNameJpg);
-
-            if (File.Exists(fullPathPng)) 
-            {
-                File.Delete(fullPathPng);
-            }
-            if (File.Exists(fullPathJpg)) 
-            {
-                File.Delete(fullPathJpg);
-            }
-        }
-
-        private void SaveHinhDaiDien()
-        {
-            string fileExtension = Path.GetExtension(ofdHinhDaiDien.FileName).ToLowerInvariant();
-
-            if (fileExtension != ".jpg" && fileExtension != ".png")
-            {
-                // Thông báo lỗi nếu ko phải file png với jpg
-                MessageBox.Show("File ảnh không hợp lệ. Chọn ảnh jpg hoặc png.");
-                return;
-            }
-
-            string fileName = $"{txtCCCD.Text}{fileExtension}";
-            string folderPath = GetFolderPath();
-            string fullPath = Path.Combine(folderPath, fileName);
-
-            DeleteDirectory(folderPath, $"{txtCCCD.Text}"); // Xóa ảnh cũ
-
-            ptcHinhDaiDien.Image.Save(fullPath, fileExtension == ".jpg" ? ImageFormat.Jpeg : ImageFormat.Png);
-        }
-
         private void ThemHinh()
         {
-            ofdHinhDaiDien.Filter = "PImage Files (*.jpg, *.png)|*.jpg;*.png";
-            try
+            if (HinhDaiDien.ThemHinhDaiDien(ofdHinhDaiDien, ptcHinhDaiDien))
             {
-                if (ofdHinhDaiDien.ShowDialog() == DialogResult.OK)
-                {
-                    ptcHinhDaiDien.Image = new Bitmap(ofdHinhDaiDien.FileName);
-                    SaveHinhDaiDien();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không mở được ảnh" + ex);
+                HinhDaiDien.SaveHinhDaiDien(txtCCCD.Text, ofdHinhDaiDien, ptcHinhDaiDien, path);
             }
         }
 

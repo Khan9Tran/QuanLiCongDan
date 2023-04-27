@@ -5,42 +5,29 @@ namespace QuanLiCongDanThanhPho
     public partial class FThongTinHonNhan : Form
     {
         private string maCCCD;
-        HonNhanDAO hnDAO = new HonNhanDAO();
-        CongDanDAO cdDAO = new CongDanDAO();
+        HonNhanDAO hNDAO = new HonNhanDAO();
+        CongDanDAO cDDAO = new CongDanDAO();
+
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
-        public string MaCCCD
-        {
-            set { maCCCD = value; }
-            get { return maCCCD; }
-        }
 
-        private void KhoiTao()
-        {
-            hnDAO = new HonNhanDAO();
-            cdDAO = new CongDanDAO();
-            StackForm.Add(this);
-        }
-
-        public FThongTinHonNhan()
-        {
-            InitializeComponent();
-            StackForm.Add(this);
-        }
+        public string MaCCCD { get => maCCCD; set => maCCCD = value; }
 
         public FThongTinHonNhan(string maCCCD)
         {
             MaCCCD = maCCCD;
             InitializeComponent();
-            KhoiTao();
+            hNDAO = new HonNhanDAO();
+            cDDAO = new CongDanDAO();
+            StackForm.Add(this);
         }
 
         private void btnThongTinChong_Click(object sender, EventArgs e)
         {
             if (txtCCCDChong.Text != "")
             {
-                FThongTinCongDan tTCD = new FThongTinCongDan(cdDAO.LayThongTin(txtCCCDChong.Text));
+                FThongTinCongDan tTCD = new FThongTinCongDan(cDDAO.LayThongTin(txtCCCDChong.Text));
                 tTCD.ShowDialog();
             }
         }
@@ -49,7 +36,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (txtCCCDVo.Text != "")
             {
-                FThongTinCongDan tTCD = new FThongTinCongDan(cdDAO.LayThongTin(txtCCCDVo.Text));
+                FThongTinCongDan tTCD = new FThongTinCongDan(cDDAO.LayThongTin(txtCCCDVo.Text));
                 tTCD.ShowDialog();
             }
         }
@@ -58,7 +45,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (maCCCD != null)
             {
-                HonNhan hn = hnDAO.LayThongTin(maCCCD);
+                HonNhan hn = hNDAO.LayThongTin(maCCCD);
                 txtTenChong.Text = hn.TenChong;
                 txtTenVo.Text = hn.TenVo;
                 txtCCCDChong.Text = hn.CCCDChong;
@@ -128,22 +115,18 @@ namespace QuanLiCongDanThanhPho
 
         public void CapNhatHonNhan()
         {
-            HonNhan hN = hnDAO.LayThongTin(maCCCD);
-            hN.NoiDangKy.DinhDang(txtNoiDangKy.Text);
-            hN.NgayDangKy = dtmNgayDangKy.Value;
-            hnDAO.CapNhatHonNhan(hN);
-        }
-
-        private void CapNhat()
-        {   if (KiemTraThongTin())
+            HonNhan hN = hNDAO.LayThongTin(maCCCD);
+            if (KiemTraThongTin())
             {
-                CapNhatHonNhan();
+                hN.NoiDangKy.DinhDang(txtNoiDangKy.Text);
+                hN.NgayDangKy = dtmNgayDangKy.Value;
+                hNDAO.CapNhatHonNhan(hN);
             }
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            CapNhat();
+            CapNhatHonNhan();
             ReadOnly();
             LayThongTinHonNhan();
         }

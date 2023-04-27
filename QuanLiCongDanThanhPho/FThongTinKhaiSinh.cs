@@ -146,7 +146,7 @@ namespace QuanLiCongDanThanhPho
             else if (ks.GioiTinh == "m")
                 txtGioiTinh.Text = "Nam";
             else
-                txtGioiTinh.Text = "unknow";
+                txtGioiTinh.Text = "u";
             txtDanToc.Text = ks.DanToc;
             txtQuocTich.Text = ks.QuocTich;
             txtQueQuan.Text = ks.QueQuan.toString();

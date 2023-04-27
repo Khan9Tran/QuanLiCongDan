@@ -11,30 +11,16 @@ namespace QuanLiCongDanThanhPho
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
-        public string MaHoKhau
-        {
-            get { return maHoKhau; }
-            set { maHoKhau = value; }
-        }
 
-        private void KhoiTao()
-        {
-            hkDAO = new HoKhauDAO();
-            cdDAO = new CongDanDAO();
-            StackForm.Add(this);
-        }
-
-        public FThongTinHoKhau()
-        {
-            InitializeComponent();
-            KhoiTao();
-        }
+        public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
 
         public FThongTinHoKhau(string maHoKhau)
         {
             MaHoKhau = maHoKhau;
             InitializeComponent();
-            KhoiTao();
+            hkDAO = new HoKhauDAO();
+            cdDAO = new CongDanDAO();
+            StackForm.Add(this);
         }
 
         // Hiển thị thông tin của hổ khẩu
@@ -126,7 +112,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (e.RowIndex != -1)
             {
-                string maCCCD = gvQuanHeVoiChuHo.CurrentRow.Cells[0].Value.ToString();
+                string maCCCD = (string)gvQuanHeVoiChuHo.CurrentRow.Cells[0].Value;
                 if (maCCCD != "")
                 {
                     FThongTinCongDan ttCD = new FThongTinCongDan(cdDAO.LayThongTin(maCCCD));
