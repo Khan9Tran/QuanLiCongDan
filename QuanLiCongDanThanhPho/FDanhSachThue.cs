@@ -126,7 +126,7 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyThue dangKyThue = new FDangKyThue();
-            (StackForm.fTrangChu).OpenChildForm(dangKyThue);
+            (StackForm.fTrangChu).openChildForm.Open(dangKyThue);
         }
 
         // Lọc danh sách những người đóng tiền trẽ hạn/ chưa đủ tiền khi quá thời gian
@@ -167,8 +167,8 @@ namespace QuanLiCongDanThanhPho
         {
             FDanhSachCongDan dscd = new FDanhSachCongDan(thueDAO.DuTuoiDongThue());
             FDanhSach ds = new FDanhSach();
-            (StackForm.fTrangChu).OpenChildForm(ds);
-            ds.OpenChildForm(dscd);
+            (StackForm.fTrangChu).openChildForm.Open(ds);
+            ds.openChildForm.Open(dscd);
         }
 
         private bool ThanhToan()

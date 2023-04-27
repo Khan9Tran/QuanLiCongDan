@@ -31,7 +31,7 @@ namespace QuanLiCongDanThanhPho
                         forms[forms.Count - 1].Name == "FDanhSach"
                         )
                     {
-                        fTrangChu.OpenChildForm(forms[forms.Count - 1]);
+                        fTrangChu.openChildForm.Open(forms[forms.Count - 1]);
                     }
                     else if (forms[forms.Count - 1].Name == "FDanhSachCongDan" ||
                             forms[forms.Count - 1].Name == "FDanhSachThue" ||
@@ -43,8 +43,8 @@ namespace QuanLiCongDanThanhPho
                         {
                             if (forms[i].Name == "FDanhSach")
                             {
-                                fTrangChu.OpenChildForm(forms[i]);
-                                (forms[i] as FDanhSach).OpenChildForm(forms[forms.Count - 1]);
+                                fTrangChu.openChildForm.Open(forms[i]);
+                                (forms[i] as FDanhSach).openChildForm.Open(forms[forms.Count - 1]);
                                 break;
                             }
                         }
@@ -56,8 +56,22 @@ namespace QuanLiCongDanThanhPho
                         {
                             if (forms[i].Name == "FDangKyHoKhau")
                             {
-                                fTrangChu.OpenChildForm(forms[i]);
-                                (forms[i] as FDangKyHoKhau).OpenChildForm(forms[forms.Count - 1]);
+                                fTrangChu.openChildForm.Open(forms[i]);
+                                (forms[i] as FDangKyHoKhau).openChildForm.Open(forms[forms.Count - 1]);
+                                break;
+                            }
+                        }
+                    }
+                    else if (forms[forms.Count - 1].Name == "FThongKeThue" ||
+                            forms[forms.Count - 1].Name == "FThongKeCongDan" ||
+                            forms[forms.Count - 1].Name == "FThongKePhanBo")
+                    {
+                        for (int i = forms.Count - 2; i >= 0; i--)
+                        {
+                            if (forms[i].Name == "FThongKe")
+                            {
+                                fTrangChu.openChildForm.Open(forms[i]);
+                                (forms[i] as FThongKe).openChildForm.Open(forms[forms.Count - 1]);
                                 break;
                             }
                         }

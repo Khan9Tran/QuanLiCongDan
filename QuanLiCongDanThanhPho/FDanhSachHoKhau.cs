@@ -85,7 +85,7 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau();
-            (StackForm.fTrangChu).OpenChildForm(dangKyHoKhau);
+            (StackForm.fTrangChu).openChildForm.Open(dangKyHoKhau);
         }
 
         private void cmnusMenuTachGop_Click(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace QuanLiCongDanThanhPho
             if (maHoKhau != "")
             {
                 FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau(maHoKhau);
-                (StackForm.fTrangChu).OpenChildForm(dangKyHoKhau);
+                (StackForm.fTrangChu).openChildForm.Open(dangKyHoKhau);
             }
         }
 
