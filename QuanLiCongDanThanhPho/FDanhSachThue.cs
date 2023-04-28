@@ -94,11 +94,6 @@ namespace QuanLiCongDanThanhPho
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
-        private string GetCCCD()
-        {
-            return (string)gvThue.CurrentRow.Cells["CCCD"].Value;
-        }
-
         // Xóa thông tin thuế của công dân ra khỏi csdl
         private void cmnusMenuXoa_Click(object sender, EventArgs e)
         {

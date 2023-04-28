@@ -63,11 +63,6 @@ namespace QuanLiCongDanThanhPho
             LoadDanhSach();
         }
 
-        private string GetCCCD()
-        {
-            return (string)gvTVTT.CurrentRow.Cells["CCCD"].Value;
-        }
-
         private string DayFormat()
         {
             return "dd/MM/yyyy";

@@ -88,6 +88,7 @@ namespace QuanLiCongDanThanhPho
             TimKiem(Loc.tatCa);
             fpnlPhanLoai.Width = 45;
         }
+
         //Kiem tra lai
         private void gvDanhSachCongDan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
