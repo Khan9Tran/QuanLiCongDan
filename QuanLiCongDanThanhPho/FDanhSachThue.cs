@@ -9,6 +9,7 @@ namespace QuanLiCongDanThanhPho
         private CongDanDAO cDDAO;
         private dynamic luaChon; // Khởi tạo lựa chọn bộ lọc
         private DataTable ds; //Khởi tạo danh sách cho datagridview
+        private Paging listThue;
 
         enum Loc
         {
@@ -25,6 +26,7 @@ namespace QuanLiCongDanThanhPho
             cDDAO = new CongDanDAO();
             ds = new DataTable();
             luaChon = Loc.tatCa;
+            listThue = new Paging(nudPage, 10);
         }
 
         private void FDanhSachThue_Load(object sender, EventArgs e)

@@ -7,6 +7,8 @@ namespace QuanLiCongDanThanhPho
         private CongDanDAO cdDao;
         private dynamic luaChon;
         private DataTable ds;
+        private Paging listCongDan;
+
         public DataTable Ds { get => ds; set => ds = value; }
 
         enum Loc
@@ -26,6 +28,7 @@ namespace QuanLiCongDanThanhPho
             luaChon = Loc.tatCa;
             btnTamVang.Enabled = false;
             btnThue.Enabled = false;
+            listCongDan = new Paging(nudPage, 15);
         }
 
         public FDanhSachCongDan()
@@ -76,7 +79,7 @@ namespace QuanLiCongDanThanhPho
         //Tải danh sách lên datagridview
         private void LoadDanhSach()
         {
-            gvDanhSachCongDan.DataSource = NgatTrang(ds,15); 
+            gvDanhSachCongDan.DataSource = listCongDan.NgatTrang(ds); 
         }
 
 
@@ -195,20 +198,6 @@ namespace QuanLiCongDanThanhPho
             {
                 XoaCongDan();
             }
-        }
-
-        //Phân trang cho datagridview
-        private DataTable NgatTrang(DataTable ds, int recordNum)
-        {
-            int totalRecord = ds.Rows.Count;
-            if (totalRecord <= 0)
-                return ds;
-            if (totalRecord % recordNum != 0)
-                nudPage.Maximum = (totalRecord / recordNum) + 1;
-            else
-                nudPage.Maximum =  totalRecord / recordNum;
-            int page = int.Parse(nudPage.Value.ToString());
-            return ds.AsEnumerable().Skip((page -1)* recordNum).Take(recordNum).CopyToDataTable();
         }
 
         //Đóng mở các nút lọc

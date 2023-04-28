@@ -7,7 +7,7 @@ namespace QuanLiCongDanThanhPho
         private HoKhauDAO hkDAO;
         private dynamic luaChon;
         private DataTable ds;
-
+        private Paging listHoKhau;
         enum Loc
         {
             tatCa,
@@ -21,6 +21,7 @@ namespace QuanLiCongDanThanhPho
             ds = new DataTable();
             hkDAO = new HoKhauDAO();
             luaChon = Loc.tatCa;
+            listHoKhau = new Paging(nudPage, 10);
         }
 
         private void FDanhSachHoKhau_Load(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace QuanLiCongDanThanhPho
 
         private void LoadDanhSach()
         {
-            gvHoKhau.DataSource = NgatTrang(ds, 13);
+            gvHoKhau.DataSource = listHoKhau.NgatTrang(ds);
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -97,20 +98,6 @@ namespace QuanLiCongDanThanhPho
                 FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau(maHoKhau);
                 (StackForm.TrangChu).ChildForm.Open(dangKyHoKhau);
             }
-        }
-
-        //Tạo ngắt trang
-        private DataTable NgatTrang(DataTable ds, int recordNum)
-        {
-            int totalRecord = ds.Rows.Count;
-            if (totalRecord <= 0)
-                return ds;
-            if (totalRecord % recordNum != 0)
-                nudPage.Maximum = (totalRecord / recordNum) + 1;
-            else
-                nudPage.Maximum = totalRecord / recordNum;
-            int page = int.Parse(nudPage.Value.ToString());
-            return ds.AsEnumerable().Skip((page - 1) * recordNum).Take(recordNum).CopyToDataTable();
         }
 
         private void nudPage_ValueChanged(object sender, EventArgs e)

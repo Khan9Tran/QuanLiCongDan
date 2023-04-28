@@ -8,6 +8,7 @@ namespace QuanLiCongDanThanhPho
         private TamTruTamVangDAO tttvDAO;
         private dynamic luaChon;
         private DataTable ds;
+        private Paging listTamTruTamVang;
 
         private enum Loc
         {
@@ -30,6 +31,7 @@ namespace QuanLiCongDanThanhPho
             ds = new DataTable();
             tttvDAO = new TamTruTamVangDAO();
             luaChon = Loc.tatCa;
+            listTamTruTamVang = new Paging(nudPage, 10);
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
@@ -73,7 +75,7 @@ namespace QuanLiCongDanThanhPho
 
         private void LoadDanhSach()
         {
-            gvTVTT.DataSource = NgatTrang(ds, 10);
+            gvTVTT.DataSource = listTamTruTamVang.NgatTrang(ds);
             gvTVTT.Columns[4].DefaultCellStyle.Format = DayFormat();
             gvTVTT.Columns[3].DefaultCellStyle.Format = DayFormat();
             HightLightQuaHan();
@@ -156,20 +158,6 @@ namespace QuanLiCongDanThanhPho
         {
             luaChon = type;
             txtTimKiem_TextChanged(txtTimKiem, null);
-        }
-
-        // Ngắt trang
-        private DataTable NgatTrang(DataTable ds, int recordNum)
-        {
-            int totalRecord = ds.Rows.Count;
-            if (totalRecord <= 0)
-                return ds;
-            if (totalRecord % recordNum != 0)
-                nudPage.Maximum = (totalRecord / recordNum) + 1;
-            else
-                nudPage.Maximum = totalRecord / recordNum;
-            int page = int.Parse(nudPage.Value.ToString());
-            return ds.AsEnumerable().Skip((page - 1) * recordNum).Take(recordNum).CopyToDataTable();
         }
 
         private void nudPage_ValueChanged(object sender, EventArgs e)
