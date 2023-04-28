@@ -4,8 +4,8 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyCCCD : Form
     {
-        CCCDDAO cCCDDAO;
-        CongDanDAO cDDAO;
+        private CCCDDAO cCCDDAO;
+        private CongDanDAO cDDAO;
 
         public FDangKyCCCD()
         {

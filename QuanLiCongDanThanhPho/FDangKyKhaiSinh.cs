@@ -4,9 +4,9 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyKhaiSinh : Form
     {
-        KhaiSinhDAO kSDAO;
-        CongDanDAO cDDAO;
-        HonNhanDAO hNDAO;
+        private KhaiSinhDAO kSDAO;
+        private CongDanDAO cDDAO;
+        private HonNhanDAO hNDAO;
         public FDangKyKhaiSinh()
         {
             InitializeComponent();

@@ -3,7 +3,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FKhaiTu : Form
     {
-        CongDanDAO congDanDAO;
+        private CongDanDAO congDanDAO;
 
         public FKhaiTu()
         {

@@ -1,18 +1,17 @@
 ﻿using QuanLiCongDanThanhPho.Models;
-using System.Drawing.Imaging;
 
 namespace QuanLiCongDanThanhPho
 {
     public partial class FThongTinCongDan : Form
     {
         private CongDan congDan;
-        CongDanDAO cdDAO;
-        KhaiSinhDAO ksDAO;
-        ThueDAO thueDAO;
-        HonNhanDAO hnDAO;
-        HoKhauDAO hkDAO;
-        TamTruTamVangDAO tttvDAO;
-        CCCDDAO cCCDDAO;
+        private CongDanDAO cdDAO;
+        private KhaiSinhDAO ksDAO;
+        private ThueDAO thueDAO;
+        private HonNhanDAO hnDAO;
+        private HoKhauDAO hkDAO;
+        private TamTruTamVangDAO tttvDAO;
+        private CCCDDAO cCCDDAO;
 
         private string maTamTru = "00000B";
         private string maChuaCoHK = "00000A";
@@ -184,6 +183,7 @@ namespace QuanLiCongDanThanhPho
             }
             else
             {
+                txtQuanHeVoiChuHo.Text = "Không có";
                 btnHoKhau.Enabled = false;
             }
         }
@@ -350,15 +350,18 @@ namespace QuanLiCongDanThanhPho
         private void CapNhatHoKhau()
         {
             HoKhau hoKhau = hkDAO.LayThongTin(txtMaHoKhau.Text);
-            if (txtQuanHeVoiChuHo.Text == "Chủ hộ" && hoKhau.CCCDChuHo != txtCCCD.Text)
+            if (hoKhau.MaHoKhau != "unknow")
             {
+                if (txtQuanHeVoiChuHo.Text == "Chủ hộ" && hoKhau.CCCDChuHo != txtCCCD.Text)
+                {
                     CongDan cD = cdDAO.LayThongTin(hoKhau.CCCDChuHo);
                     cD.QuanHeVoiChuHo = "Unknow";
                     hoKhau.CCCDChuHo = txtCCCD.Text;
                     cdDAO.CapNhatCongDan(cD);
+                }
+                hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
+                hkDAO.CapNhatHoKhau(hoKhau);
             }
-            hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
-            hkDAO.CapNhatHoKhau(hoKhau);
         }
 
         private void btnSua_Click(object sender, EventArgs e)

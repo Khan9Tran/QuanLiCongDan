@@ -4,10 +4,10 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyCongDan : Form
     {
-        CongDanDAO cdDAO;
-        KhaiSinhDAO kSDAO;
-        ThueDAO thueDAO;
-        HonNhanDAO hNDAO;
+        private CongDanDAO cdDAO;
+        private KhaiSinhDAO kSDAO;
+        private ThueDAO thueDAO;
+        private HonNhanDAO hNDAO;
 
         private string path = @"..\..\..\..\HinhCongDan";
 

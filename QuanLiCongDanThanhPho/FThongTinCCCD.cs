@@ -4,9 +4,9 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongTinCCCD : Form
     {
-        KhaiSinhDAO khaiSinhDAO;
-        HoKhauDAO hoKhauDAO;
-        CCCDDAO cCCDDAO;
+        private KhaiSinhDAO khaiSinhDAO;
+        private HoKhauDAO hoKhauDAO;
+        private CCCDDAO cCCDDAO;
         private CongDan congDan;
         private string path = @"..\..\..\..\HinhCongDan";
 

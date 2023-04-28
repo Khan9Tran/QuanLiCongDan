@@ -3,8 +3,8 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongKeCongDan : Form
     {
-        CongDanDAO cdDAO;
-        KhaiSinhDAO ksDAO;
+        private CongDanDAO cdDAO;
+        private KhaiSinhDAO ksDAO;
 
         public FThongKeCongDan()
         {

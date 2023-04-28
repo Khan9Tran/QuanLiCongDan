@@ -4,7 +4,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSachHoKhau : Form
     {
-        HoKhauDAO hkDao = new HoKhauDAO();
+        private HoKhauDAO hkDAO;
         private dynamic luaChon;
         private DataTable ds;
 
@@ -19,6 +19,7 @@ namespace QuanLiCongDanThanhPho
             InitializeComponent();
             StackForm.Add(this);
             ds = new DataTable();
+            hkDAO = new HoKhauDAO();
             luaChon = Loc.tatCa;
         }
 
@@ -49,9 +50,9 @@ namespace QuanLiCongDanThanhPho
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if (luaChon == Loc.tatCa)
-               ds = hkDao.LayDanhSachChuaTu(txtTimKiem.Text);
+               ds = hkDAO.LayDanhSachChuaTu(txtTimKiem.Text);
             else if (luaChon == Loc.soThanhVien)
-               ds = hkDao.LayDanhSachXepTheoSoTV(txtTimKiem.Text);
+               ds = hkDAO.LayDanhSachXepTheoSoTV(txtTimKiem.Text);
             nudPage.Value = 1;
             LoadDanhSach();
         }
@@ -85,7 +86,7 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau();
-            (StackForm.fTrangChu).openChildForm.Open(dangKyHoKhau);
+            (StackForm.TrangChu).ChildForm.Open(dangKyHoKhau);
         }
 
         private void cmnusMenuTachGop_Click(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace QuanLiCongDanThanhPho
             if (maHoKhau != "")
             {
                 FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau(maHoKhau);
-                (StackForm.fTrangChu).openChildForm.Open(dangKyHoKhau);
+                (StackForm.TrangChu).ChildForm.Open(dangKyHoKhau);
             }
         }
 

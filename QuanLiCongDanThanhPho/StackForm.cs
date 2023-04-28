@@ -4,7 +4,10 @@ namespace QuanLiCongDanThanhPho
     static internal class StackForm
     {
         static private List<Form> forms = new List<Form>();
-        static public FTrangChu fTrangChu = new FTrangChu();
+        private static FTrangChu trangChu = new FTrangChu();
+
+        public static FTrangChu TrangChu { get => trangChu; set => trangChu = value; }
+
         static public void Add(Form form)
         {
             forms.Add(form);
@@ -31,7 +34,7 @@ namespace QuanLiCongDanThanhPho
                         forms[forms.Count - 1].Name == "FDanhSach"
                         )
                     {
-                        fTrangChu.openChildForm.Open(forms[forms.Count - 1]);
+                        trangChu.ChildForm.Open(forms[forms.Count - 1]);
                     }
                     else if (forms[forms.Count - 1].Name == "FDanhSachCongDan" ||
                             forms[forms.Count - 1].Name == "FDanhSachThue" ||
@@ -43,8 +46,8 @@ namespace QuanLiCongDanThanhPho
                         {
                             if (forms[i].Name == "FDanhSach")
                             {
-                                fTrangChu.openChildForm.Open(forms[i]);
-                                (forms[i] as FDanhSach).openChildForm.Open(forms[forms.Count - 1]);
+                                trangChu.ChildForm.Open(forms[i]);
+                                (forms[i] as FDanhSach).ChildForm.Open(forms[forms.Count - 1]);
                                 break;
                             }
                         }
@@ -56,8 +59,8 @@ namespace QuanLiCongDanThanhPho
                         {
                             if (forms[i].Name == "FDangKyHoKhau")
                             {
-                                fTrangChu.openChildForm.Open(forms[i]);
-                                (forms[i] as FDangKyHoKhau).openChildForm.Open(forms[forms.Count - 1]);
+                                trangChu.ChildForm.Open(forms[i]);
+                                (forms[i] as FDangKyHoKhau).ChildForm.Open(forms[forms.Count - 1]);
                                 break;
                             }
                         }
@@ -70,8 +73,8 @@ namespace QuanLiCongDanThanhPho
                         {
                             if (forms[i].Name == "FThongKe")
                             {
-                                fTrangChu.openChildForm.Open(forms[i]);
-                                (forms[i] as FThongKe).openChildForm.Open(forms[forms.Count - 1]);
+                                trangChu.ChildForm.Open(forms[i]);
+                                (forms[i] as FThongKe).ChildForm.Open(forms[forms.Count - 1]);
                                 break;
                             }
                         }

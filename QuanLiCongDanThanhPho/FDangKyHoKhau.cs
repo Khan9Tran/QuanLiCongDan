@@ -3,12 +3,15 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyHoKhau : Form
     {
-        public OpenChildForm openChildForm;
+        private OpenChildForm childForm;
+        private string maHoTach;
+
+        public OpenChildForm ChildForm { get => childForm; set => childForm = value; }
 
         private void KhoiTao()
         {
             InitializeComponent();
-            openChildForm = new OpenChildForm(pnlLuaChon);
+            childForm = new OpenChildForm(pnlLuaChon);
             StackForm.Add(this);
         }
 
@@ -26,19 +29,19 @@ namespace QuanLiCongDanThanhPho
         public FDangKyHoKhau(string maHoTach)
         {
             KhoiTao();
-            openChildForm.Open(new FTachGopHo(maHoTach));
+            childForm.Open(new FTachGopHo(maHoTach));
             SetButton();
         }
 
         private void btnTachGop_Click(object sender, EventArgs e)
         {
-            openChildForm.Open(new FTachGopHo());
+            childForm.Open(new FTachGopHo());
             SetButton();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            openChildForm.Open(new FThemNguoiVaoHo());
+            childForm.Open(new FThemNguoiVaoHo());
             btnTachGop.BackColor = Color.WhiteSmoke;
             btnThem.BackColor = Color.Gray;
         }

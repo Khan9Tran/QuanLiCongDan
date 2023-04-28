@@ -5,9 +5,9 @@ namespace QuanLiCongDanThanhPho
     public partial class FThongTinThue : Form
     {
         private string maCCCD;
-        ThueDAO thueDAO;
-        CongDanDAO cdDAO;
-        HoKhauDAO hkDAO;
+        private ThueDAO thueDAO;
+        private CongDanDAO cdDAO;
+        private HoKhauDAO hkDAO;
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;

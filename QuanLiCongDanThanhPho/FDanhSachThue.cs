@@ -5,8 +5,8 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSachThue : Form
     {
-        ThueDAO thueDAO;
-        CongDanDAO cDDAO;
+        private ThueDAO thueDAO;
+        private CongDanDAO cDDAO;
         private dynamic luaChon; // Khởi tạo lựa chọn bộ lọc
         private DataTable ds; //Khởi tạo danh sách cho datagridview
 
@@ -43,6 +43,7 @@ namespace QuanLiCongDanThanhPho
             }
  
         }
+
         // Danh sach thuế của tất cả công dân
         private void btnTatCa_Click(object sender, EventArgs e)
         {
@@ -126,7 +127,7 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyThue dangKyThue = new FDangKyThue();
-            (StackForm.fTrangChu).openChildForm.Open(dangKyThue);
+            (StackForm.TrangChu).ChildForm.Open(dangKyThue);
         }
 
         // Lọc danh sách những người đóng tiền trẽ hạn/ chưa đủ tiền khi quá thời gian
@@ -167,8 +168,8 @@ namespace QuanLiCongDanThanhPho
         {
             FDanhSachCongDan dscd = new FDanhSachCongDan(thueDAO.DuTuoiDongThue());
             FDanhSach ds = new FDanhSach();
-            (StackForm.fTrangChu).openChildForm.Open(ds);
-            ds.openChildForm.Open(dscd);
+            (StackForm.TrangChu).ChildForm.Open(ds);
+            ds.ChildForm.Open(dscd);
         }
 
         private bool ThanhToan()

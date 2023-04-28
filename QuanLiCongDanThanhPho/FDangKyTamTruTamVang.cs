@@ -4,8 +4,8 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyTamTruTamVang : Form
     {
-        TamTruTamVangDAO tTTVDAO;
-        CongDanDAO cDDAO;
+        private TamTruTamVangDAO tTTVDAO;
+        private CongDanDAO cDDAO;
 
         private void KhoiTao()
         {

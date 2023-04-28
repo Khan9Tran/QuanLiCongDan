@@ -3,13 +3,14 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSach : Form
     {
-        public OpenChildForm openChildForm;
+        private OpenChildForm childForm;
+        public OpenChildForm ChildForm { get => childForm; set => childForm = value; }
 
         public FDanhSach()
         {
             InitializeComponent();
             StackForm.Add(this);
-            openChildForm = new OpenChildForm(pnlHienThiDanhSach);
+            childForm = new OpenChildForm(pnlHienThiDanhSach);
             FlatStyle();
         }
 
@@ -36,22 +37,22 @@ namespace QuanLiCongDanThanhPho
 
         private void btnCongDan_Click(object sender, EventArgs e)
         {
-            openChildForm.Open(new FDanhSachCongDan());
+            childForm.Open(new FDanhSachCongDan());
         }
 
         private void btnThue_Click(object sender, EventArgs e)
         {
-            openChildForm.Open(new FDanhSachThue());
+            childForm.Open(new FDanhSachThue());
         }
 
         private void btnHoKhau_Click(object sender, EventArgs e)
         {
-            openChildForm.Open(new FDanhSachHoKhau());
+            childForm.Open(new FDanhSachHoKhau());
         }
 
         private void btnTTTV_Click(object sender, EventArgs e)
         {
-            openChildForm.Open(new FDanhSachTamTruTamVang());
+            childForm.Open(new FDanhSachTamTruTamVang());
         }
     }
 }

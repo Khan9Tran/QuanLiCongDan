@@ -1,7 +1,5 @@
-﻿using QuanLiCongDanThanhPho.Models;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Security.Principal;
+﻿using System.Drawing.Imaging;
+
 
 namespace QuanLiCongDanThanhPho
 {

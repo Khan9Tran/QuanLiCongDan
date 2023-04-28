@@ -3,9 +3,9 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongKePhanBo : Form
     {
-        CongDanDAO cdDAO;
-        TamTruTamVangDAO tttvDAO;
-        HoKhauDAO hkDAO;
+        private CongDanDAO cdDAO;
+        private TamTruTamVangDAO tttvDAO;
+        private HoKhauDAO hkDAO;
 
         public FThongKePhanBo()
         {

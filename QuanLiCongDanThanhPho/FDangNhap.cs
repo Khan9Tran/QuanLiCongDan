@@ -7,7 +7,7 @@ namespace QuanLiCongDanThanhPho
         private AccountDAO accDAO;
         private bool checkTK = false;
         private bool checkPass = false;
-        FLOGO flogo;
+        private FLOGO flogo;
 
         public FDangNhap()
         {

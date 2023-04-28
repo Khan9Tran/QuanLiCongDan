@@ -3,7 +3,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongKeThue : Form
     {
-        ThueDAO thueDAO;
+        private ThueDAO thueDAO;
 
         public FThongKeThue()
         {
