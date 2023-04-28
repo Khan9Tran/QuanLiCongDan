@@ -15,7 +15,7 @@ namespace QuanLiCongDanThanhPho
 
         private string maTamTru = "00000B";
         private string maChuaCoHK = "00000A";
-        private string path = @"..\..\..\..\HinhCongDan";
+        private HinhDaiDien hinhCongDan;
 
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
@@ -42,6 +42,7 @@ namespace QuanLiCongDanThanhPho
             tttvDAO = new TamTruTamVangDAO();
             cCCDDAO = new CCCDDAO();
             this.congDan = congDan;
+            hinhCongDan = new HinhDaiDien(HinhDaiDien.Type.congDan);
         }
         
         //Mở F khai sinh
@@ -156,9 +157,10 @@ namespace QuanLiCongDanThanhPho
         private void LayThue()
         {
             Thue thue = thueDAO.LayThongTin(congDan.CCCD);
-            if (thue.MaThue == null || thue.MaThue == "")
+            if (thue.MaThue == null || thue.MaThue == "" || thue.MaThue == "unknow")
                 btnThue.Enabled = false;
-            txtMaThue.Text = thue.MaThue;
+            if (thue.MaThue != "unknow")
+                txtMaThue.Text = thue.MaThue;
         }
 
         private void LayHonNhan()
@@ -210,7 +212,7 @@ namespace QuanLiCongDanThanhPho
                 LayHonNhan();
                 LayHoKhau();
                 LayTamTruTamVang();
-                HinhDaiDien.LayHinhDaiDien(txtCCCD.Text, ptcHinhDaiDien, path);
+                hinhCongDan.LayHinhDaiDien(txtCCCD.Text, ptcHinhDaiDien);
             }
         }
 
@@ -403,9 +405,9 @@ namespace QuanLiCongDanThanhPho
 
         private void ThemHinh()
         {
-            if (HinhDaiDien.ThemHinhDaiDien(ofdHinhDaiDien, ptcHinhDaiDien))
+            if (hinhCongDan.ThemHinhDaiDien(ofdHinhDaiDien, ptcHinhDaiDien))
             {
-                HinhDaiDien.SaveHinhDaiDien(txtCCCD.Text, ofdHinhDaiDien, ptcHinhDaiDien, path);
+                hinhCongDan.SaveHinhDaiDien(txtCCCD.Text, ofdHinhDaiDien, ptcHinhDaiDien);
             }
         }
 

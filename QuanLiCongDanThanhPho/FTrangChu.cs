@@ -11,8 +11,8 @@ namespace QuanLiCongDanThanhPho
         private OpenChildForm childForm;
         private Account account;
         private AccountDAO accountDAO;
-        private string path = @"..\..\..\..\HinhTaiKhoan";
         private FDangNhap fDangNhap;
+        private HinhDaiDien hinhAdmin;
 
         public Account Account { get => account; set => account = value; }
         public OpenChildForm ChildForm { get => childForm; set => childForm = value; }
@@ -24,6 +24,7 @@ namespace QuanLiCongDanThanhPho
             this.Controls.Add(pnlHienThiForm);
             StackForm.TrangChu = this;
             childForm = new OpenChildForm(pnlHienThiForm);
+            hinhAdmin = new HinhDaiDien(HinhDaiDien.Type.admin);
         }
 
         public FTrangChu()
@@ -45,7 +46,7 @@ namespace QuanLiCongDanThanhPho
         {
             account = accountDAO.LayThongTinTaiKhoan(account);
             btnTaiKhoan.Text = "Xin chào: " + account.DisplayName;
-            HinhDaiDien.LayHinhDaiDien(account.UserName, ptcHinhDaiDien, path);
+            hinhAdmin.LayHinhDaiDien(account.UserName, ptcHinhDaiDien);
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)

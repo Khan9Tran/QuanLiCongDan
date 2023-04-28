@@ -88,22 +88,25 @@ namespace QuanLiCongDanThanhPho
             TimKiem(Loc.tatCa);
             fpnlPhanLoai.Width = 45;
         }
-
+        //Kiem tra lai
         private void gvDanhSachCongDan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnThue.Enabled = true;
+            btnTamVang.Enabled = true;
+            string cCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
             if (e.RowIndex != -1 && gvDanhSachCongDan.Rows[e.RowIndex].Cells[0].Value.ToString().Length > 0)
             {
                 ThueDAO thueDAO = new ThueDAO();
                 // Kiểm tra nếu không có trong ds thuế thì có thể đăng kí
-                if (thueDAO.LayThongTin(GetCCCD()) != null)
+                if (thueDAO.LayThongTin(cCCD).MaThue != "unknow")
                 {
-                    btnThue.Enabled = true;
+                    btnThue.Enabled = false;
                 }
                 TamTruTamVangDAO tttvDAO = new TamTruTamVangDAO();
                 // Kiểm tra nếu không có trogn ds tạm trú, tạm vắng thì có thể đắng kí
-                if (tttvDAO.LayThongTin(GetCCCD()) != null)
+                if (tttvDAO.LayThongTin(cCCD).MaSo != "unknow")
                 {
-                    btnTamVang.Enabled = true;
+                    btnTamVang.Enabled = false;
                 }
                 cmnusMenu.Show(this, this.PointToClient(MousePosition));
             }
@@ -158,16 +161,10 @@ namespace QuanLiCongDanThanhPho
             (StackForm.TrangChu).ChildForm.Open(dangKyCongDan);
         }
 
-        //Lấy mã cccd bằng kick vào gridview
-        private string GetCCCD()
-        {
-            return (string)gvDanhSachCongDan.CurrentRow.Cells[0].Value;
-        }
-
         //Menu
         private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
         {
-            string maCCCD = GetCCCD();
+            string maCCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
             if (maCCCD != "")
             {
                 CongDan cD = cdDao.LayThongTin(maCCCD);
@@ -179,7 +176,7 @@ namespace QuanLiCongDanThanhPho
         //Xóa công dân
         private void XoaCongDan()
         {
-            string maCCCD = GetCCCD();
+            string maCCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
             if (maCCCD != "")
             {
                 CongDan cD = cdDao.LayThongTin(maCCCD);
@@ -221,13 +218,15 @@ namespace QuanLiCongDanThanhPho
 
         private void btnThue_Click(object sender, EventArgs e)
         {
-            FDangKyThue dangKyThue = new FDangKyThue(GetCCCD());
+            string cCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
+            FDangKyThue dangKyThue = new FDangKyThue(cCCD);
             (StackForm.TrangChu).ChildForm.Open(dangKyThue); 
         }
 
         private void btnTamVang_Click(object sender, EventArgs e)
         {
-            FDangKyTamTruTamVang dKTamTruTamVang = new FDangKyTamTruTamVang(GetCCCD());
+            string cCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
+            FDangKyTamTruTamVang dKTamTruTamVang = new FDangKyTamTruTamVang(cCCD);
             (StackForm.TrangChu).ChildForm.Open(dKTamTruTamVang);
         }
     }

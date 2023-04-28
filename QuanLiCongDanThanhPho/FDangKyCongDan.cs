@@ -8,8 +8,7 @@ namespace QuanLiCongDanThanhPho
         private KhaiSinhDAO kSDAO;
         private ThueDAO thueDAO;
         private HonNhanDAO hNDAO;
-
-        private string path = @"..\..\..\..\HinhCongDan";
+        private HinhDaiDien hinhDaiDien;
 
         enum LuaChon
         {
@@ -25,6 +24,7 @@ namespace QuanLiCongDanThanhPho
             kSDAO = new KhaiSinhDAO();
             thueDAO = new ThueDAO();
             hNDAO = new HonNhanDAO();
+            hinhDaiDien = new HinhDaiDien(HinhDaiDien.Type.congDan);
         }
 
         public void ThemCongDan()
@@ -47,7 +47,7 @@ namespace QuanLiCongDanThanhPho
                     hNDAO.ThemHonNhan(hN);
                 }
                 if (ptcHinhDaiDien.Image != null) 
-                    HinhDaiDien.SaveHinhDaiDien(txtCCCD.Text, ofdHinhDaiDien, ptcHinhDaiDien, path);
+                    hinhDaiDien.SaveHinhDaiDien(txtCCCD.Text, ofdHinhDaiDien, ptcHinhDaiDien);
             }
         }
 
@@ -241,7 +241,7 @@ namespace QuanLiCongDanThanhPho
 
         private void btnThemHinh_Click(object sender, EventArgs e)
         {
-            HinhDaiDien.ThemHinhDaiDien(ofdHinhDaiDien, ptcHinhDaiDien);
+            hinhDaiDien.ThemHinhDaiDien(ofdHinhDaiDien, ptcHinhDaiDien);
         }
     }
 }

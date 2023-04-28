@@ -31,5 +31,9 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format($"SELECT * FROM CCCD WHERE MaCCCD = '{cCCD.MaCCCD}'");
             return conn.LayThongTinCCCD(sqlStr);
         }
+        static public string GetCCCD(DataGridView gvDanhSach, int index)
+        {
+            return (string)gvDanhSach.CurrentRow.Cells[index].Value;
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace QuanLiCongDanThanhPho
         private HoKhauDAO hoKhauDAO;
         private CCCDDAO cCCDDAO;
         private CongDan congDan;
-        private string path = @"..\..\..\..\HinhCongDan";
+        private HinhDaiDien hinhCongDan;
 
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
@@ -22,6 +22,7 @@ namespace QuanLiCongDanThanhPho
             cCCDDAO = new CCCDDAO();
             StackForm.Add(this);
             this.congDan = congDan;
+            hinhCongDan = new HinhDaiDien(HinhDaiDien.Type.congDan);
         }
 
         // Hiển thị thông tin lấy từ class công dân
@@ -78,7 +79,7 @@ namespace QuanLiCongDanThanhPho
         private void FThongTinCCCD_Load(object sender, EventArgs e)
         {
             HienThiThongTin();
-            HinhDaiDien.LayHinhDaiDien(lblCCCD.Text, ptcHinhDaiDien, path);
+            hinhCongDan.LayHinhDaiDien(lblCCCD.Text, ptcHinhDaiDien);
         }
 
         protected override void WndProc(ref Message message)

@@ -76,7 +76,7 @@ namespace QuanLiCongDanThanhPho
         // Hàm hiện thị tiền cần thanh toán
         private void LoadLblThue(int rowIndex)
         {
-            CongDan cD = cDDAO.LayThongTin(GetCCCD());
+            CongDan cD = cDDAO.LayThongTin(CCCDDAO.GetCCCD(gvThue, 1));
             string Ten = cD.Ten;
             string soTienCanNop = (string)gvThue.Rows[rowIndex].Cells[2].Value;
             lblThongTin.Text = Ten + " cần thanh toán " + soTienCanNop + " VNĐ";
@@ -105,7 +105,7 @@ namespace QuanLiCongDanThanhPho
             DialogResult exit = MessageBox.Show("Bạn có thật sự muốn xóa thông tin thuế?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (exit == DialogResult.Yes)
             {
-                string maCCCD = GetCCCD();
+                string maCCCD = CCCDDAO.GetCCCD(gvThue, 1);
                 if (maCCCD != "")
                 {
                     thueDAO.XoaThue(maCCCD);
@@ -117,7 +117,7 @@ namespace QuanLiCongDanThanhPho
         // Mở ra form thông tin thuế của công dân được chọn
         private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
         {
-            string maCCCD = GetCCCD();
+            string maCCCD = CCCDDAO.GetCCCD(gvThue, 1);
             if (maCCCD != "")
             {
                 FThongTinThue ttThue = new FThongTinThue(maCCCD);
@@ -180,7 +180,7 @@ namespace QuanLiCongDanThanhPho
             if (KiemTraDuLieuNhap.isTien(txtDongThue.Text))
             {
                 int tienNhap = int.Parse(txtDongThue.Text);
-                Thue thue = thueDAO.LayThongTin(GetCCCD());
+                Thue thue = thueDAO.LayThongTin(CCCDDAO.GetCCCD(gvThue, 1));
                 if (thue.ThanhToan(tienNhap))
                 {
                     thueDAO.CapNhatThue(thue);

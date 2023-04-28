@@ -4,7 +4,6 @@ namespace QuanLiCongDanThanhPho
     public partial class FDangKyHoKhau : Form
     {
         private OpenChildForm childForm;
-        private string maHoTach;
 
         public OpenChildForm ChildForm { get => childForm; set => childForm = value; }
 
