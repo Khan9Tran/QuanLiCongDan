@@ -2,12 +2,10 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDanhSachHoKhau : Form
+    public partial class FDanhSachHoKhau : FormDanhSach
     {
         private HoKhauDAO hkDAO;
-        private dynamic luaChon;
-        private DataTable ds;
-        private Paging listHoKhau;
+
         enum Loc
         {
             tatCa,
@@ -17,11 +15,11 @@ namespace QuanLiCongDanThanhPho
         public FDanhSachHoKhau()
         {
             InitializeComponent();
-            StackForm.Add(this);
-            ds = new DataTable();
+
             hkDAO = new HoKhauDAO();
-            luaChon = Loc.tatCa;
-            listHoKhau = new Paging(nudPage, 10);
+            ListData = new Paging(nudPage, 10);
+
+            LuaChon = Loc.tatCa;
         }
 
         private void FDanhSachHoKhau_Load(object sender, EventArgs e)
@@ -43,19 +41,14 @@ namespace QuanLiCongDanThanhPho
             TimKiem(Loc.tatCa);
         }
 
-        private void LoadDanhSach()
-        {
-            gvHoKhau.DataSource = listHoKhau.NgatTrang(ds);
-        }
-
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            if (luaChon == Loc.tatCa)
-               ds = hkDAO.LayDanhSachChuaTu(txtTimKiem.Text);
-            else if (luaChon == Loc.soThanhVien)
-               ds = hkDAO.LayDanhSachXepTheoSoTV(txtTimKiem.Text);
+            if (LuaChon == Loc.tatCa)
+               Ds = hkDAO.LayDanhSachChuaTu(txtTimKiem.Text);
+            else if (LuaChon == Loc.soThanhVien)
+               Ds = hkDAO.LayDanhSachXepTheoSoTV(txtTimKiem.Text);
             nudPage.Value = 1;
-            LoadDanhSach();
+            LoadDanhSach(gvHoKhau);
         }
 
         private string GetMaHoKhau()
@@ -70,7 +63,7 @@ namespace QuanLiCongDanThanhPho
 
         private void TimKiem(dynamic type)
         {
-            luaChon = type;
+            LuaChon = type;
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
@@ -102,15 +95,12 @@ namespace QuanLiCongDanThanhPho
 
         private void nudPage_ValueChanged(object sender, EventArgs e)
         {
-            LoadDanhSach();
+            LoadDanhSach(gvHoKhau);
         }
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            if (flpnlPhanLoai.Width > 50)
-                flpnlPhanLoai.Width = 45;
-            else
-                flpnlPhanLoai.Width = 800;
+            Loc_Click(flpnlPhanLoai);
         }
     }
 }

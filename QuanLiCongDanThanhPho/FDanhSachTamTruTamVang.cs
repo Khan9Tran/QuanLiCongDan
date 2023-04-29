@@ -3,12 +3,9 @@ using System.Data;
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDanhSachTamTruTamVang : Form
+    public partial class FDanhSachTamTruTamVang : FormDanhSach
     {
         private TamTruTamVangDAO tttvDAO;
-        private dynamic luaChon;
-        private DataTable ds;
-        private Paging listTamTruTamVang;
 
         private enum Loc
         {
@@ -27,11 +24,11 @@ namespace QuanLiCongDanThanhPho
         public FDanhSachTamTruTamVang()
         {
             InitializeComponent();
-            StackForm.Add(this);
-            ds = new DataTable();
+
             tttvDAO = new TamTruTamVangDAO();
-            luaChon = Loc.tatCa;
-            listTamTruTamVang = new Paging(nudPage, 10);
+            ListData = new Paging(nudPage, 10);
+
+            LuaChon = Loc.tatCa;
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
@@ -51,26 +48,20 @@ namespace QuanLiCongDanThanhPho
         //Tìm kiếm
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            if (luaChon == Loc.tatCa)
-                ds = tttvDAO.LayDanhSachChuaTu(txtTimKiem.Text);
-            else if (luaChon == Loc.tamTru)
-                ds = tttvDAO.LayDanhSachTamTru(txtTimKiem.Text);
-            else if (luaChon == Loc.tamVang)
-                ds = tttvDAO.LayDanhSachTamVang(txtTimKiem.Text);
-            else if (luaChon == Loc.quaHan)
-                ds = tttvDAO.LayDanhSachQuaHan(txtTimKiem.Text);
+            if (LuaChon == Loc.tatCa)
+                Ds = tttvDAO.LayDanhSachChuaTu(txtTimKiem.Text);
+            else if (LuaChon == Loc.tamTru)
+                Ds = tttvDAO.LayDanhSachTamTru(txtTimKiem.Text);
+            else if (LuaChon == Loc.tamVang)
+                Ds = tttvDAO.LayDanhSachTamVang(txtTimKiem.Text);
+            else if (LuaChon == Loc.quaHan)
+                Ds = tttvDAO.LayDanhSachQuaHan(txtTimKiem.Text);
             nudPage.Value = 1;
-            LoadDanhSach();
+            LoadDanhSach(gvTVTT);
         }
 
-        private string DayFormat()
+        internal override void HeaderText()
         {
-            return "dd/MM/yyyy";
-        }
-
-        private void LoadDanhSach()
-        {
-            gvTVTT.DataSource = listTamTruTamVang.NgatTrang(ds);
             gvTVTT.Columns[4].DefaultCellStyle.Format = DayFormat();
             gvTVTT.Columns[3].DefaultCellStyle.Format = DayFormat();
             HightLightQuaHan();
@@ -86,7 +77,7 @@ namespace QuanLiCongDanThanhPho
             else
                 tTTV.NgayKetThuc = tTTV.NgayKetThuc.AddYears(soLuong);
             tttvDAO.CapNhat(tTTV);
-            TimKiem(luaChon);
+            TimKiem(LuaChon);
         }
 
         // Tô đỏ những người quá hạn tạm trú/tạm vắng
@@ -151,21 +142,18 @@ namespace QuanLiCongDanThanhPho
         // Tìm kiếm theo lựa chọn
         private void TimKiem(dynamic type)
         {
-            luaChon = type;
+            LuaChon = type;
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
         private void nudPage_ValueChanged(object sender, EventArgs e)
         {
-            LoadDanhSach();
+            LoadDanhSach(gvTVTT);
         }
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            if (flpnlPhanLoai.Width > 50)
-                flpnlPhanLoai.Width = 45;
-            else
-                flpnlPhanLoai.Width = 800;
+            Loc_Click(flpnlPhanLoai);
         }
 
         // Tăng thời gian tạm trú/tạm vắng thêm 3 ngày

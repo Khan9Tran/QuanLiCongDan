@@ -3,13 +3,10 @@ using System.Data;
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDanhSachThue : Form
+    public partial class FDanhSachThue : FormDanhSach
     {
         private ThueDAO thueDAO;
         private CongDanDAO cDDAO;
-        private dynamic luaChon; // Khởi tạo lựa chọn bộ lọc
-        private DataTable ds; //Khởi tạo danh sách cho datagridview
-        private Paging listThue;
 
         enum Loc
         {
@@ -25,10 +22,9 @@ namespace QuanLiCongDanThanhPho
 
             thueDAO = new ThueDAO();
             cDDAO = new CongDanDAO();
-            ds = new DataTable();
 
-            luaChon = Loc.tatCa;
-            listThue = new Paging(nudPage, 10);
+            LuaChon = Loc.tatCa;
+            ListData = new Paging(nudPage, 10);
         }
 
         private void FDanhSachThue_Load(object sender, EventArgs e)
@@ -57,22 +53,21 @@ namespace QuanLiCongDanThanhPho
         // Thay đổi danh sách trong datagridview theo từ tìm kiếm
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            if (luaChon == Loc.tatCa)
-                ds = thueDAO.LayDanhSachChuaTu(txtTimKiem.Text);
-            else if (luaChon == Loc.daNop)
-                ds = thueDAO.LayDanhSachSoTienDaNop(txtTimKiem.Text);
-            else if (luaChon == Loc.treHan)
-                ds = thueDAO.LayDanhSachTreHan(txtTimKiem.Text);
+            if (LuaChon == Loc.tatCa)
+                Ds = thueDAO.LayDanhSachChuaTu(txtTimKiem.Text);
+            else if (LuaChon == Loc.daNop)
+                Ds = thueDAO.LayDanhSachSoTienDaNop(txtTimKiem.Text);
+            else if (LuaChon == Loc.treHan)
+                Ds = thueDAO.LayDanhSachTreHan(txtTimKiem.Text);
             nudPage.Value = 1;
-            LoadDanhSach();
+            LoadDanhSach(gvThue);
 
         }
 
-        // Hàm sửa gán datatable cho datagridview
-        private void LoadDanhSach()
+        internal override void HeaderText()
         {
-            gvThue.DataSource = NgatTrang(ds,10);
-            gvThue.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+            gvThue.Columns[4].DefaultCellStyle.Format = DayFormat();
+            gvThue.Columns[5].DefaultCellStyle.Format = DayFormat();
         }
 
         // Hàm hiện thị tiền cần thanh toán
@@ -92,7 +87,7 @@ namespace QuanLiCongDanThanhPho
         
         private void TimKiem(dynamic type)
         {
-            luaChon = type;
+            LuaChon = type;
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
@@ -106,7 +101,7 @@ namespace QuanLiCongDanThanhPho
                 if (maCCCD != "")
                 {
                     thueDAO.XoaThue(maCCCD);
-                    TimKiem(luaChon);
+                    TimKiem(LuaChon);
                 }
             }
         }
@@ -152,15 +147,12 @@ namespace QuanLiCongDanThanhPho
         //Thay đổi page
         private void nudPage_ValueChanged(object sender, EventArgs e)
         {
-            LoadDanhSach();
+            LoadDanhSach(gvThue);
         }
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            if (flpnPhanLoai.Width > 50)
-                flpnPhanLoai.Width = 45;
-            else
-                flpnPhanLoai.Width = 1000;
+            Loc_Click(flpnPhanLoai);
         }
 
         private void btnCongDanCanTaoThue_Click(object sender, EventArgs e)
@@ -196,7 +188,7 @@ namespace QuanLiCongDanThanhPho
                 lastSelectedRowIndex = gvThue.CurrentCell.RowIndex; // Tìm lại dòng đã chọn trước khi load lại
                 lastSelectedColumnIndex = gvThue.CurrentCell.ColumnIndex;   // Tìm lại ô đã chọn
                 MessageBox.Show("Thanh toán thành công");
-                TimKiem(luaChon);
+                TimKiem(LuaChon);
                 DataGridViewRow lastSelectedRow = gvThue.Rows[lastSelectedRowIndex];
                 gvThue.CurrentCell = lastSelectedRow.Cells[lastSelectedColumnIndex];
                 LoadLblThue(gvThue.CurrentCell.RowIndex);

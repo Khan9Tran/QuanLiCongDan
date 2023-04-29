@@ -2,14 +2,9 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDanhSachCongDan : Form
+    public partial class FDanhSachCongDan : FormDanhSach
     {
         private CongDanDAO cdDao;
-        private dynamic luaChon;
-        private DataTable ds;
-        private Paging listCongDan;
-
-        public DataTable Ds { get => ds; set => ds = value; }
 
         enum Loc
         {
@@ -23,65 +18,58 @@ namespace QuanLiCongDanThanhPho
 
         private void KhoiTao()
         {
+            InitializeComponent();
+
             cdDao = new CongDanDAO();
-            StackForm.Add(this);
-            luaChon = Loc.tatCa;
+            ListData = new Paging(nudPage, 15);
+
+            LuaChon = Loc.tatCa;
+
             btnTamVang.Enabled = false;
             btnThue.Enabled = false;
-            listCongDan = new Paging(nudPage, 15);
         }
 
         public FDanhSachCongDan()
         {
-            InitializeComponent();
-            ds = new DataTable();
             KhoiTao();
         }
 
         public FDanhSachCongDan(DataTable ds)
         {
-            InitializeComponent();
-            Ds = ds;
             KhoiTao();
+            Ds = ds;
         }
 
         //Tìm kiếm công dân theo các điều kiện
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            if (luaChon == Loc.tatCa)
+            if (LuaChon == Loc.tatCa)
             {
-                ds = cdDao.LayDanhSachChuaTu(txtTimKiem.Text);
+                Ds = cdDao.LayDanhSachChuaTu(txtTimKiem.Text);
             }
-            else if (luaChon == Loc.nam)
+            else if (LuaChon == Loc.nam)
             {
-                ds = cdDao.LayDanhSachCongDanNam(txtTimKiem.Text);
+                Ds = cdDao.LayDanhSachCongDanNam(txtTimKiem.Text);
             }
-            else if (luaChon == Loc.nu)
+            else if (LuaChon == Loc.nu)
             {
-                ds = cdDao.LayDanhSachCongDanNu(txtTimKiem.Text);
+                Ds = cdDao.LayDanhSachCongDanNu(txtTimKiem.Text);
             }
-            else if (luaChon == Loc.ketHon)
+            else if (LuaChon == Loc.ketHon)
             {
-                ds = cdDao.LayDanhSachDaKetHon(txtTimKiem.Text);
+                Ds = cdDao.LayDanhSachDaKetHon(txtTimKiem.Text);
             }
-            else if (luaChon == Loc.docThan)
+            else if (LuaChon == Loc.docThan)
             {
-                ds = cdDao.LayDanhSachChuaKetHon(txtTimKiem.Text);
+                Ds = cdDao.LayDanhSachChuaKetHon(txtTimKiem.Text);
             }
-            else if (luaChon == Loc.tuoiTac)
+            else if (LuaChon == Loc.tuoiTac)
             {
-                ds = cdDao.LayDanhSachTuoiXepTuBeDenLon(txtTimKiem.Text);
+                Ds = cdDao.LayDanhSachTuoiXepTuBeDenLon(txtTimKiem.Text);
             }
             nudPage.Value = 1;
-            LoadDanhSach();
+            LoadDanhSach(gvDanhSachCongDan);
         }
-
-        //Tải danh sách lên datagridview
-        private void LoadDanhSach()
-        {
-            gvDanhSachCongDan.DataSource = listCongDan.NgatTrang(ds); 
-        }
-
 
         private void FDanhSachCongDan_Load(object sender, EventArgs e)
         {
@@ -151,7 +139,7 @@ namespace QuanLiCongDanThanhPho
 
         private void TimKiem(dynamic type)
         {
-            luaChon = type;
+            LuaChon = type;
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
@@ -201,20 +189,13 @@ namespace QuanLiCongDanThanhPho
         //Đóng mở các nút lọc
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            if (fpnlPhanLoai.Width > 50)
-            {
-                fpnlPhanLoai.Width = 45;
-            }    
-            else 
-            {
-                fpnlPhanLoai.Width = 900;
-            }
+            Loc_Click(fpnlPhanLoai);
         }
 
         //Thay đổi ngắt trang
         private void nudPage_ValueChanged(object sender, EventArgs e)
         {
-            LoadDanhSach();
+            LoadDanhSach(gvDanhSachCongDan);
         }
 
         private void btnThue_Click(object sender, EventArgs e)
