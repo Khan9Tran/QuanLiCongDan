@@ -32,7 +32,7 @@ namespace QuanLiCongDanThanhPho
         private void HienThiKhaiSinh()
         {
             KhaiSinh ks = khaiSinhDAO.LayThongTin(lblCCCD.Text);
-            if (ks.MaKhaiSinh != "unknow")
+            if (ks.MaKhaiSinh != null)
             {
                 if (ks.GioiTinh == "m")
                     lblGioiTinh.Text = "Nam";
@@ -47,7 +47,7 @@ namespace QuanLiCongDanThanhPho
         private void HienThiHoKhau()
         {
             HoKhau hk = hoKhauDAO.LayThongTin(congDan.MaHoKhau);
-            if (hk.MaHoKhau != "unknow")
+            if (hk.MaHoKhau != null)
             {
                 lblDiaChi.Text = hk.DiaChi.toString();
             }
@@ -57,7 +57,7 @@ namespace QuanLiCongDanThanhPho
         private void HienThiCCCD()
         {
             CCCD cCCD = cCCDDAO.LayThongTin(new CCCD(congDan.CCCD, DateTime.Now, "unknow"));
-            if (cCCD.MaCCCD != "unknow")
+            if (cCCD.MaCCCD != null)
             {
                 lblNgayCap.Text = ((DateTime)cCCD.NgayCap).ToString("dd/MM/yyyy");
                 lblDDNhanDang.Text = cCCD.DacDiem;

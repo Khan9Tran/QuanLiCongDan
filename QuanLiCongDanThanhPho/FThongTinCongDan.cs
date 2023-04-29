@@ -85,9 +85,9 @@ namespace QuanLiCongDanThanhPho
         private void LayThue()
         {
             Thue thue = thueDAO.LayThongTin(congDan.CCCD);
-            if (thue.MaThue == null || thue.MaThue == "" || thue.MaThue == "unknow")
+            if (thue.MaThue == null || thue.MaThue == "")
                 btnThue.Enabled = false;
-            if (thue.MaThue != "unknow")
+            if (thue.MaThue != null)
                 txtMaThue.Text = thue.MaThue;
         }
 
@@ -107,7 +107,7 @@ namespace QuanLiCongDanThanhPho
         private void LayHoKhau()
         {
             HoKhau hk = hkDAO.LayThongTin(congDan.MaHoKhau);
-            if (hk.MaHoKhau != "unknow" && isMaHK(hk.MaHoKhau))
+            if (hk.MaHoKhau != null && isMaHK(hk.MaHoKhau))
             {
                 txtDiaChi.Text = hk.DiaChi.toString();
             }
@@ -280,7 +280,7 @@ namespace QuanLiCongDanThanhPho
         private void CapNhatHoKhau()
         {
             HoKhau hoKhau = hkDAO.LayThongTin(txtMaHoKhau.Text);
-            if (hoKhau.MaHoKhau != "unknow")
+            if (hoKhau.MaHoKhau != null)
             {
                 if (txtQuanHeVoiChuHo.Text == "Chủ hộ" && hoKhau.CCCDChuHo != txtCCCD.Text)
                 {

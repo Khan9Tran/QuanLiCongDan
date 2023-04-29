@@ -93,14 +93,14 @@ namespace QuanLiCongDanThanhPho
         private void HienThiCha(KhaiSinh con)
         {
             KhaiSinh ksCha = ksDAO.LayThongTin(con.CCCDCha);
-            if (con.CCCDCha != "")
+            if (con.CCCDCha != "" || con.CCCDCha != null)
                 txtQuocTichCha.Text = ksCha.QuocTich;
         }
 
         private void HienThiMe(KhaiSinh con)
         {
             KhaiSinh ksMe = ksDAO.LayThongTin(con.CCCDMe);
-            if (con.CCCDMe != "")
+            if (con.CCCDMe != "" || con.CCCDMe != null)
                 txtQuocTichMe.Text = ksMe.QuocTich;
         }
 

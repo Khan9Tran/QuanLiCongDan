@@ -87,13 +87,13 @@ namespace QuanLiCongDanThanhPho
             {
                 ThueDAO thueDAO = new ThueDAO();
                 // Kiểm tra nếu không có trong ds thuế thì có thể đăng kí
-                if (thueDAO.LayThongTin(cCCD).MaThue != "unknow")
+                if (thueDAO.LayThongTin(cCCD).MaThue != null)
                 {
                     btnThue.Enabled = false;
                 }
                 TamTruTamVangDAO tttvDAO = new TamTruTamVangDAO();
                 // Kiểm tra nếu không có trogn ds tạm trú, tạm vắng thì có thể đắng kí
-                if (tttvDAO.LayThongTin(cCCD).MaSo != "unknow")
+                if (tttvDAO.LayThongTin(cCCD).MaSo != null)
                 {
                     btnTamVang.Enabled = false;
                 }
@@ -169,7 +169,7 @@ namespace QuanLiCongDanThanhPho
             if (maCCCD != "")
             {
                 CongDan cD = cdDao.LayThongTin(maCCCD);
-                if (cD != null)
+                if (cD.CCCD != null)
                 {
                     cdDao.XoaCongDan(cD);
                     txtTimKiem_TextChanged(txtTimKiem, null);

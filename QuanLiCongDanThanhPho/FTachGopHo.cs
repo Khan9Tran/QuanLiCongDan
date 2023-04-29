@@ -82,7 +82,7 @@ namespace QuanLiCongDanThanhPho
         private bool isHoKhau(string maHoKhau)
         {
             HoKhau hk = hKDAO.LayThongTin(maHoKhau);
-            if (hk.MaHoKhau == "unknow")
+            if (hk.MaHoKhau == null)
                 return false;
             return true;
         }

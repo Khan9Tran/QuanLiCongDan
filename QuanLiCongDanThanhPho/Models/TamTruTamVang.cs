@@ -13,7 +13,6 @@ namespace QuanLiCongDanThanhPho.Models
 
         public TamTruTamVang()
         {
-            maSo = "unknow";
             trangThai = "unknow";
             ngayBatDau = DateTime.Now;
             ngayKetThuc = DateTime.Now;

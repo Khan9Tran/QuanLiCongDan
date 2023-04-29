@@ -14,7 +14,6 @@ namespace QuanLiCongDanThanhPho
 
         public CongDan()
         {
-            ten = "unknow";
             ngheNghiep = "unknow";
             SDT = "unknow";
             tonGiao = "unknow";

@@ -6,12 +6,14 @@ namespace QuanLiCongDanThanhPho
     {
         private HonNhanDAO hNDAO;
         private KhaiSinhDAO kSDAO;
+        private CongDanDAO cDDAO;
 
         public FDangKyHonNhan()
         {
             InitializeComponent();
             hNDAO = new HonNhanDAO();
             kSDAO = new KhaiSinhDAO();
+            cDDAO= new CongDanDAO();
             StackForm.Add(this);
         }
         
@@ -115,7 +117,7 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Người chồng sai giới tính");
                 return false;
             }    
-            if (hNDAO.LayThongTin(txtCCCDChong.Text).TenChong != null)
+            if (hNDAO.LayThongTin(txtCCCDChong.Text).TenVo != null)
             {
                 MessageBox.Show("Người vợ đã kết hôn");
                 return false;
@@ -123,6 +125,16 @@ namespace QuanLiCongDanThanhPho
             else if (kSDAO.LayThongTin(txtCCCDVo.Text).GioiTinh == "m")
             {
                 MessageBox.Show("Người vợ sai giới tính");
+                return false;
+            }
+            if (cDDAO.LayThongTin(txtCCCDChong.Text).CCCD == null)
+            {
+                MessageBox.Show("Người chồng không có trong thành phố");
+                return false;
+            }
+            if (cDDAO.LayThongTin(txtCCCDVo.Text).CCCD == null)
+            {
+                MessageBox.Show("Người vợ không có trong thành phố");
                 return false;
             }
             return true;

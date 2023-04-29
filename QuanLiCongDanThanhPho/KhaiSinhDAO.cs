@@ -48,16 +48,6 @@ namespace QuanLiCongDanThanhPho
             return dt;
         }
 
-        public KhaiSinh LayThongTinNamNuTheoTu(string tu, string dieuKien)
-        {
-            string strSql = string.Format($"SELECT * FROM KHAISINH WHERE MaKS like '%{tu}%'");
-            if (dieuKien.Length > 0)
-            {
-                strSql += string.Format($" AND GioiTinh = '{dieuKien}'");
-            }
-            return conn.LayThongTinKhaiSinh(strSql);
-        }
-
         private int[] SoLuongNguoiTrongNhomTuoi(DataTable dt)
         {
             int[] cntNhomTuoi = { 0, 0 ,0 };

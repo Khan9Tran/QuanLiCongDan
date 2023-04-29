@@ -102,7 +102,7 @@ namespace QuanLiCongDanThanhPho
                     }
                 }
                 TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);
-                if (tTTVDAO.LayThongTin(tTTV.CCCD) == null)
+                if (tTTVDAO.LayThongTin(tTTV.CCCD).MaSo == null)
                     tTTVDAO.ThemTamTruTamVang(tTTV);
                 else
                     MessageBox.Show("Thêm thất bại");

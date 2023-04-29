@@ -32,10 +32,6 @@ namespace QuanLiCongDanThanhPho
             return str;
         }
 
-        public DataTable LayDanhSach()
-        {
-            return conn.LayDanhSach("SELECT " + DatTenThuocTinh() + " FROM HOKHAU EXCEPT SELECT " + DatTenThuocTinh() + " FROM HOKHAU WHERE " + ChuoiDieuKien());
-        }
         public HoKhau LayThongTin(string maHoKhau)
         {
             string sqlStr = string.Format("SELECT * FROM HOKHAU WHERE MaHK = '{0}'", maHoKhau);

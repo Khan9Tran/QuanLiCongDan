@@ -84,10 +84,6 @@ namespace QuanLiCongDanThanhPho
             return str;
         }
 
-        public DataTable LayDanhSach()
-        {
-            return conn.LayDanhSach(DatTenThuocTinh() + " FROM CONGDAN");
-        }
         public DataTable LayDanhSachTheoHoKhau(string maHK)
         {
             return conn.LayDanhSach($"SELECT " + DatTenThuocTinhFHoKhau() + $" FROM CONGDAN WHERE MaHK = '{maHK}'");

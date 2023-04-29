@@ -97,12 +97,22 @@ namespace QuanLiCongDanThanhPho
         {
             CongDan cha = cDDAO.LayThongTin(txtCccdCha.Text);
             CongDan me = cDDAO.LayThongTin(txtCccdMe.Text);
-            if ((cha.Ten != "unknow") && (txtTenCha.Text != cha.Ten))
+            if (cha.CCCD == null)
+            {
+                MessageBox.Show("Cha không có trong thành phố");
+                return false;
+            }
+            if (me.CCCD == null)
+            {
+                MessageBox.Show("Mẹ không có trong thành phố");
+                return false;
+            }
+            if ((cha.Ten != null) && (txtTenCha.Text != cha.Ten))
             {
                 MessageBox.Show("Tên và căn cước công dân cha không khớp");
                 return false;
             }
-            if ((me.Ten != "unknow") && (txtTenMe.Text != me.Ten))
+            if ((me.Ten != null) && (txtTenMe.Text != me.Ten))
             {
                 MessageBox.Show("Tên và căn cước công dân mẹ không khớp");
                 return false;
@@ -110,7 +120,7 @@ namespace QuanLiCongDanThanhPho
             HonNhan Chong = hNDAO.LayThongTin(txtCccdCha.Text);
             HonNhan Vo = hNDAO.LayThongTin(txtCccdMe.Text);
             //Cả vợ và chồng đều có thông tin hôn nhân ở khu vực mới có thể đăng kí khai sinh cho con
-            if (Chong.MaSo != Vo.MaSo || Chong.MaSo == "unknow" || Vo.MaSo == "unknow")
+            if (Chong.MaSo != Vo.MaSo || Chong.MaSo == null || Vo.MaSo == null)
             {
                 MessageBox.Show("Hôn nhân không khớp");
                 return false;

@@ -53,7 +53,7 @@ namespace QuanLiCongDanThanhPho
         private void txtCCCD_TextChanged(object sender, EventArgs e)
         {
             CongDan cD = congDanDAO.LayThongTin(txtCCCD.Text);
-            if (cD != null)
+            if (cD.CCCD != null)
             {
                 txtTen.Text = cD.Ten;
             }

@@ -20,7 +20,6 @@ namespace QuanLiCongDanThanhPho.Models
 
         public Thue() 
         {
-            maThue = "unknow";
             GanMacDinh();
         }
 
