@@ -7,9 +7,7 @@ namespace QuanLiCongDanThanhPho
     {
         DBConnection conn = new DBConnection();
         
-        public CongDanDAO() 
-        {
-        }
+        public CongDanDAO() { }
 
         public void ThemCongDan(CongDan cD)
         {

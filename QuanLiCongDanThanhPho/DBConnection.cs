@@ -56,13 +56,13 @@ namespace QuanLiCongDanThanhPho
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    cd.SDT = reader["SDT"].ToString();
-                    cd.Ten = reader["Ten"].ToString();
-                    cd.CCCD = reader["CCCD"].ToString();
-                    cd.TonGiao = reader["TonGiao"].ToString();
-                    cd.MaHoKhau = reader["MaHK"].ToString();
-                    cd.QuanHeVoiChuHo = reader["QuanHeVoiChuHo"].ToString();
-                    cd.NgheNghiep = reader["NgheNghiep"].ToString();
+                    cd.SDT = (string)reader["SDT"];
+                    cd.Ten = (string)reader["Ten"];
+                    cd.CCCD = (string)reader["CCCD"];
+                    cd.TonGiao = (string)reader["TonGiao"];
+                    cd.MaHoKhau = (string)reader["MaHK"];
+                    cd.QuanHeVoiChuHo = (string)reader["QuanHeVoiChuHo"];
+                    cd.NgheNghiep = (string)reader["NgheNghiep"];
                 }
             }
             catch (Exception ex)
@@ -86,9 +86,9 @@ namespace QuanLiCongDanThanhPho
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    cCCD.MaCCCD = reader["MaCCCD"].ToString();
+                    cCCD.MaCCCD = (string)reader["MaCCCD"];
                     cCCD.NgayCap = reader.GetDateTime("NgayCap");
-                    cCCD.DacDiem = reader["DacDiem"].ToString();
+                    cCCD.DacDiem = (string)reader["DacDiem"];
                 }
             }
             catch (Exception ex)
@@ -111,10 +111,12 @@ namespace QuanLiCongDanThanhPho
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    accTmp.UserName = reader["UserName"].ToString();
-                    accTmp.Password = reader["StrPassword"].ToString();
-                    accTmp.DisplayName = reader["DisplayName"].ToString();
-                    accTmp.Type = int.Parse(reader["QuyenTruyCap"].ToString());
+                    accTmp.UserName = (string)reader["UserName"];
+                    accTmp.Password = (string)reader["StrPassword"];
+                    accTmp.DisplayName = (string)reader["DisplayName"];
+                    int type;
+                    int.TryParse(reader["QuyenTruyCap"].ToString(), out type);
+                    accTmp.Type = type;
                 }
             }
             catch (Exception ex)
@@ -137,23 +139,23 @@ namespace QuanLiCongDanThanhPho
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    ks.MaKhaiSinh = reader["MaKS"].ToString();
-                    ks.HoTen = reader["Ten"].ToString();
+                    ks.MaKhaiSinh = (string)reader["MaKS"];
+                    ks.HoTen = (string)reader["Ten"];
                     ks.NgaySinh = reader.GetDateTime("NgaySinh");
                     ks.NgayDangKy = reader.GetDateTime("NgayDangKy");
-                    ks.GioiTinh = reader["GioiTinh"].ToString();
-                    ks.DanToc = reader["DanToc"].ToString();
-                    ks.QuocTich = reader["QuocTich"].ToString();
+                    ks.GioiTinh = (string)reader["GioiTinh"];
+                    ks.DanToc = (string)reader["DanToc"];
+                    ks.QuocTich = (string)reader["QuocTich"];
                     DiaChi temp = new DiaChi();
-                    temp.DinhDang(reader["NoiSinh"].ToString());
+                    temp.DinhDang((string)reader["NoiSinh"]);
                     ks.NoiSinh = temp;
                     DiaChi temp2 = new DiaChi();
-                    temp2.DinhDang(reader["QueQuan"].ToString());
+                    temp2.DinhDang((string)reader["QueQuan"]);
                     ks.QueQuan = temp2;
-                    ks.CCCDCha = reader["CCCDCha"].ToString();
-                    ks.TenCha = reader["TenCha"].ToString();
-                    ks.CCCDMe = reader["CCCDMe"].ToString();
-                    ks.TenMe = reader["TenMe"].ToString();
+                    ks.CCCDCha = (string)reader["CCCDCha"];
+                    ks.TenCha = (string)reader["TenCha"];
+                    ks.CCCDMe = (string)reader["CCCDMe"];
+                    ks.TenMe = (string)reader["TenMe"];
                 }
             }
             catch (Exception ex)
@@ -177,11 +179,11 @@ namespace QuanLiCongDanThanhPho
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    thue.MaThue = reader["MaThue"].ToString();
+                    thue.MaThue = (string)reader["MaThue"];
                     thue.NgayCapMa = reader.GetDateTime("NgayCap");
                     thue.HanNop = reader.GetDateTime("HanNop");
-                    thue.SoTienCanNop = reader["SoTienCanNop"].ToString();
-                    thue.SoTienDaNop = reader["SoTienDaNop"].ToString();
+                    thue.SoTienCanNop = (string)reader["SoTienCanNop"];
+                    thue.SoTienDaNop = (string)reader["SoTienDaNop"];
                 }
             }
             catch (Exception ex)
@@ -205,10 +207,10 @@ namespace QuanLiCongDanThanhPho
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    hk.MaHoKhau = reader["MaHK"].ToString();
-                    hk.CCCDChuHo = reader["CCCDChuHo"].ToString();
+                    hk.MaHoKhau = (string)reader["MaHK"];
+                    hk.CCCDChuHo = (string)reader["CCCDChuHo"];
                     DiaChi temp = new DiaChi();
-                    temp.DinhDang(reader["DiaChi"].ToString());
+                    temp.DinhDang((string)reader["DiaChi"]);
                     hk.DiaChi = temp;
                 }
             }
@@ -232,14 +234,14 @@ namespace QuanLiCongDanThanhPho
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    hn.MaSo = reader["MaHonNhan"].ToString();
-                    hn.CCCDChong = reader["CCCDNam"].ToString();
-                    hn.TenChong = reader["TenNam"].ToString();
-                    hn.CCCDVo = reader["CCCDNu"].ToString();
-                    hn.TenVo = reader["TenNu"].ToString();
+                    hn.MaSo = (string)reader["MaHonNhan"];
+                    hn.CCCDChong = (string)reader["CCCDNam"];
+                    hn.TenChong = (string)reader["TenNam"];
+                    hn.CCCDVo = (string)reader["CCCDNu"];
+                    hn.TenVo = (string)reader["TenNu"];
                     hn.NgayDangKy = reader.GetDateTime("NgayDangKy");
                     DiaChi temp = new DiaChi();
-                    temp.DinhDang(reader["NoiDangKy"].ToString());
+                    temp.DinhDang((string)reader["NoiDangKy"]);
                     hn.NoiDangKy = temp;
                 }
             }
@@ -263,14 +265,14 @@ namespace QuanLiCongDanThanhPho
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    tttv.MaSo = reader["MaTTTV"].ToString();
-                    tttv.CCCD = reader["CCCD"].ToString();
+                    tttv.MaSo = (string)reader["MaTTTV"];
+                    tttv.CCCD = (string)reader["CCCD"];
                     tttv.NgayBatDau = reader.GetDateTime("NgayBD");
                     tttv.NgayKetThuc = reader.GetDateTime("NgayKT");
-                    tttv.TrangThai = reader["TrangThai"].ToString();
-                    tttv.LyDo = reader["LiDo"].ToString();
+                    tttv.TrangThai = (string)reader["TrangThai"];
+                    tttv.LyDo = (string)reader["LiDo"];
                     DiaChi temp = new DiaChi();
-                    temp.DinhDang(reader["DiaChi"].ToString());
+                    temp.DinhDang((string)reader["DiaChi"]);
                     tttv.DiaChi = temp;
                 }
             }
