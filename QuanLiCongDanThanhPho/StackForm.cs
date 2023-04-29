@@ -4,7 +4,7 @@ namespace QuanLiCongDanThanhPho
     static internal class StackForm
     {
         static private List<Form> forms = new List<Form>();
-        private static FTrangChu trangChu = new FTrangChu();
+        private static FTrangChu trangChu;
 
         public static FTrangChu TrangChu { get => trangChu; set => trangChu = value; }
 

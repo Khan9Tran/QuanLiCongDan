@@ -2,24 +2,27 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FThongTinKhaiSinh : Form
+    public partial class FThongTinKhaiSinh : MoveForm
     {
         private string maCCCD;
         private KhaiSinhDAO ksDAO;
         private CongDanDAO cdDAO;
-        const int WM_NCHITTEST = 0x84;
-        const int HTCLIENT = 0x1;
-        const int HTCAPTION = 0x2;
+
+        private ToolsForControl tool;
 
         public string MaCCCD { get => maCCCD; set => maCCCD = value; }
 
         public FThongTinKhaiSinh(string maCCCD)
         {
             MaCCCD = maCCCD;
+
             InitializeComponent();
+            StackForm.Add(this);
+
             ksDAO = new KhaiSinhDAO();
             cdDAO = new CongDanDAO();
-            StackForm.Add(this);
+
+            SetTools();
         }
 
         private void btnThongTinCha_Click(object sender, EventArgs e)
@@ -31,50 +34,16 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
-        private void ReadOnly()
+        private void SetTools()
         {
-            txtGioiTinh.ReadOnly = true;
-            txtGioiTinh.BackColor = Color.Gainsboro;
-            txtQuocTich.ReadOnly= true;
-            txtQuocTich.BackColor = Color.Gainsboro;
-            txtDanToc.ReadOnly= true;
-            txtDanToc.BackColor = Color.Gainsboro;
-            txtQueQuan.ReadOnly = true;
-            txtQueQuan.BackColor = Color.Gainsboro; 
-            txtNoiSinh.ReadOnly = true;
-            txtNoiSinh.BackColor= Color.Gainsboro;
-            btnXacNhan.Enabled = false;
-            dtmNgaySinh.Enabled = false;
-            dtmNgayDangKy.Enabled = false;
-        }
+            List<TextBox> listTxt = new List<TextBox>()
+            { txtGioiTinh, txtQuocTich, txtDanToc, txtQueQuan, txtNoiSinh};
 
-        private void UnReadOnLy()
-        {
-            txtGioiTinh.ReadOnly = false;
-            txtGioiTinh.BackColor = Color.SteelBlue;
-            txtQuocTich.ReadOnly = false;
-            txtQuocTich.BackColor = Color.SteelBlue;
-            txtDanToc.ReadOnly = false;
-            txtDanToc.BackColor = Color.SteelBlue;
-            txtQueQuan.ReadOnly = false;
-            txtQueQuan.BackColor = Color.SteelBlue;
-            txtNoiSinh.ReadOnly = false;
-            txtNoiSinh.BackColor = Color.SteelBlue;
-            btnXacNhan.Enabled = true;
-            dtmNgaySinh.Enabled = true;
-            dtmNgayDangKy.Enabled = true;
-        }
-
-        private void AutoReadOnly()
-        {
-            if (txtGioiTinh.ReadOnly == false)
+            List<Control> listControl = new List<Control>()
             {
-                ReadOnly();
-            }    
-            else
-            {
-                UnReadOnLy();
-            }    
+                btnXacNhan, dtmNgaySinh, dtmNgayDangKy
+            };
+            tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
         }
 
         private bool KiemTraThongTin()
@@ -174,15 +143,6 @@ namespace QuanLiCongDanThanhPho
             LayThongTinKhaiKhaiSinh();
         }
 
-        // Tạo kéo thả form
-        protected override void WndProc(ref Message message)
-        {
-            base.WndProc(ref message);
-
-            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
-                message.Result = (IntPtr)HTCAPTION;
-        }
-
         private void CapNhatKhaiSinh()
         {
             if (KiemTraThongTin())
@@ -197,7 +157,7 @@ namespace QuanLiCongDanThanhPho
                 kS.DinhDangGioiTinh();
                 kS.NgayDangKy = dtmNgayDangKy.Value;
                 ksDAO.CapNhatKhaiSinh(kS);
-                ReadOnly();
+                tool.TurnOff();
                 LayThongTinKhaiKhaiSinh();
             }    
         }
@@ -209,12 +169,12 @@ namespace QuanLiCongDanThanhPho
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            AutoReadOnly();
+            tool.AutoReadOnly();
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {
-            ReadOnly();
+            tool.TurnOff();
             LayThongTinKhaiKhaiSinh();
         }
     }

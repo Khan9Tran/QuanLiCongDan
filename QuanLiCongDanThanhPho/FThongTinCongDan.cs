@@ -2,7 +2,7 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FThongTinCongDan : Form
+    public partial class FThongTinCongDan : MoveForm
     {
         private CongDan congDan;
         private CongDanDAO cdDAO;
@@ -13,22 +13,11 @@ namespace QuanLiCongDanThanhPho
         private TamTruTamVangDAO tttvDAO;
         private CCCDDAO cCCDDAO;
 
+        private ToolsForControl tool;
+
         private string maTamTru = "00000B";
         private string maChuaCoHK = "00000A";
         private HinhDaiDien hinhCongDan;
-
-        const int WM_NCHITTEST = 0x84;
-        const int HTCLIENT = 0x1;
-        const int HTCAPTION = 0x2;
- 
-        // Tạo kéo thả form
-        protected override void WndProc(ref Message message)
-        {
-            base.WndProc(ref message);
-
-            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
-                message.Result = (IntPtr)HTCAPTION;
-        }
 
         public FThongTinCongDan(CongDan congDan)
         {
@@ -43,6 +32,7 @@ namespace QuanLiCongDanThanhPho
             cCCDDAO = new CCCDDAO();
             this.congDan = congDan;
             hinhCongDan = new HinhDaiDien(HinhDaiDien.Type.congDan);
+            SetTools();
         }
         
         //Mở F khai sinh
@@ -52,78 +42,16 @@ namespace QuanLiCongDanThanhPho
             tTKS.ShowDialog();
         }
 
-        //Chỉ cho phép xem
-        private void ReadOnly()
+        private void SetTools()
         {
-            txtNgheNghiep.ReadOnly = true;
-            txtNgheNghiep.BackColor = Color.Gainsboro;
-            txtHoVaTen.ReadOnly = true;
-            txtHoVaTen.BackColor = Color.Gainsboro;
-            txtSDT.ReadOnly= true;
-            txtSDT.BackColor = Color.Gainsboro;
-            txtTonGiao.ReadOnly= true;
-            txtTonGiao.BackColor = Color.Gainsboro;
-            btnXacNhan.Enabled = false;
-            txtDanToc.ReadOnly = true;
-            txtDanToc.BackColor= Color.Gainsboro;
-            txtQueQuan.ReadOnly = true;
-            txtQueQuan.BackColor = Color.Gainsboro;
-            txtQuocTich.ReadOnly = true;
-            txtQuocTich.BackColor = Color.Gainsboro;
-            txtDiaChi.ReadOnly = true;
-            txtDiaChi.BackColor = Color.Gainsboro;
-            txtGioiTinh.ReadOnly = true;
-            txtGioiTinh.BackColor = Color.Gainsboro;
-            txtQuanHeVoiChuHo.ReadOnly = true;
-            txtQuanHeVoiChuHo.BackColor = Color.Gainsboro;
-            dtmNgaySinh.Enabled = false;
-            ptcHinhDaiDien.Enabled = false;
-            ptcHinhDaiDien.BackColor = Color.Transparent;
-        }
-
-        //Cho phép sửa đổi
-        private void UnReadOnLy()
-        {
-            txtNgheNghiep.ReadOnly = false;
-            txtNgheNghiep.BackColor = Color.SteelBlue;
-            txtHoVaTen.ReadOnly = false;
-            txtHoVaTen.BackColor = Color.SteelBlue;  
-            txtSDT.ReadOnly = false;
-            txtSDT.BackColor = Color.SteelBlue;
-            txtTonGiao.ReadOnly = false;
-            txtTonGiao.BackColor = Color.SteelBlue;
-            btnXacNhan.Enabled = true;
-            txtDanToc.ReadOnly = false;
-            txtDanToc.BackColor = Color.SteelBlue;
-            txtQueQuan.ReadOnly = false;
-            txtQueQuan.BackColor = Color.SteelBlue;
-            txtQuocTich.ReadOnly = false;
-            txtQuocTich.BackColor = Color.SteelBlue;
-            txtDiaChi.ReadOnly = false;
-            txtDiaChi.BackColor = Color.SteelBlue;
-            txtGioiTinh.ReadOnly = false;
-            txtGioiTinh.BackColor = Color.SteelBlue;
-            if (txtMaHoKhau.Text != "")
+            List<TextBox> listTxt = new List<TextBox>()
+            { txtNgheNghiep, txtHoVaTen, txtSDT, txtTonGiao, txtDanToc, txtQueQuan,
+                txtQuocTich, txtDiaChi, txtGioiTinh, txtQuanHeVoiChuHo};
+            List<Control> listControl = new List<Control>()
             {
-                txtQuanHeVoiChuHo.ReadOnly = false;
-                txtQuanHeVoiChuHo.BackColor = Color.SteelBlue;
-            }
-            dtmNgaySinh.Enabled = true;
-            ptcHinhDaiDien.Enabled = true;
-            ptcHinhDaiDien.BackColor = Color.SteelBlue;
-        }
-
-        //Tự động đổi chế độ
-        private void AutoReadOnly()
-        {
-            if (txtHoVaTen.ReadOnly == true)
-            {
-                UnReadOnLy();
-            }
-            else
-            {
-                ReadOnly();
-            }
+                btnXacNhan, dtmNgaySinh, ptcHinhDaiDien
+            };
+            tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
         }
 
         //Lấy ảnh công dân hiện lên picturebox
@@ -368,7 +296,7 @@ namespace QuanLiCongDanThanhPho
 
         private void btnSua_Click(object sender, EventArgs e)
         {  
-            AutoReadOnly();
+            tool.AutoReadOnly();
         }
 
         private void CapNhatHonNhan()
@@ -393,14 +321,14 @@ namespace QuanLiCongDanThanhPho
                 CapNhatHonNhan();
                 LayThongTinCongDan();
                 CapNhatHoKhau();
-                ReadOnly();
+                tool.AutoReadOnly();
             }    
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {
             LayThongTinCongDan();
-            ReadOnly();
+            tool.AutoReadOnly();
         }
 
         private void ThemHinh()

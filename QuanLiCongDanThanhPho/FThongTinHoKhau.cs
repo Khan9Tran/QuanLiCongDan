@@ -3,14 +3,13 @@ using System.Data;
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FThongTinHoKhau : Form
+    public partial class FThongTinHoKhau : MoveForm
     {
         private string maHoKhau;
         private HoKhauDAO hkDAO;
         private CongDanDAO cdDAO;
-        const int WM_NCHITTEST = 0x84;
-        const int HTCLIENT = 0x1;
-        const int HTCAPTION = 0x2;
+
+        private ToolsForControl tool;
 
         public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
 
@@ -18,9 +17,12 @@ namespace QuanLiCongDanThanhPho
         {
             MaHoKhau = maHoKhau;
             InitializeComponent();
+            StackForm.Add(this);
+
             hkDAO = new HoKhauDAO();
             cdDAO = new CongDanDAO();
-            StackForm.Add(this);
+
+            SetTools();
         }
 
         // Hiển thị thông tin của hổ khẩu
@@ -73,39 +75,16 @@ namespace QuanLiCongDanThanhPho
             LayThongTinHoKhau();
         }
 
-        // Tạo kéo thả form
-        protected override void WndProc(ref Message message)
+        private void SetTools()
         {
-            base.WndProc(ref message);
+            List<TextBox> listTxt = new List<TextBox>()
+            {txtDiaChi};
 
-            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
-                message.Result = (IntPtr)HTCAPTION;
-        }
-
-        private void ReadOnly()
-        {
-            txtDiaChi.ReadOnly = true;
-            txtDiaChi.BackColor = Color.Gainsboro;
-            btnXacNhan.Enabled = false;
-        }
-
-        private void UnReadOnly()
-        {
-            txtDiaChi.ReadOnly = false;
-            txtDiaChi.BackColor = Color.SteelBlue;
-            btnXacNhan.Enabled = true;
-        }
-
-        private void AutoReadOnly()
-        {
-            if (txtDiaChi.ReadOnly == false)
+            List<Control> listControl = new List<Control>()
             {
-                ReadOnly();
-            }
-            else
-            {
-                UnReadOnly();
-            }
+                btnXacNhan
+            };
+            tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
         }
 
         private void gvQuanHeVoiChuHo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -123,20 +102,21 @@ namespace QuanLiCongDanThanhPho
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            AutoReadOnly();
+            tool.AutoReadOnly();
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             CapNhatHoKhau();
             LayThongTinHoKhau();
-            ReadOnly();
+            tool.TurnOff();
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {
             LayThongTinHoKhau();
-            ReadOnly();
+            tool.State = ToolsForControl.Turn.on;
+            tool.TurnOff();
         }
     }
 }

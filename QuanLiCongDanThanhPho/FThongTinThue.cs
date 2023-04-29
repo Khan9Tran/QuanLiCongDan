@@ -2,15 +2,14 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FThongTinThue : Form
+    public partial class FThongTinThue : MoveForm
     {
         private string maCCCD;
         private ThueDAO thueDAO;
         private CongDanDAO cdDAO;
         private HoKhauDAO hkDAO;
-        const int WM_NCHITTEST = 0x84;
-        const int HTCLIENT = 0x1;
-        const int HTCAPTION = 0x2;
+
+        private ToolsForControl tool;
 
         public string MaCCCD
         {
@@ -18,25 +17,17 @@ namespace QuanLiCongDanThanhPho
             get { return maCCCD; }
         }
 
-        private void KhoiTao()
-        {
-            thueDAO = new ThueDAO();
-            cdDAO = new CongDanDAO();
-            hkDAO = new HoKhauDAO();
-            StackForm.Add(this);
-        }
-
-        public FThongTinThue()
-        {
-            InitializeComponent();
-            KhoiTao();
-        }
-
         public FThongTinThue(string maCCCD)
         {
             MaCCCD = maCCCD;
             InitializeComponent();
-            KhoiTao();
+            StackForm.Add(this);
+
+            thueDAO = new ThueDAO();
+            cdDAO = new CongDanDAO();
+            hkDAO = new HoKhauDAO();
+
+            SetTools();
         }
 
         private bool KiemTraThongTin()
@@ -56,39 +47,16 @@ namespace QuanLiCongDanThanhPho
             return true;
         }
 
-        private void ReadOnly()
+        private void SetTools()
         {
-            txtSoTienCanNop.ReadOnly = true;
-            txtSoTienCanNop.BackColor = Color.Gainsboro;
-            txtSoTienDaNop.ReadOnly = true;
-            txtSoTienDaNop.BackColor = Color.Gainsboro;
-            dtmHanNopThue.Enabled = false;
-            dtmNgayCapMaSoThue.Enabled = false;
-            btnXacNhan.Enabled = false;
-        }
+            List<TextBox> listTxt = new List<TextBox>()
+            {txtSoTienCanNop, txtSoTienDaNop};
 
-        private void UnReanOnly()
-        {
-            txtSoTienCanNop.ReadOnly = false;
-            txtSoTienCanNop.BackColor = Color.SteelBlue;
-            txtSoTienDaNop.ReadOnly = false;
-            txtSoTienDaNop.BackColor = Color.SteelBlue;
-            dtmHanNopThue.Enabled = true;
-            dtmNgayCapMaSoThue.Enabled = true;
-            btnXacNhan.Enabled = true;
-        }
-
-        private void AutoReadOnly()
-        {
-            if (txtSoTienCanNop.ReadOnly == false)
+            List<Control> listControl = new List<Control>()
             {
-                ReadOnly();
-            }
-            else
-            {
-                UnReanOnly();
-            } 
-                
+                dtmHanNopThue, dtmNgayCapMaSoThue, btnXacNhan
+            };
+            tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
         }
 
         private void LayThongTinThue()
@@ -115,15 +83,6 @@ namespace QuanLiCongDanThanhPho
             LayThongTinThue();
         }
 
-        // Tạo kéo thả form
-        protected override void WndProc(ref Message message)
-        {
-            base.WndProc(ref message);
-
-            if (message.Msg == WM_NCHITTEST && (int)message.Result == HTCLIENT)
-                message.Result = (IntPtr)HTCAPTION;
-        }
-
         private void CapNhatThue()
         {
             Thue thue = thueDAO.LayThongTin(MaCCCD);
@@ -144,19 +103,19 @@ namespace QuanLiCongDanThanhPho
             {
                 CapNhatThue();
                 LayThongTinThue();
-                ReadOnly();
+                tool.TurnOff();
             }    
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            AutoReadOnly();
+            tool.AutoReadOnly();
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {
             LayThongTinThue();
-            ReadOnly();
+            tool.TurnOff();
         }
     }
 }

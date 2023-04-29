@@ -22,9 +22,11 @@ namespace QuanLiCongDanThanhPho
         {
             InitializeComponent();
             StackForm.Add(this);
+
             thueDAO = new ThueDAO();
             cDDAO = new CongDanDAO();
             ds = new DataTable();
+
             luaChon = Loc.tatCa;
             listThue = new Paging(nudPage, 10);
         }
