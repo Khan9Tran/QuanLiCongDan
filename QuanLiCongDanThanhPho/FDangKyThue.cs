@@ -9,6 +9,7 @@ namespace QuanLiCongDanThanhPho
 
         private void KhoiTao()
         {
+            InitializeComponent();
             StackForm.Add(this);
             cDDAO = new CongDanDAO();
             thueDAO = new ThueDAO();
@@ -16,15 +17,15 @@ namespace QuanLiCongDanThanhPho
 
         public FDangKyThue()
         {
-            InitializeComponent();
             KhoiTao();
         }
+
         public FDangKyThue(string cCCD)
         {
-            InitializeComponent();
             KhoiTao();
             LoadThongTin(cCCD);
         }
+
         private void LoadThongTin(string cCCD)
         {
             if (cCCD != null)
@@ -67,23 +68,9 @@ namespace QuanLiCongDanThanhPho
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
-
-            func = (controls) =>
-            {
-                foreach (Control control in controls)
-                {
-                    if (control is TextBox)
-                    {
-                        (control as TextBox).Clear();
-                    }
-                    else
-                    {
-                        func(control.Controls);
-                    }
-                }
-            };
-            func(Controls);
+            ToolsForControl.ClearTextBox(Controls);
+            dtpNgayCapMa.Value = DateTime.Now;
+            dtpHanNop.Value = DateTime.Now;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)

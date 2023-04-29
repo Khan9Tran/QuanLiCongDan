@@ -8,6 +8,7 @@ namespace QuanLiCongDanThanhPho
         private KhaiSinhDAO kSDAO;
         private ThueDAO thueDAO;
         private HonNhanDAO hNDAO;
+        private HoKhauDAO hKDAO;
         private HinhDaiDien hinhDaiDien;
 
         enum LuaChon
@@ -24,6 +25,7 @@ namespace QuanLiCongDanThanhPho
             kSDAO = new KhaiSinhDAO();
             thueDAO = new ThueDAO();
             hNDAO = new HonNhanDAO();
+            hKDAO = new HoKhauDAO();
             hinhDaiDien = new HinhDaiDien(HinhDaiDien.Type.congDan);
         }
 
@@ -31,6 +33,11 @@ namespace QuanLiCongDanThanhPho
         {
             if (KiemTraThongTin())
             {
+                if (cboQuanHe.SelectedItem.ToString() == "Chủ hộ")
+                {
+                    HoKhau hK = new HoKhau(txtHoKhau.Text, txtDiaChi.Text, txtCCCD.Text);
+                    hKDAO.ThemHoKhau(hK);
+                }
                 CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, (string)cboTonGiao.SelectedItem, txtHoKhau.Text, (string)cboQuanHe.SelectedItem, txtDiaChi.Text);
                 cdDAO.ThemCongDan(cD);
 
@@ -53,23 +60,9 @@ namespace QuanLiCongDanThanhPho
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
-
-            func = (controls) =>
-            {
-                foreach (Control control in controls)
-                {
-                    if (control is TextBox)
-                    {
-                        (control as TextBox).Clear();
-                    }
-                    else
-                    {
-                        func(control.Controls);
-                    }
-                }
-            };
-            func(Controls);
+            ToolsForControl.ClearTextBox(Controls);
+            dtmDKKhaiSinh.Value = DateTime.Now;
+            dtmNgaySinh.Value = DateTime.Now;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)

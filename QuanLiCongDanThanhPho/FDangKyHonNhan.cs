@@ -5,13 +5,13 @@ namespace QuanLiCongDanThanhPho
     public partial class FDangKyHonNhan : Form
     {
         private HonNhanDAO hNDAO;
-        private KhaiSinhDAO ksDAO;
+        private KhaiSinhDAO kSDAO;
 
         public FDangKyHonNhan()
         {
             InitializeComponent();
             hNDAO = new HonNhanDAO();
-            ksDAO = new KhaiSinhDAO();
+            kSDAO = new KhaiSinhDAO();
             StackForm.Add(this);
         }
         
@@ -110,7 +110,7 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Người chồng đã kết hôn");
                 return false;
             }
-            else if (ksDAO.LayThongTin(txtCCCDChong.Text).GioiTinh == "f")
+            else if (kSDAO.LayThongTin(txtCCCDChong.Text).GioiTinh == "f")
             {
                 MessageBox.Show("Người chồng sai giới tính");
                 return false;
@@ -120,7 +120,7 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Người vợ đã kết hôn");
                 return false;
             }
-            else if (ksDAO.LayThongTin(txtCCCDVo.Text).GioiTinh == "m")
+            else if (kSDAO.LayThongTin(txtCCCDVo.Text).GioiTinh == "m")
             {
                 MessageBox.Show("Người vợ sai giới tính");
                 return false;
@@ -132,11 +132,7 @@ namespace QuanLiCongDanThanhPho
         //Xóa các textbox
         public void Clear()
         {
-            txtCCCDChong.Clear();
-            txtCCCDVo.Clear();
-            txtTenChong.Clear();
-            txtTenVo.Clear();
-            txtNoiDK.Clear();
+            ToolsForControl.ClearTextBox(Controls);
             dtpNgayDangKy.Value = DateTime.Now;
         }
 
@@ -169,7 +165,7 @@ namespace QuanLiCongDanThanhPho
         //Trả về tên hôn nhân thep mã số
         private string LayTenTheoCCCD(string cCCD)
         {
-            KhaiSinh ks = ksDAO.LayThongTin(cCCD);
+            KhaiSinh ks = kSDAO.LayThongTin(cCCD);
             return ks.HoTen;
         }
 

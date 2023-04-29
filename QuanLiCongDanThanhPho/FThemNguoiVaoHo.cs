@@ -41,10 +41,7 @@ namespace QuanLiCongDanThanhPho
 
         private void Reset()
         {
-            txtCCCD.Text = "";
-            txtTen.Text = "";
-            txtMaHo.Text = "";
-            txtQuanHeVoiChuHo.Text = "";
+            ToolsForControl.ClearTextBox(Controls);
             gvNguoiChuaCoHoKhau.Hide();
             lblThongTin.Hide();
             LoadDanhSachChuaHoKhau();

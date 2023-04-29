@@ -37,24 +37,17 @@ namespace QuanLiCongDanThanhPho
             congDanDAO.XoaCongDan(cD);
         }
 
-        private void Reset()
-        {
-            txtCCCD.Clear();
-            txtTen.Clear();
-        }
-
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             if (KiemTraThongTin())
             {
                 XoaCongDan();
-                Reset();
             }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            Reset();
+            ToolsForControl.ClearTextBox(Controls);
         }
 
         private void txtCCCD_TextChanged(object sender, EventArgs e)

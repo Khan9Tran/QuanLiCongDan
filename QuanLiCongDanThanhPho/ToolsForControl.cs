@@ -22,6 +22,17 @@ namespace QuanLiCongDanThanhPho
 
         public Turn State { set => state = value; }
 
+        public static void ClearTextBox(Control.ControlCollection Controls)
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is TextBox)
+                {
+                    (control as TextBox).Clear();
+                }
+            }
+        }
+
         public void AutoReadOnly()
         {
             if (state == Turn.on)
