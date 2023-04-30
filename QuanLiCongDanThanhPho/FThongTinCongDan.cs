@@ -253,7 +253,7 @@ namespace QuanLiCongDanThanhPho
             tTHN.ShowDialog();
         }
 
-        private void CapNhatKhaiSinh()
+        private bool CapNhatKhaiSinh()
         {
             KhaiSinh khaiSinh = ksDAO.LayThongTin(congDan.CCCD);
             khaiSinh.HoTen = txtHoVaTen.Text;
@@ -263,21 +263,21 @@ namespace QuanLiCongDanThanhPho
             khaiSinh.QuocTich = txtQuocTich.Text;
             khaiSinh.GioiTinh = txtGioiTinh.Text;
             khaiSinh.DinhDangGioiTinh();
-            ksDAO.CapNhatKhaiSinh(khaiSinh);  
+            return ksDAO.CapNhatKhaiSinh(khaiSinh);  
         }    
 
-        private void CapNhatCongDan()
+        private bool CapNhatCongDan()
         {
             congDan.Ten = txtHoVaTen.Text;
             congDan.SDT = txtSDT.Text;
             congDan.NgheNghiep = txtNgheNghiep.Text;
             congDan.TonGiao = txtTonGiao.Text;
             congDan.QuanHeVoiChuHo = txtQuanHeVoiChuHo.Text;
-            cdDAO.CapNhatCongDan(congDan);
+            return cdDAO.CapNhatCongDan(congDan);
         }
 
         //Thay đổi chủ hộ ở table hộ khẩu nếu có
-        private void CapNhatHoKhau()
+        private bool CapNhatHoKhau()
         {
             HoKhau hoKhau = hkDAO.LayThongTin(txtMaHoKhau.Text);
             if (hoKhau.MaHoKhau != null)
@@ -287,11 +287,13 @@ namespace QuanLiCongDanThanhPho
                     CongDan cD = cdDAO.LayThongTin(hoKhau.CCCDChuHo);
                     cD.QuanHeVoiChuHo = "Unknow";
                     hoKhau.CCCDChuHo = txtCCCD.Text;
-                    cdDAO.CapNhatCongDan(cD);
+                    if (!cdDAO.CapNhatCongDan(cD))
+                        return false;
                 }
                 hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
-                hkDAO.CapNhatHoKhau(hoKhau);
+                return hkDAO.CapNhatHoKhau(hoKhau);
             }
+            return false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -299,7 +301,7 @@ namespace QuanLiCongDanThanhPho
             tool.AutoReadOnly();
         }
 
-        private void CapNhatHonNhan()
+        private bool CapNhatHonNhan()
         {
             if (txtHonNhan.Text != "Chưa có hôn nhân" && txtHonNhan.Text != "")
             {
@@ -308,19 +310,37 @@ namespace QuanLiCongDanThanhPho
                     hn.TenChong = txtHoVaTen.Text;  
                 else
                     hn.TenVo = txtHoVaTen.Text;
-                hnDAO.CapNhatHonNhan(hn);
+                return hnDAO.CapNhatHonNhan(hn);
             }
+            return false;
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {  
             if (KiemTraThongTin())
             {
-                CapNhatCongDan();
-                CapNhatKhaiSinh();
-                CapNhatHonNhan();
+                if (!CapNhatCongDan())
+                {
+                    MessageBox.Show("Cập nhật thông tin công dân thất bại");
+                    return;
+                }
+                if (!CapNhatKhaiSinh())
+                {
+                    MessageBox.Show("Cập nhật thông tin công dân thất bại");
+                    return;
+                }
+                if (!CapNhatHonNhan())
+                {
+                    MessageBox.Show("Cập nhật thông tin công dân thất bại");
+                    return;
+                }
                 LayThongTinCongDan();
-                CapNhatHoKhau();
+                if (!CapNhatHoKhau())
+                {
+                    MessageBox.Show("Cập nhật thông tin công dân thất bại");
+                    return;
+                }
+                MessageBox.Show("Cập nhất thông tin công dân thành công");
                 tool.AutoReadOnly();
             }    
         }

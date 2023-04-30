@@ -67,7 +67,10 @@ namespace QuanLiCongDanThanhPho
             {
                 hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
             }
-            hkDAO.CapNhatHoKhau(hoKhau);
+            if (hkDAO.CapNhatHoKhau(hoKhau))
+                MessageBox.Show("Cập nhất hộ khẩu thành công");
+            else
+                MessageBox.Show("Cập nhật hổ khẩu thất bại");
         }
 
         private void FThongTinHoKhau_Load(object sender, EventArgs e)

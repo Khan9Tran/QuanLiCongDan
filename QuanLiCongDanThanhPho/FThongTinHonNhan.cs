@@ -97,7 +97,10 @@ namespace QuanLiCongDanThanhPho
             {
                 hN.NoiDangKy.DinhDang(txtNoiDangKy.Text);
                 hN.NgayDangKy = dtmNgayDangKy.Value;
-                hNDAO.CapNhatHonNhan(hN);
+                if (hNDAO.CapNhatHonNhan(hN))
+                    MessageBox.Show("Cập nhật hôn nhân thành công");
+                else
+                    MessageBox.Show("Cập nhật hôn nhân thất bại");
             }
         }
 

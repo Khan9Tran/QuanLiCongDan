@@ -7,7 +7,7 @@ namespace QuanLiCongDanThanhPho
     internal class DBConnection
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
-        public void ThucThi(string sqlStr, string thongBao)
+        public bool ThucThi(string sqlStr)
         {
             try
             {
@@ -15,12 +15,13 @@ namespace QuanLiCongDanThanhPho
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show(thongBao);
+                    return true;
                 }
+                return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Thất bại" + ex);
+                return false;
             }
             finally
             {

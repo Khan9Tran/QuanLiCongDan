@@ -11,20 +11,23 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format($"INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('{kS.MaKhaiSinh}' , N'{kS.HoTen}', '{kS.NgaySinh}','{kS.NgayDangKy}', '{kS.GioiTinh}', N'{kS.DanToc}', N'{kS.QuocTich}', N'{kS.NoiSinh.toString()}', N'{kS.QueQuan.toString()}','{kS.CCCDCha}', N'{kS.TenCha}', '{kS.CCCDMe}', N'{kS.TenMe}');");
             return sqlStr;
         }
-        public void CapNhatKhaiSinh(KhaiSinh kS)
+        public bool CapNhatKhaiSinh(KhaiSinh kS)
         {
             string sqlStr = string.Format($"UPDATE KHAISINH SET  Ten = N'{kS.HoTen}', NgaySinh = '{kS.NgaySinh}', NgayDangKy = '{kS.NgayDangKy}', GioiTinh = '{kS.GioiTinh}', DanToc = N'{kS.DanToc}', QuocTich = N'{kS.QuocTich}', NoiSinh = N'{kS.NoiSinh.toString()}', QueQuan = N'{kS.QueQuan.toString()}', CCCDCha = '{kS.CCCDCha}', TenCha = N'{kS.TenCha}', CCCDMe = '{kS.CCCDMe}', TenMe = N'{kS.TenMe}' WHERE MaKS = '{kS.MaKhaiSinh}'");
-            conn.ThucThi(sqlStr, "Cập nhật khai sinh thành công");
+            return conn.ThucThi(sqlStr);
+            //"Cập nhật khai sinh thành công"
         }
-        public void ThemKhaSinh(KhaiSinh kS)
+        public bool ThemKhaSinh(KhaiSinh kS)
         {
             string sqlStr = StringKhaiSinh(kS);
-            conn.ThucThi(sqlStr,"Thêm khai sinh thành công");
+            return conn.ThucThi(sqlStr);
+            //"Thêm khai sinh thành công"
         }
-        public void XoaKhaiSinh(string maKhaiSinh)
+        public bool XoaKhaiSinh(string maKhaiSinh)
         {
             string sqlStr = string.Format($"DELETE FROM KHAISINH WHERE MaKS = '{maKhaiSinh}'");
-            conn.ThucThi(sqlStr, "Xóa khai sinh thành công");
+            return conn.ThucThi(sqlStr);
+            //"Xóa khai sinh thành công"
         }
         public KhaiSinh LayThongTin(string maCCCD)
         {

@@ -36,25 +36,46 @@ namespace QuanLiCongDanThanhPho
                 if (cboQuanHe.SelectedItem.ToString() == "Chủ hộ")
                 {
                     HoKhau hK = new HoKhau(txtHoKhau.Text, txtDiaChi.Text, txtCCCD.Text);
-                    hKDAO.ThemHoKhau(hK);
+                    if (!hKDAO.ThemHoKhau(hK))
+                    {
+                        MessageBox.Show("Thêm công dân thất bại");
+                        return;
+                    }
                 }
                 CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text, txtNgheNghiep.Text, txtSoDT.Text, (string)cboTonGiao.SelectedItem, txtHoKhau.Text, (string)cboQuanHe.SelectedItem, txtDiaChi.Text);
-                cdDAO.ThemCongDan(cD);
+                if (!cdDAO.ThemCongDan(cD))
+                {
+                    MessageBox.Show("Thêm công dân thất bại");
+                    return;
+                }
 
                 KhaiSinh kS = new KhaiSinh(txtCCCD.Text, txtTen.Text, rdoNam.Checked.ToString(), (string)cboQuocTich.SelectedItem, (string)cboDanToc.SelectedItem, dtmNgaySinh.Value, dtmDKKhaiSinh.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCCCDCha.Text, txtTenCha.Text, txtCCCDMe.Text, txtTenMe.Text);
-                kSDAO.ThemKhaSinh(kS);
+                if (!kSDAO.ThemKhaSinh(kS))
+                {
+                    MessageBox.Show("Thêm công dân thất bại");
+                    return;
+                }
 
                 Thue thue = new Thue(txtThue.Text, txtCCCD.Text);
-                thueDAO.ThemThue(thue);
+                if (!thueDAO.ThemThue(thue))
+                {
+                    MessageBox.Show("Thêm công dân thất bại");
+                    return;
+                }
                 
                 if (cboTinhTrang.SelectedIndex == (int)LuaChon.ketHon)
                 {
 
                     HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, "", DateTime.Now, rdoNam.ToString());
-                    hNDAO.ThemHonNhan(hN);
+                    if (!hNDAO.ThemHonNhan(hN))
+                    {
+                        MessageBox.Show("Thêm công dân thất bại");
+                        return;
+                    }
                 }
                 if (ptcHinhDaiDien.Image != null) 
                     hinhDaiDien.SaveHinhDaiDien(txtCCCD.Text, ofdHinhDaiDien, ptcHinhDaiDien);
+                MessageBox.Show("Thêm công dân thành công");
             }
         }
 

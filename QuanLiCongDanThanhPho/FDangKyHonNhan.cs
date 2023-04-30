@@ -23,7 +23,8 @@ namespace QuanLiCongDanThanhPho
             if (KiemTraThongTin())
             {
                 HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtTenVo.Text, txtNoiDK.Text, dtpNgayDangKy.Value);
-                hNDAO.ThemHonNhan(hN);
+                if (hNDAO.ThemHonNhan(hN))
+                    MessageBox.Show("Đăng ký hôn nhân thành công");
             }
         }
 
@@ -57,7 +58,10 @@ namespace QuanLiCongDanThanhPho
         private void btnDelete_Click(object sender, EventArgs e)
         {
             HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtCCCDChong.Text, txtNoiDK.Text, dtpNgayDangKy.Value);
-            hNDAO.Xoa(hN);
+            if (hNDAO.Xoa(hN))
+                MessageBox.Show("Xóa hôn nhân thành công");
+            else
+                MessageBox.Show("Xóa hôn nhân thất bại");
             Reset();
         }
 

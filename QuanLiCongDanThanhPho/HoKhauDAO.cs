@@ -7,10 +7,11 @@ namespace QuanLiCongDanThanhPho
     {
         DBConnection conn = new DBConnection();
         public HoKhauDAO() { }
-        public void ThemHoKhau(HoKhau hK)
+        public bool ThemHoKhau(HoKhau hK)
         {
             string sqlStr = string.Format($"INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('{hK.MaHoKhau}',N'{hK.DiaChi.toString()}', '{hK.CCCDChuHo}');");
-            conn.ThucThi(sqlStr, "Tạo hộ khẩu mới thành công");
+            return conn.ThucThi(sqlStr);
+            // "Tạo hộ khẩu mới thành công"
         }
 
         // Lấy chuỗi đặt bí danh cho các thuộc tính trong sql
@@ -49,15 +50,17 @@ namespace QuanLiCongDanThanhPho
             ds.Columns.Remove("SL");
             return ds;
         }
-        public void CapNhatHoKhau(HoKhau hK)
+        public bool CapNhatHoKhau(HoKhau hK)
         {
             string sqlStr = string.Format($"UPDATE HOKHAU SET DiaChi = N'{hK.DiaChi.toString()}', CCCDChuHo = '{hK.CCCDChuHo}' WHERE MaHK = '{hK.MaHoKhau}'");
-            conn.ThucThi(sqlStr, $"Cập nhật hộ khẩu thành công");
+            return conn.ThucThi(sqlStr);
+            //"Cập nhật hộ khẩu thành công"
         }
-        public void XoaHoKhau(HoKhau hK)
+        public bool XoaHoKhau(HoKhau hK)
         {
             string sqlStr = string.Format($"DELETE HOKHAU WHERE MaHK = '{hK.MaHoKhau}'");
-            conn.ThucThi(sqlStr, "Đã xóa hộ không còn thành viên");
+            return conn.ThucThi(sqlStr);
+            //"Đã xóa hộ không còn thành viên"
         }
 
         public DataTable TimHoNhieuNguoiNhat()

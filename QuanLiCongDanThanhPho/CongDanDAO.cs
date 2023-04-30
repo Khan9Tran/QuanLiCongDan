@@ -9,16 +9,20 @@ namespace QuanLiCongDanThanhPho
         
         public CongDanDAO() { }
 
-        public void ThemCongDan(CongDan cD)
+        public bool ThemCongDan(CongDan cD)
         {
             CCCDDAO cCCDDAO = new CCCDDAO();
             string strSql = string.Format($"INSERT INTO CONGDAN(CCCD,Ten,NgheNghiep,SDT,TonGiao,MaHK,QuanHeVoiChuHo) VALUES ('{cD.CCCD}' , N'{cD.Ten}', N'{cD.NgheNghiep}', '{cD.SDT}', N'{cD.TonGiao}', '{cD.MaHoKhau}', N'{cD.QuanHeVoiChuHo}');");
-            conn.ThucThi(strSql, "Công dân hợp lệ");
+            if (!conn.ThucThi(strSql))
+                return false;
+            //"Công dân hợp lệ"
             CCCD cCCD = new CCCD(cD.CCCD);
-            cCCDDAO.ThemCCCD(cCCD);
+            if (!cCCDDAO.ThemCCCD(cCCD))
+                return false;
+            return true;
         }
 
-        public void XoaCongDan(CongDan cD)
+        public bool XoaCongDan(CongDan cD)
         {
             ThueDAO thueDAO = new ThueDAO();
             KhaiSinhDAO ksDAO = new KhaiSinhDAO();
@@ -39,23 +43,27 @@ namespace QuanLiCongDanThanhPho
             }
             cCCDDAO.XoaCCCD(cD.CCCD);
             string strSql = string.Format($"DELETE FROM CONGDAN WHERE CCCD = '{cD.CCCD}'");
-            conn.ThucThi(strSql, "Xóa công dân thành công");
+            return conn.ThucThi(strSql);
+            //"Xóa công dân thành công"
         }
 
-        public void CapNhatCongDan(CongDan cD )
+        public bool CapNhatCongDan(CongDan cD )
         {
             string strSql = string.Format($"UPDATE CONGDAN SET Ten = N'{cD.Ten}', NgheNghiep = N'{cD.NgheNghiep}', TonGiao = N'{cD.TonGiao}', SDT = '{cD.SDT}', MaHK = '{cD.MaHoKhau}', QuanHeVoiChuHo = N'{cD.QuanHeVoiChuHo}' WHERE CCCD = '{cD.CCCD}'");
-            conn.ThucThi(strSql, "Cập nhật thông tin thành công");
+            return conn.ThucThi(strSql);
+            //"Cập nhật thông tin thành công"
         }
-        public void ThayDoiHoKhau(CongDan cD)
+        public bool ThayDoiHoKhau(CongDan cD)
         {
             string strSql = string.Format("UPDATE CONGDAN SET MaHK = '{0}' , QuanHeVoiChuHo = N'{1}' WHERE CCCD = '{2}'", cD.MaHoKhau, cD.QuanHeVoiChuHo, cD.CCCD);
-            conn.ThucThi(strSql, "Thêm thành viên thành công");
+            return conn.ThucThi(strSql);
+            //"Thêm thành viên thành công"
         }
-        public void NhapHoKhau(CongDan cD)
+        public bool NhapHoKhau(CongDan cD)
         {
             string strSql = string.Format("UPDATE CONGDAN SET MaHK = '{0}' , QuanHeVoiChuHo = N'Vừa nhập hộ' WHERE CCCD = '{1}'", cD.MaHoKhau, cD.CCCD);
-            conn.ThucThi(strSql, "Nhập hộ thành công");
+            return conn.ThucThi(strSql);
+            // "Nhập hộ thành công"
         }
 
         //Chuỗi đặt bí danh cho các thuộc tính trong sql

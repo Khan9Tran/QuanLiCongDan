@@ -34,7 +34,10 @@ namespace QuanLiCongDanThanhPho
         private void XoaCongDan()
         {
             CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text);
-            congDanDAO.XoaCongDan(cD);
+            if (congDanDAO.XoaCongDan(cD))
+                MessageBox.Show("Khai tử công dân thành công");
+            else
+                MessageBox.Show("Khai tử công dân thất bại");
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)

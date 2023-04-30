@@ -156,7 +156,10 @@ namespace QuanLiCongDanThanhPho
                 kS.GioiTinh = txtGioiTinh.Text;
                 kS.DinhDangGioiTinh();
                 kS.NgayDangKy = dtmNgayDangKy.Value;
-                ksDAO.CapNhatKhaiSinh(kS);
+                if (ksDAO.CapNhatKhaiSinh(kS))
+                    MessageBox.Show("Cập nhật khai sinh thành công");
+                else
+                    MessageBox.Show("Cập nhật khai sinh thất bại");
                 tool.TurnOff();
                 LayThongTinKhaiKhaiSinh();
             }    

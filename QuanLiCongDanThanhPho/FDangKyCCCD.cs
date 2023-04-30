@@ -58,7 +58,10 @@ namespace QuanLiCongDanThanhPho
                 if (cDDAO.LayThongTin(txtCCCD.Text).Ten == txtTen.Text)
                 {
                     CCCD cCCD = new CCCD(txtCCCD.Text, dtmNgayCap.Value, txtDDNhanDang.Text);
-                    cCCDDAO.CapNhatCCCD(cCCD);
+                    if (cCCDDAO.CapNhatCCCD(cCCD))
+                        MessageBox.Show("Cấp căn cước thành công");
+                    else
+                        MessageBox.Show("Cấp căn cước thất bại");
                 }
                 else
                 {

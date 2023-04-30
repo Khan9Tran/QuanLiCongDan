@@ -6,20 +6,22 @@ namespace QuanLiCongDanThanhPho
     internal class CCCDDAO
     {
         DBConnection conn = new DBConnection();
-        public void ThemCCCD(CCCD canCuoc)
+        public bool ThemCCCD(CCCD canCuoc)
         {
             string sqlStr = string.Format($"INSERT INTO CCCD(MaCCCD, DacDiem, NgayCap) VALUES('{canCuoc.MaCCCD}', N'{canCuoc.DacDiem}', '{canCuoc.NgayCap}');");
-            conn.ThucThi(sqlStr, "Căn cước đã khởi tạo");
+            return conn.ThucThi(sqlStr);
+            //"Căn cước đã khởi tạo"
         }
-        public void XoaCCCD(string maCanCuoc) 
+        public bool XoaCCCD(string maCanCuoc) 
         {
             string sqlStr = string.Format($"DELETE FROM CCCD WHERE MaCCCD = '{maCanCuoc}'");
-            conn.ThucThi(sqlStr, "Xóa căn cước thành công");
+            return conn.ThucThi(sqlStr);
+            //"Xóa căn cước thành công"
         }
-        public void CapNhatCCCD(CCCD canCuoc) 
+        public bool CapNhatCCCD(CCCD canCuoc) 
         {
             string sqlStr = string.Format($"UPDATE CCCD SET DacDiem = N'{canCuoc.DacDiem}', NgayCap = '{canCuoc.NgayCap}' WHERE MaCCCD = '{canCuoc.MaCCCD}'");
-            conn.ThucThi(sqlStr, "Cấp căn cước thành công");
+            return conn.ThucThi(sqlStr);
         }
         public DataTable DanhSachCCCDTheoDacDiem(string dacDiem)
         {

@@ -100,7 +100,10 @@ namespace QuanLiCongDanThanhPho
                 string maCCCD = CCCDDAO.GetCCCD(gvThue, 1);
                 if (maCCCD != "")
                 {
-                    thueDAO.XoaThue(maCCCD);
+                    if (thueDAO.XoaThue(maCCCD))
+                        MessageBox.Show("Xóa thuế thành công");
+                    else
+                        MessageBox.Show("Xóa thuế thất bại");
                     TimKiem(LuaChon);
                 }
             }
@@ -172,8 +175,7 @@ namespace QuanLiCongDanThanhPho
                 Thue thue = thueDAO.LayThongTin(CCCDDAO.GetCCCD(gvThue, 1));
                 if (thue.ThanhToan(tienNhap))
                 {
-                    thueDAO.CapNhatThue(thue);
-                    return true;
+                    return thueDAO.CapNhatThue(thue);
                 }
             }
             return false;

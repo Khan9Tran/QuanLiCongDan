@@ -171,7 +171,10 @@ namespace QuanLiCongDanThanhPho
                 CongDan cD = cdDao.LayThongTin(maCCCD);
                 if (cD.CCCD != null)
                 {
-                    cdDao.XoaCongDan(cD);
+                    if (cdDao.XoaCongDan(cD))
+                        MessageBox.Show("Xóa công dân thành công");
+                    else
+                        MessageBox.Show("Xóa công dân thất bại");
                     txtTimKiem_TextChanged(txtTimKiem, null);
                 }
             }

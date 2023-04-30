@@ -33,15 +33,17 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND TrangThai = N'Tạm vắng'";
             return conn.LayDanhSach(sqlStr);
         }
-        public void ThemTamTruTamVang(TamTruTamVang tTTV)
+        public bool ThemTamTruTamVang(TamTruTamVang tTTV)
         {
             string sqlStr = string.Format($"INSERT INTO TAMTRUTAMVANG(MaTTTV, CCCD, DiaChi, NgayBD, NgayKT, TrangThai, LiDo) VALUES('{tTTV.MaSo}','{tTTV.CCCD}',N'{tTTV.DiaChi.toString()}' ,'{tTTV.NgayBatDau}', '{tTTV.NgayKetThuc}', N'{tTTV.TrangThai}', N'{tTTV.LyDo}' );");
-            conn.ThucThi(sqlStr, "Thêm tạm vắng/tạm trú thành công");   
+            return conn.ThucThi(sqlStr);
+            //Thêm tạm vắng/tạm trú thành công
         }
-        public void XoaTamTruTamVang(string canCuoc)
+        public bool XoaTamTruTamVang(string canCuoc)
         {
             string sqlStr = string.Format($"DELETE FROM TAMTRUTAMVANG WHERE CCCD = '{canCuoc}'");
-            conn.ThucThi(sqlStr, "Xóa tạm vắng/tạm trú thành công");
+            return conn.ThucThi(sqlStr);
+            //Xóa tạm vắng/tạm trú thành công
         }
         public Boolean KiemTraTamTruTamVang(string maCCCD)
         {
@@ -89,7 +91,8 @@ namespace QuanLiCongDanThanhPho
         public void CapNhat(TamTruTamVang tTTV)
         {
             string strSql = string.Format($"UPDATE TAMTRUTAMVANG SET MaTTTV = '{tTTV.MaSo}', CCCD = '{tTTV.CCCD}', DiaChi = N'{tTTV.DiaChi.toString()}', NgayBD = '{tTTV.NgayBatDau}', NgayKT = '{tTTV.NgayKetThuc}', TrangThai = N'{tTTV.TrangThai}', LiDo = N'{tTTV.LyDo}' WHERE MaTTTV = '{tTTV.MaSo}' OR CCCD = '{tTTV.CCCD}'");
-            conn.ThucThi(strSql, "Cập nhật thông tin thành công");
+            conn.ThucThi(strSql);
+            //Cập nhật thông tin thành công
         }
     }
 }

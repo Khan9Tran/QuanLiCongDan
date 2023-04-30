@@ -8,19 +8,26 @@ namespace QuanLiCongDanThanhPho
         public AccountDAO() { }
         DBConnection conn = new DBConnection();
 
-        public void XoaTaiKhoan(Account acc)
+        public bool XoaTaiKhoan(Account acc)
         {
             string sqlStr = string.Format($"DELETE ACCOUNT WHERE UserName = {acc.UserName}");
+            return conn.ThucThi(sqlStr);
         }
         public void CapNhatMatKhau(Account acc)
         {
             string sqlStr = string.Format($"UPDATE ACCOUNT SET StrPassword = '{acc.Password}' WHERE UserName = '{acc.UserName}'");
-            conn.ThucThi(sqlStr, "Đổi mật khẩu thành công");
+            if (conn.ThucThi(sqlStr))
+                MessageBox.Show("Đổi mật khẩu thành công");
+            else
+                MessageBox.Show("Đổi mật khẩu thất bại");
         }
         public void CapNhatDisplayName(Account acc)
         {
             string sqlStr = string.Format($"UPDATE ACCOUNT SET DisplayName = N'{acc.DisplayName}' WHERE UserName = '{acc.UserName}'");
-            conn.ThucThi(sqlStr, "Cập nhật tên thành công");
+            if (conn.ThucThi(sqlStr))
+                MessageBox.Show("Cập nhật tên thành công");
+            else
+                MessageBox.Show("Đổi mật tên thất bại");
         }
         public Account LayThongTinTaiKhoan(Account acc)
         {

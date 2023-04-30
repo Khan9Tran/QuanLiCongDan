@@ -127,7 +127,10 @@ namespace QuanLiCongDanThanhPho
                 string maCCCD = CCCDDAO.GetCCCD(gvTVTT, 1);
                 if (maCCCD != "")
                 {
-                    tttvDAO.XoaTamTruTamVang(maCCCD);
+                    if (tttvDAO.XoaTamTruTamVang(maCCCD))
+                        MessageBox.Show("Xóa tạm trú/tạm vắng thành công");
+                    else
+                        MessageBox.Show("Xóa tạm trú/tạm vắng thất bại");
                     txtTimKiem_TextChanged(txtTimKiem, null);
                 }
             }

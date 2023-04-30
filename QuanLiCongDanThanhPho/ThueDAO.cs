@@ -9,15 +9,17 @@ namespace QuanLiCongDanThanhPho
 
         public ThueDAO() { }
 
-        public void ThemThue(Thue thue)
+        public bool ThemThue(Thue thue)
         {
             string sqlStr = string.Format($"INSERT INTO THUE(MaThue, CCCD, SoTienCanNop, SoTienDaNop, NgayCap, HanNop) VALUES('{thue.MaThue}','{thue.CCCD}', '{thue.SoTienCanNop}','{thue.SoTienDaNop}', '{thue.NgayCapMa}', '{thue.HanNop}');");
-            conn.ThucThi(sqlStr,"Thêm thông tin thuế thành công");
+            return conn.ThucThi(sqlStr);
+            //"Thêm thông tin thuế thành công"
         }
-        public void XoaThue(string canCuoc)
+        public bool XoaThue(string canCuoc)
         {
             string sqlStr = string.Format($"DELETE FROM THUE WHERE CCCD = '{canCuoc}'");
-            conn.ThucThi(sqlStr, "Xóa thông tin thuế thành công");
+            return conn.ThucThi(sqlStr);
+            //"Xóa thông tin thuế thành công"
         }
         public Thue LayThongTin(string maCCCD)
         {
@@ -44,10 +46,11 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND GETDATE() > THUE.HanNop";
             return conn.LayDanhSach(sqlStr);
         }
-        public void CapNhatThue(Thue thue) 
+        public bool CapNhatThue(Thue thue) 
         {
             string sqlStr = string.Format($"UPDATE THUE SET SoTienCanNop = '{thue.SoTienCanNop}', SoTienDaNop = '{thue.SoTienDaNop}', NgayCap = '{thue.NgayCapMa}', HanNop = '{thue.HanNop}' WHERE MaThue = '{thue.MaThue}'");
-            conn.ThucThi(sqlStr, $"Cập nhật thuế thành công");
+            return conn.ThucThi(sqlStr);
+            //Cập nhật thuế thành công
         }
         public int[] LayThongKeThue()
         {

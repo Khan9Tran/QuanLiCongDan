@@ -70,10 +70,19 @@ namespace QuanLiCongDanThanhPho
         {
             //Kiểm tra 
             HoKhau hK = new HoKhau(txtMaHoGop.Text, "unknow, unknow, unknow,uknow", cD.CCCD);
-            hKDAO.ThemHoKhau(hK);
+            if (!hKDAO.ThemHoKhau(hK))
+            {
+                MessageBox.Show("Thêm hổ khẩu thất bại");
+                return;
+            }
             cD.QuanHeVoiChuHo = "Chủ hộ";
             cD.MaHoKhau = txtMaHoGop.Text;
-            cDDAO.ThayDoiHoKhau(cD);
+            if (!cDDAO.ThayDoiHoKhau(cD))
+            {
+                MessageBox.Show("Chuyển hổ khẩu thất bại");
+                return;
+            }
+            MessageBox.Show("Thêm hổ khẩu thành công");
             LoadHoTach();
             LoadHoGop();
             XoaHoThua();
@@ -114,14 +123,18 @@ namespace QuanLiCongDanThanhPho
             HoKhau hK = new HoKhau(txtMaHoTach.Text, "unknow, unknow, unknow,uknow", cD.CCCD);
             if (gvHoTach.Rows.Count <=1)
             {
-                hKDAO.XoaHoKhau(hK);
+                if (hKDAO.XoaHoKhau(hK))
+                    MessageBox.Show("Xóa hộ thừa thành công");
             }
         }
 
         public void ThemVaoHo()
         {
             cD.MaHoKhau = txtMaHoGop.Text;
-            cDDAO.NhapHoKhau(cD);   
+            if (!cDDAO.NhapHoKhau(cD))
+                MessageBox.Show("Thêm vào hộ thành công");
+            else
+                MessageBox.Show("Thêm vào hộ thất bại");
             LoadHoTach();
             LoadHoGop();
             XoaHoThua();

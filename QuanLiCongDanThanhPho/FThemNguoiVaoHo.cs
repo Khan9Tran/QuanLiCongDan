@@ -28,7 +28,10 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             CongDan congDan= new CongDan(txtCCCD.Text,txtTen.Text,"","","",txtMaHo.Text,txtQuanHeVoiChuHo.Text,"u,u,u,u,u");
-            cDDAO.ThayDoiHoKhau(congDan);
+            if (!cDDAO.ThayDoiHoKhau(congDan))
+                MessageBox.Show("Thêm công dân vào hộ khẩu thất bại");
+            else
+                MessageBox.Show("Thêm công dân vào hộ khẩu thành công");
             LoadDanhSachChuaHoKhau();
         }
 

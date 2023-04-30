@@ -78,7 +78,10 @@ namespace QuanLiCongDanThanhPho
             if (KiemTraThongTin())
             {
                 Thue thue = new Thue(txtMaSoThue.Text, txtCCCD.Text, dtpNgayCapMa.Value, dtpHanNop.Value, txtSoTienCanNop.Text, txtSoTienDaNop.Text);
-                thueDAO.ThemThue(thue);
+                if (thueDAO.ThemThue(thue))
+                    MessageBox.Show("Đăng ký thuế thành công");
+                else
+                    MessageBox.Show("Đăng ký thuế thất bại");
             }
         }
     }

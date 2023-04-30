@@ -134,9 +134,18 @@ namespace QuanLiCongDanThanhPho
             if (KiemTraThongTin() && KiemTraChaMe())
             { 
                 CongDan congDan = new CongDan(txtCccd.Text, txtTen.Text);
-                cDDAO.ThemCongDan(congDan);
+                if (!cDDAO.ThemCongDan(congDan))
+                {
+                    MessageBox.Show("Thêm khai sinh thất bại");
+                    return;
+                }
                 KhaiSinh kS = new KhaiSinh(txtCccd.Text, txtTen.Text, rdoNam.Checked.ToString(), (string)cboQuocTich.SelectedItem, (string)cboDanToc.SelectedItem, dtmNgaySinh.Value, dtmNgayDangKy.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCccdCha.Text, txtTenCha.Text, txtCccdMe.Text, txtTenMe.Text);
-                kSDAO.ThemKhaSinh(kS);
+                if (!kSDAO.ThemKhaSinh(kS))
+                {
+                    MessageBox.Show("Thêm khai sinh thất bại");
+                    return;
+                }
+                MessageBox.Show("Thêm khai sinh thành công");
             }
         }
 

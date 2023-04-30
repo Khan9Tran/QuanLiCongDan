@@ -94,7 +94,10 @@ namespace QuanLiCongDanThanhPho
                 thue.NgayCapMa = dtmNgayCapMaSoThue.Value;
                 thue.HanNop = dtmHanNopThue.Value;
             }
-            thueDAO.CapNhatThue(thue);
+            if (thueDAO.CapNhatThue(thue))
+                MessageBox.Show("Cập nhật thuế thành công");
+            else
+                MessageBox.Show("Cập nhật thuế thất bại");
         }    
 
         private void btnXacNhan_Click(object sender, EventArgs e)
