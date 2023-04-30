@@ -13,13 +13,11 @@ namespace QuanLiCongDanThanhPho
         {
             string sqlStr = string.Format($"INSERT INTO THUE(MaThue, CCCD, SoTienCanNop, SoTienDaNop, NgayCap, HanNop) VALUES('{thue.MaThue}','{thue.CCCD}', '{thue.SoTienCanNop}','{thue.SoTienDaNop}', '{thue.NgayCapMa}', '{thue.HanNop}');");
             return conn.ThucThi(sqlStr);
-            //"Thêm thông tin thuế thành công"
         }
         public bool XoaThue(string canCuoc)
         {
             string sqlStr = string.Format($"DELETE FROM THUE WHERE CCCD = '{canCuoc}'");
             return conn.ThucThi(sqlStr);
-            //"Xóa thông tin thuế thành công"
         }
         public Thue LayThongTin(string maCCCD)
         {

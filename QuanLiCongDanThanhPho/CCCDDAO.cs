@@ -10,13 +10,11 @@ namespace QuanLiCongDanThanhPho
         {
             string sqlStr = string.Format($"INSERT INTO CCCD(MaCCCD, DacDiem, NgayCap) VALUES('{canCuoc.MaCCCD}', N'{canCuoc.DacDiem}', '{canCuoc.NgayCap}');");
             return conn.ThucThi(sqlStr);
-            //"Căn cước đã khởi tạo"
         }
         public bool XoaCCCD(string maCanCuoc) 
         {
             string sqlStr = string.Format($"DELETE FROM CCCD WHERE MaCCCD = '{maCanCuoc}'");
             return conn.ThucThi(sqlStr);
-            //"Xóa căn cước thành công"
         }
         public bool CapNhatCCCD(CCCD canCuoc) 
         {

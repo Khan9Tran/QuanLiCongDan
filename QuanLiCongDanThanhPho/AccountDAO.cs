@@ -8,11 +8,6 @@ namespace QuanLiCongDanThanhPho
         public AccountDAO() { }
         DBConnection conn = new DBConnection();
 
-        public bool XoaTaiKhoan(Account acc)
-        {
-            string sqlStr = string.Format($"DELETE ACCOUNT WHERE UserName = {acc.UserName}");
-            return conn.ThucThi(sqlStr);
-        }
         public void CapNhatMatKhau(Account acc)
         {
             string sqlStr = string.Format($"UPDATE ACCOUNT SET StrPassword = '{acc.Password}' WHERE UserName = '{acc.UserName}'");

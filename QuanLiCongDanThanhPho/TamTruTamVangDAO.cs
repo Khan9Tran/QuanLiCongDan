@@ -37,13 +37,11 @@ namespace QuanLiCongDanThanhPho
         {
             string sqlStr = string.Format($"INSERT INTO TAMTRUTAMVANG(MaTTTV, CCCD, DiaChi, NgayBD, NgayKT, TrangThai, LiDo) VALUES('{tTTV.MaSo}','{tTTV.CCCD}',N'{tTTV.DiaChi.toString()}' ,'{tTTV.NgayBatDau}', '{tTTV.NgayKetThuc}', N'{tTTV.TrangThai}', N'{tTTV.LyDo}' );");
             return conn.ThucThi(sqlStr);
-            //Thêm tạm vắng/tạm trú thành công
         }
         public bool XoaTamTruTamVang(string canCuoc)
         {
             string sqlStr = string.Format($"DELETE FROM TAMTRUTAMVANG WHERE CCCD = '{canCuoc}'");
             return conn.ThucThi(sqlStr);
-            //Xóa tạm vắng/tạm trú thành công
         }
         public Boolean KiemTraTamTruTamVang(string maCCCD)
         {

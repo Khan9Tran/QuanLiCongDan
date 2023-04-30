@@ -41,7 +41,6 @@ namespace QuanLiCongDanThanhPho
 
             string sqlStr = string.Format($"INSERT INTO HONNHAN(MaHonNhan, CCCDNam, TenNam, CCCDNu, TenNu, NoiDangKy, NgayDangKy) VALUES('{hN.MaSo}','{hN.CCCDChong}',N'{hN.TenChong}','{hN.CCCDVo}',N'{hN.TenVo}',N'{hN.NoiDangKy.toString()}','{hN.NgayDangKy}');");
             return conn.ThucThi(sqlStr);
-            //  "Thêm hôn nhân thành công"
         }
 
         //Cập nhật thông tin hôn nhân
@@ -49,7 +48,6 @@ namespace QuanLiCongDanThanhPho
         {
             string sqlStr = string.Format($"UPDATE HONNHAN SET CCCDNam = '{hN.CCCDChong}', TenNam = N'{hN.TenChong}', CCCDNu = '{hN.CCCDVo}', TenNu = N'{hN.TenVo}', NoiDangKy = N'{hN.NoiDangKy.toString()}', NgayDangKy = '{hN.NgayDangKy}' WHERE MaHonNhan = '{hN.MaSo}'");
             return conn.ThucThi(sqlStr);
-            // "Cập nhật hôn nhân thành công"
         }
 
         //Kiểm tra xem người có CCCD này đã kết hôn chưa
@@ -64,7 +62,6 @@ namespace QuanLiCongDanThanhPho
         {
             string sqlStr = string.Format("DELETE HONNHAN WHERE MaHonNhan = {0}", honNhan.MaSo);
             return conn.ThucThi(sqlStr);
-            //Xóa hôn nhân thành công
         }
 
         //Lấy tất cả thông tin của hôn nhân theo CCCD

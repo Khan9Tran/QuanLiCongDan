@@ -54,13 +54,11 @@ namespace QuanLiCongDanThanhPho
         {
             string sqlStr = string.Format($"UPDATE HOKHAU SET DiaChi = N'{hK.DiaChi.toString()}', CCCDChuHo = '{hK.CCCDChuHo}' WHERE MaHK = '{hK.MaHoKhau}'");
             return conn.ThucThi(sqlStr);
-            //"Cập nhật hộ khẩu thành công"
         }
         public bool XoaHoKhau(HoKhau hK)
         {
             string sqlStr = string.Format($"DELETE HOKHAU WHERE MaHK = '{hK.MaHoKhau}'");
             return conn.ThucThi(sqlStr);
-            //"Đã xóa hộ không còn thành viên"
         }
 
         public DataTable TimHoNhieuNguoiNhat()
