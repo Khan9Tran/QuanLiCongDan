@@ -7,6 +7,7 @@ namespace QuanLiCongDanThanhPho
         private KhaiSinhDAO kSDAO;
         private CongDanDAO cDDAO;
         private HonNhanDAO hNDAO;
+
         public FDangKyKhaiSinh()
         {
             InitializeComponent();
@@ -14,6 +15,31 @@ namespace QuanLiCongDanThanhPho
             cDDAO = new CongDanDAO();
             hNDAO = new HonNhanDAO();
             StackForm.Add(this);
+        }
+
+        public FDangKyKhaiSinh(string cCCCDThanNhan)
+        {
+            InitializeComponent();
+            kSDAO = new KhaiSinhDAO();
+            cDDAO = new CongDanDAO();
+            hNDAO = new HonNhanDAO();
+            StackForm.Add(this);
+            LoadThongTinChaMe(cCCCDThanNhan);
+        }
+
+        private void LoadThongTinChaMe(string cCCCDThanNhan)
+        {
+            if (cCCCDThanNhan != null)
+            {
+                HonNhan honNhan = hNDAO.LayThongTin(cCCCDThanNhan);
+                if (honNhan.MaSo != null)
+                {
+                    txtCccdCha.Text = honNhan.CCCDChong;
+                    txtCccdMe.Text = honNhan.CCCDVo;
+                    txtTenCha.Text = honNhan.TenChong;
+                    txtTenMe.Text = honNhan.TenVo;
+                }
+            }
         }
 
         private bool KiemTraThongTin()

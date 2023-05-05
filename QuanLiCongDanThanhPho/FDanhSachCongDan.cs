@@ -1,11 +1,11 @@
-﻿using System.Data;
+﻿using QuanLiCongDanThanhPho.Models;
+using System.Data;
 
 namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSachCongDan : FormDanhSach
     {
         private CongDanDAO cdDao;
-
         enum Loc
         {
             tatCa,
@@ -27,6 +27,7 @@ namespace QuanLiCongDanThanhPho
 
             btnTamVang.Enabled = false;
             btnThue.Enabled = false;
+            btnKhaiSinh.Enabled = false;
         }
 
         public FDanhSachCongDan()
@@ -82,6 +83,7 @@ namespace QuanLiCongDanThanhPho
         {
             btnThue.Enabled = true;
             btnTamVang.Enabled = true;
+            btnKhaiSinh.Enabled = true;
             string cCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
             if (e.RowIndex != -1 && gvDanhSachCongDan.Rows[e.RowIndex].Cells[0].Value.ToString()?.Length > 0)
             {
@@ -96,6 +98,11 @@ namespace QuanLiCongDanThanhPho
                 if (tttvDAO.LayThongTin(cCCD).MaSo != null)
                 {
                     btnTamVang.Enabled = false;
+                }
+                HonNhanDAO hnDAO = new HonNhanDAO();
+                if (hnDAO.LayThongTin(cCCD).MaSo == null)
+                {
+                    btnKhaiSinh.Enabled = false;
                 }
                 cmnusMenu.Show(this, this.PointToClient(MousePosition));
             }
@@ -214,6 +221,13 @@ namespace QuanLiCongDanThanhPho
             string cCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
             FDangKyTamTruTamVang dKTamTruTamVang = new FDangKyTamTruTamVang(cCCD);
             (StackForm.TrangChu)?.ChildForm.Open(dKTamTruTamVang);
+        }
+
+        private void btnKhaiSinh_Click(object sender, EventArgs e)
+        {
+            string cCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
+            FDangKyKhaiSinh dKKhaiSinh = new FDangKyKhaiSinh(cCCD);
+            (StackForm.TrangChu)?.ChildForm.Open(dKKhaiSinh);
         }
     }
 }

@@ -358,7 +358,7 @@ namespace QuanLiCongDanThanhPho
                     MessageBox.Show("Cập nhật thông tin công dân thất bại");
                     return;
                 }
-                MessageBox.Show("Cập nhất thông tin công dân thành công");
+                MessageBox.Show("Cập nhật thông tin công dân thành công");
                 tool.AutoReadOnly();
             }    
         }
