@@ -31,11 +31,14 @@ namespace QuanLiCongDanThanhPho
             if (cCCD != null)
             {
                 CongDan congDan = cDDAO.LayThongTin(cCCD);
-                txtTen.Text = congDan.Ten;
-                txtCCCD.Text = congDan.CCCD;
-                txtMaSo.Text = congDan.CCCD;
-                txtSDT.Text = congDan.SDT;
-                rdoTamVang.Checked = true;
+                if (congDan.CCCD != null)
+                {
+                    txtTen.Text = congDan.Ten;
+                    txtCCCD.Text = congDan.CCCD;
+                    txtMaSo.Text = congDan.CCCD;
+                    txtSDT.Text = congDan.SDT;
+                    rdoTamVang.Checked = true;
+                }
             }
         }
 

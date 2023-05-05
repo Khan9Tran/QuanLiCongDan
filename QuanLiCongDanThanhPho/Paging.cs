@@ -6,6 +6,7 @@ namespace QuanLiCongDanThanhPho
     {
         private NumericUpDown nudPage;
         private int recordNum;
+
         public Paging(NumericUpDown nudPage, int recordNum)
         {
             this.nudPage = nudPage;

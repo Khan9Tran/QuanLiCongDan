@@ -4,13 +4,13 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongTinKhaiSinh : MoveForm
     {
-        private string maCCCD;
+        private string? maCCCD;
         private KhaiSinhDAO ksDAO;
         private CongDanDAO cdDAO;
 
         private ToolsForControl tool;
 
-        public string MaCCCD { get => maCCCD; set => maCCCD = value; }
+        public string? MaCCCD { get => maCCCD; set => maCCCD = value; }
 
         public FThongTinKhaiSinh(string maCCCD)
         {
@@ -25,13 +25,22 @@ namespace QuanLiCongDanThanhPho
             SetTools();
         }
 
+        private void OpenThanNhan(TextBox txtCongDan)
+        {
+            if (KiemTraDuLieuNhap.isCCCD(txtCongDan.Text))
+            {
+                CongDan cD = cdDAO.LayThongTin(txtCongDan.Text);
+                if (cD.CCCD != null)
+                {
+                    FThongTinCongDan tTCD = new FThongTinCongDan(cD);
+                    tTCD.ShowDialog();
+                }
+            }
+        }
+
         private void btnThongTinCha_Click(object sender, EventArgs e)
         {
-            if (txtCccdCha.Text != "" && txtCccdCha.Text != "unknow")
-            {
-                FThongTinCongDan tTCD = new FThongTinCongDan(cdDAO.LayThongTin(txtCccdCha.Text));
-                tTCD.ShowDialog();
-            }
+            OpenThanNhan(txtCccdCha);
         }
 
         private void SetTools()
@@ -83,25 +92,28 @@ namespace QuanLiCongDanThanhPho
 
         private void btnThongTinMe_Click(object sender, EventArgs e)
         {
-            if (txtCccdMe.Text != "" && txtCccdMe.Text != "unknow")
+            OpenThanNhan(txtCccdMe);
+        }
+
+        private void LoadQuocTich(string? cCCD, TextBox quocTich)
+        {
+            KhaiSinh ks = ksDAO.LayThongTin(cCCD);
+            if (ks.MaKhaiSinh != null)
             {
-                FThongTinCongDan tTCD = new FThongTinCongDan(cdDAO.LayThongTin(txtCccdMe.Text));
-                tTCD.ShowDialog();
+                quocTich.Text = ks.QuocTich;
             }
         }
 
         private void HienThiCha(KhaiSinh con)
         {
-            KhaiSinh ksCha = ksDAO.LayThongTin(con.CCCDCha);
-            if (con.CCCDCha != "" || con.CCCDCha != null)
-                txtQuocTichCha.Text = ksCha.QuocTich;
+            if (con.CCCDCha != null)
+                LoadQuocTich(con.CCCDCha, txtQuocTichCha);
         }
 
         private void HienThiMe(KhaiSinh con)
         {
-            KhaiSinh ksMe = ksDAO.LayThongTin(con.CCCDMe);
-            if (con.CCCDMe != "" || con.CCCDMe != null)
-                txtQuocTichMe.Text = ksMe.QuocTich;
+            if (con.CCCDMe != null)
+                LoadQuocTich(con.CCCDMe, txtQuocTichMe);
         }
 
         private void HienThiThongTin(KhaiSinh ks)
@@ -119,7 +131,8 @@ namespace QuanLiCongDanThanhPho
             txtDanToc.Text = ks.DanToc;
             txtQuocTich.Text = ks.QuocTich;
             txtQueQuan.Text = ks.QueQuan.toString();
-            dtmNgayDangKy.Value = ks.NgayDangKy;
+            if (ks.NgayDangKy != null)
+                dtmNgayDangKy.Value = ks.NgayDangKy;
 
             txtTenCha.Text = ks.TenCha;
             txtTenMe.Text = ks.TenMe;
@@ -132,9 +145,12 @@ namespace QuanLiCongDanThanhPho
             if (maCCCD != null)
             {
                 KhaiSinh ks = ksDAO.LayThongTin(maCCCD);
-                HienThiThongTin(ks);
-                HienThiCha(ks);
-                HienThiMe(ks);
+                if (ks.MaKhaiSinh != null)
+                {
+                    HienThiThongTin(ks);
+                    HienThiCha(ks);
+                    HienThiMe(ks);
+                }
             }
         }
 
@@ -147,21 +163,27 @@ namespace QuanLiCongDanThanhPho
         {
             if (KiemTraThongTin())
             {
-                KhaiSinh kS = ksDAO.LayThongTin(MaCCCD);
-                kS.NoiSinh.DinhDang(txtNoiSinh.Text);
-                kS.QueQuan.DinhDang(txtQueQuan.Text);
-                kS.NgaySinh = dtmNgaySinh.Value;
-                kS.DanToc = txtDanToc.Text;
-                kS.QuocTich = txtQuocTich.Text;
-                kS.GioiTinh = txtGioiTinh.Text;
-                kS.DinhDangGioiTinh();
-                kS.NgayDangKy = dtmNgayDangKy.Value;
-                if (ksDAO.CapNhatKhaiSinh(kS))
-                    MessageBox.Show("Cập nhật khai sinh thành công");
-                else
-                    MessageBox.Show("Cập nhật khai sinh thất bại");
-                tool.TurnOff();
-                LayThongTinKhaiKhaiSinh();
+                if (MaCCCD != null)
+                {
+                    KhaiSinh kS = ksDAO.LayThongTin(MaCCCD);
+                    if (kS.MaKhaiSinh != null)
+                    {
+                        kS.NoiSinh.DinhDang(txtNoiSinh.Text);
+                        kS.QueQuan.DinhDang(txtQueQuan.Text);
+                        kS.NgaySinh = dtmNgaySinh.Value;
+                        kS.DanToc = txtDanToc.Text;
+                        kS.QuocTich = txtQuocTich.Text;
+                        kS.GioiTinh = txtGioiTinh.Text;
+                        kS.DinhDangGioiTinh();
+                        kS.NgayDangKy = dtmNgayDangKy.Value;
+                        if (ksDAO.CapNhatKhaiSinh(kS))
+                            MessageBox.Show("Cập nhật khai sinh thành công");
+                        else
+                            MessageBox.Show("Cập nhật khai sinh thất bại");
+                        tool.TurnOff();
+                        LayThongTinKhaiKhaiSinh();
+                    }
+                }
             }    
         }
 

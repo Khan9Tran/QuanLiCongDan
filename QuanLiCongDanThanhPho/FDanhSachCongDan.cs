@@ -83,7 +83,7 @@ namespace QuanLiCongDanThanhPho
             btnThue.Enabled = true;
             btnTamVang.Enabled = true;
             string cCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
-            if (e.RowIndex != -1 && gvDanhSachCongDan.Rows[e.RowIndex].Cells[0].Value.ToString().Length > 0)
+            if (e.RowIndex != -1 && gvDanhSachCongDan.Rows[e.RowIndex].Cells[0].Value.ToString()?.Length > 0)
             {
                 ThueDAO thueDAO = new ThueDAO();
                 // Kiểm tra nếu không có trong ds thuế thì có thể đăng kí
@@ -154,11 +154,12 @@ namespace QuanLiCongDanThanhPho
         private void cmnusMenuChiTiet_Click(object sender, EventArgs e)
         {
             string maCCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
-            if (maCCCD != "")
+            if (maCCCD != "" && maCCCD != null)
             {
                 CongDan cD = cdDao.LayThongTin(maCCCD);
-                FThongTinCongDan ttCD = new FThongTinCongDan(cD);
-                ttCD.ShowDialog();
+                FThongTinCongDan? ttCD = new FThongTinCongDan(cD);
+                if (ttCD != null) 
+                    ttCD?.ShowDialog();
             }
         }
 
@@ -205,14 +206,14 @@ namespace QuanLiCongDanThanhPho
         {
             string cCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
             FDangKyThue dangKyThue = new FDangKyThue(cCCD);
-            (StackForm.TrangChu).ChildForm.Open(dangKyThue); 
+            (StackForm.TrangChu)?.ChildForm.Open(dangKyThue); 
         }
 
         private void btnTamVang_Click(object sender, EventArgs e)
         {
             string cCCD = CCCDDAO.GetCCCD(gvDanhSachCongDan, 0);
             FDangKyTamTruTamVang dKTamTruTamVang = new FDangKyTamTruTamVang(cCCD);
-            (StackForm.TrangChu).ChildForm.Open(dKTamTruTamVang);
+            (StackForm.TrangChu)?.ChildForm.Open(dKTamTruTamVang);
         }
     }
 }

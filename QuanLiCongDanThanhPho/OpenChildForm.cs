@@ -22,7 +22,7 @@ namespace QuanLiCongDanThanhPho
         public void Open(Form childForm)
         {
             if (currentChildForm != null)
-            {
+            {   
                 currentChildForm.Hide();
             }
             currentChildForm = childForm;

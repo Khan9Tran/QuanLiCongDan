@@ -39,7 +39,7 @@ namespace QuanLiCongDanThanhPho
                 int index = gvHoTach.CurrentCell.RowIndex;
                     if (index >= 0)
                     {
-                        cD.CCCD = gvHoTach.Rows[index].Cells[0].Value.ToString();
+                        cD.CCCD = (string)gvHoTach.Rows[index].Cells[0].Value;
                         isTach = true;
                     }
             }
@@ -121,7 +121,7 @@ namespace QuanLiCongDanThanhPho
         private void XoaHoThua()
         {
             HoKhau hK = new HoKhau(txtMaHoTach.Text, "unknow, unknow, unknow,uknow", cD.CCCD);
-            if (gvHoTach.Rows.Count <=1)
+            if (hK.MaHoKhau != null && gvHoTach.Rows.Count <=1)
             {
                 if (hKDAO.XoaHoKhau(hK))
                     MessageBox.Show("Xóa hộ thừa thành công");

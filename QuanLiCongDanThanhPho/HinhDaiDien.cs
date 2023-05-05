@@ -89,7 +89,7 @@ namespace QuanLiCongDanThanhPho
 
         private void GanHinh(string filename, PictureBox ptcHinhDaiDien)
         {
-            Bitmap bitmap = null;
+            Bitmap? bitmap = null;
             bitmap?.Dispose();
             ptcHinhDaiDien.Image?.Dispose();
 
@@ -125,7 +125,7 @@ namespace QuanLiCongDanThanhPho
             string png = imagePath + ".png";
             string jpg = imagePath + ".jpg";
 
-            Bitmap bitmap = null;
+            Bitmap? bitmap = null;
             if (File.Exists(png))
             {
                 bitmap?.Dispose();

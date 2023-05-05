@@ -4,18 +4,15 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongTinThue : MoveForm
     {
-        private string maCCCD;
+        private string? maCCCD;
         private ThueDAO thueDAO;
         private CongDanDAO cdDAO;
         private HoKhauDAO hkDAO;
 
         private ToolsForControl tool;
 
-        public string MaCCCD
-        {
-            set { maCCCD = value; }
-            get { return maCCCD; }
-        }
+        public string? MaCCCD { get => maCCCD; set => maCCCD = value; }
+
 
         public FThongTinThue(string maCCCD)
         {
@@ -86,7 +83,7 @@ namespace QuanLiCongDanThanhPho
         private void CapNhatThue()
         {
             Thue thue = thueDAO.LayThongTin(MaCCCD);
-            if (txtMaSoThue.Text != "")
+            if (txtMaSoThue.Text != "" && thue.MaThue != null)
             {
                 thue.CCCD = txtCCCD.Text;
                 thue.SoTienCanNop = txtSoTienCanNop.Text;

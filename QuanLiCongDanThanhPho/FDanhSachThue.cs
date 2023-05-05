@@ -18,7 +18,6 @@ namespace QuanLiCongDanThanhPho
         public FDanhSachThue()
         {
             InitializeComponent();
-            StackForm.Add(this);
 
             thueDAO = new ThueDAO();
             cDDAO = new CongDanDAO();
@@ -36,7 +35,7 @@ namespace QuanLiCongDanThanhPho
         private void gvThue_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Kiểm tra xem ô/dòng click nếu ko phải là header hoặc dòng trống cuối cùng mới thực hiện
-            if (e.RowIndex != -1 && gvThue.Rows[e.RowIndex].Cells[0].Value.ToString().Length > 0)
+            if (e.RowIndex != -1 && gvThue.Rows[e.RowIndex].Cells[0].Value.ToString()?.Length > 0)
             {
                 cmnusMenu.Show(this, this.PointToClient(MousePosition));
                 LoadLblThue(e.RowIndex);
@@ -74,9 +73,12 @@ namespace QuanLiCongDanThanhPho
         private void LoadLblThue(int rowIndex)
         {
             CongDan cD = cDDAO.LayThongTin(CCCDDAO.GetCCCD(gvThue, 1));
-            string Ten = cD.Ten;
-            string soTienCanNop = (string)gvThue.Rows[rowIndex].Cells[2].Value;
-            lblThongTin.Text = Ten + " cần thanh toán " + soTienCanNop + " VNĐ";
+            if (cD.CCCD != null)
+            {
+                string Ten = cD.Ten;
+                string soTienCanNop = (string)gvThue.Rows[rowIndex].Cells[2].Value;
+                lblThongTin.Text = Ten + " cần thanh toán " + soTienCanNop + " VNĐ";
+            }
         }
         
         // Sắp xếp danh sách tăng dần theo số tiền đã nộp
@@ -124,7 +126,7 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyThue dangKyThue = new FDangKyThue();
-            (StackForm.TrangChu).ChildForm.Open(dangKyThue);
+            (StackForm.TrangChu)?.ChildForm.Open(dangKyThue);
         }
 
         // Lọc danh sách những người đóng tiền trẽ hạn/ chưa đủ tiền khi quá thời gian
@@ -162,7 +164,7 @@ namespace QuanLiCongDanThanhPho
         {
             FDanhSachCongDan dscd = new FDanhSachCongDan(thueDAO.DuTuoiDongThue());
             FDanhSach ds = new FDanhSach();
-            (StackForm.TrangChu).ChildForm.Open(ds);
+            (StackForm.TrangChu)?.ChildForm.Open(ds);
             ds.ChildForm.Open(dscd);
         }
 
@@ -173,7 +175,7 @@ namespace QuanLiCongDanThanhPho
             {
                 int tienNhap = int.Parse(txtDongThue.Text);
                 Thue thue = thueDAO.LayThongTin(CCCDDAO.GetCCCD(gvThue, 1));
-                if (thue.ThanhToan(tienNhap))
+                if (thue.MaThue != null && thue.ThanhToan(tienNhap))
                 {
                     return thueDAO.CapNhatThue(thue);
                 }

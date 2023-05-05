@@ -4,13 +4,13 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongTinHonNhan : MoveForm
     {
-        private string maCCCD;
+        private string? maCCCD;
         private HonNhanDAO hNDAO;
         private CongDanDAO cDDAO;
 
         private ToolsForControl tool;
 
-        public string MaCCCD { get => maCCCD; set => maCCCD = value; }
+        public string? MaCCCD { get => maCCCD; set => maCCCD = value; }
 
         public FThongTinHonNhan(string maCCCD)
         {
@@ -48,12 +48,15 @@ namespace QuanLiCongDanThanhPho
             if (maCCCD != null)
             {
                 HonNhan hn = hNDAO.LayThongTin(maCCCD);
-                txtTenChong.Text = hn.TenChong;
-                txtTenVo.Text = hn.TenVo;
-                txtCCCDChong.Text = hn.CCCDChong;
-                txtCCCDVo.Text = hn.CCCDVo;
-                txtNoiDangKy.Text = hn.NoiDangKy.toString();
-                dtmNgayDangKy.Value = hn.NgayDangKy;
+                if (hn.MaSo != null)
+                {
+                    txtTenChong.Text = hn.TenChong;
+                    txtTenVo.Text = hn.TenVo;
+                    txtCCCDChong.Text = hn.CCCDChong;
+                    txtCCCDVo.Text = hn.CCCDVo;
+                    txtNoiDangKy.Text = hn.NoiDangKy.toString();
+                    dtmNgayDangKy.Value = hn.NgayDangKy;
+                }
             }
         }    
 
@@ -93,7 +96,7 @@ namespace QuanLiCongDanThanhPho
         public void CapNhatHonNhan()
         {
             HonNhan hN = hNDAO.LayThongTin(maCCCD);
-            if (KiemTraThongTin())
+            if (KiemTraThongTin() && hN.MaSo != null)
             {
                 hN.NoiDangKy.DinhDang(txtNoiDangKy.Text);
                 hN.NgayDangKy = dtmNgayDangKy.Value;

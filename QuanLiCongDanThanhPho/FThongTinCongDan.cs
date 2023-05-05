@@ -57,29 +57,35 @@ namespace QuanLiCongDanThanhPho
         //Lấy ảnh công dân hiện lên picturebox
         private void LayCongDan()
         {
-            txtCCCD.Text = congDan.CCCD;
-            txtHoVaTen.Text = congDan.Ten;
+            if (congDan.CCCD != null)
+            {
+                txtCCCD.Text = congDan.CCCD;
+                txtHoVaTen.Text = congDan.Ten;
 
-            if (isMaHK(congDan.MaHoKhau)) 
-                txtMaHoKhau.Text = congDan.MaHoKhau;
+                if (isMaHK(congDan.MaHoKhau))
+                    txtMaHoKhau.Text = congDan.MaHoKhau;
 
-            txtSDT.Text = congDan.SDT;
-            txtTonGiao.Text = congDan.TonGiao;
-            txtNgheNghiep.Text = congDan.NgheNghiep;
-            txtQuanHeVoiChuHo.Text = congDan.QuanHeVoiChuHo;
+                txtSDT.Text = congDan.SDT;
+                txtTonGiao.Text = congDan.TonGiao;
+                txtNgheNghiep.Text = congDan.NgheNghiep;
+                txtQuanHeVoiChuHo.Text = congDan.QuanHeVoiChuHo;
+            }
         }
 
         private void LayKhaiSinh()
         {
             KhaiSinh ks = ksDAO.LayThongTin(congDan.CCCD);
-            dtmNgaySinh.Value = ks.NgaySinh;
-            if (ks.GioiTinh == "f")  // "f" là giới tính nữ, "m" là nam
-                txtGioiTinh.Text = "Nữ";
-            else
-                txtGioiTinh.Text = "Nam";
-            txtDanToc.Text = ks.DanToc;
-            txtQuocTich.Text = ks.QuocTich;
-            txtQueQuan.Text = ks.QueQuan.toString();
+            if (ks.MaKhaiSinh != null)
+            {
+                dtmNgaySinh.Value = ks.NgaySinh;
+                if (ks.GioiTinh == "f")  // "f" là giới tính nữ, "m" là nam
+                    txtGioiTinh.Text = "Nữ";
+                else
+                    txtGioiTinh.Text = "Nam";
+                txtDanToc.Text = ks.DanToc;
+                txtQuocTich.Text = ks.QuocTich;
+                txtQueQuan.Text = ks.QueQuan.toString();
+            }
         }
 
         private void LayThue()
@@ -93,15 +99,16 @@ namespace QuanLiCongDanThanhPho
 
         private void LayHonNhan()
         {
-            HonNhan hn = new HonNhan();
-            hn = hnDAO.LayThongTin(congDan.CCCD);
             if (!hnDAO.KiemTraHonNhan(congDan.CCCD))
             {
                 txtHonNhan.Text = "Chưa có hôn nhân";
                 btnHonNhan.Enabled = false;
             }
             else
+            {
+                HonNhan hn = hnDAO.LayThongTin(congDan.CCCD);
                 txtHonNhan.Text = hn.MaSo;
+            }
         }
 
         private void LayHoKhau()
@@ -148,9 +155,9 @@ namespace QuanLiCongDanThanhPho
         {
             CCCD cccd = new CCCD(congDan.CCCD);
             cccd = cCCDDAO.LayThongTin(cccd);
-            if (cccd.DacDiem == "unknow")
+            if (cccd.MaCCCD != null && cccd.DacDiem == "unknow")
             {
-                btnThongTinCCCD.Enabled = false;
+                    btnThongTinCCCD.Enabled = false;
             }
 
         }
@@ -259,14 +266,19 @@ namespace QuanLiCongDanThanhPho
         private bool CapNhatKhaiSinh()
         {
             KhaiSinh khaiSinh = ksDAO.LayThongTin(congDan.CCCD);
-            khaiSinh.HoTen = txtHoVaTen.Text;
-            khaiSinh.QueQuan.DinhDang(txtQueQuan.Text);
-            khaiSinh.NgaySinh = dtmNgaySinh.Value;
-            khaiSinh.DanToc = txtDanToc.Text;
-            khaiSinh.QuocTich = txtQuocTich.Text;
-            khaiSinh.GioiTinh = txtGioiTinh.Text;
-            khaiSinh.DinhDangGioiTinh();
-            return ksDAO.CapNhatKhaiSinh(khaiSinh);  
+            if (khaiSinh.MaKhaiSinh != null)
+            {
+                khaiSinh.HoTen = txtHoVaTen.Text;
+                khaiSinh.QueQuan.DinhDang(txtQueQuan.Text);
+                khaiSinh.NgaySinh = dtmNgaySinh.Value;
+                khaiSinh.DanToc = txtDanToc.Text;
+                khaiSinh.QuocTich = txtQuocTich.Text;
+                khaiSinh.GioiTinh = txtGioiTinh.Text;
+                khaiSinh.DinhDangGioiTinh();
+                return ksDAO.CapNhatKhaiSinh(khaiSinh);
+            }
+            else
+                return false;
         }    
 
         private bool CapNhatCongDan()

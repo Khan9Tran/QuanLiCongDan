@@ -10,8 +10,8 @@ namespace QuanLiCongDanThanhPho
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            (this.ParentForm as FTrangChu).ChildForm.CurrentChildForm = null;
             StackForm.ClearAll();
+            StackForm.TrangChu?.BringToFront();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

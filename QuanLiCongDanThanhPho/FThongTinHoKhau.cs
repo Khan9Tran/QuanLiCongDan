@@ -5,13 +5,13 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FThongTinHoKhau : MoveForm
     {
-        private string maHoKhau;
+        private string? maHoKhau;
         private HoKhauDAO hkDAO;
         private CongDanDAO cdDAO;
 
         private ToolsForControl tool;
 
-        public string MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
+        public string? MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
 
         public FThongTinHoKhau(string maHoKhau)
         {
@@ -36,7 +36,8 @@ namespace QuanLiCongDanThanhPho
 
                 // Hiện thị thông tin của chủ hộ
                 CongDan chuHo = cdDAO.LayThongTin(hk.CCCDChuHo);
-                txtTenChuHo.Text = chuHo.Ten.ToString();
+                if (chuHo.CCCD  != null)
+                    txtTenChuHo.Text = chuHo.Ten.ToString();
 
                 // Hiện thị danh sách những người trong hộ
                 DataTable dsNguoiTrongHo = cdDAO.LayDanhSachTheoHoKhau(maHoKhau);

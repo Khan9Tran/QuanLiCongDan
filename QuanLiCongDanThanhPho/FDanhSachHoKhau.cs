@@ -30,7 +30,7 @@ namespace QuanLiCongDanThanhPho
 
         private void gvHoKhau_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1 && gvHoKhau.Rows[e.RowIndex].Cells[0].Value.ToString().Length > 0)
+            if (e.RowIndex != -1 && gvHoKhau.Rows[e.RowIndex].Cells[0].Value.ToString()?.Length > 0)
             {
                 cmnusMenu.Show(this, this.PointToClient(MousePosition));
             }
@@ -80,7 +80,7 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau();
-            (StackForm.TrangChu).ChildForm.Open(dangKyHoKhau);
+            (StackForm.TrangChu)?.ChildForm.Open(dangKyHoKhau);
         }
 
         private void cmnusMenuTachGop_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace QuanLiCongDanThanhPho
             if (maHoKhau != "")
             {
                 FDangKyHoKhau dangKyHoKhau = new FDangKyHoKhau(maHoKhau);
-                (StackForm.TrangChu).ChildForm.Open(dangKyHoKhau);
+                (StackForm.TrangChu)?.ChildForm.Open(dangKyHoKhau);
             }
         }
 

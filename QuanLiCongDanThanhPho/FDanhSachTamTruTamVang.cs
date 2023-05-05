@@ -70,14 +70,17 @@ namespace QuanLiCongDanThanhPho
         private void GiaHan(dynamic thoiGian, int soLuong)
         {
             TamTruTamVang tTTV = tttvDAO.LayThongTin(CCCDDAO.GetCCCD(gvTVTT, 1));
-            if (thoiGian == ThoiGian.ngay)
-                tTTV.NgayKetThuc = tTTV.NgayKetThuc.AddDays(soLuong);
-            else if (thoiGian == ThoiGian.thang)
-                tTTV.NgayKetThuc = tTTV.NgayKetThuc.AddMonths(soLuong);
-            else
-                tTTV.NgayKetThuc = tTTV.NgayKetThuc.AddYears(soLuong);
-            tttvDAO.CapNhat(tTTV);
-            TimKiem(LuaChon);
+            if (tTTV.CCCD != null)
+            {
+                if (thoiGian == ThoiGian.ngay)
+                    tTTV.NgayKetThuc = tTTV.NgayKetThuc.AddDays(soLuong);
+                else if (thoiGian == ThoiGian.thang)
+                    tTTV.NgayKetThuc = tTTV.NgayKetThuc.AddMonths(soLuong);
+                else
+                    tTTV.NgayKetThuc = tTTV.NgayKetThuc.AddYears(soLuong);
+                tttvDAO.CapNhat(tTTV);
+                TimKiem(LuaChon);
+            }
         }
 
         // Tô đỏ những người quá hạn tạm trú/tạm vắng
@@ -107,12 +110,12 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyTamTruTamVang dangKyTTTV = new FDangKyTamTruTamVang();
-            (StackForm.TrangChu).ChildForm.Open(dangKyTTTV);
+            (StackForm.TrangChu)?.ChildForm.Open(dangKyTTTV);
         }
 
         private void gvTVTT_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1 && gvTVTT.Rows[e.RowIndex].Cells[0].Value.ToString().Length > 0)
+            if (e.RowIndex != -1 && gvTVTT.Rows[e.RowIndex].Cells[0].Value.ToString()?.Length > 0)
             {
                 cmnusMenu.Show(this, this.PointToClient(MousePosition));
             }
