@@ -169,10 +169,13 @@ namespace QuanLiCongDanThanhPho
         private void btnHoKhau_Click(object sender, EventArgs e)
         {
             CongDan cd = cdDAO.LayThongTin(congDan.CCCD);
-            if (isMaHK(cd.MaHoKhau))
+            if (cd.CCCD != null)
             {
-                FThongTinHoKhau tTHK = new FThongTinHoKhau(congDan.MaHoKhau);
-                tTHK.ShowDialog();
+                if (isMaHK(cd.MaHoKhau))
+                {
+                    FThongTinHoKhau tTHK = new FThongTinHoKhau(congDan.MaHoKhau);
+                    tTHK.ShowDialog();
+                }
             }
         }
 
@@ -285,10 +288,13 @@ namespace QuanLiCongDanThanhPho
                 if (txtQuanHeVoiChuHo.Text == "Chủ hộ" && hoKhau.CCCDChuHo != txtCCCD.Text)
                 {
                     CongDan cD = cdDAO.LayThongTin(hoKhau.CCCDChuHo);
-                    cD.QuanHeVoiChuHo = "Unknow";
-                    hoKhau.CCCDChuHo = txtCCCD.Text;
-                    if (!cdDAO.CapNhatCongDan(cD))
-                        return false;
+                    if (cD.CCCD != null)
+                    {
+                        cD.QuanHeVoiChuHo = "Unknow";
+                        hoKhau.CCCDChuHo = txtCCCD.Text;
+                        if (!cdDAO.CapNhatCongDan(cD))
+                            return false;
+                    }
                 }
                 hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
                 return hkDAO.CapNhatHoKhau(hoKhau);

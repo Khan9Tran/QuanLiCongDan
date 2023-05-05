@@ -25,45 +25,30 @@ namespace QuanLiCongDanThanhPho
             SetTools();
         }
 
-        // Hiển thị thông tin của hổ khẩu
-        private void HienThiHoKhau()
-        {
-            HoKhau hk = hkDAO.LayThongTin(MaHoKhau);
-            txtCCCDChuHo.Text = hk.CCCDChuHo;
-            txtMaHoKhau.Text = hk.MaHoKhau;
-            txtDiaChi.Text = hk.DiaChi.toString();
-        }
-
-        // Hiện thị thông tin của chủ hộ
-        private void HienThiCongDan()
-        {
-            HoKhau hk = hkDAO.LayThongTin(MaHoKhau);
-            CongDan chuHo = cdDAO.LayThongTin(hk.CCCDChuHo);
-            txtTenChuHo.Text = chuHo.Ten.ToString();
-        }
-
-        // Hiện thị danh sách những người trong hộ
-        private void HienThiNguoiTrongHo()
-        {
-            DataTable dsNguoiTrongHo = cdDAO.LayDanhSachTheoHoKhau(maHoKhau);
-            gvQuanHeVoiChuHo.DataSource = dsNguoiTrongHo;
-            lblTong.Text = "Tổng thành viên: " + dsNguoiTrongHo.Rows.Count.ToString();
-        }
-
         public void LayThongTinHoKhau()
         {
-            if (MaHoKhau != null)
+            HoKhau hk = hkDAO.LayThongTin(MaHoKhau);
+            if (hk.MaHoKhau != null)
             {
-                HienThiHoKhau();
-                HienThiCongDan();
-                HienThiNguoiTrongHo();
+                txtCCCDChuHo.Text = hk.CCCDChuHo;
+                txtMaHoKhau.Text = hk.MaHoKhau;
+                txtDiaChi.Text = hk.DiaChi.toString();
+
+                // Hiện thị thông tin của chủ hộ
+                CongDan chuHo = cdDAO.LayThongTin(hk.CCCDChuHo);
+                txtTenChuHo.Text = chuHo.Ten.ToString();
+
+                // Hiện thị danh sách những người trong hộ
+                DataTable dsNguoiTrongHo = cdDAO.LayDanhSachTheoHoKhau(maHoKhau);
+                gvQuanHeVoiChuHo.DataSource = dsNguoiTrongHo;
+                lblTong.Text = "Tổng thành viên: " + dsNguoiTrongHo.Rows.Count.ToString();
             }
         }
 
         private void CapNhatHoKhau()
         {
             HoKhau hoKhau = hkDAO.LayThongTin(maHoKhau);
-            if (txtDiaChi.Text != "")
+            if (txtDiaChi.Text != "" && hoKhau.MaHoKhau != null)
             {
                 hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
             }
@@ -97,8 +82,12 @@ namespace QuanLiCongDanThanhPho
                 string maCCCD = (string)gvQuanHeVoiChuHo.CurrentRow.Cells[0].Value;
                 if (maCCCD != "")
                 {
-                    FThongTinCongDan ttCD = new FThongTinCongDan(cdDAO.LayThongTin(maCCCD));
-                    ttCD.ShowDialog();
+                    CongDan cd = cdDAO.LayThongTin(maCCCD);
+                    if (cd.CCCD != null)
+                    {
+                        FThongTinCongDan ttCD = new FThongTinCongDan(cd);
+                        ttCD.ShowDialog();
+                    }
                 }
             }
         }
