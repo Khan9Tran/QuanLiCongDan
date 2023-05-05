@@ -91,22 +91,26 @@ namespace QuanLiCongDanThanhPho
         {
             if (KiemTraThongTin())
             {
-                if (rdoTamTru.Checked == true)
+                if (tTTVDAO.LayThongTin(txtCCCD.Text).MaSo == null)
                 {
-                    CongDan cDTamTru = new CongDan(txtCCCD.Text, txtTen.Text, txtSDT.Text);
-                    try
+                    if (rdoTamTru.Checked == true)
                     {
-                        cDDAO.ThemCongDan(cDTamTru);
+                        if (cDDAO.LayThongTin(txtCCCD.Text).CCCD == null)
+                        {
+                            CongDan cDTamTru = new CongDan(txtCCCD.Text, txtTen.Text, txtSDT.Text);
+                            try
+                            {
+                                cDDAO.ThemCongDan(cDTamTru);
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Không thể dùng tùy chọn này");
+                                return;
+                            }
+                        }
                     }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show("Không thể dùng tùy chọn này");
-                        return;
-                    }
-                }
-                TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);
-                if (tTTVDAO.LayThongTin(tTTV.CCCD).MaSo == null)
-                {
+                    TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);
+
                     if (!tTTVDAO.ThemTamTruTamVang(tTTV))
                         MessageBox.Show("Thêm tạm trú/tạm vắng thất bại");
                     else
