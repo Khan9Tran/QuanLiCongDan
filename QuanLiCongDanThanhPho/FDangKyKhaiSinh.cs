@@ -8,30 +8,31 @@ namespace QuanLiCongDanThanhPho
         private CongDanDAO cDDAO;
         private HonNhanDAO hNDAO;
 
+        private void KhoiTao()
+        {
+            InitializeComponent();
+            kSDAO = new KhaiSinhDAO();
+            cDDAO = new CongDanDAO();
+            hNDAO = new HonNhanDAO();
+            StackForm.Add(this);
+        }
+
         public FDangKyKhaiSinh()
         {
-            InitializeComponent();
-            kSDAO = new KhaiSinhDAO();
-            cDDAO = new CongDanDAO();
-            hNDAO = new HonNhanDAO();
-            StackForm.Add(this);
+            KhoiTao();
         }
 
-        public FDangKyKhaiSinh(string cCCCDThanNhan)
+        public FDangKyKhaiSinh(string cCCDThanNhan)
         {
-            InitializeComponent();
-            kSDAO = new KhaiSinhDAO();
-            cDDAO = new CongDanDAO();
-            hNDAO = new HonNhanDAO();
-            StackForm.Add(this);
-            LoadThongTinChaMe(cCCCDThanNhan);
+            KhoiTao();
+            LoadThongTinChaMe(cCCDThanNhan);
         }
 
-        private void LoadThongTinChaMe(string cCCCDThanNhan)
+        private void LoadThongTinChaMe(string cCCDThanNhan)
         {
-            if (cCCCDThanNhan != null)
+            if (cCCDThanNhan != null)
             {
-                HonNhan honNhan = hNDAO.LayThongTin(cCCCDThanNhan);
+                HonNhan honNhan = hNDAO.LayThongTin(cCCDThanNhan);
                 if (honNhan.MaSo != null)
                 {
                     txtCccdCha.Text = honNhan.CCCDChong;
