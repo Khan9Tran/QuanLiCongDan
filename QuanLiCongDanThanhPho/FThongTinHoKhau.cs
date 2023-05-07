@@ -3,31 +3,18 @@ using System.Data;
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FThongTinHoKhau : MoveForm
+    public partial class FThongTinHoKhau : FormThongTin
     {
-        private string? maHoKhau;
-        private HoKhauDAO hkDAO;
-        private CongDanDAO cdDAO;
-
-        private ToolsForControl tool;
-
-        public string? MaHoKhau { get => maHoKhau; set => maHoKhau = value; }
-
         public FThongTinHoKhau(string maHoKhau)
         {
             MaHoKhau = maHoKhau;
             InitializeComponent();
-            StackForm.Add(this);
-
-            hkDAO = new HoKhauDAO();
-            cdDAO = new CongDanDAO();
-
             SetTools();
         }
 
         public void LayThongTinHoKhau()
         {
-            HoKhau hk = hkDAO.LayThongTin(MaHoKhau);
+            HoKhau hk = HKDAO.LayThongTin(MaHoKhau);
             if (hk.MaHoKhau != null)
             {
                 txtCCCDChuHo.Text = hk.CCCDChuHo;
@@ -35,12 +22,12 @@ namespace QuanLiCongDanThanhPho
                 txtDiaChi.Text = hk.DiaChi.toString();
 
                 // Hiện thị thông tin của chủ hộ
-                CongDan chuHo = cdDAO.LayThongTin(hk.CCCDChuHo);
+                CongDan chuHo = CDDAO.LayThongTin(hk.CCCDChuHo);
                 if (chuHo.CCCD  != null)
                     txtTenChuHo.Text = chuHo.Ten.ToString();
 
                 // Hiện thị danh sách những người trong hộ
-                DataTable dsNguoiTrongHo = cdDAO.LayDanhSachTheoHoKhau(maHoKhau);
+                DataTable dsNguoiTrongHo = CDDAO.LayDanhSachTheoHoKhau(MaHoKhau);
                 gvQuanHeVoiChuHo.DataSource = dsNguoiTrongHo;
                 lblTong.Text = "Tổng thành viên: " + dsNguoiTrongHo.Rows.Count.ToString();
             }
@@ -48,12 +35,12 @@ namespace QuanLiCongDanThanhPho
 
         private void CapNhatHoKhau()
         {
-            HoKhau hoKhau = hkDAO.LayThongTin(maHoKhau);
+            HoKhau hoKhau = HKDAO.LayThongTin(MaHoKhau);
             if (KiemTraDuLieuNhap.isDiaChi(txtDiaChi.Text) && hoKhau.MaHoKhau != null)
             {
                 hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
             }
-            if (hkDAO.CapNhatHoKhau(hoKhau))
+            if (HKDAO.CapNhatHoKhau(hoKhau))
                 MessageBox.Show("Cập nhất hộ khẩu thành công");
             else
                 MessageBox.Show("Cập nhật hổ khẩu thất bại");
@@ -64,7 +51,7 @@ namespace QuanLiCongDanThanhPho
             LayThongTinHoKhau();
         }
 
-        private void SetTools()
+        internal override void SetTools()
         {
             List<TextBox> listTxt = new List<TextBox>()
             {txtDiaChi};
@@ -73,7 +60,7 @@ namespace QuanLiCongDanThanhPho
             {
                 btnXacNhan
             };
-            tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
+            Tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
         }
 
         private void gvQuanHeVoiChuHo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -83,7 +70,7 @@ namespace QuanLiCongDanThanhPho
                 string maCCCD = (string)gvQuanHeVoiChuHo.CurrentRow.Cells[0].Value;
                 if (maCCCD != "")
                 {
-                    CongDan cd = cdDAO.LayThongTin(maCCCD);
+                    CongDan cd = CDDAO.LayThongTin(maCCCD);
                     if (cd.CCCD != null)
                     {
                         FThongTinCongDan ttCD = new FThongTinCongDan(cd);
@@ -95,21 +82,21 @@ namespace QuanLiCongDanThanhPho
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            tool.AutoReadOnly();
+            Tool.AutoReadOnly();
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             CapNhatHoKhau();
             LayThongTinHoKhau();
-            tool.TurnOff();
+            Tool.TurnOff();
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {
             LayThongTinHoKhau();
-            tool.State = ToolsForControl.Turn.on;
-            tool.TurnOff();
+            Tool.State = ToolsForControl.Turn.on;
+            Tool.TurnOff();
         }
     }
 }

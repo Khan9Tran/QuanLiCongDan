@@ -2,23 +2,13 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FThongTinCCCD : MoveForm
+    public partial class FThongTinCCCD : FormThongTin
     {
-        private KhaiSinhDAO khaiSinhDAO;
-        private HoKhauDAO hoKhauDAO;
-        private CCCDDAO cCCDDAO;
-        private CongDan congDan;
-        private HinhDaiDien hinhCongDan;
-
         public FThongTinCCCD(CongDan congDan)
         {
             InitializeComponent();
-            khaiSinhDAO = new KhaiSinhDAO();
-            hoKhauDAO = new HoKhauDAO();
-            cCCDDAO = new CCCDDAO();
-            StackForm.Add(this);
-            this.congDan = congDan;
-            hinhCongDan = new HinhDaiDien(HinhDaiDien.Type.congDan);
+            CongDan = congDan;
+            HinhCongDan = new HinhDaiDien(HinhDaiDien.Type.congDan);
         }
 
         private string DateTimeFormat()
@@ -29,14 +19,14 @@ namespace QuanLiCongDanThanhPho
         // Hiển thị thông tin lấy từ class công dân
         private void HienThiCongDan()
         {
-            lblCCCD.Text = congDan.CCCD;
-            lblTen.Text = congDan.Ten.ToUpper();
+            lblCCCD.Text = CongDan.CCCD;
+            lblTen.Text = CongDan.Ten.ToUpper();
         }
 
         // Hiển thị thông tin lấy từ class khai sinh
         private void HienThiKhaiSinh()
         {
-            KhaiSinh ks = khaiSinhDAO.LayThongTin(lblCCCD.Text);
+            KhaiSinh ks = KSDAO.LayThongTin(lblCCCD.Text);
             if (ks.MaKhaiSinh != null)
             {
                 if (ks.GioiTinh == "m")
@@ -51,7 +41,7 @@ namespace QuanLiCongDanThanhPho
         // Hiển thị thông tin lấy từ class hộ khẩu
         private void HienThiHoKhau()
         {
-            HoKhau hk = hoKhauDAO.LayThongTin(congDan.MaHoKhau);
+            HoKhau hk = HKDAO.LayThongTin(CongDan.MaHoKhau);
             if (hk.MaHoKhau != null)
             {
                 lblDiaChi.Text = hk.DiaChi.toString();
@@ -61,7 +51,7 @@ namespace QuanLiCongDanThanhPho
         // Hiển thị thông tin láy từ class CCCD
         private void HienThiCCCD()
         {
-            CCCD cCCD = cCCDDAO.LayThongTin(new CCCD(congDan.CCCD, DateTime.Now, "unknow"));
+            CCCD cCCD = CCCDDAO.LayThongTin(new CCCD(CongDan.CCCD, DateTime.Now, "unknow"));
             if (cCCD.MaCCCD != null)
             {
                 lblNgayCap.Text = ((DateTime)cCCD.NgayCap).ToString(DateTimeFormat());
@@ -80,7 +70,7 @@ namespace QuanLiCongDanThanhPho
         private void FThongTinCCCD_Load(object sender, EventArgs e)
         {
             HienThiThongTin();
-            hinhCongDan.LayHinhDaiDien(lblCCCD.Text, ptcHinhDaiDien);
+            HinhCongDan.LayHinhDaiDien(lblCCCD.Text, ptcHinhDaiDien);
         }
 
     }

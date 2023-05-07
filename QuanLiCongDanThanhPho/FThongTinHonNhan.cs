@@ -2,25 +2,13 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FThongTinHonNhan : MoveForm
+    public partial class FThongTinHonNhan : FormThongTin
     {
-        private string? maCCCD;
-        private HonNhanDAO hNDAO;
-        private CongDanDAO cDDAO;
-
-        private ToolsForControl tool;
-
-        public string? MaCCCD { get => maCCCD; set => maCCCD = value; }
-
         public FThongTinHonNhan(string maCCCD)
         {
             MaCCCD = maCCCD;
 
             InitializeComponent();
-            StackForm.Add(this);
-
-            hNDAO = new HonNhanDAO();
-            cDDAO = new CongDanDAO();
 
             SetTools();
         }
@@ -29,7 +17,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (txtCCCDChong.Text != "")
             {
-                FThongTinCongDan tTCD = new FThongTinCongDan(cDDAO.LayThongTin(txtCCCDChong.Text));
+                FThongTinCongDan tTCD = new FThongTinCongDan(CDDAO.LayThongTin(txtCCCDChong.Text));
                 tTCD.ShowDialog();
             }
         }
@@ -38,16 +26,16 @@ namespace QuanLiCongDanThanhPho
         {
             if (txtCCCDVo.Text != "")
             {
-                FThongTinCongDan tTCD = new FThongTinCongDan(cDDAO.LayThongTin(txtCCCDVo.Text));
+                FThongTinCongDan tTCD = new FThongTinCongDan(CDDAO.LayThongTin(txtCCCDVo.Text));
                 tTCD.ShowDialog();
             }
         }
 
         public void LayThongTinHonNhan()
         {
-            if (maCCCD != null)
+            if (MaCCCD != null)
             {
-                HonNhan hn = hNDAO.LayThongTin(maCCCD);
+                HonNhan hn = HNDAO.LayThongTin(MaCCCD);
                 if (hn.MaSo != null)
                 {
                     txtTenChong.Text = hn.TenChong;
@@ -65,7 +53,7 @@ namespace QuanLiCongDanThanhPho
             LayThongTinHonNhan();
         }
 
-        private void SetTools()
+        internal override void SetTools()
         {
             List<TextBox> listTxt = new List<TextBox>()
             { txtNoiDangKy};
@@ -74,33 +62,22 @@ namespace QuanLiCongDanThanhPho
             {
                 btnXacNhan, dtmNgayDangKy
             };
-            tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
+            Tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            tool.AutoReadOnly();
+            Tool.AutoReadOnly();
         }
-
-        private bool KiemTraThongTin()
-        {
-            if (!KiemTraDuLieuNhap.isDiaChi(txtNoiDangKy.Text))
-            {
-                MessageBox.Show("Kiểm tra lại nơi đăng ký");
-                txtNoiDangKy.Focus();
-                return false;
-            }    
-            return true;
-        }    
 
         public void CapNhatHonNhan()
         {
-            HonNhan hN = hNDAO.LayThongTin(maCCCD);
+            HonNhan hN = HNDAO.LayThongTin(MaCCCD);
             if (hN.MaSo != null)
             {
                 hN.NoiDangKy.DinhDang(txtNoiDangKy.Text);
                 hN.NgayDangKy = dtmNgayDangKy.Value;
-                if (KiemTraDuLieuNhap.KiemTraHonNhan(hN) && hNDAO.CapNhatHonNhan(hN))
+                if (KiemTraDuLieuNhap.KiemTraHonNhan(hN) && HNDAO.CapNhatHonNhan(hN))
                     MessageBox.Show("Cập nhật hôn nhân thành công");
                 else
                     MessageBox.Show("Cập nhật hôn nhân thất bại");
@@ -110,7 +87,7 @@ namespace QuanLiCongDanThanhPho
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             CapNhatHonNhan();
-            tool.TurnOff();
+            Tool.TurnOff();
             LayThongTinHonNhan();
         }
 
