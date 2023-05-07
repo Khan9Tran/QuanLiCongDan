@@ -192,78 +192,13 @@ namespace QuanLiCongDanThanhPho
             tTThue.ShowDialog();
         }
 
-        private bool KiemTraThongTin()
-        {
-            if (!KiemTraDuLieuNhap.isTen(txtHoVaTen.Text))
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại họ và tên");
-                txtHoVaTen.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isGioiTinh(txtGioiTinh.Text))
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại giới tính");
-                txtGioiTinh.Focus();
-                return false;
-            }
-            if (txtNgheNghiep.Text == "")
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại nghề nghiệp");
-                txtNgheNghiep.Focus();
-                return false;
-            }
-            if (txtQuocTich.Text == "")
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại quốc tịch");
-                txtQuocTich.Focus();
-                return false;
-            }
-            if (txtDanToc.Text == "")
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại dân tộc");
-                txtDanToc.Focus();
-                return false;
-            }
-            if (txtTonGiao.Text == "")
-            {
-                MessageBox.Show("Tôn giáo không được để trống");
-                txtTonGiao.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isDiaChi(txtDiaChi.Text))
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại địa chỉ");
-                txtDiaChi.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isDiaChi(txtQueQuan.Text))
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại quê quán");
-                txtQueQuan.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isSoDT(txtSDT.Text))
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại số điện thoại");
-                txtSDT.Focus();
-                return false;
-            }      
-            if (txtQuanHeVoiChuHo.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập mối quan hệ với chủ hộ");
-                txtQuanHeVoiChuHo.Focus();
-                return false;
-            }    
-            return true;
-        }
-
         private void btnHonNhan_Click(object sender, EventArgs e)
         {
             FThongTinHonNhan tTHN = new FThongTinHonNhan(congDan.CCCD);
             tTHN.ShowDialog();
         }
 
-        private bool CapNhatKhaiSinh()
+        private void CapNhatKhaiSinh()
         {
             KhaiSinh khaiSinh = ksDAO.LayThongTin(congDan.CCCD);
             if (khaiSinh.MaKhaiSinh != null)
@@ -275,24 +210,24 @@ namespace QuanLiCongDanThanhPho
                 khaiSinh.QuocTich = txtQuocTich.Text;
                 khaiSinh.GioiTinh = txtGioiTinh.Text;
                 khaiSinh.DinhDangGioiTinh();
-                return ksDAO.CapNhatKhaiSinh(khaiSinh);
+                if (KiemTraDuLieuNhap.KiemTraKhaiSinh(khaiSinh))
+                    ksDAO.CapNhatKhaiSinh(khaiSinh);
             }
-            else
-                return false;
         }    
 
-        private bool CapNhatCongDan()
+        private void CapNhatCongDan()
         {
             congDan.Ten = txtHoVaTen.Text;
             congDan.SDT = txtSDT.Text;
             congDan.NgheNghiep = txtNgheNghiep.Text;
             congDan.TonGiao = txtTonGiao.Text;
             congDan.QuanHeVoiChuHo = txtQuanHeVoiChuHo.Text;
-            return cdDAO.CapNhatCongDan(congDan);
+            if (KiemTraDuLieuNhap.KiemTraCongDan(congDan))
+                cdDAO.CapNhatCongDan(congDan);
         }
 
         //Thay đổi chủ hộ ở table hộ khẩu nếu có
-        private bool CapNhatHoKhau()
+        private void CapNhatHoKhau()
         {
             HoKhau hoKhau = hkDAO.LayThongTin(txtMaHoKhau.Text);
             if (hoKhau.MaHoKhau != null)
@@ -304,14 +239,13 @@ namespace QuanLiCongDanThanhPho
                     {
                         cD.QuanHeVoiChuHo = "Unknow";
                         hoKhau.CCCDChuHo = txtCCCD.Text;
-                        if (!cdDAO.CapNhatCongDan(cD))
-                            return false;
+                        cdDAO.CapNhatCongDan(cD);
                     }
                 }
                 hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
-                return hkDAO.CapNhatHoKhau(hoKhau);
+                if (KiemTraDuLieuNhap.KiemTraHoKhau(hoKhau))
+                    hkDAO.CapNhatHoKhau(hoKhau);
             }
-            return false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -319,7 +253,7 @@ namespace QuanLiCongDanThanhPho
             tool.AutoReadOnly();
         }
 
-        private bool CapNhatHonNhan()
+        private void CapNhatHonNhan()
         {
             if (txtHonNhan.Text != "Chưa có hôn nhân" && txtHonNhan.Text != "")
             {
@@ -328,39 +262,19 @@ namespace QuanLiCongDanThanhPho
                     hn.TenChong = txtHoVaTen.Text;  
                 else
                     hn.TenVo = txtHoVaTen.Text;
-                return hnDAO.CapNhatHonNhan(hn);
+                if (KiemTraDuLieuNhap.KiemTraHonNhan(hn))
+                    hnDAO.CapNhatHonNhan(hn);
             }
-            return false;
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
-        {  
-            if (KiemTraThongTin())
-            {
-                if (!CapNhatCongDan())
-                {
-                    MessageBox.Show("Cập nhật thông tin công dân thất bại");
-                    return;
-                }
-                if (!CapNhatKhaiSinh())
-                {
-                    MessageBox.Show("Cập nhật thông tin công dân thất bại");
-                    return;
-                }
-                if (!CapNhatHonNhan())
-                {
-                    MessageBox.Show("Cập nhật thông tin công dân thất bại");
-                    return;
-                }
-                LayThongTinCongDan();
-                if (!CapNhatHoKhau())
-                {
-                    MessageBox.Show("Cập nhật thông tin công dân thất bại");
-                    return;
-                }
-                MessageBox.Show("Cập nhật thông tin công dân thành công");
-                tool.AutoReadOnly();
-            }    
+        {
+            CapNhatHoKhau();
+            CapNhatCongDan();
+            CapNhatKhaiSinh();
+            CapNhatHonNhan();
+            LayThongTinCongDan();
+            tool.AutoReadOnly();
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
