@@ -82,8 +82,8 @@ namespace QuanLiCongDanThanhPho
             int dong = e.RowIndex;
             if (dong >= 0)
             {
-                txtCCCD.Text = gvDanhSachChuaCapCCCD.Rows[dong].Cells["maCCCD"].Value.ToString();
-                txtTen.Text = gvDanhSachChuaCapCCCD.Rows[dong].Cells["Ten"].Value.ToString();
+                txtCCCD.Text = gvDanhSachChuaCapCCCD.Rows[dong].Cells["CCCD"].Value.ToString();
+                txtTen.Text = gvDanhSachChuaCapCCCD.Rows[dong].Cells["Tên"].Value.ToString();
             }
             txtDDNhanDang.Text = "";
             dtmNgayCap.Value = DateTime.Now;

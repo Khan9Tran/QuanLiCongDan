@@ -84,6 +84,11 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Vui lòng kiểm tra lại địa chỉ");
                 return false;
             }  
+            if (tTTVDAO.LayThongTin(txtCCCD.Text).MaSo != null)
+            {
+                MessageBox.Show("Đăng kí thất bại");
+                return false;
+            }
             return true;
         }
 
@@ -91,33 +96,24 @@ namespace QuanLiCongDanThanhPho
         {
             if (KiemTraThongTin())
             {
-                if (tTTVDAO.LayThongTin(txtCCCD.Text).MaSo == null)
+                TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);
+                CongDan congDan = cDDAO.LayThongTin(txtCCCD.Text);
+                if (rdoTamTru.Checked == true)
                 {
-                    if (rdoTamTru.Checked == true)
+                    if (congDan.CCCD == null)
                     {
-                        if (cDDAO.LayThongTin(txtCCCD.Text).CCCD == null)
+                        CongDan cDTamTru = new CongDan(txtCCCD.Text, txtTen.Text, txtSDT.Text);
+                        if (!cDDAO.ThemCongDan(cDTamTru))
                         {
-                            CongDan cDTamTru = new CongDan(txtCCCD.Text, txtTen.Text, txtSDT.Text);
-                            try
-                            {
-                                cDDAO.ThemCongDan(cDTamTru);
-                            }
-                            catch
-                            {
-                                MessageBox.Show("Không thể dùng tùy chọn này");
-                                return;
-                            }
+                            MessageBox.Show("Không thể dùng tùy chọn này");
+                            return;
                         }
                     }
-                    TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);
-
-                    if (!tTTVDAO.ThemTamTruTamVang(tTTV))
-                        MessageBox.Show("Thêm tạm trú/tạm vắng thất bại");
-                    else
-                        MessageBox.Show("Thêm tạm trú/tạm vắng thành công");
                 }
+                if (!tTTVDAO.ThemTamTruTamVang(tTTV))
+                    MessageBox.Show("Đăng ký thất bại");
                 else
-                    MessageBox.Show("Thêm thất bại");
+                    MessageBox.Show("Đăng ký thành công");
             }
         }
 
