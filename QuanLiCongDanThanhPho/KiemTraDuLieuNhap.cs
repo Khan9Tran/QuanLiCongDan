@@ -150,6 +150,19 @@ namespace QuanLiCongDanThanhPho
             return true;
         }
 
+        public static bool KiemTraHaiHo(string maHk1, string maHk2)
+        {
+            if (!isMaSo(maHk1) || !isMaSo(maHk2))
+            {
+                return false;
+            }
+            if (maHk1 == maHk2)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public static bool KiemTraKhaiSinh(KhaiSinh khaiSinh)
         {
             if (!isDiaChi(khaiSinh.QueQuan.toString()))

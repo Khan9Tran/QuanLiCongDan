@@ -19,26 +19,7 @@ namespace QuanLiCongDanThanhPho
         {
             LoadDanhSach();
         }
-       private bool KiemTraThongTin()
-       {
-            if (txtCCCD.Text == "")
-            {
-                MessageBox.Show("CCCD không hợp lệ");
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isTen(txtTen.Text))
-            {
-                MessageBox.Show("Họ và tên không hợp lệ");
-                return false;
-            }
-            if (txtDDNhanDang.Text== "")
-            {
-                MessageBox.Show("Đặc điểm nhận dạng không được để trống");
-                return false;
-            }
-            return true;
 
-       }
         private void Reset()
         {
             txtCCCD.Text = "";
@@ -66,7 +47,7 @@ namespace QuanLiCongDanThanhPho
             }
             else
             {
-                MessageBox.Show("CCCD và họ tên không khớp");
+                MessageBox.Show("Thêm thất bại");
             }
             LoadDanhSach();
             

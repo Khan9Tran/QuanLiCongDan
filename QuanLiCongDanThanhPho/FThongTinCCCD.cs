@@ -21,6 +21,11 @@ namespace QuanLiCongDanThanhPho
             hinhCongDan = new HinhDaiDien(HinhDaiDien.Type.congDan);
         }
 
+        private string DateTimeFormat()
+        {
+            return "dd/MM/yyyy";
+        }
+
         // Hiển thị thông tin lấy từ class công dân
         private void HienThiCongDan()
         {
@@ -37,7 +42,7 @@ namespace QuanLiCongDanThanhPho
                 if (ks.GioiTinh == "m")
                     lblGioiTinh.Text = "Nam";
                 else lblGioiTinh.Text = "Nữ";
-                lblNgaySinh.Text = ks.NgaySinh.ToString("dd/MM/yyyy");
+                lblNgaySinh.Text = ks.NgaySinh.ToString(DateTimeFormat());
                 lblQueQuan.Text = ks.QueQuan.toString();
                 lblQuocTich.Text = ks.QuocTich;
             }
@@ -59,7 +64,7 @@ namespace QuanLiCongDanThanhPho
             CCCD cCCD = cCCDDAO.LayThongTin(new CCCD(congDan.CCCD, DateTime.Now, "unknow"));
             if (cCCD.MaCCCD != null)
             {
-                lblNgayCap.Text = ((DateTime)cCCD.NgayCap).ToString("dd/MM/yyyy");
+                lblNgayCap.Text = ((DateTime)cCCD.NgayCap).ToString(DateTimeFormat());
                 lblDDNhanDang.Text = cCCD.DacDiem;
             }
         }
