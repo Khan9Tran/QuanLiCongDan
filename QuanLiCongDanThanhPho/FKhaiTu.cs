@@ -12,40 +12,18 @@ namespace QuanLiCongDanThanhPho
             congDanDAO = new CongDanDAO();
         }
 
-        private bool KiemTraThongTin()
-        {
-            CongDan cD = congDanDAO.LayThongTin(txtCCCD.Text);
-            if (!KiemTraDuLieuNhap.isCCCD(txtCCCD.Text) || cD.CCCD == null)
-            {
-                MessageBox.Show("CCCD không chính xác");
-                txtCCCD.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isTen(txtTen.Text) || cD.Ten != txtTen.Text)
-            {
-                MessageBox.Show("Tên nhập không chính xác");
-                txtTen.Focus();
-                return false;
-
-            }
-            return true;
-        }
-
         private void XoaCongDan()
         {
             CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text);
-            if (congDanDAO.XoaCongDan(cD))
-                MessageBox.Show("Khai tử công dân thành công");
+            if (cD.CCCD != null && cD.Ten == txtTen.Text && congDanDAO.XoaCongDan(cD))
+                MessageBox.Show("Đã Khai tử");
             else
-                MessageBox.Show("Khai tử công dân thất bại");
+                MessageBox.Show("Khai tử thất bại");
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTin())
-            {
                 XoaCongDan();
-            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
