@@ -10,6 +10,7 @@ namespace QuanLiCongDanThanhPho
         private HoKhauDAO hKDAO;
         private HinhDaiDien hinhCongDan;
         private TamTruTamVangDAO tTTVDAO;
+        private CCCDDAO cCCDDAO;
 
         public HinhDaiDien HinhCongDan { get => hinhCongDan; set => hinhCongDan = value; }
         internal CongDanDAO CDDAO { get => cDDAO; set => cDDAO = value; }
@@ -18,6 +19,8 @@ namespace QuanLiCongDanThanhPho
         internal HonNhanDAO HNDAO { get => hNDAO; set => hNDAO = value; }
         internal HoKhauDAO HKDAO { get => hKDAO; set => hKDAO = value; }
         internal TamTruTamVangDAO TTTVDAO { get => tTTVDAO; set => tTTVDAO = value; }
+        internal CCCDDAO CCCDDAO { get => cCCDDAO; set => cCCDDAO = value; }
+
 
         public FormDangKy()
         {
@@ -28,7 +31,7 @@ namespace QuanLiCongDanThanhPho
             hNDAO = new HonNhanDAO();
             hKDAO = new HoKhauDAO();
             tTTVDAO = new TamTruTamVangDAO();
-
+            cCCDDAO = new CCCDDAO();
         }
 
         internal virtual void DangKy() { }

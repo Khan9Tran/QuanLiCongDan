@@ -2,17 +2,11 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDangKyCCCD : Form
+    public partial class FDangKyCCCD : FormDangKy
     {
-        private CCCDDAO cCCDDAO;
-        private CongDanDAO cDDAO;
-
         public FDangKyCCCD()
         {
             InitializeComponent();
-            cCCDDAO = new CCCDDAO();
-            cDDAO = new CongDanDAO();
-            StackForm.Add(this);
         }
         
         private void FDangKyCCCD_Load(object sender, EventArgs e)
@@ -34,13 +28,13 @@ namespace QuanLiCongDanThanhPho
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            CongDan cD = cDDAO.LayThongTin(txtCCCD.Text);
-            CCCD cCCD = cCCDDAO.LayThongTin(txtCCCD.Text);
+            CongDan cD = CDDAO.LayThongTin(txtCCCD.Text);
+            CCCD cCCD = CCCDDAO.LayThongTin(txtCCCD.Text);
             if (cD.CCCD != null && cD.Ten == txtTen.Text && KiemTraDuLieuNhap.KiemTraTenVaCCCD(cD) && KiemTraDuLieuNhap.isEmpty(txtDDNhanDang.Text) == false && cCCD.MaCCCD != null)
             {
                 cCCD.NgayCap = dtmNgayCap.Value;
                 cCCD.DacDiem = txtDDNhanDang.Text;
-                if (cCCDDAO.CapNhatCCCD(cCCD))
+                if (CCCDDAO.CapNhatCCCD(cCCD))
                     MessageBox.Show("Cấp căn cước thành công");
                 else
                     MessageBox.Show("Cấp căn cước thất bại");
@@ -54,7 +48,7 @@ namespace QuanLiCongDanThanhPho
         }
         private void LoadDanhSach()
         {
-            gvDanhSachChuaCapCCCD.DataSource = cCCDDAO.DanhSachCCCDTheoDacDiem("unknow");
+            gvDanhSachChuaCapCCCD.DataSource = CCCDDAO.DanhSachCCCDTheoDacDiem("unknow");
             Reset();
         }    
         private void gvDanhSachChuaCapCCCD_CellClick(object sender, DataGridViewCellEventArgs e)
