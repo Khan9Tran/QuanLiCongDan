@@ -133,6 +133,23 @@ namespace QuanLiCongDanThanhPho
             return true;
         }
 
+        public static bool KiemTraThue(Thue thue)
+        {
+            if (!isCCCD(thue.CCCD))
+            {
+                return false;
+            }
+            if (!isMaSo(thue.MaThue))
+            {
+                return false;
+            }
+            if (isEmpty(thue.SoTienCanNop) || isEmpty(thue.SoTienDaNop))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public static bool KiemTraKhaiSinh(KhaiSinh khaiSinh)
         {
             if (!isDiaChi(khaiSinh.QueQuan.toString()))
