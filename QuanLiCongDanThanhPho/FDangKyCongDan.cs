@@ -58,15 +58,15 @@ namespace QuanLiCongDanThanhPho
             {
                 hinhDaiDien.SaveHinhDaiDien(txtCCCD.Text, ofdHinhDaiDien, ptcHinhDaiDien);
 
+                if (!thueDAO.ThemThue(thue))
+                {
+                    MessageBox.Show("Mã số thuế bị trùng. Vui lòng đăng kí thuế sau");
+                }
+
                 if (cboTinhTrang.SelectedIndex == (int)LuaChon.ketHon)
                 {
 
                     HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, "u,u,u,u", DateTime.Now, rdoNam.ToString());
-
-                    if (!thueDAO.ThemThue(thue))
-                    {
-                        MessageBox.Show("Mã số thuế bị trùng. Vui lòng đăng kí thuế sau");
-                    }
                     
                     if (KiemTraDuLieuNhap.KiemTraHonNhan(hN) && hNDAO.ThemHonNhan(hN))
                     {
