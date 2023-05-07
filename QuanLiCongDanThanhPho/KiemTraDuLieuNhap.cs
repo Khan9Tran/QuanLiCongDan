@@ -36,14 +36,41 @@ namespace QuanLiCongDanThanhPho
             return KiemTra(CCCD, rule);
         }
 
-        public static bool isEmpty(TextBox txtData)
+        public static bool isEmpty(string data)
         {
-            if (txtData.Text == "" || txtData.Text == null)
+            if (data == "" || data == null)
             {
                 MessageBox.Show("Không để trống dữ liệu");
                 return true;
             }
             return false;
+        }
+
+        public static bool KiemTraHonNhan(HonNhan honnhan)
+        {
+            CongDanDAO cdDAO = new CongDanDAO();
+            if (!isMaSo(honnhan.MaSo))
+            {
+                return false;
+            }
+            CongDan chong = cdDAO.LayThongTin(honnhan.CCCDChong);
+            CongDan vo = cdDAO.LayThongTin(honnhan.CCCDVo);
+
+            if (chong.CCCD == null || vo.CCCD == null)
+            {
+                return false;
+            }
+
+            if (!KiemTraTenVaCCCD(chong) || !KiemTraTenVaCCCD(vo))
+            {
+                return false;
+            }
+
+            if (isEmpty(honnhan.NoiDangKy.toString()))
+            {
+                return false;
+            }
+            return true;
         }
 
         public static bool isTen(string Ten) 

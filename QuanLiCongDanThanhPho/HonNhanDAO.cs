@@ -17,25 +17,26 @@ namespace QuanLiCongDanThanhPho
         public bool ThemHonNhan(HonNhan hN)
         {
             CongDanDAO congDanDAO = new CongDanDAO();
+            KhaiSinhDAO ksDAO = new KhaiSinhDAO();
+
             CongDan chong = congDanDAO.LayThongTin(hN.CCCDChong);
             CongDan vo = congDanDAO.LayThongTin(hN.CCCDVo);
 
-            //Nếu 2 người không sống trong khu vực thì không thể đăng ký
-            if (chong.CCCD == null || vo.CCCD == null)
+            KhaiSinh ksChong = ksDAO.LayThongTin(hN.CCCDChong);
+            KhaiSinh ksVo = ksDAO.LayThongTin(hN.CCCDVo);
+
+            if (ksChong.MaKhaiSinh == null || ksVo.MaKhaiSinh == null)
             {
-                MessageBox.Show("Thông tin không tồn tại trong hệ thống");
                 return false;
             }
 
-            //Kiểm tra tên có khớp không
-            if (chong.Ten != null && !isGiongNhau(chong.Ten, hN.TenChong))
+            if (LayThongTinTheoMaSo(hN.MaSo).MaSo != null || chong.CCCD == null || vo.CCCD == null)
+            if (!isGiongNhau(chong.Ten, hN.TenChong))
             {
-                MessageBox.Show("Tên chồng không khớp với CCCD");
                 return false;
             }
-            if (vo.Ten != null && !isGiongNhau(vo.Ten, hN.TenVo))
+            if (!isGiongNhau(vo.Ten, hN.TenVo))
             {
-                MessageBox.Show("Tên vợ không khớp với CCCD");
                 return false;
             }
 

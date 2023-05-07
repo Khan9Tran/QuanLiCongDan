@@ -6,26 +6,23 @@ namespace QuanLiCongDanThanhPho
     {
         private HonNhanDAO hNDAO;
         private KhaiSinhDAO kSDAO;
-        private CongDanDAO cDDAO;
 
         public FDangKyHonNhan()
         {
             InitializeComponent();
             hNDAO = new HonNhanDAO();
             kSDAO = new KhaiSinhDAO();
-            cDDAO= new CongDanDAO();
             StackForm.Add(this);
         }
         
         //Thêm hôn nhân mới
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTin())
-            {
-                HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtTenVo.Text, txtNoiDK.Text, dtpNgayDangKy.Value);
-                if (hNDAO.ThemHonNhan(hN))
-                    MessageBox.Show("Đăng ký hôn nhân thành công");
-            }
+            HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtTenVo.Text, txtNoiDK.Text, dtpNgayDangKy.Value);
+            if (KiemTraDuLieuNhap.KiemTraHonNhan(hN) && hNDAO.ThemHonNhan(hN))
+                MessageBox.Show("Đăng ký hôn nhân thành công");
+            else
+                MessageBox.Show("Đắng ký thất bại");
         }
 
         //Bật các nút giúp cho phép đăng ký li hôn
@@ -78,73 +75,6 @@ namespace QuanLiCongDanThanhPho
             Reset();
         }
 
-        //Kiểm tra hợp lệ của thông tin
-        private bool KiemTraThongTin()
-        {
-            if (!KiemTraDuLieuNhap.isMaSo(txtMaHonNhan.Text))
-            {
-                MessageBox.Show("Mã hôn nhân sai định dạng");
-                txtMaHonNhan.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isCCCD(txtCCCDChong.Text))
-            {
-                MessageBox.Show("CCCD chồng sai định dạng");
-                txtCCCDChong.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isCCCD(txtCCCDVo.Text))
-            {
-                MessageBox.Show("CCCD vợ sai định dạng");
-                txtCCCDVo.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isTen(txtTenChong.Text))
-            {
-                MessageBox.Show("Tên chồng sai định dạng");
-                txtTenChong.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isTen(txtTenVo.Text))
-            {
-                MessageBox.Show("Tên vợ sai định dạng");
-                txtTenVo.Focus();
-                return false;
-            }
-            if (hNDAO.LayThongTin(txtCCCDChong.Text).TenChong != null)
-            {
-                MessageBox.Show("Người chồng đã kết hôn");
-                return false;
-            }
-            else if (kSDAO.LayThongTin(txtCCCDChong.Text).GioiTinh == "f")
-            {
-                MessageBox.Show("Người chồng sai giới tính");
-                return false;
-            }    
-            if (hNDAO.LayThongTin(txtCCCDChong.Text).TenVo != null)
-            {
-                MessageBox.Show("Người vợ đã kết hôn");
-                return false;
-            }
-            else if (kSDAO.LayThongTin(txtCCCDVo.Text).GioiTinh == "m")
-            {
-                MessageBox.Show("Người vợ sai giới tính");
-                return false;
-            }
-            if (cDDAO.LayThongTin(txtCCCDChong.Text).CCCD == null)
-            {
-                MessageBox.Show("Người chồng không có trong thành phố");
-                return false;
-            }
-            if (cDDAO.LayThongTin(txtCCCDVo.Text).CCCD == null)
-            {
-                MessageBox.Show("Người vợ không có trong thành phố");
-                return false;
-            }
-            return true;
-
-        }
-
         //Xóa các textbox
         public void Clear()
         {
@@ -162,6 +92,7 @@ namespace QuanLiCongDanThanhPho
             txtTenVo.Text = hn.TenVo;
             txtNoiDK.Text = hn.NoiDangKy.toString();
             dtpNgayDangKy.Value = hn.NgayDangKy;
+
             if (hn.CCCDChong != null)
                 ChoPhepLiHon();
             else
