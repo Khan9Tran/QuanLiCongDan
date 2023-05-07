@@ -53,21 +53,20 @@ namespace QuanLiCongDanThanhPho
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTin())
-            { 
-                if (cDDAO.LayThongTin(txtCCCD.Text).Ten == txtTen.Text)
-                {
-                    CCCD cCCD = new CCCD(txtCCCD.Text, dtmNgayCap.Value, txtDDNhanDang.Text);
-                    if (cCCDDAO.CapNhatCCCD(cCCD))
-                        MessageBox.Show("Cấp căn cước thành công");
-                    else
-                        MessageBox.Show("Cấp căn cước thất bại");
-                }
+            CongDan cD = cDDAO.LayThongTin(txtCCCD.Text);
+            CCCD cCCD = cCCDDAO.LayThongTin(txtCCCD.Text);
+            if (cD.CCCD != null && cD.Ten == txtTen.Text && KiemTraDuLieuNhap.KiemTraTenVaCCCD(cD) && KiemTraDuLieuNhap.isEmpty(txtDDNhanDang) == false && cCCD.MaCCCD != null)
+            {
+                cCCD.NgayCap = dtmNgayCap.Value;
+                cCCD.DacDiem = txtDDNhanDang.Text;
+                if (cCCDDAO.CapNhatCCCD(cCCD))
+                    MessageBox.Show("Cấp căn cước thành công");
                 else
-                {
-                    MessageBox.Show("CCCD và Họ tên không khớp");
-                }    
-                
+                    MessageBox.Show("Cấp căn cước thất bại");
+            }
+            else
+            {
+                MessageBox.Show("CCCD và họ tên không khớp");
             }
             LoadDanhSach();
             
