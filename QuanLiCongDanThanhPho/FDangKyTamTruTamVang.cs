@@ -94,27 +94,29 @@ namespace QuanLiCongDanThanhPho
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTin())
+            TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);
+            CongDan congDan = cDDAO.LayThongTin(txtCCCD.Text);
+            if (rdoTamVang.Checked == true && congDan.CCCD == null)
             {
-                TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);
-                CongDan congDan = cDDAO.LayThongTin(txtCCCD.Text);
-                if (rdoTamTru.Checked == true)
+                MessageBox.Show("Đăng ký thất bại");
+                return;
+            }
+            else if (rdoTamTru.Checked == true)
+            {
+                if (congDan.CCCD == null)
                 {
-                    if (congDan.CCCD == null)
+                    CongDan cDTamTru = new CongDan(txtCCCD.Text, txtTen.Text, txtSDT.Text);
+                    if (!cDDAO.ThemCongDan(cDTamTru))
                     {
-                        CongDan cDTamTru = new CongDan(txtCCCD.Text, txtTen.Text, txtSDT.Text);
-                        if (!cDDAO.ThemCongDan(cDTamTru))
-                        {
-                            MessageBox.Show("Không thể dùng tùy chọn này");
-                            return;
-                        }
+                        MessageBox.Show("Không thể dùng tùy chọn này");
+                        return;
                     }
                 }
-                if (!tTTVDAO.ThemTamTruTamVang(tTTV))
-                    MessageBox.Show("Đăng ký thất bại");
-                else
-                    MessageBox.Show("Đăng ký thành công");
             }
+            if (!KiemTraDuLieuNhap.isTamTruTamVang(tTTV) && !KiemTraDuLieuNhap.isDiaChi(txtDiaChi.Text) && !tTTVDAO.ThemTamTruTamVang(tTTV))
+                MessageBox.Show("Đăng ký thất bại");
+            else
+                MessageBox.Show("Đăng ký thành công");
         }
 
         private void btnReset_Click(object sender, EventArgs e)
