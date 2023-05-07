@@ -27,23 +27,6 @@ namespace QuanLiCongDanThanhPho
             SetTools();
         }
 
-        private bool KiemTraThongTin()
-        {
-            if (!KiemTraDuLieuNhap.isTien(txtSoTienCanNop.Text))
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại số tiền cần nộp");
-                txtSoTienCanNop.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isTien(txtSoTienDaNop.Text))
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại số tiền đã nộp");
-                txtSoTienDaNop.Focus();
-                return false;
-            }   
-            return true;
-        }
-
         private void SetTools()
         {
             List<TextBox> listTxt = new List<TextBox>()
@@ -91,7 +74,7 @@ namespace QuanLiCongDanThanhPho
                 thue.NgayCapMa = dtmNgayCapMaSoThue.Value;
                 thue.HanNop = dtmHanNopThue.Value;
             }
-            if (thueDAO.CapNhatThue(thue))
+            if (KiemTraDuLieuNhap.KiemTraThue(thue) && thueDAO.CapNhatThue(thue))
                 MessageBox.Show("Cập nhật thuế thành công");
             else
                 MessageBox.Show("Cập nhật thuế thất bại");
@@ -99,12 +82,9 @@ namespace QuanLiCongDanThanhPho
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            if (KiemTraThongTin())
-            {
-                CapNhatThue();
-                LayThongTinThue();
-                tool.TurnOff();
-            }    
+            CapNhatThue();
+            LayThongTinThue();
+            tool.TurnOff();
         }
 
         private void btnSua_Click(object sender, EventArgs e)

@@ -96,11 +96,11 @@ namespace QuanLiCongDanThanhPho
         public void CapNhatHonNhan()
         {
             HonNhan hN = hNDAO.LayThongTin(maCCCD);
-            if (KiemTraThongTin() && hN.MaSo != null)
+            if (hN.MaSo != null)
             {
                 hN.NoiDangKy.DinhDang(txtNoiDangKy.Text);
                 hN.NgayDangKy = dtmNgayDangKy.Value;
-                if (hNDAO.CapNhatHonNhan(hN))
+                if (KiemTraDuLieuNhap.KiemTraHonNhan(hN) && hNDAO.CapNhatHonNhan(hN))
                     MessageBox.Show("Cập nhật hôn nhân thành công");
                 else
                     MessageBox.Show("Cập nhật hôn nhân thất bại");

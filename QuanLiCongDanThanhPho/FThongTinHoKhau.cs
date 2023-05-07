@@ -49,7 +49,7 @@ namespace QuanLiCongDanThanhPho
         private void CapNhatHoKhau()
         {
             HoKhau hoKhau = hkDAO.LayThongTin(maHoKhau);
-            if (txtDiaChi.Text != "" && hoKhau.MaHoKhau != null)
+            if (KiemTraDuLieuNhap.isDiaChi(txtDiaChi.Text) && hoKhau.MaHoKhau != null)
             {
                 hoKhau.DiaChi.DinhDang(txtDiaChi.Text);
             }

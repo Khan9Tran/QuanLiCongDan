@@ -55,41 +55,6 @@ namespace QuanLiCongDanThanhPho
             tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
         }
 
-        private bool KiemTraThongTin()
-        {
-            if (!KiemTraDuLieuNhap.isGioiTinh(txtGioiTinh.Text))
-            {
-                MessageBox.Show("Giới tính sai địng dạng");
-                txtGioiTinh.Focus();
-                return false;
-            }
-            if (txtQuocTich.Text == "")
-            {
-                MessageBox.Show("Quốc tịch không được để trống");
-                txtQuocTich.Focus();
-                return false;
-            }
-            if (txtDanToc.Text == "")
-            {
-                MessageBox.Show("Dân tộc không được để trống");
-                txtDanToc.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isDiaChi(txtQueQuan.Text))
-            {
-                MessageBox.Show("Quê quán sai địng dạng");
-                txtQueQuan.Focus();
-                return false;
-            }
-            if (!KiemTraDuLieuNhap.isDiaChi(txtNoiSinh.Text))
-            {
-                MessageBox.Show("Nơi sinh sai địng dạng");
-                txtNoiSinh.Focus();
-                return false;
-            }
-            return true;
-        }
-
         private void btnThongTinMe_Click(object sender, EventArgs e)
         {
             OpenThanNhan(txtCccdMe);
@@ -161,30 +126,31 @@ namespace QuanLiCongDanThanhPho
 
         private void CapNhatKhaiSinh()
         {
-            if (KiemTraThongTin())
+            if (MaCCCD != null)
             {
-                if (MaCCCD != null)
+                KhaiSinh kS = ksDAO.LayThongTin(MaCCCD);
+                if (kS.MaKhaiSinh != null)
                 {
-                    KhaiSinh kS = ksDAO.LayThongTin(MaCCCD);
-                    if (kS.MaKhaiSinh != null)
+                    kS.NoiSinh.DinhDang(txtNoiSinh.Text);
+                    kS.QueQuan.DinhDang(txtQueQuan.Text);
+                    kS.NgaySinh = dtmNgaySinh.Value;
+                    kS.DanToc = txtDanToc.Text;
+                    kS.QuocTich = txtQuocTich.Text;
+                    kS.GioiTinh = txtGioiTinh.Text;
+                    kS.DinhDangGioiTinh();
+                    kS.NgayDangKy = dtmNgayDangKy.Value;
+
+                    if (KiemTraDuLieuNhap.KiemTraKhaiSinh(kS) && ksDAO.CapNhatKhaiSinh(kS))
                     {
-                        kS.NoiSinh.DinhDang(txtNoiSinh.Text);
-                        kS.QueQuan.DinhDang(txtQueQuan.Text);
-                        kS.NgaySinh = dtmNgaySinh.Value;
-                        kS.DanToc = txtDanToc.Text;
-                        kS.QuocTich = txtQuocTich.Text;
-                        kS.GioiTinh = txtGioiTinh.Text;
-                        kS.DinhDangGioiTinh();
-                        kS.NgayDangKy = dtmNgayDangKy.Value;
-                        if (ksDAO.CapNhatKhaiSinh(kS))
-                            MessageBox.Show("Cập nhật khai sinh thành công");
-                        else
-                            MessageBox.Show("Cập nhật khai sinh thất bại");
                         tool.TurnOff();
                         LayThongTinKhaiKhaiSinh();
+                        MessageBox.Show("Cập nhật khai sinh thành công");
                     }
+                    else
+                        MessageBox.Show("Cập nhật khai sinh thất bại");
                 }
-            }    
+            }
+
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
