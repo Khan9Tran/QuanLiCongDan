@@ -1,21 +1,18 @@
 ﻿
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FThemNguoiVaoHo : Form
+    public partial class FThemNguoiVaoHo : FormDangKy
     {
-        private CongDanDAO cDDAO;
         public FThemNguoiVaoHo()
         {
             InitializeComponent();
-            cDDAO = new CongDanDAO();
             lblThongTin.Hide();
             gvNguoiChuaCoHoKhau.Hide();
-            StackForm.Add(this);
         }
 
         private void LoadDanhSachChuaHoKhau()
         {
-            gvNguoiChuaCoHoKhau.DataSource = cDDAO.LayDanhSachTheoHoKhau("00000A");
+            gvNguoiChuaCoHoKhau.DataSource = CDDAO.LayDanhSachTheoHoKhau("00000A");
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -28,7 +25,7 @@ namespace QuanLiCongDanThanhPho
         private void btnThem_Click(object sender, EventArgs e)
         {
             CongDan congDan= new CongDan(txtCCCD.Text,txtTen.Text,"","","",txtMaHo.Text,txtQuanHeVoiChuHo.Text,"u,u,u,u,u");
-            if (!cDDAO.ThayDoiHoKhau(congDan))
+            if (!CDDAO.ThayDoiHoKhau(congDan))
                 MessageBox.Show("Thêm công dân vào hộ khẩu thất bại");
             else
                 MessageBox.Show("Thêm công dân vào hộ khẩu thành công");
@@ -42,9 +39,9 @@ namespace QuanLiCongDanThanhPho
             txtTen.Text = gvNguoiChuaCoHoKhau.Rows[dong].Cells[1].Value.ToString();
         }
 
-        private void Reset()
+        internal override void Reset()
         {
-            ToolsForControl.ClearTextBox(Controls);
+            base.Reset();
             gvNguoiChuaCoHoKhau.Hide();
             lblThongTin.Hide();
             LoadDanhSachChuaHoKhau();

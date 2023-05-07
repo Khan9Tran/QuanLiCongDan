@@ -2,17 +2,12 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDangKyTamTruTamVang : Form
+    public partial class FDangKyTamTruTamVang : FormDangKy
     {
-        private TamTruTamVangDAO tTTVDAO;
-        private CongDanDAO cDDAO;
 
         private void KhoiTao()
         {
             InitializeComponent();
-            tTTVDAO = new TamTruTamVangDAO();
-            cDDAO = new CongDanDAO();
-            StackForm.Add(this);
         }
 
         public FDangKyTamTruTamVang()
@@ -30,7 +25,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (cCCD != null)
             {
-                CongDan congDan = cDDAO.LayThongTin(cCCD);
+                CongDan congDan = CDDAO.LayThongTin(cCCD);
                 if (congDan.CCCD != null)
                 {
                     txtTen.Text = congDan.Ten;
@@ -42,10 +37,10 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
-        private void btnDangKy_Click(object sender, EventArgs e)
+        internal override void DangKy()
         {
             TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);
-            CongDan congDan = cDDAO.LayThongTin(txtCCCD.Text);
+            CongDan congDan = CDDAO.LayThongTin(txtCCCD.Text);
             if (rdoTamVang.Checked == true && congDan.CCCD == null)
             {
                 MessageBox.Show("Đăng ký thất bại");
@@ -56,7 +51,7 @@ namespace QuanLiCongDanThanhPho
                 if (congDan.CCCD == null)
                 {
                     CongDan cDTamTru = new CongDan(txtCCCD.Text, txtTen.Text, txtSDT.Text);
-                    if (!cDDAO.ThemCongDan(cDTamTru))
+                    if (!CDDAO.ThemCongDan(cDTamTru))
                     {
                         MessageBox.Show("Không thể dùng tùy chọn này");
                         return;
@@ -64,16 +59,20 @@ namespace QuanLiCongDanThanhPho
                 }
             }
 
-            if (KiemTraDuLieuNhap.isTamTruTamVang(tTTV) && KiemTraDuLieuNhap.isDiaChi(txtDiaChi.Text) && tTTVDAO.ThemTamTruTamVang(tTTV))
+            if (KiemTraDuLieuNhap.isTamTruTamVang(tTTV) && KiemTraDuLieuNhap.isDiaChi(txtDiaChi.Text) && TTTVDAO.ThemTamTruTamVang(tTTV))
                 MessageBox.Show("Đăng ký thành công");
             else
                 MessageBox.Show("Đăng ký thất bại");
+        }
 
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            DangKy();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            ToolsForControl.ClearTextBox(Controls);
+            base.Reset();
         }
     }
 }

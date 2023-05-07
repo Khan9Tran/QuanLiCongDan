@@ -2,17 +2,11 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDangKyThue : Form
+    public partial class FDangKyThue : FormDangKy
     {
-        private CongDanDAO cDDAO;
-        private ThueDAO thueDAO;
-
         private void KhoiTao()
         {
             InitializeComponent();
-            StackForm.Add(this);
-            cDDAO = new CongDanDAO();
-            thueDAO = new ThueDAO();
         }
 
         public FDangKyThue()
@@ -30,7 +24,7 @@ namespace QuanLiCongDanThanhPho
         {
             if (cCCD != null)
             {
-                CongDan congDan = cDDAO.LayThongTin(cCCD);
+                CongDan congDan = CDDAO.LayThongTin(cCCD);
                 if (congDan.CCCD != null)
                 {
                     txtCCCD.Text = congDan.CCCD;
@@ -40,20 +34,30 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        internal override void Reset()
         {
-            ToolsForControl.ClearTextBox(Controls);
+            base.Reset();
             dtpNgayCapMa.Value = DateTime.Now;
             dtpHanNop.Value = DateTime.Now;
         }
 
-        private void btnDangKy_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        internal override void DangKy()
         {
             Thue thue = new Thue(txtMaSoThue.Text, txtCCCD.Text, dtpNgayCapMa.Value, dtpHanNop.Value, txtSoTienCanNop.Text, txtSoTienDaNop.Text);
-            if (KiemTraDuLieuNhap.KiemTraThue(thue) && thueDAO.ThemThue(thue))
+            if (KiemTraDuLieuNhap.KiemTraThue(thue) && ThueDAO.ThemThue(thue))
                 MessageBox.Show("Đăng ký thuế thành công");
             else
                 MessageBox.Show("Đăng ký thuế thất bại");
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            DangKy();
         }
     }
 }

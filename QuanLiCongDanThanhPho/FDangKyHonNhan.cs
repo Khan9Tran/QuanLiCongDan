@@ -2,24 +2,18 @@
 
 namespace QuanLiCongDanThanhPho
 {
-    public partial class FDangKyHonNhan : Form
+    public partial class FDangKyHonNhan : FormDangKy
     {
-        private HonNhanDAO hNDAO;
-        private KhaiSinhDAO kSDAO;
-
         public FDangKyHonNhan()
         {
             InitializeComponent();
-            hNDAO = new HonNhanDAO();
-            kSDAO = new KhaiSinhDAO();
-            StackForm.Add(this);
         }
         
         //Thêm hôn nhân mới
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtTenVo.Text, txtNoiDK.Text, dtpNgayDangKy.Value);
-            if (KiemTraDuLieuNhap.KiemTraHonNhan(hN) && hNDAO.ThemHonNhan(hN))
+            if (KiemTraDuLieuNhap.KiemTraHonNhan(hN) && HNDAO.ThemHonNhan(hN))
                 MessageBox.Show("Đăng ký hôn nhân thành công");
             else
                 MessageBox.Show("Đắng ký thất bại");
@@ -55,7 +49,7 @@ namespace QuanLiCongDanThanhPho
         private void btnDelete_Click(object sender, EventArgs e)
         {
             HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCDChong.Text, txtTenChong.Text, txtCCCDVo.Text, txtCCCDChong.Text, txtNoiDK.Text, dtpNgayDangKy.Value);
-            if (hNDAO.Xoa(hN))
+            if (HNDAO.Xoa(hN))
                 MessageBox.Show("Xóa hôn nhân thành công");
             else
                 MessageBox.Show("Xóa hôn nhân thất bại");
@@ -63,10 +57,10 @@ namespace QuanLiCongDanThanhPho
         }
 
         //Đưa form về trạng thái ban đầu
-        private void Reset()
+        internal override void Reset()
         {
-            Clear();
-            txtMaHonNhan.Clear();
+            base.Reset();
+            dtpNgayDangKy.Value = DateTime.Now;
             ChoPhepDangKy();
         }
 
@@ -75,17 +69,10 @@ namespace QuanLiCongDanThanhPho
             Reset();
         }
 
-        //Xóa các textbox
-        public void Clear()
-        {
-            ToolsForControl.ClearTextBox(Controls);
-            dtpNgayDangKy.Value = DateTime.Now;
-        }
-
         //Tải thông tin hôn nhân lên
         private void LoadHonNhan()
         {
-            HonNhan hn = hNDAO.LayThongTinTheoMaSo(txtMaHonNhan.Text);
+            HonNhan hn = HNDAO.LayThongTinTheoMaSo(txtMaHonNhan.Text);
             txtCCCDChong.Text = hn.CCCDChong;
             txtCCCDVo.Text = hn.CCCDVo;
             txtTenChong.Text = hn.TenChong;
@@ -112,7 +99,7 @@ namespace QuanLiCongDanThanhPho
         //Trả về tên hôn nhân thep mã số
         private string LayTenTheoCCCD(string cCCD)
         {
-            KhaiSinh ks = kSDAO.LayThongTin(cCCD);
+            KhaiSinh ks = KSDAO.LayThongTin(cCCD);
             if (ks.HoTen != null)
                 return ks.HoTen;
             return null;
