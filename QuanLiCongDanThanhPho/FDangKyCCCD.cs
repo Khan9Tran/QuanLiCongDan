@@ -14,11 +14,9 @@ namespace QuanLiCongDanThanhPho
             LoadDanhSach();
         }
 
-        private void Reset()
+        internal override void Reset()
         {
-            txtCCCD.Text = "";
-            txtDDNhanDang.Text = "";
-            txtTen.Text = "";
+            base.Reset();
             dtmNgayCap.Value = DateTime.Now;
         }
         private void btnReset_Click(object sender, EventArgs e)
@@ -26,7 +24,7 @@ namespace QuanLiCongDanThanhPho
             Reset();
         }
 
-        private void btnDangKy_Click(object sender, EventArgs e)
+        internal override void DangKy()
         {
             CongDan cD = CDDAO.LayThongTin(txtCCCD.Text);
             CCCD cCCD = CCCDDAO.LayThongTin(txtCCCD.Text);
@@ -44,7 +42,11 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Thêm thất bại");
             }
             LoadDanhSach();
-            
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            DangKy();
         }
         private void LoadDanhSach()
         {
