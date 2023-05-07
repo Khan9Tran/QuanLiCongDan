@@ -113,7 +113,9 @@ namespace QuanLiCongDanThanhPho
         private string LayTenTheoCCCD(string cCCD)
         {
             KhaiSinh ks = kSDAO.LayThongTin(cCCD);
-            return ks.HoTen;
+            if (ks.HoTen != null)
+                return ks.HoTen;
+            return null;
         }
 
         //Tìm kiếm theo CCCD
