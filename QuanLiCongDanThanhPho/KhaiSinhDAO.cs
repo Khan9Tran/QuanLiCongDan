@@ -16,7 +16,7 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format($"UPDATE KHAISINH SET  Ten = N'{kS.HoTen}', NgaySinh = '{kS.NgaySinh}', NgayDangKy = '{kS.NgayDangKy}', GioiTinh = '{kS.GioiTinh}', DanToc = N'{kS.DanToc}', QuocTich = N'{kS.QuocTich}', NoiSinh = N'{kS.NoiSinh.toString()}', QueQuan = N'{kS.QueQuan.toString()}', CCCDCha = '{kS.CCCDCha}', TenCha = N'{kS.TenCha}', CCCDMe = '{kS.CCCDMe}', TenMe = N'{kS.TenMe}' WHERE MaKS = '{kS.MaKhaiSinh}'");
             return conn.ThucThi(sqlStr);
         }
-        public bool ThemKhaSinh(KhaiSinh kS)
+        public bool ThemKhaiSinh(KhaiSinh kS)
         {
             string sqlStr = StringKhaiSinh(kS);
             return conn.ThucThi(sqlStr);

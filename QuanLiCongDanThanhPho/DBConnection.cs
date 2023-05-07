@@ -184,6 +184,7 @@ namespace QuanLiCongDanThanhPho
                 while (reader.Read())
                 {
                     thue.MaThue = reader["MaThue"].ToString();
+                    thue.CCCD = reader["CCCD"].ToString();
                     thue.NgayCapMa = reader.GetDateTime("NgayCap");
                     thue.HanNop = reader.GetDateTime("HanNop");
                     thue.SoTienCanNop = reader["SoTienCanNop"].ToString();

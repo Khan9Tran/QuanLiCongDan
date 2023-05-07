@@ -71,7 +71,7 @@ namespace QuanLiCongDanThanhPho
             CongDan congDan = new CongDan(txtCccd.Text, txtTen.Text);
             KhaiSinh kS = new KhaiSinh(txtCccd.Text, txtTen.Text, rdoNam.Checked.ToString(), (string)cboQuocTich.SelectedItem, (string)cboDanToc.SelectedItem, dtmNgaySinh.Value, dtmNgayDangKy.Value, txtNoiSinh.Text, txtQueQuan.Text, txtCccdCha.Text, txtTenCha.Text, txtCccdMe.Text, txtTenMe.Text);
 
-            if (KiemTraChaMe() && KiemTraDuLieuNhap.KiemTraTenVaCCCD(congDan) && KiemTraDuLieuNhap.KiemTraKhaiSinh(kS) && cDDAO.ThemCongDan(congDan) && kSDAO.ThemKhaSinh(kS))
+            if (KiemTraChaMe() && KiemTraDuLieuNhap.KiemTraTenVaCCCD(congDan) && KiemTraDuLieuNhap.KiemTraKhaiSinh(kS) && cDDAO.ThemCongDan(congDan) && kSDAO.ThemKhaiSinh(kS))
                 MessageBox.Show("Thêm thành công");
             else
                 MessageBox.Show("Sai thông tin");

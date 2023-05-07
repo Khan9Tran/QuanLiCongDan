@@ -100,13 +100,9 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
-        public static bool KiemTraSoDT(CongDan congdan)
+        public static bool KiemTraCongDan(CongDan congdan)
         {
-            if (!isSoDT(congdan.SDT))
-            {
-                return false;
-            }
-            return true;
+            return KiemTraTenVaCCCD(congdan) && isSoDT(congdan.SDT) && !isEmpty(congdan.NgheNghiep) && !isEmpty(congdan.TonGiao);
         }
         public static bool isTamTruTamVang(TamTruTamVang data)
         {
@@ -132,22 +128,18 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
+        public static bool KiemTraHoKhau(HoKhau hokhau)
+        {
+            return isMaSo(hokhau.MaHoKhau) && isCCCD(hokhau.CCCDChuHo) && isDiaChi(hokhau.DiaChi.toString());
+        }
 
+        public static bool KiemTraThueDonGian(Thue thue)
+        {
+            return isCCCD(thue.CCCD) && isMaSo(thue.MaThue);
+        }
         public static bool KiemTraThue(Thue thue)
         {
-            if (!isCCCD(thue.CCCD))
-            {
-                return false;
-            }
-            if (!isMaSo(thue.MaThue))
-            {
-                return false;
-            }
-            if (isEmpty(thue.SoTienCanNop) || isEmpty(thue.SoTienDaNop))
-            {
-                return false;
-            }
-            return true;
+            return KiemTraThueDonGian(thue) && !isEmpty(thue.SoTienCanNop) && !isEmpty(thue.SoTienDaNop);
         }
 
         public static bool KiemTraHaiHo(string maHk1, string maHk2)
@@ -165,23 +157,7 @@ namespace QuanLiCongDanThanhPho
 
         public static bool KiemTraKhaiSinh(KhaiSinh khaiSinh)
         {
-            if (!isDiaChi(khaiSinh.QueQuan.toString()))
-            {
-                return false;
-            }
-            if (!isDiaChi(khaiSinh.NoiSinh.toString()))
-            {
-                return false;
-            }
-            if (isEmpty(khaiSinh.QuocTich))
-            {
-                return false;
-            }
-            if (isEmpty(khaiSinh.DanToc))
-            {
-                return false;
-            }
-            return true;
+            return isDiaChi(khaiSinh.QueQuan.toString()) && isDiaChi(khaiSinh.NoiSinh.toString()) && !isEmpty(khaiSinh.QuocTich) && !isEmpty(khaiSinh.DanToc);
         }
     }
 }
