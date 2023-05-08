@@ -135,20 +135,6 @@ namespace QuanLiCongDanThanhPho
             TimKiem(Loc.treHan);
         }
 
-        //Ngắt trang
-        private DataTable NgatTrang(DataTable ds, int recordNum)
-        {
-            int totalRecord = ds.Rows.Count;
-            if (totalRecord <= 0)
-                return ds;
-            if (totalRecord % recordNum != 0)
-                nudPage.Maximum = (totalRecord / recordNum) + 1;
-            else
-                nudPage.Maximum = totalRecord / recordNum;
-            int page = int.Parse(nudPage.Value.ToString());
-            return ds.AsEnumerable().Skip((page - 1) * recordNum).Take(recordNum).CopyToDataTable();
-        }
-
         //Thay đổi page
         private void nudPage_ValueChanged(object sender, EventArgs e)
         {

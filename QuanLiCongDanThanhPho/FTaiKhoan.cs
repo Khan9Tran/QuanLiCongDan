@@ -8,8 +8,6 @@ namespace QuanLiCongDanThanhPho
         private Account account;
         private HinhDaiDien hinhAdmin;
 
-        public Account Account { get => account; set => account = value; }
-
         public FTaiKhoan(Account acc)
         {
             InitializeComponent();

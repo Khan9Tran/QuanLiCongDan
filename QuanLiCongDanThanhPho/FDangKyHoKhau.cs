@@ -44,12 +44,5 @@ namespace QuanLiCongDanThanhPho
             btnTachGop.BackColor = Color.WhiteSmoke;
             btnThem.BackColor = Color.Gray;
         }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            childForm.Open(new FThemNguoiVaoHo());
-            btnTachGop.BackColor = Color.WhiteSmoke;
-            btnThem.BackColor = Color.Gray;
-        }
     }
 }

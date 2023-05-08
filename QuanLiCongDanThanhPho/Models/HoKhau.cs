@@ -10,7 +10,7 @@ namespace QuanLiCongDanThanhPho.Models
         public HoKhau()
         {
             cCCDChuHo = "unknow";
-            DiaChi diaChi= new DiaChi();
+            diaChi= new DiaChi();
         }
 
         public HoKhau(string maHoKhau, string diaChi, string cCCDChuHo)

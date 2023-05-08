@@ -1,5 +1,4 @@
-﻿using System.Data;
-
+﻿
 namespace QuanLiCongDanThanhPho
 {
     public partial class FDanhSachHoKhau : FormDanhSach

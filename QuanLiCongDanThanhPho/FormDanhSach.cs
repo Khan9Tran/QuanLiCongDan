@@ -40,6 +40,7 @@ namespace QuanLiCongDanThanhPho
             else
                 HeaderText();
         }
+
         internal string DayFormat()
         {
             return "dd/MM/yyyy";

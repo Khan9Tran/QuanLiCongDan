@@ -16,14 +16,6 @@ namespace QuanLiCongDanThanhPho.Models
             type = -1;
         }
 
-        public Account(string userName, string password, string displayName, int type)
-        {
-            this.userName = userName;
-            this.password = password;
-            this.displayName = displayName;
-            this.type = type;
-        }
-
         public Account(string userName, string password)
         {
             this.userName = userName;

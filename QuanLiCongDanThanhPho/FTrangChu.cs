@@ -78,29 +78,6 @@ namespace QuanLiCongDanThanhPho
             TatMenu(sender, e);
         }
 
-        private void cmnusDanhMucItemCongDan_Click(object sender, EventArgs e)
-        {
-            childForm.Open(new FDanhSachCongDan());
-            TatMenu(sender, e);
-        }
-
-        private void cmnusDanhMucItemHoKhau_Click(object sender, EventArgs e)
-        {
-            childForm.Open(new FDanhSachHoKhau());
-            TatMenu(sender, e);
-        }
-        private void cmnusDanhMucItemTamTruTamVang_Click(object sender, EventArgs e)
-        {
-            ChildForm.Open(new FDanhSachTamTruTamVang());
-            TatMenu(sender, e);
-        }
-
-        private void cmnusDanhMucItemThue_Click(object sender, EventArgs e)
-        {
-            childForm.Open(new FDanhSachThue());
-            TatMenu(sender, e);
-        }
-
         private void cmnusDangKyItemCongDan_Click(object sender, EventArgs e)
         {
             childForm.Open(new FDangKyCongDan());

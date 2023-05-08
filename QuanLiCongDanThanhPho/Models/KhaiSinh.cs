@@ -36,13 +36,6 @@ namespace QuanLiCongDanThanhPho.Models
             GanMacDinh();
         }
 
-        public KhaiSinh(string cCCD, string ten)
-        {
-            hoTen = ten;
-            maKhaiSinh = cCCD;
-            GanMacDinh();
-        }
-
         public KhaiSinh(string maKhaiSinh, string hoTen, string gioiTinh, string quocTich, string danToc, DateTime ngaySinh, DateTime ngayDangKy, string noiSinh, string queQuan, string cCCDCha, string tenCha, string cCCDMe, string tenMe)
         {
             this.maKhaiSinh = maKhaiSinh;

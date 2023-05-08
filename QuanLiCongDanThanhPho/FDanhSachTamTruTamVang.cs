@@ -1,5 +1,4 @@
 ﻿using QuanLiCongDanThanhPho.Models;
-using System.Data;
 
 namespace QuanLiCongDanThanhPho
 {
