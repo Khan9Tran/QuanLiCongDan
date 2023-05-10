@@ -67,7 +67,8 @@ namespace QuanLiCongDanThanhPho
                     }
                     else if (forms[forms.Count - 1].Name == "FThongKeThue" ||
                             forms[forms.Count - 1].Name == "FThongKeCongDan" ||
-                            forms[forms.Count - 1].Name == "FThongKePhanBo")
+                            forms[forms.Count - 1].Name == "FThongKePhanBo" ||
+                            forms[forms.Count - 1].Name == "FThongKeNgheNghiep")
                     {
                         for (int i = forms.Count - 2; i >= 0; i--)
                         {

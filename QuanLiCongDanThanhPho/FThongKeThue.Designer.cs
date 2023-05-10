@@ -109,5 +109,7 @@
         private Label lblTongThueCanDong;
         private Label lblSoNguoiTreHan;
         private Label lblTrungBinhThue;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartThue;
+
     }
 }

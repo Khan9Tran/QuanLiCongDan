@@ -97,8 +97,6 @@
             this.pnlDanhMuc.Name = "pnlDanhMuc";
             this.pnlDanhMuc.Size = new System.Drawing.Size(290, 80);
             this.pnlDanhMuc.TabIndex = 0;
-            this.pnlDanhMuc.MouseLeave += new System.EventHandler(this.pnlDanhMuc_MouseLeave);
-            this.pnlDanhMuc.MouseHover += new System.EventHandler(this.pnlDanhMuc_MouseHover);
             // 
             // lblDanhMuc
             // 
@@ -185,21 +183,21 @@
             // ItemCongDanChuyenDen
             // 
             this.ItemCongDanChuyenDen.Name = "ItemCongDanChuyenDen";
-            this.ItemCongDanChuyenDen.Size = new System.Drawing.Size(224, 32);
+            this.ItemCongDanChuyenDen.Size = new System.Drawing.Size(210, 32);
             this.ItemCongDanChuyenDen.Text = "Chuyển đến";
             this.ItemCongDanChuyenDen.Click += new System.EventHandler(this.cmnusDangKyItemCongDan_Click);
             // 
             // ItemCongDanKhaiTu
             // 
             this.ItemCongDanKhaiTu.Name = "ItemCongDanKhaiTu";
-            this.ItemCongDanKhaiTu.Size = new System.Drawing.Size(224, 32);
+            this.ItemCongDanKhaiTu.Size = new System.Drawing.Size(210, 32);
             this.ItemCongDanKhaiTu.Text = "Khai Tử";
             this.ItemCongDanKhaiTu.Click += new System.EventHandler(this.ItemCongDanChuyenDi_Click);
             // 
             // ItemKhaiSinh
             // 
             this.ItemKhaiSinh.Name = "ItemKhaiSinh";
-            this.ItemKhaiSinh.Size = new System.Drawing.Size(224, 32);
+            this.ItemKhaiSinh.Size = new System.Drawing.Size(210, 32);
             this.ItemKhaiSinh.Text = "Khai sinh";
             this.ItemKhaiSinh.Click += new System.EventHandler(this.cmnusDangKyItemKhaiSinh_Click);
             // 
@@ -378,8 +376,6 @@
             this.pnlThongKe.Name = "pnlThongKe";
             this.pnlThongKe.Size = new System.Drawing.Size(290, 80);
             this.pnlThongKe.TabIndex = 1;
-            this.pnlThongKe.MouseLeave += new System.EventHandler(this.pnlThongKe_MouseLeave);
-            this.pnlThongKe.MouseHover += new System.EventHandler(this.pnlThongKe_MouseHover);
             // 
             // lblThongKe
             // 
@@ -423,8 +419,6 @@
             this.lblDangKy.Text = "        Đăng ký";
             this.lblDangKy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lblDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
-            this.lblDangKy.MouseLeave += new System.EventHandler(this.lblDangKy_MouseLeave);
-            this.lblDangKy.MouseHover += new System.EventHandler(this.lblDangKy_MouseHover);
             // 
             // tmrPhongTo
             // 

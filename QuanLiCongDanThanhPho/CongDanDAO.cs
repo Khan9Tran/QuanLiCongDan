@@ -175,7 +175,7 @@ namespace QuanLiCongDanThanhPho
 
         public DataTable LayDanhSachNgheNghiep()
         {
-            string sqlStr = string.Format("SELECT NgheNghiep as 'Nghề nghiệp', COUNT(NgheNghiep) as 'Số lượng' FROM CONGDAN GROUP BY NgheNghiep");
+            string sqlStr = string.Format("SELECT NgheNghiep as 'Nghề nghiệp', COUNT(NgheNghiep) as 'Số lượng' FROM CONGDAN GROUP BY NgheNghiep ORDER BY COUNT(NgheNghiep) DESC");
             return conn.LayDanhSach(sqlStr);
         }
 

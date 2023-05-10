@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gvDanhSachQuan = new System.Windows.Forms.DataGridView();
             this.lblQuan = new System.Windows.Forms.Label();
             this.lblSoNguoiTamTru = new System.Windows.Forms.Label();
             this.lblSoNguoiTamVang = new System.Windows.Forms.Label();
@@ -37,38 +36,22 @@
             this.lblHoNhieuNhat = new System.Windows.Forms.Label();
             this.gvHoNhieuNguoiNhat = new System.Windows.Forms.DataGridView();
             this.lblSoNguoiTrungBinhMotQuan = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachQuan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoNhieuNguoiNhat)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gvDanhSachQuan
-            // 
-            this.gvDanhSachQuan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvDanhSachQuan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.gvDanhSachQuan.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gvDanhSachQuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gvDanhSachQuan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDanhSachQuan.Location = new System.Drawing.Point(223, 144);
-            this.gvDanhSachQuan.Name = "gvDanhSachQuan";
-            this.gvDanhSachQuan.RowHeadersVisible = false;
-            this.gvDanhSachQuan.RowHeadersWidth = 51;
-            this.gvDanhSachQuan.RowTemplate.Height = 29;
-            this.gvDanhSachQuan.Size = new System.Drawing.Size(315, 439);
-            this.gvDanhSachQuan.TabIndex = 24;
             // 
             // lblQuan
             // 
             this.lblQuan.AutoSize = true;
-            this.lblQuan.Location = new System.Drawing.Point(223, 96);
+            this.lblQuan.Location = new System.Drawing.Point(12, 180);
             this.lblQuan.Name = "lblQuan";
-            this.lblQuan.Size = new System.Drawing.Size(301, 28);
+            this.lblQuan.Size = new System.Drawing.Size(303, 28);
             this.lblQuan.TabIndex = 25;
-            this.lblQuan.Text = "Số lượng cư dân của mỗi quận";
+            this.lblQuan.Text = "Top 10 quận động dân cư nhất";
             // 
             // lblSoNguoiTamTru
             // 
             this.lblSoNguoiTamTru.AutoSize = true;
-            this.lblSoNguoiTamTru.Location = new System.Drawing.Point(596, 191);
+            this.lblSoNguoiTamTru.Location = new System.Drawing.Point(12, 64);
             this.lblSoNguoiTamTru.Name = "lblSoNguoiTamTru";
             this.lblSoNguoiTamTru.Size = new System.Drawing.Size(174, 28);
             this.lblSoNguoiTamTru.TabIndex = 26;
@@ -77,7 +60,7 @@
             // lblSoNguoiTamVang
             // 
             this.lblSoNguoiTamVang.AutoSize = true;
-            this.lblSoNguoiTamVang.Location = new System.Drawing.Point(596, 285);
+            this.lblSoNguoiTamVang.Location = new System.Drawing.Point(377, 64);
             this.lblSoNguoiTamVang.Name = "lblSoNguoiTamVang";
             this.lblSoNguoiTamVang.Size = new System.Drawing.Size(192, 28);
             this.lblSoNguoiTamVang.TabIndex = 27;
@@ -86,7 +69,7 @@
             // lblSoNguoiQuaHanTT
             // 
             this.lblSoNguoiQuaHanTT.AutoSize = true;
-            this.lblSoNguoiQuaHanTT.Location = new System.Drawing.Point(596, 240);
+            this.lblSoNguoiQuaHanTT.Location = new System.Drawing.Point(12, 117);
             this.lblSoNguoiQuaHanTT.Name = "lblSoNguoiQuaHanTT";
             this.lblSoNguoiQuaHanTT.Size = new System.Drawing.Size(256, 28);
             this.lblSoNguoiQuaHanTT.TabIndex = 28;
@@ -95,7 +78,7 @@
             // lblSoNguoiQuaHanTV
             // 
             this.lblSoNguoiQuaHanTV.AutoSize = true;
-            this.lblSoNguoiQuaHanTV.Location = new System.Drawing.Point(596, 333);
+            this.lblSoNguoiQuaHanTV.Location = new System.Drawing.Point(377, 117);
             this.lblSoNguoiQuaHanTV.Name = "lblSoNguoiQuaHanTV";
             this.lblSoNguoiQuaHanTV.Size = new System.Drawing.Size(274, 28);
             this.lblSoNguoiQuaHanTV.TabIndex = 29;
@@ -104,7 +87,7 @@
             // lblHoNhieuNhat
             // 
             this.lblHoNhieuNhat.AutoSize = true;
-            this.lblHoNhieuNhat.Location = new System.Drawing.Point(1019, 141);
+            this.lblHoNhieuNhat.Location = new System.Drawing.Point(1178, 180);
             this.lblHoNhieuNhat.Name = "lblHoNhieuNhat";
             this.lblHoNhieuNhat.Size = new System.Drawing.Size(209, 28);
             this.lblHoNhieuNhat.TabIndex = 30;
@@ -117,18 +100,18 @@
             this.gvHoNhieuNguoiNhat.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvHoNhieuNguoiNhat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvHoNhieuNguoiNhat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvHoNhieuNguoiNhat.Location = new System.Drawing.Point(1019, 190);
+            this.gvHoNhieuNguoiNhat.Location = new System.Drawing.Point(1178, 211);
             this.gvHoNhieuNguoiNhat.Name = "gvHoNhieuNguoiNhat";
             this.gvHoNhieuNguoiNhat.RowHeadersVisible = false;
             this.gvHoNhieuNguoiNhat.RowHeadersWidth = 51;
             this.gvHoNhieuNguoiNhat.RowTemplate.Height = 29;
-            this.gvHoNhieuNguoiNhat.Size = new System.Drawing.Size(287, 393);
+            this.gvHoNhieuNguoiNhat.Size = new System.Drawing.Size(287, 440);
             this.gvHoNhieuNguoiNhat.TabIndex = 31;
             // 
             // lblSoNguoiTrungBinhMotQuan
             // 
             this.lblSoNguoiTrungBinhMotQuan.AutoSize = true;
-            this.lblSoNguoiTrungBinhMotQuan.Location = new System.Drawing.Point(596, 144);
+            this.lblSoNguoiTrungBinhMotQuan.Location = new System.Drawing.Point(12, 19);
             this.lblSoNguoiTrungBinhMotQuan.Name = "lblSoNguoiTrungBinhMotQuan";
             this.lblSoNguoiTrungBinhMotQuan.Size = new System.Drawing.Size(339, 28);
             this.lblSoNguoiTrungBinhMotQuan.TabIndex = 32;
@@ -148,14 +131,12 @@
             this.Controls.Add(this.lblSoNguoiTamVang);
             this.Controls.Add(this.lblSoNguoiTamTru);
             this.Controls.Add(this.lblQuan);
-            this.Controls.Add(this.gvDanhSachQuan);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FThongKePhanBo";
             this.Text = "FThongKePhanBo";
             this.Load += new System.EventHandler(this.FThongKePhanBo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachQuan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoNhieuNguoiNhat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,8 +144,6 @@
         }
 
         #endregion
-
-        private DataGridView gvDanhSachQuan;
         private Label lblQuan;
         private Label lblSoNguoiTamTru;
         private Label lblSoNguoiTamVang;
@@ -173,5 +152,7 @@
         private Label lblHoNhieuNhat;
         private DataGridView gvHoNhieuNguoiNhat;
         private Label lblSoNguoiTrungBinhMotQuan;
+
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPhanBo;
     }
 }

@@ -10,6 +10,7 @@ namespace QuanLiCongDanThanhPho
         enum ThongKe
         {
             congDan,
+            ngheNghiep,
             thue,
             phanBoDanCu,
         }
@@ -29,6 +30,8 @@ namespace QuanLiCongDanThanhPho
                 childForm.Open(new FThongKePhanBo());
             else if (cmbLuaChon.SelectedIndex == (int)ThongKe.thue)
                 childForm.Open(new FThongKeThue());
+            else if (cmbLuaChon.SelectedIndex == (int)ThongKe.ngheNghiep)
+                childForm.Open(new FThongKeNgheNghiep());   
         }
     }
 }

@@ -22,6 +22,9 @@ namespace QuanLiCongDanThanhPho
             CongDan chong = congDanDAO.LayThongTin(hN.CCCDChong);
             CongDan vo = congDanDAO.LayThongTin(hN.CCCDVo);
 
+            HonNhan hnChong = LayThongTin(hN.CCCDChong);
+            HonNhan hnVo = LayThongTin(hN.CCCDVo);
+
             KhaiSinh ksChong = ksDAO.LayThongTin(hN.CCCDChong);
             KhaiSinh ksVo = ksDAO.LayThongTin(hN.CCCDVo);
 
@@ -30,7 +33,7 @@ namespace QuanLiCongDanThanhPho
                 return false;
             }
 
-            if (LayThongTinTheoMaSo(hN.MaSo).MaSo != null || chong.CCCD == null || vo.CCCD == null)
+            if (LayThongTinTheoMaSo(hN.MaSo).MaSo != null || hnChong.CCCDChong != null || hnVo.CCCDVo != null)
             if (!isGiongNhau(chong.Ten, hN.TenChong))
             {
                 return false;
