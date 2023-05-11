@@ -9,7 +9,11 @@ namespace QuanLiCongDanThanhPho
         //Kiểm tra tên nhập vào có trùng khớp với trong hệ thống không
         private bool isGiongNhau(string a, string b)
         {
-            if (a != b) return false;
+            if (a != b)
+            {
+                MessageBox.Show("Tên không khớp");
+                return false;
+            }
             return true;
         }
 
@@ -34,8 +38,14 @@ namespace QuanLiCongDanThanhPho
             }
 
             if ((ksChong.MaKhaiSinh != null && ksVo.MaKhaiSinh != null) && (ksChong.GioiTinh != "m" || ksVo.GioiTinh != "f"))
+                return false;
 
             if (LayThongTinTheoMaSo(hN.MaSo).MaSo != null || hnChong.CCCDChong != null || hnVo.CCCDVo != null)
+            {
+                MessageBox.Show("Vui lòng kiểm tra tình trạng hôn nhân");
+                return false;
+            }
+
             if (!isGiongNhau(chong.Ten, hN.TenChong))
             {
                 return false;

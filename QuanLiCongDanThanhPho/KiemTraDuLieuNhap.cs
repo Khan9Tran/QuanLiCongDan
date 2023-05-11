@@ -12,7 +12,12 @@ namespace QuanLiCongDanThanhPho
         public static bool isTien(string tien)
         {
             string rule = @"^\d{1,15}$";
-            return KiemTra(tien, rule);
+            if (KiemTra(tien, rule) == false)
+            {
+                MessageBox.Show("Vui lòng đúng định dạng tiền");
+                return false;
+            }
+            return true;
         }
         public static bool isPass(string pass)
         {;
@@ -22,18 +27,33 @@ namespace QuanLiCongDanThanhPho
         public  static bool isDiaChi(string diaChi)
         {
             string rule = @"^([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})$";
-            return KiemTra(diaChi, rule);
+            if (KiemTra(diaChi, rule) == false)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại địa chỉ");
+                return false;
+            }
+            return true;
         }
         public static bool isSoDT(string SoDT)
         {
             string rule = @"^\d{9,11}$";
-            return KiemTra(SoDT, rule);
+            if (KiemTra(SoDT, rule) == false)
+            {
+                MessageBox.Show("Số điện thoại từ 9 đến 11 số");
+                return false;
+            }
+            return true;
         }
 
         public static bool isCCCD(string CCCD)
         {
             string rule = @"^\d{12}$";
-            return KiemTra(CCCD, rule);
+            if (KiemTra(CCCD, rule) == false)
+            {
+                MessageBox.Show("Nhập CCCD gồm 12 số");
+                return false;
+            }
+            return true;
         }
 
         public static bool isEmpty(string data)
@@ -58,11 +78,13 @@ namespace QuanLiCongDanThanhPho
 
             if (chong.CCCD == null || vo.CCCD == null)
             {
+                MessageBox.Show("Không tìm thấy thông tin vợ/ chồng");
                 return false;
             }
 
             if (!KiemTraTenVaCCCD(chong) || !KiemTraTenVaCCCD(vo))
             {
+                MessageBox.Show("Tên vợ/ chồng không khớp CCCD");
                 return false;
             }
 
@@ -76,17 +98,32 @@ namespace QuanLiCongDanThanhPho
         public static bool isTen(string Ten) 
         {
             string rule = @"^[^!@#$%^*()|+*0123456789]{3,30}$";
-            return KiemTra(Ten, rule);
+            if (KiemTra(Ten, rule) == false)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại tên");
+                return false;
+            }
+            return true;
         }
         public static bool isMaSo(string MaSo)
         {
             string rule = @"^[0-9a-zA-Z]{5,15}$";
-            return KiemTra(MaSo, rule);
+            if (KiemTra(MaSo, rule) == false)
+            {
+                MessageBox.Show("Kiểm tra lại mã số");
+                return false;
+            }
+            return true;
         }
         public static bool isGioiTinh(string GioiTinh)
         {
             string rule = @"^([Nn]{1})((\u1EEE{1})|(\u1EEF{1})|([Uu]{1})|([Aa]{1}[Mm]{1}))$";
-            return KiemTra(GioiTinh, rule);
+            if (KiemTra(GioiTinh, rule) == false)
+            {
+                MessageBox.Show("Nhập sai định dạng giới tính");
+                return false;
+            }
+            return true;
         }
         public static bool KiemTraTenVaCCCD(CongDan congdan)
         {
@@ -112,10 +149,12 @@ namespace QuanLiCongDanThanhPho
             }
             if (data.TrangThai != "Tạm trú" && data.TrangThai != "Tạm vắng")
             {
+                MessageBox.Show("Trạng thái tạm trú/ tạm vắng sai");
                 return false;
             }
             if (data.LyDo == "" || data.LyDo == null)
             {
+                MessageBox.Show("Vui lòng không để trống lí do");
                 return false;
             }
             if (!isDiaChi(data.DiaChi.toString()))
@@ -151,6 +190,7 @@ namespace QuanLiCongDanThanhPho
             }
             if (maHk1 == maHk2)
             {
+                MessageBox.Show("Mã 2 hộ trùng nhau");
                 return false;
             }
             return true;
