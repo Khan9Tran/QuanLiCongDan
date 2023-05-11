@@ -33,6 +33,8 @@ namespace QuanLiCongDanThanhPho
                 return false;
             }
 
+            if ((ksChong.MaKhaiSinh != null && ksVo.MaKhaiSinh != null) && (ksChong.GioiTinh != "m" || ksVo.GioiTinh != "f"))
+
             if (LayThongTinTheoMaSo(hN.MaSo).MaSo != null || hnChong.CCCDChong != null || hnVo.CCCDVo != null)
             if (!isGiongNhau(chong.Ten, hN.TenChong))
             {

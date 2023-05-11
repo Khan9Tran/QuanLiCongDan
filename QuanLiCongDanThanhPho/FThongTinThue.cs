@@ -50,18 +50,22 @@ namespace QuanLiCongDanThanhPho
         private void CapNhatThue()
         {
             Thue thue = ThueDAO.LayThongTin(MaCCCD);
-            if (txtMaSoThue.Text != "" && thue.MaThue != null)
+            if (txtMaSoThue.Text != "" && thue.MaThue != null && KiemTraDuLieuNhap.isTien(txtSoTienDaNop.Text) && KiemTraDuLieuNhap.isTien(txtSoTienCanNop.Text))
             {
                 thue.CCCD = txtCCCD.Text;
                 thue.SoTienCanNop = txtSoTienCanNop.Text;
                 thue.SoTienDaNop = txtSoTienDaNop.Text;
                 thue.NgayCapMa = dtmNgayCapMaSoThue.Value;
                 thue.HanNop = dtmHanNopThue.Value;
+                if (KiemTraDuLieuNhap.KiemTraThue(thue) && ThueDAO.CapNhatThue(thue))
+                    MessageBox.Show("Cập nhật thuế thành công");
+                else
+                    MessageBox.Show("Cập nhật thuế thất bại");
             }
-            if (KiemTraDuLieuNhap.KiemTraThue(thue) && ThueDAO.CapNhatThue(thue))
-                MessageBox.Show("Cập nhật thuế thành công");
             else
-                MessageBox.Show("Cập nhật thuế thất bại");
+            {
+                MessageBox.Show("Thông tin nhập sai");
+            }
         }    
 
         private void btnXacNhan_Click(object sender, EventArgs e)

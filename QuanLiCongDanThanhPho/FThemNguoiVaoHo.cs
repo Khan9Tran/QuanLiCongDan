@@ -22,21 +22,29 @@ namespace QuanLiCongDanThanhPho
             LoadDanhSachChuaHoKhau();
         }
 
+        internal override void DangKy()
+        {
+            CongDan congDan = new CongDan(txtCCCD.Text, txtTen.Text, "", "", "", txtMaHo.Text, txtQuanHeVoiChuHo.Text, "u,u,u,u,u");
+            if (HKDAO.LayThongTin(txtMaHo.Text).MaHoKhau != null && CDDAO.ThayDoiHoKhau(congDan))
+                MessageBox.Show("Thêm công dân vào hộ khẩu thành công");
+            else
+                MessageBox.Show("Thêm công dân vào hộ khẩu thất bại");
+            LoadDanhSachChuaHoKhau();
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            CongDan congDan= new CongDan(txtCCCD.Text,txtTen.Text,"","","",txtMaHo.Text,txtQuanHeVoiChuHo.Text,"u,u,u,u,u");
-            if (!CDDAO.ThayDoiHoKhau(congDan))
-                MessageBox.Show("Thêm công dân vào hộ khẩu thất bại");
-            else
-                MessageBox.Show("Thêm công dân vào hộ khẩu thành công");
-            LoadDanhSachChuaHoKhau();
+            DangKy();
         }
 
         private void gvNguoiChuaCoHoKhau_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int dong = e.RowIndex;
-            txtCCCD.Text = gvNguoiChuaCoHoKhau.Rows[dong].Cells[0].Value.ToString();
-            txtTen.Text = gvNguoiChuaCoHoKhau.Rows[dong].Cells[1].Value.ToString();
+            if (dong >= 0)
+            {
+                txtCCCD.Text = gvNguoiChuaCoHoKhau.Rows[dong].Cells[0].Value.ToString();
+                txtTen.Text = gvNguoiChuaCoHoKhau.Rows[dong].Cells[1].Value.ToString();
+            }
         }
 
         internal override void Reset()
