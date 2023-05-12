@@ -14,7 +14,7 @@ namespace QuanLiCongDanThanhPho
             HinhCongDan = new HinhDaiDien(HinhDaiDien.Type.congDan);
             SetTools();
         }
-        
+
         //Mở F khai sinh
         private void btnKhaiSinh_Click(object sender, EventArgs e)
         {
@@ -137,7 +137,7 @@ namespace QuanLiCongDanThanhPho
             cccd = CCCDDAO.LayThongTin(cccd);
             if (cccd.MaCCCD != null && cccd.DacDiem == "unknow")
             {
-                    btnThongTinCCCD.Enabled = false;
+                btnThongTinCCCD.Enabled = false;
             }
 
         }
@@ -193,7 +193,7 @@ namespace QuanLiCongDanThanhPho
                 if (KiemTraDuLieuNhap.KiemTraKhaiSinh(khaiSinh))
                     KSDAO.CapNhatKhaiSinh(khaiSinh);
             }
-        }    
+        }
 
         private void CapNhatCongDan()
         {
@@ -229,7 +229,7 @@ namespace QuanLiCongDanThanhPho
         }
 
         private void btnSua_Click(object sender, EventArgs e)
-        {  
+        {
             Tool.AutoReadOnly();
         }
 
@@ -239,7 +239,7 @@ namespace QuanLiCongDanThanhPho
             {
                 HonNhan hn = HNDAO.LayThongTin(CongDan.CCCD);
                 if (txtCCCD.Text == hn.CCCDChong)
-                    hn.TenChong = txtHoVaTen.Text;  
+                    hn.TenChong = txtHoVaTen.Text;
                 else
                     hn.TenVo = txtHoVaTen.Text;
                 if (KiemTraDuLieuNhap.KiemTraHonNhan(hn))
