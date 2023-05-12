@@ -33,8 +33,8 @@ namespace QuanLiCongDanThanhPho
             chartNgheNghiep.Series["Data"].Color = Color.SkyBlue;
 
             DataTable dt = cdDAO.LayDanhSachNgheNghiep();
-            var dt10 = dt.AsEnumerable().Take(15);
-            chartNgheNghiep.DataSource = dt10;
+            var dt15 = dt.AsEnumerable().Take(15);
+            chartNgheNghiep.DataSource = dt15;
             chartNgheNghiep.Series["Data"].XValueMember = "Nghề nghiệp";
             chartNgheNghiep.Series["Data"].YValueMembers = "Số lượng";
 

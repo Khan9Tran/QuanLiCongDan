@@ -74,5 +74,21 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format("SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM CONGDAN JOIN KHAISINH ON CONGDAN.CCCD = KHAISINH.MaKS WHERE (GETDATE() < DATEADD(year, YEAR(GETDATE()) - YEAR(NgaySinh), NgaySinh) AND YEAR(GETDATE())- YEAR(NgaySinh) - 1 >= 18) OR (GETDATE() >= DATEADD(year, YEAR(GETDATE()) - YEAR(NgaySinh), NgaySinh) AND YEAR(GETDATE()) - YEAR(NgaySinh) >= 18) EXCEPT SELECT CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp', CONGDAN.TonGiao as 'Tôn giáo' FROM THUE, CONGDAN WHERE THUE.CCCD = CONGDAN.CCCD");
             return conn.LayDanhSach(sqlStr);
         }
+
+        public DataTable LayDanhSachTienDongThueCacQuan()
+        {
+            CongDanDAO cDDAO = new CongDanDAO();
+            DataTable cacQuan = cDDAO.LayDanhSachDiaChi();
+            DataTable result = new DataTable();
+            result.Columns.Add("Quận", typeof(string));
+            result.Columns.Add("Tiền đã thu", typeof(int));
+            foreach (DataRow row in cacQuan.Rows)
+            {
+                string sqlStr = string.Format($"SELECT SUM(CONVERT(INT,SoTienDaNop)) as 'Tiền đã thu' FROM\r\nTHUE inner join\r\n(SELECT  CCCD, DiaChi FROM CONGDAN INNER JOIN HOKHAU ON CONGDAN.MaHK = HOKHAU.MaHK WHERE HOKHAU.DiaChi <> N'Tạm trú' AND HOKHAU.DiaChi <> N'Tạm vắng' UNION ALL SELECT CCCD, DiaChi FROM TAMTRUTAMVANG) QUAN\r\non Thue.CCCD = Quan.CCCD\r\nWHERE DiaChi like N'%{row["Quận"].ToString()}%'\r\n");
+                DataTable temp = conn.LayDanhSach(sqlStr);
+                result.Rows.Add(row["Quận"].ToString(), temp.Rows[0]["Tiền đã thu"]);
+            }
+            return result;
+        }
     }
 }

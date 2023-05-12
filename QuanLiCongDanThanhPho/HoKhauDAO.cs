@@ -45,7 +45,7 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachXepTheoSoTV(string tu)
         {
-            string sqlStr = string.Format("SELECT " + DatTenThuocTinh() + $", SL FROM (SELECT * FROM HOKHAU EXCEPT SELECT * FROM HOKHAU WHERE " + DatTenThuocTinh() + ") as HOKHAU INNER JOIN (SELECT MaHK, count(CCCD) as SL FROM CONGDAN GROUP BY MaHK) as SLCONGDAN ON HOKHAU.MaHK = SLCONGDAN.MaHK WHERE " + ChuoiChuaTu(tu) + " ORDER BY SL ASC");
+            string sqlStr = string.Format("SELECT " + DatTenThuocTinh() + $" , SL FROM (SELECT * FROM HOKHAU EXCEPT SELECT * FROM HOKHAU WHERE " + ChuoiDieuKien() + " ) as HOKHAU INNER JOIN (SELECT MaHK, count(CCCD) as SL FROM CONGDAN GROUP BY MaHK) as SLCONGDAN ON HOKHAU.MaHK = SLCONGDAN.MaHK WHERE " + ChuoiChuaTu(tu) + " ORDER BY SL ASC");
             DataTable ds = conn.LayDanhSach(sqlStr);
             ds.Columns.Remove("SL");
             return ds;
