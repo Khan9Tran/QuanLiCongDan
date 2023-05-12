@@ -36,6 +36,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.fpnlChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +44,8 @@
             // lblCCCD
             // 
             this.lblCCCD.AutoSize = true;
+            this.lblCCCD.BackColor = System.Drawing.Color.DodgerBlue;
+            this.lblCCCD.ForeColor = System.Drawing.Color.White;
             this.lblCCCD.Location = new System.Drawing.Point(380, 230);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(61, 28);
@@ -52,6 +55,8 @@
             // lblTen
             // 
             this.lblTen.AutoSize = true;
+            this.lblTen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.lblTen.ForeColor = System.Drawing.Color.White;
             this.lblTen.Location = new System.Drawing.Point(380, 330);
             this.lblTen.Name = "lblTen";
             this.lblTen.Size = new System.Drawing.Size(106, 28);
@@ -60,12 +65,12 @@
             // 
             // txtCCCD
             // 
-            this.txtCCCD.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCD.BackColor = System.Drawing.Color.White;
+            this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCCCD.Location = new System.Drawing.Point(530, 230);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(476, 27);
+            this.txtCCCD.Size = new System.Drawing.Size(534, 34);
             this.txtCCCD.TabIndex = 21;
             this.txtCCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCCCD.TextChanged += new System.EventHandler(this.txtCCCD_TextChanged);
@@ -73,11 +78,11 @@
             // txtTen
             // 
             this.txtTen.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTen.Location = new System.Drawing.Point(530, 330);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(534, 27);
+            this.txtTen.Size = new System.Drawing.Size(534, 34);
             this.txtTen.TabIndex = 22;
             // 
             // fpnlChucNang
@@ -95,7 +100,7 @@
             this.btnReset.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
+            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.undo__1_;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReset.Location = new System.Drawing.Point(3, 3);
             this.btnReset.Name = "btnReset";
@@ -112,7 +117,7 @@
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDangKy.ForeColor = System.Drawing.Color.Black;
-            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.accept;
             this.btnDangKy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangKy.Location = new System.Drawing.Point(159, 3);
             this.btnDangKy.Name = "btnDangKy";
@@ -124,12 +129,20 @@
             // 
             // picTimKiem
             // 
-            this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.picTimKiem.Location = new System.Drawing.Point(1027, 226);
+            this.picTimKiem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search__1_;
+            this.picTimKiem.Location = new System.Drawing.Point(1070, 230);
             this.picTimKiem.Name = "picTimKiem";
-            this.picTimKiem.Size = new System.Drawing.Size(37, 31);
+            this.picTimKiem.Size = new System.Drawing.Size(37, 34);
             this.picTimKiem.TabIndex = 100;
             this.picTimKiem.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Location = new System.Drawing.Point(362, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(136, 367);
+            this.panel1.TabIndex = 101;
             // 
             // FKhaiTu
             // 
@@ -143,6 +156,7 @@
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.lblTen);
             this.Controls.Add(this.lblCCCD);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -165,5 +179,6 @@
         private Button btnReset;
         private Button btnDangKy;
         private PictureBox picTimKiem;
+        private Panel panel1;
     }
 }

@@ -41,9 +41,9 @@
             this.btnTachGop.FlatAppearance.BorderSize = 0;
             this.btnTachGop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTachGop.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTachGop.Location = new System.Drawing.Point(1172, 17);
+            this.btnTachGop.Location = new System.Drawing.Point(1197, 17);
             this.btnTachGop.Name = "btnTachGop";
-            this.btnTachGop.Size = new System.Drawing.Size(188, 50);
+            this.btnTachGop.Size = new System.Drawing.Size(172, 55);
             this.btnTachGop.TabIndex = 10;
             this.btnTachGop.Text = "Tách Gộp Hộ";
             this.btnTachGop.UseVisualStyleBackColor = false;
@@ -51,13 +51,13 @@
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.add_user__1_;
-            this.btnThem.Location = new System.Drawing.Point(1381, 17);
+            this.btnThem.Image = global::QuanLiCongDanThanhPho.Properties.Resources.add_button__1_;
+            this.btnThem.Location = new System.Drawing.Point(1389, 14);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(50, 50);
+            this.btnThem.Size = new System.Drawing.Size(60, 60);
             this.btnThem.TabIndex = 11;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -73,7 +73,7 @@
             // 
             // pnlBarDuoi
             // 
-            this.pnlBarDuoi.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlBarDuoi.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnlBarDuoi.Controls.Add(this.btnThem);
             this.pnlBarDuoi.Controls.Add(this.btnTachGop);
             this.pnlBarDuoi.Dock = System.Windows.Forms.DockStyle.Bottom;

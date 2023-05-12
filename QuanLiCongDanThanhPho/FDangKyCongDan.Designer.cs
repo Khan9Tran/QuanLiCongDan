@@ -69,9 +69,6 @@
             this.lblMaHonNhan = new System.Windows.Forms.Label();
             this.txtMaHonNhan = new System.Windows.Forms.TextBox();
             this.lblSDT = new System.Windows.Forms.Label();
-            this.txtSoDT = new System.Windows.Forms.TextBox();
-            this.lblTonGiao = new System.Windows.Forms.Label();
-            this.cboTonGiao = new System.Windows.Forms.ComboBox();
             this.lblNoiSinh = new System.Windows.Forms.Label();
             this.txtNoiSinh = new System.Windows.Forms.TextBox();
             this.lblQuanHeChuHo = new System.Windows.Forms.Label();
@@ -83,6 +80,10 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.ofdHinhDaiDien = new System.Windows.Forms.OpenFileDialog();
             this.sfdHinhDaiDien = new System.Windows.Forms.SaveFileDialog();
+            this.txtSoDT = new System.Windows.Forms.TextBox();
+            this.cboTonGiao = new System.Windows.Forms.ComboBox();
+            this.lblTonGiao = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,6 +135,7 @@
             // lblDanToc
             // 
             this.lblDanToc.AutoSize = true;
+            this.lblDanToc.BackColor = System.Drawing.Color.Transparent;
             this.lblDanToc.Location = new System.Drawing.Point(425, 190);
             this.lblDanToc.Name = "lblDanToc";
             this.lblDanToc.Size = new System.Drawing.Size(86, 28);
@@ -197,7 +199,8 @@
             // lblCCCMe
             // 
             this.lblCCCMe.AutoSize = true;
-            this.lblCCCMe.Location = new System.Drawing.Point(740, 490);
+            this.lblCCCMe.BackColor = System.Drawing.Color.Transparent;
+            this.lblCCCMe.Location = new System.Drawing.Point(741, 490);
             this.lblCCCMe.Name = "lblCCCMe";
             this.lblCCCMe.Size = new System.Drawing.Size(61, 28);
             this.lblCCCMe.TabIndex = 12;
@@ -206,7 +209,8 @@
             // lblCCCDCha
             // 
             this.lblCCCDCha.AutoSize = true;
-            this.lblCCCDCha.Location = new System.Drawing.Point(740, 441);
+            this.lblCCCDCha.BackColor = System.Drawing.Color.Transparent;
+            this.lblCCCDCha.Location = new System.Drawing.Point(741, 441);
             this.lblCCCDCha.Name = "lblCCCDCha";
             this.lblCCCDCha.Size = new System.Drawing.Size(61, 28);
             this.lblCCCDCha.TabIndex = 13;
@@ -215,7 +219,8 @@
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Location = new System.Drawing.Point(769, 90);
+            this.lblGioiTinh.BackColor = System.Drawing.Color.Transparent;
+            this.lblGioiTinh.Location = new System.Drawing.Point(749, 94);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(95, 28);
             this.lblGioiTinh.TabIndex = 14;
@@ -250,23 +255,23 @@
             // 
             // txtCCCD
             // 
-            this.txtCCCD.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCD.BackColor = System.Drawing.Color.White;
+            this.txtCCCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCCCD.Location = new System.Drawing.Point(200, 90);
             this.txtCCCD.Name = "txtCCCD";
-            this.txtCCCD.Size = new System.Drawing.Size(534, 27);
+            this.txtCCCD.Size = new System.Drawing.Size(534, 34);
             this.txtCCCD.TabIndex = 19;
             this.txtCCCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTen
             // 
-            this.txtTen.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTen.BackColor = System.Drawing.Color.White;
+            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTen.Location = new System.Drawing.Point(200, 140);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(534, 27);
+            this.txtTen.Size = new System.Drawing.Size(534, 34);
             this.txtTen.TabIndex = 20;
             // 
             // txtQueQuan
@@ -277,7 +282,7 @@
             this.txtQueQuan.ForeColor = System.Drawing.Color.Black;
             this.txtQueQuan.Location = new System.Drawing.Point(200, 241);
             this.txtQueQuan.Name = "txtQueQuan";
-            this.txtQueQuan.Size = new System.Drawing.Size(852, 27);
+            this.txtQueQuan.Size = new System.Drawing.Size(862, 27);
             this.txtQueQuan.TabIndex = 21;
             this.txtQueQuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -289,7 +294,7 @@
             this.txtDiaChi.ForeColor = System.Drawing.Color.Black;
             this.txtDiaChi.Location = new System.Drawing.Point(200, 291);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(852, 27);
+            this.txtDiaChi.Size = new System.Drawing.Size(861, 27);
             this.txtDiaChi.TabIndex = 22;
             this.txtDiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -397,22 +402,24 @@
             // rdoNam
             // 
             this.rdoNam.AutoSize = true;
+            this.rdoNam.BackColor = System.Drawing.Color.Transparent;
             this.rdoNam.Location = new System.Drawing.Point(873, 90);
             this.rdoNam.Name = "rdoNam";
             this.rdoNam.Size = new System.Drawing.Size(78, 32);
             this.rdoNam.TabIndex = 35;
             this.rdoNam.Text = "Nam";
-            this.rdoNam.UseVisualStyleBackColor = true;
+            this.rdoNam.UseVisualStyleBackColor = false;
             // 
             // rdoNu
             // 
             this.rdoNu.AutoSize = true;
+            this.rdoNu.BackColor = System.Drawing.Color.Transparent;
             this.rdoNu.Location = new System.Drawing.Point(974, 90);
             this.rdoNu.Name = "rdoNu";
             this.rdoNu.Size = new System.Drawing.Size(62, 32);
             this.rdoNu.TabIndex = 36;
             this.rdoNu.Text = "Nữ";
-            this.rdoNu.UseVisualStyleBackColor = true;
+            this.rdoNu.UseVisualStyleBackColor = false;
             // 
             // dtmNgaySinh
             // 
@@ -466,7 +473,7 @@
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDangKy.ForeColor = System.Drawing.Color.White;
-            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.accept;
             this.btnDangKy.Location = new System.Drawing.Point(1365, 104);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(50, 50);
@@ -508,6 +515,7 @@
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
+            this.lblSDT.BackColor = System.Drawing.Color.Transparent;
             this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSDT.Image = global::QuanLiCongDanThanhPho.Properties.Resources.call;
             this.lblSDT.Location = new System.Drawing.Point(749, 185);
@@ -515,44 +523,6 @@
             this.lblSDT.Size = new System.Drawing.Size(63, 32);
             this.lblSDT.TabIndex = 93;
             this.lblSDT.Text = "       ";
-            // 
-            // txtSoDT
-            // 
-            this.txtSoDT.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtSoDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSoDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSoDT.Location = new System.Drawing.Point(840, 190);
-            this.txtSoDT.Name = "txtSoDT";
-            this.txtSoDT.Size = new System.Drawing.Size(212, 27);
-            this.txtSoDT.TabIndex = 94;
-            this.txtSoDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblTonGiao
-            // 
-            this.lblTonGiao.AutoSize = true;
-            this.lblTonGiao.Location = new System.Drawing.Point(740, 140);
-            this.lblTonGiao.Name = "lblTonGiao";
-            this.lblTonGiao.Size = new System.Drawing.Size(93, 28);
-            this.lblTonGiao.TabIndex = 95;
-            this.lblTonGiao.Text = "Tôn giáo";
-            // 
-            // cboTonGiao
-            // 
-            this.cboTonGiao.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboTonGiao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTonGiao.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboTonGiao.FormattingEnabled = true;
-            this.cboTonGiao.Items.AddRange(new object[] {
-            "Không",
-            "Phật giáo",
-            "Cao đài",
-            "Hòa hảo",
-            "Tin lành",
-            "Thiên chúa"});
-            this.cboTonGiao.Location = new System.Drawing.Point(839, 137);
-            this.cboTonGiao.Name = "cboTonGiao";
-            this.cboTonGiao.Size = new System.Drawing.Size(213, 36);
-            this.cboTonGiao.TabIndex = 96;
             // 
             // lblNoiSinh
             // 
@@ -613,7 +583,7 @@
             this.cboTinhTrang.Items.AddRange(new object[] {
             "Độc thân",
             "Kết hôn"});
-            this.cboTinhTrang.Location = new System.Drawing.Point(292, 532);
+            this.cboTinhTrang.Location = new System.Drawing.Point(292, 539);
             this.cboTinhTrang.Name = "cboTinhTrang";
             this.cboTinhTrang.Size = new System.Drawing.Size(180, 36);
             this.cboTinhTrang.TabIndex = 104;
@@ -670,7 +640,7 @@
             this.btnReset.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
+            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.undo__1_;
             this.btnReset.Location = new System.Drawing.Point(1365, 160);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(50, 50);
@@ -682,13 +652,63 @@
             // 
             this.ofdHinhDaiDien.FileName = "openFileDialog1";
             // 
+            // txtSoDT
+            // 
+            this.txtSoDT.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtSoDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSoDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSoDT.Location = new System.Drawing.Point(849, 185);
+            this.txtSoDT.Name = "txtSoDT";
+            this.txtSoDT.Size = new System.Drawing.Size(212, 27);
+            this.txtSoDT.TabIndex = 94;
+            this.txtSoDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cboTonGiao
+            // 
+            this.cboTonGiao.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboTonGiao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTonGiao.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboTonGiao.FormattingEnabled = true;
+            this.cboTonGiao.Items.AddRange(new object[] {
+            "Không",
+            "Phật giáo",
+            "Cao đài",
+            "Hòa hảo",
+            "Tin lành",
+            "Thiên chúa"});
+            this.cboTonGiao.Location = new System.Drawing.Point(849, 139);
+            this.cboTonGiao.Name = "cboTonGiao";
+            this.cboTonGiao.Size = new System.Drawing.Size(213, 36);
+            this.cboTonGiao.TabIndex = 96;
+            // 
+            // lblTonGiao
+            // 
+            this.lblTonGiao.AutoSize = true;
+            this.lblTonGiao.BackColor = System.Drawing.Color.Transparent;
+            this.lblTonGiao.Location = new System.Drawing.Point(749, 142);
+            this.lblTonGiao.Name = "lblTonGiao";
+            this.lblTonGiao.Size = new System.Drawing.Size(93, 28);
+            this.lblTonGiao.TabIndex = 95;
+            this.lblTonGiao.Text = "Tôn giáo";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Location = new System.Drawing.Point(1355, -10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(67, 806);
+            this.panel1.TabIndex = 108;
+            // 
             // FDangKyCongDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.lblTonGiao);
             this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.txtSoDT);
+            this.Controls.Add(this.cboTonGiao);
             this.Controls.Add(this.cboQuanHe);
             this.Controls.Add(this.btnThemHinh);
             this.Controls.Add(this.cboTinhTrang);
@@ -697,9 +717,6 @@
             this.Controls.Add(this.lblQuanHeChuHo);
             this.Controls.Add(this.txtNoiSinh);
             this.Controls.Add(this.lblNoiSinh);
-            this.Controls.Add(this.cboTonGiao);
-            this.Controls.Add(this.lblTonGiao);
-            this.Controls.Add(this.txtSoDT);
             this.Controls.Add(this.lblSDT);
             this.Controls.Add(this.txtMaHonNhan);
             this.Controls.Add(this.lblMaHonNhan);
@@ -741,6 +758,7 @@
             this.Controls.Add(this.lblDiaChi);
             this.Controls.Add(this.lblNgaySinh);
             this.Controls.Add(this.lblTen);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -795,9 +813,6 @@
         private Label lblMaHonNhan;
         private TextBox txtMaHonNhan;
         private Label lblSDT;
-        private TextBox txtSoDT;
-        private Label lblTonGiao;
-        private ComboBox cboTonGiao;
         private Label lblNoiSinh;
         private TextBox txtNoiSinh;
         private Label lblQuanHeChuHo;
@@ -809,5 +824,9 @@
         private Button btnReset;
         private OpenFileDialog ofdHinhDaiDien;
         private SaveFileDialog sfdHinhDaiDien;
+        private TextBox txtSoDT;
+        private ComboBox cboTonGiao;
+        private Label lblTonGiao;
+        private Panel panel1;
     }
 }

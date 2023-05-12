@@ -78,10 +78,10 @@
             // 
             // btnMenuShow
             // 
-            this.btnMenuShow.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenuShow.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnMenuShow.FlatAppearance.BorderSize = 0;
             this.btnMenuShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuShow.Image = global::QuanLiCongDanThanhPho.Properties.Resources.menu__8_;
+            this.btnMenuShow.Image = global::QuanLiCongDanThanhPho.Properties.Resources.menu__9_;
             this.btnMenuShow.Location = new System.Drawing.Point(7, 3);
             this.btnMenuShow.Name = "btnMenuShow";
             this.btnMenuShow.Size = new System.Drawing.Size(65, 65);
@@ -91,7 +91,7 @@
             // 
             // pnlDanhMuc
             // 
-            this.pnlDanhMuc.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlDanhMuc.BackColor = System.Drawing.Color.RoyalBlue;
             this.pnlDanhMuc.Controls.Add(this.lblDanhMuc);
             this.pnlDanhMuc.Location = new System.Drawing.Point(0, 69);
             this.pnlDanhMuc.Name = "pnlDanhMuc";
@@ -101,11 +101,11 @@
             // lblDanhMuc
             // 
             this.lblDanhMuc.AutoSize = true;
-            this.lblDanhMuc.BackColor = System.Drawing.Color.Transparent;
+            this.lblDanhMuc.BackColor = System.Drawing.Color.RoyalBlue;
             this.lblDanhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDanhMuc.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDanhMuc.ForeColor = System.Drawing.Color.Black;
-            this.lblDanhMuc.Image = global::QuanLiCongDanThanhPho.Properties.Resources.user_list;
+            this.lblDanhMuc.ForeColor = System.Drawing.Color.White;
+            this.lblDanhMuc.Image = global::QuanLiCongDanThanhPho.Properties.Resources.user__6_;
             this.lblDanhMuc.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblDanhMuc.Location = new System.Drawing.Point(12, 17);
             this.lblDanhMuc.Name = "lblDanhMuc";
@@ -204,7 +204,7 @@
             // pnlHienThiForm
             // 
             this.pnlHienThiForm.AutoSize = true;
-            this.pnlHienThiForm.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlHienThiForm.BackColor = System.Drawing.Color.White;
             this.pnlHienThiForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlHienThiForm.Location = new System.Drawing.Point(88, 81);
             this.pnlHienThiForm.Name = "pnlHienThiForm";
@@ -358,7 +358,7 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlMenu.BackColor = System.Drawing.Color.RoyalBlue;
             this.pnlMenu.Controls.Add(this.pnlThongKe);
             this.pnlMenu.Controls.Add(this.pnlDangKy);
             this.pnlMenu.Controls.Add(this.pnlDanhMuc);
@@ -370,7 +370,7 @@
             // 
             // pnlThongKe
             // 
-            this.pnlThongKe.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlThongKe.BackColor = System.Drawing.Color.RoyalBlue;
             this.pnlThongKe.Controls.Add(this.lblThongKe);
             this.pnlThongKe.Location = new System.Drawing.Point(0, 224);
             this.pnlThongKe.Name = "pnlThongKe";
@@ -380,11 +380,11 @@
             // lblThongKe
             // 
             this.lblThongKe.AutoSize = true;
-            this.lblThongKe.BackColor = System.Drawing.Color.Transparent;
+            this.lblThongKe.BackColor = System.Drawing.Color.RoyalBlue;
             this.lblThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblThongKe.ForeColor = System.Drawing.Color.Black;
-            this.lblThongKe.Image = global::QuanLiCongDanThanhPho.Properties.Resources.file;
+            this.lblThongKe.ForeColor = System.Drawing.Color.White;
+            this.lblThongKe.Image = global::QuanLiCongDanThanhPho.Properties.Resources.pie_chart;
             this.lblThongKe.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblThongKe.Location = new System.Drawing.Point(12, 16);
             this.lblThongKe.Name = "lblThongKe";
@@ -396,7 +396,7 @@
             // 
             // pnlDangKy
             // 
-            this.pnlDangKy.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlDangKy.BackColor = System.Drawing.Color.RoyalBlue;
             this.pnlDangKy.Controls.Add(this.lblDangKy);
             this.pnlDangKy.Location = new System.Drawing.Point(0, 144);
             this.pnlDangKy.Name = "pnlDangKy";
@@ -406,11 +406,11 @@
             // lblDangKy
             // 
             this.lblDangKy.AutoSize = true;
-            this.lblDangKy.BackColor = System.Drawing.Color.Transparent;
+            this.lblDangKy.BackColor = System.Drawing.Color.RoyalBlue;
             this.lblDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDangKy.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDangKy.ForeColor = System.Drawing.Color.Black;
-            this.lblDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.edit__2_;
+            this.lblDangKy.ForeColor = System.Drawing.Color.White;
+            this.lblDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.pencil;
             this.lblDangKy.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblDangKy.Location = new System.Drawing.Point(12, 18);
             this.lblDangKy.Name = "lblDangKy";
