@@ -48,7 +48,7 @@ namespace QuanLiCongDanThanhPho
                     dtmNgayDangKy.Value = hn.NgayDangKy;
                 }
             }
-        }    
+        }
 
         private void FThongTinHonNhan_Load(object sender, EventArgs e)
         {

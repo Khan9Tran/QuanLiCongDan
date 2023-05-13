@@ -66,7 +66,7 @@ namespace QuanLiCongDanThanhPho
             {
                 MessageBox.Show("Thông tin nhập sai");
             }
-        }    
+        }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
