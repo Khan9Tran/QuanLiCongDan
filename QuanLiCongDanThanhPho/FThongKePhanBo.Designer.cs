@@ -36,12 +36,15 @@
             this.lblHoNhieuNhat = new System.Windows.Forms.Label();
             this.gvHoNhieuNguoiNhat = new System.Windows.Forms.DataGridView();
             this.lblSoNguoiTrungBinhMotQuan = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoNhieuNguoiNhat)).BeginInit();
             this.SuspendLayout();
             // 
             // lblQuan
             // 
             this.lblQuan.AutoSize = true;
+            this.lblQuan.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblQuan.ForeColor = System.Drawing.Color.White;
             this.lblQuan.Location = new System.Drawing.Point(12, 180);
             this.lblQuan.Name = "lblQuan";
             this.lblQuan.Size = new System.Drawing.Size(303, 28);
@@ -51,6 +54,8 @@
             // lblSoNguoiTamTru
             // 
             this.lblSoNguoiTamTru.AutoSize = true;
+            this.lblSoNguoiTamTru.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSoNguoiTamTru.ForeColor = System.Drawing.Color.White;
             this.lblSoNguoiTamTru.Location = new System.Drawing.Point(12, 64);
             this.lblSoNguoiTamTru.Name = "lblSoNguoiTamTru";
             this.lblSoNguoiTamTru.Size = new System.Drawing.Size(174, 28);
@@ -60,6 +65,8 @@
             // lblSoNguoiTamVang
             // 
             this.lblSoNguoiTamVang.AutoSize = true;
+            this.lblSoNguoiTamVang.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSoNguoiTamVang.ForeColor = System.Drawing.Color.White;
             this.lblSoNguoiTamVang.Location = new System.Drawing.Point(377, 64);
             this.lblSoNguoiTamVang.Name = "lblSoNguoiTamVang";
             this.lblSoNguoiTamVang.Size = new System.Drawing.Size(192, 28);
@@ -69,6 +76,8 @@
             // lblSoNguoiQuaHanTT
             // 
             this.lblSoNguoiQuaHanTT.AutoSize = true;
+            this.lblSoNguoiQuaHanTT.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSoNguoiQuaHanTT.ForeColor = System.Drawing.Color.White;
             this.lblSoNguoiQuaHanTT.Location = new System.Drawing.Point(12, 117);
             this.lblSoNguoiQuaHanTT.Name = "lblSoNguoiQuaHanTT";
             this.lblSoNguoiQuaHanTT.Size = new System.Drawing.Size(256, 28);
@@ -78,6 +87,8 @@
             // lblSoNguoiQuaHanTV
             // 
             this.lblSoNguoiQuaHanTV.AutoSize = true;
+            this.lblSoNguoiQuaHanTV.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSoNguoiQuaHanTV.ForeColor = System.Drawing.Color.White;
             this.lblSoNguoiQuaHanTV.Location = new System.Drawing.Point(377, 117);
             this.lblSoNguoiQuaHanTV.Name = "lblSoNguoiQuaHanTV";
             this.lblSoNguoiQuaHanTV.Size = new System.Drawing.Size(274, 28);
@@ -87,6 +98,8 @@
             // lblHoNhieuNhat
             // 
             this.lblHoNhieuNhat.AutoSize = true;
+            this.lblHoNhieuNhat.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblHoNhieuNhat.ForeColor = System.Drawing.Color.White;
             this.lblHoNhieuNhat.Location = new System.Drawing.Point(1178, 180);
             this.lblHoNhieuNhat.Name = "lblHoNhieuNhat";
             this.lblHoNhieuNhat.Size = new System.Drawing.Size(209, 28);
@@ -111,11 +124,22 @@
             // lblSoNguoiTrungBinhMotQuan
             // 
             this.lblSoNguoiTrungBinhMotQuan.AutoSize = true;
+            this.lblSoNguoiTrungBinhMotQuan.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSoNguoiTrungBinhMotQuan.ForeColor = System.Drawing.Color.White;
             this.lblSoNguoiTrungBinhMotQuan.Location = new System.Drawing.Point(12, 19);
             this.lblSoNguoiTrungBinhMotQuan.Name = "lblSoNguoiTrungBinhMotQuan";
             this.lblSoNguoiTrungBinhMotQuan.Size = new System.Drawing.Size(339, 28);
             this.lblSoNguoiTrungBinhMotQuan.TabIndex = 32;
             this.lblSoNguoiTrungBinhMotQuan.Text = "Số người trung bình của một quận";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(659, 165);
+            this.panel1.TabIndex = 33;
             // 
             // FThongKePhanBo
             // 
@@ -131,6 +155,7 @@
             this.Controls.Add(this.lblSoNguoiTamVang);
             this.Controls.Add(this.lblSoNguoiTamTru);
             this.Controls.Add(this.lblQuan);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -154,5 +179,6 @@
         private Label lblSoNguoiTrungBinhMotQuan;
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPhanBo;
+        private Panel panel1;
     }
 }

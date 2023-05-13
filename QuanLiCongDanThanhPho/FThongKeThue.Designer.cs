@@ -35,11 +35,14 @@
             this.lblTrungBinhThue = new System.Windows.Forms.Label();
             this.lblTopQuanDongItThue = new System.Windows.Forms.Label();
             this.lblTopQuanDongNhieuThueNhat = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblTongTienThue
             // 
             this.lblTongTienThue.AutoSize = true;
+            this.lblTongTienThue.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTongTienThue.ForeColor = System.Drawing.Color.White;
             this.lblTongTienThue.Location = new System.Drawing.Point(29, 32);
             this.lblTongTienThue.Name = "lblTongTienThue";
             this.lblTongTienThue.Size = new System.Drawing.Size(152, 28);
@@ -49,6 +52,8 @@
             // lblTongThueDaDong
             // 
             this.lblTongThueDaDong.AutoSize = true;
+            this.lblTongThueDaDong.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTongThueDaDong.ForeColor = System.Drawing.Color.White;
             this.lblTongThueDaDong.Location = new System.Drawing.Point(29, 73);
             this.lblTongThueDaDong.Name = "lblTongThueDaDong";
             this.lblTongThueDaDong.Size = new System.Drawing.Size(292, 28);
@@ -58,6 +63,8 @@
             // lblTongThueCanDong
             // 
             this.lblTongThueCanDong.AutoSize = true;
+            this.lblTongThueCanDong.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTongThueCanDong.ForeColor = System.Drawing.Color.White;
             this.lblTongThueCanDong.Location = new System.Drawing.Point(29, 114);
             this.lblTongThueCanDong.Name = "lblTongThueCanDong";
             this.lblTongThueCanDong.Size = new System.Drawing.Size(246, 28);
@@ -67,6 +74,8 @@
             // lblSoNguoiTreHan
             // 
             this.lblSoNguoiTreHan.AutoSize = true;
+            this.lblSoNguoiTreHan.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSoNguoiTreHan.ForeColor = System.Drawing.Color.White;
             this.lblSoNguoiTreHan.Location = new System.Drawing.Point(29, 206);
             this.lblSoNguoiTreHan.Name = "lblSoNguoiTreHan";
             this.lblSoNguoiTreHan.Size = new System.Drawing.Size(226, 28);
@@ -76,6 +85,8 @@
             // lblTrungBinhThue
             // 
             this.lblTrungBinhThue.AutoSize = true;
+            this.lblTrungBinhThue.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTrungBinhThue.ForeColor = System.Drawing.Color.White;
             this.lblTrungBinhThue.Location = new System.Drawing.Point(29, 159);
             this.lblTrungBinhThue.Name = "lblTrungBinhThue";
             this.lblTrungBinhThue.Size = new System.Drawing.Size(414, 28);
@@ -85,6 +96,8 @@
             // lblTopQuanDongItThue
             // 
             this.lblTopQuanDongItThue.AutoSize = true;
+            this.lblTopQuanDongItThue.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblTopQuanDongItThue.ForeColor = System.Drawing.Color.White;
             this.lblTopQuanDongItThue.Location = new System.Drawing.Point(29, 266);
             this.lblTopQuanDongItThue.Name = "lblTopQuanDongItThue";
             this.lblTopQuanDongItThue.Size = new System.Drawing.Size(250, 28);
@@ -94,11 +107,23 @@
             // lblTopQuanDongNhieuThueNhat
             // 
             this.lblTopQuanDongNhieuThueNhat.AutoSize = true;
+            this.lblTopQuanDongNhieuThueNhat.BackColor = System.Drawing.Color.RoyalBlue;
+            this.lblTopQuanDongNhieuThueNhat.ForeColor = System.Drawing.Color.White;
             this.lblTopQuanDongNhieuThueNhat.Location = new System.Drawing.Point(802, 266);
             this.lblTopQuanDongNhieuThueNhat.Name = "lblTopQuanDongNhieuThueNhat";
             this.lblTopQuanDongNhieuThueNhat.Size = new System.Drawing.Size(289, 28);
             this.lblTopQuanDongNhieuThueNhat.TabIndex = 6;
             this.lblTopQuanDongNhieuThueNhat.Text = "5 quận đóng nhiều thuế nhất";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(25, 17);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(671, 246);
+            this.panel1.TabIndex = 7;
             // 
             // FThongKeThue
             // 
@@ -113,6 +138,7 @@
             this.Controls.Add(this.lblTongThueCanDong);
             this.Controls.Add(this.lblTongThueDaDong);
             this.Controls.Add(this.lblTongTienThue);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -136,5 +162,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartQuanDongNhieuThue;
         private Label lblTopQuanDongItThue;
         private Label lblTopQuanDongNhieuThueNhat;
+        private Panel panel1;
     }
 }
