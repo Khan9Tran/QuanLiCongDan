@@ -118,14 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="add-user (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add-user (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add-file" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="smartcity2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\smartcity2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="confirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\confirm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="potential" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\potential.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,14 +148,14 @@
   <data name="user (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="undo (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\undo (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="leftWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\leftWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="page" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="merge (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\merge (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,17 +163,11 @@
   <data name="customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add-user (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add-user (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="merge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\merge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,11 +175,11 @@
   <data name="reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="plus (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mycity" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mycity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +193,9 @@
   <data name="user (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menu (9)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu (9).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,8 +208,11 @@
   <data name="division" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\division.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plus (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plus (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="merge (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\merge (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barchart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barchart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,17 +220,14 @@
   <data name="dots (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dots (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add-user (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-user (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mycity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mycity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="confirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\confirm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="menu (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add-user (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-user (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="smartcity" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\smartcity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,8 +244,8 @@
   <data name="minusWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minusWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barchart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barchart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,8 +259,8 @@
   <data name="crossWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crossWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="undo (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\undo (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,8 +271,8 @@
   <data name="menu (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add-file" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add-file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="homeWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homeWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,13 +280,16 @@
   <data name="add-button (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-button (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="left1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\left1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="share" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\share.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

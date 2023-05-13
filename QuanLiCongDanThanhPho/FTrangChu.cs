@@ -89,6 +89,7 @@ namespace QuanLiCongDanThanhPho
             pnlMenu.BringToFront();
             LoadTaiKhoan();
             tmrNgayHienTai.Start();
+            hinhAdmin.LayHinhDaiDien("hinhnen", ptcHinhNen);
         }
 
         private void btnMenuShow_Click(object sender, EventArgs e)
@@ -217,6 +218,12 @@ namespace QuanLiCongDanThanhPho
         {
             lblNgayHienTai.Text = DateTime.Now.ToLongDateString();
             lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void btnHinhNen_Click(object sender, EventArgs e)
+        {
+            hinhAdmin.ThemHinhDaiDien(ofdHinhNen, ptcHinhNen);
+            hinhAdmin.SaveHinhDaiDien("hinhnen", ofdHinhNen, ptcHinhNen);
         }
     }
 }

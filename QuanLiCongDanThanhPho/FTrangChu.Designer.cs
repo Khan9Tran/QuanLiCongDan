@@ -43,6 +43,8 @@
             this.ItemCongDanKhaiTu = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemKhaiSinh = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHienThiForm = new System.Windows.Forms.Panel();
+            this.btnHinhNen = new System.Windows.Forms.Button();
+            this.ptcHinhNen = new System.Windows.Forms.PictureBox();
             this.pnlTaiKhoan = new System.Windows.Forms.Panel();
             this.ptcHinhDaiDien = new System.Windows.Forms.PictureBox();
             this.cmnusTaiKhoan = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -64,8 +66,12 @@
             this.lblDangKy = new System.Windows.Forms.Label();
             this.tmrPhongTo = new System.Windows.Forms.Timer(this.components);
             this.tmrNgayHienTai = new System.Windows.Forms.Timer(this.components);
+            this.ofdHinhNen = new System.Windows.Forms.OpenFileDialog();
+            this.sfdHinhNen = new System.Windows.Forms.SaveFileDialog();
             this.pnlDanhMuc.SuspendLayout();
             this.cmnusDangKy.SuspendLayout();
+            this.pnlHienThiForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhNen)).BeginInit();
             this.pnlTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).BeginInit();
             this.cmnusTaiKhoan.SuspendLayout();
@@ -205,11 +211,35 @@
             // 
             this.pnlHienThiForm.AutoSize = true;
             this.pnlHienThiForm.BackColor = System.Drawing.Color.White;
+            this.pnlHienThiForm.Controls.Add(this.btnHinhNen);
+            this.pnlHienThiForm.Controls.Add(this.ptcHinhNen);
             this.pnlHienThiForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlHienThiForm.Location = new System.Drawing.Point(88, 81);
             this.pnlHienThiForm.Name = "pnlHienThiForm";
-            this.pnlHienThiForm.Size = new System.Drawing.Size(1532, 782);
+            this.pnlHienThiForm.Size = new System.Drawing.Size(1546, 793);
             this.pnlHienThiForm.TabIndex = 2;
+            // 
+            // btnHinhNen
+            // 
+            this.btnHinhNen.BackColor = System.Drawing.Color.Transparent;
+            this.btnHinhNen.FlatAppearance.BorderSize = 0;
+            this.btnHinhNen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHinhNen.Image = global::QuanLiCongDanThanhPho.Properties.Resources.share;
+            this.btnHinhNen.Location = new System.Drawing.Point(1499, 4);
+            this.btnHinhNen.Name = "btnHinhNen";
+            this.btnHinhNen.Size = new System.Drawing.Size(32, 32);
+            this.btnHinhNen.TabIndex = 8;
+            this.btnHinhNen.UseVisualStyleBackColor = false;
+            this.btnHinhNen.Click += new System.EventHandler(this.btnHinhNen_Click);
+            // 
+            // ptcHinhNen
+            // 
+            this.ptcHinhNen.Location = new System.Drawing.Point(-1, 0);
+            this.ptcHinhNen.Name = "ptcHinhNen";
+            this.ptcHinhNen.Size = new System.Drawing.Size(1544, 790);
+            this.ptcHinhNen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcHinhNen.TabIndex = 0;
+            this.ptcHinhNen.TabStop = false;
             // 
             // pnlTaiKhoan
             // 
@@ -446,6 +476,8 @@
             this.pnlDanhMuc.ResumeLayout(false);
             this.pnlDanhMuc.PerformLayout();
             this.cmnusDangKy.ResumeLayout(false);
+            this.pnlHienThiForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhNen)).EndInit();
             this.pnlTaiKhoan.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).EndInit();
             this.cmnusTaiKhoan.ResumeLayout(false);
@@ -498,5 +530,9 @@
         private System.Windows.Forms.Timer tmrNgayHienTai;
         private Label lblNgayHienTai;
         private Label lblTime;
+        private Button btnHinhNen;
+        private PictureBox ptcHinhNen;
+        private OpenFileDialog ofdHinhNen;
+        private SaveFileDialog sfdHinhNen;
     }
 }
