@@ -38,7 +38,10 @@ namespace QuanLiCongDanThanhPho
         }
         static public string GetCCCD(DataGridView gvDanhSach, int index)
         {
-            return gvDanhSach.CurrentRow.Cells[index].Value.ToString();
+            var value = gvDanhSach.CurrentRow.Cells[index].Value;
+            if (value.ToString() != "")
+                return (string)value;
+            return "";
         }
     }
 }
