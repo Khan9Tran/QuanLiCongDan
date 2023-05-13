@@ -38,6 +38,7 @@ namespace QuanLiCongDanThanhPho
             {
                 btnXacNhan, dtmNgaySinh, dtmNgayDangKy
             };
+
             Tool = new ToolsForControl(listTxt, listControl, ToolsForControl.Turn.off);
         }
 

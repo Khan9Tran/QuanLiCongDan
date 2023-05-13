@@ -1,7 +1,4 @@
-﻿
-using QuanLiCongDanThanhPho.Models;
-using System;
-using System.Data;
+﻿using System.Data;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QuanLiCongDanThanhPho
@@ -17,14 +14,9 @@ namespace QuanLiCongDanThanhPho
             StackForm.Add(this);
         }
 
-        private string DinhDangTienTe(string s)
+        private string donVi()
         {
-            string result = s;
-            for (int i = result.Length-3; i > 0; i -= 3)
-            {
-                result = result.Insert(i, ".");
-            }
-            return result +" VND";
+            return " VNĐ";
         }
 
         private void FThongKeThue_Load(object sender, EventArgs e)
@@ -34,10 +26,10 @@ namespace QuanLiCongDanThanhPho
             TaoBieuDoQuanDongItThue();
             int[] thues = thueDAO.LayThongKeThue();
             int soNguoiTreHan = thueDAO.LaySoNguoiTreHan();
-            lblTongTienThue.Text += " " + DinhDangTienTe(thues[2].ToString());
-            lblTongThueCanDong.Text += " " + DinhDangTienTe(thues[1].ToString());
-            lblTongThueDaDong.Text += " " + DinhDangTienTe(thues[0].ToString());
-            lblTrungBinhThue.Text += " " + DinhDangTienTe(((int)(thues[2] / thues[3])).ToString());
+            lblTongTienThue.Text += " " + thues[2].ToString() + donVi();
+            lblTongThueCanDong.Text += " " + thues[1].ToString() + donVi();
+            lblTongThueDaDong.Text += " " + thues[0].ToString() + donVi();
+            lblTrungBinhThue.Text += " " + (((int)(thues[2] / thues[3])).ToString()) + donVi();
             lblSoNguoiTreHan.Text += " " + soNguoiTreHan.ToString();
         }
 

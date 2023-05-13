@@ -32,11 +32,11 @@
             this.gvSoLuongNamNu = new System.Windows.Forms.DataGridView();
             this.gvNhomTuoi = new System.Windows.Forms.DataGridView();
             this.gvHonNhan = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gvSoLuongNamNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhomTuoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHonNhan)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSoCongDan
@@ -92,15 +92,15 @@
             this.gvHonNhan.Size = new System.Drawing.Size(327, 252);
             this.gvHonNhan.TabIndex = 33;
             // 
-            // panel1
+            // pnlPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lblSoCongDan);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(509, 57);
-            this.panel1.TabIndex = 34;
+            this.pnlPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPanel.Controls.Add(this.lblSoCongDan);
+            this.pnlPanel.Location = new System.Drawing.Point(12, 12);
+            this.pnlPanel.Name = "pnlPanel";
+            this.pnlPanel.Size = new System.Drawing.Size(509, 57);
+            this.pnlPanel.TabIndex = 34;
             // 
             // FThongKeCongDan
             // 
@@ -111,7 +111,7 @@
             this.Controls.Add(this.gvHonNhan);
             this.Controls.Add(this.gvNhomTuoi);
             this.Controls.Add(this.gvSoLuongNamNu);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -121,8 +121,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvSoLuongNamNu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhomTuoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHonNhan)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlPanel.ResumeLayout(false);
+            this.pnlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -136,6 +136,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartGioiTinh;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartNhomTuoi;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartHonNhan;
-        private Panel panel1;
+        private Panel pnlPanel;
     }
 }

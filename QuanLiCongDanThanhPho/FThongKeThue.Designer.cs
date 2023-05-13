@@ -35,7 +35,7 @@
             this.lblTrungBinhThue = new System.Windows.Forms.Label();
             this.lblTopQuanDongItThue = new System.Windows.Forms.Label();
             this.lblTopQuanDongNhieuThueNhat = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblTongTienThue
@@ -115,15 +115,15 @@
             this.lblTopQuanDongNhieuThueNhat.TabIndex = 6;
             this.lblTopQuanDongNhieuThueNhat.Text = "5 quận đóng nhiều thuế nhất";
             // 
-            // panel1
+            // pnlPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(25, 17);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 246);
-            this.panel1.TabIndex = 7;
+            this.pnlPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPanel.ForeColor = System.Drawing.Color.White;
+            this.pnlPanel.Location = new System.Drawing.Point(25, 17);
+            this.pnlPanel.Name = "pnlPanel";
+            this.pnlPanel.Size = new System.Drawing.Size(671, 246);
+            this.pnlPanel.TabIndex = 7;
             // 
             // FThongKeThue
             // 
@@ -138,7 +138,7 @@
             this.Controls.Add(this.lblTongThueCanDong);
             this.Controls.Add(this.lblTongThueDaDong);
             this.Controls.Add(this.lblTongTienThue);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -162,6 +162,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartQuanDongNhieuThue;
         private Label lblTopQuanDongItThue;
         private Label lblTopQuanDongNhieuThueNhat;
-        private Panel panel1;
+        private Panel pnlPanel;
     }
 }
