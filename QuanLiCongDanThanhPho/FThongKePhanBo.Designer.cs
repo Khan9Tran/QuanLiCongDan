@@ -36,7 +36,7 @@
             this.lblHoNhieuNhat = new System.Windows.Forms.Label();
             this.gvHoNhieuNguoiNhat = new System.Windows.Forms.DataGridView();
             this.lblSoNguoiTrungBinhMotQuan = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoNhieuNguoiNhat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,14 +132,14 @@
             this.lblSoNguoiTrungBinhMotQuan.TabIndex = 32;
             this.lblSoNguoiTrungBinhMotQuan.Text = "Số người trung bình của một quận";
             // 
-            // panel1
+            // pnlPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(659, 165);
-            this.panel1.TabIndex = 33;
+            this.pnlPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPanel.Location = new System.Drawing.Point(12, 12);
+            this.pnlPanel.Name = "pnlPanel";
+            this.pnlPanel.Size = new System.Drawing.Size(659, 165);
+            this.pnlPanel.TabIndex = 33;
             // 
             // FThongKePhanBo
             // 
@@ -155,7 +155,7 @@
             this.Controls.Add(this.lblSoNguoiTamVang);
             this.Controls.Add(this.lblSoNguoiTamTru);
             this.Controls.Add(this.lblQuan);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlPanel);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -179,6 +179,6 @@
         private Label lblSoNguoiTrungBinhMotQuan;
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPhanBo;
-        private Panel panel1;
+        private Panel pnlPanel;
     }
 }

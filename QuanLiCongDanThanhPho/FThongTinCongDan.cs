@@ -139,7 +139,6 @@ namespace QuanLiCongDanThanhPho
             {
                 btnThongTinCCCD.Enabled = false;
             }
-
         }
 
         private void FThongTinCongDan_Load(object sender, EventArgs e)

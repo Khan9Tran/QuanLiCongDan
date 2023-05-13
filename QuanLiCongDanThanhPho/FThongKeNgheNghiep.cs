@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QuanLiCongDanThanhPho
@@ -66,7 +58,7 @@ namespace QuanLiCongDanThanhPho
             chartNgheNghiep.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chartNgheNghiep.Legends.Add(legend1);
-            chartNgheNghiep.Location = new System.Drawing.Point(12, 180);
+            chartNgheNghiep.Location = new Point(12, 180);
             chartNgheNghiep.Name = "chartNgheNghiep";
             series1.ChartArea = "ChartArea1";
             series1.IsVisibleInLegend = false;
@@ -74,7 +66,7 @@ namespace QuanLiCongDanThanhPho
             series1.MarkerSize = 1;
             series1.Name = "Series1";
             chartNgheNghiep.Series.Add(series1);
-            chartNgheNghiep.Size = new System.Drawing.Size(1490, 440);
+            chartNgheNghiep.Size = new Size(1490, 440);
             chartNgheNghiep.TabIndex = 0;
             chartNgheNghiep.Text = "chart1";
         }

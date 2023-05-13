@@ -23,7 +23,7 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable DanhSachCCCDTheoDacDiem(string dacDiem)
         {
-            string sqlStr = string.Format($"SELECT CCCD.MaCCCD as 'CCCD', CONGDAN.Ten as 'Tên' FROM CCCD INNER JOIN CONGDAN ON CCCD.MaCCCD = CONGDAN.CCCD WHERE DacDiem = N'{dacDiem}'");
+            string sqlStr = string.Format($"SELECT CCCD.MaCCCD as 'CCCD', CONGDAN.Ten as 'Tên' FROM CCCD INNER JOIN CONGDAN ON CCCD.MaCCCD = CONGDAN.CCCD WHERE DacDiem = N'{dacDiem}' or DacDiem is NULL");
             return conn.LayDanhSach(sqlStr);
         }
         public CCCD LayThongTin(CCCD cCCD)
@@ -38,7 +38,10 @@ namespace QuanLiCongDanThanhPho
         }
         static public string GetCCCD(DataGridView gvDanhSach, int index)
         {
-            return (string)gvDanhSach.CurrentRow.Cells[index].Value;
+            var value = gvDanhSach.CurrentRow.Cells[index].Value;
+            if (value.ToString() != "")
+                return (string)value;
+            return "";
         }
     }
 }

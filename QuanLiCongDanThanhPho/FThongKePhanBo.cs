@@ -22,7 +22,6 @@ namespace QuanLiCongDanThanhPho
         private void FThongKePhanBo_Load(object sender, EventArgs e)
         {
             TaoDoThiPhanBo();
-            //gvDanhSachQuan.DataSource = cdDAO.LayDanhSachDiaChi();
             lblSoNguoiTamTru.Text += " " + tttvDAO.LaySoLuongTamTru().ToString();
             lblSoNguoiTamVang.Text += " " + tttvDAO.LaySoLuongTamVang().ToString();
             lblSoNguoiQuaHanTT.Text += " " + tttvDAO.LaySoLuongQuaHanTamTru().ToString();
