@@ -33,6 +33,12 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND TrangThai = N'Tạm vắng'";
             return conn.LayDanhSach(sqlStr);
         }
+        public DataTable LayDanhSachChoDuyet(string tu)
+        {
+            string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND (TrangThai = N'CDTT' OR TrangThai = N'NCDTV')";
+            return conn.LayDanhSach(sqlStr);
+        }
+
         public bool ThemTamTruTamVang(TamTruTamVang tTTV)
         {
             string sqlStr = string.Format($"INSERT INTO TAMTRUTAMVANG(MaTTTV, CCCD, DiaChi, NgayBD, NgayKT, TrangThai, LiDo) VALUES('{tTTV.MaSo}','{tTTV.CCCD}',N'{tTTV.DiaChi.toString()}' ,'{tTTV.NgayBatDau}', '{tTTV.NgayKetThuc}', N'{tTTV.TrangThai}', N'{tTTV.LyDo}' );");
