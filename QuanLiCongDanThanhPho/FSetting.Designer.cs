@@ -80,6 +80,7 @@
             this.btnXacNhan.Size = new System.Drawing.Size(35, 35);
             this.btnXacNhan.TabIndex = 3;
             this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // lblMkHT
             // 

@@ -35,7 +35,7 @@ namespace QuanLiCongDanThanhPho
         }
         public DataTable LayDanhSachChoDuyet(string tu)
         {
-            string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND (TrangThai = N'CDTT' OR TrangThai = N'NCDTV')";
+            string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND (TrangThai = N'CDTT' OR TrangThai = N'CDTV')";
             return conn.LayDanhSach(sqlStr);
         }
 
