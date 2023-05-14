@@ -48,14 +48,19 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.fpnlChucNang = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnTimHonNhan = new System.Windows.Forms.Button();
+            this.ptcHinhChong = new System.Windows.Forms.PictureBox();
+            this.ptcHinhVo = new System.Windows.Forms.PictureBox();
             this.fpnlChucNang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhChong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhVo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTen
             // 
             this.lblTen.AutoSize = true;
             this.lblTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.lblTen.Location = new System.Drawing.Point(708, 360);
+            this.lblTen.Location = new System.Drawing.Point(709, 320);
             this.lblTen.Name = "lblTen";
             this.lblTen.Size = new System.Drawing.Size(104, 28);
             this.lblTen.TabIndex = 1;
@@ -66,7 +71,7 @@
             this.txtTenChong.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTenChong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTenChong.Location = new System.Drawing.Point(120, 360);
+            this.txtTenChong.Location = new System.Drawing.Point(191, 320);
             this.txtTenChong.Name = "txtTenChong";
             this.txtTenChong.Size = new System.Drawing.Size(479, 27);
             this.txtTenChong.TabIndex = 11;
@@ -76,16 +81,17 @@
             this.txtTenVo.BackColor = System.Drawing.Color.Gainsboro;
             this.txtTenVo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenVo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTenVo.Location = new System.Drawing.Point(917, 372);
+            this.txtTenVo.Location = new System.Drawing.Point(852, 320);
             this.txtTenVo.Name = "txtTenVo";
             this.txtTenVo.Size = new System.Drawing.Size(490, 27);
             this.txtTenVo.TabIndex = 13;
+            this.txtTenVo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblCCCD
             // 
             this.lblCCCD.AutoSize = true;
             this.lblCCCD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.lblCCCD.Location = new System.Drawing.Point(708, 275);
+            this.lblCCCD.Location = new System.Drawing.Point(725, 245);
             this.lblCCCD.Name = "lblCCCD";
             this.lblCCCD.Size = new System.Drawing.Size(61, 28);
             this.lblCCCD.TabIndex = 14;
@@ -93,29 +99,30 @@
             // 
             // txtCCCDChong
             // 
-            this.txtCCCDChong.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtCCCDChong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCDChong.BackColor = System.Drawing.Color.White;
+            this.txtCCCDChong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCCCDChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCCCDChong.Location = new System.Drawing.Point(120, 275);
+            this.txtCCCDChong.Location = new System.Drawing.Point(273, 246);
             this.txtCCCDChong.Name = "txtCCCDChong";
-            this.txtCCCDChong.Size = new System.Drawing.Size(397, 27);
+            this.txtCCCDChong.Size = new System.Drawing.Size(397, 34);
             this.txtCCCDChong.TabIndex = 15;
             // 
             // txtCCCDVo
             // 
-            this.txtCCCDVo.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtCCCDVo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCCCDVo.BackColor = System.Drawing.Color.White;
+            this.txtCCCDVo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCCCDVo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCCCDVo.Location = new System.Drawing.Point(917, 271);
+            this.txtCCCDVo.Location = new System.Drawing.Point(852, 246);
             this.txtCCCDVo.Name = "txtCCCDVo";
-            this.txtCCCDVo.Size = new System.Drawing.Size(397, 27);
+            this.txtCCCDVo.Size = new System.Drawing.Size(397, 34);
             this.txtCCCDVo.TabIndex = 17;
+            this.txtCCCDVo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dtpNgayDangKy
             // 
             this.dtpNgayDangKy.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayDangKy.Location = new System.Drawing.Point(326, 531);
+            this.dtpNgayDangKy.Location = new System.Drawing.Point(582, 501);
             this.dtpNgayDangKy.Name = "dtpNgayDangKy";
             this.dtpNgayDangKy.Size = new System.Drawing.Size(250, 34);
             this.dtpNgayDangKy.TabIndex = 19;
@@ -125,7 +132,7 @@
             // 
             this.lblNgayDangKy.AutoSize = true;
             this.lblNgayDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.lblNgayDangKy.Location = new System.Drawing.Point(120, 531);
+            this.lblNgayDangKy.Location = new System.Drawing.Point(376, 501);
             this.lblNgayDangKy.Name = "lblNgayDangKy";
             this.lblNgayDangKy.Size = new System.Drawing.Size(144, 28);
             this.lblNgayDangKy.TabIndex = 18;
@@ -135,7 +142,7 @@
             // 
             this.lblChong.AutoSize = true;
             this.lblChong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.lblChong.Location = new System.Drawing.Point(120, 213);
+            this.lblChong.Location = new System.Drawing.Point(15, 151);
             this.lblChong.Name = "lblChong";
             this.lblChong.Size = new System.Drawing.Size(72, 28);
             this.lblChong.TabIndex = 51;
@@ -145,7 +152,7 @@
             // 
             this.lblVo.AutoSize = true;
             this.lblVo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.lblVo.Location = new System.Drawing.Point(917, 213);
+            this.lblVo.Location = new System.Drawing.Point(1485, 151);
             this.lblVo.Name = "lblVo";
             this.lblVo.Size = new System.Drawing.Size(38, 28);
             this.lblVo.TabIndex = 52;
@@ -159,7 +166,7 @@
             this.btnTimChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTimChong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
             this.btnTimChong.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnTimChong.Location = new System.Drawing.Point(549, 264);
+            this.btnTimChong.Location = new System.Drawing.Point(191, 235);
             this.btnTimChong.Name = "btnTimChong";
             this.btnTimChong.Size = new System.Drawing.Size(50, 50);
             this.btnTimChong.TabIndex = 53;
@@ -174,7 +181,7 @@
             this.btnTimVo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTimVo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
             this.btnTimVo.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
-            this.btnTimVo.Location = new System.Drawing.Point(1357, 264);
+            this.btnTimVo.Location = new System.Drawing.Point(1292, 235);
             this.btnTimVo.Name = "btnTimVo";
             this.btnTimVo.Size = new System.Drawing.Size(50, 50);
             this.btnTimVo.TabIndex = 54;
@@ -185,7 +192,7 @@
             // 
             this.lblNoiDangKy.AutoSize = true;
             this.lblNoiDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.lblNoiDangKy.Location = new System.Drawing.Point(120, 454);
+            this.lblNoiDangKy.Location = new System.Drawing.Point(376, 424);
             this.lblNoiDangKy.Name = "lblNoiDangKy";
             this.lblNoiDangKy.Size = new System.Drawing.Size(129, 28);
             this.lblNoiDangKy.TabIndex = 55;
@@ -196,21 +203,20 @@
             this.txtNoiDK.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNoiDK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNoiDK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNoiDK.Location = new System.Drawing.Point(326, 454);
+            this.txtNoiDK.Location = new System.Drawing.Point(582, 424);
             this.txtNoiDK.Name = "txtNoiDK";
             this.txtNoiDK.Size = new System.Drawing.Size(511, 27);
             this.txtNoiDK.TabIndex = 56;
             // 
             // txtMaHonNhan
             // 
-            this.txtMaHonNhan.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtMaHonNhan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaHonNhan.BackColor = System.Drawing.Color.White;
+            this.txtMaHonNhan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaHonNhan.Location = new System.Drawing.Point(305, 116);
+            this.txtMaHonNhan.Location = new System.Drawing.Point(205, 23);
             this.txtMaHonNhan.Name = "txtMaHonNhan";
-            this.txtMaHonNhan.Size = new System.Drawing.Size(244, 27);
+            this.txtMaHonNhan.Size = new System.Drawing.Size(244, 34);
             this.txtMaHonNhan.TabIndex = 58;
-            this.txtMaHonNhan.TextChanged += new System.EventHandler(this.txtMaHonNhan_TextChanged);
             // 
             // btnReset
             // 
@@ -273,11 +279,46 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.label1.Location = new System.Drawing.Point(112, 115);
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 28);
             this.label1.TabIndex = 64;
             this.label1.Text = "Mã hôn nhân";
+            // 
+            // btnTimHonNhan
+            // 
+            this.btnTimHonNhan.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimHonNhan.FlatAppearance.BorderSize = 0;
+            this.btnTimHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTimHonNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
+            this.btnTimHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTimHonNhan.Location = new System.Drawing.Point(467, 12);
+            this.btnTimHonNhan.Name = "btnTimHonNhan";
+            this.btnTimHonNhan.Size = new System.Drawing.Size(50, 50);
+            this.btnTimHonNhan.TabIndex = 65;
+            this.btnTimHonNhan.UseVisualStyleBackColor = false;
+            this.btnTimHonNhan.Click += new System.EventHandler(this.btnTimHonNhan_Click);
+            // 
+            // ptcHinhChong
+            // 
+            this.ptcHinhChong.BackColor = System.Drawing.Color.Gainsboro;
+            this.ptcHinhChong.Location = new System.Drawing.Point(15, 190);
+            this.ptcHinhChong.Name = "ptcHinhChong";
+            this.ptcHinhChong.Size = new System.Drawing.Size(160, 200);
+            this.ptcHinhChong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcHinhChong.TabIndex = 91;
+            this.ptcHinhChong.TabStop = false;
+            // 
+            // ptcHinhVo
+            // 
+            this.ptcHinhVo.BackColor = System.Drawing.Color.Gainsboro;
+            this.ptcHinhVo.Location = new System.Drawing.Point(1363, 190);
+            this.ptcHinhVo.Name = "ptcHinhVo";
+            this.ptcHinhVo.Size = new System.Drawing.Size(160, 200);
+            this.ptcHinhVo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptcHinhVo.TabIndex = 92;
+            this.ptcHinhVo.TabStop = false;
             // 
             // FDangKyHonNhan
             // 
@@ -285,6 +326,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 782);
+            this.Controls.Add(this.ptcHinhVo);
+            this.Controls.Add(this.ptcHinhChong);
+            this.Controls.Add(this.btnTimHonNhan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fpnlChucNang);
             this.Controls.Add(this.txtMaHonNhan);
@@ -309,6 +353,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDangKyKetHon";
             this.fpnlChucNang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhChong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptcHinhVo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,5 +382,8 @@
         private Button btnDelete;
         private FlowLayoutPanel fpnlChucNang;
         private Label label1;
+        private Button btnTimHonNhan;
+        private PictureBox ptcHinhChong;
+        private PictureBox ptcHinhVo;
     }
 }

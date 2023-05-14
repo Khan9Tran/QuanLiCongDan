@@ -115,6 +115,10 @@ namespace QuanLiCongDanThanhPho
             {
                 GanHinh(jpg, ptcHinhDaiDien);
             }
+            else
+            {
+                ptcHinhDaiDien.Image = null;
+            }
         }
     }
 }
