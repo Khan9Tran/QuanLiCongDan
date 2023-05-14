@@ -71,6 +71,7 @@
             this.btnXacNhan.Size = new System.Drawing.Size(34, 34);
             this.btnXacNhan.TabIndex = 2;
             this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // rdoTamTru
             // 
