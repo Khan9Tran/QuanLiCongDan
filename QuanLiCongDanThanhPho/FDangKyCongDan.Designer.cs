@@ -594,7 +594,7 @@
             this.btnThemHinh.BackColor = System.Drawing.Color.Transparent;
             this.btnThemHinh.FlatAppearance.BorderSize = 0;
             this.btnThemHinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemHinh.Image = global::QuanLiCongDanThanhPho.Properties.Resources.upload;
+            this.btnThemHinh.Image = global::QuanLiCongDanThanhPho.Properties.Resources.cloud_computing;
             this.btnThemHinh.Location = new System.Drawing.Point(1208, 286);
             this.btnThemHinh.Name = "btnThemHinh";
             this.btnThemHinh.Size = new System.Drawing.Size(32, 32);

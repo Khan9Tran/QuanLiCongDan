@@ -72,7 +72,7 @@ namespace QuanLiCongDanThanhPho
                 Password = txtMatKhau.Text,
                 Type = 0
             };
-            if (accountDAO.LayThongTinTaiKhoan(acc) == null)
+            if (accountDAO.LayThongTinTaiKhoan(acc).UserName != acc.UserName)
             {
                 accountDAO.DangKy(acc);
                 MessageBox.Show("Tạo tài khoản thành công");

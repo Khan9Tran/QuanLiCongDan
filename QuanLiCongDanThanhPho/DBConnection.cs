@@ -125,7 +125,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
+                MessageBox.Show("Thất bại " + ex);
             }
             finally
             {
