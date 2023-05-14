@@ -46,7 +46,7 @@ namespace QuanLiCongDanThanhPho
         private void cmusItemDoiMK_Click(object sender, EventArgs e)
         {
             pnlLoad.Visible = true;
-            loadForm.Open(new FSetting());
+            loadForm.Open(new FSetting(account));
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -74,8 +74,16 @@ namespace QuanLiCongDanThanhPho
 
         private void btnTTTV_Click(object sender, EventArgs e)
         {
-            pnlLoad.Visible = true;
-            loadForm.Open(new FXinPhepTTTV());
+            TamTruTamVangDAO tTTV = new TamTruTamVangDAO();
+            if (tTTV.LayThongTin(account.UserName).MaSo != null)
+            {
+                MessageBox.Show("Thông tin TT/TTV của bạn đã được duyệt");
+            }
+            else
+            {
+                pnlLoad.Visible = true;
+                loadForm.Open(new FXinPhepTTTV(account));
+            }
         }
 
         private void btnCCCD_Click(object sender, EventArgs e)

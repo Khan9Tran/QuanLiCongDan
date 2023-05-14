@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiCongDanThanhPho.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,31 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FSetting : Form
     {
-        public FSetting()
+        private Account account;
+        private AccountDAO accountDAO;
+        public FSetting(Account account)
         {
             InitializeComponent();
+            this.account = account;
+            accountDAO = new AccountDAO();
+        }
+
+        private bool KiemTraPass()
+        {
+            if (txtMatKhauHienTai.Text != account.Password)
+            {
+                MessageBox.Show("Mật khẩu không chính xác.");
+                return false;
+            }
+            return KiemTraDuLieuNhap.KiemTraPass(txtMatKhauHienTai.Text, txtMatKhauMoi.Text, txtNhapLai.Text);
+        }
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            if (KiemTraPass())
+            {
+                account.Password = txtNhapLai.Text;
+                accountDAO.CapNhatMatKhau(account);
+            }
         }
 
     }

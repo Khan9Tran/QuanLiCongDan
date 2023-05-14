@@ -683,9 +683,9 @@ namespace QuanLiCongDanThanhPho.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap telephone__1_ {
+        internal static System.Drawing.Bitmap telephone {
             get {
-                object obj = ResourceManager.GetObject("telephone (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("telephone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -693,9 +693,9 @@ namespace QuanLiCongDanThanhPho.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap telephone {
+        internal static System.Drawing.Bitmap telephone__1_ {
             get {
-                object obj = ResourceManager.GetObject("telephone", resourceCulture);
+                object obj = ResourceManager.GetObject("telephone (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -26,13 +26,9 @@ namespace QuanLiCongDanThanhPho
 
         private bool KiemTra()
         {
-            CongDan? cd = cdDAO.LayThongTin(txtCCCD.Text);
-            CongDan congDanTmp = new CongDan()
-            {
-                CCCD = txtCCCD.Text,
-                Ten = txtTenHienThi.Text,
-            };
-            if (cd == null || !KiemTraDuLieuNhap.KiemTraTenVaCCCD(congDanTmp))
+            CongDan cd = cdDAO.LayThongTin(txtCCCD.Text);
+            CongDan congDanTmp = new CongDan(txtCCCD.Text, txtTenHienThi.Text);
+            if (cd.CCCD == null || !KiemTraDuLieuNhap.KiemTraTenVaCCCD(congDanTmp))
             {
                 return false;
             }

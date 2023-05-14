@@ -235,19 +235,14 @@ namespace QuanLiCongDanThanhPho
                 string maCCCD = CCCDDAO.GetCCCD(gvTVTT, 1);
 
                 TamTruTamVang tTTV = tttvDAO.LayThongTin(maCCCD);
-                if (tTTV != null)
+                if (tTTV.MaSo != null)
                 {
                     if (tTTV.TrangThai != "CDTV")
-                    {
                         tTTV.TrangThai = "Tạm vắng";
-                        tttvDAO.CapNhat(tTTV);
-                    }
                     if (tTTV.TrangThai != "CDTT")
-                    {
                         tTTV.TrangThai = "Tạm trú";
-                        tttvDAO.CapNhat(tTTV);
-                    }
-
+                    tttvDAO.CapNhat(tTTV);
+                    MessageBox.Show("Đã duyệt");
                 }
             }
         }
