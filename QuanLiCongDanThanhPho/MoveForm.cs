@@ -1,6 +1,7 @@
 ﻿
 namespace QuanLiCongDanThanhPho
 {
+    //Dùng để di chuyển form trên màng hình
     public class MoveForm : Form
     {
         const int WM_NCHITTEST = 0x84;

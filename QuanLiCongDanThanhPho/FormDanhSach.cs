@@ -1,5 +1,4 @@
-﻿
-using System.Data;
+﻿using System.Data;
 
 namespace QuanLiCongDanThanhPho
 {
@@ -26,8 +25,10 @@ namespace QuanLiCongDanThanhPho
             else
                 flpnPhanLoai.Width = 1000;
         }
+
         internal virtual void HeaderText()
         {
+
         }
 
         internal void LoadDanhSach(DataGridView gvDanhSach)
