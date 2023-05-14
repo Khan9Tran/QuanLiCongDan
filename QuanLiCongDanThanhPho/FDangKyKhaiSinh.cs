@@ -4,6 +4,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyKhaiSinh : FormDangKy
     {
+        //Hàm khởi tạo các thành phần của form
         private void KhoiTao()
         {
             InitializeComponent();
@@ -14,12 +15,14 @@ namespace QuanLiCongDanThanhPho
             KhoiTao();
         }
 
+        //Hiện thị thông tin của cha mẹ nếu được truyền vào mã cccd của cha hoặc mẹ
         public FDangKyKhaiSinh(string cCCDThanNhan)
         {
             KhoiTao();
             LoadThongTinChaMe(cCCDThanNhan);
         }
 
+        //Lấy thông tin cha mẹ để vào các TextBox
         private void LoadThongTinChaMe(string cCCDThanNhan)
         {
             if (cCCDThanNhan != null)
@@ -35,6 +38,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Clear các TextBox có trong form
         private void btnReset_Click(object sender, EventArgs e)
         {
             base.Reset();
@@ -57,6 +61,7 @@ namespace QuanLiCongDanThanhPho
             return true;
         }
 
+        //Đăng ký khai sinh
         internal override void DangKy()
         {
             CongDan congDan = new CongDan(txtCccd.Text, txtTen.Text);

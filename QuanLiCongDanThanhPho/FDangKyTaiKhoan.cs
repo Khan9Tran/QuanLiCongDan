@@ -6,6 +6,7 @@ namespace QuanLiCongDanThanhPho
     {
         CongDanDAO cdDAO;
         AccountDAO accountDAO;
+
         public FDangKyTaiKhoan()
         {
             InitializeComponent();
@@ -15,6 +16,7 @@ namespace QuanLiCongDanThanhPho
             
         }
 
+        //Lấy tên công dân theo CCCD
         private void btnThongTinCCCD_Click(object sender, EventArgs e)
         {
             CongDan? congDan = cdDAO.LayThongTin(txtCCCD.Text);
@@ -24,6 +26,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Kiểm tra thông tin tài khoản trước khi đăng kí
         private bool KiemTra()
         {
             CongDan cd = cdDAO.LayThongTin(txtCCCD.Text);
@@ -41,9 +44,13 @@ namespace QuanLiCongDanThanhPho
             {
                 TaoHoacCapNhatTaiKhoan();
             }
-
+            else
+            {
+                MessageBox.Show("Kiểm tra lại thông tin đăng kí");
+            }
         }
 
+        //Tạo tài khoản mới cho công dân, hoặc cặp nhập lại nếu đã có trong cơ sở dữ liệu
         private void TaoHoacCapNhatTaiKhoan()
         {
             Account acc = new Account()

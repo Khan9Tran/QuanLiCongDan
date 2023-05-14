@@ -10,6 +10,7 @@ namespace QuanLiCongDanThanhPho
         private bool isTach = false;
         private string cCCD;
 
+        //Hàm tạo các thành phần cơ bản của form
         private void KhoiTao()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace QuanLiCongDanThanhPho
             KhoiTao();
         }
 
+        //Load thông tin của hộ tách nếu được truyền Mã hộ khẩu của hộ tách
         public FTachGopHo(string maHoTach)
         {
             KhoiTao();
@@ -30,6 +32,7 @@ namespace QuanLiCongDanThanhPho
             LoadHoTach();
         }
 
+        //Chọn công dân để tách ra khỏi hộ
         private void btnTach_Click(object sender, EventArgs e)
         {
             try
@@ -49,9 +52,9 @@ namespace QuanLiCongDanThanhPho
             {
                 MessageBox.Show("Không tồn tại hộ này");
             }
-
         }
 
+        //Tạo hộ khẩu mới nếu mã hộ gộp không tồn tại
         private bool TaoHoMoi()
         {
             //Kiểm tra 
@@ -81,7 +84,6 @@ namespace QuanLiCongDanThanhPho
             else
             {
                 MessageBox.Show("Tạo hộ mới thất bại");
-
             }
             isTach = false;
         }
@@ -97,6 +99,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Thêm người được chọn tách từ hộ tách vào hộ mới
         public bool ThemVaoHo()
         {
             CongDan cD = cDDAO.LayThongTin(cCCD);
@@ -115,7 +118,6 @@ namespace QuanLiCongDanThanhPho
         {
             if (KiemTraDuLieuNhap.KiemTraHaiHo(txtMaHoGop.Text, txtMaHoTach.Text) && isTach == true && ThemVaoHo())
             {
-
                 MessageBox.Show("Gộp hộ thành công");
             }
             else
@@ -135,18 +137,21 @@ namespace QuanLiCongDanThanhPho
             gvHoGop.DataSource = cDDAO.LayDanhSachTheoHoKhau(txtMaHoGop.Text);
         }
 
+        //Hiện thị danh sách thành viên trong hộ tách
         private void btnMaHoTach_Click(object sender, EventArgs e)
         {
             if (txtMaHoTach.Text != "")
                 LoadHoTach();
         }
 
+        //Hiện thị danh sách thành viên trong hộ gọp
         private void btnMaHoGop_Click(object sender, EventArgs e)
         {
             if (txtMaHoGop.Text != "")
             LoadHoGop();
         }
 
+        //Clear các TextBox
         private void Reset()
         {
             txtMaHoGop.Text = "";

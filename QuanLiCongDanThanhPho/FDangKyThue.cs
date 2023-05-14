@@ -4,6 +4,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyThue : FormDangKy
     {
+        //Hàm tạo các thành phần của form
         private void KhoiTao()
         {
             InitializeComponent();
@@ -14,12 +15,14 @@ namespace QuanLiCongDanThanhPho
             KhoiTao();
         }
 
+        //Load thông tin thuế của công dân nếu được truyền CCCD
         public FDangKyThue(string cCCD)
         {
             KhoiTao();
             LoadThongTin(cCCD);
         }
 
+        //Hiện thị thông tin của công dân trong TextBox
         private void LoadThongTin(string cCCD)
         {
             if (cCCD != null)
@@ -34,6 +37,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Clear các TextBox
         internal override void Reset()
         {
             base.Reset();
@@ -46,6 +50,7 @@ namespace QuanLiCongDanThanhPho
             Reset();
         }
 
+        //Đăng kí thuế cho công dân
         internal override void DangKy()
         {
             Thue thue = new Thue(txtMaSoThue.Text, txtCCCD.Text, dtpNgayCapMa.Value, dtpHanNop.Value, txtSoTienCanNop.Text, txtSoTienDaNop.Text);

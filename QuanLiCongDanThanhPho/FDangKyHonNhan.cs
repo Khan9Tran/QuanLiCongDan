@@ -1,5 +1,4 @@
 ﻿using QuanLiCongDanThanhPho.Models;
-using System.CodeDom.Compiler;
 
 namespace QuanLiCongDanThanhPho
 {
@@ -100,7 +99,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
-        //Trả về tên hôn nhân thep mã số
+        //Trả về tên công dân theo mã số căn cước
         private string LayTenTheoCCCD(string cCCD)
         {
             KhaiSinh ks = KSDAO.LayThongTin(cCCD);

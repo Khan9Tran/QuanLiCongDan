@@ -32,8 +32,7 @@ namespace QuanLiCongDanThanhPho
         public bool DangNhap(Account acc)
         {
             string sqlStr = string.Format($"SELECT *FROM ACCOUNT WHERE UserName = '{acc.UserName}' AND StrPassword = '{acc.Password}'");
-            DataTable dt = new DataTable();
-            dt = conn.LayDanhSach(sqlStr);
+            DataTable dt = conn.LayDanhSach(sqlStr);
             return dt.Rows.Count > 0;
         }
         public bool DangKy(Account acc)

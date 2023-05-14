@@ -4,7 +4,7 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FDangKyTamTruTamVang : FormDangKy
     {
-
+        //Khởi tạo các thành phần cơ bản của form
         private void KhoiTao()
         {
             InitializeComponent();
@@ -15,12 +15,14 @@ namespace QuanLiCongDanThanhPho
             KhoiTao();
         }
 
+        //Load các thông tin của công dân vào sẵn trong TextBox nếu được truyền CCCD
         public FDangKyTamTruTamVang(string cCCD)
         {
             KhoiTao();
             LoadThongTin(cCCD);
         }
 
+        //Hiện thị thông tin của công dân
         private void LoadThongTin(string cCCD)
         {
             if (cCCD != null)
@@ -37,6 +39,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Đăng kí tạm trú/ tạm vắng cho công dân
         internal override void DangKy()
         {
             TamTruTamVang tTTV = new TamTruTamVang(txtMaSo.Text, txtCCCD.Text, rdoTamTru.Checked.ToString(), dtpNgayBatDau.Value, dtpNgayKetThuc.Value, txtDiaChi.Text, txtLiDo.Text);

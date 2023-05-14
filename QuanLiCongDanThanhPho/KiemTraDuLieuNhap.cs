@@ -82,7 +82,7 @@ namespace QuanLiCongDanThanhPho
                 return false;
             }
 
-            if (!KiemTraTenVaCCCD(chong) || !KiemTraTenVaCCCD(vo))
+            if (chong.Ten != honnhan.TenChong || vo.Ten != honnhan.TenVo)
             {
                 MessageBox.Show("Tên vợ/ chồng không khớp CCCD");
                 return false;

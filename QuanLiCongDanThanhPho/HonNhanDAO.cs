@@ -17,7 +17,7 @@ namespace QuanLiCongDanThanhPho
             return true;
         }
 
-        //Đnăng ký hôn nhân
+        //Đăng ký hôn nhân
         public bool ThemHonNhan(HonNhan hN)
         {
             CongDanDAO congDanDAO = new CongDanDAO();
@@ -37,7 +37,7 @@ namespace QuanLiCongDanThanhPho
                 return false;
             }
 
-            if ((ksChong.MaKhaiSinh != null && ksVo.MaKhaiSinh != null) && (ksChong.GioiTinh != "m" || ksVo.GioiTinh != "f"))
+            if (ksChong.GioiTinh != "m" || ksVo.GioiTinh != "f")
                 return false;
 
             if (LayThongTinTheoMaSo(hN.MaSo).MaSo != null || hnChong.CCCDChong != null || hnVo.CCCDVo != null)
