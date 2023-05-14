@@ -9,6 +9,12 @@ namespace QuanLiCongDanThanhPho
         private bool checkPass = false;
         private FLOGO flogo;
 
+        enum  Quyen
+        {
+            congDan,
+            admin,
+        }
+
         public FDangNhap()
         {
             InitializeComponent();
@@ -94,8 +100,17 @@ namespace QuanLiCongDanThanhPho
                 tmrShowTime.Stop();
                 flogo.Close();
                 Account acc = new Account(txtTaiKhoan.Text, txtMatKhau.Text);
-                FTrangChu newTrangChu = new FTrangChu(acc, this);
-                newTrangChu.Show();
+                acc = accDAO.LayThongTinTaiKhoan(acc);
+                if ((Quyen)acc.Type == Quyen.admin)
+                {
+                    FTrangChu newTrangChu = new FTrangChu(acc, this);
+                    newTrangChu.Show();
+                }
+                else
+                {
+                    FTrangChuCongDan newTrangChu = new FTrangChuCongDan(acc, this);
+                    newTrangChu.Show();
+                }
             }
         }
     }
