@@ -197,7 +197,7 @@
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDangKy.ForeColor = System.Drawing.Color.Black;
-            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.check__2_;
             this.btnDangKy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangKy.Location = new System.Drawing.Point(159, 3);
             this.btnDangKy.Name = "btnDangKy";
@@ -213,7 +213,7 @@
             this.btnReset.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
+            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.undo__1_1;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReset.Location = new System.Drawing.Point(3, 3);
             this.btnReset.Name = "btnReset";
