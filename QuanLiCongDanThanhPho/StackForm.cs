@@ -1,22 +1,31 @@
 ﻿
 namespace QuanLiCongDanThanhPho
 {
+    //Dùng hổ trợ cho nút Back và nút Home
     static internal class StackForm
     {
+        //Lưu các form con
         static private List<Form> forms = new List<Form>();
+
+        //Lưu form trang chủ
         private static FTrangChu? trangChu;
 
         public static FTrangChu? TrangChu { get => trangChu; set => trangChu = value; }
 
+        //Thêm form vào stack
         static public void Add(Form form)
         {
             forms.Add(form);
         }
+
+        //Xóa form
         static public void RemoveForm()
         {
             forms[forms.Count - 1].Close();
             forms.RemoveAt(forms.Count - 1);
         }
+
+        //Thực hiện quay lui form
         static public void Back()
         {
             if (forms.Count > 0)
@@ -24,19 +33,7 @@ namespace QuanLiCongDanThanhPho
                 RemoveForm();
                 if (forms.Count > 0)
                 {
-                    if (forms[forms.Count - 1].Name == "FDangKyCongDan" ||
-                        forms[forms.Count - 1].Name == "FDangHoKhau" ||
-                        forms[forms.Count - 1].Name == "FDangKyThue" ||
-                        forms[forms.Count - 1].Name == "FDangKyHonNhan" ||
-                        forms[forms.Count - 1].Name == "FDangKyTamTruTamVang" ||
-                        forms[forms.Count - 1].Name == "FDangKyKhaiSinh" ||
-                        forms[forms.Count - 1].Name == "FDangKyCCCD" ||
-                        forms[forms.Count - 1].Name == "FDanhSach"
-                        )
-                    {
-                        trangChu?.ChildForm.Open(forms[forms.Count - 1]);
-                    }
-                    else if (forms[forms.Count - 1].Name == "FDanhSachCongDan" ||
+                   if (forms[forms.Count - 1].Name == "FDanhSachCongDan" ||
                             forms[forms.Count - 1].Name == "FDanhSachThue" ||
                             forms[forms.Count - 1].Name == "FDanhSachTamTruTamVang" ||
                             forms[forms.Count - 1].Name == "FDanhSachHoKhau"
@@ -87,6 +84,9 @@ namespace QuanLiCongDanThanhPho
                 }
             }
         }
+        
+
+        //Xóa tất cả các form
         static public void ClearAll()
         {
             foreach (var form in forms) 
