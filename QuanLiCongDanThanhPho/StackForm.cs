@@ -38,7 +38,7 @@ namespace QuanLiCongDanThanhPho
                             forms[forms.Count - 1].Name == "FDanhSachTamTruTamVang" ||
                             forms[forms.Count - 1].Name == "FDanhSachHoKhau"
                             )
-                    {
+                   {
                         for (int i = forms.Count - 2; i >= 0; i--)
                         {
                             if (forms[i].Name == "FDanhSach")
