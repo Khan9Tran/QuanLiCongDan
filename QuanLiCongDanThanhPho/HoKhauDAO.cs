@@ -5,8 +5,11 @@ namespace QuanLiCongDanThanhPho
 {
     internal class HoKhauDAO
     {
+        //Lấy kết nối
         DBConnection conn = new DBConnection();
+
         public HoKhauDAO() { }
+
         public bool ThemHoKhau(HoKhau hK)
         {
             string sqlStr = string.Format($"INSERT INTO HOKHAU(MaHK,DiaChi,CCCDChuHo) VALUES('{hK.MaHoKhau}',N'{hK.DiaChi.toString()}', '{hK.CCCDChuHo}');");
@@ -20,12 +23,14 @@ namespace QuanLiCongDanThanhPho
             string str = " HOKHAU.MaHK as 'Mã hộ khẩu', DiaChi as 'Địa chỉ', CCCDChuHo as 'CCCD của chủ hộ' ";
             return str;
         }
+
         // Lấy chuổi điều kiện giá trị chứa từ tìm kiếm
         private string ChuoiChuaTu(string tu)
         {
             string str = $" DiaChi like N'%{tu}%' OR CCCDChuHo like '%{tu}%' OR HOKHAU.MaHK like '%{tu}%' ";
             return str;
         }
+
         // Lấy chuổi điều kiện giá trị MaHK là 00000A hoặc 00000B
         private string ChuoiDieuKien()
         {
@@ -38,11 +43,13 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format("SELECT * FROM HOKHAU WHERE MaHK = '{0}'", maHoKhau);
             return conn.LayThongTinHoKhau(sqlStr);
         }
+
         public DataTable LayDanhSachChuaTu(string tu)
         {
             string sqlStr = string.Format("SELECT " + DatTenThuocTinh() + " FROM HOKHAU WHERE " + ChuoiChuaTu(tu) + " EXCEPT SELECT " + DatTenThuocTinh() + " FROM HOKHAU WHERE " + ChuoiDieuKien());
             return conn.LayDanhSach(sqlStr);
         }
+
         public DataTable LayDanhSachXepTheoSoTV(string tu)
         {
             string sqlStr = string.Format("SELECT " + DatTenThuocTinh() + $" , SL FROM (SELECT * FROM HOKHAU EXCEPT SELECT * FROM HOKHAU WHERE " + ChuoiDieuKien() + " ) as HOKHAU INNER JOIN (SELECT MaHK, count(CCCD) as SL FROM CONGDAN GROUP BY MaHK) as SLCONGDAN ON HOKHAU.MaHK = SLCONGDAN.MaHK WHERE " + ChuoiChuaTu(tu) + " ORDER BY SL ASC");
@@ -50,11 +57,13 @@ namespace QuanLiCongDanThanhPho
             ds.Columns.Remove("SL");
             return ds;
         }
+
         public bool CapNhatHoKhau(HoKhau hK)
         {
             string sqlStr = string.Format($"UPDATE HOKHAU SET DiaChi = N'{hK.DiaChi.toString()}', CCCDChuHo = '{hK.CCCDChuHo}' WHERE MaHK = '{hK.MaHoKhau}'");
             return conn.ThucThi(sqlStr);
         }
+
         public bool XoaHoKhau(HoKhau hK)
         {
             string sqlStr = string.Format($"DELETE HOKHAU WHERE MaHK = '{hK.MaHoKhau}'");

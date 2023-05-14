@@ -5,10 +5,12 @@ namespace QuanLiCongDanThanhPho
 {
     internal static class KiemTraDuLieuNhap
     {
+        //Tiến hành kiểm tra chuỗi s so với rule
         public static bool KiemTra(string s, string rule)
         {
             return Regex.IsMatch(s, rule);
         }
+
         public static bool isTien(string tien)
         {
             string rule = @"^\d{1,15}$";
@@ -19,11 +21,15 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
+
+        //Kiểm tra mật khẩu: từ 6 ksi từ, có chứa số, kí tự đặc biệt
         public static bool isPass(string pass)
         {;
             string rule = @"^.*(?=.{6,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@ #$%^&+=]).*$";
             return KiemTra(pass, rule);
         }
+
+        //Kiểm tra địa chỉ có dạng a,b,c,d
         public  static bool isDiaChi(string diaChi)
         {
             string rule = @"^([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})[,]([^#$%*+.@!]{1,25})$";
@@ -34,6 +40,8 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
+
+        //Kiểm tra Số ĐT có từ 9,11 số
         public static bool isSoDT(string SoDT)
         {
             string rule = @"^\d{9,11}$";
@@ -45,6 +53,7 @@ namespace QuanLiCongDanThanhPho
             return true;
         }
 
+        //Kiểm tra CCCD phải có 12 số
         public static bool isCCCD(string CCCD)
         {
             string rule = @"^\d{12}$";
@@ -55,7 +64,8 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
-
+        
+        //Kiểm tra chuỗi có rỗng không
         public static bool isEmpty(string data)
         {
             if (data == "" || data == null)
@@ -66,6 +76,7 @@ namespace QuanLiCongDanThanhPho
             return false;
         }
 
+        //Kiểm tra hôn nhân có phù hợp không
         public static bool KiemTraHonNhan(HonNhan honnhan)
         {
             CongDanDAO cdDAO = new CongDanDAO();
@@ -95,6 +106,7 @@ namespace QuanLiCongDanThanhPho
             return true;
         }
 
+        //Kiểm tra tên
         public static bool isTen(string Ten) 
         {
             string rule = @"^[^!@#$%^*()|+*0123456789]{3,30}$";
@@ -105,6 +117,8 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
+        
+        //Kiểm tra mã số từ 5 - 15 kí tự chữ hoặc số
         public static bool isMaSo(string MaSo)
         {
             string rule = @"^[0-9a-zA-Z]{5,15}$";
@@ -115,16 +129,7 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
-        public static bool isGioiTinh(string GioiTinh)
-        {
-            string rule = @"^([Nn]{1})((\u1EEE{1})|(\u1EEF{1})|([Uu]{1})|([Aa]{1}[Mm]{1}))$";
-            if (KiemTra(GioiTinh, rule) == false)
-            {
-                MessageBox.Show("Nhập sai định dạng giới tính");
-                return false;
-            }
-            return true;
-        }
+
         public static bool KiemTraTenVaCCCD(CongDan congdan)
         {
             if (!isCCCD(congdan.CCCD))
@@ -137,10 +142,12 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
+
         public static bool KiemTraCongDan(CongDan congdan)
         {
             return KiemTraTenVaCCCD(congdan) && isSoDT(congdan.SDT) && !isEmpty(congdan.NgheNghiep) && !isEmpty(congdan.TonGiao);
         }
+
         public static bool isTamTruTamVang(TamTruTamVang data)
         {
             if (!isMaSo(data.MaSo))
@@ -167,6 +174,7 @@ namespace QuanLiCongDanThanhPho
             }
             return true;
         }
+
         public static bool KiemTraHoKhau(HoKhau hokhau)
         {
             return isMaSo(hokhau.MaHoKhau) && isCCCD(hokhau.CCCDChuHo) && isDiaChi(hokhau.DiaChi.toString());
@@ -176,6 +184,7 @@ namespace QuanLiCongDanThanhPho
         {
             return isCCCD(thue.CCCD) && isMaSo(thue.MaThue);
         }
+
         public static bool KiemTraThue(Thue thue)
         {
             return KiemTraThueDonGian(thue) && !isEmpty(thue.SoTienCanNop) && !isEmpty(thue.SoTienDaNop)
@@ -213,7 +222,7 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Mật khẩu phải từ 6 kí tự");
                 return false;
             }
-            if (!KiemTraDuLieuNhap.isPass(matKhauMoi))
+            if (!isPass(matKhauMoi))
             {
 
                 MessageBox.Show("Mật khẩu phải chứa ít nhất một chữ viết hoa, một chữ thường, một số và một kí tự đặt biệt");
