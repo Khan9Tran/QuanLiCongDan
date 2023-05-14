@@ -28,6 +28,7 @@ namespace QuanLiCongDanThanhPho
             btnQuaHan.BackColor = Color.RoyalBlue;
             btnTT.BackColor = Color.RoyalBlue;
             btnTV.BackColor = Color.RoyalBlue;
+            btnChoDuyet.BackColor = Color.RoyalBlue;
 
             if (type == Loc.tatCa)
             {
@@ -237,12 +238,16 @@ namespace QuanLiCongDanThanhPho
                 TamTruTamVang tTTV = tttvDAO.LayThongTin(maCCCD);
                 if (tTTV.MaSo != null)
                 {
-                    if (tTTV.TrangThai != "CDTV")
-                        tTTV.TrangThai = "Tạm vắng";
-                    if (tTTV.TrangThai != "CDTT")
-                        tTTV.TrangThai = "Tạm trú";
-                    tttvDAO.CapNhat(tTTV);
-                    MessageBox.Show("Đã duyệt");
+                    if (tTTV.TrangThai == "CDTV" || tTTV.TrangThai == "CDTT")
+                    {
+                        if (tTTV.TrangThai == "CDTV")
+                            tTTV.TrangThai = "Tạm vắng";
+                        if (tTTV.TrangThai == "CDTT")
+                            tTTV.TrangThai = "Tạm trú";
+
+                        tttvDAO.CapNhat(tTTV);
+                        MessageBox.Show("Đã duyệt");
+                    }
                 }
             }
         }
