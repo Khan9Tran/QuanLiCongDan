@@ -45,6 +45,10 @@ namespace QuanLiCongDanThanhPho
             {
                 btnQuaHan.BackColor = Color.DarkBlue;
             }
+            else if (type == Loc.choDuyet)
+            {
+                btnChoDuyet.BackColor = Color.DarkBlue;
+            }
         }
 
         public FDanhSachTamTruTamVang()

@@ -68,6 +68,7 @@
             this.tmrNgayHienTai = new System.Windows.Forms.Timer(this.components);
             this.ofdHinhNen = new System.Windows.Forms.OpenFileDialog();
             this.sfdHinhNen = new System.Windows.Forms.SaveFileDialog();
+            this.cmnusDangKyItemTaiKhoanCongDan = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDanhMuc.SuspendLayout();
             this.cmnusDangKy.SuspendLayout();
             this.pnlHienThiForm.SuspendLayout();
@@ -142,11 +143,12 @@
             this.cmnusDangKyItemHonNhan,
             this.cmnusDangKyItemCCCD,
             this.cmnusDangKyItemHoKhau,
-            this.cmnusDangKyItemCongDan});
+            this.cmnusDangKyItemCongDan,
+            this.cmnusDangKyItemTaiKhoanCongDan});
             this.cmnusDangKy.Name = "cmnusDangKy";
             this.cmnusDangKy.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.cmnusDangKy.ShowImageMargin = false;
-            this.cmnusDangKy.Size = new System.Drawing.Size(245, 164);
+            this.cmnusDangKy.Size = new System.Drawing.Size(245, 224);
             // 
             // cmnusDangKyItemTamTruTamVang
             // 
@@ -459,6 +461,13 @@
             this.tmrNgayHienTai.Interval = 1000;
             this.tmrNgayHienTai.Tick += new System.EventHandler(this.tmrNgayHienTai_Tick);
             // 
+            // cmnusDangKyItemTaiKhoanCongDan
+            // 
+            this.cmnusDangKyItemTaiKhoanCongDan.Name = "cmnusDangKyItemTaiKhoanCongDan";
+            this.cmnusDangKyItemTaiKhoanCongDan.Size = new System.Drawing.Size(244, 32);
+            this.cmnusDangKyItemTaiKhoanCongDan.Text = "Tài khoản công dân";
+            this.cmnusDangKyItemTaiKhoanCongDan.Click += new System.EventHandler(this.cmnusDangKyItemTaiKhoanCongDan_Click);
+            // 
             // FTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -534,5 +543,6 @@
         private PictureBox ptcHinhNen;
         private OpenFileDialog ofdHinhNen;
         private SaveFileDialog sfdHinhNen;
+        private ToolStripMenuItem cmnusDangKyItemTaiKhoanCongDan;
     }
 }

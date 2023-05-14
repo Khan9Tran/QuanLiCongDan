@@ -22,7 +22,7 @@ namespace QuanLiCongDanThanhPho
             if (conn.ThucThi(sqlStr))
                 MessageBox.Show("Cập nhật tên thành công");
             else
-                MessageBox.Show("Đổi mật tên thất bại");
+                MessageBox.Show("Đổi tên thất bại");
         }
         public Account LayThongTinTaiKhoan(Account acc)
         {
@@ -35,6 +35,11 @@ namespace QuanLiCongDanThanhPho
             DataTable dt = new DataTable();
             dt = conn.LayDanhSach(sqlStr);
             return dt.Rows.Count > 0;
+        }
+        public bool DangKy(Account acc)
+        {
+            string sqlStr = string.Format($"INSERT INTO ACCOUNT(UserName, StrPassword, QuyenTruyCap, DisplayName) VALUES ('{acc.UserName}', '{acc.Password}', {acc.Type}, N'{acc.DisplayName}');");
+            return conn.ThucThi(sqlStr);
         }
     }
 }
