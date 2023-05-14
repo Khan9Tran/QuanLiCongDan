@@ -5,6 +5,7 @@ namespace QuanLiCongDanThanhPho
 {
     internal class ThueDAO
     {
+        //Lấy kết nối
         DBConnection conn = new DBConnection();
 
         public ThueDAO() { }
@@ -14,26 +15,31 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = string.Format($"INSERT INTO THUE(MaThue, CCCD, SoTienCanNop, SoTienDaNop, NgayCap, HanNop) VALUES('{thue.MaThue}','{thue.CCCD}', '{thue.SoTienCanNop}','{thue.SoTienDaNop}', '{thue.NgayCapMa}', '{thue.HanNop}');");
             return conn.ThucThi(sqlStr);
         }
+
         public bool XoaThue(string canCuoc)
         {
             string sqlStr = string.Format($"DELETE FROM THUE WHERE CCCD = '{canCuoc}'");
             return conn.ThucThi(sqlStr);
         }
+
         public Thue LayThongTin(string maCCCD)
         {
             string sqlStr = string.Format("SELECT * FROM THUE WHERE CCCD = {0}", maCCCD);
             return conn.LayThongTinThue(sqlStr);
         }
+
         public string ChuoiLayDanhSachTheoTu(string tu)
         {
             string str = string.Format($"SELECT MaThue as 'Mã thuế', CCCD, SoTienCanNop as 'Số tiền cần nộp', SoTienDaNop as 'Số tiền đã nộp', NgayCap as 'Ngày cấp', HanNop as 'Hạn nộp' FROM THUE WHERE (MaThue like '%{tu}%' OR CCCD like '%{tu}%' OR SoTienCanNop like '%{tu}%' OR Convert(varchar,Format(HanNop, 'dd/MM/yyyy')) like '%{tu}%')");
             return str;
         }
+
         public DataTable LayDanhSachChuaTu(string tu)
         {
             string strSql = ChuoiLayDanhSachTheoTu(tu);
             return conn.LayDanhSach(strSql);
         }
+
         public DataTable LayDanhSachSoTienDaNop(string tu)
         {
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " ORDER BY SoTienDaNop ASC";

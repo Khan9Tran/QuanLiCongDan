@@ -6,7 +6,10 @@ namespace QuanLiCongDanThanhPho
 {
     internal class DBConnection
     {
+        //Tạo kết nối
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+
+        //Thực thi câu lệnh sql
         public bool ThucThi(string sqlStr)
         {
             try
@@ -28,6 +31,8 @@ namespace QuanLiCongDanThanhPho
                 conn.Close();
             }
         }
+
+        //Trả về danh sách thỏa chuỗi sql
         public DataTable LayDanhSach(string sqlStr)
         {
             DataTable ds = new DataTable();
@@ -47,6 +52,8 @@ namespace QuanLiCongDanThanhPho
             }
             return ds;
         }
+
+        //Trả về công dân thỏa câu sql
         public CongDan LayThongTinCongDan(string sqlStr)
         {
             CongDan cd = new CongDan();
@@ -68,7 +75,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
+                MessageBox.Show("Thất bại " + ex);
             }
             finally
             {
@@ -77,6 +84,7 @@ namespace QuanLiCongDanThanhPho
             return cd;
         }
 
+        //Trả về CCCD thỏa câu sql
         public CCCD LayThongTinCCCD(string sqlStr)
         {
            CCCD cCCD = new CCCD();
@@ -97,7 +105,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
+                MessageBox.Show("Thất bại " + ex);
             }
             finally
             {
@@ -105,6 +113,8 @@ namespace QuanLiCongDanThanhPho
             }
             return cCCD;
         }
+
+        //Trả về tài khoản thỏa câu sql
         public Account LayThongTinTaiKhoan(string sqlStr)
         {
             Account accTmp = new Account();
@@ -133,6 +143,8 @@ namespace QuanLiCongDanThanhPho
             }
             return accTmp;
         }
+
+        //Trả về thông tin khai sinh thỏa câu sql
         public KhaiSinh LayThongTinKhaiSinh(string sqlStr)
         {
             KhaiSinh ks = new KhaiSinh();
@@ -164,7 +176,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
+                MessageBox.Show("Thất bại " + ex);
             }
             finally
             {
@@ -173,6 +185,7 @@ namespace QuanLiCongDanThanhPho
             return ks;
         }
 
+        //Trả về Thue thỏa câu sql
         public Thue LayThongTinThue(string sqlStr)
         {
             Thue thue = new Thue();
@@ -193,7 +206,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
+                MessageBox.Show("Thất bại " + ex);
             }
             finally
             {
@@ -202,6 +215,7 @@ namespace QuanLiCongDanThanhPho
             return thue;
         }
 
+        //Trả về hộ khẩu thỏa câu Sql
         public HoKhau LayThongTinHoKhau(string sqlStr)
         {
             HoKhau hk = new HoKhau();
@@ -221,7 +235,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
+                MessageBox.Show("Thất bại " + ex);
             }
             finally
             {
@@ -229,6 +243,8 @@ namespace QuanLiCongDanThanhPho
             }
             return hk;
         }
+
+        //Trả về hôn nhân thỏa câu sql
         public HonNhan LayThongTinHonNhan(string sqlStr)
         {
             HonNhan hn = new HonNhan();
@@ -252,7 +268,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
+                MessageBox.Show("Thất bại " + ex);
             }
             finally
             {
@@ -260,6 +276,8 @@ namespace QuanLiCongDanThanhPho
             }
             return hn;
         }
+
+        //Trả về TamTruTamVang thỏa câu sql
         public TamTruTamVang LayThongTinTamTruTamVang(string sqlStr)
         {
             TamTruTamVang tttv = new TamTruTamVang();
@@ -283,7 +301,7 @@ namespace QuanLiCongDanThanhPho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("That bai " + ex);
+                MessageBox.Show("Thất bại " + ex);
             }
             finally
             {
@@ -291,6 +309,8 @@ namespace QuanLiCongDanThanhPho
             }
             return tttv;
         }
+
+        //Kiểm tra có tồn tại đối tượng thỏa câu sql không
         public Boolean KiemTraCoKhong(string sqlStr)
         {
             try

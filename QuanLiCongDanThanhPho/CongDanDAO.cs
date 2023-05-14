@@ -5,10 +5,12 @@ namespace QuanLiCongDanThanhPho
 {
     internal class CongDanDAO
     {
+        //Lấy kết nối
         DBConnection conn = new DBConnection();
         
         public CongDanDAO() { }
 
+        //Thêm công dân đồng thời thêm CCCD 
         public bool ThemCongDan(CongDan cD)
         {
             CCCDDAO cCCDDAO = new CCCDDAO();
@@ -21,6 +23,7 @@ namespace QuanLiCongDanThanhPho
             return true;
         }
 
+        //Xóa công dân cùng các thông tin liên quan
         public bool XoaCongDan(CongDan cD)
         {
             ThueDAO thueDAO = new ThueDAO();
@@ -50,11 +53,13 @@ namespace QuanLiCongDanThanhPho
             string strSql = string.Format($"UPDATE CONGDAN SET Ten = N'{cD.Ten}', NgheNghiep = N'{cD.NgheNghiep}', TonGiao = N'{cD.TonGiao}', SDT = '{cD.SDT}', MaHK = '{cD.MaHoKhau}', QuanHeVoiChuHo = N'{cD.QuanHeVoiChuHo}' WHERE CCCD = '{cD.CCCD}'");
             return conn.ThucThi(strSql);
         }
+
         public bool ThayDoiHoKhau(CongDan cD)
         {
             string strSql = string.Format("UPDATE CONGDAN SET MaHK = '{0}' , QuanHeVoiChuHo = N'{1}' WHERE CCCD = '{2}'", cD.MaHoKhau, cD.QuanHeVoiChuHo, cD.CCCD);
             return conn.ThucThi(strSql);
         }
+
         public bool NhapHoKhau(CongDan cD)
         {
             string strSql = string.Format("UPDATE CONGDAN SET MaHK = '{0}' , QuanHeVoiChuHo = N'Vừa nhập hộ' WHERE CCCD = '{1}'", cD.MaHoKhau, cD.CCCD);
@@ -67,12 +72,14 @@ namespace QuanLiCongDanThanhPho
             string str = " CONGDAN.CCCD, CONGDAN.Ten as 'Họ và tên', CONGDAN.SDT as 'Số điện thoại', CONGDAN.NgheNghiep as 'Nghề nghiệp' ";
             return str;
         }
+
         // Lấy chuổi đặt bí danh cho form danh sách công dân
         private string DatTenThuocTinhFDanhSach()
         {
             string str = DatTenThuocTinh() + ", CONGDAN.TonGiao as 'Tôn giáo' ";
             return str;
         }
+
         // Lấy chuổi đặt bí danh cho danh sách người trong 1 hộ gia định cho form thông tin hộ khẩu
         private string DatTenThuocTinhFHoKhau()
         {
@@ -91,36 +98,43 @@ namespace QuanLiCongDanThanhPho
         {
             return conn.LayDanhSach($"SELECT " + DatTenThuocTinhFHoKhau() + $" FROM CONGDAN WHERE MaHK = '{maHK}'");
         }
+
         public CongDan LayThongTin(string maCCCD)
         {
             string strSql = string.Format("SELECT * FROM CONGDAN WHERE CCCD = '{0}'", maCCCD);
             return conn.LayThongTinCongDan(strSql);
         }
+
         public DataTable LayDanhSachCongDanNam(string tu)
         {
             string strSql = string.Format($"SELECT distinct " + DatTenThuocTinhFDanhSach() + $" FROM CONGDAN INNER JOIN KHAISINH ON CONGDAN.CCCD = KHAISINH.MaKS AND KHAISINH.GioiTinh like 'm' WHERE " + ChuoiChuaTu(tu));
             return conn.LayDanhSach(strSql);
         }
+
         public DataTable LayDanhSachCongDanNu(string tu)
         {
             string strSql = string.Format($"SELECT distinct " + DatTenThuocTinhFDanhSach() + $" FROM CONGDAN INNER JOIN KHAISINH ON CONGDAN.CCCD = KHAISINH.MaKS AND KHAISINH.GioiTinh like 'f' WHERE " + ChuoiChuaTu(tu));
             return conn.LayDanhSach(strSql);
         }
+
         public DataTable LayDanhSachDaKetHon(string tu)
         { 
             string strSql = string.Format($"SELECT distinct " + DatTenThuocTinhFDanhSach() + $" FROM CONGDAN INNER JOIN HONNHAN ON CONGDAN.CCCD = HONNHAN.CCCDNam OR CONGDAN.CCCD = HONNHAN.CCCDNu WHERE " + ChuoiChuaTu(tu));
             return conn.LayDanhSach(strSql);
         }
+
         public DataTable LayDanhSachChuaKetHon(string tu)
         {
             string strSql = string.Format($"SELECT " + DatTenThuocTinhFDanhSach() + $" FROM (SELECT CD.CCCD, CD.Ten, CD.SDT, CD.NgheNghiep, CD.TonGiao FROM CONGDAN AS CD EXCEPT SELECT CONGDAN.CCCD, CONGDAN.Ten, CONGDAN.SDT, CONGDAN.NgheNghiep, CONGDAN.TonGiao FROM CONGDAN, HONNHAN WHERE CONGDAN.CCCD = HONNHAN.CCCDNam OR CONGDAN.CCCD = HONNHAN.CCCDNu) as CONGDAN WHERE " + ChuoiChuaTu(tu));
             return conn.LayDanhSach(strSql);
         }
+
         public DataTable LayDanhSachTuoiXepTuBeDenLon(string tu)
         {
             string strSql = string.Format($"SELECT " + DatTenThuocTinhFDanhSach() + $" FROM CONGDAN INNER JOIN KHAISINH ON CONGDAN.CCCD = KHAISINH.MaKS WHERE " + ChuoiChuaTu(tu) + " ORDER BY NgaySinh DESC");
             return conn.LayDanhSach(strSql);
         }
+
         public DataTable LayDanhSachChuaTu(string tu)
         {
             string strSql = string.Format($"SELECT " + DatTenThuocTinhFDanhSach() + $" FROM CONGDAN WHERE " + ChuoiChuaTu(tu));

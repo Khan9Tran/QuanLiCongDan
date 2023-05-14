@@ -4,6 +4,7 @@ namespace QuanLiCongDanThanhPho
 {
     internal class TamTruTamVangDAO
     {
+        //Lấy kết nối
         DBConnection conn = new DBConnection();
 
         //Chuỗi đặt bí danh cho các thuộc tính trong sql
@@ -18,21 +19,25 @@ namespace QuanLiCongDanThanhPho
             string str = string.Format($"SELECT " + DatTenThuocTinh() + $" FROM TAMTRUTAMVANG WHERE (MaTTTV like '%{tu}%' OR CCCD like '%{tu}%' OR DiaChi like N'%{tu}%' OR Convert(varchar,Format(NgayBD, 'dd/MM/yyyy')) like '%{tu}%' OR Convert(varchar,Format(NgayKT, 'dd/MM/yyyy')) like '%{tu}%' OR TrangThai like N'%{tu}%' OR LiDo like N'%{tu}%')");
             return str;
         }
+
         public string ChuoiDemSoLuong()
         {
             string str = string.Format("SELECT COUNT(*) as COUNT FROM TAMTRUTAMVANG");
             return str;
         }
+
         public DataTable LayDanhSachTamTru(string tu)
         {
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND TrangThai = N'Tạm trú'";
             return conn.LayDanhSach(sqlStr);
         }
+
         public DataTable LayDanhSachTamVang(string tu)
         {
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND TrangThai = N'Tạm vắng'";
             return conn.LayDanhSach(sqlStr);
         }
+
         public DataTable LayDanhSachChoDuyet(string tu)
         {
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND (TrangThai = N'CDTT' OR TrangThai = N'CDTV')";

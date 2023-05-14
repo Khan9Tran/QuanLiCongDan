@@ -5,27 +5,34 @@ namespace QuanLiCongDanThanhPho
 {
     internal class KhaiSinhDAO
     {
+        //Lấy kết nối
         DBConnection conn = new DBConnection();
+
+        //Chuỗi lấy toàn bộ thông tin khai sinh
         public string StringKhaiSinh(KhaiSinh kS)
         {
             string sqlStr = string.Format($"INSERT INTO KHAISINH(MaKS, Ten, NgaySinh, NgayDangKy, GioiTinh, DanToc, QuocTich, NoiSinh, QueQuan, CCCDCha, TenCha, CCCDMe, TenMe) VALUES('{kS.MaKhaiSinh}' , N'{kS.HoTen}', '{kS.NgaySinh}','{kS.NgayDangKy}', '{kS.GioiTinh}', N'{kS.DanToc}', N'{kS.QuocTich}', N'{kS.NoiSinh.toString()}', N'{kS.QueQuan.toString()}','{kS.CCCDCha}', N'{kS.TenCha}', '{kS.CCCDMe}', N'{kS.TenMe}');");
             return sqlStr;
         }
+
         public bool CapNhatKhaiSinh(KhaiSinh kS)
         {
             string sqlStr = string.Format($"UPDATE KHAISINH SET  Ten = N'{kS.HoTen}', NgaySinh = '{kS.NgaySinh}', NgayDangKy = '{kS.NgayDangKy}', GioiTinh = '{kS.GioiTinh}', DanToc = N'{kS.DanToc}', QuocTich = N'{kS.QuocTich}', NoiSinh = N'{kS.NoiSinh.toString()}', QueQuan = N'{kS.QueQuan.toString()}', CCCDCha = '{kS.CCCDCha}', TenCha = N'{kS.TenCha}', CCCDMe = '{kS.CCCDMe}', TenMe = N'{kS.TenMe}' WHERE MaKS = '{kS.MaKhaiSinh}'");
             return conn.ThucThi(sqlStr);
         }
+
         public bool ThemKhaiSinh(KhaiSinh kS)
         {
             string sqlStr = StringKhaiSinh(kS);
             return conn.ThucThi(sqlStr);
         }
+
         public bool XoaKhaiSinh(string maKhaiSinh)
         {
             string sqlStr = string.Format($"DELETE FROM KHAISINH WHERE MaKS = '{maKhaiSinh}'");
             return conn.ThucThi(sqlStr);
         }
+
         public KhaiSinh LayThongTin(string maCCCD)
         {
             string strSql = string.Format("SELECT * FROM KHAISINH WHERE MaKS = '{0}'", maCCCD);
@@ -62,6 +69,7 @@ namespace QuanLiCongDanThanhPho
             }
             return cntNhomTuoi;
         }
+
         public DataTable LayTuoiCongDan()
         {
             string sqlStr = string.Format("SELECT YEAR(GETDATE()) - YEAR(NgaySinh) as SoTuoi FROM KHAISINH");

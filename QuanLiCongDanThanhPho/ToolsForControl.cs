@@ -1,6 +1,7 @@
 ﻿
 namespace QuanLiCongDanThanhPho
 {
+    //Dùng tự động bật tắt readonly và khả dụng cho button
     public class ToolsForControl
     {
         private List<TextBox> needReadOnly;
@@ -45,6 +46,7 @@ namespace QuanLiCongDanThanhPho
             }
 
         }
+
         public void TurnOff()
         {
             foreach (var ctr in needReadOnly)
@@ -58,6 +60,7 @@ namespace QuanLiCongDanThanhPho
             }
             state = Turn.off;
         }
+
         public void TurnOn()
         {
             foreach (var ctr in needReadOnly)

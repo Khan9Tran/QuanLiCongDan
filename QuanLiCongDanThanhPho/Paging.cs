@@ -2,17 +2,20 @@
 
 namespace QuanLiCongDanThanhPho
 {
+    //Dùng ngắt trang để hiển thị thông tin trên datagridview
     internal class Paging
     {
         private NumericUpDown nudPage;
         private int recordNum;
 
+        //Khởi tạo với liên kết với nudPgae để chuyển trang, và recordNum đế quy định tổng số trang
         public Paging(NumericUpDown nudPage, int recordNum)
         {
             this.nudPage = nudPage;
             this.recordNum = recordNum;
         }
 
+        //Trả về Dữ liệu sao khi đã ngắt trang
         public DataTable NgatTrang(DataTable ds)
         {
             int totalRecord = ds.Rows.Count;

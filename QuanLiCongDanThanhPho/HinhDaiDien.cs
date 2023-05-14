@@ -5,8 +5,10 @@ namespace QuanLiCongDanThanhPho
 {
     public class HinhDaiDien
     {
+        //String lưu địa chỉ folder chứa hình ảnh
         private static string pathAdmin = @"..\..\..\..\HinhTaiKhoan";
         private static string pathCongdan = @"..\..\..\..\HinhCongDan";
+
         private string path;
 
         public enum Type
@@ -30,6 +32,7 @@ namespace QuanLiCongDanThanhPho
             return folderPath;
         }
 
+        //Xóa hình
         private void DeleteDirectory(string folderPath, string fileName)
         {
             string fileNamePng = fileName + ".png";
@@ -49,6 +52,7 @@ namespace QuanLiCongDanThanhPho
 
         }
 
+        //Lưu hình đại diện từ picturbox về với name mới
         public void SaveHinhDaiDien(string name, OpenFileDialog ofdHinhDaiDien, PictureBox ptcHinhDaiDien)
         {
             string fileExtension = Path.GetExtension(ofdHinhDaiDien.FileName).ToLowerInvariant();
@@ -69,6 +73,7 @@ namespace QuanLiCongDanThanhPho
             ptcHinhDaiDien.Image.Save(fullPath, fileExtension == ".jpg" ? ImageFormat.Jpeg : ImageFormat.Png);
         }
 
+        //Mở file để lấy hình đưa vào picturebox
         public bool ThemHinhDaiDien(OpenFileDialog ofdHinhDaiDien, PictureBox ptcHinhDaiDien)
         {
             ofdHinhDaiDien.Filter = "PImage Files (*.jpg, *.png)|*.jpg;*.png";
@@ -100,6 +105,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Đưa hình đại diện lên DataGridView
         public void LayHinhDaiDien(string name, PictureBox ptcHinhDaiDien)
         {
             string folderPath = GetFolderPath();
