@@ -23,7 +23,7 @@ namespace QuanLiCongDanThanhPho
 
                 // Hiện thị thông tin của chủ hộ
                 CongDan chuHo = CDDAO.LayThongTin(hk.CCCDChuHo);
-                if (chuHo.CCCD  != null)
+                if (chuHo.CCCD != null)
                     txtTenChuHo.Text = chuHo.Ten.ToString();
 
                 // Hiện thị danh sách những người trong hộ

@@ -12,6 +12,7 @@ namespace QuanLiCongDanThanhPho
             tamTru,
             tamVang,
             quaHan,
+            choDuyet,
         }
 
         private enum ThoiGian
@@ -82,6 +83,8 @@ namespace QuanLiCongDanThanhPho
                 Ds = tttvDAO.LayDanhSachTamVang(txtTimKiem.Text);
             else if (LuaChon == Loc.quaHan)
                 Ds = tttvDAO.LayDanhSachQuaHan(txtTimKiem.Text);
+            else if (LuaChon == Loc.choDuyet)
+                Ds = tttvDAO.LayDanhSachChoDuyet(txtTimKiem.Text);
             nudPage.Value = 1;
             LoadDanhSach(gvTVTT);
         }
@@ -213,6 +216,36 @@ namespace QuanLiCongDanThanhPho
         private void namToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             GiaHan(ThoiGian.nam, 1);
+        }
+
+        private void btnChoDuyet_Click(object sender, EventArgs e)
+        {
+            ChangeBtnColor(Loc.choDuyet);
+            TimKiem(Loc.choDuyet);
+        }
+
+        private void btnDuyet_Click(object sender, EventArgs e)
+        {
+            if (gvTVTT.Rows.Count > 1)
+            {
+                string maCCCD = CCCDDAO.GetCCCD(gvTVTT, 1);
+
+                TamTruTamVang tTTV = tttvDAO.LayThongTin(maCCCD);
+                if (tTTV != null)
+                {
+                    if (tTTV.TrangThai != "CDTV")
+                    {
+                        tTTV.TrangThai = "Tạm vắng";
+                        tttvDAO.CapNhat(tTTV);
+                    }
+                    if (tTTV.TrangThai != "CDTT")
+                    {
+                        tTTV.TrangThai = "Tạm trú";
+                        tttvDAO.CapNhat(tTTV);
+                    }
+
+                }
+            }
         }
     }
 }
