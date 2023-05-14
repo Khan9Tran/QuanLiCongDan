@@ -27,7 +27,7 @@ namespace QuanLiCongDanThanhPho
                     return true;
                 }
                 else
-                { 
+                {
                     return false;
                 }
             }
@@ -54,7 +54,7 @@ namespace QuanLiCongDanThanhPho
                 {
 
                     HonNhan hN = new HonNhan(txtMaHonNhan.Text, txtCCCD.Text, txtTen.Text, txtCCCDVoChong.Text, txtTenVoChong.Text, "u,u,u,u", DateTime.Now, rdoNam.ToString());
-                    
+
                     if (KiemTraDuLieuNhap.KiemTraHonNhan(hN) && HNDAO.ThemHonNhan(hN))
                     {
                         MessageBox.Show("Thêm thành công");
@@ -102,7 +102,7 @@ namespace QuanLiCongDanThanhPho
                 txtCCCDVoChong.BackColor = Color.Gainsboro;
                 txtMaHonNhan.BackColor = Color.Gainsboro;
                 txtTenVoChong.BackColor = Color.Gainsboro;
-            } 
+            }
             else
             {
                 txtTenVoChong.ReadOnly = true;
@@ -111,7 +111,7 @@ namespace QuanLiCongDanThanhPho
                 txtCCCDVoChong.BackColor = Color.WhiteSmoke;
                 txtMaHonNhan.BackColor = Color.WhiteSmoke;
                 txtTenVoChong.BackColor = Color.WhiteSmoke;
-            }    
+            }
         }
 
         private void btnThemHinh_Click(object sender, EventArgs e)

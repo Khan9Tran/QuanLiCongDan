@@ -165,7 +165,7 @@
             this.btnTimChong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimChong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTimChong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnTimChong.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTimChong.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search__1_1;
             this.btnTimChong.Location = new System.Drawing.Point(191, 235);
             this.btnTimChong.Name = "btnTimChong";
             this.btnTimChong.Size = new System.Drawing.Size(50, 50);
@@ -180,7 +180,7 @@
             this.btnTimVo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimVo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTimVo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnTimVo.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTimVo.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search__1_;
             this.btnTimVo.Location = new System.Drawing.Point(1292, 235);
             this.btnTimVo.Name = "btnTimVo";
             this.btnTimVo.Size = new System.Drawing.Size(50, 50);
@@ -224,7 +224,7 @@
             this.btnReset.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.reset;
+            this.btnReset.Image = global::QuanLiCongDanThanhPho.Properties.Resources.undo__1_;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReset.Location = new System.Drawing.Point(159, 3);
             this.btnReset.Name = "btnReset";
@@ -239,7 +239,7 @@
             this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
             this.btnDangKy.FlatAppearance.BorderSize = 0;
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.confirm;
+            this.btnDangKy.Image = global::QuanLiCongDanThanhPho.Properties.Resources.check__2_;
             this.btnDangKy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangKy.Location = new System.Drawing.Point(315, 3);
             this.btnDangKy.Name = "btnDangKy";
@@ -292,7 +292,7 @@
             this.btnTimHonNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimHonNhan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTimHonNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
-            this.btnTimHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search;
+            this.btnTimHonNhan.Image = global::QuanLiCongDanThanhPho.Properties.Resources.search__1_1;
             this.btnTimHonNhan.Location = new System.Drawing.Point(467, 12);
             this.btnTimHonNhan.Name = "btnTimHonNhan";
             this.btnTimHonNhan.Size = new System.Drawing.Size(50, 50);

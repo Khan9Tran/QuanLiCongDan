@@ -225,5 +225,10 @@ namespace QuanLiCongDanThanhPho
             hinhAdmin.ThemHinhDaiDien(ofdHinhNen, ptcHinhNen);
             hinhAdmin.SaveHinhDaiDien("hinhnen", ofdHinhNen, ptcHinhNen);
         }
+
+        private void cmnusDangKyItemTaiKhoanCongDan_Click(object sender, EventArgs e)
+        {
+            childForm.Open(new FDangKyTaiKhoan());
+        }
     }
 }

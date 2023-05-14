@@ -147,7 +147,7 @@ namespace QuanLiCongDanThanhPho
             {
                 return false;
             }
-            if (data.TrangThai != "Tạm trú" && data.TrangThai != "Tạm vắng")
+            if (data.TrangThai != "Tạm trú" && data.TrangThai != "Tạm vắng" && data.TrangThai != "CDTT" && data.TrangThai != "CDTV")
             {
                 MessageBox.Show("Trạng thái tạm trú/ tạm vắng sai");
                 return false;
@@ -191,6 +191,32 @@ namespace QuanLiCongDanThanhPho
             if (maHk1 == maHk2)
             {
                 MessageBox.Show("Mã 2 hộ trùng nhau");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool KiemTraPass(string matKhauHienTai, string matKhauMoi, string nhapLaiMatKhau)
+        {
+            if (matKhauMoi != nhapLaiMatKhau)
+            {
+                MessageBox.Show("Mật khẩu không khớp");
+                return false;
+            }
+            if (matKhauHienTai == matKhauMoi)
+            {
+                MessageBox.Show("Mật khẩu mới phải khác mật khẩu cũ");
+                return false;
+            }
+            if (matKhauMoi.Length < 6)
+            {
+                MessageBox.Show("Mật khẩu phải từ 6 kí tự");
+                return false;
+            }
+            if (!KiemTraDuLieuNhap.isPass(matKhauMoi))
+            {
+
+                MessageBox.Show("Mật khẩu phải chứa ít nhất một chữ viết hoa, một chữ thường, một số và một kí tự đặt biệt");
                 return false;
             }
             return true;
