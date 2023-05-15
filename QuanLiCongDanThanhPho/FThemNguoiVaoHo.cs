@@ -26,8 +26,8 @@ namespace QuanLiCongDanThanhPho
         //Thêm công dân vào hộ được chọn
         internal override void DangKy()
         {
-            CongDan congDan = new CongDan(txtCCCD.Text, txtTen.Text, "", "", "", txtMaHo.Text, txtQuanHeVoiChuHo.Text, "u,u,u,u,u");
-            if (KiemTraDuLieuNhap.KiemTraTenVaCCCD(congDan) && CDDAO.LayThongTin(txtCCCD.Text).Ten == txtTen.Text && HKDAO.LayThongTin(txtMaHo.Text).MaHoKhau != null && CDDAO.ThayDoiHoKhau(congDan))
+            CongDan congDan = CDDAO.LayThongTin(txtCCCD.Text);
+            if (congDan.CCCD != null && congDan.Ten == txtTen.Text && congDan.MaHoKhau != txtMaHo.Text && HKDAO.LayThongTin(txtMaHo.Text).MaHoKhau != null && CDDAO.ThayDoiHoKhau(congDan))
                 MessageBox.Show("Thêm công dân vào hộ khẩu thành công");
             else
                 MessageBox.Show("Thêm công dân vào hộ khẩu thất bại");
