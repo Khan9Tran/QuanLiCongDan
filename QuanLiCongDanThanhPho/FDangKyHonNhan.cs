@@ -17,7 +17,7 @@ namespace QuanLiCongDanThanhPho
             if (KiemTraDuLieuNhap.KiemTraHonNhan(hN) && HNDAO.ThemHonNhan(hN))
                 MessageBox.Show("Đăng ký hôn nhân thành công");
             else
-                MessageBox.Show("Đắng ký thất bại");
+                MessageBox.Show("Đăng ký thất bại");
         }
 
         //Bật các nút giúp cho phép đăng ký li hôn
