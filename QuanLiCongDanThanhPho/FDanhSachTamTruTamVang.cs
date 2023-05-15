@@ -22,6 +22,7 @@ namespace QuanLiCongDanThanhPho
             nam,
         }
 
+        //Đổi màu nút nhấn
         private void ChangeBtnColor(Loc type)
         {
             btnTatCa.BackColor = Color.RoyalBlue;
@@ -101,6 +102,7 @@ namespace QuanLiCongDanThanhPho
             HightLightQuaHan();
         }
 
+        //Tăng số ngày kết thúc tạm trú tạm vắng
         private void GiaHan(dynamic thoiGian, int soLuong)
         {
             TamTruTamVang tTTV = tttvDAO.LayThongTin(CCCDDAO.GetCCCD(gvTVTT, 1));
@@ -143,6 +145,7 @@ namespace QuanLiCongDanThanhPho
             TimKiem(Loc.tamTru);
         }
 
+        //Chuyển đến form thêm tttv
         private void btnThem_Click(object sender, EventArgs e)
         {
             FDangKyTamTruTamVang dangKyTTTV = new FDangKyTamTruTamVang();
@@ -189,11 +192,13 @@ namespace QuanLiCongDanThanhPho
             txtTimKiem_TextChanged(txtTimKiem, null);
         }
 
+        //Tải lại danh sách khi chuyển trang
         private void nudPage_ValueChanged(object sender, EventArgs e)
         {
             LoadDanhSach(gvTVTT);
         }
 
+        //Mở chức năng lọc
         private void btnLoc_Click(object sender, EventArgs e)
         {
             Loc_Click(flpnlPhanLoai);
@@ -223,12 +228,14 @@ namespace QuanLiCongDanThanhPho
             GiaHan(ThoiGian.nam, 1);
         }
 
+        //Mở danh sách công dân chờ duyệt tttv
         private void btnChoDuyet_Click(object sender, EventArgs e)
         {
             ChangeBtnColor(Loc.choDuyet);
             TimKiem(Loc.choDuyet);
         }
 
+        //Duyệt yêu cầu tạm trú tạm vắng
         private void btnDuyet_Click(object sender, EventArgs e)
         {
             if (gvTVTT.Rows.Count > 1)
