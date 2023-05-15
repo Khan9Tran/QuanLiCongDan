@@ -25,7 +25,7 @@ namespace QuanLiCongDanThanhPho
                 path = pathCongdan;
         }
 
-        private string GetFolderPath()
+        public string GetFolderPath()
         {
             string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string folderPath = string.Format(System.IO.Path.Combine(sCurrentDirectory, path));
@@ -33,7 +33,7 @@ namespace QuanLiCongDanThanhPho
         }
 
         //Xóa hình
-        private void DeleteDirectory(string folderPath, string fileName)
+        public void DeleteDirectory(string folderPath, string fileName)
         {
             string fileNamePng = fileName + ".png";
             string fullPathPng = Path.Combine(folderPath, fileNamePng);

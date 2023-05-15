@@ -16,8 +16,13 @@ namespace QuanLiCongDanThanhPho
         private void XoaCongDan()
         {
             CongDan cD = new CongDan(txtCCCD.Text, txtTen.Text);
-            if (cD.CCCD != null && cD.Ten == txtTen.Text && congDanDAO.XoaCongDan(cD))
-                MessageBox.Show("Đã Khai tử");
+            if (cD.CCCD != null && cD.Ten == txtTen.Text)
+            {
+                HinhDaiDien hinhDaiDien = new HinhDaiDien(HinhDaiDien.Type.congDan);
+                hinhDaiDien.DeleteDirectory(hinhDaiDien.GetFolderPath(), cD.CCCD);
+                if (congDanDAO.XoaCongDan(cD))
+                    MessageBox.Show("Đã Khai tử");
+            }
             else
                 MessageBox.Show("Khai tử thất bại");
         }
