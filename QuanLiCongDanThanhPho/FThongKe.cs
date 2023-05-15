@@ -6,7 +6,6 @@ namespace QuanLiCongDanThanhPho
         private OpenChildForm childForm;
         public OpenChildForm ChildForm { get => childForm; set => childForm = value; }
 
-
         enum ThongKe
         {
             congDan,

@@ -4,9 +4,8 @@ namespace QuanLiCongDanThanhPho
 {
     public partial class FTrangChuCongDan : Form
     {
-        private OpenChildForm childForm;
+        private OpenChildForm loadForm;
         private Account  account;
-        private AccountDAO accountDAO;
         private FDangNhap fDangNhap;
         private HinhDaiDien hinhCongDan;
 
@@ -19,8 +18,6 @@ namespace QuanLiCongDanThanhPho
             loadForm = new OpenChildForm(pnlLoad);
             hinhCongDan = new HinhDaiDien(HinhDaiDien.Type.congDan);
         }
-
-        OpenChildForm loadForm;
 
         private void btnThongTin_Click(object sender, EventArgs e)
         {;

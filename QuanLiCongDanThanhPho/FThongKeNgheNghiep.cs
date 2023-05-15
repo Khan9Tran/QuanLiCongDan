@@ -6,6 +6,7 @@ namespace QuanLiCongDanThanhPho
     public partial class FThongKeNgheNghiep : Form
     {
         CongDanDAO cdDAO;
+
         public FThongKeNgheNghiep()
         {
             InitializeComponent();

@@ -13,6 +13,7 @@ namespace QuanLiCongDanThanhPho
             TamTruTamVang,
             HoKhau
         }
+
         private void ChangeBtnColor(Type type)
         {
             btnHoKhau.BackColor = Color.RoyalBlue;

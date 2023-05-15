@@ -130,35 +130,6 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
-        private void pnlDanhMuc_MouseHover(object sender, EventArgs e)
-        {
-            pnlDanhMuc.BackColor = Color.FromArgb(44, 43, 60);
-        }
-        private void pnlDanhMuc_MouseLeave(object sender, EventArgs e)
-        {
-            pnlDanhMuc.BackColor = Color.FromArgb(50, 49, 70);
-        }
-
-        private void lblDangKy_MouseHover(object sender, EventArgs e)
-        {
-            pnlDangKy.BackColor = Color.FromArgb(44, 43, 60);
-        }
-
-        private void lblDangKy_MouseLeave(object sender, EventArgs e)
-        {
-            pnlDangKy.BackColor = Color.FromArgb(50, 49, 70);
-        }
-
-        private void pnlThongKe_MouseHover(object sender, EventArgs e)
-        {
-            pnlThongKe.BackColor = Color.FromArgb(44, 43, 60);
-        }
-
-        private void pnlThongKe_MouseLeave(object sender, EventArgs e)
-        {
-            pnlThongKe.BackColor = Color.FromArgb(50, 49, 70);
-        }
-
         private void cmnusDangKyItemHoKhau_Click(object sender, EventArgs e)
         {
             childForm.Open(new FDangKyHoKhau());

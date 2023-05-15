@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using QuanLiCongDanThanhPho.Models;
+
 namespace QuanLiCongDanThanhPho
 {
     internal class TamTruTamVangDAO

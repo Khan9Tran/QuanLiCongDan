@@ -39,6 +39,7 @@ namespace QuanLiCongDanThanhPho
             KhoiTao();
             Ds = ds;
         }
+
         private void ChangeBtnColor(Loc type)
         {
             btnDocThan.BackColor = Color.RoyalBlue;
