@@ -42,6 +42,8 @@ namespace QuanLiCongDanThanhPho
             }
  
         }
+
+        //Đổi màu khi ấn nút
         private void ChangeBtnColor(Loc type)
         {
             btnTienDaNop.BackColor = Color.RoyalBlue;
@@ -176,6 +178,7 @@ namespace QuanLiCongDanThanhPho
             ds.ChildForm.Open(dscd);
         }
 
+        //Thực hiện thanh toán tiền thuế của công dân
         private bool ThanhToan()
         {
             if (txtDongThue.Text.Length == 0) return false;
