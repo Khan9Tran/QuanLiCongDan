@@ -20,6 +20,7 @@ namespace QuanLiCongDanThanhPho
 
             LuaChon = Loc.tatCa;
         }
+
         private void ChangeBtnColor(Loc type)
         {
             btnSoTV.BackColor = Color.DodgerBlue;

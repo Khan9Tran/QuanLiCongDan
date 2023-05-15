@@ -6,6 +6,7 @@ namespace QuanLiCongDanThanhPho
     {
         private Account account;
         private AccountDAO accountDAO;
+
         public FSetting(Account account)
         {
             InitializeComponent();

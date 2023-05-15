@@ -7,6 +7,7 @@ namespace QuanLiCongDanThanhPho
         CongDan congdan;
         CongDanDAO congDanDAO;
         TamTruTamVangDAO tTTVDAO;
+
         public FXinPhepTTTV(Account account)
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace QuanLiCongDanThanhPho
                 return "";
             }
         }
+
         private void XinPhep()
         {
             try
