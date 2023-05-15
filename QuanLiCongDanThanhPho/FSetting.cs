@@ -13,6 +13,7 @@ namespace QuanLiCongDanThanhPho
             accountDAO = new AccountDAO();
         }
 
+        //Kiểm tra mk
         private bool KiemTraPass()
         {
             if (txtMatKhauHienTai.Text != account.Password)
@@ -22,6 +23,8 @@ namespace QuanLiCongDanThanhPho
             }
             return KiemTraDuLieuNhap.KiemTraPass(txtMatKhauHienTai.Text, txtMatKhauMoi.Text, txtNhapLai.Text);
         }
+
+        //Đổi mật khẩu
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             if (KiemTraPass())

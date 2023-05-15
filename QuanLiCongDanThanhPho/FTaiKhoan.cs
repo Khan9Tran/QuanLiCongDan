@@ -25,6 +25,7 @@ namespace QuanLiCongDanThanhPho
             txtMatKhauMoi.Clear();
         }
 
+        //Đổi chữ cho button
         private void btnDoiMK_Click(object sender, EventArgs e)
         {
             if (btnDoiMK.Text == "Đổi mật khẩu")
@@ -40,6 +41,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Hiện thông tin từ account lên textbox
         private void HienThiThongTin()
         {
             txtDisplayName.Text = account.DisplayName;
@@ -47,6 +49,7 @@ namespace QuanLiCongDanThanhPho
             hinhAdmin.LayHinhDaiDien(account.UserName, ptcHinhDaiDien);
         }
 
+        //Đổi mật khẩu
         private void CapNhatMatKhau(string matKhauMoi, string userName)
         {
             Account acc = new Account();
@@ -55,6 +58,7 @@ namespace QuanLiCongDanThanhPho
             accountDAO.CapNhatMatKhau(acc);
         }
 
+        //Đổi tên hiển thị
         private void CapNhatDisplayName(string newDisplayName, string userName)
         {
             account.DisplayName = newDisplayName;
@@ -62,6 +66,7 @@ namespace QuanLiCongDanThanhPho
             StackForm.TrangChu.LoadTaiKhoan();
         }
 
+        //Kiểm tra mật khẩu có đúng định dạng và nhập có đúng k
         private bool KiemTraPass()
         {
             if (txtMatKhau.Text != account.Password)
@@ -87,6 +92,7 @@ namespace QuanLiCongDanThanhPho
             ClearPass();
         }
 
+        //Chuyển các nút và txt không thể sửa
         private void ReadOnly()
         {
             btnThemHinh.Enabled = false;
@@ -95,6 +101,7 @@ namespace QuanLiCongDanThanhPho
             btnCapNhat.Enabled = false;
         }
 
+        //Cho phép sửa các txt và ấn các nút
         private void UnReadOnly()
         {
             btnThemHinh.Enabled = true;
@@ -103,6 +110,7 @@ namespace QuanLiCongDanThanhPho
             btnCapNhat.Enabled = true;
         }
 
+        //Auto công việc
         private void AutoReadOnLy()
         {
             if (txtDisplayName.ReadOnly == false)
@@ -141,40 +149,31 @@ namespace QuanLiCongDanThanhPho
             HienThiThongTin();
         }
 
-        private void btnXemMK_Click(object sender, EventArgs e)
+        //Cho phép hiển thị mật khẩu
+        private void UseSystemPassChar(TextBox textBox)
         {
-            if (txtMatKhau.UseSystemPasswordChar == true)
+            if (textBox.UseSystemPasswordChar == true)
             {
-                txtMatKhau.UseSystemPasswordChar = false;
-            }
+                textBox.UseSystemPasswordChar = false;
+            }    
             else
             {
-                txtMatKhau.UseSystemPasswordChar = true;
-            }
+                textBox.UseSystemPasswordChar = true;
+            }    
+        }
+        private void btnXemMK_Click(object sender, EventArgs e)
+        {
+            UseSystemPassChar(txtMatKhau);
         }
 
         private void btnXemMKMoi_Click(object sender, EventArgs e)
         {
-            if (txtMatKhauMoi.UseSystemPasswordChar == true)
-            {
-                txtMatKhauMoi.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtMatKhauMoi.UseSystemPasswordChar = true;
-            }
+            UseSystemPassChar(txtMatKhauMoi);
         }
 
         private void btnXemMKNhapLai_Click(object sender, EventArgs e)
         {
-            if (txtMatKhauMoiNhapLai.UseSystemPasswordChar == true)
-            {
-                txtMatKhauMoiNhapLai.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtMatKhauMoiNhapLai.UseSystemPasswordChar = true;
-            }
+            UseSystemPassChar(txtMatKhauMoiNhapLai);
         }
 
         private void btnThemHinh_Click(object sender, EventArgs e)
