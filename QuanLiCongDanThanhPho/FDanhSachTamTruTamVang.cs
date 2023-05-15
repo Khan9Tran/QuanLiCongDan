@@ -247,6 +247,7 @@ namespace QuanLiCongDanThanhPho
 
                         tttvDAO.CapNhat(tTTV);
                         MessageBox.Show("Đã duyệt");
+                        txtTimKiem_TextChanged(txtTimKiem, null);
                     }
                 }
             }
