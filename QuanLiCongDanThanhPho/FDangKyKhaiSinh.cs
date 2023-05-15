@@ -83,6 +83,7 @@ namespace QuanLiCongDanThanhPho
         {
             DangKy();
         }
+
         private int turn = 0;
         private void TuDongNhap()
         {

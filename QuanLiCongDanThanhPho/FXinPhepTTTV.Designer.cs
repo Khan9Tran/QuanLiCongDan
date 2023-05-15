@@ -132,6 +132,7 @@
             // dtpNgayDangKy
             // 
             this.dtpNgayDangKy.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayDangKy.Enabled = false;
             this.dtpNgayDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDangKy.Location = new System.Drawing.Point(384, 272);
             this.dtpNgayDangKy.Name = "dtpNgayDangKy";

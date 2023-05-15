@@ -21,6 +21,7 @@ namespace QuanLiCongDanThanhPho
             LuaChon = Loc.tatCa;
         }
 
+        //Đổi màu cho nút nhấn
         private void ChangeBtnColor(Loc type)
         {
             btnSoTV.BackColor = Color.DodgerBlue;

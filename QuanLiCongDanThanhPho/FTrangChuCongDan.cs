@@ -54,6 +54,7 @@ namespace QuanLiCongDanThanhPho
             hinhCongDan.LayHinhDaiDien(account.UserName, ptcCongDan);
         }
 
+        //Mở thuế, nếu chưa có thuế thì thông báo
         private void btnThue_Click(object sender, EventArgs e)
         {
             ThueDAO thueDAO = new ThueDAO();
@@ -66,6 +67,7 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Chưa có thuế. Cần liên hệ trực tiếp cơ quan để tạo");
         }
 
+        //Mở TTTV, nếu đã TTTV thì thông báo
         private void btnTTTV_Click(object sender, EventArgs e)
         {
             TamTruTamVangDAO tTTV = new TamTruTamVangDAO();
@@ -80,6 +82,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Xem CCCD
         private void btnCCCD_Click(object sender, EventArgs e)
         {
             CongDanDAO cdDAO = new CongDanDAO();

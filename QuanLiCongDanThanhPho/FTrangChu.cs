@@ -106,6 +106,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Điều khiển thanh bar
         private void tmrThuNho_Tick(object sender, EventArgs e)
         {
             if (pnlMenu.Width >= 80)
@@ -118,6 +119,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Điều khiển phóng to thanh bar
         private void tmrPhongTo_Tick(object sender, EventArgs e)
         {
             if (pnlMenu.Width < 290)
@@ -185,12 +187,15 @@ namespace QuanLiCongDanThanhPho
             TatMenu(sender, e);
         }
 
+
+        //Tạo đồng hồ
         private void tmrNgayHienTai_Tick(object sender, EventArgs e)
         {
             lblNgayHienTai.Text = DateTime.Now.ToLongDateString();
             lblTime.Text = DateTime.Now.ToLongTimeString();
         }
 
+        //Thay đổi hình nền
         private void btnHinhNen_Click(object sender, EventArgs e)
         {
             hinhAdmin.ThemHinhDaiDien(ofdHinhNen, ptcHinhNen);

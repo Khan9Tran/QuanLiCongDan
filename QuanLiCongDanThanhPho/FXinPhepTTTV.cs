@@ -21,6 +21,7 @@ namespace QuanLiCongDanThanhPho
             XinPhep();
         }
 
+        //Trả về trạng thái xin TT hoặc xin TV
         private string TrangThai()
         {
             if (rdoTamTru.Checked == true)
@@ -39,6 +40,7 @@ namespace QuanLiCongDanThanhPho
 
         private void XinPhep()
         {
+            //Bắt lỗi nhập ngày
             try
             {
                 int Ngay = int.Parse(txtDay.Text);
@@ -53,6 +55,7 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Vui lòng nhập ngày là số nguyên dương");
                 return;
             }
+            //Tạo đối tượng TTTV
             TamTruTamVang tTTV = new TamTruTamVang()
             {
                 TrangThai = TrangThai(),
@@ -62,6 +65,7 @@ namespace QuanLiCongDanThanhPho
                 NgayBatDau = DateTime.Now,
                 NgayKetThuc = DateTime.Now.AddDays(int.Parse(txtDay.Text))
             };
+
             tTTV.DiaChi.DinhDang(txtDiaChi.Text);
             if (KiemTraDuLieuNhap.isTamTruTamVang(tTTV) && tTTVDAO.ThemTamTruTamVang(tTTV))
             {
