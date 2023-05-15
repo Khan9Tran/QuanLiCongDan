@@ -161,6 +161,7 @@ namespace QuanLiCongDanThanhPho
                 textBox.UseSystemPasswordChar = true;
             }    
         }
+
         private void btnXemMK_Click(object sender, EventArgs e)
         {
             UseSystemPassChar(txtMatKhau);
