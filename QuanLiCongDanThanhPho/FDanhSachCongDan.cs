@@ -219,6 +219,8 @@ namespace QuanLiCongDanThanhPho
                 CongDan cD = cdDao.LayThongTin(maCCCD);
                 if (cD.CCCD != null)
                 {
+                    HinhDaiDien hinhDaiDien = new HinhDaiDien(HinhDaiDien.Type.congDan);
+                    hinhDaiDien.DeleteDirectory(hinhDaiDien.GetFolderPath(), cD.CCCD);
                     if (cdDao.XoaCongDan(cD))
                         MessageBox.Show("Xóa công dân thành công");
                     else

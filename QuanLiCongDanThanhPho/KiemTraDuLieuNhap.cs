@@ -241,6 +241,7 @@ namespace QuanLiCongDanThanhPho
             return true;
 
         }
+
         public static bool KiemTraKhaiSinh(KhaiSinh khaiSinh)
         {
             return isDiaChi(khaiSinh.QueQuan.toString()) && isDiaChi(khaiSinh.NoiSinh.toString()) && !isEmpty(khaiSinh.QuocTich) && !isEmpty(khaiSinh.DanToc);
