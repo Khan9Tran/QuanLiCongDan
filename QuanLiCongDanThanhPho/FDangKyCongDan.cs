@@ -22,13 +22,13 @@ namespace QuanLiCongDanThanhPho
             if (HKDAO.LayThongTin(txtHoKhau.Text).MaHoKhau == null)
             {
                 HoKhau hK = new HoKhau(txtHoKhau.Text, txtDiaChi.Text, txtCCCD.Text);
-                if (KiemTraDuLieuNhap.KiemTraHoKhau(hK) && cboQuanHe.SelectedItem.ToString() == "Chủ hộ")
+                if (KiemTraDuLieuNhap.KiemTraHoKhau(hK) && cboQuanHe.SelectedItem.ToString() == "Chủ hộ" && HKDAO.ThemHoKhau(hK))
                 {
-                    HKDAO.ThemHoKhau(hK);
                     return true;
                 }
                 else
                 {
+                    MessageBox.Show("Tạo hộ khẩu lỗi");
                     return false;
                 }
             }
@@ -43,7 +43,7 @@ namespace QuanLiCongDanThanhPho
             Thue thue = new Thue(txtThue.Text, txtCCCD.Text);
 
             if (KiemTraDuLieuNhap.KiemTraCongDan(cD) && KiemTraDuLieuNhap.KiemTraKhaiSinh(kS) && KiemTraDuLieuNhap.KiemTraThueDonGian(thue)
-            && ptcHinhDaiDien.Image != null && ThemHoKhau() && CDDAO.ThemCongDan(cD) && KSDAO.ThemKhaiSinh(kS))
+            && KiemTraDuLieuNhap.isHinh(ptcHinhDaiDien) && ThemHoKhau() && CDDAO.ThemCongDan(cD) && KSDAO.ThemKhaiSinh(kS))
             {
                 HinhCongDan.SaveHinhDaiDien(txtCCCD.Text, ofdHinhDaiDien, ptcHinhDaiDien);
 
