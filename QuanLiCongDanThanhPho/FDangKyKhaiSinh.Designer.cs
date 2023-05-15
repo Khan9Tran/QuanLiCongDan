@@ -60,6 +60,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnAuto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -412,6 +413,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.btnAuto);
             this.panel2.Controls.Add(this.btnDangKy);
             this.panel2.Controls.Add(this.btnReset);
             this.panel2.Location = new System.Drawing.Point(1417, 1);
@@ -445,6 +447,19 @@
             this.btnReset.TabIndex = 92;
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnAuto
+            // 
+            this.btnAuto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAuto.FlatAppearance.BorderSize = 0;
+            this.btnAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAuto.Image = global::QuanLiCongDanThanhPho.Properties.Resources.effective;
+            this.btnAuto.Location = new System.Drawing.Point(16, 272);
+            this.btnAuto.Name = "btnAuto";
+            this.btnAuto.Size = new System.Drawing.Size(50, 50);
+            this.btnAuto.TabIndex = 98;
+            this.btnAuto.UseVisualStyleBackColor = false;
+            this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
             // 
             // FDangKyKhaiSinh
             // 
@@ -518,5 +533,6 @@
         private Panel panel2;
         private Button btnDangKy;
         private Button btnReset;
+        private Button btnAuto;
     }
 }

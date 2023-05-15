@@ -51,9 +51,15 @@ namespace QuanLiCongDanThanhPho
             HonNhan vo = HNDAO.LayThongTin(txtCccdMe.Text);
 
             if (chong.MaSo == null || vo.MaSo == null)
+            {
+                MessageBox.Show("Cha/ mẹ chưa có hôn nhân");
                 return false;
+            }
             if (chong.MaSo != vo.MaSo)
+            {
+                MessageBox.Show("Cha mẹ không khớp trong hôn nhân");
                 return false;
+            }
             if (txtTenCha.Text != chong.TenChong)
                 return false;
             if (txtTenMe.Text != vo.TenVo)
@@ -73,10 +79,56 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Sai thông tin"); ;
         }
 
-        // Nếu 2 người cùng trong thành phố thì phải kiểm tra hai người phải kết hôn rồi
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             DangKy();
+        }
+        private int turn = 0;
+        private void TuDongNhap()
+        {
+            KhaiSinh chong = KSDAO.LayThongTin(txtCccdCha.Text);
+            KhaiSinh vo = KSDAO.LayThongTin(txtCccdMe.Text);
+            if (turn == 0 && chong.MaKhaiSinh == null)
+            {
+                turn = 1;
+                if (vo.MaKhaiSinh == null) turn = 2;
+            }
+            switch (turn)
+            {
+                case 0:
+                    txtQueQuan.Text = chong.QueQuan.toString();
+                    txtNoiSinh.Text = chong.NoiSinh.toString();
+                    cboQuocTich.SelectedItem = chong.QuocTich;
+                    cboDanToc.SelectedItem = chong.DanToc;
+                    if (vo.MaKhaiSinh != null)
+                    {
+                        turn += 1;
+                    }
+                    else
+                    {
+                        turn += 2;
+                    }    
+                    break;
+                case 1:
+                    txtQueQuan.Text = vo.QueQuan.toString();
+                    txtNoiSinh.Text = vo.NoiSinh.toString();
+                    cboQuocTich.SelectedItem = vo.QuocTich;
+                    cboDanToc.SelectedItem = vo.DanToc;
+                    turn++;
+                    break;
+                case 2:
+                    txtQueQuan.Text = "";
+                    txtNoiSinh.Text = "";
+                    cboQuocTich.SelectedItem = "";
+                    cboDanToc.SelectedItem = "";
+                    turn = 0;
+                    break;
+            }
+        }
+
+        private void btnAuto_Click(object sender, EventArgs e)
+        {
+            TuDongNhap();
         }
     }
 }
