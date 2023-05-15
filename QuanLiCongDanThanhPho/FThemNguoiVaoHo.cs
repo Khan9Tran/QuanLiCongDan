@@ -27,8 +27,14 @@ namespace QuanLiCongDanThanhPho
         internal override void DangKy()
         {
             CongDan congDan = CDDAO.LayThongTin(txtCCCD.Text);
-            if (congDan.CCCD != null && congDan.Ten == txtTen.Text && congDan.MaHoKhau != txtMaHo.Text && HKDAO.LayThongTin(txtMaHo.Text).MaHoKhau != null && CDDAO.ThayDoiHoKhau(congDan))
-                MessageBox.Show("Thêm công dân vào hộ khẩu thành công");
+            if (congDan.CCCD != null && congDan.Ten == txtTen.Text && congDan.MaHoKhau != txtMaHo.Text && HKDAO.LayThongTin(txtMaHo.Text).MaHoKhau != null)
+            {
+                congDan.MaHoKhau = txtMaHo.Text;
+                if (CDDAO.ThayDoiHoKhau(congDan))
+                    MessageBox.Show("Thêm công dân vào hộ khẩu thành công");
+                else
+                    MessageBox.Show("Thêm công dân vào hộ thất bại");
+            }
             else
                 MessageBox.Show("Thêm công dân vào hộ khẩu thất bại");
             LoadDanhSachChuaHoKhau();
