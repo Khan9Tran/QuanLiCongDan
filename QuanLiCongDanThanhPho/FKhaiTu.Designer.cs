@@ -36,7 +36,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTrangTri = new System.Windows.Forms.Panel();
             this.fpnlChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTimKiem)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,7 @@
             // lblCCCD
             // 
             this.lblCCCD.AutoSize = true;
-            this.lblCCCD.BackColor = System.Drawing.Color.DodgerBlue;
+            this.lblCCCD.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblCCCD.ForeColor = System.Drawing.Color.White;
             this.lblCCCD.Location = new System.Drawing.Point(380, 230);
             this.lblCCCD.Name = "lblCCCD";
@@ -55,7 +55,7 @@
             // lblTen
             // 
             this.lblTen.AutoSize = true;
-            this.lblTen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.lblTen.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblTen.ForeColor = System.Drawing.Color.White;
             this.lblTen.Location = new System.Drawing.Point(380, 330);
             this.lblTen.Name = "lblTen";
@@ -77,7 +77,7 @@
             // 
             // txtTen
             // 
-            this.txtTen.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtTen.BackColor = System.Drawing.Color.White;
             this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTen.Location = new System.Drawing.Point(530, 330);
@@ -137,13 +137,13 @@
             this.picTimKiem.TabIndex = 100;
             this.picTimKiem.TabStop = false;
             // 
-            // panel1
+            // pnlTrangTri
             // 
-            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel1.Location = new System.Drawing.Point(362, -3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(136, 367);
-            this.panel1.TabIndex = 101;
+            this.pnlTrangTri.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlTrangTri.Location = new System.Drawing.Point(310, -3);
+            this.pnlTrangTri.Name = "pnlTrangTri";
+            this.pnlTrangTri.Size = new System.Drawing.Size(188, 367);
+            this.pnlTrangTri.TabIndex = 101;
             // 
             // FKhaiTu
             // 
@@ -157,7 +157,7 @@
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.lblTen);
             this.Controls.Add(this.lblCCCD);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTrangTri);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -181,5 +181,6 @@
         private Button btnDangKy;
         private PictureBox picTimKiem;
         private Panel panel1;
+        private Panel pnlTrangTri;
     }
 }
