@@ -67,10 +67,10 @@ namespace QuanLiCongDanThanhPho
         {
             if (e.RowIndex != -1)
             {
-                string maCCCD = (string)gvQuanHeVoiChuHo.CurrentRow.Cells[0].Value;
-                if (maCCCD != "")
+                var maCCCD = gvQuanHeVoiChuHo.CurrentRow.Cells[0].Value;
+                if (maCCCD.ToString() != "")
                 {
-                    CongDan cd = CDDAO.LayThongTin(maCCCD);
+                    CongDan cd = CDDAO.LayThongTin((string)maCCCD);
                     if (cd.CCCD != null)
                     {
                         FThongTinCongDan ttCD = new FThongTinCongDan(cd);
