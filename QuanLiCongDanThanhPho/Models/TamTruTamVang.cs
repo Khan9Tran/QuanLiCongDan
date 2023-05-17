@@ -24,14 +24,7 @@ namespace QuanLiCongDanThanhPho.Models
         {
             MaSo = maSo;
             this.cCCD = cCCD;
-            if (trangThai == "True")
-            {
-                this.trangThai = "Tạm trú";
-            }   
-            else
-            {
-                this.trangThai = "Tạm vắng";
-            }    
+            this.trangThai = trangThai;   
             NgayBatDau = ngayBatDau;
             NgayKetThuc = ngayKetThuc;
             this.diaChi = new DiaChi();
