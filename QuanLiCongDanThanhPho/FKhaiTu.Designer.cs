@@ -180,7 +180,6 @@
         private Button btnReset;
         private Button btnDangKy;
         private PictureBox picTimKiem;
-        private Panel panel1;
         private Panel pnlTrangTri;
     }
 }
