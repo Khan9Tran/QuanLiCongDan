@@ -45,7 +45,7 @@ namespace QuanLiCongDanThanhPho
         private void DangNhap()
         {
             Account acc = new Account(txtTaiKhoan.Text,txtMatKhau.Text);
-            if (!accDAO.DangNhap(acc))
+            if (accDAO.LayThongTinTaiKhoan(acc).UserName == null || !accDAO.DangNhap(acc))
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!");
             }    
