@@ -24,7 +24,7 @@ namespace QuanLiCongDanThanhPho
 
         public Thue LayThongTin(string maCCCD)
         {
-            string sqlStr = string.Format("SELECT * FROM THUE WHERE CCCD = {0}", maCCCD);
+            string sqlStr = string.Format("SELECT * FROM THUE WHERE CCCD = '{0}'", maCCCD);
             return conn.LayThongTinThue(sqlStr);
         }
 

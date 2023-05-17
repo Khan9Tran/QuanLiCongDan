@@ -76,7 +76,7 @@ namespace QuanLiCongDanThanhPho
         //Xóa hôn nhân
         public bool Xoa(HonNhan honNhan)
         {
-            string sqlStr = string.Format("DELETE HONNHAN WHERE MaHonNhan = {0}", honNhan.MaSo);
+            string sqlStr = string.Format("DELETE HONNHAN WHERE MaHonNhan = '{0}'", honNhan.MaSo);
             return conn.ThucThi(sqlStr);
         }
 
