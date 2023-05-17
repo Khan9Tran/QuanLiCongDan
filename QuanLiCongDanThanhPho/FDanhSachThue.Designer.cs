@@ -37,9 +37,9 @@
             this.cmnusMenuXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.flpnPhanLoai = new System.Windows.Forms.FlowLayoutPanel();
             this.btnLoc = new System.Windows.Forms.Button();
+            this.btnTreHan = new System.Windows.Forms.Button();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnTienDaNop = new System.Windows.Forms.Button();
-            this.btnTreHan = new System.Windows.Forms.Button();
             this.btnCongDanCanTaoThue = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.picTimKiem = new System.Windows.Forms.PictureBox();
@@ -144,6 +144,22 @@
             this.btnLoc.UseVisualStyleBackColor = false;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
+            // btnTreHan
+            // 
+            this.btnTreHan.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnTreHan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnTreHan.FlatAppearance.BorderSize = 0;
+            this.btnTreHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTreHan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTreHan.ForeColor = System.Drawing.Color.White;
+            this.btnTreHan.Location = new System.Drawing.Point(41, 3);
+            this.btnTreHan.Name = "btnTreHan";
+            this.btnTreHan.Size = new System.Drawing.Size(128, 40);
+            this.btnTreHan.TabIndex = 59;
+            this.btnTreHan.Text = "Trễ Hạn";
+            this.btnTreHan.UseVisualStyleBackColor = false;
+            this.btnTreHan.Click += new System.EventHandler(this.btnTreHan_Click);
+            // 
             // btnTatCa
             // 
             this.btnTatCa.BackColor = System.Drawing.Color.RoyalBlue;
@@ -170,27 +186,11 @@
             this.btnTienDaNop.ForeColor = System.Drawing.Color.White;
             this.btnTienDaNop.Location = new System.Drawing.Point(306, 3);
             this.btnTienDaNop.Name = "btnTienDaNop";
-            this.btnTienDaNop.Size = new System.Drawing.Size(125, 40);
+            this.btnTienDaNop.Size = new System.Drawing.Size(158, 40);
             this.btnTienDaNop.TabIndex = 6;
             this.btnTienDaNop.Text = "Tiền đã nộp";
             this.btnTienDaNop.UseVisualStyleBackColor = false;
             this.btnTienDaNop.Click += new System.EventHandler(this.btnTienDaNop_Click);
-            // 
-            // btnTreHan
-            // 
-            this.btnTreHan.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnTreHan.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnTreHan.FlatAppearance.BorderSize = 0;
-            this.btnTreHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTreHan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTreHan.ForeColor = System.Drawing.Color.White;
-            this.btnTreHan.Location = new System.Drawing.Point(41, 3);
-            this.btnTreHan.Name = "btnTreHan";
-            this.btnTreHan.Size = new System.Drawing.Size(128, 40);
-            this.btnTreHan.TabIndex = 59;
-            this.btnTreHan.Text = "Trễ Hạn";
-            this.btnTreHan.UseVisualStyleBackColor = false;
-            this.btnTreHan.Click += new System.EventHandler(this.btnTreHan_Click);
             // 
             // btnCongDanCanTaoThue
             // 
@@ -200,7 +200,7 @@
             this.btnCongDanCanTaoThue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCongDanCanTaoThue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCongDanCanTaoThue.ForeColor = System.Drawing.Color.White;
-            this.btnCongDanCanTaoThue.Location = new System.Drawing.Point(437, 3);
+            this.btnCongDanCanTaoThue.Location = new System.Drawing.Point(470, 3);
             this.btnCongDanCanTaoThue.Name = "btnCongDanCanTaoThue";
             this.btnCongDanCanTaoThue.Size = new System.Drawing.Size(128, 40);
             this.btnCongDanCanTaoThue.TabIndex = 64;
