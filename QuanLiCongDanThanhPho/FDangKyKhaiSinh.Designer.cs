@@ -55,15 +55,15 @@
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.cboQuocTich = new System.Windows.Forms.ComboBox();
             this.cboDanToc = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlLoadLbl = new System.Windows.Forms.Panel();
+            this.pnlLoadLbl2 = new System.Windows.Forms.Panel();
+            this.pnlLoadChucNang = new System.Windows.Forms.Panel();
+            this.btnAuto = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.btnAuto = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlLoadLbl.SuspendLayout();
+            this.pnlLoadLbl2.SuspendLayout();
+            this.pnlLoadChucNang.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNoiSinh
@@ -381,45 +381,58 @@
             this.cboDanToc.Size = new System.Drawing.Size(259, 36);
             this.cboDanToc.TabIndex = 100;
             // 
-            // panel1
+            // pnlLoadLbl
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.lblTen);
-            this.panel1.Controls.Add(this.lblNgayDangKy);
-            this.panel1.Controls.Add(this.lblMaDinhDanh);
-            this.panel1.Controls.Add(this.lblNoiSinh);
-            this.panel1.Controls.Add(this.lblTenCha);
-            this.panel1.Controls.Add(this.lblQueQuan);
-            this.panel1.Controls.Add(this.lblTenMe);
-            this.panel1.Controls.Add(this.lblCccdCha);
-            this.panel1.Controls.Add(this.lblCccdMe);
-            this.panel1.Location = new System.Drawing.Point(155, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(184, 706);
-            this.panel1.TabIndex = 111;
+            this.pnlLoadLbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlLoadLbl.Controls.Add(this.lblTen);
+            this.pnlLoadLbl.Controls.Add(this.lblNgayDangKy);
+            this.pnlLoadLbl.Controls.Add(this.lblMaDinhDanh);
+            this.pnlLoadLbl.Controls.Add(this.lblNoiSinh);
+            this.pnlLoadLbl.Controls.Add(this.lblTenCha);
+            this.pnlLoadLbl.Controls.Add(this.lblQueQuan);
+            this.pnlLoadLbl.Controls.Add(this.lblTenMe);
+            this.pnlLoadLbl.Controls.Add(this.lblCccdCha);
+            this.pnlLoadLbl.Controls.Add(this.lblCccdMe);
+            this.pnlLoadLbl.Location = new System.Drawing.Point(155, 0);
+            this.pnlLoadLbl.Name = "pnlLoadLbl";
+            this.pnlLoadLbl.Size = new System.Drawing.Size(184, 706);
+            this.pnlLoadLbl.TabIndex = 111;
             // 
-            // panel3
+            // pnlLoadLbl2
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Controls.Add(this.lblGioiTinh);
-            this.panel3.Controls.Add(this.lblQuocTich);
-            this.panel3.Controls.Add(this.lblDanToc);
-            this.panel3.Controls.Add(this.lblNgaySinh);
-            this.panel3.Location = new System.Drawing.Point(865, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(137, 329);
-            this.panel3.TabIndex = 112;
+            this.pnlLoadLbl2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlLoadLbl2.Controls.Add(this.lblGioiTinh);
+            this.pnlLoadLbl2.Controls.Add(this.lblQuocTich);
+            this.pnlLoadLbl2.Controls.Add(this.lblDanToc);
+            this.pnlLoadLbl2.Controls.Add(this.lblNgaySinh);
+            this.pnlLoadLbl2.Location = new System.Drawing.Point(865, 0);
+            this.pnlLoadLbl2.Name = "pnlLoadLbl2";
+            this.pnlLoadLbl2.Size = new System.Drawing.Size(137, 329);
+            this.pnlLoadLbl2.TabIndex = 112;
             // 
-            // panel2
+            // pnlLoadChucNang
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.btnAuto);
-            this.panel2.Controls.Add(this.btnDangKy);
-            this.panel2.Controls.Add(this.btnReset);
-            this.panel2.Location = new System.Drawing.Point(1417, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(82, 755);
-            this.panel2.TabIndex = 113;
+            this.pnlLoadChucNang.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlLoadChucNang.Controls.Add(this.btnAuto);
+            this.pnlLoadChucNang.Controls.Add(this.btnDangKy);
+            this.pnlLoadChucNang.Controls.Add(this.btnReset);
+            this.pnlLoadChucNang.Location = new System.Drawing.Point(1417, 1);
+            this.pnlLoadChucNang.Name = "pnlLoadChucNang";
+            this.pnlLoadChucNang.Size = new System.Drawing.Size(82, 755);
+            this.pnlLoadChucNang.TabIndex = 113;
+            // 
+            // btnAuto
+            // 
+            this.btnAuto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAuto.FlatAppearance.BorderSize = 0;
+            this.btnAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAuto.Image = global::QuanLiCongDanThanhPho.Properties.Resources.effective;
+            this.btnAuto.Location = new System.Drawing.Point(16, 272);
+            this.btnAuto.Name = "btnAuto";
+            this.btnAuto.Size = new System.Drawing.Size(50, 50);
+            this.btnAuto.TabIndex = 98;
+            this.btnAuto.UseVisualStyleBackColor = false;
+            this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
             // 
             // btnDangKy
             // 
@@ -448,28 +461,15 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // btnAuto
-            // 
-            this.btnAuto.BackColor = System.Drawing.Color.Transparent;
-            this.btnAuto.FlatAppearance.BorderSize = 0;
-            this.btnAuto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAuto.Image = global::QuanLiCongDanThanhPho.Properties.Resources.effective;
-            this.btnAuto.Location = new System.Drawing.Point(16, 272);
-            this.btnAuto.Name = "btnAuto";
-            this.btnAuto.Size = new System.Drawing.Size(50, 50);
-            this.btnAuto.TabIndex = 98;
-            this.btnAuto.UseVisualStyleBackColor = false;
-            this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
-            // 
             // FDangKyKhaiSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 752);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlLoadChucNang);
+            this.Controls.Add(this.pnlLoadLbl2);
+            this.Controls.Add(this.pnlLoadLbl);
             this.Controls.Add(this.cboDanToc);
             this.Controls.Add(this.cboQuocTich);
             this.Controls.Add(this.txtQueQuan);
@@ -490,11 +490,11 @@
             this.Name = "FDangKyKhaiSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDangKyKhaiSinh";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnlLoadLbl.ResumeLayout(false);
+            this.pnlLoadLbl.PerformLayout();
+            this.pnlLoadLbl2.ResumeLayout(false);
+            this.pnlLoadLbl2.PerformLayout();
+            this.pnlLoadChucNang.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,9 +528,9 @@
         private TextBox txtQueQuan;
         private ComboBox cboQuocTich;
         private ComboBox cboDanToc;
-        private Panel panel1;
-        private Panel panel3;
-        private Panel panel2;
+        private Panel pnlLoadLbl;
+        private Panel pnlLoadLbl2;
+        private Panel pnlLoadChucNang;
         private Button btnDangKy;
         private Button btnReset;
         private Button btnAuto;

@@ -23,6 +23,7 @@ namespace QuanLiCongDanThanhPho
 
         public Turn State { set => state = value; }
 
+        //Xóa text nếu control là textbox
         public static void ClearTextBox(Control.ControlCollection Controls)
         {
             foreach (Control control in Controls)
@@ -34,6 +35,7 @@ namespace QuanLiCongDanThanhPho
             }
         }
 
+        //Tự động bật tắt readonly
         public void AutoReadOnly()
         {
             if (state == Turn.on)
@@ -73,6 +75,15 @@ namespace QuanLiCongDanThanhPho
                 ctr.Enabled = true;
             }
             state = Turn.on;
+        }
+
+        public static void ReadOnly(List<TextBox> textBoxs, bool trangThai, Color color)
+        {
+            foreach (var textBox in textBoxs)
+            {
+                textBox.ReadOnly = trangThai;
+                textBox.BackColor = color;
+            }
         }
     }
 }

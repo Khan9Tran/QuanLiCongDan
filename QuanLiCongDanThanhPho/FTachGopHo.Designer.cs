@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMaHoTach = new System.Windows.Forms.Label();
             this.lblMaHoGop = new System.Windows.Forms.Label();
             this.gvHoTach = new System.Windows.Forms.DataGridView();
@@ -44,11 +44,11 @@
             this.btnMaHoTach = new System.Windows.Forms.Button();
             this.btnMaHoGop = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.fpnlFrameChucNang = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlContainerChucNang = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoTach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoGop)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.fpnlFrameChucNang.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMaHoTach
@@ -74,23 +74,23 @@
             this.gvHoTach.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvHoTach.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvHoTach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvHoTach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvHoTach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gvHoTach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvHoTach.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvHoTach.DefaultCellStyle = dataGridViewCellStyle6;
             this.gvHoTach.EnableHeadersVisualStyles = false;
             this.gvHoTach.Location = new System.Drawing.Point(296, 84);
             this.gvHoTach.Name = "gvHoTach";
@@ -106,23 +106,23 @@
             this.gvHoGop.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvHoGop.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvHoGop.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvHoGop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvHoGop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gvHoGop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvHoGop.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvHoGop.DefaultCellStyle = dataGridViewCellStyle8;
             this.gvHoGop.EnableHeadersVisualStyles = false;
             this.gvHoGop.Location = new System.Drawing.Point(303, 434);
             this.gvHoGop.Name = "gvHoGop";
@@ -243,25 +243,25 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // flowLayoutPanel1
+            // fpnlFrameChucNang
             // 
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Controls.Add(this.btnTaoHoMoi);
-            this.flowLayoutPanel1.Controls.Add(this.btnTach);
-            this.flowLayoutPanel1.Controls.Add(this.btnGopHo);
-            this.flowLayoutPanel1.Controls.Add(this.btnReset);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1171, 75);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(158, 239);
-            this.flowLayoutPanel1.TabIndex = 94;
+            this.fpnlFrameChucNang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fpnlFrameChucNang.Controls.Add(this.btnTaoHoMoi);
+            this.fpnlFrameChucNang.Controls.Add(this.btnTach);
+            this.fpnlFrameChucNang.Controls.Add(this.btnGopHo);
+            this.fpnlFrameChucNang.Controls.Add(this.btnReset);
+            this.fpnlFrameChucNang.Location = new System.Drawing.Point(1171, 75);
+            this.fpnlFrameChucNang.Name = "fpnlFrameChucNang";
+            this.fpnlFrameChucNang.Size = new System.Drawing.Size(158, 239);
+            this.fpnlFrameChucNang.TabIndex = 94;
             // 
-            // panel1
+            // pnlContainerChucNang
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(1125, -17);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 853);
-            this.panel1.TabIndex = 95;
+            this.pnlContainerChucNang.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlContainerChucNang.Location = new System.Drawing.Point(1125, -17);
+            this.pnlContainerChucNang.Name = "pnlContainerChucNang";
+            this.pnlContainerChucNang.Size = new System.Drawing.Size(250, 853);
+            this.pnlContainerChucNang.TabIndex = 95;
             // 
             // FTachGopHo
             // 
@@ -269,7 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1532, 695);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.fpnlFrameChucNang);
             this.Controls.Add(this.btnMaHoGop);
             this.Controls.Add(this.btnMaHoTach);
             this.Controls.Add(this.txtMaHoGop);
@@ -278,7 +278,7 @@
             this.Controls.Add(this.gvHoTach);
             this.Controls.Add(this.lblMaHoGop);
             this.Controls.Add(this.lblMaHoTach);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlContainerChucNang);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -287,7 +287,7 @@
             this.Text = "FTachGopHo";
             ((System.ComponentModel.ISupportInitialize)(this.gvHoTach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHoGop)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.fpnlFrameChucNang.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,7 +307,7 @@
         private Button btnMaHoTach;
         private Button btnMaHoGop;
         private Button btnReset;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel1;
+        private FlowLayoutPanel fpnlFrameChucNang;
+        private Panel pnlContainerChucNang;
     }
 }

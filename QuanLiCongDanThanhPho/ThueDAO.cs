@@ -45,17 +45,19 @@ namespace QuanLiCongDanThanhPho
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " ORDER BY SoTienDaNop ASC";
             return conn.LayDanhSach(sqlStr);
         }
+
         public DataTable LayDanhSachTreHan(string tu)
         {
             string sqlStr = ChuoiLayDanhSachTheoTu(tu) + " AND GETDATE() > THUE.HanNop";
             return conn.LayDanhSach(sqlStr);
         }
+
         public bool CapNhatThue(Thue thue) 
         {
             string sqlStr = string.Format($"UPDATE THUE SET SoTienCanNop = '{thue.SoTienCanNop}', SoTienDaNop = '{thue.SoTienDaNop}', NgayCap = '{thue.NgayCapMa}', HanNop = '{thue.HanNop}' WHERE MaThue = '{thue.MaThue}'");
             return conn.ThucThi(sqlStr);
-            //Cập nhật thuế thành công
         }
+
         public int[] LayThongKeThue()
         {
             string sqlStr = string.Format("SELECT SUM(CONVERT(INT,SoTienCanNop)) as TongTienCanNop, SUM(CONVERT(INT,SoTienDaNop)) as TongTienDaNop, COUNT(*) as SL FROM THUE");
@@ -67,6 +69,7 @@ namespace QuanLiCongDanThanhPho
             thues[3] = dt.Rows[0].Field<int>("SL");
             return thues;
         }
+
         public int LaySoNguoiTreHan()
         {
             string sqlStr = string.Format("SELECT COUNT(*) as SL FROM THUE WHERE GETDATE() > THUE.HanNop");

@@ -20,7 +20,7 @@ namespace QuanLiCongDanThanhPho
         }
 
         private void btnThongTin_Click(object sender, EventArgs e)
-        {;
+        {
             pnlLoad.Visible = true;
             CongDanDAO cdDAO = new CongDanDAO();
             loadForm.Open(new FXemCongDan(cdDAO.LayThongTin(account.UserName)));
@@ -66,7 +66,7 @@ namespace QuanLiCongDanThanhPho
             else
                 MessageBox.Show("Chưa có thuế. Cần liên hệ trực tiếp cơ quan để tạo");
         }
-
+       
         //Mở TTTV, nếu đã TTTV thì thông báo
         private void btnTTTV_Click(object sender, EventArgs e)
         {

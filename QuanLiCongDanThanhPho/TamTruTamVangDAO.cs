@@ -102,7 +102,6 @@ namespace QuanLiCongDanThanhPho
         {
             string strSql = string.Format($"UPDATE TAMTRUTAMVANG SET MaTTTV = '{tTTV.MaSo}', CCCD = '{tTTV.CCCD}', DiaChi = N'{tTTV.DiaChi.toString()}', NgayBD = '{tTTV.NgayBatDau}', NgayKT = '{tTTV.NgayKetThuc}', TrangThai = N'{tTTV.TrangThai}', LiDo = N'{tTTV.LyDo}' WHERE MaTTTV = '{tTTV.MaSo}' OR CCCD = '{tTTV.CCCD}'");
             conn.ThucThi(strSql);
-            //Cập nhật thông tin thành công
         }
     }
 }

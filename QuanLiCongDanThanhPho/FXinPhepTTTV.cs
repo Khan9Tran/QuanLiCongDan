@@ -55,6 +55,7 @@ namespace QuanLiCongDanThanhPho
                 MessageBox.Show("Vui lòng nhập ngày là số nguyên dương");
                 return;
             }
+
             //Tạo đối tượng TTTV
             TamTruTamVang tTTV = new TamTruTamVang()
             {

@@ -95,26 +95,19 @@ namespace QuanLiCongDanThanhPho
             DangKy();
         }
 
+
+
         //Chỉnh lại trạng thái(đọc/ghi) của TextBox theo tình trạng hôn nhân
         private void cboTinhTrang_SelectedValueChanged(object sender, EventArgs e)
         {
+            List<TextBox> textBoxs = new List<TextBox>() { txtTenVoChong, txtMaHonNhan, txtCCCDVoChong };
             if (cboTinhTrang.SelectedIndex == (int)LuaChon.ketHon)
             {
-                txtTenVoChong.ReadOnly = false;
-                txtMaHonNhan.ReadOnly = false;
-                txtCCCDVoChong.ReadOnly = false;
-                txtCCCDVoChong.BackColor = Color.Gainsboro;
-                txtMaHonNhan.BackColor = Color.Gainsboro;
-                txtTenVoChong.BackColor = Color.Gainsboro;
+                ToolsForControl.ReadOnly(textBoxs, false, Color.Gainsboro);
             }
             else
             {
-                txtTenVoChong.ReadOnly = true;
-                txtMaHonNhan.ReadOnly = true;
-                txtCCCDVoChong.ReadOnly = true;
-                txtCCCDVoChong.BackColor = Color.WhiteSmoke;
-                txtMaHonNhan.BackColor = Color.WhiteSmoke;
-                txtTenVoChong.BackColor = Color.WhiteSmoke;
+                ToolsForControl.ReadOnly(textBoxs, true, Color.WhiteSmoke);
             }
         }
 
