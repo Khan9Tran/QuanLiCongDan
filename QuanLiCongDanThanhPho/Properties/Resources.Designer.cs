@@ -123,16 +123,6 @@ namespace QuanLiCongDanThanhPho.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap barchart {
-            get {
-                object obj = ResourceManager.GetObject("barchart", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cake {
             get {
                 object obj = ResourceManager.GetObject("cake", resourceCulture);
@@ -196,16 +186,6 @@ namespace QuanLiCongDanThanhPho.Properties {
         internal static System.Drawing.Bitmap crossWhite {
             get {
                 object obj = ResourceManager.GetObject("crossWhite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap customer {
-            get {
-                object obj = ResourceManager.GetObject("customer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -325,7 +305,7 @@ namespace QuanLiCongDanThanhPho.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap i_stay_at_home {
             get {
-                object obj = ResourceManager.GetObject("i-stay-at-home", resourceCulture);
+                object obj = ResourceManager.GetObject("i_stay_at_home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,36 +376,6 @@ namespace QuanLiCongDanThanhPho.Properties {
         internal static System.Drawing.Bitmap mặt_trước_thẻ_cccd {
             get {
                 object obj = ResourceManager.GetObject("mặt trước thẻ cccd", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menu__5_ {
-            get {
-                object obj = ResourceManager.GetObject("menu (5)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menu__6_ {
-            get {
-                object obj = ResourceManager.GetObject("menu (6)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menu__8_ {
-            get {
-                object obj = ResourceManager.GetObject("menu (8)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -525,7 +475,7 @@ namespace QuanLiCongDanThanhPho.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap personal_information__1_ {
             get {
-                object obj = ResourceManager.GetObject("personal-information (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("personal_information__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -705,7 +655,7 @@ namespace QuanLiCongDanThanhPho.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap telephone__1_ {
             get {
-                object obj = ResourceManager.GetObject("telephone (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("telephone__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
