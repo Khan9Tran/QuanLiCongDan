@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtMaHo = new System.Windows.Forms.TextBox();
             this.lblMaHo = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             this.gvNguoiChuaCoHoKhau = new System.Windows.Forms.DataGridView();
             this.lblThongTin = new System.Windows.Forms.Label();
             this.pnlTrangTri = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlButton = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gvNguoiChuaCoHoKhau)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,23 +171,23 @@
             // 
             this.gvNguoiChuaCoHoKhau.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvNguoiChuaCoHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvNguoiChuaCoHoKhau.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvNguoiChuaCoHoKhau.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gvNguoiChuaCoHoKhau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvNguoiChuaCoHoKhau.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvNguoiChuaCoHoKhau.DefaultCellStyle = dataGridViewCellStyle4;
             this.gvNguoiChuaCoHoKhau.Location = new System.Drawing.Point(802, 183);
             this.gvNguoiChuaCoHoKhau.Name = "gvNguoiChuaCoHoKhau";
             this.gvNguoiChuaCoHoKhau.RowHeadersWidth = 51;
@@ -214,13 +214,13 @@
             this.pnlTrangTri.Size = new System.Drawing.Size(529, 855);
             this.pnlTrangTri.TabIndex = 112;
             // 
-            // panel1
+            // pnlButton
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(1379, -32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(67, 899);
-            this.panel1.TabIndex = 113;
+            this.pnlButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlButton.Location = new System.Drawing.Point(1379, -32);
+            this.pnlButton.Name = "pnlButton";
+            this.pnlButton.Size = new System.Drawing.Size(67, 899);
+            this.pnlButton.TabIndex = 113;
             // 
             // FThemNguoiVaoHo
             // 
@@ -242,7 +242,7 @@
             this.Controls.Add(this.txtMaHo);
             this.Controls.Add(this.lblMaHo);
             this.Controls.Add(this.pnlTrangTri);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlButton);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -270,6 +270,6 @@
         private DataGridView gvNguoiChuaCoHoKhau;
         private Label lblThongTin;
         private Panel pnlTrangTri;
-        private Panel panel1;
+        private Panel pnlButton;
     }
 }
