@@ -62,13 +62,13 @@ namespace QuanLiCongDanThanhPho
         }
         public TamTruTamVang LayThongTin(string maCCCD)
         {
-            string sqlStr = string.Format("SELECT * FROM TAMTRUTAMVANG WHERE CCCD = {0}", maCCCD);
+            string sqlStr = string.Format("SELECT * FROM TAMTRUTAMVANG WHERE CCCD = '{0}'", maCCCD);
             return conn.LayThongTinTamTruTamVang(sqlStr);
         }
 
         public TamTruTamVang LayThongTinTheoMaSo(string maSo)
         {
-            string sqlStr = string.Format("SELECT * FROM TAMTRUTAMVANG WHERE MaTTTV = {0}", maSo);
+            string sqlStr = string.Format("SELECT * FROM TAMTRUTAMVANG WHERE MaTTTV = '{0}'", maSo);
             return conn.LayThongTinTamTruTamVang(sqlStr);
         }
         public DataTable LayDanhSachChuaTu(string tu)
