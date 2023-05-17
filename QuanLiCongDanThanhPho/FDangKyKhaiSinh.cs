@@ -85,6 +85,8 @@ namespace QuanLiCongDanThanhPho
         }
 
         private int turn = 0;
+
+        //Tạo nên 3 turn lấy thông tin theo chồng/vợ/không lấy
         private void TuDongNhap()
         {
             KhaiSinh chong = KSDAO.LayThongTin(txtCccdCha.Text);
