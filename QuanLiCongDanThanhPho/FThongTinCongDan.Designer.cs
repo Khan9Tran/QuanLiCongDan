@@ -116,6 +116,7 @@
             this.ptcHinhDaiDien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptcHinhDaiDien.TabIndex = 2;
             this.ptcHinhDaiDien.TabStop = false;
+            this.ptcHinhDaiDien.Click += new System.EventHandler(this.picCongDan_Click);
             // 
             // lblTen
             // 
@@ -311,6 +312,7 @@
             this.btnThongTinCCCD.Size = new System.Drawing.Size(50, 27);
             this.btnThongTinCCCD.TabIndex = 102;
             this.btnThongTinCCCD.UseVisualStyleBackColor = false;
+            this.btnThongTinCCCD.Click += new System.EventHandler(this.btnThongTinCCCD_Click);
             // 
             // lblQuanHeVoiChuHo
             // 
@@ -359,6 +361,7 @@
             this.btnXacNhan.Size = new System.Drawing.Size(61, 74);
             this.btnXacNhan.TabIndex = 109;
             this.btnXacNhan.UseVisualStyleBackColor = false;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // btnSua
             // 
@@ -371,6 +374,7 @@
             this.btnSua.Size = new System.Drawing.Size(61, 65);
             this.btnSua.TabIndex = 100;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnReLoad
             // 
@@ -385,6 +389,7 @@
             this.btnReLoad.Size = new System.Drawing.Size(61, 78);
             this.btnReLoad.TabIndex = 110;
             this.btnReLoad.UseVisualStyleBackColor = false;
+            this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
             // 
             // btnHonNhan
             // 
@@ -397,6 +402,7 @@
             this.btnHonNhan.Size = new System.Drawing.Size(50, 35);
             this.btnHonNhan.TabIndex = 98;
             this.btnHonNhan.UseVisualStyleBackColor = false;
+            this.btnHonNhan.Click += new System.EventHandler(this.btnHonNhan_Click);
             // 
             // btnThue
             // 
@@ -409,6 +415,7 @@
             this.btnThue.Size = new System.Drawing.Size(50, 35);
             this.btnThue.TabIndex = 97;
             this.btnThue.UseVisualStyleBackColor = false;
+            this.btnThue.Click += new System.EventHandler(this.btnThue_Click);
             // 
             // btnHoKhau
             // 
@@ -421,6 +428,7 @@
             this.btnHoKhau.Size = new System.Drawing.Size(50, 35);
             this.btnHoKhau.TabIndex = 96;
             this.btnHoKhau.UseVisualStyleBackColor = false;
+            this.btnHoKhau.Click += new System.EventHandler(this.btnHoKhau_Click);
             // 
             // txtGhiChu
             // 
@@ -455,6 +463,7 @@
             this.btnKhaiSinh.TabIndex = 50;
             this.btnKhaiSinh.Text = "Khai Sinh";
             this.btnKhaiSinh.UseVisualStyleBackColor = false;
+            this.btnKhaiSinh.Click += new System.EventHandler(this.btnKhaiSinh_Click);
             // 
             // txtHonNhan
             // 
@@ -658,6 +667,7 @@
             this.Name = "FThongTinCongDan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FThongTinCongDan";
+            this.Load += new System.EventHandler(this.FThongTinCongDan_Load);
             this.pnlTittleBar.ResumeLayout(false);
             this.pnlTittleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptcHinhDaiDien)).EndInit();
